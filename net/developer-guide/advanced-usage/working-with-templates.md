@@ -245,6 +245,35 @@ If the table position depends on the other object of the page, a user can define
 
 [MoveTo](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/templatetablelayout/methods/moveto) method returns a copy of the current object. A user can pass any coordinates (even negative - then layout will be moved to the left/top).
 
+## Template barcodes
+
+Template barcodes work in the same way as a template field with the fixed position. The following example shows how to define a template barcode field:
+
+```csharp
+// Define a barcode field
+TemplateBarcode barcode = new TemplateBarcode(
+    new Rectangle(new Point(590, 80), new Size(150, 150)),
+    "QR");
+
+// Create a template
+Template template = new Template(new TemplateItem[] { barcode });
+
+// Create an instance of Parser class
+using (Parser parser = new Parser(Constants.SamplePdfWithBarcodes))
+{
+    // Parse the document by the template
+    DocumentData data = parser.ParseByTemplate(template);
+
+    // Print all extracted data
+    for (int i = 0; i < data.Count; i++)
+    {
+        Console.Write(data[i].Name + ": ");
+        PageBarcodeArea area = data[i].PageArea as PageBarcodeArea;
+        Console.WriteLine(area == null ? "Not a template barcode field" : area.Value);
+    }
+}
+```
+
 ## Complex template example
 
 This example shows the template which is used to parse the following invoice:

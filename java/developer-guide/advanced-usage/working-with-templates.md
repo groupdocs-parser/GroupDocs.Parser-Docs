@@ -261,6 +261,35 @@ If the table position depends on the other object of the page, a user can define
 
 [moveTo(Point)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.templates/TemplateTableLayout#moveTo(com.groupdocs.parser.data.Point)) method returns a copy of the current object. A user can pass any coordinates (even negative - then layout will be moved to the left/top).
 
+## Template barcodes
+
+Template barcodes work in the same way as a template field with the fixed position. The following example shows how to define a template barcode field:
+
+```java
+// Define a barcode field
+TemplateBarcode barcode = new TemplateBarcode(
+        new Rectangle(new Point(590, 80), new Size(150, 150)),
+        "QR");
+// Create a template
+Template template = new Template(Arrays.asList(new TemplateItem[]{barcode}));
+// Create an instance of Parser class
+try (Parser parser = new Parser(Constants.SamplePdfWithBarcodes)) {
+    // Parse the document by the template
+    DocumentData data = parser.parseByTemplate(template);
+    // Print all extracted data
+    for (int i = 0; i < data.getCount(); i++) {
+        // Print field name
+        System.out.print(data.get(i).getName() + ": ");
+        // As we have defined only barcode fields in the template,
+        // we cast PageArea property value to PageBarcodeArea
+        PageBarcodeArea area = data.get(i).getPageArea() instanceof PageBarcodeArea
+                ? (PageBarcodeArea) data.get(i).getPageArea()
+                : null;
+        System.out.println(area == null ? "Not a template barcode field" : area.getValue());
+    }
+}
+```
+
 ## Complex template example
 
 This example shows the template which is used to parse the following invoice:

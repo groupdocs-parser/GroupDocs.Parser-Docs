@@ -1,7 +1,7 @@
 ---
-id: release-notes-2016
-url: parser/net/release-notes-2016
-title: Release Notes - 2016
+id: working-with-barcodes
+url: parser/net/working-with-barcodes
+title: Working with barcodes
 weight: 7
 description: ""
 keywords: 

@@ -60,7 +60,6 @@ try (Parser parser = new Parser(Constants.SampleImagesPdf)) {
         System.out.println(String.format("Page: %d, R: %s, Type: %s", image.getPage().getIndex(), image.getRectangle(), image.getFileType()));
     }
 }
-
 ```
 
 ## More resources
