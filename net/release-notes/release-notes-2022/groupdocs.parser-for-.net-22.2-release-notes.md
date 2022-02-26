@@ -23,6 +23,7 @@ hideChildren: False
 | PARSERNET-1823 | Improve text area extraction from spreadsheets | Improvement |
 | PARSERNET-1868 | Improve the spreadsheet preview functionality | Improvement |
 | PARSERNET-1880 | Implement the support for .NET 6 | Improvement |
+| PARSERNET-1872 | .NET 6 support | Improvement |
 
 ## Public API and Backward Incompatible Changes
 
