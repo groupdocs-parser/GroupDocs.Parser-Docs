@@ -1,7 +1,7 @@
 ---
 id: scan-barcode
 url: parser/net/scan-barcode
-title: Scan barcode
+title: Scan Barcode
 weight: 5
 description: "Scan barcode in .Net with GroupDocs.Parser with few lines of code from images, documents and other file formats like PDF, Emails, Ebooks, Word, and others."
 keywords: 

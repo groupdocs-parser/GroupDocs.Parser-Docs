@@ -8,11 +8,11 @@ keywords:
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-GroupDocs.Parser .Net allows to scan QR code from PDF, MS Word (DOC, DOCX), MS PowerPoint (PPT, PPTX), LibreOffice formats and many others (see full list at [supported document formats]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}) article).
+GroupDocs.Parser .Net allows to scan QR Code from PDF, MS Word (DOC, DOCX), MS PowerPoint (PPT, PPTX), LibreOffice formats and many others (see full list at [supported document formats]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}) article).
 
-GroupDocs.Parser's QR-Code scanner is easy to use and powerful at the same time. Our sophisticated algorithms allow to read even damaged barcodes.
+GroupDocs.Parser's QR Code scanner is easy to use and powerful at the same time. Our sophisticated algorithms allow to read even damaged barcodes.
 
-This article demonstrates how to implement QR-Code reader from any supported format. 
+This article demonstrates how to implement QR Code reader from any supported format. 
 
 ## How to scan QR Code in .Net with GroupDocs.Parser
 
