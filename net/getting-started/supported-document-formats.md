@@ -118,6 +118,16 @@ The following tables indicate the file formats from which GroupDocs.Parser for .
 | [JPG, JPEG](https://wiki.fileformat.com/image/jpeg/)<br/>JPEG Image file  |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
 | [PNG](https://wiki.fileformat.com/image/png/)<br/>Portable Network Graphics |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
 | [TIF, TIFF](https://wiki.fileformat.com/image/tiff/)<br/>Tagged Image File Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [DICOM](https://wiki.fileformat.com/image/dcm/)<br/>DICOM (Digital Imaging and Communications in Medicine) |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [DJVU](https://wiki.fileformat.com/image/djvu/)<br/>DjVu File Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [EMF](https://wiki.fileformat.com/image/emf/)<br/>Enhanced metafile |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [J2K](https://wiki.fileformat.com/image/j2k/)<br/>JPEG 2000 |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [PS](https://docs.fileformat.com/page-description-language/ps/)<br/>PostScript File Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [PSD](https://wiki.fileformat.com/image/psd/)<br/>Photoshop Document |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [SVG](https://wiki.fileformat.com/image/svg/)<br/>Scalar Vector Graphics file |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [SVGZ](https://wiki.fileformat.com/image/svgz/)<br/>Scalar Vector Graphics file (with gzip compression) |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [WEBP](https://wiki.fileformat.com/image/webp/)<br/>WebP Image File Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| [WMF](https://wiki.fileformat.com/image/wmf/)<br/>Microsoft Windows Metafile |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
 
 ## Database
 
