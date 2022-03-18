@@ -1,19 +1,20 @@
 ---
-id: groupdocs-parser-for-java-21-11-release-notes
-url: parser/java/groupdocs-parser-for-java-21-11-release-notes
-title: GroupDocs.Parser for Java 21.11 Release Notes
+id: groupdocs-parser-for-java-22.3-release-notes
+url: parser/java/groupdocs-parser-for-java-22.3-release-notes
+title: GroupDocs.Parser for Java 22.3 Release Notes
 weight: 1
 description: ""
 keywords: 
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-{{< alert style="info" >}}This page contains release notes for GroupDocs.Parser for Java 21.11{{< /alert >}}
+{{< alert style="info" >}}This page contains release notes for GroupDocs.Parser for Java 22.3{{< /alert >}}
 
 ## Full List of Issues Covering all Changes in this Release
 
 | Key | Summary | Category |
 | --- | --- | --- |
+| PARSERNET-1874 | Implement the support of barcode extraction from images | New Feature |
 | PARSERNET-1366 | Implement the ability to parse barcodes in the parse by template functionality | New Feature |
 | PARSERNET-1832 | Implement the ability to parse barcodes from documents | New Feature |
 | PARSERNET-1830 | Implement the ability to detect images by content | New Feature |
@@ -24,6 +25,44 @@ hideChildren: False
 
 ## Public API and Backward Incompatible Changes
 
+### Implement the support of barcode extraction from images
+
+#### Description
+
+This feature provides the ability to extract barcodes from images.
+
+#### Public API changes
+
+No public API changes.
+
+#### Usage
+
+The following example shows how to extract barcodes from images:
+
+```java
+// Create an instance of Parser class
+try(Parser parser = new Parser(Constants.SamplePdfWithBarcodes))
+{
+	// Check if the file supports barcodes extraction
+	if (!parser.getFeatures().isBarcodes()) {
+		System.out.println("File doesn't support barcodes extraction.");
+		return;
+	}
+
+	// Extract barcodes from the image.
+	Iterable<PageBarcodeArea> barcodes = parser.getBarcodes();
+
+	// Iterate over barcodes
+	for(PageBarcodeArea barcode : barcodes)
+	{
+		// Print the page index
+		System.out.println("Page: " + barcode.getPage().getIndex());
+		// Print the barcode value
+		System.out.println("Value: " + barcode.getValue());
+	}
+}
+```
+
 ### Implement the ability to parse barcodes in the parse by template functionality
 
 #### Description
@@ -32,18 +71,18 @@ This feature provides the ability to extract barcodes from documents.
 
 #### Public API changes
 
-[GroupDocs.Parser.Options.Features](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser.options/Features) public class was updated with changes as follows:
+[GroupDocs.Parser.Options.Features](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/Features) public class was updated with changes as follows:
 
-* Added [Barcodes](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser.options/Features#isBarcodes()) property
+* Added [Barcodes](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/Features#isBarcodes()) property
 
-[PageBarcodeArea](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea) public class was added
+[PageBarcodeArea](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea) public class was added
 
-[Parser](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser/Parser) public class was updated with changes as follows:
+[Parser](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) public class was updated with changes as follows:
 
-* Added [getBarcodes](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes()) method
-* Added [getBarcodes(int)](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(int)) method
-* Added [getBarcodes(PageAreaOptions)](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(com.groupdocs.parser.options.PageAreaOptions)) method
-* Added [getBarcodes(int, PageAreaOptions)](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(int,%20com.groupdocs.parser.options.PageAreaOptions)) method
+* Added [getBarcodes](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes()) method
+* Added [getBarcodes(int)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(int)) method
+* Added [getBarcodes(PageAreaOptions)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(com.groupdocs.parser.options.PageAreaOptions)) method
+* Added [getBarcodes(int, PageAreaOptions)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(int,%20com.groupdocs.parser.options.PageAreaOptions)) method
 
 #### Usage
 
@@ -113,7 +152,7 @@ This feature allows to define barcode fields in templates.
 
 #### Public API changes
 
-[TemplateBarcode](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser.templates/TemplateBarcode) public class was added.
+[TemplateBarcode](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.templates/TemplateBarcode) public class was added.
 
 ### Usage
 
@@ -156,9 +195,9 @@ This improvement enhanced the work with text fields.
 
 #### Public API changes
 
-[FieldData](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser.data/FieldData) public class was updated with changes as follows:
+[FieldData](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/FieldData) public class was updated with changes as follows:
 
-* Added [Text](https://apireference-qa.groupdocs.com/parser/java/com.groupdocs.parser.data/FieldData#getText()) property
+* Added [Text](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/FieldData#getText()) property
 
 #### Usage
 
