@@ -129,11 +129,10 @@ The following tables indicate the file formats from which GroupDocs.Parser for .
 | [WEBP](https://wiki.fileformat.com/image/webp/)<br/>WebP Image File Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
 | [WMF](https://wiki.fileformat.com/image/wmf/)<br/>Microsoft Windows Metafile |   |   |   |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
 
-
 ## Database
 
 Databases are supported via ADO&#46;NET. To work with the corresponding database format install its database provider.
 
 | Document Type | Parse Document by Template | Extract Text (Accurate) | Extract Text (Raw) | Extract Structured Text and Formatted Text | Extract Text Areas | Extract Metadata | Extract Images | Extract Containers and Attachments | Parse Form Data | Extract Table of Contents | Scan Barcode |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| ADO&#46;NET | | ![(tick)](parser/net/images/check.png) |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) |
+| ADO&#46;NET | | ![(tick)](parser/net/images/check.png) |   |   |   |   |   |   |   | ![(tick)](parser/net/images/check.png) | |
