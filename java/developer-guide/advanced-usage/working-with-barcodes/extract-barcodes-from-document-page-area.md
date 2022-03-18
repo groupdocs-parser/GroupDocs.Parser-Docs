@@ -1,11 +1,11 @@
 ---
 id: extract-barcodes-from-document-page-area
-url: parser/net/extract-barcodes-from-document-page-area
+url: parser/java/extract-barcodes-from-document-page-area
 title: Extract barcodes from document page area
 weight: 3
 description: ""
 keywords: 
-productName: GroupDocs.Parser for .NET
+productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
 
