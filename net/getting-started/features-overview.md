@@ -3,19 +3,19 @@ id: features-overview
 url: parser/net/features-overview
 title: Features Overview
 weight: 1
-description: ""
-keywords: 
+description: " a feature-rich document data parsing API that allows to create a template with data field definitions, table definitions. Then it's easy to use the template to parse and extract data such as prices, invoices, tables from your typical documents."
+keywords: parse data, parse, extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-{{< alert style="info" >}}GroupDocs.Parser is a feature-reach document data parsing API. Here you may find description of the most important features.{{< /alert >}}
+{{< alert style="info" >}}GroupDocs.Parser is a feature-rich document data parsing API. Here you may find description of the most important features.{{< /alert >}}
 
 
 ## Parse Data from Documents
 
 GroupDocs.Parser allows to parse documents by user-defined templates.
 
-It is easy to crate a template with data field definitions, table definitions. Then it's easy to use the template (just pass the  [Template](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object to [ParseByTemplate](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method) and extract data such as prices, invoices, tables from your typical documents.
+It is easy to create a template with data field definitions, table definitions. Then it's easy to use the template (just pass the  [Template](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object to [ParseByTemplate](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method) and extract data such as prices, invoices, tables from your typical documents.
 
 ## Extract Text
 

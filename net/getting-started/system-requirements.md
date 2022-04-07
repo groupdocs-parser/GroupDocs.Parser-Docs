@@ -3,8 +3,8 @@ id: system-requirements
 url: parser/net/system-requirements
 title: System Requirements
 weight: 3
-description: ""
-keywords: 
+description: "GroupDocs.Parser for .NET supports any 32-bit or 64-bit operating system where .NET or Mono framework is installed."
+keywords: parser, GroupDocs.Parser for .NET
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

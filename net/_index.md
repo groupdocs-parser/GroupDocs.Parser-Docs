@@ -3,8 +3,8 @@ id: home
 url: parser/net
 title: GroupDocs.Parser for .NET
 weight: 1
-description: ""
-keywords: 
+description: "A convenient text extractor API that permits users to extract raw or formatted text from different document formats. Besides, it is not only a text extractor API, the user can extract metadata from the document as well. "
+keywords: parser api, text extractor, extract raw, extract metadata
 productName: GroupDocs.Parser for .NET
 hideChildren: True
 ---

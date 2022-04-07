@@ -3,8 +3,8 @@ id: evaluation-limitations-and-licensing
 url: parser/net/evaluation-limitations-and-licensing
 title: Evaluation Limitations and Licensing
 weight: 5
-description: ""
-keywords: 
+description: "free parser api version is available to evaluate the API which will be similar as licensed but with few limitations."
+keywords: free parser api, parser api
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

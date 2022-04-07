@@ -3,8 +3,8 @@ id: how-to-run-examples
 url: parser/net/how-to-run-examples
 title: How to Run Examples
 weight: 6
-description: ""
-keywords: 
+description:  "This article describes how to run .NET parser API code examples."
+keywords:  parser api
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
