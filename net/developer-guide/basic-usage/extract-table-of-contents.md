@@ -4,7 +4,7 @@ url: parser/net/extract-table-of-contents
 title: Extract table of contents
 weight: 11
 description: "With GroupDocs.Parser you may extract table of contents from Microsoft Word (DOC, DOCX etc), PDF documents and Ebooks (CHM, EPUB)."
-keywords: 
+keywords: extract table of contents, DOC, DOCX, CHM, EPUB
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

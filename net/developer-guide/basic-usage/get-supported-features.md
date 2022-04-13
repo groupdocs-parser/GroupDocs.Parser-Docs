@@ -3,8 +3,8 @@ id: get-supported-features
 url: parser/net/get-supported-features
 title: Get supported features
 weight: 3
-description: "`"
-keywords: Features Parser C# CSharp .Net dotNet
+description: " GroupDocs.Parser provides the functionality to check if feature supported for the document."
+keywords: Feature,s Parser, C#, CSharp, .Net, dotNet
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

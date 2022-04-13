@@ -3,8 +3,8 @@ id: extract-data-from-emails
 url: parser/net/extract-data-from-emails
 title: Extract data from Emails
 weight: 5
-description: ""
-keywords: 
+description: "GroupDocs.Parser provides the functionality to extract data from emails. Both email message (eml, msg) and Outlook Storage (ost, pst) formats are supported. Also POP, IMAP and Exchange Web Services protocols are supported."
+keywords: extract data from emails, extract data, eml, msg, POP, IMAP, Exchange Web Services protocols
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

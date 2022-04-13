@@ -3,8 +3,8 @@ id: search-text-in-emails
 url: parser/net/search-text-in-emails
 title: Search text in Emails
 weight: 7
-description: ""
-keywords: 
+description: "Search a keyword in emails using Search method"
+keywords: search a keyword, search a keyword in emails
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

@@ -4,7 +4,7 @@ url: parser/net/extract-text-from-documents
 title: Extract text from documents
 weight: 5
 description: "Extract text with GroupDocs.Parser from PDF, Emails, Ebooks (EPUB, FB2, CHM), Microsoft Office formats: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others."
-keywords: 
+keywords: Extract text, EPUB, FB2, CHM, pdf, DOC, DOCX, PPT, PPTX, XLS, XLSX
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

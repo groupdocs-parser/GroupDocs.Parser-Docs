@@ -4,7 +4,7 @@ url: parser/net/parse-data-from-documents
 title: Parse data from documents
 weight: 4
 description: "Automate your document processes with document parsing feature of GroupDocs.Parser. Document Parser allows you to extract data from documents of various formats including PDF, Microsoft Word (DOC, DOCX), Excel (XLS, XLSX), LibreOffice formats etc."
-keywords: Document parsing
+keywords: Document parsing,document parsing feature,DOC, DOCX,XLS, XLSX,PDF
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

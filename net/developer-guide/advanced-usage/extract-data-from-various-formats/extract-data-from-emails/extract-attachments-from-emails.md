@@ -3,8 +3,8 @@ id: extract-attachments-from-emails
 url: parser/net/extract-attachments-from-emails
 title: Extract attachments from Emails
 weight: 4
-description: ""
-keywords: 
+description: "Extract email attachments using GroupDocs.Parser for .NET"
+keywords: Extract email attachments
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

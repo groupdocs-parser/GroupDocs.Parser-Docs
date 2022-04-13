@@ -3,8 +3,8 @@ id: extract-emails-from-remote-server-via-pop-imap-or-exchange-web-services-prot
 url: parser/net/extract-emails-from-remote-server-via-pop-imap-or-exchange-web-services-protocols
 title: Extract emails from remote server via POP IMAP or Exchange Web Services protocols
 weight: 6
-description: ""
-keywords: 
+description: "GroupDocs.Parser allows you to extract emails from remote servers and data from the emails. It supports POP, IMAP and EWS protocols."
+keywords: Extract emails, Extract emails from remote server, POP, IMAP, EWS
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

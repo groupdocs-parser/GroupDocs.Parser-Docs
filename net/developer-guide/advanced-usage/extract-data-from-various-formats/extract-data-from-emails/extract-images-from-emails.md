@@ -3,8 +3,8 @@ id: extract-images-from-emails
 url: parser/net/extract-images-from-emails
 title: Extract images from Emails
 weight: 3
-description: ""
-keywords: 
+description: "Extract images from emails, by default images are extracted with its original format"
+keywords: extract images, extract images from emails
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

@@ -3,8 +3,8 @@ id: extract-metadata-from-emails
 url: parser/net/extract-metadata-from-emails
 title: Extract metadata from Emails
 weight: 2
-description: ""
-keywords: 
+description: "Extract metadata from emails by using GetMetaData method."
+keywords: extract metadata,extract metadata from emails
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

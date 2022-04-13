@@ -3,8 +3,8 @@ id: get-document-info
 url: parser/net/get-document-info
 title: Get document info
 weight: 2
-description: " "
-keywords: Dofument Info Parser C# CSharp .Net dotNet
+description: "GroupDocs.Parser provides the functionality to get the basic document info."
+keywords: Document Info, Parser, C#, CSharp, .Net, dotNet
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

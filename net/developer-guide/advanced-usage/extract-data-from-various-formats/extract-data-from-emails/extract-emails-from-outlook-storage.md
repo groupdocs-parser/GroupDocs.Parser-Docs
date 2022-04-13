@@ -3,8 +3,8 @@ id: extract-emails-from-outlook-storage
 url: parser/net/extract-emails-from-outlook-storage
 title: Extract emails from Outlook Storage
 weight: 5
-description: ""
-keywords: 
+description: "Extract emails from Outlook using GroupDocs.Parser for .NET"
+keywords: Extract emails from Outlook
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

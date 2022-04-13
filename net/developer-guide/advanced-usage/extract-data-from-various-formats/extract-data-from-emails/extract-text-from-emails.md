@@ -3,8 +3,8 @@ id: extract-text-from-emails
 url: parser/net/extract-text-from-emails
 title: Extract text from Emails
 weight: 1
-description: ""
-keywords: 
+description: "Extract text from emails using GetText method."
+keywords: extract text from emails
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
