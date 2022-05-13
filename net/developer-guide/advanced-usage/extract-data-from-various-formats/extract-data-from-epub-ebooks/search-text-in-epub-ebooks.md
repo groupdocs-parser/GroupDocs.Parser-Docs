@@ -3,8 +3,8 @@ id: search-text-in-epub-ebooks
 url: parser/net/search-text-in-epub-ebooks
 title: Search text in EPUB eBooks
 weight: 4
-description: ""
-keywords: 
+description: "To search a keyword in EPUB e-books Search(String) method is used. This method returns the collection of SearchResult objects."
+keywords: search a keyword in EPUB, search a keyword
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

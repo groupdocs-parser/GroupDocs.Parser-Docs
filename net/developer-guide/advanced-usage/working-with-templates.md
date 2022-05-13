@@ -3,7 +3,7 @@ id: working-with-templates
 url: parser/net/working-with-templates
 title: Working with templates
 weight: 101
-description: ""
+description: "Document template is set by Template class. It contains template items - fields and tables."
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False

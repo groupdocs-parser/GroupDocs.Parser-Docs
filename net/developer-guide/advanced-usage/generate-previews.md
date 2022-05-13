@@ -3,8 +3,8 @@ id: generate-previews
 url: parser/net/generate-previews
 title: Generate previews
 weight: 105
-description: ""
-keywords: 
+description: "This article provides learning contents about how to generate page previews of documents in .NET using GroupDocs.Parser API"
+keywords: page previews, how to generate page previews of documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

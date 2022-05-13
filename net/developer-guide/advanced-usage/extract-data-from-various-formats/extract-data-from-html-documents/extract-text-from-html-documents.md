@@ -3,8 +3,8 @@ id: extract-text-from-html-documents
 url: parser/net/extract-text-from-html-documents
 title: Extract text from HTML documents
 weight: 1
-description: ""
-keywords: 
+description: "To extract a text from HTML documents GetText method is used. This method allows to extract a text from the entire document. Pagination and raw mode is not supported for emails."
+keywords: extract a text, extract a text from HTML
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

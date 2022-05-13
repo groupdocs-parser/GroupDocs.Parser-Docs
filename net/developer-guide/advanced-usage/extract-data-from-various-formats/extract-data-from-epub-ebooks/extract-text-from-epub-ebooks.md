@@ -3,8 +3,8 @@ id: extract-text-from-epub-ebooks
 url: parser/net/extract-text-from-epub-ebooks
 title: Extract text from EPUB eBooks
 weight: 1
-description: ""
-keywords: 
+description: "To extract text from EPUB e-books GetText and GetText(pageIndex) methods is used. These methods allow to extract text from the entire document or a text from the selected page. Raw mode is not supported for EPUB."
+keywords: extract text
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

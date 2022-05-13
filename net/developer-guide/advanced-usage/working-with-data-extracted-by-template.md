@@ -3,8 +3,8 @@ id: working-with-data-extracted-by-template
 url: parser/net/working-with-data-extracted-by-template
 title: Working with data extracted by template
 weight: 102
-description: ""
-keywords: 
+description: "Extracted data are stored in the instance of DocumentData class"
+keywords: Extracted data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

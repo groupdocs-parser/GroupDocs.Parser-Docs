@@ -3,8 +3,8 @@ id: extract-metadata-from-epub-ebook
 url: parser/net/extract-metadata-from-epub-ebook
 title: Extract metadata from EPUB eBook
 weight: 2
-description: ""
-keywords: 
+description: "To extract metadata from EPUB e-books GetMetadata method is used"
+keywords: extract metadata, extract metadata from EPUB
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

@@ -3,8 +3,8 @@ id: search-text-in-html-documents
 url: parser/net/search-text-in-html-documents
 title: Search text in HTML documents
 weight: 2
-description: ""
-keywords: 
+description: "To search a keyword in HTML documents Search(String) method is used. This method returns the collection of SearchResult objects."
+keywords: search a keyword, search a keyword in HTML
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

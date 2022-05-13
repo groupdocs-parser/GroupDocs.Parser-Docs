@@ -3,7 +3,7 @@ id: extract-table-of-contents-from-epub-ebooks
 url: parser/net/extract-table-of-contents-from-epub-ebooks
 title: Extract table of contents from EPUB eBooks
 weight: 3
-description: ""
+description: "To extract table of contents from EPUB e-books GetToc method is used."
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False

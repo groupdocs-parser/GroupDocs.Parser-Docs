@@ -3,8 +3,8 @@ id: extract-data-from-databases
 url: parser/net/extract-data-from-databases
 title: Extract data from databases
 weight: 100
-description: ""
-keywords: 
+description: "This article shows the data extraction from database via ADO.NET using GroupDocs.Parser"
+keywords: data extraction from database, Extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
