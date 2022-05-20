@@ -3,8 +3,8 @@ id: extract-data-from-databases
 url: parser/java/extract-data-from-databases
 title: Extract data from databases
 weight: 100
-description: ""
-keywords: 
+description: "This article demonstrate that how to extract data from databases via JDBC"
+keywords: via JDBC, extract data
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

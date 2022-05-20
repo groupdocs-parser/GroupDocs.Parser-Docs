@@ -3,8 +3,7 @@ id: search-text-in-html-documents
 url: parser/java/search-text-in-html-documents
 title: Search text in HTML documents
 weight: 2
-description: ""
-keywords: 
+description: "Learn how to search a keyword in HTML documents search(String) method is used. This method returns the collection of SearchResult objects."
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

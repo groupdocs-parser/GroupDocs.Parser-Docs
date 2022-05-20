@@ -3,8 +3,8 @@ id: extract-data-from-microsoft-office-excel
 url: parser/java/extract-data-from-microsoft-office-excel
 title: Extract data from Microsoft Office Excel spreadsheets
 weight: 2
-description: ""
-keywords: 
+description: "This article shows how to to extract data from Microsoft Office Excel spreadsheets."
+keywords: extract data
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

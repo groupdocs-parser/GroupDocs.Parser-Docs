@@ -3,8 +3,8 @@ id: generate-previews
 url: parser/java/generate-previews
 title: Generate previews
 weight: 105
-description: ""
-keywords: 
+description: "This article provides learning contents about how to generate page previews of documents in .NET using GroupDocs.Parser for Java API"
+keywords: page previews, how to generate page previews of documents
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

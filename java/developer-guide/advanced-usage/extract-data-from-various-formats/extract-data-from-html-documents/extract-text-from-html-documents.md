@@ -3,8 +3,8 @@ id: extract-text-from-html-documents
 url: parser/java/extract-text-from-html-documents
 title: Extract text from HTML documents
 weight: 1
-description: ""
-keywords: 
+description: "Learn how to extract a text from HTML documents getText() method is used. This method allows to extract a text from the entire document. Pagination and raw mode is not supported for emails."
+keywords: extract a text, extract a text from HTML
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

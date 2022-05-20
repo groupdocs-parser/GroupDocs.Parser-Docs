@@ -3,8 +3,8 @@ id: search-text-in-epub-ebooks
 url: parser/java/search-text-in-epub-ebooks
 title: Search text in EPUB eBooks
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to search a keyword in EPUB e-books Search(String) method is used. This method returns the collection of SearchResult objects."
+keywords: search a keyword in EPUB, search a keyword
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

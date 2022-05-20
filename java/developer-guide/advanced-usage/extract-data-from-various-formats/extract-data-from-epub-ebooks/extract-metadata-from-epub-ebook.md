@@ -3,8 +3,8 @@ id: extract-metadata-from-epub-ebook
 url: parser/java/extract-metadata-from-epub-ebook
 title: Extract metadata from EPUB eBook
 weight: 2
-description: ""
-keywords: 
+description:  "This article explains that how to extract metadata from EPUB e-books getMetadata method is used."
+keywords: extract metadata, extract metadata from EPUB
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

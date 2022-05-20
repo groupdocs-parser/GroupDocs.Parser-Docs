@@ -3,7 +3,7 @@ id: extract-data-from-microsoft-office-excel-spreadsheets
 url: parser/net/extract-data-from-microsoft-office-excel-spreadsheets
 title: Extract data from Microsoft Office Excel spreadsheets
 weight: 2
-description: "This article show how to to extract data from Microsoft Office Excel spreadsheets."
+description: "This article shows how to to extract data from Microsoft Office Excel spreadsheets."
 keywords: extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False

@@ -3,8 +3,8 @@ id: extract-table-of-contents-from-epub-ebooks
 url: parser/java/extract-table-of-contents-from-epub-ebooks
 title: Extract table of contents from EPUB eBooks
 weight: 3
-description: ""
-keywords: 
+description: "How to extract table of contents from EPUB e-books getToc method is used."
+keywords: extract metadata, extract metadata from EPUB
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

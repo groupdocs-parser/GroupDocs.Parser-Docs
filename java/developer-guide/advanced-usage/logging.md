@@ -3,8 +3,8 @@ id: logging
 url: parser/java/logging
 title: Logging
 weight: 103
-description: ""
-keywords: 
+description: "An interface is used to receive the information about errors, warnings and events which occur while data extraction."
+keywords: data extraction
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
