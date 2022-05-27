@@ -3,8 +3,8 @@ id: extract-images-from-microsoft-office-powerpoint-presentations
 url: parser/net/extract-images-from-microsoft-office-powerpoint-presentations
 title: Extract images from Microsoft Office PowerPoint presentations
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract images from Microsoft Office PowerPoint(.ppt, .pptx) presentations"
+keywords: extract images, extract images from Microsoft Office PowerPoint,.ppt, .pptx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

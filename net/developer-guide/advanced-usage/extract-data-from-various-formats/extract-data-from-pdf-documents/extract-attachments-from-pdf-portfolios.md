@@ -3,8 +3,8 @@ id: extract-attachments-from-pdf-portfolios
 url: parser/net/extract-attachments-from-pdf-portfolios
 title: Extract attachments from PDF portfolios
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to extract attachments from PDF documents"
+keywords: extract attachments, extract attachments from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

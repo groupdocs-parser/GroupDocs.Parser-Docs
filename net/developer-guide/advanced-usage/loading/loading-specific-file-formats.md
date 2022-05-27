@@ -3,8 +3,8 @@ id: loading-specific-file-formats
 url: parser/net/loading-specific-file-formats
 title: Loading specific file formats
 weight: 1
-description: ""
-keywords: 
+description: "Learn how to Load specific file formats."
+keywords: Load specific file formats
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

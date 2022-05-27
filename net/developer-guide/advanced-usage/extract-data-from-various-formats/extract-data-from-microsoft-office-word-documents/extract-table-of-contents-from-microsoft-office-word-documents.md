@@ -3,8 +3,8 @@ id: extract-table-of-contents-from-microsoft-office-word-documents
 url: parser/net/extract-table-of-contents-from-microsoft-office-word-documents
 title: Extract table of contents from Microsoft Office Word documents
 weight: 6
-description: ""
-keywords: 
+description: "This article explains that how to extract table of contents from Microsoft Office Word (.doc, .docx) documents"
+keywords: extract table of contents, extract table of contents from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

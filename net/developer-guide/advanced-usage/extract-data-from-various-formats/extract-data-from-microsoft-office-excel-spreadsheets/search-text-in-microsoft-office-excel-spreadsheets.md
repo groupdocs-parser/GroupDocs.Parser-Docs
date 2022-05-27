@@ -3,8 +3,8 @@ id: search-text-in-microsoft-office-excel-spreadsheets
 url: parser/net/search-text-in-microsoft-office-excel-spreadsheets
 title: Search text in Microsoft Office Excel spreadsheets
 weight: 4
-description: ""
-keywords: 
+description:  "This article explains that how to search text from Microsoft Office Excel (.xls, .xlsx) spreadsheets."
+keywords: search text, search text from Microsoft Office Excel, .xls, .xlsx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

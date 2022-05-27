@@ -3,8 +3,8 @@ id: extract-text-from-microsoft-onenote-sections
 url: parser/net/extract-text-from-microsoft-onenote-sections
 title: Extract text from Microsoft OneNote sections
 weight: 1
-description: ""
-keywords: 
+description: "This article explains that how to extract text from Microsoft OneNote sections presentations"
+keywords: extract text, extract text from Microsoft Office PowerPoint
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

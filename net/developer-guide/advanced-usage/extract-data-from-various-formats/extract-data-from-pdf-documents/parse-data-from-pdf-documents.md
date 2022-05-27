@@ -3,8 +3,8 @@ id: parse-data-from-pdf-documents
 url: parser/net/parse-data-from-pdf-documents
 title: Parse data from PDF documents
 weight: 5
-description: ""
-keywords: 
+description:  "This article explains that how to parse data from PDF documents"
+keywords: Parse data, Parse data from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

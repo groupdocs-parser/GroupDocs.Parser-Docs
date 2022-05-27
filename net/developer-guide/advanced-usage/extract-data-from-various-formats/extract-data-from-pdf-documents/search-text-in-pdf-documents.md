@@ -3,8 +3,8 @@ id: search-text-in-pdf-documents
 url: parser/net/search-text-in-pdf-documents
 title: Search text in PDF documents
 weight: 6
-description: ""
-keywords: 
+description: "This article explains that how to search text from PDF documents"
+keywords: search text, search text from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

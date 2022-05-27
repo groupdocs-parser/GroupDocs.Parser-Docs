@@ -3,8 +3,8 @@ id: search-text-in-microsoft-office-powerpoint-presentations
 url: parser/net/search-text-in-microsoft-office-powerpoint-presentations
 title: Search text in Microsoft Office PowerPoint presentations
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to search text from Microsoft Office PowerPoint(.ppt, .pptx) presentations"
+keywords: search text, search text from Microsoft Office PowerPoint,.ppt, .pptx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

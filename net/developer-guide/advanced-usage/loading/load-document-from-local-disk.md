@@ -3,8 +3,8 @@ id: load-document-from-local-disk
 url: parser/net/load-document-from-local-disk
 title: Load document from local disk
 weight: 4
-description: ""
-keywords: 
+description: "Learn how to extract data from documents on the local disk "
+keywords: extract data from documents on the local disk, extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

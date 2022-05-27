@@ -3,8 +3,8 @@ id: extract-text-from-microsoft-office-excel-spreadsheets
 url: parser/net/extract-text-from-microsoft-office-excel-spreadsheets
 title: Extract text from Microsoft Office Excel spreadsheets
 weight: 1
-description: ""
-keywords: 
+description: "This article explains that how to extract text from Microsoft Office Excel (.xls, .xlsx) spreadsheets."
+keywords: extract text, extract text from Microsoft Office Excel, .xls, .xlsx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

@@ -3,8 +3,8 @@ id: extract-images-from-microsoft-office-excel-spreadsheets
 url: parser/net/extract-images-from-microsoft-office-excel-spreadsheets
 title: Extract images from Microsoft Office Excel spreadsheets
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract images from Microsoft Office Excel (.xls, .xlsx) spreadsheets."
+keywords: extract images from Microsoft Office Excel, .xls, .xlsx, spreadsheets
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

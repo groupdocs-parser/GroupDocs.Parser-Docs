@@ -3,8 +3,8 @@ id: extract-text-from-microsoft-office-powerpoint-presentations
 url: parser/net/extract-text-from-microsoft-office-powerpoint-presentations
 title: Extract text from Microsoft Office PowerPoint presentations
 weight: 1
-description: ""
-keywords: 
+description: "This article explains that how to extract text from Microsoft Office PowerPoint(.ppt, .pptx) presentations"
+keywords: extract text, extract text from Microsoft Office PowerPoint,.ppt, .pptx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

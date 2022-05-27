@@ -3,8 +3,8 @@ id: extract-metadata-from-pdf-documents
 url: parser/net/extract-metadata-from-pdf-documents
 title: Extract metadata from PDF documents
 weight: 2
-description: ""
-keywords: 
+description: "This article explains that how to extract metadata from PDF documents"
+keywords: extract metadata, extract metadata from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

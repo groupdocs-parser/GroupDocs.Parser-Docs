@@ -3,8 +3,8 @@ id: extract-images-from-pdf-documents
 url: parser/net/extract-images-from-pdf-documents
 title: Extract images from PDF documents
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract images from PDF documents"
+keywords: extract images, extract images from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

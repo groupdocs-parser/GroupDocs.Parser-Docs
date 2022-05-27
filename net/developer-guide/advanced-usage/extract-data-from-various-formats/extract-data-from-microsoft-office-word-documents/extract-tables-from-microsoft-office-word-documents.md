@@ -3,8 +3,8 @@ id: extract-tables-from-microsoft-office-word-documents
 url: parser/net/extract-tables-from-microsoft-office-word-documents
 title: Extract tables from Microsoft Office Word documents
 weight: 5
-description: ""
-keywords: 
+description: "This article explains that how to extract tables from Microsoft Office Word (.doc, .docx) documents"
+keywords: extract tables, extract tables from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

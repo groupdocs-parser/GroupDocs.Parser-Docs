@@ -3,8 +3,8 @@ id: extract-metadata-from-microsoft-office-word-documents
 url: parser/net/extract-metadata-from-microsoft-office-word-documents
 title: Extract metadata from Microsoft Office Word documents
 weight: 2
-description: ""
-keywords: 
+description: "This article explains that how to extract metadata from Microsoft Office Word (.doc, .docx) documents"
+keywords: extract metadata, extract metadata from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

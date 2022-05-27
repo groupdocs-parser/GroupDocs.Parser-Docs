@@ -3,8 +3,8 @@ id: extract-hyperlinks-from-microsoft-office-word-documents
 url: parser/net/extract-hyperlinks-from-microsoft-office-word-documents
 title: Extract hyperlinks from Microsoft Office Word documents
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to extract hyperlinks from Microsoft Office Word (.doc, .docx) documents"
+keywords: extract hyperlink, extract hyperlinks from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

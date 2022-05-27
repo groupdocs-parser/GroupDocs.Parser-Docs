@@ -3,8 +3,8 @@ id: extract-text-from-zip-archive-files
 url: parser/net/extract-text-from-zip-archive-files
 title: Extract text from ZIP archive files
 weight: 1
-description: ""
-keywords: 
+description: "This article explains that how to extract text from ZIP archive files"
+keywords: extract text, extract text from ZIP archive files
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

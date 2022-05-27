@@ -3,8 +3,8 @@ id: extract-metadata-from-microsoft-office-excel-spreadsheets
 url: parser/net/extract-metadata-from-microsoft-office-excel-spreadsheets
 title: Extract metadata from Microsoft Office Excel spreadsheets
 weight: 2
-description: ""
-keywords: 
+description: "This article explains that how to extract metadata from Microsoft Office Excel (.xls, .xlsx) spreadsheets."
+keywords: extract metadata from Microsoft Office Excel, .xls, .xlsx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

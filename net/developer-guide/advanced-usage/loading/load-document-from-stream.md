@@ -3,8 +3,8 @@ id: load-document-from-stream
 url: parser/net/load-document-from-stream
 title: Load document from stream
 weight: 3
-description: ""
-keywords: 
+description: "Learn how to Load document from stream."
+keywords: Load document from stream, extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

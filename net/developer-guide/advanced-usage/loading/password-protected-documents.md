@@ -3,8 +3,8 @@ id: password-protected-documents
 url: parser/net/password-protected-documents
 title: Password-protected documents
 weight: 2
-description: ""
-keywords: 
+description: "Learn how to open the password-protected documents."
+keywords: open the password-protected documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

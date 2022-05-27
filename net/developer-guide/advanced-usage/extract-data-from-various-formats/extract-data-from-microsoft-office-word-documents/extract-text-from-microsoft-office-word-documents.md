@@ -3,8 +3,8 @@ id: extract-text-from-microsoft-office-word-documents
 url: parser/net/extract-text-from-microsoft-office-word-documents
 title: Extract text from Microsoft Office Word documents
 weight: 1
-description: ""
-keywords: 
+description:"This article explains that how to extract text from Microsoft Office Word (.doc, .docx) documents"
+keywords: extract text, extract text from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

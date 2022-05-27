@@ -3,8 +3,8 @@ id: search-text-in-microsoft-onenote-sections
 url: parser/net/search-text-in-microsoft-onenote-sections
 title: Search text in Microsoft OneNote sections
 weight: 2
-description: ""
-keywords: 
+description: "This article explains that how to search text from Microsoft OneNote sections presentations"
+keywords: Search text, Search text from Microsoft Office PowerPoint
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

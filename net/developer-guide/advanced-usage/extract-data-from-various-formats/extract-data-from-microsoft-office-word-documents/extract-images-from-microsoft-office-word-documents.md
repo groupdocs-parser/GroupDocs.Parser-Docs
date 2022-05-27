@@ -3,8 +3,8 @@ id: extract-images-from-microsoft-office-word-documents
 url: parser/net/extract-images-from-microsoft-office-word-documents
 title: Extract images from Microsoft Office Word documents
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract images from Microsoft Office Word (.doc, .docx) documents"
+keywords: extract images, extract images from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

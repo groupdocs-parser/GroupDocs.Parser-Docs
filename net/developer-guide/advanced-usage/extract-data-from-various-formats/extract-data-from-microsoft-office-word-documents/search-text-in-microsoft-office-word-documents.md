@@ -3,8 +3,8 @@ id: search-text-in-microsoft-office-word-documents
 url: parser/net/search-text-in-microsoft-office-word-documents
 title: Search text in Microsoft Office Word documents
 weight: 7
-description: ""
-keywords: 
+description:"This article explains that how to search text from Microsoft Office Word (.doc, .docx) documents"
+keywords: Search text, Search text from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

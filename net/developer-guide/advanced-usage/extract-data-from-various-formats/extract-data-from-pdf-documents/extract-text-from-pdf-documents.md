@@ -3,8 +3,8 @@ id: extract-text-from-pdf-documents
 url: parser/net/extract-text-from-pdf-documents
 title: Extract text from PDF documents
 weight: 1
-description: ""
-keywords: 
+description:  "This article explains that how to extract text from PDF documents"
+keywords: extract text, extract text from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
