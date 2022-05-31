@@ -3,8 +3,8 @@ id: extract-tables-from-document
 url: parser/net/extract-tables-from-document
 title: Extract tables from document
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to extract tables from document."
+keywords: extract tables, extract tables from document
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

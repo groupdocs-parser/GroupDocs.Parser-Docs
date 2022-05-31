@@ -3,8 +3,8 @@ id: extract-hyperlinks-from-document-page-area
 url: parser/net/extract-hyperlinks-from-document-page-area
 title: Extract hyperlinks from document page area
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to extract hyperlinks from document page area."
+keywords: extract hyperlinks, extract hyperlinks from document page area
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

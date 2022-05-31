@@ -3,8 +3,8 @@ id: extract-hyperlinks-from-document
 url: parser/net/extract-hyperlinks-from-document
 title: Extract hyperlinks from document
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to extract hyperlinks from documents."
+keywords: extract hyperlinks from documents, extract hyperlinks
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

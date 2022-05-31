@@ -3,8 +3,8 @@ id: extract-barcodes-from-document
 url: parser/net/extract-barcodes-from-document
 title: Extract barcodes from document
 weight: 1
-description: ""
-keywords: 
+description: "This article explains that how to extract barcodes from documents."
+keywords: extract barcodes
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

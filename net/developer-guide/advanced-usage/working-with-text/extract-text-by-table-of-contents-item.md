@@ -3,8 +3,8 @@ id: extract-text-by-table-of-contents-item
 url: parser/net/extract-text-by-table-of-contents-item
 title: Extract text by table of contents item
 weight: 9
-description: ""
-keywords: 
+description: "This article explains that how to extract text by table of contents item."
+keywords: extract text, extract text by table of contents item
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

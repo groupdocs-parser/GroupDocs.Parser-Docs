@@ -3,8 +3,8 @@ id: extract-barcodes-from-document-page-area
 url: parser/net/extract-barcodes-from-document-page-area
 title: Extract barcodes from document page area
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract barcodes from document page area."
+keywords:  extract barcodes from document page area,  extract barcodes
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

@@ -3,8 +3,8 @@ id: extract-images-to-files
 url: parser/net/extract-images-to-files
 title: Extract images to files
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to extract images to files."
+keywords: extract images to files, extract images
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

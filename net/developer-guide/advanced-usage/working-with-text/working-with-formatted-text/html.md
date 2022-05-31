@@ -3,8 +3,8 @@ id: html
 url: parser/net/html
 title: HTML
 weight: 1
-description: ""
-keywords: 
+description: "This article explains that how to extract HTML formatted text from document page."
+keywords: extract HTML formatted text, extract HTML formatted text from document page
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

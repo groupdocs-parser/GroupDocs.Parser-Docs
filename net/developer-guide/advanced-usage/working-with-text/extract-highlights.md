@@ -3,8 +3,8 @@ id: extract-highlights
 url: parser/net/extract-highlights
 title: Extract highlights
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract highlights from documents."
+keywords: extract highlights, extract highlights from documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

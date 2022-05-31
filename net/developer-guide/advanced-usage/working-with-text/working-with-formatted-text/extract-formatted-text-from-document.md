@@ -3,8 +3,8 @@ id: extract-formatted-text-from-document
 url: parser/net/extract-formatted-text-from-document
 title: Extract formatted text from document
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract formatted text from document."
+keywords: extract formatted text, extract formatted text from documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

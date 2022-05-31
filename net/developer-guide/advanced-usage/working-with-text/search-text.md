@@ -3,8 +3,8 @@ id: search-text
 url: parser/net/search-text
 title: Search text
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to search text from documents."
+keywords: search text, search text from documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---

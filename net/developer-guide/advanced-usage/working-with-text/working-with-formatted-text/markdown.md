@@ -3,8 +3,8 @@ id: markdown
 url: parser/net/markdown
 title: Markdown
 weight: 2
-description: ""
-keywords: 
+description: "This article explains that how to extract Markdown formatted text from document page."
+keywords: extract Markdown formatted text, extract Markdown formatted text from document page
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
