@@ -3,8 +3,8 @@ id: extract-text-structure
 url: parser/java/extract-text-structure
 title: Extract text structure
 weight: 6
-description: ""
-keywords: 
+description: "This article explains that how to extract text structure from documents."
+keywords: extract text, extract text structure
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

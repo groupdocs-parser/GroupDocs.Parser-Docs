@@ -3,8 +3,8 @@ id: plain-text
 url: parser/java/plain-text
 title: Plain text
 weight: 5
-description: ""
-keywords: 
+description: "This article explains that how to extract plain formatted text from document page in Java."
+keywords: extract plain formatted text, extract plain formatted text from document page
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

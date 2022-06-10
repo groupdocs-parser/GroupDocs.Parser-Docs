@@ -3,8 +3,8 @@ id: extract-barcodes-from-document-page
 url: parser/java/extract-barcodes-from-document-page
 title: Extract barcodes from document page
 weight: 2
-description: ""
-keywords: 
+description: "This article explains that how to extract barcodes from document page."
+keywords: extract barcodes 
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

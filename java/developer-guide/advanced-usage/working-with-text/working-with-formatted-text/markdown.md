@@ -3,8 +3,8 @@ id: markdown
 url: parser/java/markdown
 title: Markdown
 weight: 4
-description: ""
-keywords: 
+description:  "This article explains that how to extract Markdown formatted text from document page in Java."
+keywords: extract Markdown formatted text, extract Markdown formatted text from document page
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

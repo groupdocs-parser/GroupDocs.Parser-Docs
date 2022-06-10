@@ -3,8 +3,8 @@ id: extract-images-to-files
 url: parser/java/extract-images-to-files
 title: Extract images to files
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to extract images to files."
+keywords: extract images to files, extract images
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

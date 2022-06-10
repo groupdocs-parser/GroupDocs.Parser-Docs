@@ -3,8 +3,8 @@ id: extract-text-in-accurate-mode
 url: parser/java/extract-text-in-accurate-mode
 title: Extract text in Accurate Mode
 weight: 1
-description: ""
-keywords: 
+description: "This article explains that how to extract text in Accurate mode."
+keywords: extract text, extract text in Accurate mode
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

@@ -3,8 +3,8 @@ id: extract-text-areas
 url: parser/java/extract-text-areas
 title: Extract text areas
 weight: 7
-description: ""
-keywords: 
+description: "This article explains that how to extract text areas from documents in Java."
+keywords: extract text areas, extract text areas from documents
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

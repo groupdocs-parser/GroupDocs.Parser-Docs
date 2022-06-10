@@ -3,8 +3,8 @@ id: extract-images-from-document
 url: parser/java/extract-images-from-document
 title: Extract images from document
 weight: 1
-description: ""
-keywords: 
+description:  "This article explains that how to extract images from document."
+keywords: extract images from document, extract images 
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

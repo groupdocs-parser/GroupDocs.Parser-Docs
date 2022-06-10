@@ -3,8 +3,8 @@ id: extract-highlights
 url: parser/java/extract-highlights
 title: Extract highlights
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract highlights from documents in Java."
+keywords: extract highlights, extract highlights from documents
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

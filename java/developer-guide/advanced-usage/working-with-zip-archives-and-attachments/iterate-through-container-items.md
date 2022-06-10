@@ -3,8 +3,8 @@ id: iterate-through-container-items
 url: parser/java/iterate-through-container-items
 title: Iterate through container items
 weight: 1
-description: ""
-keywords: 
+description: "This article explains that how to extract containers items and iterate through container items in Java."
+keywords: extract containers items, iterate through container items
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

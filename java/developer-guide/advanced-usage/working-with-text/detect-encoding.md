@@ -3,8 +3,8 @@ id: detect-encoding
 url: parser/java/detect-encoding
 title: Detect encoding
 weight: 8
-description: ""
-keywords: 
+description: "This article explains that how to detect encoding of a plain text file in java."
+keywords: detect encoding of a plain text file, detect encoding
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

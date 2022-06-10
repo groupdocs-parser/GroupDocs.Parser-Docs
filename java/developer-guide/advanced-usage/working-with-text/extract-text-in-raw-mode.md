@@ -3,8 +3,8 @@ id: extract-text-in-raw-mode
 url: parser/java/extract-text-in-raw-mode
 title: Extract text in Raw Mode
 weight: 2
-description: ""
-keywords: 
+description: "This article explains that how to extract text in Raw mode."
+keywords: extract text, extract text in Raw mode
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

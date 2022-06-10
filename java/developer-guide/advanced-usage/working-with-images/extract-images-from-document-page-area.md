@@ -3,8 +3,8 @@ id: extract-images-from-document-page-area
 url: parser/java/extract-images-from-document-page-area
 title: Extract images from document page area
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract images from document page area."
+keywords: extract images from document page area, extract images
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

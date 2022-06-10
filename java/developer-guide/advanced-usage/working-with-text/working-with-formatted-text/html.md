@@ -3,8 +3,8 @@ id: html
 url: parser/java/html
 title: HTML
 weight: 3
-description: ""
-keywords: 
+description: "This article explains that how to extract HTML formatted text from document page in Java."
+keywords: extract HTML formatted text, extract HTML formatted text from document page
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

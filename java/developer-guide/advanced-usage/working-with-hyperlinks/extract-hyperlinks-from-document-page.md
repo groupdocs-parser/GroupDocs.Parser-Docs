@@ -3,8 +3,8 @@ id: extract-hyperlinks-from-document-page
 url: parser/java/extract-hyperlinks-from-document-page
 title: Extract hyperlinks from document page
 weight: 4
-description: ""
-keywords: 
+description:  "This article explains that how to extract hyperlinks from document page."
+keywords: extract hyperlinks from document page, extract hyperlinks 
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

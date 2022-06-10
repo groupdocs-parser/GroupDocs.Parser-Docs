@@ -3,8 +3,8 @@ id: extract-formatted-text-from-document-page
 url: parser/java/extract-formatted-text-from-document-page
 title: Extract formatted text from document page
 weight: 2
-description: ""
-keywords: 
+description:  "This article explains that how to extract formatted text from document page."
+keywords: extract formatted text, extract formatted text from document page
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

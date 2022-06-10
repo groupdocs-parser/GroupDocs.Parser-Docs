@@ -3,8 +3,8 @@ id: extract-tables-from-document-page
 url: parser/java/extract-tables-from-document-page
 title: Extract tables from document page
 weight: 4
-description: ""
-keywords: 
+description: "This article explains that how to extract tables from document page."
+keywords: extract tables, extract tables from document page
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

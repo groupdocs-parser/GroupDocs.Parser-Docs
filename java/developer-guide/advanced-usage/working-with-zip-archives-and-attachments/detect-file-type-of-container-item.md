@@ -3,8 +3,8 @@ id: detect-file-type-of-container-item
 url: parser/java/detect-file-type-of-container-item
 title: Detect file type of container item
 weight: 2
-description: ""
-keywords: 
+description: "This article explains that how to detect file type of container item."
+keywords: detect file type, detect file type of container item
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
