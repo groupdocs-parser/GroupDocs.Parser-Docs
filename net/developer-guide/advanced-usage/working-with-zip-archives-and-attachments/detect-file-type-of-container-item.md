@@ -5,7 +5,6 @@ title: Detect file type of container item
 weight: 1
 description: "This article explains that how to detect file type of container item."
 keywords: detect file type, detect file type of container item
-keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
