@@ -3,7 +3,7 @@ id: extract-metadata-from-documents
 url: parser/net/extract-metadata-from-documents
 title: Extract metadata from documents
 weight: 7
-description: "Extract metadata with GroupDocs.Parser from documents of various formats: PDF, Emails, Ebooks, Microsoft Office: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others."
+description: "This article shows how to extract metadata with GroupDocs.Parser from documents of various formats: PDF, Emails, Ebooks, Microsoft Office: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others."
 keywords: Extract metadata, extract basic metadata, extract metadata from image
 productName: GroupDocs.Parser for .NET
 hideChildren: False

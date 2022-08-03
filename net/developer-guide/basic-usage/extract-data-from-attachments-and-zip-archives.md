@@ -3,7 +3,7 @@ id: extract-data-from-attachments-and-zip-archives
 url: parser/net/extract-data-from-attachments-and-zip-archives
 title: Extract data from attachments and ZIP archives
 weight: 9
-description: "Extract data (text, images, PDF forms) from ZIP-archived documents with GroupDocs.Parser."
+description: "This article shows how to extract data (text, images, PDF forms) from ZIP-archived documents with GroupDocs.Parser."
 keywords: Extract data, PDF forms, ZIP-archived documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False

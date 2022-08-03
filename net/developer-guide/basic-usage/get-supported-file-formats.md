@@ -3,7 +3,7 @@ id: get-supported-file-formats
 url: parser/net/get-supported-file-formats
 title: Get supported file formats
 weight: 1
-description: " "
+description: "This article shows how to check supported file formats."
 keywords: Formats Parser .Net dotNet C# CSharp
 productName: GroupDocs.Parser for .NET
 hideChildren: False

@@ -3,7 +3,7 @@ id: extract-data-from-pdf-forms
 url: parser/net/extract-data-from-pdf-forms
 title: Extract data from PDF forms
 weight: 10
-description: "Extract data from PDF forms easily with GroupDocs.Parser."
+description: "This article shows how to extract data from PDF forms easily with GroupDocs.Parser."
 keywords: Extract data, PDF form, extract pdf form data
 productName: GroupDocs.Parser for .NET
 hideChildren: False

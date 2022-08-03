@@ -3,7 +3,7 @@ id: extract-formatted-text-from-documents
 url: parser/net/extract-formatted-text-from-documents
 title: Extract formatted text from documents
 weight: 6
-description: "Extract formatted text represented as HTML or Markdown with GroupDocs.Parser from documents of various formats like Emails, Ebooks (EPUB, FB2, CHM), Microsoft Office formats: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others."
+description: "This article shows how to extract formatted text represented as HTML or Markdown with GroupDocs.Parser from documents of various formats like Emails, Ebooks (EPUB, FB2, CHM), Microsoft Office formats: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others."
 keywords: Extract formatted text, Extract data, EPUB, FB2, CHM, DOC, DOCX, PPT, PPTX, XLS, XLSX
 productName: GroupDocs.Parser for .NET
 hideChildren: False

@@ -3,7 +3,7 @@ id: scan-qr-code
 url: parser/net/scan-qr-code
 title: Scan QR Code
 weight: 5
-description: "Scan QR Code in .Net with GroupDocs.Parser with few lines of code from image, document or other file format like PDF, Email, Ebook, Words, and others."
+description: " This article shows how to scan QR Code in .Net with GroupDocs.Parser with few lines of code from image, document or other file format like PDF, Email, Ebook, Words, and others."
 keywords: Scan QR Code, PDF, Email, Ebook, Words
 productName: GroupDocs.Parser for .NET
 hideChildren: False

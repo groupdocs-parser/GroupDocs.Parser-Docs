@@ -3,7 +3,7 @@ id: extract-images-from-documents
 url: parser/net/extract-images-from-documents
 title: Extract images from documents
 weight: 8
-description: "GroupDocs.Parser allows to extract images from PDF, Emails, Ebooks, Microsoft Office: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others"
+description: "This article shows how to extract images from PDF, Emails, Ebooks, Microsoft Office: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others"
 keywords: extract images, extract images from pdf
 productName: GroupDocs.Parser for .NET,DOC, DOCX,PPT, PPTX,XLS, XLSX
 hideChildren: False

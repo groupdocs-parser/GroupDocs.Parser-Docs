@@ -3,7 +3,7 @@ id: developer-guide
 url: parser/net/developer-guide
 title: Developer Guide
 weight: 3
-description: ""
+description: "This section contains the basic and advanced usage guide for programmers."
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
