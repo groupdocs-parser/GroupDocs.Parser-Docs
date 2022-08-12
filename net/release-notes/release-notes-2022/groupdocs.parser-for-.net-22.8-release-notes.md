@@ -33,7 +33,7 @@ This feature provides the ability to extract data from 7z archives.
 
 [GroupDocs.Parser.Options.FileType](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) public class was updated with changes as follows:
 
-* Added [SEVENZ]() readonly field.
+* Added [SEVENZ](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetype/fields/sevenz) readonly field.
 
 #### Usage
 
