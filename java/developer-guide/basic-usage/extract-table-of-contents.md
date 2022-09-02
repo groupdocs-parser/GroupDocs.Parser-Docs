@@ -3,8 +3,8 @@ id: extract-table-of-contents
 url: parser/java/extract-table-of-contents
 title: Extract table of contents
 weight: 11
-description: ""
-keywords: 
+description: "This article shows how to extract table of contents from Microsoft Word (DOC, DOCX etc), PDF documents and Ebooks (CHM, EPUB)."
+keywords: extract table of contents, DOC, DOCX, CHM, EPUB
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

@@ -3,8 +3,8 @@ id: extract-data-from-attachments-and-zip-archives
 url: parser/java/extract-data-from-attachments-and-zip-archives
 title: Extract data from attachments and ZIP archives
 weight: 9
-description: ""
-keywords: 
+description: "This article shows how to extract data (text, images, PDF forms) from ZIP-archived documents with GroupDocs.Parser."
+keywords: Extract data, PDF forms, ZIP-archived documents
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

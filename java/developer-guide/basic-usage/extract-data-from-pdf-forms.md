@@ -3,8 +3,8 @@ id: extract-data-from-pdf-forms
 url: parser/java/extract-data-from-pdf-forms
 title: Extract data from PDF forms
 weight: 10
-description: ""
-keywords: 
+description:  "This article shows how to extract data from PDF forms easily with GroupDocs.Parser."
+keywords: Extract data, PDF form, extract pdf form data
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

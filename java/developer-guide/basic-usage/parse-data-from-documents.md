@@ -3,8 +3,8 @@ id: parse-data-from-documents
 url: parser/java/parse-data-from-documents
 title: Parse data from documents
 weight: 4
-description: ""
-keywords: 
+description: "This article shows how to extract data from documents of various formats including PDF, Microsoft Word (DOC, DOCX), Excel (XLS, XLSX), LibreOffice formats etc."
+keywords: Document parsing,document parsing feature,DOC, DOCX,XLS, XLSX,PDF
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

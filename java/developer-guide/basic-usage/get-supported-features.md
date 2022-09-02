@@ -3,8 +3,8 @@ id: get-supported-features
 url: parser/java/get-supported-features
 title: Get supported features
 weight: 3
-description: ""
-keywords: 
+description: "This article shows how to check if feature supported for the document."
+keywords: Feature,s Parser, Java
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

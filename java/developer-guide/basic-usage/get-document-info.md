@@ -3,8 +3,8 @@ id: get-document-info
 url: parser/java/get-document-info
 title: Get document info
 weight: 2
-description: ""
-keywords: 
+description: "This article shows how to get the basic document info."
+keywords: Document Info, Parser, Java
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---

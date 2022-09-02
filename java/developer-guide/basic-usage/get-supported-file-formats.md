@@ -3,8 +3,8 @@ id: get-supported-file-formats
 url: parser/java/get-supported-file-formats
 title: Get supported file formats
 weight: 1
-description: ""
-keywords: 
+description: "This article shows how to check supported file formats."
+keywords: Formats Parser Java CSharp
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
