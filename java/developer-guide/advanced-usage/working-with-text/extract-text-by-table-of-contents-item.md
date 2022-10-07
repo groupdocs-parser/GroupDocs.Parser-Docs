@@ -22,19 +22,19 @@ try(TextReader reader = tocItem.extractText()) {
 
 This method returns a text from the chapter to which table of contents item refers (without sub-chapters). For example, "Heading 1.2" from the page
 
-![](parser/java/images/extract-text-by-table-of-contents-item.png)
+![](/parser/java/images/extract-text-by-table-of-contents-item.png)
 
 returns the following text:
 
-![](parser/java/images/extract-text-by-table-of-contents-item_1.png)
+![](/parser/java/images/extract-text-by-table-of-contents-item_1.png)
 
 "Heading 2" from the page:
 
-![](parser/java/images/extract-text-by-table-of-contents-item_2.png)
+![](/parser/java/images/extract-text-by-table-of-contents-item_2.png)
 
 returns the following text:
 
-![](parser/java/images/extract-text-by-table-of-contents-item_3.png)
+![](/parser/java/images/extract-text-by-table-of-contents-item_3.png)
 
 {{< alert style="warning" >}}
 *[java.lang.UnsupportedOperationException](https://docs.oracle.com/javase/7/docs/api/java/lang/UnsupportedOperationException.html)* is thrown if [getPageIndex](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/TocItem#getPageIndex()) is *null*.

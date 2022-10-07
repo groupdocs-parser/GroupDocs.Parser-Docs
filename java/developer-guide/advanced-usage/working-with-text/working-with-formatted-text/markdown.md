@@ -33,11 +33,11 @@ The API supports the following formatting:
 
 The following Microsoft Word document is used as input document:
 
-![](parser/java/images/markdown.png)
+![](/parser/java/images/markdown.png)
 
 The following Markdown document is extracted using the example above:
 
-![](parser/java/images/markdown_1.png)
+![](/parser/java/images/markdown_1.png)
 
 ## More resources
 

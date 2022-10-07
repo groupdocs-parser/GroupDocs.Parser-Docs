@@ -14,19 +14,19 @@ To extract table of contents from Microsoft Office Word document [getToc](https:
 
 [getToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method returns a collection of [TocItem](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/TocItem) objects. [extractText](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/TocItem#extractText()) method returns a text from the chapter to which table of contents item refers (without sub-chapters). For example, "Heading 1.2" from the page
 
-![](parser/java/images/extract-table-of-contents-from-microsoft-office-word-documents.png)
+![](/parser/java/images/extract-table-of-contents-from-microsoft-office-word-documents.png)
 
 returns the following text:
 
-![](parser/java/images/extract-table-of-contents-from-microsoft-office-word-documents_1.png)
+![](/parser/java/images/extract-table-of-contents-from-microsoft-office-word-documents_1.png)
 
 "Heading 2" from the page:
 
-![](parser/java/images/extract-table-of-contents-from-microsoft-office-word-documents_2.png)
+![](/parser/java/images/extract-table-of-contents-from-microsoft-office-word-documents_2.png)
 
 returns the following text:
 
-![](parser/java/images/extract-table-of-contents-from-microsoft-office-word-documents_3.png)
+![](/parser/java/images/extract-table-of-contents-from-microsoft-office-word-documents_3.png)
 
 {{< alert style="warning" >}}java.lang.UnsupportedOperationException is thrown if getPageIndex() is null.{{< /alert >}}
 

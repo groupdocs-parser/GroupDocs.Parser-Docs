@@ -26,19 +26,19 @@ using (TextReader reader = tocItem.ExtractText())
 
 This method returns a text from the chapter to which table of contents item refers (without sub-chapters). For example, "Heading 1.2" from the page
 
-![](parser/net/images/extract-text-by-table-of-contents-item.png)
+![](/parser/net/images/extract-text-by-table-of-contents-item.png)
 
 returns the following text:
 
-![](parser/net/images/extract-text-by-table-of-contents-item_1.png)
+![](/parser/net/images/extract-text-by-table-of-contents-item_1.png)
 
 "Heading 2" from the page:
 
-![](parser/net/images/extract-text-by-table-of-contents-item_2.png)
+![](/parser/net/images/extract-text-by-table-of-contents-item_2.png)
 
 returns the following text:
 
-![](parser/net/images/extract-text-by-table-of-contents-item_3.png)
+![](/parser/net/images/extract-text-by-table-of-contents-item_3.png)
 
 {{< alert style="warning" >}}
 [InvalidOperationException](https://docs.microsoft.com/en-us/dotnet/api/system.invalidoperationexception?view=netframework-2.0) is thrown if [tocItem.PageIndex](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/pageindex) is *null*.

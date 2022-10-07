@@ -22,7 +22,7 @@ Follow these steps to reference GroupDocs.Parser using Package Manager GUI:
 *   Select Browse tab and type "GroupDocs.Parser" in the search text box.
 *   Click the Install button to install the latest version of the API into your project as shown in the following screenshot.
 
-![](parser/net/images/installation.png)
+![](/parser/net/images/installation.png)
 
 #### Using Package Manager Console
 
@@ -33,9 +33,9 @@ You can follow the steps below to reference GroupDocs.Parser for .NET using the 
 *   Type the command "Install-Package GroupDocs.Parser" and press enter to install the latest release into your application.
 *   After successful installation, GroupDocs.Parser will be referenced in your application.
 
-![](parser/net/images/installation_1.png)
+![](/parser/net/images/installation_1.png)
 
-![](parser/net/images/installation_2.png)
+![](/parser/net/images/installation_2.png)
 
 ## Install from official GroupDocs website
 

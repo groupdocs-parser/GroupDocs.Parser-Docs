@@ -26,11 +26,11 @@ using (Parser parser = new Parser(filePath))
 
 The following Microsoft Word document is used as input document:
 
-![](parser/net/images/plain-text.png)
+![](/parser/net/images/plain-text.png)
 
 The following plain text document is extracted using the example above:
 
-![](parser/net/images/plain-text_1.png)
+![](/parser/net/images/plain-text_1.png)
 
 ## More resources
 

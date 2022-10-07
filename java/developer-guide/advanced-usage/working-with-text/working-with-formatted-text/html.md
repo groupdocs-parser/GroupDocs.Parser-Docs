@@ -34,11 +34,11 @@ try (Parser parser = new Parser(Constants.SampleDocx)) {
 
 The following Microsoft Word document is used as input document:
 
-![](parser/java/images/html.png)
+![](/parser/java/images/html.png)
 
 The following HTML document is extracted using the example above:
 
-![](parser/java/images/html_1.png)
+![](/parser/java/images/html_1.png)
 
 ## More resources
 

@@ -46,12 +46,12 @@ It is recommended to define a rectangular area above (below) the center of the l
 
 | Template definition | Result |
 | --- | --- |
-| ![](parser/net/images/working-with-templates.png)) | Extracts only one line
+| ![](/parser/net/images/working-with-templates.png)) | Extracts only one line
 67890 |
-|  ![](parser/net/images/working-with-templates_1.png)) | Extracts two lines
+|  ![](/parser/net/images/working-with-templates_1.png)) | Extracts two lines
 4321 First Street  
 Anytown, State ZIP |
-| ![](parser/net/images/working-with-templates_2.png)) | Extracts four lines
+| ![](/parser/net/images/working-with-templates_2.png)) | Extracts four lines
 Company Name  
 4321 First Street  
 Anytown, State ZIP  
@@ -96,7 +96,7 @@ TemplateField invoiceNumber = new TemplateField(
 
 | Template definition | Result |
 | --- | --- |
-| ![](parser/net/images/working-with-templates_3.png)) | Extracts a text on the right of "Invoice Number" field:INV-3337 
+| ![](/parser/net/images/working-with-templates_3.png)) | Extracts a text on the right of "Invoice Number" field:INV-3337 
 
 To simplify the setting of the size of template field [AutoScale](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/templatelinkedposition/properties/autoscale) property is used. The size of template field is scaled according to the related field if [AutoScale](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/templatelinkedposition/properties/autoscale) is set to *true*. This is useful when the font size is not known in advance, but the proportions of the size of the value (the ratio of height to width) are approximately known:
 
@@ -111,7 +111,7 @@ TemplateField invoiceNumber = new TemplateField(
 
 | Template definition | Result |
 | --- | --- |
-| ![](parser/net/images/working-with-templates_4.png)) | Extracts a text on the right of "Invoice Number" field:INV-3337 
+| ![](/parser/net/images/working-with-templates_4.png)) | Extracts a text on the right of "Invoice Number" field:INV-3337 
 
 The field value can be extracted from either side of the related field. The side of the value extraction is set by [Edges](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/templatelinkedposition/properties/edges) property. The size of rectangular area is set by [SearchArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/templatelinkedposition/properties/searcharea) property. The position of rectangular area depends on the side of the value extraction:
 
@@ -141,7 +141,7 @@ TemplateField addressField = new TemplateField(
 
 | Template definition | Result |
 | --- | --- |
-| ![](parser/net/images/working-with-templates_5.png)) | The extraction is processed in the following way:Extracts data of "From" regex field (green
+| ![](/parser/net/images/working-with-templates_5.png)) | The extraction is processed in the following way:Extracts data of "From" regex field (green
 Extracts data of "FromCompany" related field (yellow)  
 Extracts data of "FromAddress" related field (red) |
 
@@ -278,7 +278,7 @@ using (Parser parser = new Parser(Constants.SamplePdfWithBarcodes))
 
 This example shows the template which is used to parse the following invoice:
 
-![](parser/net/images/working-with-templates_6.jpg)
+![](/parser/net/images/working-with-templates_6.jpg)
 
 ```csharp
 // Create detector parameters for "Details" table

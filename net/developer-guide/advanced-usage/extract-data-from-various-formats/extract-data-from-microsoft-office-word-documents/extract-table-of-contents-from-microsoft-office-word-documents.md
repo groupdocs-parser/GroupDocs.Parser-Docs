@@ -16,19 +16,19 @@ To extract table of contents from Microsoft Office Word document [GetToc](https:
 
 [GetToc](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method returns a collection of [TocItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) objects. [TocItem.GetText](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/gettext) method returns a text from the chapter to which table of contents item refers (without sub-chapters). For example, "Heading 1.2" from the page
 
-![](parser/net/images/extract-table-of-contents-from-microsoft-office-word-documents.png)
+![](/parser/net/images/extract-table-of-contents-from-microsoft-office-word-documents.png)
 
 returns the following text:
 
-![](parser/net/images/extract-table-of-contents-from-microsoft-office-word-documents_1.png)
+![](/parser/net/images/extract-table-of-contents-from-microsoft-office-word-documents_1.png)
 
 "Heading 2" from the page:
 
-![](parser/net/images/extract-table-of-contents-from-microsoft-office-word-documents_2.png)
+![](/parser/net/images/extract-table-of-contents-from-microsoft-office-word-documents_2.png)
 
 returns the following text:
 
-![](parser/net/images/extract-table-of-contents-from-microsoft-office-word-documents_3.png)
+![](/parser/net/images/extract-table-of-contents-from-microsoft-office-word-documents_3.png)
 
 {{< alert style="warning" >}}
 [InvalidOperationException](https://docs.microsoft.com/en-us/dotnet/api/system.invalidoperationexception?view=netframework-2.0) is thrown if [tocItem.PageIndex](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/pageindex) is *null*.

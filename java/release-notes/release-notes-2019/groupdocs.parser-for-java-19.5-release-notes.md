@@ -173,10 +173,10 @@ There are the following features in this release:
     
     | Template definition | Result |
     | --- | --- |
-| ![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes.png)) | Extracts only one line:67890 
-| ![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes_1.png)) | Extracts two lines:4321 First Stree
+| ![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes.png)) | Extracts only one line:67890 
+| ![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes_1.png)) | Extracts two lines:4321 First Stree
     Anytown, State ZIP |
-| ![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes_2.png)) | Extracts four lines:Company Nam
+| ![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes_2.png)) | Extracts four lines:Company Nam
     4321 First Street  
     Anytown, State ZIP  
     Date: 06/02/2019 |
@@ -214,7 +214,7 @@ There are the following features in this release:
     
     | Template definition | Result |
     | --- | --- |
-| ![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes_3.png)) | Extracts a text on the right of "Invoice Number" field:INV-3337 
+| ![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes_3.png)) | Extracts a text on the right of "Invoice Number" field:INV-3337 
     
     To simplify the setting of the size of template field CanScaleSearchAreaSize property is used. The size of template field is scaled according to the related field if CanScaleSearchAreaSize is set to true.This is useful when the font size is not known in advance, but the proportions of the size of the value (the ratio of height to width) are approximately known:
     
@@ -226,7 +226,7 @@ There are the following features in this release:
     
     | Template definition | Result |
     | --- | --- |
-| ![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes_4.png))  | Extracts a text on the right of "Invoice Number" field:INV-3337 
+| ![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes_4.png))  | Extracts a text on the right of "Invoice Number" field:INV-3337 
     
     The field value can be extracted from either side of the related field. The side of value extraction is set by TemplateFieldRelatedPositionType enumeration. The size of rectangular area is set by SearchAreaSize property. The position of rectangular area depends on the side of value extraction:
     
@@ -248,7 +248,7 @@ There are the following features in this release:
     
     | Template definition | Result |
     | --- | --- |
-| ![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes_5.png)) | The extraction is processed in the following way
+| ![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes_5.png)) | The extraction is processed in the following way
     1.  Extracts data of "From" regex field (green)
     2.  Extracts data of "FromCompany" related field (yellow)
     3.  Extracts data of "FromAddress" related field (red)
@@ -407,7 +407,7 @@ There are the following features in this release:
     
     This example shows the template which is used to parse the following invoice:
     
-![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes_6.jpg)
+![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes_6.jpg)
     
     ```java
     // Create a collection of template fields
@@ -706,7 +706,7 @@ There are the following features in this release:
     }
     ```
     
-![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes_7.png)
+![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes_7.png)
     
     For more accurate table detection a user can set a rectangular area that bounds the table:
     
@@ -742,7 +742,7 @@ There are the following features in this release:
     }
     ```
     
-![](parser/java/images/groupdocs-parser-for-java-19-5-release-notes_8.png)
+![](/parser/java/images/groupdocs-parser-for-java-19-5-release-notes_8.png)
     
 4.  ### Remove obsolete members (version 18.7)
     

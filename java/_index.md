@@ -9,7 +9,7 @@ productName: GroupDocs.Parser for Java
 hideChildren: True
 ---
 {{< alert style="info" >}}
-![](parser/java/images/home.png) **Welcome to the GroupDocs.Parser for Java**  
+![](/parser/java/images/home.png) **Welcome to the GroupDocs.Parser for Java**  
 GroupDocs.Parser is a convenient text extractor API that permits users to extract raw or formatted text from different document formats. Besides, the user can extract metadata from the document. 
 {{< /alert >}}
 

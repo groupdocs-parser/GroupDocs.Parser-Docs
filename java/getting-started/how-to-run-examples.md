@@ -14,7 +14,7 @@ The complete examples package of **GroupDocs.Parser** is hosted on [GitHub](ht
 
 In case you download the ZIP file, extract the folders on your local disk. The extracted files and folders will look like following image:
 
-![](parser/java/images/how-to-run-examples.png)
+![](/parser/java/images/how-to-run-examples.png)
 
 Open IntelliJ Idea and import the project to get started with it. Archived project file can also be imported. Follow the given steps to run the application:
 
@@ -24,7 +24,7 @@ Open IntelliJ Idea and import the project to get started with it. Archived proj
 *   Open Dependencies tab
 *   Click '+' and click JARs or directories
 
-![](parser/java/images/how-to-run-examples_1.png)
+![](/parser/java/images/how-to-run-examples_1.png)
 
 ## Contribute
 

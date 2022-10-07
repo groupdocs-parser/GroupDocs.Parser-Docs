@@ -38,11 +38,11 @@ The following HTML tags are supported by the API:
 
 The following Microsoft Word document is used as input document:
 
-![](parser/net/images/html.png)
+![](/parser/net/images/html.png)
 
 The following HTML document is extracted using the example above:
 
-![](parser/net/images/html_1.png)
+![](/parser/net/images/html_1.png)
 
 ## More resources
 
