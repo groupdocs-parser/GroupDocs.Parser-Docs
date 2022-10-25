@@ -4,13 +4,13 @@ url: parser/java/installation
 title: Installation
 weight: 4
 description: ""
-keywords: 
+keywords:
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
 ## Installation from GroupDocs Repository using Maven
 
-GroupDocs hosts all Java APIs on [GroupDocs Repository](https://repository.groupdocs.com). You can easily use [GroupDocs.Parser for Java](https://artifact.groupdocs.com/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-parser) API directly in your Maven projects with simple configurations.
+GroupDocs hosts all Java APIs on [GroupDocs Repository](https://releases.groupdocs.com/java/repo/). You can easily use [GroupDocs.Parser for Java](https://releases.groupdocs.com/java/repo/com/groupdocs/groupdocs-parser/) API directly in your Maven projects with simple configurations.
 
 ### Specify GroupDocs Repository Configuration
 
@@ -21,7 +21,7 @@ First, you need to specify GroupDocs repository configuration/location in your M
     <repository>
         <id>GroupDocsJavaAPI</id>
         <name>GroupDocs Java API</name>
-        <url>http://repository.groupdocs.com/repo/</url>
+        <url>https://releases.groupdocs.com/java/repo/</url>
     </repository>
 </repositories>
 ```
@@ -35,7 +35,7 @@ Then define GroupDocs.Parser for Java API dependency in your `pom.xml` as fol
     <dependency>
         <groupId>com.groupdocs</groupId>
         <artifactId>groupdocs-parser</artifactId>
-        <version>19.11</version> 
+        <version>19.11</version>
     </dependency>
 </dependencies>
 ```
