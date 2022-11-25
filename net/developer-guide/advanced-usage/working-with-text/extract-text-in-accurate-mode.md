@@ -14,21 +14,21 @@ The **Accurate** mode is default text extraction mode and it means that text qua
 
 You can extract the whole document text or only a document page.
 
-To extract a text from the document in the Accurate mode, [GetText](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) and [GetText(int)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/2) methods of [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) class are used:
+To extract a text from the document in the Accurate mode, [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) and [GetText(int)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/2) methods of [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) class are used:
 
 ```csharp
 TextReader GetText();
 TextReader GetText(int pageIndex);
 ```
 
-Methods return an instance of [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) class with the extracted text. The first method extracts text from the whole document. The second method extracts text from the document page. To retrieve the total number of document pages [GetDocumentIn](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo)[fo](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo)  method is used (see below).
+Methods return an instance of [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) class with the extracted text. The first method extracts text from the whole document. The second method extracts text from the document page. To retrieve the total number of document pages [GetDocumentIn](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo)[fo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo)  method is used (see below).
 
 ## Extract text
 
 Here are the steps to extract text from the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetText](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
 *   Check if *reader* isn't null (text extraction is supported for the document);
 *   Read a text from *reader*.
 
@@ -52,9 +52,9 @@ using(Parser parser = new Parser(filePath))
 
 Here are the steps to extract text from a document page:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [Features.Text](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/features/properties/text) property to check if text extraction is supported for the document;
-*   Call [GetText(int)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/2) method with the page index and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [Features.Text](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/features/properties/text) property to check if text extraction is supported for the document;
+*   Call [GetText(int)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/2) method with the page index and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
 *   Read a text from *reader*.
 
 The following example shows how to extract a text from the document page:

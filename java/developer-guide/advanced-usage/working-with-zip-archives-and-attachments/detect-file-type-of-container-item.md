@@ -8,7 +8,7 @@ keywords: detect file type, detect file type of container item
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-GroupDocs.Parser provides the functionality to detect a file type of container items by [detectFileType(FileTypeDetectionMode)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/ContainerItem#detectFileType(com.groupdocs.parser.options.FileTypeDetectionMode)) method. 
+GroupDocs.Parser provides the functionality to detect a file type of container items by [detectFileType(FileTypeDetectionMode)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/ContainerItem#detectFileType(com.groupdocs.parser.options.FileTypeDetectionMode)) method. 
 
 FileTypeDetectionMode parameter provides the ability to control file type detection:
 
@@ -19,9 +19,9 @@ FileTypeDetectionMode parameter provides the ability to control file type detect
 Here are the steps to detect a file type of container items:
 
 *  Instantiate Parser object for the initial document;
-*  Call [getContainer](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getContainer()) method and obtain the collection of [ContainerItem](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/ContainerItem) objects;
+*  Call [getContainer](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getContainer()) method and obtain the collection of [ContainerItem](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/ContainerItem) objects;
 *  Check if collection isn't null (container extraction is supported for the document);
-*  Iterate through the collection and call [detectFileType(FileTypeDetectionMode)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/ContainerItem#detectFileType(com.groupdocs.parser.options.FileTypeDetectionMode)) method.
+*  Iterate through the collection and call [detectFileType(FileTypeDetectionMode)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/ContainerItem#detectFileType(com.groupdocs.parser.options.FileTypeDetectionMode)) method.
 
 The following example shows how to detect a file type of container items:
 

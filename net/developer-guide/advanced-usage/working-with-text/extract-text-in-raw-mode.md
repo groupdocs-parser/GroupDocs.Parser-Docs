@@ -16,26 +16,26 @@ Raw mode usually retrieves text in worse quality than Accurate mode, but in some
 
 You can extract the whole document text or only a document page.
 
-To extract a text from the document in the Raw mode, [GetText(TextOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/1) and [GetText(int, TextOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/3) methods of [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) class are used:
+To extract a text from the document in the Raw mode, [GetText(TextOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/1) and [GetText(int, TextOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/3) methods of [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) class are used:
 
 ```csharp
 TextReader GetText(TextOptions options);
 TextReader GetText(int pageIndex, TextOptions options);
 ```
 
-Methods return an instance of [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) class with an extracted text. The first method extracts text from the whole document. The second method extracts text from the document page. To retrieve the total number of document pages [GetDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method is used (see below).
+Methods return an instance of [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) class with an extracted text. The first method extracts text from the whole document. The second method extracts text from the document page. To retrieve the total number of document pages [GetDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method is used (see below).
 
 {{< alert style="warning" >}}
-Instead of the accurate mode, [RawPageCount](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/rawpagecount) property of [IDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo) class is used to avoid extra calculations.
+Instead of the accurate mode, [RawPageCount](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/rawpagecount) property of [IDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo) class is used to avoid extra calculations.
 {{< /alert >}}
 
 ## Extract text
 
 Here are the steps to extract a raw text from document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Instantiate [TextOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/textoptions) object with *true* parameter;
-*   Call [GetText(TextOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/1) method with [TextOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/textoptions)parameter and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Instantiate [TextOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/textoptions) object with *true* parameter;
+*   Call [GetText(TextOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/1) method with [TextOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/textoptions)parameter and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
 *   Check if *reader* isn't *null* (text extraction is supported for the document);
 *   Read a text from *reader*.
 
@@ -59,12 +59,12 @@ using(Parser parser = new Parser(filePath))
 
 Here are the steps to extract a raw text from the document page:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Instantiate [TextOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/textoptions) object with *true* parameter;
-*   Call [GetDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method;
-*   Call [Features.Text](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/features/properties/text) property to check if text extraction is supported for the document;
-*   Use [RawPageCount](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/rawpagecount) instead of [PageCount](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/pagecount) to avoid extra calculations;
-*   Call [GetText(int, TextOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/3) method with the page index and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Instantiate [TextOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/textoptions) object with *true* parameter;
+*   Call [GetDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method;
+*   Call [Features.Text](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/features/properties/text) property to check if text extraction is supported for the document;
+*   Use [RawPageCount](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/rawpagecount) instead of [PageCount](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/pagecount) to avoid extra calculations;
+*   Call [GetText(int, TextOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/3) method with the page index and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
 *   Read a text from *reader*.
 
 The following example shows how to extract a raw text from a document page:

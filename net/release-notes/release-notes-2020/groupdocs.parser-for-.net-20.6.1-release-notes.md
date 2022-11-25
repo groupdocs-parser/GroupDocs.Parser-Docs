@@ -28,18 +28,18 @@ class.
 
 #### Public API changes {#GroupDocs.Parserfor.NET20.6.1-PublicAPIchanges}
 
-[GroupDocs.Parser.Parser ](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser)public
+[GroupDocs.Parser.Parser ](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser)public
 class was updated with changes as follows:
 
 *   Renamed
-    [GetHyperlinks](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gethyperlinks)
+    [GetHyperlinks](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gethyperlinks)
     method
-*   Renamed [GetHyperlinks(Int32)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/2)
+*   Renamed [GetHyperlinks(Int32)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/2)
     method
-*   Renamed [GetHyperlinks(PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/1)
+*   Renamed [GetHyperlinks(PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/1)
     method
 *   Renamed [GetHyperlinks(Int32,
-    PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/3)
+    PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/3)
     method
 
 #### Usage {#GroupDocs.Parserfor.NET20.6.1-Usage}

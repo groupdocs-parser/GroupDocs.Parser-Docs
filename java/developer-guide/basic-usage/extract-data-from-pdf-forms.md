@@ -12,18 +12,18 @@ GroupDocs.Parser allows to parse form data from PDF documents.
 
 # Extract data from PDF forms
 
-To extract PDF form data please call the [parseForm](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseForm()) method:
+To extract PDF form data please call the [parseForm](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseForm()) method:
 
 ```java
 DocumentData parseForm();
 ```
 
-This method returns an instance of [DocumentData](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData) class with the extracted data.
+This method returns an instance of [DocumentData](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData) class with the extracted data.
 
 Here are the steps to parse form of the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
-*   Call [parseForm](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseForm()) method and obtain the [DocumentData](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
+*   Call [parseForm](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseForm()) method and obtain the [DocumentData](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData) object;
 *   Check if *data* isn't *null* (parse form is supported for the document);
 *   Iterate over field data to obtain form data.
 

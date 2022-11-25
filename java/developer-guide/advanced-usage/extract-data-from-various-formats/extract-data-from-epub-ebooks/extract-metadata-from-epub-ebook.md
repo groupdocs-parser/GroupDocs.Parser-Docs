@@ -8,7 +8,7 @@ keywords: extract metadata, extract metadata from EPUB
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-To extract metadata from EPUB e-books [getMetadata](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method is used. This method allows to extract the following metadata:
+To extract metadata from EPUB e-books [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method is used. This method allows to extract the following metadata:
 
 | Name | Description |
 | --- | --- |
@@ -23,12 +23,12 @@ To extract metadata from EPUB e-books [getMetadata](https://apireference.groupdo
 
 Here are the steps to extract metadata from EPUB e-book:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial e-book;
-*   Call [getMetadata](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method and obtain collection of document metadata objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial e-book;
+*   Call [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method and obtain collection of document metadata objects;
 *   Iterate through the collection and get metadata names and values.
 
 {{< alert style="warning" >}}
-[getMetadata](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns *null* value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for Zip archive. Therefore, for Zip archive [getMetadata](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns *null*. If EPUB e-book has no metadata, [getMetadata](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns an empty collection.
+[getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns *null* value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for Zip archive. Therefore, for Zip archive [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns *null*. If EPUB e-book has no metadata, [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns an empty collection.
 {{< /alert >}}
 
 The following example demonstrates how to extract metadata from EPUB e-book:

@@ -8,19 +8,19 @@ keywords: page previews, how to generate page previews of documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-GroupDocs.Parser provides the functionality to generate document page previews by [GeneratePreview(PreviewOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/generatepreview) method:
+GroupDocs.Parser provides the functionality to generate document page previews by [GeneratePreview(PreviewOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/generatepreview) method:
 
 ```csharp
 void GeneratePreview(PreviewOptions previewOptions);
 ```
 
-[PreviewOptions](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) class is used to set requirements and stream delegates for preview generation.
+[PreviewOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) class is used to set requirements and stream delegates for preview generation.
 
 Here are the steps to generate document page previews:
 
-* Prepare [PreviewOptions](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) object;
-* Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object;
-* Call [GeneratePreview(PreviewOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/generatepreview) method.
+* Prepare [PreviewOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) object;
+* Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object;
+* Call [GeneratePreview(PreviewOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/generatepreview) method.
 
 The following example shows how to generate document page previews:
 
@@ -55,9 +55,9 @@ private static string GetOutputPath(string fileName)
 
 Here are the steps to generate spreadsheets page previews:
 
-* Prepare [PreviewOptions](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) object;
-* Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object;
-* Call [GeneratePreview(PreviewOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/generatepreview) method.
+* Prepare [PreviewOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) object;
+* Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object;
+* Call [GeneratePreview(PreviewOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/generatepreview) method.
 
 The following example shows how to generate spreadsheet page previews:
 

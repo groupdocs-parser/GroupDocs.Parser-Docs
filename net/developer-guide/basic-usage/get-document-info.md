@@ -8,26 +8,26 @@ keywords: Document Info, Parser, C#, CSharp, .Net, dotNet
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-GroupDocs.Parser provides the functionality to get the basic document info by the [GetDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method:
+GroupDocs.Parser provides the functionality to get the basic document info by the [GetDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method:
 
 ```csharp
 IDocumentInfo GetDocumentInfo();
 
 ```
 
-[IDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo) interface has the following members:
+[IDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo) interface has the following members:
 
 | Member | Description |
 | --- | --- |
-| [FileType](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/filetype) | The document type. |
-| [PageCount](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/pagecount) | The total number of document pages. |
-| [Size](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/size) | The size of the document in bytes. |
+| [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/filetype) | The document type. |
+| [PageCount](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/pagecount) | The total number of document pages. |
+| [Size](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/size) | The size of the document in bytes. |
 
 Here are the steps to get document info:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method and obtain the object with [IDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo) interface;
-*   Call properties such as [FileType](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/filetype), [PageCount](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/pagecount) or [Size](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/size).
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method and obtain the object with [IDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo) interface;
+*   Call properties such as [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/filetype), [PageCount](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/pagecount) or [Size](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/size).
 
 The following example shows how to get document info:
 

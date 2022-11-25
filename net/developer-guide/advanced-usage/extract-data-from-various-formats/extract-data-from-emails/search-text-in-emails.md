@@ -8,16 +8,16 @@ keywords: search a keyword, search a keyword in emails
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-To search a keyword in emails [Search(String)](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method is used. This method returns the collection of [SearchResult](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/searchresult) objects. For details, see [Search Text]({{< ref "parser/net/developer-guide/advanced-usage/working-with-text/search-text.md" >}}).
+To search a keyword in emails [Search(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method is used. This method returns the collection of [SearchResult](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/searchresult) objects. For details, see [Search Text]({{< ref "parser/net/developer-guide/advanced-usage/working-with-text/search-text.md" >}}).
 
 Here are the steps to search a keyword in the email:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial email;
-*   Call [Search(string)](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method and obtain the collection of [SearchResult](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/searchresult) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial email;
+*   Call [Search(string)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method and obtain the collection of [SearchResult](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/searchresult) objects;
 *   Iterate through the collection and get the position and text.
 
 {{< alert style="warning" >}}
-[Search(String)](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method returns *null* value if search isn't supported for the email. For example, text extraction isn't supported for Zip archive. Therefore, for Zip archive [Search(String)](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method returns *null*. For an empty email [Search(String)](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method returns an empty collection.
+[Search(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method returns *null* value if search isn't supported for the email. For example, text extraction isn't supported for Zip archive. Therefore, for Zip archive [Search(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method returns *null*. For an empty email [Search(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method returns an empty collection.
 {{< /alert >}}
 
 The following example shows how to find a keyword in the email:
@@ -37,13 +37,13 @@ using(Parser parser = new Parser(filePath))
 }
 ```
 
-[Search(String, SearchOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/search/methods/1) is used for the advanced search in emails - like search with regular expressions. [SearchOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/searchoptions) parameter is used to customize a search.
+[Search(String, SearchOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/search/methods/1) is used for the advanced search in emails - like search with regular expressions. [SearchOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/searchoptions) parameter is used to customize a search.
 
 Here are the steps to search with a regular expression in the email:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial email;
-*   Instantiate [SearchOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/searchoptions) object with the parameters for the search;
-*   Call [Search(string, SearchOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/search/methods/1) method and obtain the collection of [SearchResult](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/searchresult) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial email;
+*   Instantiate [SearchOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/searchoptions) object with the parameters for the search;
+*   Call [Search(string, SearchOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/search/methods/1) method and obtain the collection of [SearchResult](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/searchresult) objects;
 *   Iterate through the collection and get the position and text.
 
 The following example shows how to search with a regular expression in the email:

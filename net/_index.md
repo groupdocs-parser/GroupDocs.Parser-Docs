@@ -21,6 +21,6 @@ Following are the links to some useful resources you may need to accomplish your
 *   [GroupDocs.Parser for .NET Release Notes]({{< ref "parser/net/release-notes/_index.md" >}})
 *   [GroupDocs.Parser for .NET Product Page](https://products.groupdocs.com/parser/net)
 *   [Install GroupDocs.Parser for .NET NuGet Package](https://www.nuget.org/packages/GroupDocs.Parser/)
-*   [GroupDocs.Parser for .NET API Reference Guide](https://apireference.groupdocs.com/net/parser)
+*   [GroupDocs.Parser for .NET API Reference Guide](https://reference.groupdocs.com/net/parser)
 *   [GroupDocs.Parser for .NET Free Support Forum](https://forum.groupdocs.com/c/parser)
 *   [GroupDocs.Parser for .NET Paid Support Helpdesk](https://helpdesk.groupdocs.com/)

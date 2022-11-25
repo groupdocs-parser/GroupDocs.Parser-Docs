@@ -9,31 +9,31 @@ productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
 
-GroupDocs.Parser provides the functionality to extract tables from document page by the [getTable(int, PageTableAreaOptions)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getTables(int,%20com.groupdocs.parser.options.PageTableAreaOptions)) method:
+GroupDocs.Parser provides the functionality to extract tables from document page by the [getTable(int, PageTableAreaOptions)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getTables(int,%20com.groupdocs.parser.options.PageTableAreaOptions)) method:
 
 ```java
 Iterable<PageTableArea> getTables(int pageIndex, PageTableAreaOptions options);
 ```
 
-This method returns a collection of [PageTableArea](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea) object:
+This method returns a collection of [PageTableArea](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea) object:
 
 | Member | Description |
 | --- | --- |
-| [getRectangle](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getRectangle()) | The rectangular area that bounds text area. |
-| [getPage](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getPage()) | The page information (page index and page size) |
-| [getRowCount](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getRowCount()) | The total number of the table rows. |
-| [getColumnCount](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getColumnCount()) | The total number of the table columns. |
-| [getCell(int, int)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getCell(int,%20int)) | The table cell by row and column indexes. |
-| [getRowHeight(int)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getRowHeight(int)) | The the row height. |
-| [getColumnWidth(int)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getColumnWidth(int)) | Returns the column width. |
+| [getRectangle](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getRectangle()) | The rectangular area that bounds text area. |
+| [getPage](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getPage()) | The page information (page index and page size) |
+| [getRowCount](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getRowCount()) | The total number of the table rows. |
+| [getColumnCount](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getColumnCount()) | The total number of the table columns. |
+| [getCell(int, int)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getCell(int,%20int)) | The table cell by row and column indexes. |
+| [getRowHeight(int)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getRowHeight(int)) | The the row height. |
+| [getColumnWidth(int)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea#getColumnWidth(int)) | Returns the column width. |
 
-[getTables(int, PageTableAreaOptions)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getTables(int,%20com.groupdocs.parser.options.PageTableAreaOptions)) accepts [PageTableAreaOption](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/PageTableAreaOptions) object that contains [TemplateTableLayout](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.templates/TemplateTableLayout) object with table layout (see [this article]({{< ref "parser/java/developer-guide/advanced-usage/working-with-templates.md" >}}) for more details).
+[getTables(int, PageTableAreaOptions)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getTables(int,%20com.groupdocs.parser.options.PageTableAreaOptions)) accepts [PageTableAreaOption](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/PageTableAreaOptions) object that contains [TemplateTableLayout](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.templates/TemplateTableLayout) object with table layout (see [this article]({{< ref "parser/java/developer-guide/advanced-usage/working-with-templates.md" >}}) for more details).
 
 Here are the steps to extract tables from the whole document:
 
-* Instantiate [Parser](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) object for the initial document;
+* Instantiate [Parser](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) object for the initial document;
 * Check if the document supports table extraction;
-* Call [getTables(int, PageTableAreaOptions)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getTables(int,%20com.groupdocs.parser.options.PageTableAreaOptions)) method with the page index and obtain collection of [PageTableArea](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea) objects;
+* Call [getTables(int, PageTableAreaOptions)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getTables(int,%20com.groupdocs.parser.options.PageTableAreaOptions)) method with the page index and obtain collection of [PageTableArea](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageTableArea) objects;
 * Iterate through the collection and print table cells.
 
 The following example shows how to extract tables from the whole document:

@@ -8,12 +8,12 @@ keywords: extract attachments, extract attachments from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-To extract attachments from emails [GetContainer](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method is used. This method returns the collection of [ContainerItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects.
+To extract attachments from emails [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method is used. This method returns the collection of [ContainerItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects.
 
 Here are the steps to extract an attachment text from PDF Portfolios:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetContainer](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and obtain collection of [ContainerItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and obtain collection of [ContainerItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects;
 *   Check if *collection* isn't *null* (container extraction is supported for the document);
 *   Iterate through the collection and get container item names, sizes and obtain content.
 

@@ -35,14 +35,14 @@ container items.
 
 #### Public API changes
 
-[GroupDocs.Parser.Data.ContainerItem](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/containeritem)
+[GroupDocs.Parser.Data.ContainerItem](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/containeritem)
 public class was updated with changes as follows:
 
-*   Added    [DetectFileType](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/containeritem/methods/detectfiletype) method
+*   Added    [DetectFileType](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/containeritem/methods/detectfiletype) method
 
 The following types were added:
 
-*   [FileTypeDetectionMode](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetypedetectionmode)enumeration into GroupDocs.Parser.Options namespace.
+*   [FileTypeDetectionMode](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/filetypedetectionmode)enumeration into GroupDocs.Parser.Options namespace.
 
 #### Usage
 
@@ -88,35 +88,35 @@ from the following document types:
 
 The following types were added:
 
-*   [PageHyperlinkArea](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea)
+*   [PageHyperlinkArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea)
     class into GroupDocs.Parser.Data namespace
-*   [PageTableAreaOptions](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/pagetableareaoptions)
+*   [PageTableAreaOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/pagetableareaoptions)
     class into GroupDocs.Parser.Options namespace
 
-[GroupDocs.Parser.Data.PageTableAreaCell](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagetableareacell)
+[GroupDocs.Parser.Data.PageTableAreaCell](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagetableareacell)
 public class was updated with changes as follows:
 
 *   Added
-    [Text](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagetableareacell/properties/text)
+    [Text](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagetableareacell/properties/text)
     property
 
-[GroupDocs.Parser.Parser ](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser)public
+[GroupDocs.Parser.Parser ](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser)public
 class was updated with changes as follows:
 
 *   Added
-    [GetHypelinks](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gethypelinks)
+    [GetHypelinks](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gethypelinks)
     method
-*   Added [GetHypelinks(Int32)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethypelinks/methods/2)
+*   Added [GetHypelinks(Int32)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethypelinks/methods/2)
     method
-*   Added [GetHypelinks(PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethypelinks/methods/1)
+*   Added [GetHypelinks(PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethypelinks/methods/1)
     method
 *   Added [GetHypelinks(Int32,
-    PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethypelinks/methods/3)
+    PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethypelinks/methods/3)
     method
-*   Added [GetTables(PageTableAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gettables)
+*   Added [GetTables(PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gettables)
     method
 *   Added [GetTables(Int32,
-    PageTableAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gettables/methods/1)
+    PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gettables/methods/1)
     method
 
 #### Usage 

@@ -8,16 +8,16 @@ keywords: extract metadata, extract metadata from EPUB
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-To extract table of contents from EPUB e-books [getToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method is used.
+To extract table of contents from EPUB e-books [getToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method is used.
 
 {{< alert style="warning" >}}
-[getToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method returns *null* value if table of contents extraction isn't supported for the document. For example, table of contents extraction isn't supported for TXT files. Therefore, for TXT file [getToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method returns *null*. If EPUB e-book has no table of contents, [getToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method returns an empty collection.
+[getToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method returns *null* value if table of contents extraction isn't supported for the document. For example, table of contents extraction isn't supported for TXT files. Therefore, for TXT file [getToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method returns *null*. If EPUB e-book has no table of contents, [getToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method returns an empty collection.
 {{< /alert >}}
 
 Here are the steps to extract extract table of contents from EPUB e-book:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial e-book;
-*   Call [getToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method and obtain collection of [TocItem](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/TocItem "class in com.groupdocs.parser.data") objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial e-book;
+*   Call [getToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method and obtain collection of [TocItem](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/TocItem "class in com.groupdocs.parser.data") objects;
 *   Iterate through the collection and get page index to extract a page text from the document.
 
 The following example shows how to extract table of contents from EPUB e-book:

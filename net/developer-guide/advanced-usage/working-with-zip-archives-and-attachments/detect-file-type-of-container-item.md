@@ -10,7 +10,7 @@ hideChildren: False
 ---
 # Detect file type of container item
 
-GroupDocs.Parser provides the functionality to detect a file type of container items by [DetectFileType](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/containeritem/methods/detectfiletype) method. [FileTypeDetectionMode](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetypedetectionmode) parameter provides the ability to control file type detection:
+GroupDocs.Parser provides the functionality to detect a file type of container items by [DetectFileType](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/containeritem/methods/detectfiletype) method. [FileTypeDetectionMode](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/filetypedetectionmode) parameter provides the ability to control file type detection:
 
 - Default. The file type is detected by the file extension; if the file extension  isn't recognized, the file type is detected by the file content.
 - Extension. The file type is detected only by the file extension.
@@ -18,10 +18,10 @@ GroupDocs.Parser provides the functionality to detect a file type of container i
 
 Here are the steps to detect a file type of container items:
 
-- Instantiate [Parser ](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser)object for the initial document;
-- Call [GetContainer](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and obtain the collection of [ContainerItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects;
+- Instantiate [Parser ](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser)object for the initial document;
+- Call [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and obtain the collection of [ContainerItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects;
 - Check if *collection* isn't *null* (container extraction is supported for the document);
-- Iterate through the collection and call [DetectFileType](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/containeritem/methods/detectfiletype) method.
+- Iterate through the collection and call [DetectFileType](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/containeritem/methods/detectfiletype) method.
 
 The following example shows how to detect a file type of container items:
 

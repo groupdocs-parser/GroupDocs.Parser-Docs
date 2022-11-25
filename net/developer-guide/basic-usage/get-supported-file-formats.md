@@ -8,26 +8,26 @@ keywords: Formats Parser .Net dotNet C# CSharp
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-GroupDocs.Parser allows to get the list of all the supported file formats by the [GetSupportedFileTypes](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/methods/getsupportedfiletypes) static method:
+GroupDocs.Parser allows to get the list of all the supported file formats by the [GetSupportedFileTypes](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/methods/getsupportedfiletypes) static method:
 
 ```csharp
 IEnumerable<FileType> FileType.GetSupportedFileTypes();
 
 ```
 
-This method returns a collection of [FileType](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype) items with the following members:
+This method returns a collection of [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype) items with the following members:
 
 | Member | Description |
 | --- | --- |
-| [FileFormat](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/properties/fileformat) | File type name e.g. "Microsoft Word Document". |
-| [Extension](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/properties/extension) | Filename suffix (including the period ".") e.g. ".doc". |
+| [FileFormat](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/properties/fileformat) | File type name e.g. "Microsoft Word Document". |
+| [Extension](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/properties/extension) | Filename suffix (including the period ".") e.g. ".doc". |
 
-Also [FileType](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype) contains static fields that represent all the supported file formats.
+Also [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype) contains static fields that represent all the supported file formats.
 
 Here are the steps to get all the supported file formats:
 
-*   Call [GetSupportedFileTypes](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/methods/getsupportedfiletypes) static method and obtain a collection of [FileType](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype) objects;
-*   Iterate through the collection and get [FileFormat](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/properties/fileformat) or [Extension](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/properties/extension) of [FileType](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/filetype).
+*   Call [GetSupportedFileTypes](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/methods/getsupportedfiletypes) static method and obtain a collection of [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype) objects;
+*   Iterate through the collection and get [FileFormat](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/properties/fileformat) or [Extension](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/properties/extension) of [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype).
 
 The following example shows how to print all the supported file types:
 

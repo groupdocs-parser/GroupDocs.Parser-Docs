@@ -14,8 +14,8 @@ hideChildren: False
 
 There are the following improvements in this release:
 
-*   Added [RawPageCount](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/idocumentinfo/properties/rawpagecount) property to [IDocumentInfo](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/idocumentinfo) interface
-*   Implemented the ability to create [Parser](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser) object with [DbConnection](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbconnection?view=netcore-3.1) and [EmailConnection](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/emailconnection) objects
+*   Added [RawPageCount](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/idocumentinfo/properties/rawpagecount) property to [IDocumentInfo](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/idocumentinfo) interface
+*   Implemented the ability to create [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser) object with [DbConnection](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbconnection?view=netcore-3.1) and [EmailConnection](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/emailconnection) objects
 
 ## Full List of Issues Covering all Changes in this Release
 
@@ -35,9 +35,9 @@ This feature improves API of raw text extraction from document page.
 
 #### Public API changes
 
-[IDocumentInfo](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/idocumentinfo) interface was updated with changes as follows:
+[IDocumentInfo](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/idocumentinfo) interface was updated with changes as follows:
 
-*   Added [RawPageCount](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/idocumentinfo/properties/rawpagecount) property
+*   Added [RawPageCount](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/idocumentinfo/properties/rawpagecount) property
 
 #### Usage
 
@@ -85,10 +85,10 @@ This feature allows to extract data from databases via ADO.NET.
 
 #### Public API changes
 
-[Parser](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser) class was updated with changes as follows:
+[Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser) class was updated with changes as follows:
 
-*   Added [Parser(DbConnection)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/constructors/2) constructor
-*   Added [Parser(DbConnection, ParserSettings)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/constructors/3) constructor
+*   Added [Parser(DbConnection)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/constructors/2) constructor
+*   Added [Parser(DbConnection, ParserSettings)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/constructors/3) constructor
 
 #### Usage
 
@@ -136,10 +136,10 @@ This feature allows to extract data from email servers.
 
 #### Public API changes
 
-[Parser](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser) class was updated with changes as follows:
+[Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser) class was updated with changes as follows:
 
-*   Added [Parser(EmailConnection)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/constructors/main) constructor
-*   Added [Parser(EmailConnection, ParserSettings)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/constructors/1) constructor
+*   Added [Parser(EmailConnection)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/constructors/main) constructor
+*   Added [Parser(EmailConnection, ParserSettings)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/constructors/1) constructor
 
 #### Usage
 

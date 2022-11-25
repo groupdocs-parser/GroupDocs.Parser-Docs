@@ -27,12 +27,12 @@ This feature allows to identify whether a file is password-protected.
 
 The following types were added:
 
-* Added [FileInfo](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/fileinfo) class into GroupDocs.Parser.Options namespace.
+* Added [FileInfo](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/fileinfo) class into GroupDocs.Parser.Options namespace.
 
-[GroupDocs.Parser.Parser](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser) public class was updated with changes as follows:
+[GroupDocs.Parser.Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser) public class was updated with changes as follows:
 
-* Added [GetFileInfo(Stream)](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getfileinfo) method
-* Added [GetFileInfo(String)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/getfileinfo/methods/1) method
+* Added [GetFileInfo(Stream)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getfileinfo) method
+* Added [GetFileInfo(String)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getfileinfo/methods/1) method
 
 #### Usage
 

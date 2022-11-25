@@ -14,30 +14,30 @@ GroupDocs.Parser provides the functionality to extract emails from remote server
 *   Internet Message Access Protocol (IMAP)
 *   Exchange Web Services (EWS)
 
-To create an instance of [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) class to extract emails from a remote server the following constructor is used:
+To create an instance of [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) class to extract emails from a remote server the following constructor is used:
 
 ```java
 Parser(EmailConnection connection);
 Parser(EmailConnection connection, ParserSettings parserSettings)
 ```
 
-The second constructor allows to use [ParserSettings](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/ParserSettings) object to control the process; for example, by adding logging functionality.
+The second constructor allows to use [ParserSettings](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ParserSettings) object to control the process; for example, by adding logging functionality.
 
-[EmailConnection](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/EmailConnection) is a base class. The following connection classes are used:
+[EmailConnection](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/EmailConnection) is a base class. The following connection classes are used:
 
 | Protocol | Class |
 | --- | --- |
-| Exchange Web Services | [EmailEwsConnection](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/EmailEwsConnection) |
-| IMAP | [EmailImapConnection](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/EmailImapConnection) |
-| POP | [EmailPopConnection](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/EmailPopConnection) |
+| Exchange Web Services | [EmailEwsConnection](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/EmailEwsConnection) |
+| IMAP | [EmailImapConnection](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/EmailImapConnection) |
+| POP | [EmailPopConnection](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/EmailPopConnection) |
 
 Here are the steps to extract emails from the remote server:
 
 *   Prepare connection string (see table below);
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object with connection string;
-*   Call [isContainer](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isContainer())  property to check if container extraction is supported;
-*   Call [getContainer](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getContainer()) method and obtain collection of [ContainerItem](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/ContainerItem) objects;
-*   Iterate through the collection and get [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for each item.
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object with connection string;
+*   Call [isContainer](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isContainer())  property to check if container extraction is supported;
+*   Call [getContainer](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getContainer()) method and obtain collection of [ContainerItem](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/ContainerItem) objects;
+*   Iterate through the collection and get [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for each item.
 
 The following example shows how to extract emails from Exchange Server:
 

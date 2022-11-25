@@ -42,11 +42,11 @@ No API changes.
 
 #### Description
 
-Removed the obsolete TocItem.GetText method. Use [TocItem.ExtractText](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/tocitem/methods/extracttext) method instead.
+Removed the obsolete TocItem.GetText method. Use [TocItem.ExtractText](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/tocitem/methods/extracttext) method instead.
 
 #### Public API changes
 
-[GroupDocs.Parser.Data.TocItem](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/tocitem) public class was updated with changes as follows:
+[GroupDocs.Parser.Data.TocItem](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/tocitem) public class was updated with changes as follows:
 
 * Removed GetText method
 

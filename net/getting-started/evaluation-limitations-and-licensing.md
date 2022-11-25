@@ -58,24 +58,24 @@ using (FileStream fileStream = File.OpenRead("GroupDocs.Parser.lic"))
 }
 ```
 {{< alert style="info" >}}
-Calling [License.SetLicense(String)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.license/setlicense/methods/1) multiple times is not harmful but simply wastes processor time. If you are developing a Windows Forms or console application, call [License.SetLicense(String)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.license/setlicense/methods/1) in your startup code, before using GroupDocs.Parser classes.
+Calling [License.SetLicense(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser.license/setlicense/methods/1) multiple times is not harmful but simply wastes processor time. If you are developing a Windows Forms or console application, call [License.SetLicense(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser.license/setlicense/methods/1) in your startup code, before using GroupDocs.Parser classes.
 {{< /alert >}}
 #### Setting Metered License
 {{< alert style="info" >}}
 You can also set Metered license as an alternative to license file. It is a new licensing mechanism that will be used along with existing licensing method. It is useful for the customers who want to be billed based on the usage of the API features. For more details, please refer to Metered Licensing FAQ section.
 {{< /alert >}}
   
-Here are the simple steps to use the [Metered](https://apireference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
-*       Create an instance of [Metered](https://apireference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
-*       Pass public & private keys to [SetMeteredKey](https://apireference.groupdocs.com/net/parser/groupdocs.parser/metered/methods/setmeteredkey) method.
+Here are the simple steps to use the [Metered](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
+*       Create an instance of [Metered](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
+*       Pass public & private keys to [SetMeteredKey](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered/methods/setmeteredkey) method.
 *       Do processing (perform task).
-*       call method [GetConsumptionQuantity](https://apireference.groupdocs.com/net/parser/groupdocs.parser/metered/methods/getconsumptionquantity) of the [Metered](https://apireference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
+*       call method [GetConsumptionQuantity](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered/methods/getconsumptionquantity) of the [Metered](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
 *       It will return the amount/quantity of API requests that you have consumed so far.
-*       call method [GetConsumptionCredit](https://apireference.groupdocs.com/net/parser/groupdocs.parser/metered/methods/getconsumptioncredit) of the [Metered](https://apireference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
+*       call method [GetConsumptionCredit](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered/methods/getconsumptioncredit) of the [Metered](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
 *       It will return the credit that you have consumed so far.
 
   
-Following is the sample code demonstrating how to use [Metered](https://apireference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
+Following is the sample code demonstrating how to use [Metered](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
 
 ```csharp
 // For complete examples and data files, please go to https://github.com/groupdocs-parser/GroupDocs.Parser-for-.NET

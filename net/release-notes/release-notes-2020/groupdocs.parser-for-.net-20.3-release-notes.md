@@ -34,10 +34,10 @@ This feature improves API of text extraction by table of contents items.
 
 #### Public API changes
 
-[GroupDocs.Parser.Data.TocItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) public class was updated with changes as follows:
+[GroupDocs.Parser.Data.TocItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) public class was updated with changes as follows:
 
 *   Added ExtractText method
-*   [GetText](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/gettext) method was marked as obsolete
+*   [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/gettext) method was marked as obsolete
 
 #### Usage
 

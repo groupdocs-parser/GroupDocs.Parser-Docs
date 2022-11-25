@@ -74,18 +74,18 @@ This feature provides the ability to extract barcodes from documents.
 
 #### Public API changes
 
-[GroupDocs.Parser.Options.Features](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/features) public class was updated with changes as follows:
+[GroupDocs.Parser.Options.Features](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/features) public class was updated with changes as follows:
 
-* Added [Barcodes](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/features/properties/barcodes) property
+* Added [Barcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/features/properties/barcodes) property
 
-[PageBarcodeArea](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) public class was added
+[PageBarcodeArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) public class was added
 
-[Parser](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser) public class was updated with changes as follows:
+[Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser) public class was updated with changes as follows:
 
-* Added [GetBarcodes](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getbarcodes) method
-* Added [GetBarcodes(Int32)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/2) method
-* Added [GetBarcodes(PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/1) method
-* Added [GetBarcodes(Int32, PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/3) method
+* Added [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getbarcodes) method
+* Added [GetBarcodes(Int32)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/2) method
+* Added [GetBarcodes(PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/1) method
+* Added [GetBarcodes(Int32, PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/3) method
 
 #### Usage
 
@@ -159,7 +159,7 @@ This feature allows to define barcode fields in templates.
 
 #### Public API changes
 
-[TemplateBarcode](https://apireference.groupdocs.com/parser/net/groupdocs.parser.templates/templatebarcode) public class was added.
+[TemplateBarcode](https://reference.groupdocs.com/parser/net/groupdocs.parser.templates/templatebarcode) public class was added.
 
 ### Usage
 
@@ -198,10 +198,10 @@ This feature allows to detect the file type of the password-protected OOXML docu
 
 #### Public API changes
 
-[Parser](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser) public class was updated with changes as follows:
+[Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser) public class was updated with changes as follows:
 
-* Added [GetFileInfo(Stream, LoadOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/getfileinfo/methods/1) method
-* Added [GetFileInfo(String, LoadOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/getfileinfo/methods/3) method
+* Added [GetFileInfo(Stream, LoadOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getfileinfo/methods/1) method
+* Added [GetFileInfo(String, LoadOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getfileinfo/methods/3) method
 
 ### Usage
 

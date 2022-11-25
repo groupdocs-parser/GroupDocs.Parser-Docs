@@ -14,21 +14,21 @@ This feature allows to extract text with integrated HTML tags, or Markdown synta
 
 ## Extract formatted text from documents
 
-To extract a formatted text from documents simply call the [GetFormattedText](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getformattedtext) method:
+To extract a formatted text from documents simply call the [GetFormattedText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getformattedtext) method:
 
 ```csharp
 TextReader GetFormattedText(FormattedTextOptions options);
 
 ```
 
-Methods return an instance of [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) class with an extracted text. [FormattedTextOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/formattedtextoptions) has the following constructor:
+Methods return an instance of [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) class with an extracted text. [FormattedTextOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/formattedtextoptions) has the following constructor:
 
 ```csharp
 FormattedTextOptions(FormattedTextMode mode)
 
 ```
 
-[FormattedTextMode](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/formattedtextmode) enumeration has the following members:
+[FormattedTextMode](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/formattedtextmode) enumeration has the following members:
 
 | Member | Description |
 | --- | --- |
@@ -38,9 +38,9 @@ FormattedTextOptions(FormattedTextMode mode)
 
 Here are the steps to extract a HTML formatted text from the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Instantiate [FormattedTextOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/formattedtextoptions) with HTML text mode;
-*   Call [GetFormattedText](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getformattedtext) method and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Instantiate [FormattedTextOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/formattedtextoptions) with HTML text mode;
+*   Call [GetFormattedText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getformattedtext) method and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
 *   Check if *reader* isn't *null* (formatted text extraction is supported for the document);
 *   Read a text from *reader*.
 

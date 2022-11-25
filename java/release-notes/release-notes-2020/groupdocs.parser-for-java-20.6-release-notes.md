@@ -37,7 +37,7 @@ container items.
 
 #### Public API changes
 
-[com.groupdocs.parser.data.ContainerItem](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/ContainerItem)
+[com.groupdocs.parser.data.ContainerItem](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/ContainerItem)
 public class was updated with changes as follows:
 
 *   Added `detectFileType(FileTypeDetectionMode detectionMode)` method
@@ -87,8 +87,8 @@ from the following document types:
 
 The following types were added:
 
-*   [`PageHyperlinkArea`](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageHyperlinkArea "class in com.groupdocs.parser.data")    class into com.groupdocs.parser.data package
-*   [`PageTableAreaOptions`](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/PageTableAreaOptions "class in com.groupdocs.parser.options")    class into com.groupdocs.parser.options package
+*   [`PageHyperlinkArea`](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageHyperlinkArea "class in com.groupdocs.parser.data")    class into com.groupdocs.parser.data package
+*   [`PageTableAreaOptions`](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/PageTableAreaOptions "class in com.groupdocs.parser.options")    class into com.groupdocs.parser.options package
 
 com.groupdocs.parser.data.PageTableAreaCell public class was updated
 with changes as follows:

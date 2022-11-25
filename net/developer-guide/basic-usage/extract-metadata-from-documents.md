@@ -12,24 +12,24 @@ GroupDocs.Parser allows to extract basic metadata from documents of various form
 
 ## Extract metadata from documents
 
-To extract metadata from documents simply call the [GetMetadata](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method:
+To extract metadata from documents simply call the [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method:
 
 ```csharp
 IEnumerable<MetadataItem> GetMetadata();
 
 ```
 
-This method returns a collection of [MetadataItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/metadataitem) objects with following members:
+This method returns a collection of [MetadataItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/metadataitem) objects with following members:
 
 | Member | Description |
 | --- | --- |
-| [Name](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/metadataitem/properties/name) | The name of the metadata item |
-| [Value](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/metadataitem/properties/value) | The value of the metadata item |
+| [Name](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/metadataitem/properties/name) | The name of the metadata item |
+| [Value](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/metadataitem/properties/value) | The value of the metadata item |
 
 Here are the steps to extract metadata from the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetMetadata](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method and obtain collection of document metadata objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method and obtain collection of document metadata objects;
 *   Check if *collection* isn't null (metadata extraction is supported for the document);
 *   Iterate through the collection and get metadata names and values.
 

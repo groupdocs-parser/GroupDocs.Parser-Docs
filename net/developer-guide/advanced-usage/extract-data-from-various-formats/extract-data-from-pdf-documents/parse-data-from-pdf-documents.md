@@ -8,12 +8,12 @@ keywords: Parse data, Parse data from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-To extract data from PDF documents [ParseForm](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parseform) and [ParseByTemplate](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) methods are used. Both methods return [DocumentData](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object. For details, see [Working With Extracted Data]({{< ref "parser/net/developer-guide/advanced-usage/working-with-data-extracted-by-template.md" >}}).
+To extract data from PDF documents [ParseForm](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parseform) and [ParseByTemplate](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) methods are used. Both methods return [DocumentData](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object. For details, see [Working With Extracted Data]({{< ref "parser/net/developer-guide/advanced-usage/working-with-data-extracted-by-template.md" >}}).
 
 Here are the steps to extract data from PDF Form:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document
-*   Call [ParseForm](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parseform) method and obtain the [DocumentData](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document
+*   Call [ParseForm](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parseform) method and obtain the [DocumentData](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object;
 *   Check if *data* isn't *null* (parse form is supported for the document);
 *   Iterate over field data to obtain form data.
 
@@ -71,13 +71,13 @@ public class PreliminaryRecord
 }
 ```
 
-[ParseByTemplate](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method is used to parse PDF document by a user-generated template. For details about templates, see [Working With Templates]({{< ref "parser/net/developer-guide/advanced-usage/working-with-templates.md" >}}).
+[ParseByTemplate](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method is used to parse PDF document by a user-generated template. For details about templates, see [Working With Templates]({{< ref "parser/net/developer-guide/advanced-usage/working-with-templates.md" >}}).
 
 Here are the steps to parse data from PDF document by the user-generated template:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the existing document;
-*   Instantiate [Template](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object with the user-generated template;
-*   Call [ParseByTemplate](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method and obtain [DocumentData](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the existing document;
+*   Instantiate [Template](https://reference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object with the user-generated template;
+*   Call [ParseByTemplate](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method and obtain [DocumentData](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object;
 *   Iterate over field data to obtain the document data.
 
 The following example shows how to parse data from PDF document by the user-generated template:

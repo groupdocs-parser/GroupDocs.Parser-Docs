@@ -16,7 +16,7 @@ Using this feature is straightforward. Simply define a template programmatically
 
 ## Parse data from documents
 
-GroupDocs.Parser provides [Template](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object to define a template and [ParseByTemplate](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method to apply the template to existing document.
+GroupDocs.Parser provides [Template](https://reference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object to define a template and [ParseByTemplate](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method to apply the template to existing document.
 
 ```csharp
 DocumentData ParseByTemplate(Template template)
@@ -24,9 +24,9 @@ DocumentData ParseByTemplate(Template template)
 
 Here are the steps to parse data from the document by user-generated template:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the existing document;
-*   Instantiate [Template](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object with the user-generated template;
-*   Call [ParseByTemplate](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method and obtain [DocumentData](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the existing document;
+*   Instantiate [Template](https://reference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object with the user-generated template;
+*   Call [ParseByTemplate](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method and obtain [DocumentData](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object;
 *   Check if *data* isn't *null* (indicates that Parse by Template feature is supported for the document);
 *   Iterate over field data to obtain the document data.
 

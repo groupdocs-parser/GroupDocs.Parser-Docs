@@ -16,29 +16,29 @@ In this article you can see how to extract images from any supported format with
 
 # Extract images from documents
 
-To extract images from documents simply call the [getImages](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getImages()) method:
+To extract images from documents simply call the [getImages](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getImages()) method:
 
 ```java
 Iterable<PageImageArea> getImages();
 ```
 
-This method returns a collection of [PageImageArea](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea) objects:
+This method returns a collection of [PageImageArea](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea) objects:
 
 | Member | Description |
 | --- | --- |
-| [getPage](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageArea#getPage()) | The page that contains the text area. |
-| [getRectangle](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageArea#getRectangle()) | The rectangular area on the page that contains the text area. |
-| [getFileType](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#getFileType()) | The format of the image. |
-| [getRotation](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#getRotation()) | The rotation angle of the image. |
-| [getImageStream](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#getImageStream()) | Returns the image stream. |
-| [getImageStream(ImageOptions)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#getImageStream(com.groupdocs.parser.options.ImageOptions)) | Returns the image stream in a different format. |
-| [save(String)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#save(java.lang.String)) | Saves the image to the file. |
-| [save(String, ImageOptions)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#save(java.lang.String,%20com.groupdocs.parser.options.ImageOptions)) | Saves the image to the file in a different format. |
+| [getPage](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageArea#getPage()) | The page that contains the text area. |
+| [getRectangle](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageArea#getRectangle()) | The rectangular area on the page that contains the text area. |
+| [getFileType](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#getFileType()) | The format of the image. |
+| [getRotation](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#getRotation()) | The rotation angle of the image. |
+| [getImageStream](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#getImageStream()) | Returns the image stream. |
+| [getImageStream(ImageOptions)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#getImageStream(com.groupdocs.parser.options.ImageOptions)) | Returns the image stream in a different format. |
+| [save(String)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#save(java.lang.String)) | Saves the image to the file. |
+| [save(String, ImageOptions)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/PageImageArea#save(java.lang.String,%20com.groupdocs.parser.options.ImageOptions)) | Saves the image to the file in a different format. |
 
 Here are the steps to extract images from the whole document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
-*   Call [getImages](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getImages()) method and obtain collection of image objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
+*   Call [getImages](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getImages()) method and obtain collection of image objects;
 *   Check if *collection* isn't *null* (images extraction is supported for the document);
 *   Iterate through the collection and get sizes, image types and image contents.
 
