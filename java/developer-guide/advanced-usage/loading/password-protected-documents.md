@@ -12,9 +12,9 @@ GroupDocs.Parser provides the functionality to open the password-protected docum
 
 The following are the steps to work with password protected documents.
 
-*   Instantiate the [LoadOptions](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/LoadOptions) object;
-*   Set password in [LoadOptions(String)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/LoadOptions#LoadOptions(java.lang.String)) constructor;
-*   Create [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object and call any method.
+*   Instantiate the [LoadOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/LoadOptions) object;
+*   Set password in [LoadOptions(String)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/LoadOptions#LoadOptions(java.lang.String)) constructor;
+*   Create [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object and call any method.
 
 The following code sample shows how to process password protected documents.
 
@@ -39,7 +39,7 @@ try {
 }
 ```
 
-If the password is incorrect or empty [InvalidPasswordException](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.exceptions/InvalidPasswordException) exception is thrown.
+If the password is incorrect or empty [InvalidPasswordException](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.exceptions/InvalidPasswordException) exception is thrown.
 
 The following code shows how to check whether a file is password-protected:
 

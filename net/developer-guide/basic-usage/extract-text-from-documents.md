@@ -16,7 +16,7 @@ This article demonstrates how to implement the simplest scenario - extract text 
 
 ## Extract text from documents
 
-To extract text from documents simply call [GetText](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method:
+To extract text from documents simply call [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method:
 
 ```csharp
 TextReader GetText();
@@ -28,8 +28,8 @@ Methods return an instance of [TextReader](https://docs.microsoft.com/en-us/dotn
 
 Here are the steps to extract a text from the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetText](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
 *   Check if *reader* isn't *null* (text extraction is supported for the document);
 *   Read a text from *reader*.
 

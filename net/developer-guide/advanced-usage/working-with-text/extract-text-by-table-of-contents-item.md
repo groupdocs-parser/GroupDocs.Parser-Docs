@@ -10,7 +10,7 @@ hideChildren: False
 ---
 GroupDocs.Parser provides the functionality to extract a text by an item of table of contents. This feature is supported for Word Processing, PDF, ePUB and CHM documents (for more details, see [Supported Document Formats]({{< ref "parser/net/getting-started/supported-document-formats.md" >}})).
 
-Text is extracted by [TocItem.ExtractText](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/extracttext) method:
+Text is extracted by [TocItem.ExtractText](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/extracttext) method:
 
 ```csharp
 // Get the first item of table of contents
@@ -41,15 +41,15 @@ returns the following text:
 ![](/parser/net/images/extract-text-by-table-of-contents-item_3.png)
 
 {{< alert style="warning" >}}
-[InvalidOperationException](https://docs.microsoft.com/en-us/dotnet/api/system.invalidoperationexception?view=netframework-2.0) is thrown if [tocItem.PageIndex](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/pageindex) is *null*.
+[InvalidOperationException](https://docs.microsoft.com/en-us/dotnet/api/system.invalidoperationexception?view=netframework-2.0) is thrown if [tocItem.PageIndex](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/pageindex) is *null*.
 {{< /alert >}}
 
 Here are the steps to extract a text by an item of table of contents:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetToc](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method and obtain the collection of [TocItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetToc](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method and obtain the collection of [TocItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) objects;
 *   Check if *collection* isn't *null* (table of contents extraction is supported for the document);
-*   Iterate through the collection and extract a text by [GetText](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/gettext) method.  
+*   Iterate through the collection and extract a text by [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/gettext) method.  
 
 The following example shows how to extract a text by an item of table of contents:      
     

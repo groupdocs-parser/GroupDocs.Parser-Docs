@@ -9,28 +9,28 @@ productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
 
-GroupDocs.Parser provides the functionality to extract hyperlinks from document page area by the [GetHyperlinks(PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/1) and [GetHyperlinks(Int32, PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/3) methods:
+GroupDocs.Parser provides the functionality to extract hyperlinks from document page area by the [GetHyperlinks(PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/1) and [GetHyperlinks(Int32, PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/3) methods:
 
 ```csharp
 IEnumerable<PageHyperlinkArea> GetHyperlinks(int pageIndex, PageAreaOptions options);
 IEnumerable<PageHyperlinkArea> GetHyperlinks(PageAreaOptions options);
 ```
 
-These methods return a collection of [PageHyperlinkArea](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea) object:
+These methods return a collection of [PageHyperlinkArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea) object:
 
 | Member                                                       | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Page](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area.                        |
-| [Rectangle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
-| [Text](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea/properties/text) | The hyperlink text.                                          |
-| [Url](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea/properties/url) | The hyperlink URL.                                           |
+| [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area.                        |
+| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
+| [Text](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea/properties/text) | The hyperlink text.                                          |
+| [Url](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea/properties/url) | The hyperlink URL.                                           |
 
 Here are the steps to extract hyperlinks from the document page area:
 
-- Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+- Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
 - Check if the document supports hyperlink extraction;
-- Instantiate [PageAreaOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) with the rectangular area;
-- Call [GetHyperlinks(PageAreaOptions)](https://apireference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/1) method and obtain collection of [PageHyperlinkArea](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea) objects;
+- Instantiate [PageAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) with the rectangular area;
+- Call [GetHyperlinks(PageAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/1) method and obtain collection of [PageHyperlinkArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagehyperlinkarea) objects;
 - Iterate through the collection and get a hyperlink text and URL.
 
 The following example shows how to extract hyperlinks from the document page area:

@@ -9,26 +9,26 @@ productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
 
-GroupDocs.Parser provides the functionality to extract barcodes from documents by the [GetBarcodes](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(int)) method:
+GroupDocs.Parser provides the functionality to extract barcodes from documents by the [GetBarcodes](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(int)) method:
 
 ```java
 Iterable<PageBarcodeArea> getBarcodes(int pageIndex)
 ```
 
-This method returns a collection of [PageBarcodeArea](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea) objects:
+This method returns a collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea) objects:
 
 | Member | Description |
 | --- | --- |
-| [Page](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getPage()) | The page that contains the text area. |
-| [Rectangle](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getRectangle()) | The rectangular area on the page that contains the text area. |
-| [Value](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea#getValue()) | A string value that represents a value of the barcode page area. |
-| [CodeTypeName](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea#getCodeTypeName()) | A string value than represents a type name of the barcode. |
+| [Page](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getPage()) | The page that contains the text area. |
+| [Rectangle](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getRectangle()) | The rectangular area on the page that contains the text area. |
+| [Value](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea#getValue()) | A string value that represents a value of the barcode page area. |
+| [CodeTypeName](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea#getCodeTypeName()) | A string value than represents a type name of the barcode. |
 
 Here are the steps to extract all barcodes from the whole document:
 
-- Instantiate [Parser](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) object for the initial document;
+- Instantiate [Parser](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) object for the initial document;
 - Check if the document supports barcodes extraction;
-- Call [GetBarcodes](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(int)) method with the page index and obtain collection of [PageBarcodeArea](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea) objects;
+- Call [GetBarcodes](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#getBarcodes(int)) method with the page index and obtain collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea) objects;
 - Iterate through the collection and get a barcode value.
 
 The following example shows how to extract barcodes from a document page:

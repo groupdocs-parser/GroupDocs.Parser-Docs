@@ -8,29 +8,29 @@ keywords: search text, search text from documents
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-GroupDocs.Parser provides the functionality to search a text from documents by the [search(String)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String)) and [search(String, SearchOptions)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String,%20com.groupdocs.parser.options.SearchOptions)) methods:
+GroupDocs.Parser provides the functionality to search a text from documents by the [search(String)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String)) and [search(String, SearchOptions)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String,%20com.groupdocs.parser.options.SearchOptions)) methods:
 
 ```java
 Iterable<SearchResult> search(String keyword);
 Iterable<SearchResult> search(String keyword, SearchOptions options);
 ```
 
-The *keyword* parameter can contain a text or a regular expression. [SearchResult](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) class contains every occurrence of the keyword in the document text. This class has the following members:
+The *keyword* parameter can contain a text or a regular expression. [SearchResult](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) class contains every occurrence of the keyword in the document text. This class has the following members:
 
 | Member | Description |
 | --- | --- |
-| [getPosition](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getPosition()) | A zero-based index of the start position of the search result. Depending on [isSearchByPages](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isSearchByPages()) property value this index starts from the document start or the document page start. |
-| [getPageIndex](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getPageIndex()) | The page index where the text is found. |
-| [getText](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getText()) | The found text. |
-| [getLeftHighlightItem](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getLeftHighlightItem()) | The left highlight. |
-| [getRightHighlightItem](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getRightHighlightItem()) | The right highlight. |
+| [getPosition](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getPosition()) | A zero-based index of the start position of the search result. Depending on [isSearchByPages](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isSearchByPages()) property value this index starts from the document start or the document page start. |
+| [getPageIndex](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getPageIndex()) | The page index where the text is found. |
+| [getText](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getText()) | The found text. |
+| [getLeftHighlightItem](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getLeftHighlightItem()) | The left highlight. |
+| [getRightHighlightItem](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult#getRightHighlightItem()) | The right highlight. |
 
 ## Search text by keyword
 
 Here are the steps to search a keyword in the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
-*   Call [search(String)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String)) method and obtain collection of [SearchResult](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
+*   Call [search(String)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String)) method and obtain collection of [SearchResult](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) objects;
 *   Check if *collection* isn't null (search is supported for the document);
 *   Iterate through the collection and get position and text.
 
@@ -60,18 +60,18 @@ try (Parser parser = new Parser(Constants.SamplePdf)) {
 
 | Member | Description |
 | --- | --- |
-| [isMatchCase](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isMatchCase()) | The value that indicates whether a text case isn't ignored. |
-| [isMatchWholeWord](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isMatchWholeWord()) | The value that indicates whether text search is limited by the whole word. |
-| [isUseRegularExpression](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isUseRegularExpression()) | The value that indicates whether a regular expression is used. |
-| [isSearchByPages](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isSearchByPages()) | The value that indicates whether the search is performed by pages. |
-| [getLeftHighlightOptions](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#getLeftHighlightOptions()) | The options for the left highlight. |
-| [getRightHighlightOptions](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#getRightHighlightOptions()) | The options for the right highlight. |
+| [isMatchCase](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isMatchCase()) | The value that indicates whether a text case isn't ignored. |
+| [isMatchWholeWord](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isMatchWholeWord()) | The value that indicates whether text search is limited by the whole word. |
+| [isUseRegularExpression](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isUseRegularExpression()) | The value that indicates whether a regular expression is used. |
+| [isSearchByPages](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#isSearchByPages()) | The value that indicates whether the search is performed by pages. |
+| [getLeftHighlightOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#getLeftHighlightOptions()) | The options for the left highlight. |
+| [getRightHighlightOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions#getRightHighlightOptions()) | The options for the right highlight. |
 
 Here are the steps to search with a regular expression in the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
-*   Instantiate [SearchOptions](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions) object with the parameters for the search;
-*   Call [search(String, SearchOptions)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String,%20com.groupdocs.parser.options.SearchOptions)) method and obtain collection of [SearchResult](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
+*   Instantiate [SearchOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions) object with the parameters for the search;
+*   Call [search(String, SearchOptions)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String,%20com.groupdocs.parser.options.SearchOptions)) method and obtain collection of [SearchResult](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) objects;
 *   Check if *collection* isn't *null* (search is supported for the document);
 *   Iterate through the collection and get position and text.
 
@@ -99,10 +99,10 @@ try (Parser parser = new Parser(Constants.SamplePdf)) {
 
 Here are the steps to search a text with a highlights:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
-*   Instantiate [HighlightOptions](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/HighlightOptions) object with the parameters for the highlight extraction;
-*   Instantiate [SearchOptions](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions) object with the parameters for the search;
-*   Call [search(String, SearchOptions)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String,%20com.groupdocs.parser.options.SearchOptions)) method and obtain collection of [SearchResult](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
+*   Instantiate [HighlightOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/HighlightOptions) object with the parameters for the highlight extraction;
+*   Instantiate [SearchOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions) object with the parameters for the search;
+*   Call [search(String, SearchOptions)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String,%20com.groupdocs.parser.options.SearchOptions)) method and obtain collection of [SearchResult](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) objects;
 *   Check if *collection* isn't *null* (search is supported for the document);
 *   Iterate through the collection and get position and text.
 
@@ -131,9 +131,9 @@ try (Parser parser = new Parser(Constants.SamplePdf)) {
 
 Here are the steps to search a text with page numbers:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
-*   Instantiate [SearchOptions](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions) object with the parameters for the search;
-*   Call [search(String, SearchOptions)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String,%20com.groupdocs.parser.options.SearchOptions)) method and obtain collection of [SearchResult](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
+*   Instantiate [SearchOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/SearchOptions) object with the parameters for the search;
+*   Call [search(String, SearchOptions)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#search(java.lang.String,%20com.groupdocs.parser.options.SearchOptions)) method and obtain collection of [SearchResult](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/SearchResult) objects;
 *   Check if *collection* isn't *null* (search is supported for the document);
 *   Iterate through the collection and get position, text and page number.
 

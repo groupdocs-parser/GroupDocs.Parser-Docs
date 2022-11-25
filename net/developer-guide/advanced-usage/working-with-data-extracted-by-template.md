@@ -10,24 +10,24 @@ hideChildren: False
 ---
 ## DocumentData class
 
-Extracted data are stored in the instance of [DocumentData](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) class:
+Extracted data are stored in the instance of [DocumentData](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) class:
 
 | Member | Description |
 | --- | --- |
-| [Count](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata/properties/count) | The total number of the data fields. |
-| DataField [Item](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata/properties/item) | The data field. |
-| IList<FieldData> [GetFieldsByName(String)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata/methods/getfieldsbyname) | Returns the collection of data fields where the name is equal to field name. |
+| [Count](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata/properties/count) | The total number of the data fields. |
+| DataField [Item](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata/properties/item) | The data field. |
+| IList<FieldData> [GetFieldsByName(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata/methods/getfieldsbyname) | Returns the collection of data fields where the name is equal to field name. |
 
-[FieldData](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata) class has the following members:
+[FieldData](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata) class has the following members:
 
 | Member | Description |
 | --- | --- |
-| [Name](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/name) | The field name. |
-| [PageIndex](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/pageindex) | The page index. |
-| [PageArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/pagearea) | The value of the field. |
-| [LinkedField](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/linkedfield) | The linked field. |
+| [Name](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/name) | The field name. |
+| [PageIndex](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/pageindex) | The page index. |
+| [PageArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/pagearea) | The value of the field. |
+| [LinkedField](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/linkedfield) | The linked field. |
 
-Field data are stored in [PageArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/pagearea) property. Depending on the type of the value it can contain the instance of [PageTextArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) or [PageTableArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea) classes:
+Field data are stored in [PageArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/fielddata/properties/pagearea) property. Depending on the type of the value it can contain the instance of [PageTextArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) or [PageTableArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea) classes:
 
 ```csharp
 // Get the field data
@@ -40,30 +40,30 @@ if(field.PageArea is PageTextArea)
 }
 ```
 
-[PageTextArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) class represents a text block on the page. This class has the following members:
+[PageTextArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) class represents a text block on the page. This class has the following members:
 
 | Member | Description |
 | --- | --- |
-| [Rectangle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area that bounds the text area. |
-| [Page](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page information (page index and page size). |
-| [Text](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/text) | The value of the text area. |
-| [BaseLine](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/baseline) | The base line of the text area. |
-| [TextStyle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/textstyle) | The style of the text block (like font name, font size etc.) |
-| [Areas](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/areas) | The collection of child text areas. |
+| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area that bounds the text area. |
+| [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page information (page index and page size). |
+| [Text](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/text) | The value of the text area. |
+| [BaseLine](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/baseline) | The base line of the text area. |
+| [TextStyle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/textstyle) | The style of the text block (like font name, font size etc.) |
+| [Areas](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/areas) | The collection of child text areas. |
 
 The text area can be single or composite. In the first case it contains a text which is bounded by a rectangular area. In the second case it contains other text areas; text and table properties are calculated by child text areas.
 
-[PageTableArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea) class represents a table. This class has the following members:
+[PageTableArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea) class represents a table. This class has the following members:
 
 | Member | Description |
 | --- | --- |
-| [Rectangle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area that bounds text area. |
-| [Page](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page information (page index and page size) |
-| [RowCount](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/properties/rowcount) | The total number of the table rows. |
-| [ColumnCount](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/properties/columncount) | The total number of the table columns. |
-| PageTableAreaCell [Item](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/properties/item) | The table cell by row and column indexes. |
-| double [GetRowHeight(int)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/methods/getrowheight) | The the row height. |
-| double [GetColumnWidth(int)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/methods/getcolumnwidth) | Returns the column width. |
+| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area that bounds text area. |
+| [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page information (page index and page size) |
+| [RowCount](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/properties/rowcount) | The total number of the table rows. |
+| [ColumnCount](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/properties/columncount) | The total number of the table columns. |
+| PageTableAreaCell [Item](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/properties/item) | The table cell by row and column indexes. |
+| double [GetRowHeight(int)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/methods/getrowheight) | The the row height. |
+| double [GetColumnWidth(int)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetablearea/methods/getcolumnwidth) | Returns the column width. |
 
 There are two ways to work with fields data.
 

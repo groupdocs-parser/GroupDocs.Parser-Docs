@@ -15,7 +15,7 @@ hideChildren: False
 
 GroupDocs.Parser allows to parse documents by user-defined templates.
 
-It is easy to create a template with data field definitions, table definitions. Then it's easy to use the template (just pass the  [Template](https://apireference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object to [ParseByTemplate](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method) and extract data such as prices, invoices, tables from your typical documents.
+It is easy to create a template with data field definitions, table definitions. Then it's easy to use the template (just pass the  [Template](https://reference.groupdocs.com/net/parser/groupdocs.parser.templates/template) object to [ParseByTemplate](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) method) and extract data such as prices, invoices, tables from your typical documents.
 
 ## Extract Text
 
@@ -31,7 +31,7 @@ Below different text extraction aspects are described:
 
 ### Accurate Text Extraction Mode
 
-One of the most demanded features is accurate text extraction. GroupDocs.Parser allows to easily implement it using simple [GetText](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method.
+One of the most demanded features is accurate text extraction. GroupDocs.Parser allows to easily implement it using simple [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method.
 
 ### Raw Text Extraction Mode
 
@@ -41,7 +41,7 @@ This feature is useful in those text extraction scenarios when text quality may 
 
 ### Extract Formatted Text
 
-In additional to standard text extraction modes, GroupDocs.Parser API provides a method [GetFormattedText(FormattedTextOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getformattedtext) to extract a formatted text for those cases when simple plain text is not enough and you may need to keep formatting like text style, table layout etc.
+In additional to standard text extraction modes, GroupDocs.Parser API provides a method [GetFormattedText(FormattedTextOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getformattedtext) to extract a formatted text for those cases when simple plain text is not enough and you may need to keep formatting like text style, table layout etc.
 
 At this moment the following formats are supported:
 
@@ -84,36 +84,36 @@ Following HTML tags are now supported when extracting text with this formatting 
 
 ### Extract Structured Text
 
-Many document formats do not contain only a text. Usually, the text could be organized into paragraphs divided into parts with headers. Also, the text can contain hyperlinks, lists, tables. For this scenario, GroupDocs.Parser provides structured text extraction with the ability to extract a text with its structure. This feature is easy to use - you simply call [GetStructure](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method that returns [XmlReader](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=netframework-2.0) with structured text in XML form.
+Many document formats do not contain only a text. Usually, the text could be organized into paragraphs divided into parts with headers. Also, the text can contain hyperlinks, lists, tables. For this scenario, GroupDocs.Parser provides structured text extraction with the ability to extract a text with its structure. This feature is easy to use - you simply call [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method that returns [XmlReader](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=netframework-2.0) with structured text in XML form.
 
 ### Extract Text Areas
 
 GroupDocs.Parser provides API that allow to extract text areas with coordinates and text style.
 
-This feature allows to implement advanced scenarios related to text analytics in your applications. Just call [GetTextAreas](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettextareas) method and you will get all text area objects.
+This feature allows to implement advanced scenarios related to text analytics in your applications. Just call [GetTextAreas](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettextareas) method and you will get all text area objects.
 
 ### Search Text in Documents
 
-GroupDocs.Parser allows to perform search over loaded document using keywords or regular expression. Please use [Search(String)](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method and then loop through the collection of search results.
+GroupDocs.Parser allows to perform search over loaded document using keywords or regular expression. Please use [Search(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method and then loop through the collection of search results.
 
 ## Extract Metadata
 
-GroupDocs.Parser provides API that allows to extract metadata from supported document formats with simple [GetMetadata](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method call.
+GroupDocs.Parser provides API that allows to extract metadata from supported document formats with simple [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method call.
 
 ## Extract Images
 
-GroupDocs.Parser supports Images extraction from documents. You may call [GetImages](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getimages) method that returns all info about document images and allows to save them.
+GroupDocs.Parser supports Images extraction from documents. You may call [GetImages](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getimages) method that returns all info about document images and allows to save them.
 
 ## Extract Data from Attachments and ZIP Archives
 
 GroupDocs.Parser allows to extract data (text, images, other supported extraction methods) from formats that contain other documents like ZIP archives, PDF portfolios, emails, OST containers.
 
-You can simply call [GetContainer](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and work with extracted attached or archived documents as with usual document files.
+You can simply call [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and work with extracted attached or archived documents as with usual document files.
 
 ## Parse Form Data
 
-GroupDocs.Parser provides the functionality to parse form data from PDF documents. You may call [ParseForm](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parseform) method and iterate through extracted form fields.
+GroupDocs.Parser provides the functionality to parse form data from PDF documents. You may call [ParseForm](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parseform) method and iterate through extracted form fields.
 
 ## Extract Table of Contents
 
-GroupDocs.Parser allows to extract table of contents from some document formats. To do it, you may call [GetToc](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method.
+GroupDocs.Parser allows to extract table of contents from some document formats. To do it, you may call [GetToc](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method.

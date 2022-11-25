@@ -17,25 +17,25 @@ IEnumerable<PageTextArea> GetTextAreas(int pageIndex);
 IEnumerable<PageTextArea> GetTextAreas(int pageIndex, PageTextAreaOptions options);
 ```
 
-The methods return a collection of [PageTextArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) objects:
+The methods return a collection of [PageTextArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) objects:
 
 | Member | Description |
 | --- | --- |
-| [Page](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area. |
-| [Rectangle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
-| [Text](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/text) | The value of the text area. |
-| [BaseLine](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/baseline) | The base line of the text area. |
-| [TextStyle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/textstyle) | The text style of the text area. |
-| [Areas](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/areas) | The collection of child text areas. |
+| [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area. |
+| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
+| [Text](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/text) | The value of the text area. |
+| [BaseLine](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/baseline) | The base line of the text area. |
+| [TextStyle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/textstyle) | The text style of the text area. |
+| [Areas](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/areas) | The collection of child text areas. |
 
-Text area represents a rectangular page area with a text. Text area can be simple or composite. The simple text area contains only a text and [Areas](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/areas) property is always an empty collection (not null). The composite text area doesn't have its own text. Text property is calculated by its children texts which are contained in [Areas](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/areas) property.
+Text area represents a rectangular page area with a text. Text area can be simple or composite. The simple text area contains only a text and [Areas](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/areas) property is always an empty collection (not null). The composite text area doesn't have its own text. Text property is calculated by its children texts which are contained in [Areas](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea/properties/areas) property.
 
 ## Extract text areas
 
 Here are the steps to extract text areas from the whole document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetTextAreas](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettextareas) method and obtain collection of [PageTextArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetTextAreas](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettextareas) method and obtain collection of [PageTextArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) objects;
 *   Check if *collection* isn't *null* (text areas extraction is supported for the document);
 *   Iterate through the collection and get rectangles and text.
 
@@ -67,9 +67,9 @@ using(Parser parser = new Parser(filePath))
 
 Here are the steps to extract text areas from a document page:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [Features.TextAreas](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/features/properties/textareas) property to check if text areas extraction is supported for the document;
-*   Call [GetTextAreas(int)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/gettextareas/methods/2) method with the page index and obtain collection of [PageTextArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [Features.TextAreas](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/features/properties/textareas) property to check if text areas extraction is supported for the document;
+*   Call [GetTextAreas(int)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettextareas/methods/2) method with the page index and obtain collection of [PageTextArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) objects;
 *   Check if *collection* isn't *null* (text areas extraction is supported for the document);
 *   Iterate through the collection and get rectangles and text.
 
@@ -114,21 +114,21 @@ using(Parser parser = new Parser(filePath))
 
 ## Extract text areas with options
 
-[PageTextAreaOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions) parameter is used to customize text areas extraction process. This class has the following members:
+[PageTextAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions) parameter is used to customize text areas extraction process. This class has the following members:
 
 | Member | Description |
 | --- | --- |
-| [Rectangle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions/properties/rectangle) | The rectangular area that contains a text area. |
-| [Expression](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions/properties/expression) | The regular expression. |
-| [MatchCase](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions/properties/matchcase) | The value that indicates whether a text case isn't ignored. |
-| [UniteSegments](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions/properties/unitesegments) | The value that indicates whether segments are united. |
-| [IgnoreFormatting](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions/properties/ignoreformatting) | The value that indicates whether text formatting is ignored. |
+| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions/properties/rectangle) | The rectangular area that contains a text area. |
+| [Expression](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions/properties/expression) | The regular expression. |
+| [MatchCase](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions/properties/matchcase) | The value that indicates whether a text case isn't ignored. |
+| [UniteSegments](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions/properties/unitesegments) | The value that indicates whether segments are united. |
+| [IgnoreFormatting](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions/properties/ignoreformatting) | The value that indicates whether text formatting is ignored. |
 
 Here are the steps to extract text areas from the upper-left corner:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Instantiate [PageTextAreaOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions) with the rectangular area;
-*   Call [GetTextAreas(int, PageTextAreaOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/gettextareas/methods/3) method and obtain collection of [PageTextArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Instantiate [PageTextAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pagetextareaoptions) with the rectangular area;
+*   Call [GetTextAreas(int, PageTextAreaOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettextareas/methods/3) method and obtain collection of [PageTextArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagetextarea) objects;
 *   Check if *collection* isn't *null* (text areas extraction is supported for the document);
 *   Iterate through the collection and get rectangles and text.
 

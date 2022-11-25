@@ -12,22 +12,22 @@ GroupDocs.Parser provides the functionality to extract data from databases via J
 
 ## Extract data with Connection object
 
-To create an instance of [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) class to extract data from a database with [*java.sql.Connection*](http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html?is-external=true) object the following constructor is used:
+To create an instance of [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) class to extract data from a database with [*java.sql.Connection*](http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html?is-external=true) object the following constructor is used:
 
 ```csharp
 Parser(java.sql.Connection connection);
 Parser(java.sql.Connection connection, ParserSettings parserSettings);
 ```
 
-The second constructor allows to use [ParserSettings](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/ParserSettings) object to control the process; for example, by adding logging functionality.
+The second constructor allows to use [ParserSettings](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ParserSettings) object to control the process; for example, by adding logging functionality.
 
 Here are the steps to extract data from Sqlite database:
 
 *  Prepare [*java.sql.Connection*](http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html?is-external=true) object;
-*  Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object with connection object;
-*  Call [isText](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isText()) property to check if text extraction is supported;
-*  Call [isToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isToc()) property to check if table of contents extraction is supported;
-*  Call [getToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method and obtain collection of tables;
+*  Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object with connection object;
+*  Call [isText](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isText()) property to check if text extraction is supported;
+*  Call [isToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isToc()) property to check if table of contents extraction is supported;
+*  Call [getToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method and obtain collection of tables;
 *  Iterate through the collection and get a text from tables.
 
 The following example shows how to extract data from Sqlite database:
@@ -65,21 +65,21 @@ try (Parser parser = new Parser(connection)) {
 
 ## Extract data with connection string
 
-To create an instance of [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) class to extract data from a database with connection string the following constructor is used:
+To create an instance of [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) class to extract data from a database with connection string the following constructor is used:
 
 ```java
 Parser(String filePath, LoadOptions loadOptions);
 ```
 
-The list of tables is represented as table of contents. The table extraction is processed by [getText](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getText()) method.
+The list of tables is represented as table of contents. The table extraction is processed by [getText](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getText()) method.
 
 Here are the steps to extract emails from Sqlite database:
 
 *   Prepare connection string;
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object with connection string;
-*   Call [isText](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isText()) property to check if text extraction is supported;
-*   Call [isToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isToc()) property to check if table of contents extraction is supported;
-*   Call [getToc](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method and obtain collection of tables;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object with connection string;
+*   Call [isText](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isText()) property to check if text extraction is supported;
+*   Call [isToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/Features#isToc()) property to check if table of contents extraction is supported;
+*   Call [getToc](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getToc()) method and obtain collection of tables;
 *   Iterate through the collection and get a text from tables.
 
 The following example shows how to extract data from Sqlite database:

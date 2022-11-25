@@ -14,30 +14,30 @@ GroupDocs.Parser allows you to extract emails from remote servers and data from 
 *   Internet Message Access Protocol (IMAP)
 *   Exchange Web Services (EWS)
 
-To create an instance of [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) class to extract emails from a remote server the following constructors are used:
+To create an instance of [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) class to extract emails from a remote server the following constructors are used:
 
 ```csharp
 Parser(EmailConnection connection);
 Parser(EmailConnection connection, ParserSettings parserSettings);
 ```
 
-The second constructor allows to use [ParserSettings](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object to control the process; for example, by adding [logging functionality]({{< ref "parser/net/developer-guide/advanced-usage/logging.md" >}}).
+The second constructor allows to use [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object to control the process; for example, by adding [logging functionality]({{< ref "parser/net/developer-guide/advanced-usage/logging.md" >}}).
 
-[EmailConnection](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/emailconnection) is a base class. The following connection classes are used:
+[EmailConnection](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/emailconnection) is a base class. The following connection classes are used:
 
 | Protocol | Class |
 | --- | --- |
-| POP | [EmailPopConnection](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/emailpopconnection) |
-| IMAP | [EmailImapConnection](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/emailimapconnection) |
-| Exchange Web Services | [EmailEwsConnection](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/emailewsconnection) |
+| POP | [EmailPopConnection](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/emailpopconnection) |
+| IMAP | [EmailImapConnection](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/emailimapconnection) |
+| Exchange Web Services | [EmailEwsConnection](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/emailewsconnection) |
 
 Here are the steps to extract emails from the remote server:
 
 *   Prepare connection string (see table below);
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object with connection string;
-*   Call [Features.Container](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/features/properties/container) property to check if container extraction is supported;
-*   Call [GetContainer](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and obtain collection of document container item objects;
-*   Iterate through the collection and get [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for each item.
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object with connection string;
+*   Call [Features.Container](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/features/properties/container) property to check if container extraction is supported;
+*   Call [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and obtain collection of document container item objects;
+*   Iterate through the collection and get [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for each item.
 
 The following example shows how to extract emails from Exchange Server:
 

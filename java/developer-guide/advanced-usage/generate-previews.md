@@ -8,19 +8,19 @@ keywords: page previews, how to generate page previews of documents
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-GroupDocs.Parser provides the functionality to generate document page previews by [generatePreview(PreviewOptions)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#generatePreview(com.groupdocs.parser.options.PreviewOptions)) method:
+GroupDocs.Parser provides the functionality to generate document page previews by [generatePreview(PreviewOptions)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#generatePreview(com.groupdocs.parser.options.PreviewOptions)) method:
 
 ```csharp
 void generatePreview(PreviewOptions previewOptions)
 ```
 
-[PreviewOptions](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/PreviewOptions) class is used to set requirements and stream delegates for preview generation.
+[PreviewOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/PreviewOptions) class is used to set requirements and stream delegates for preview generation.
 
 Here are the steps to generate document page previews:
 
-* Prepare [PreviewOptions](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/PreviewOptions) object;
-* Instantiate [Parser](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) object;
-* Call [generatePreview(PreviewOptions)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#generatePreview(com.groupdocs.parser.options.PreviewOptions)) method.
+* Prepare [PreviewOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/PreviewOptions) object;
+* Instantiate [Parser](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) object;
+* Call [generatePreview(PreviewOptions)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#generatePreview(com.groupdocs.parser.options.PreviewOptions)) method.
 
 The following example shows how to generate document page previews:
 
@@ -56,9 +56,9 @@ private static String getOutputPath(String fileName) throws java.io.IOException 
 
 Here are the steps to generate spreadsheets page previews:
 
-* Prepare [PreviewOptions](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser.options/PreviewOptions) object;
-* Instantiate [Parser](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) object;
-* Call [generatePreview(PreviewOptions)](https://apireference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#generatePreview(com.groupdocs.parser.options.PreviewOptions)) method.
+* Prepare [PreviewOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/PreviewOptions) object;
+* Instantiate [Parser](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser) object;
+* Call [generatePreview(PreviewOptions)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#generatePreview(com.groupdocs.parser.options.PreviewOptions)) method.
 
 The following example shows how to generate spreadsheet page previews:
 

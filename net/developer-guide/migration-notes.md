@@ -12,7 +12,7 @@ hideChildren: False
 
 Here are the key reasons to use the new updated API provided by GroupDocs.Parser for .NET since version 19.8:
 
-*   [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) class is introduced as a **single entry point** to extract data from the document.    
+*   [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) class is introduced as a **single entry point** to extract data from the document.    
 *   Data extraction was unified for all data types.      
 *   The overall document related classes were unified to common.      
 *   Product architecture was redesigned from scratch in order to simplify passing options and classes to manipulate data.    

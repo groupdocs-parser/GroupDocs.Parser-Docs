@@ -22,10 +22,10 @@ Encoding can be detected by BOM or by the content of the file (if BOM isn't pres
 
 Here are the steps to detect the encoding of the document:
 
-*   Instantiate [LoadOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/loadoptions) object with the default ANSI encoding;
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method and cast the result to [TextDocumentInfo](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/textdocumentinfo);
-*   Read the [Encoding](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/textdocumentinfo/properties/encoding) property.
+*   Instantiate [LoadOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/loadoptions) object with the default ANSI encoding;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method and cast the result to [TextDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/textdocumentinfo);
+*   Read the [Encoding](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/textdocumentinfo/properties/encoding) property.
 
 The following example shows how to detect the encoding of the document:
 

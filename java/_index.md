@@ -21,6 +21,6 @@ Following are the links to some useful resources you may need to accomplish your
 *   [GroupDocs.Parser for Java Release Notes]({{< ref "parser/java/release-notes/_index.md" >}})
 *   [GroupDocs.Parser for Java Product Page](https://products.groupdocs.com/parser/java)
 *   [Download GroupDocs.Parser for Java](https://repository.groupdocs.com/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-parser)
-*   [GroupDocs.Parser for Java API Reference Guide](https://apireference.groupdocs.com/java/parser)
+*   [GroupDocs.Parser for Java API Reference Guide](https://reference.groupdocs.com/java/parser)
 *   [GroupDocs.Parser for Java Free Support Forum](https://forum.groupdocs.com/c/parser)
 *   [GroupDocs.Parser for Java Paid Support Helpdesk](https://helpdesk.groupdocs.com/)

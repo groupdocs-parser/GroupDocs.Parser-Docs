@@ -8,7 +8,7 @@ keywords: extract metadata, extract metadata from Microsoft Office PowerPoint,.p
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-To extract metadata from Microsoft Office PowerPoint presentations [GetMetadata](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method is used. This method allows to extract the following metadata:
+To extract metadata from Microsoft Office PowerPoint presentations [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method is used. This method allows to extract the following metadata:
 
 | Name | Description |
 | --- | --- |
@@ -33,8 +33,8 @@ To extract metadata from Microsoft Office PowerPoint presentations [GetMetadata
 
 Here are the steps to extract metadata from Microsoft Office PowerPoint presentation:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial presentation;
-*   Call [GetMetadata](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method and obtain collection of document metadata objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial presentation;
+*   Call [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method and obtain collection of document metadata objects;
 *   Iterate through the collection and get metadata names and values.
 
 {{< alert style="warning" >}}GetMetadata method returns null value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for TXT files. Therefore, for TXT file GetMetadata method returns null. If Microsoft Office PowerPoint presentation has no metadata, GetMetadata method returns an empty collection.{{< /alert >}}

@@ -8,7 +8,7 @@ keywords: extract text, extract text structure
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-GroupDocs.Parser provides the functionality to extract the text structure from documents by the [GetStructure](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method:
+GroupDocs.Parser provides the functionality to extract the text structure from documents by the [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method:
 
 ```csharp
 XmlReader GetStructure();
@@ -89,8 +89,8 @@ It's more simple than others. A section can contain any number of shapes and onl
 
 Here are the steps to extract hyperlinks from the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser)  object for the initial document;
-*   Call [GetStructure](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method and obtain [XmlReader](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=netframework-2.0) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser)  object for the initial document;
+*   Call [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method and obtain [XmlReader](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=netframework-2.0) object;
 *   Check if *reader* isn't null (text structure extraction is supported for the document);
 *   Process the XML document.
 

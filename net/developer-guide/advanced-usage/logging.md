@@ -8,20 +8,20 @@ keywords: data extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-[ILogger](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface is used to receive the information about errors, warnings and events which occur while data extraction. [ILogger](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface has the following members:
+[ILogger](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface is used to receive the information about errors, warnings and events which occur while data extraction. [ILogger](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface has the following members:
 
 | Member | Description |
 | --- | --- |
-| [Error(string, Exception)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger/methods/error) | Logs an error that occurred during data extraction. |
-| [Warning(string)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger/methods/warning) | Logs a warning that occurred during data extraction. |
-| [Trace(string)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger/methods/trace) | Logs an event occurred during data extraction. |
+| [Error(string, Exception)](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger/methods/error) | Logs an error that occurred during data extraction. |
+| [Warning(string)](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger/methods/warning) | Logs a warning that occurred during data extraction. |
+| [Trace(string)](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger/methods/trace) | Logs an event occurred during data extraction. |
 
-Here are the steps to receive the information via [ILogger](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface:
+Here are the steps to receive the information via [ILogger](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface:
 
-*   Implement the class with [ILogger](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface implementation;
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser)  object with [ParserSettings](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/parsersettings) object.
+*   Implement the class with [ILogger](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface implementation;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser)  object with [ParserSettings](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/parsersettings) object.
 
-The following example shows how to receive the information via [ILogger](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface.
+The following example shows how to receive the information via [ILogger](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface.
 
 ```csharp
 try

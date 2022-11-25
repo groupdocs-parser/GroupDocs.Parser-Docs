@@ -8,12 +8,12 @@ keywords:
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-To extract data from PDF documents [parseForm](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseForm()) and [parseByTemplate(Template)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseByTemplate(com.groupdocs.parser.templates.Template)) methods are used. Both methods return [DocumentData](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData) object. For details, see [Working With Extracted Data]({{< ref "parser/java/developer-guide/advanced-usage/working-with-data-extracted-by-template.md" >}}).
+To extract data from PDF documents [parseForm](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseForm()) and [parseByTemplate(Template)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseByTemplate(com.groupdocs.parser.templates.Template)) methods are used. Both methods return [DocumentData](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData) object. For details, see [Working With Extracted Data]({{< ref "parser/java/developer-guide/advanced-usage/working-with-data-extracted-by-template.md" >}}).
 
 Here are the steps to extract data from PDF Form:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document
-*   Call [parseForm](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseForm()) method and obtain the [DocumentData](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData "class in com.groupdocs.parser.data") object;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document
+*   Call [parseForm](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseForm()) method and obtain the [DocumentData](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData "class in com.groupdocs.parser.data") object;
 *   Check if *data* isn't *null* (parse form is supported for the document);
 *   Iterate over field data to obtain form data.
 
@@ -65,13 +65,13 @@ static class PreliminaryRecord {
 }
 ```
 
-[parseByTemplate(Template)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseByTemplate(com.groupdocs.parser.templates.Template)) method is used to parse PDF document by a user-generated template. For details about templates, see [Working With Templates]({{< ref "parser/java/developer-guide/advanced-usage/working-with-templates.md" >}}).
+[parseByTemplate(Template)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseByTemplate(com.groupdocs.parser.templates.Template)) method is used to parse PDF document by a user-generated template. For details about templates, see [Working With Templates]({{< ref "parser/java/developer-guide/advanced-usage/working-with-templates.md" >}}).
 
 Here are the steps to parse data from PDF document by the user-generated template:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the existing document;
-*   Instantiate [Template](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.templates/Template) object with the user-generated template;
-*   Call [parseByTemplate(Template)](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseByTemplate(com.groupdocs.parser.templates.Template))) method and obtain [DocumentData](https://apireference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData) object;
+*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the existing document;
+*   Instantiate [Template](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.templates/Template) object with the user-generated template;
+*   Call [parseByTemplate(Template)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#parseByTemplate(com.groupdocs.parser.templates.Template))) method and obtain [DocumentData](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/DocumentData) object;
 *   Iterate over field data to obtain the document data.
 
 The following example shows how to parse data from PDF document by the user-generated template:

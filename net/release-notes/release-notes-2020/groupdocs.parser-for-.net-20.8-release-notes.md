@@ -173,8 +173,8 @@ This feature allows to get file format from FileType object.
 
 #### Public API changes
 
-* Added [Format](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetype/properties/format) property to [GroupDocs.Parser.Options.FileType](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) class
-* Added **Image** member to [GroupDocs.Parser.Options.FileFormat](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/fileformat) enum
+* Added [Format](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/filetype/properties/format) property to [GroupDocs.Parser.Options.FileType](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) class
+* Added **Image** member to [GroupDocs.Parser.Options.FileFormat](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/fileformat) enum
 
 #### Usage
 
@@ -192,7 +192,7 @@ This improvement allows to set dpi to generate previews.
 
 #### Public API changes
 
-* Added [Dpi](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions/properties/dpi) property to [GroupDocs.Parser.Options.PreviewOptions](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) class
+* Added [Dpi](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions/properties/dpi) property to [GroupDocs.Parser.Options.PreviewOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) class
 
 #### Usage
 
@@ -233,9 +233,9 @@ This improvement allows to generate previews for spreadsheets by tiles
 
 #### Public API changes
 
-* Added [PageRenderInfo](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/pagerenderinfo) class to [GroupDocs.Parser.Options](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options) namespace
-* Added [PreviewPageRender](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/previewpagerender) delegate to [GroupDocs.Parser.Options](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options) namespace
-* Added [PreviewPageRender](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions/properties/previewpagerender) property to [GroupDocs.Parser.Options.PreviewOptions](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) class
+* Added [PageRenderInfo](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/pagerenderinfo) class to [GroupDocs.Parser.Options](https://reference.groupdocs.com/parser/net/groupdocs.parser.options) namespace
+* Added [PreviewPageRender](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/previewpagerender) delegate to [GroupDocs.Parser.Options](https://reference.groupdocs.com/parser/net/groupdocs.parser.options) namespace
+* Added [PreviewPageRender](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions/properties/previewpagerender) property to [GroupDocs.Parser.Options.PreviewOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/previewoptions) class
 
 #### Usage
 

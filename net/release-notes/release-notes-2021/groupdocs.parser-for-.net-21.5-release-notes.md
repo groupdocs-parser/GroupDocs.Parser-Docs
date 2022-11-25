@@ -31,9 +31,9 @@ This improvement enhanced the work with text fields.
 
 #### Public API changes
 
-[GroupDocs.Parser.Data.FieldData](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/fielddata) public class was updated with changes as follows:
+[GroupDocs.Parser.Data.FieldData](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/fielddata) public class was updated with changes as follows:
 
-* Added [Text](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/fielddata/properties/text) property
+* Added [Text](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/fielddata/properties/text) property
 
 #### Usage
 
@@ -58,7 +58,7 @@ This feature allows to extract documents from TAR and RAR archives.
 
 #### Public API changes
 
-[GroupDocs.Parser.Options.FileType](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) public class was updated with changes as follows:
+[GroupDocs.Parser.Options.FileType](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) public class was updated with changes as follows:
 
 * Added ZIP and RAR readonly static fields.
 
@@ -95,7 +95,7 @@ This feature allows to extract documents from GZip and BZip2 archives.
 
 #### Public API changes
 
-[GroupDocs.Parser.Options.FileType](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) public class was updated with changes as follows:
+[GroupDocs.Parser.Options.FileType](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) public class was updated with changes as follows:
 
 * Added GZ and BZ2 readonly static fields.
 

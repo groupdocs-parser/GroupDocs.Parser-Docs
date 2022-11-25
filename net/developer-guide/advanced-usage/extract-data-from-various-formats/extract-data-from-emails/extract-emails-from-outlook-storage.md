@@ -8,7 +8,7 @@ keywords: Extract emails from Outlook
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-To extract emails from Outlook Storage [GetContainer](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method is used. This method returns the collection of [ContainerItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects.
+To extract emails from Outlook Storage [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method is used. This method returns the collection of [ContainerItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects.
 
 Outlook Storage item can contain the following metadata:
 
@@ -23,8 +23,8 @@ Outlook Storage container consists of email documents (msg files).
 
 Here are the steps to extract an email text from Outlook Storage:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetContainer](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and obtain collection of [ContainerItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method and obtain collection of [ContainerItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects;
 *   Check if *collection* isn't *null* (container extraction is supported for the document);
 *   Iterate through the collection and get container item names, sizes and obtain content.
 

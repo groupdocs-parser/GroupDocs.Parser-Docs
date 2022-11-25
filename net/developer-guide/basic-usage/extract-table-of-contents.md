@@ -12,26 +12,26 @@ GroupDocs.Parser allows to extract table of contents from Microsoft Word (DOC, D
 
 ## Extract table of contents
 
-To extract TOC from documents, please use the [GetToc](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method:
+To extract TOC from documents, please use the [GetToc](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method:
 
 ```csharp
 IEnumerable<TocItem> GetToc()
 
 ```
 
-[TocItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) class has the following members:
+[TocItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) class has the following members:
 
 | Member | Description |
 | --- | --- |
-| [Depth](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/depth) | The depth level. |
-| [PageIndex](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/pageindex) | The page index. |
-| [Text](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/text) | The text. |
-| TextReader [ExtractText()](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/extracttext) | Extract a text from the document to which [TocItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) object refers. For detail, see [Extract Text By Table of Contents Item]({{< ref "parser/net/developer-guide/advanced-usage/working-with-text/extract-text-by-table-of-contents-item.md" >}}) |
+| [Depth](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/depth) | The depth level. |
+| [PageIndex](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/pageindex) | The page index. |
+| [Text](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/properties/text) | The text. |
+| TextReader [ExtractText()](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/extracttext) | Extract a text from the document to which [TocItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) object refers. For detail, see [Extract Text By Table of Contents Item]({{< ref "parser/net/developer-guide/advanced-usage/working-with-text/extract-text-by-table-of-contents-item.md" >}}) |
 
 Here are the steps to extract extract table of contents from the document:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetToc](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method and obtain collection of [TocItem](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Call [GetToc](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method and obtain collection of [TocItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem) objects;
 *   Check if *collection* isn't *null* (table of contents  extraction is supported for the document);
 *   Iterate through the collection and get page index to extract a page text from the document.
 

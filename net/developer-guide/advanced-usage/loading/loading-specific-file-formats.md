@@ -18,8 +18,8 @@ In some cases it's required to specify the document format manually to guarantee
 
 Here are the steps to specify the document format for Markup document.
 
-*   Instantiate the [LoadOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/loadoptions) object and pass the document format in [LoadOptions(FileFormat)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/loadoptions/constructors/1) constructor;
-*   Create [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object and call any method.
+*   Instantiate the [LoadOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/loadoptions) object and pass the document format in [LoadOptions(FileFormat)](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/loadoptions/constructors/1) constructor;
+*   Create [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object and call any method.
 
 The following example shows how to specify the document format for Markup document:  
 

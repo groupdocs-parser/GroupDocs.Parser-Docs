@@ -8,7 +8,7 @@ keywords: extract images from document page area, extract images
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-GroupDocs.Parser provides the functionality to extract images from document page area by the [GetImages(PageAreaOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/getimages/methods/1) and [GetImages(int, PageAreaOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/getimages/methods/3) methods:
+GroupDocs.Parser provides the functionality to extract images from document page area by the [GetImages(PageAreaOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/getimages/methods/1) and [GetImages(int, PageAreaOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/getimages/methods/3) methods:
 
 ```csharp
 IEnumerable<PageImageArea> GetImages(PageAreaOptions options);
@@ -16,20 +16,20 @@ IEnumerable<PageImageArea> GetImages(int pageIndex, PageAreaOptions options);
 
 ```
 
-The methods return a collection of [PageImageArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea) objects:
+The methods return a collection of [PageImageArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea) objects:
 
 | Member | Description |
 | --- | --- |
-| [Page](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area. |
-| [Rectangle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
-| [FileType](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/properties/filetype) | The format of the image. |
-| [Rotation](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/properties/rotation) | The rotation angle of the image. |
-| Stream [GetImageStream()](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/methods/getimagestream) | Returns the image stream. |
-| Stream [GetImageStream(ImageOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/getimagestream/methods/1) | Returns the image stream in a different format. |
-| [Save(string)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/methods/save) | Saves the image to the file. |
-| [Save(string, ImageOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/save/methods/1) | Saves the image to the file in a different format. |
+| [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area. |
+| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
+| [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/properties/filetype) | The format of the image. |
+| [Rotation](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/properties/rotation) | The rotation angle of the image. |
+| Stream [GetImageStream()](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/methods/getimagestream) | Returns the image stream. |
+| Stream [GetImageStream(ImageOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/getimagestream/methods/1) | Returns the image stream in a different format. |
+| [Save(string)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/methods/save) | Saves the image to the file. |
+| [Save(string, ImageOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/save/methods/1) | Saves the image to the file in a different format. |
 
-[ImageOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/imageoptions) class is used to define the image format into which the image is converted. The following image formats are supported:
+[ImageOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/imageoptions) class is used to define the image format into which the image is converted. The following image formats are supported:
 
 *   Bmp
 *   Gif
@@ -37,17 +37,17 @@ The methods return a collection of [PageImageArea](https://apireference.groupdoc
 *   Png
 *   WebP
 
-[PageAreaOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) parameter is used to customize text areas extraction process. This class has the following members:
+[PageAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) parameter is used to customize text areas extraction process. This class has the following members:
 
 | Member | Description |
 | --- | --- |
-| [Rectangle](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions/properties/rectangle) | The rectangular area that contains a text area. |
+| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions/properties/rectangle) | The rectangular area that contains a text area. |
 
 Here are the steps to extract images from the upper-left corner:
 
-*   Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Instantiate [PageAreaOptions](https://apireference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) with the rectangular area;
-*   Call [GetImages(PageAreaOptions)](https://apireference.groupdocs.com/net/parser/groupdocs.parser.parser/getimages/methods/1) method and obtain collection of [PageImageArea](https://apireference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea) objects;
+*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
+*   Instantiate [PageAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) with the rectangular area;
+*   Call [GetImages(PageAreaOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/getimages/methods/1) method and obtain collection of [PageImageArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea) objects;
 *   Check if *collection* isn't *null* (images extraction is supported for the document);
 *   Iterate through the collection and get sizes, image types and image contents.
 

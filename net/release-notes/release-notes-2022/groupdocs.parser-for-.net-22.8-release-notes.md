@@ -31,9 +31,9 @@ This feature provides the ability to extract data from 7z archives.
 
 #### Public API changes
 
-[GroupDocs.Parser.Options.FileType](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) public class was updated with changes as follows:
+[GroupDocs.Parser.Options.FileType](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/filetype) public class was updated with changes as follows:
 
-* Added [SEVENZ](https://apireference.groupdocs.com/parser/net/groupdocs.parser.options/filetype/fields/sevenz) readonly field.
+* Added [SEVENZ](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/filetype/fields/sevenz) readonly field.
 
 #### Usage
 

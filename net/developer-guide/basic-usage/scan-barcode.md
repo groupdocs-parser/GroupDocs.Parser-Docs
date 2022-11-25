@@ -16,19 +16,19 @@ This article demonstrates how to implement the simplest scenario - read barcode 
 
 ## How to scan barcode in .Net with GroupDocs.Parser
 
-To scan barcode from your file, simply call [GetBarcodes](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getbarcodes) method:
+To scan barcode from your file, simply call [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getbarcodes) method:
 
 ```csharp
 IEnumerable<PageBarcodeArea> GetBarcodes();
 ```
 
-This method returns a collection of [PageBarcodeArea](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) objects.
+This method returns a collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) objects.
 
 Here are the steps to extract a barcode from file:
 
-- Instantiate [Parser](https://apireference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial file;
+- Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial file;
 - Check if the file supports barcodes extraction;
-- Call [GetBarcodes](https://apireference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getbarcodes) method and obtain collection of [PageBarcodeArea](https://apireference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) objects;
+- Call [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getbarcodes) method and obtain collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) objects;
 - Iterate through the collection and get a barcode value.
 
 The following example shows how to scan barcode:
