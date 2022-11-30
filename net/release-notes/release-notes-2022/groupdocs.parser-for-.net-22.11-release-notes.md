@@ -74,4 +74,4 @@ using (Parser parser = new Parser(Constants.SampleScan, settings))
 }
 ```
 
-See [OCR Usage Basics]({{< ref "ocr-usage-basics" >}}) for more details.
+See [OCR Usage Basics]({{< ref "../../developer-guide/advanced-usage/using-ocr/ocr-usage-basics.md" >}}) for more details.

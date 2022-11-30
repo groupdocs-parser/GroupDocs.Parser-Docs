@@ -2,7 +2,7 @@
 id: groupdocs-parser-for-java-22-3-release-notes
 url: parser/java/groupdocs-parser-for-java-22-3-release-notes
 title: GroupDocs.Parser for Java 22.3 Release Notes
-weight: 2
+weight: 3
 description: ""
 keywords: 
 productName: GroupDocs.Parser for Java
