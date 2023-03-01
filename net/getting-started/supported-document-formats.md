@@ -35,8 +35,8 @@ The following tables indicate the file formats from which GroupDocs.Parser for .
 
 | Document Type | Parse Document by Template | Extract Text (Accurate) | Extract Text (Raw) | Extract Structured Text and Formatted Text | Extract Text Areas | Extract Metadata | Extract Images | Extract Containers and Attachments | Parse Form Data | Extract Table of Contents | Scan Barcode |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| [XHTML](https://wiki.fileformat.com/web/xhtml/) <br/>Extensible Hypertext Markup Language File |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |   |   |   |   |   |
-| [MHTML](https://wiki.fileformat.com/web/mhtml/) <br/>MIME HTML File |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |   |   |   |   |   |
+| [XHTML](https://wiki.fileformat.com/web/xhtml/) <br/>Extensible Hypertext Markup Language File |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |  ![(tick)](/parser/net/images/check.png) |   |   |   |   |
+| [MHTML](https://wiki.fileformat.com/web/mhtml/) <br/>MIME HTML File |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |  ![(tick)](/parser/net/images/check.png) |   |   |   |   |
 | [MD](https://wiki.fileformat.com/word-processing/md/) <br/>Markdown |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) <br/>(Formatted Text is Not supported) |   |   |   |   |   |   |   |
 | [XML](https://wiki.fileformat.com/web/xml/) <br/>XML File |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |   |   |   |   |   |
 
@@ -44,9 +44,9 @@ The following tables indicate the file formats from which GroupDocs.Parser for .
 
 | Document Type | Parse Document by Template | Extract Text (Accurate) | Extract Text (Raw) | Extract Structured Text and Formatted Text | Extract Text Areas | Extract Metadata | Extract Images | Extract Containers and Attachments | Parse Form Data | Extract Table of Contents | Scan Barcode |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| [CHM](https://wiki.fileformat.com/web/chm/) <br/>Compiled HTML Help File |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |   |
-| [EPUB](https://wiki.fileformat.com/ebook/epub/) <br/>Digital E-Book File Format |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) |   |   |   | ![(tick)](/parser/net/images/check.png) |   |
-| [FB2](https://wiki.fileformat.com/ebook/fb2/) <br/>FictionBook 2.0 File |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |   |
+| [CHM](https://wiki.fileformat.com/web/chm/) <br/>Compiled HTML Help File |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) |   |   | ![(tick)](/parser/net/images/check.png)  |   |   | ![(tick)](/parser/net/images/check.png) |   |
+| [EPUB](https://wiki.fileformat.com/ebook/epub/) <br/>Digital E-Book File Format |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) |   |  |  ![(tick)](/parser/net/images/check.png) |   |   | ![(tick)](/parser/net/images/check.png) |   |
+| [FB2](https://wiki.fileformat.com/ebook/fb2/) <br/>FictionBook 2.0 File |   | ![(tick)](/parser/net/images/check.png) |   | ![(tick)](/parser/net/images/check.png) |  |  |  ![(tick)](/parser/net/images/check.png) |   |   |   |   |
 
 ## Speadsheet
 
