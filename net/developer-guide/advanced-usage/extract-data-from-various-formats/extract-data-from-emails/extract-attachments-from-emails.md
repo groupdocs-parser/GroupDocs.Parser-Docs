@@ -71,6 +71,36 @@ using(Parser parser = new Parser(filePath))
 }
 ```
 
+## Detect inline images
+
+To detect if image attachment is inline 'disposition' metadata is used. If it's present, it can take 'inline' or 'attachment' values.
+
+The following example shows how to detect inline attachments:
+
+```csharp
+// Create an instance of Parser class
+using(Parser parser = new Parser(filePath))
+{
+    // Extract attachments from the container
+    IEnumerable<ContainerItem> attachments = parser.GetContainer();
+    // Check if container extraction is supported
+    if(attachments == null)
+    {
+        Console.WriteLine("Container extraction isn't supported");
+    }
+
+    // Iterate over attachments
+    foreach(ContainerItem item in attachments)
+    {
+        // Check metadata for 'disposition' item
+        if(item.GetMetadataValue("disposition") == "inline") {
+		    // If it's 'inline' then print the file path
+		    Console.WriteLine(item.FilePath);
+        }
+    }
+}
+```
+
 ## More resources
 
 ### GitHub examples

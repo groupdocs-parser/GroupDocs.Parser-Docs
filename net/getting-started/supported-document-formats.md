@@ -102,12 +102,14 @@ The following tables indicate the file formats from which GroupDocs.Parser for .
 
 | Document Type | Parse Document by Template | Extract Text (Accurate) | Extract Text (Raw) | Extract Structured Text and Formatted Text | Extract Text Areas | Extract Metadata | Extract Images | Extract Containers and Attachments | Parse Form Data | Extract Table of Contents | Scan Barcode |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| [7Z](https://wiki.fileformat.com/compression/7z/) <br/>7Z File |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) | ![(tick)](/parser/net/images/check.png) |   |   |   |
+| [7Z](https://wiki.fileformat.com/compression/7z/)* <br/>7Z File |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) | ![(tick)](/parser/net/images/check.png) |   |   |   |
 | [ZIP](https://wiki.fileformat.com/compression/zip/) <br/>Zipped File |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) | ![(tick)](/parser/net/images/check.png) |   |   |   |
 | [RAR](https://wiki.fileformat.com/compression/rar/) <br/>Rar File |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) | ![(tick)](/parser/net/images/check.png) |   |   |   |
 | [TAR](https://wiki.fileformat.com/compression/tar/) <br/>Tar File |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) | ![(tick)](/parser/net/images/check.png) |   |   |   |
 | [GZ](https://wiki.fileformat.com/compression/gz/) <br/>GZip file |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) | ![(tick)](/parser/net/images/check.png) |   |   |   |
 | [BZ2](https://wiki.fileformat.com/compression/bz2/) <br/>BZip2 File |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) | ![(tick)](/parser/net/images/check.png) |   |   |   |
+
+\* Encrypted 7-zip archives are not supported.
 
 ## Image
 
