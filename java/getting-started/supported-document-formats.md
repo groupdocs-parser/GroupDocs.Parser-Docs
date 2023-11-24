@@ -49,6 +49,8 @@ The following tables indicate the file formats from which GroupDocs.Parser for J
 | [CHM](https://wiki.fileformat.com/web/chm/) <br/>Compiled HTML Help File |   | ![(tick)](/parser/java/images/check.png) |   | ![(tick)](/parser/java/images/check.png) |   |   | ![(tick)](/parser/java/images/check.png)  |   |   | ![(tick)](/parser/java/images/check.png) |   |
 | [EPUB](https://wiki.fileformat.com/ebook/epub/) <br/>Digital E-Book File Format |   | ![(tick)](/parser/java/images/check.png) |   | ![(tick)](/parser/java/images/check.png) |   |  |  ![(tick)](/parser/java/images/check.png) |   |   | ![(tick)](/parser/java/images/check.png) |   |
 | [FB2](https://wiki.fileformat.com/ebook/fb2/) <br/>FictionBook 2.0 File |   | ![(tick)](/parser/java/images/check.png) |   | ![(tick)](/parser/java/images/check.png) |  |  |  ![(tick)](/parser/java/images/check.png) |   |   |   |   |
+| [MOBI](https://docs.fileformat.com/ebook/mobi/) <br/>Mobipocket |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |   |   |   |   |   |
+| [AZW3](https://docs.fileformat.com/ebook/azw3/) <br/>Kindle Format 8 |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |   |   |   |   |   |
 
 ## Speadsheet
 
