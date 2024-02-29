@@ -37,6 +37,15 @@ You can follow the steps below to reference GroupDocs.Parser for .NET using the 
 
 ![](/parser/net/images/installation_2.png)
 
+Starting with 24.2 version, GroupDocs.Parser is divided into two packages - for .NET Framework and .NET Standard. GroupDocs.Parser for .NET Framework package is recommended for using with .NET Framework projects. GroupDocs.Parser package is designed to work with .NET projects. You need to [configure binding redirection](https://stackoverflow.com/questions/43365736/assembly-binding-redirect-how-and-why) to make it work with .NET Framework. For regular .NET Framework project it's required to [enable automatic binding redirection](https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection). For unit tests projects you also need to specify `GenerateBindingRedirectsOutputType` in the project file:
+
+```
+<PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+</PropertyGroup>
+```
+
 ## Install from official GroupDocs website
 
 You can follow the steps below to reference GroupDocs.Parser for .NET downloaded from official website Downloads section:
