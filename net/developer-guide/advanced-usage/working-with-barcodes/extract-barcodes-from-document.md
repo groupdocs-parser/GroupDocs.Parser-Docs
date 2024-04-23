@@ -23,6 +23,8 @@ This method returns a collection of [PageBarcodeArea](https://reference.groupdoc
 | [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
 | [Value](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/properties/value) | A string value that represents a value of the barcode page area. |
 | [CodeTypeName](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/properties/codetypename) | A string value than represents a type name of the barcode. |
+| [Confidence](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/confidence/) | The level of confidence of the parsered barcode. |
+| [Angle](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/angle/) | The angle of the barcode. |
 
 Here are the steps to extract all barcodes from the whole document:
 

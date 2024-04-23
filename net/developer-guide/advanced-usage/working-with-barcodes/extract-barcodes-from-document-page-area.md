@@ -23,12 +23,14 @@ This method returns a collection of [PageBarcodeArea](https://reference.groupdoc
 | [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
 | [Value](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/properties/value) | A string value that represents a value of the barcode page area. |
 | [CodeTypeName](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/properties/codetypename) | A string value than represents a type name of the barcode. |
+| [Confidence](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/confidence/) | The level of confidence of the parsered barcode. |
+| [Angle](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/angle/) | The angle of the barcode. |
 
 Here are the steps to extract all barcodes from the whole document:
 
 - Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
 - Check if the document supports barcodes extraction;
-- Instantiate [PageAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) with the rectangular area;
+- Instantiate [BarcodeOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/BarcodeOptions) with the rectangular area;
 - Call [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/1) method and obtain collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) objects;
 - Iterate through the collection and get a barcode value.
 
@@ -46,7 +48,7 @@ using (Parser parser = new Parser(Constants.SamplePdfWithBarcodes))
     }
 
     // Create the options which are used for barcodes extraction
-    PageAreaOptions options = new PageAreaOptions(new Rectangle(new Point(590, 80), new Size(150, 150)));
+    BarcodeOptions options = new BarcodeOptions(new Rectangle(new Point(590, 80), new Size(150, 150)));
     // Extract barcodes from the upper-right corner.
     IEnumerable<PageBarcodeArea> barcodes = parser.GetBarcodes(options);
 
