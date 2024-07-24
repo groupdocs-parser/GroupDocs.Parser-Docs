@@ -10,7 +10,7 @@ hideChildren: False
 ---
 GroupDocs.Parser for .NET 24.6 provides the ability to extract a text from images and PDFs (which don't contain a plain text) for English language.
 
-{{< alert style="info" >}}This functionality works only on .NET Core 3.1 and later versions - .NET Framework isn't supported.{{< /alert >}}
+{{< alert style="info" >}}To use the OCR functionality in .NET Framework set PlatformTarget to x64. If downloadable (msi or zip) version of GroupDocs.Parser is used, see readme.txt file for the additional information.{{< /alert >}}
 
 The following example shows how to extract a text from images and PDFs:
 

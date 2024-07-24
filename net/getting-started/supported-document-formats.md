@@ -117,14 +117,14 @@ The following tables indicate the file formats from which GroupDocs.Parser for .
 
 | Document Type | Parse Document by Template | Extract Text (Accurate) | Extract Text (Raw) | Extract Structured Text and Formatted Text | Extract Text Areas | Extract Metadata | Extract Images | Extract Containers and Attachments | Parse Form Data | Extract Table of Contents | Scan Barcode |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| [BMP](https://wiki.fileformat.com/image/bmp/)<br/>Bitmap Image file |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
+| [BMP](https://wiki.fileformat.com/image/bmp/)<br/>Bitmap Image file |   | ![(tick)](/parser/net/images/check.png)  |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
 | [GIF](https://wiki.fileformat.com/image/gif/)<br/>Graphical Interchange Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
 | [JP2](https://wiki.fileformat.com/image/jp2/)<br/>JPEG 2000 |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
-| [JPG, JPEG](https://wiki.fileformat.com/image/jpeg/)<br/>JPEG Image file  |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
-| [PNG](https://wiki.fileformat.com/image/png/)<br/>Portable Network Graphics |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
-| [TIF, TIFF](https://wiki.fileformat.com/image/tiff/)<br/>Tagged Image File Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
+| [JPG, JPEG](https://wiki.fileformat.com/image/jpeg/)<br/>JPEG Image file  |   | ![(tick)](/parser/net/images/check.png)  |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
+| [PNG](https://wiki.fileformat.com/image/png/)<br/>Portable Network Graphics |   | ![(tick)](/parser/net/images/check.png)  |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
+| [TIF, TIFF](https://wiki.fileformat.com/image/tiff/)<br/>Tagged Image File Format |   | ![(tick)](/parser/net/images/check.png)  |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
 | [DICOM](https://wiki.fileformat.com/image/dcm/)<br/>DICOM (Digital Imaging and Communications in Medicine) |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
-| [DJVU](https://wiki.fileformat.com/image/djvu/)<br/>DjVu File Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
+| [DJVU](https://wiki.fileformat.com/image/djvu/)<br/>DjVu File Format |   | ![(tick)](/parser/net/images/check.png) |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
 | [EMF](https://wiki.fileformat.com/image/emf/)<br/>Enhanced metafile |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
 | [J2K](https://wiki.fileformat.com/image/j2k/)<br/>JPEG 2000 |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
 | [PS](https://docs.fileformat.com/page-description-language/ps/)<br/>PostScript File Format |   |   |   |   |   |   |   |   |   |   | ![(tick)](/parser/net/images/check.png) |
