@@ -340,6 +340,95 @@ TemplateItem[] templateItems = new TemplateItem[]
 Template template = new Template(templateItems); 
 ```
 
+## Template serialization
+
+Since GroupDocs.Parser for .NET 23.12 it's possible to load templates from XML files instead of creating them in the code.
+
+```c#
+// Load a document template from the file
+Template template = Template.Load("template.xml");
+
+// Create an instance of Parser class
+using (Parser parser = new Parser(Constants.SamplePdfWithBarcodes))
+{
+    // Parse the document by the template
+    DocumentData data = parser.ParseByTemplate(template);
+
+    // Print all extracted data
+    for (int i = 0; i < data.Count; i++)
+    {
+        // Print the field's name and text
+        Console.WriteLine(data[i].Name + ": " + data[i].Text);
+    }
+}
+```
+
+Templates can be saved from the code:
+
+```C#
+// Create a collection of template items
+TemplateItem[] templateItems = new TemplateItem[]
+{
+    // ... items were omitted, see samples above
+};
+
+// Create a document template
+Template template = new Template(templateItems);
+// Save the document template to the file
+template.Save("template.xml");
+```
+
+You can also create templates in any text editor. XML DTD file is the following:
+
+```XML
+<!ELEMENT template (items)>
+<!ATTLIST template version CDATA #REQUIRED>
+<!ATTLIST template rectangleTolerance CDATA #IMPLIED>
+
+<!ELEMENT items (barcode|field|table)*>
+
+<!ELEMENT barcode EMPTY>
+<!ATTLIST barcode name CDATA #REQUIRED>
+<!ATTLIST barcode pageIndex CDATA #IMPLIED>
+<!ATTLIST barcode position CDATA #REQUIRED>
+<!ATTLIST barcode size CDATA #REQUIRED>
+
+<!ELEMENT field (fixed|regex|link)>
+<!ATTLIST field name CDATA #REQUIRED>
+<!ATTLIST field pageIndex CDATA #IMPLIED>
+
+<!ELEMENT fixed EMPTY>
+<!ATTLIST fixed position CDATA #REQUIRED>
+<!ATTLIST fixed size CDATA #REQUIRED>
+
+<!ELEMENT regex EMPTY>
+<!ATTLIST regex expression CDATA #REQUIRED>
+<!ATTLIST regex matchCase CDATA #IMPLIED>
+
+<!ELEMENT link EMPTY>
+<!ATTLIST link fieldName CDATA #REQUIRED>
+<!ATTLIST link searchArea CDATA #REQUIRED>
+<!ATTLIST link edges CDATA #REQUIRED>
+<!ATTLIST link autoScale CDATA #IMPLIED>
+
+<!ELEMENT table (layout|parameters)>
+<!ATTLIST table name CDATA #REQUIRED>
+<!ATTLIST table pageIndex CDATA #IMPLIED>
+
+<!ELEMENT layout EMPTY>
+<!ATTLIST layout verticalSeparators CDATA #REQUIRED>
+<!ATTLIST layout horizontalSeparators CDATA #REQUIRED>
+
+<!ELEMENT parameters EMPTY>
+<!ATTLIST parameters position CDATA #REQUIRED>
+<!ATTLIST parameters size CDATA #REQUIRED>
+<!ATTLIST parameters verticalSeparators CDATA #IMPLIED>
+<!ATTLIST parameters hasMergedCells CDATA #IMPLIED>
+<!ATTLIST parameters minRowCount CDATA #IMPLIED>
+<!ATTLIST parameters minColumnCount CDATA #IMPLIED>
+<!ATTLIST parameters minVerticalSpace CDATA #IMPLIED>
+```
+
 ## More resources
 
 ### GitHub examples
