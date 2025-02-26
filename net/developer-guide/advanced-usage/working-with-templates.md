@@ -340,6 +340,31 @@ TemplateItem[] templateItems = new TemplateItem[]
 Template template = new Template(templateItems); 
 ```
 
+## Images and scanned PDFs
+
+Starting from version 25.2, GroupDocs.Parser for .NET supports template-based parsing for images and scanned PDF documents. By default, it uses built-in OCR, which can be [replaced](https://docs.groupdocs.com/parser/net/use-ocr-connector/) with any other OCR engine. OCR is automatically enabled for images, but for scanned PDFs, you need to use methods with ParseByTemplateOptions.
+
+```C#
+// Load a document template from the file
+Template template = Template.Load("template.xml");
+
+// Create an instance of Parser class
+using (Parser parser = new Parser(Constants.SamplePdfWithBarcodes))
+{
+    // Parse the document by the template (force OCR usage)
+    DocumentData data = parser.ParseByTemplate(template, new ParseByTemplateOptions(true));
+
+    // Print all extracted data
+    for (int i = 0; i < data.Count; i++)
+    {
+        // Print the field's name and text
+        Console.WriteLine(data[i].Name + ": " + data[i].Text);
+    }
+}
+```
+
+This functionality has some limitations: only simple fields, tables, and barcodes are supported. Other field types will be ignored.
+
 ## Template serialization
 
 Since GroupDocs.Parser for .NET 23.12 it's possible to load templates from XML files instead of creating them in the code.
