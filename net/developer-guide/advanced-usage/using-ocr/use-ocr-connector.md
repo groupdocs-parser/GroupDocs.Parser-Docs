@@ -50,9 +50,7 @@ If this property returns true, then you need to implement the RecognizeText meth
 The OCR settings are represented by the [OcrOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions/) class and may include:
 
 * [OcrEventHandler](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions/handler) for sending messages that occur during document processing.
-
 * A [rectangular area](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions/rectangle) of the image from which text needs to be extracted; in this case, there's no need to extract text from the entire image, limiting it to the specified area.
-
 * A [flag](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions/usespellchecker) for using spell checking (if supported by the OCR).
 
 The IsTextAreasSupported property answers the question: Can the connector extract text areas? Text areas are rectangles on a page that contain text. Typically, these areas represent individual words (this assumption is the basis for the template-based parsing functionality). If the property returns false, it means this functionality is not supported, and no further action is required.
