@@ -8,28 +8,13 @@ keywords: OCR, extract text from images
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-GroupDocs.Parser doesn't contain OCR functionality as a part of its distributable. Instead of it API for integrating any paid or free OCR solution is provided. See [this article]({{< ref "use-ocr-connector" >}}) for details how to integrate OCR soluton to GroupDocs.Parser. 
-
-To use OCR functionality, Parser object must be properly initialized:
-
-* Instantiate [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object with the instance of class that implements OCR functionality;
-* Instantiate [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) object with [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object.
-
-The following example shows how to create an instance of [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) class with Aspose.OCR on-premise API connector:
-
-```C#
-// Create an instance of ParserSettings class with the implementation of Aspose.OCR on-premise API connector
-ParserSettings settings = new ParserSettings(new AsposeOCR());
-// Create an instance of Parser class with the parser settings
-Parser parser = new Parser(fileName, settins);
-```
+GroupDocs.Parser for .NET provides the ability to extract a text from images and PDFs (which don't contain a plain text) for English language.
 
 [GetText](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettext#gettext_1) and [GetTextAreas](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettextareas#gettextareas_1) methods from [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) class are used to recognize a text from images.
 
 To extract a text from image files or non-text PDF documents GetText method is used:
 
-* Instantiate [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object with the instance of class that implements OCR functionality;
-* Instantiate [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) object with [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object;
+* Instantiate [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) object;
 * Instantiate [TextOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/textoptions/) object with useOcr = true;
 * Call [GetText](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettext#gettext_1)(TextOptions) method with TextOptions parameter and obtain TextReader object;
 * Check if the reader isn’t null (text extraction is supported for the document);
@@ -38,11 +23,8 @@ To extract a text from image files or non-text PDF documents GetText method is u
 The following example shows how to extract a text from the image file:
 
 ```C#
-// Create an instance of ParserSettings class with OCR Connector
-ParserSettings settings = new ParserSettings(new AsposeOcrOnPremise());
-
-// Create an instance of Parser class with settings
-using (Parser parser = new Parser(Constants.SampleScan, settings))
+// Create an instance of Parser class
+using (Parser parser = new Parser(Constants.SampleScan))
 {
     // Create an instance of TextOptions to use OCR
     TextOptions options = new TextOptions(false, true);
@@ -57,8 +39,7 @@ using (Parser parser = new Parser(Constants.SampleScan, settings))
 
 To extract text areas from image files or non-text PDF documents GetTextAreas method is used:
 
-* Instantiate [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object with the instance of class that implements OCR functionality;
-* Instantiate [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) object with [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object;
+* Instantiate [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) object;
 * Instantiate [PageTextAreaOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/pagetextareaoptions) object with useOcr = true;
 * Call [GetTextAreas](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettextareas/#gettextareas_1)(PageTextAreaOptions) method and obtain the collection of [PageTextArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagetextarea) objects;
 * Check if the collection isn’t null (text areas extraction is supported for the document);
@@ -67,11 +48,8 @@ To extract text areas from image files or non-text PDF documents GetTextAreas me
 The following example shows how to extract text areas from the image file:
 
 ```C#
-// Create an instance of ParserSettings class with OCR Connector
-ParserSettings settings = new ParserSettings(new AsposeOcrOnPremise());
-
-// Create an instance of Parser class with settings
-using (Parser parser = new Parser(Constants.SampleScan, settings))
+// Create an instance of Parser class
+using (Parser parser = new Parser(Constants.SampleScan))
 {
     // Create an instance of PageTextAreaOptions to use OCR
     PageTextAreaOptions options = new PageTextAreaOptions(true);
@@ -113,11 +91,8 @@ To restrict an area of the image for the text recognition [OcrOptions](https://r
 The following example shows how to restrict the text recognition by the rectangular area:
 
 ```C#
-// Create an instance of ParserSettings class with OCR Connector
-ParserSettings settings = new ParserSettings(new AsposeOcrOnPremise());
-
-// Create an instance of Parser class with settings
-using (Parser parser = new Parser(Constants.SampleScan, settings))
+// Create an instance of Parser class
+using (Parser parser = new Parser(Constants.SampleScan))
 {
     // Create an instance of OcrOptions to set a rectangle
     OcrOptions ocrOptions = new OcrOptions(new Data.Rectangle(0, 0, 400, 200));
@@ -140,11 +115,8 @@ To restrict an area of the image for the text recognition [OcrOptions](https://r
 The following example shows how to handle warning messages:
 
 ```C#
-// Create an instance of ParserSettings class with OCR Connector
-ParserSettings settings = new ParserSettings(new AsposeOcrOnPremise());
-
-// Create an instance of Parser class with settings
-using (Parser parser = new Parser(Constants.SampleScan, settings))
+// Create an instance of Parser class
+using (Parser parser = new Parser(Constants.SampleScan))
 {
     // Create an instance of OcrEventHandler to handle warnings
     OcrEventHandler handler = new OcrEventHandler();

@@ -8,134 +8,63 @@ keywords: OCR, extract text from images
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-[OcrConnectorBase](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocrconnectorbase) class provides the interface to integrate any OCR solution to GroupDocs.Parser. This class has the following members:
+GroupDocs.Parser provides out-of-the-box text recognition from images and scanned PDFs in English. This requires no additional setup; you just need to explicitly request OCR when extracting text or parsing a document. Moreover, for image files, even this is not necessary—OCR will be automatically applied during text extraction without any extra reminders.
 
-| Member | Description |
-| --- | --- |
-| RecognizeText | Extracts a text from the provided image stream. It is used when [GetText](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettext#gettext_1) method from Parser class is called. |
-| RecognizeTextAreas | Extracts text areas from the provided image stream. It is used when [GetTextAreas](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettextareas#gettextareas_1) method from Parser class is called. |
+If the capabilities of the built-in OCR are not sufficient, you can use the mechanism to connect a third-party OCR. To do this, you need to write your own OCR connector and pass it when creating the Parser class:
 
-Class with OCR integration must implement at least one of these methods (depends on the required functionality).
+* Instantiate [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object with the instance of class that implements OCR functionality;
+* Instantiate [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) object with [ParserSettings](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/parsersettings) object.
 
-## Extract a text from the image
-
-[RegognizeText](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocrconnectorbase/recognizetext) method has the following signature: 
+The following example shows how to create an instance of [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) class with the custom connector:
 
 ```C#
-string RecognizeText(Stream imageStream, int pageIndex, OcrOptions options)
+// Create an instance of ParserSettings class with the custom ocr connector
+ParserSettings settings = new ParserSettings(new YourCustomOcrConnector());
+// Create an instance of Parser class with the parser settings
+Parser parser = new Parser(fileName, settins);
 ```
 
-| Parameter | Description |
-| --- | --- |
-| imageStream | An image from which the text must be extracted. |
-| pageIndex | A zero-based index of the page in the document (in the case when the image represents the document page). |
-| options | Is used to define a rectangular area which restricts the area of the image and [OcrEventHandler](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocreventhandler) object to handle warnings while the text recognition. |
-
-The following example shows how to implement text recognition by using Aspose.OCR on-premise API:
+All OCR connectors inherit from the base class [OcrConnectorBase](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocrconnectorbase/) (including the built-in one in the parser). This class contains two properties and three methods:
 
 ```C#
-public override string RecognizeText(Stream imageStream, int pageIndex, OcrOptions options)
+public abstract class OcrConnectorBase
 {
-    // Create an instance of Aspose OCR API
-    AsposeOcr api = new AsposeOcr();
+    public virtual bool IsTextSupported { get; }
 
-    // Convert the image stream into the memory stream
-    using (MemoryStream memoryStream = GetMemoryStream(imageStream))
-    {
-        // Create an instance of RecognitionSettings
-        RecognitionSettings settings = new RecognitionSettings();
+    public virtual bool IsTextAreasSupported { get; }
 
-        // Check if the rectangle is set
-        if (options != null && options.Rectangle != null)
-        {
-            List<Aspose.Drawing.Rectangle> areas = new List<Aspose.Drawing.Rectangle>();
-            areas.Add(new Aspose.Drawing.Rectangle(
-                (int)options.Rectangle.Left,
-                (int)options.Rectangle.Top,
-                (int)options.Rectangle.Size.Width,
-                (int)options.Rectangle.Size.Height));
+    public virtual string RecognizeText(Stream imageStream, OcrOptions options);
 
-            // Set recognition areas
-            settings.RecognitionAreas = areas;
-        }
+    public virtual IList<PageTextArea> RecognizeTextAreas(Stream imageStream, Page page, OcrOptions options);
 
-        // Perform the text recognition
-        RecognitionResult result = api.RecognizeImage(memoryStream, settings);
-
-        // Check if the handler is set
-        if (options != null && options.Handler != null)
-        {
-            // Send all recognition warnings
-            options.Handler.OnWarnings(pageIndex, result.Warnings);
-        }
-
-        // Return a recognized text
-        return result.RecognitionText;
-    }
+    public virtual IList<PageTextArea> RecognizeTextAreas(Stream imageStream, IEnumerable<Rectangle> rectangles, string allowedSymbols, Page page, OcrOptions options);
 }
 ```
 
-## Extract text areas from the image
+Parser separates text recognition into two independent workflows: plain text and text areas. The first one handles extracting text from a document, which can be obtained, for example, via Parser.GetText. Text areas are used in the template-based parsing functionality. These two workflows are independent of each other, and when creating a custom connector, you only need to implement the required functionality.
 
-[RecognizeTextAreas](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocrconnectorbase/recognizetextareas) method has the following signature:
+The IsTextSupported property answers the question: Can the connector extract plain text? If it returns false, there's no need to override the RecognizeText method, as Parser won't call it and will immediately return null when text is requested.
 
-```C#
-IList<PageTextArea> RecognizeTextAreas(Stream imageStream, int pageIndex, Size pageSize, OcrOptions options)
-```
+If this property returns true, then you need to implement the RecognizeText method. It takes two parameters: a stream with the image (imageStream) and OCR settings (options).
 
-| Parameter | Description |
-| --- | --- |
-| imageStream | An image from which the text must be extracted. |
-| pageIndex | A zero-based index of the page in the document (in the case when the image represents the document page). |
-| pageSize | A size of the image (in the case when the image represents the document page - the size of the page). |
-| options | Is used to define a rectangular area which restricts the area of the image and [OcrEventHandler](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocreventhandler) object to handle warnings while the text recognition. |
+The OCR settings are represented by the [OcrOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions/) class and may include:
 
-The following example shows how to implement text areas recognition by using Aspose.OCR on-premise API:
+* [OcrEventHandler](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions/handler) for sending messages that occur during document processing.
 
-```C#
-public override IList<PageTextArea> RecognizeTextAreas(Stream imageStream, int pageIndex, Data.Size pageSize, OcrOptions options)
-{
-    // Create an instance of Aspose OCR API
-    AsposeOcr api = new AsposeOcr();
+* A [rectangular area](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions/rectangle) of the image from which text needs to be extracted; in this case, there's no need to extract text from the entire image, limiting it to the specified area.
 
-    // Convert the image stream into the memory stream
-    using (MemoryStream memoryStream = GetMemoryStream(imageStream))
-    {
-        // Create recognition settings and set detect areas
-        RecognitionSettings settings = new RecognitionSettings(detectAreas: true);
+* A [flag](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions/usespellchecker) for using spell checking (if supported by the OCR).
 
-        // Check if the rectangle is set
-        if (options != null && options.Rectangle != null)
-        {
-            List<Aspose.Drawing.Rectangle> areas = new List<Aspose.Drawing.Rectangle>();
-            areas.Add(new Aspose.Drawing.Rectangle(
-                (int)options.Rectangle.Left,
-                (int)options.Rectangle.Top,
-                (int)options.Rectangle.Size.Width,
-                (int)options.Rectangle.Size.Height));
+The IsTextAreasSupported property answers the question: Can the connector extract text areas? Text areas are rectangles on a page that contain text. Typically, these areas represent individual words (this assumption is the basis for the template-based parsing functionality). If the property returns false, it means this functionality is not supported, and no further action is required.
 
-            // Set recognition areas
-            settings.RecognitionAreas = areas;
-        }
+If this property returns true, then you need to implement the RecognizeTextAreas methods. In addition to the image and OCR settings, these methods receive the document's page class and, in a more advanced version, a list of rectangular areas to recognize and a list of allowed characters.
 
-        // Perform the text recognition 
-        RecognitionResult r = api.RecognizeImage(memoryStream, settings);
+Both methods should return a collection of PageTextArea objects. These objects contain the document's page, the text, and the rectangular area on the page where the text was found. You can pass the page parameter as the page.
 
-        // Check if the handler is set
-        if (options != null && options.Handler != null)
-        {
-            // Send all recognition warnings
-            options.Handler.OnWarnings(pageIndex, r.Warnings);
-        }
+The coordinates of the rectangles are calculated based on the Rectangle value from OcrOptions. This means that if the rectangle from the OCR settings has the top-left corner at (10; 10), and the text on the page has coordinates (12; 15), then you should return (2; 5). In other words, the image is first cropped to the rectangle, and then OCR is performed.
 
-        // Create a page object. The pageIndex parameter represents the page index of the document; for images it's always zero.
-        Page page = new Page(pageIndex, pageSize);
+It's important to note that these two methods are independent, and you need to implement both of them.
 
-        // Combibe rectangle and text collections to produce PageTextArea collection
-        return r.RecognitionAreasRectangles
-            .Zip(r.RecognitionAreasText, (rect, text) => new { Rect = rect, Text = text })
-            .Select(x => new PageTextArea(x.Text, page, new Data.Rectangle(x.Rect.Left, x.Rect.Top, x.Rect.Right, x.Rect.Bottom)))
-            .ToList();
-    }
-}
-```
+The list of rectangular areas specifies the coordinates within the already cropped image from which text needs to be extracted. This functionality is used in template-based parsing for simple fields—the user defines a field using a rectangle. The list of these rectangles is then sent to the connector to extract text data based on these coordinates.
+
+The list of allowed characters is a string containing the characters that Parser expects to see in these areas. This can be used, for example, to extract only digits (if there is ambiguity between "O" and "0," the system will favor the latter) or to explicitly define decimal separators (e.g., specifying a dot instead of a comma) and so on. Currently, this functionality is not supported, and the parameter has been added for potential expansion in future releases.
