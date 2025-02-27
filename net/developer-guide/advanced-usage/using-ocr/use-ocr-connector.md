@@ -57,11 +57,11 @@ The OCR settings are represented by the [OcrOptions](https://reference.groupdocs
 
 The IsTextAreasSupported property answers the question: Can the connector extract text areas? Text areas are rectangles on a page that contain text. Typically, these areas represent individual words (this assumption is the basis for the template-based parsing functionality). If the property returns false, it means this functionality is not supported, and no further action is required.
 
-If this property returns true, then you need to implement the RecognizeTextAreas methods. In addition to the image and OCR settings, these methods receive the document's page class and, in a more advanced version, a list of rectangular areas to recognize and a list of allowed characters.
+If this property returns true, then you need to implement the RecognizeTextAreas methods. In addition to the image and OCR settings, these methods receive the [document's page class](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/page) and, in a more advanced version, a list of rectangular areas to recognize and a list of allowed characters.
 
-Both methods should return a collection of PageTextArea objects. These objects contain the document's page, the text, and the rectangular area on the page where the text was found. You can pass the page parameter as the page.
+Both methods should return a collection of [PageTextArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagetextarea) objects. These objects contain the document's page, the text, and the rectangular area on the page where the text was found. You can pass the page parameter as the page.
 
-The coordinates of the rectangles are calculated based on the Rectangle value from OcrOptions. This means that if the rectangle from the OCR settings has the top-left corner at (10; 10), and the text on the page has coordinates (12; 15), then you should return (2; 5). In other words, the image is first cropped to the rectangle, and then OCR is performed.
+The coordinates of the rectangles are calculated based on the Rectangle value from [OcrOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/ocroptions). This means that if the rectangle from the OCR settings has the top-left corner at (10; 10), and the text on the page has coordinates (12; 15), then you should return (2; 5). In other words, the image is first cropped to the rectangle, and then OCR is performed.
 
 It's important to note that these two methods are independent, and you need to implement both of them.
 
