@@ -8,7 +8,9 @@ keywords: DOCX, DOCM, DOC, DOT, DOTM, XLS, XLSX, PDF, PPT, JPG, PNG, HTML, EML
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 ---
-The following tables indicate the file formats from which GroupDocs.Parser for .NET can extract data.
+The following tables indicate the file formats from which GroupDocs.Parser for .NET can extract data. You can use the input below to filter supported formats by extension.
+
+{{< table-filter placeholder="Start typing to find file format" forumUrl="https://forum.groupdocs.com/c/parser/17">}}
 
 ## Word Processing
 

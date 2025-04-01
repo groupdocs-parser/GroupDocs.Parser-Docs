@@ -8,9 +8,10 @@ keywords:
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-## Supported File Formats
 
-The following tables indicate the file formats from which GroupDocs.Parser for Java can extract data.
+The following tables indicate the file formats from which GroupDocs.Parser for Java can extract data. You can use the input below to filter supported formats by extension.
+
+{{< table-filter placeholder="Start typing to find file format" forumUrl="https://forum.groupdocs.com/c/parser/17">}}
 
 ## Word Processing
 
