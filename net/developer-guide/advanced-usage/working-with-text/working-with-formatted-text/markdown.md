@@ -7,6 +7,7 @@ description: "This article explains that how to extract Markdown formatted text 
 keywords: extract Markdown formatted text, extract Markdown formatted text from document page
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 The following example shows how to extract Markdown formatted text:
 

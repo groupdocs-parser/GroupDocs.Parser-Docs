@@ -7,6 +7,7 @@ description: "Learn how to Load document from url."
 keywords: Load document from url, extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 
 To avoid the overhead of saving documents to the disk, GroupDocs.Parser enables to extract data from url directly.

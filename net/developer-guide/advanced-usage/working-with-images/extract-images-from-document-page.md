@@ -7,6 +7,7 @@ description: "This article explains that how to extract images from document pag
 keywords: extract images from document page, extract images
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract images from document page by the [GetImages(int)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/getimages/methods/2) method:
 

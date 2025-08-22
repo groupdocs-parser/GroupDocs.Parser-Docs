@@ -7,6 +7,7 @@ description: "This article explains that how to extract plain formatted text fro
 keywords: extract plain formatted text, extract plain formatted text from document page
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 The following example shows how to extract plain formatted text:
 

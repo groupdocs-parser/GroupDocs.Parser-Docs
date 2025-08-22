@@ -7,6 +7,7 @@ description: "To extract a text from HTML documents GetText method is used. This
 keywords: extract a text, extract a text from HTML
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract a text from HTML documents [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method is used. This method allows to extract a text from the entire document. Pagination and raw mode is not supported for emails.
 

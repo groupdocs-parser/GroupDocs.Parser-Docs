@@ -7,6 +7,7 @@ description: "This article shows how to get the basic document info."
 keywords: Document Info, Parser, C#, CSharp, .Net, dotNet
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to get the basic document info by the [GetDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method:
 

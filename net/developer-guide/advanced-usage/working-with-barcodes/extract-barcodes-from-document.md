@@ -7,6 +7,7 @@ description: "This article explains that how to extract barcodes from documents.
 keywords: extract barcodes
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 
 GroupDocs.Parser provides the functionality to extract barcodes from documents by the [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getbarcodes) method:

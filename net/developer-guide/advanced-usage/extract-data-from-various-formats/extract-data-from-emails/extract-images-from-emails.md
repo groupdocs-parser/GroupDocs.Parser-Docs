@@ -7,6 +7,7 @@ description: "Extract images from emails, by default images are extracted with i
 keywords: extract images, extract images from emails
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract images from emails [GetImages](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getimages) method is used. By default images are extracted with its original format. With using [ImageOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/imageoptions) class it is possible to extract images from emails as bmp, gif, jpeg, png and webp formats.
 

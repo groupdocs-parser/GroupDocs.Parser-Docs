@@ -7,6 +7,7 @@ description: "Learn how to handle loading of external resources."
 keywords: open HTML handle loading of external resources documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to handle loading of HTML external resources.
 

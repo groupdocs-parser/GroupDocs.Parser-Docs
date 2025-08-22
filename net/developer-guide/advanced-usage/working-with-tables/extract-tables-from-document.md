@@ -7,6 +7,7 @@ description: "This article explains that how to extract tables from document."
 keywords: extract tables, extract tables from document
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 
 GroupDocs.Parser provides the functionality to extract tables from documents by the [GetTables(PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gettables) method:

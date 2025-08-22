@@ -7,6 +7,7 @@ description: ""
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract data from Microsoft Office PowerPoint presentations. Both classic (ppt, pot) and Open XML (pptx, potx) formats are supported. Also LibreOffice Impress (OpenOffice.org Impress) formats are supported.
 

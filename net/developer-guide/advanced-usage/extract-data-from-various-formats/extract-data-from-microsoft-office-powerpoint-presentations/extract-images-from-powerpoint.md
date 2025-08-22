@@ -7,6 +7,7 @@ description: "This article explains that how to extract images from Microsoft Of
 keywords: extract images, extract images from Microsoft Office PowerPoint,.ppt, .pptx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract images from Microsoft Office PowerPoint presentations [GetImages](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getimages) methods are used. By default images are extracted with its original format. With using [ImageOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/imageoptions) class it is possible to extract images from Microsoft Office PowerPoint presentations as bmp, gif, jpeg, png and webp formats.
 

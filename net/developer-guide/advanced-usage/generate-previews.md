@@ -7,6 +7,7 @@ description: "This article provides learning contents about how to generate page
 keywords: page previews, how to generate page previews of documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to generate document page previews by [GeneratePreview(PreviewOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/generatepreview) method:
 

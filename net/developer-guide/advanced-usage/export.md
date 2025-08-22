@@ -7,6 +7,7 @@ description: "How to export data to JSON or XML files."
 keywords: json xml export
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to export data to JSON or XML files. [JsonExporter](https://reference.groupdocs.com/parser/net/groupdocs.parser.export/jsonexporter) or [XmlExporter](https://reference.groupdocs.com/parser/net/groupdocs.parser.export/xmlexporter) classes are used for this. Also extensions methods from [Extensions](https://reference.groupdocs.com/parser/net/groupdocs.parser.export/extensions) class can be used to simplify the code.
 

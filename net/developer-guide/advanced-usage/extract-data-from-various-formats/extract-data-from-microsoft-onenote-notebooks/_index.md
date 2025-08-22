@@ -7,5 +7,6 @@ description: ""
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 The following examples demonstrate how to extract data from Microsoft OneNote Notebooks:

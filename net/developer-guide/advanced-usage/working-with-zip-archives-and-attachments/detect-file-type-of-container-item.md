@@ -7,6 +7,7 @@ description: "This article explains that how to detect file type of container it
 keywords: detect file type, detect file type of container item
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 # Detect file type of container item
 

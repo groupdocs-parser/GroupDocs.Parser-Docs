@@ -7,6 +7,7 @@ description: "This article explains that how to extract text from ZIP archive fi
 keywords: extract text, extract text from ZIP archive files
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract files from ZIP archives [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method is used. This method returns the collection of [ContainerItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects.
 

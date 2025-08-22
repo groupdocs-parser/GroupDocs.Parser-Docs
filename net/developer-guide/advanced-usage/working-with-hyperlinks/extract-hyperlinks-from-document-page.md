@@ -7,6 +7,7 @@ description: "This article explains that how to extract hyperlinks from document
 keywords: extract hyperlinks from document page, extract hyperlinks 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 
 GroupDocs.Parser provides the functionality to extract hyperlinks from document page by the [GetHyperlinks(Int32)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gethyperlinks/methods/2) method:

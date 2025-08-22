@@ -7,6 +7,7 @@ description: "To extract text from EPUB e-books GetText and GetText(pageIndex) m
 keywords: extract text
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract a text from EPUB e-books [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) and [GetText(pageIndex)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/2) methods is used. These methods allow to extract a text from the entire document or a text from the selected page. Raw mode is not supported for EPUB.
 

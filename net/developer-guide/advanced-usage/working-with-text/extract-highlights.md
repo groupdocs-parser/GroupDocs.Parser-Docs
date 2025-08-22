@@ -7,6 +7,7 @@ description: "This article explains that how to extract highlights from document
 keywords: extract highlights, extract highlights from documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract a highlight (a part of the text which is usually used to explain the context of the found text in the search functionality) from documents by the [GetHighlight](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gethighlight) method:
 

@@ -7,6 +7,7 @@ description:  "This article explains how to use OCR."
 keywords: OCR, extract text from images
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser for .NET provides the ability to extract a text from images and PDFs (which don't contain a plain text) for English language.
 

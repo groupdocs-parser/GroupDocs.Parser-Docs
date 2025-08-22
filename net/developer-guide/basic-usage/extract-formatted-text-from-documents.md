@@ -7,6 +7,7 @@ description: "This article shows how to extract formatted text represented as HT
 keywords: Extract formatted text, Extract data, EPUB, FB2, CHM, DOC, DOCX, PPT, PPTX, XLS, XLSX
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser allows to extract formatted text from documents for those cases when simple plain text is not enough and you may need to keep formatting like text style, table layout etc.
 

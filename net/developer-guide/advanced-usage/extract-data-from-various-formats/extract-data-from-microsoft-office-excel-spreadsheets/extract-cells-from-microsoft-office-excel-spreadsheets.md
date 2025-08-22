@@ -7,6 +7,7 @@ description:  "This article explains that how to extract cells from Microsoft Of
 keywords: extract cells from Microsoft Office Excel, .xls, .xlsx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract cells from spreadsheets. The following methods are used for this purpose:
 

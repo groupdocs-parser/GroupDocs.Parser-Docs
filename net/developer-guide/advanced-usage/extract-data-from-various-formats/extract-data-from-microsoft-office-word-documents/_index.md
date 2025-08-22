@@ -7,6 +7,7 @@ description: ""
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract data from Microsoft Office Word documents. Both classic (doc, dot) and Open XML (docx, dotx) formats are supported. Also LibreOffice Writer (OpenOffice.org Writer) formats and RTF are supported.
 

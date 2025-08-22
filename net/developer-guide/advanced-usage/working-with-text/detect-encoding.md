@@ -7,6 +7,7 @@ description: "This article explains that how to detect encoding of a plain text 
 keywords: detect encoding of a plain text file, detect encoding
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to detect the encoding of a plain text file. The following encodings are supported:
 

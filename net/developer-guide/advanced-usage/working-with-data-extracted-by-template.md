@@ -7,6 +7,7 @@ description: "Extracted data are stored in the instance of DocumentData class"
 keywords: Extracted data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 ## DocumentData class
 

@@ -7,6 +7,7 @@ description: "This article shows how to extract text with GroupDocs.Parser from 
 keywords: Extract text, EPUB, FB2, CHM, pdf, DOC, DOCX, PPT, PPTX, XLS, XLSX
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser allows to extract text from PDF, Emails, Ebooks, Microsoft Office formats: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others (see full list at [supported document formats]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}) article).
 

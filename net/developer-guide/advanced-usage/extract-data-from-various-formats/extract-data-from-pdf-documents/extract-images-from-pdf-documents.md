@@ -7,6 +7,7 @@ description: "This article explains that how to extract images from PDF document
 keywords: extract images, extract images from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract images from PDF documents [GetImages](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getimages) methods are used. By default images are extracted with its original format. With using [ImageOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/imageoptions) class it is possible to extract images from PDF documents as bmp, gif, jpeg, png and webp formats.
 

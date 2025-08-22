@@ -7,6 +7,7 @@ description: "This article shows how to check supported file formats."
 keywords: Formats Parser .Net dotNet C# CSharp
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser allows to get the list of all the supported file formats by the [GetSupportedFileTypes](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/filetype/methods/getsupportedfiletypes) static method:
 

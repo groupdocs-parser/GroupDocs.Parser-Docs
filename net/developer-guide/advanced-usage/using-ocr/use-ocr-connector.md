@@ -7,6 +7,7 @@ description:  "This article explains how to integrate OCR solution to GroupDocs.
 keywords: OCR, extract text from images
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides out-of-the-box text recognition from images and scanned PDFs in English. This requires no additional setup; you just need to explicitly request OCR when extracting text or parsing a document. Moreover, for image files, even this is not necessary—OCR will be automatically applied during text extraction without any extra reminders.
 

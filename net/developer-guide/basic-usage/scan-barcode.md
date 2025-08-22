@@ -7,6 +7,7 @@ description: "This article shows how to scan barcode in .Net with GroupDocs.Pars
 keywords: Scan barcode, code from images,PDF, Emails, Ebooks, Words
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser .Net allows to scan barcode from PDF, Microsoft Office formats: Word (DOC, DOCX), PowerPoint (PPT, PPTX), LibreOffice formats and many others (see full list at [supported document formats]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}) article).
 

@@ -7,6 +7,7 @@ description: "Learn how to extract data from documents on the local disk "
 keywords: extract data from documents on the local disk, extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract data from documents on the local disk.
 

@@ -7,6 +7,7 @@ description: "This article explains that how to extract text areas from document
 keywords: extract text areas, extract text areas from documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract text areas from documents by the following methods:
 

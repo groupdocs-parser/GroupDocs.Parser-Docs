@@ -7,6 +7,7 @@ description: "To extract table of contents from EPUB e-books GetToc method is us
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract table of contents from EPUB e-books [GetToc](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettoc) method is used.
 

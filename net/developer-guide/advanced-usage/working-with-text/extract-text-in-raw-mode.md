@@ -7,6 +7,7 @@ description: "This article explains that how to extract text in Raw mode."
 keywords: extract text, extract text in Raw mode
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract a text from documents.
 

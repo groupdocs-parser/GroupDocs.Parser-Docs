@@ -7,6 +7,7 @@ description: "Learn how to Load document from stream."
 keywords: Load document from stream, extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 There might be cases when the document is presented only as a stream (without a copy on the local disk). To avoid the overhead of saving documents to the disk, GroupDocs.Parser enables to extract data from streams directly.
 

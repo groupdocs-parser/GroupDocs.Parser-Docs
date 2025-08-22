@@ -7,6 +7,7 @@ description: "This article explains that how to extract text structure from docu
 keywords: extract text, extract text structure
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract the text structure from documents by the [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method:
 

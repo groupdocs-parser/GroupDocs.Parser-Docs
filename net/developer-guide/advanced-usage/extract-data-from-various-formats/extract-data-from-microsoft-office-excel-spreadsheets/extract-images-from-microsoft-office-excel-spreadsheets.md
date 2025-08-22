@@ -7,6 +7,7 @@ description: "This article explains that how to extract images from Microsoft Of
 keywords: extract images from Microsoft Office Excel, .xls, .xlsx, spreadsheets
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract images from Microsoft Office Excel spreadsheets [GetImages](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getimages) methods are used. By default images are extracted with its original format. With using [ImageOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/imageoptions) class it is possible to extract images from Microsoft Office Excel spreadsheets as bmp, gif, jpeg, png and webp formats.
 

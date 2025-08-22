@@ -7,6 +7,7 @@ description: "An interface is used to receive the information about errors, warn
 keywords: data extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 [ILogger](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface is used to receive the information about errors, warnings and events which occur while data extraction. [ILogger](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/ilogger) interface has the following members:
 

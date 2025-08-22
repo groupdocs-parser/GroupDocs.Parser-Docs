@@ -7,6 +7,7 @@ description:  "This article explains that how to parse data from PDF documents"
 keywords: Parse data, Parse data from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract data from PDF documents [ParseForm](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parseform) and [ParseByTemplate](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/parsebytemplate) methods are used. Both methods return [DocumentData](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/documentdata) object. For details, see [Working With Extracted Data]({{< ref "parser/net/developer-guide/advanced-usage/working-with-data-extracted-by-template.md" >}}).
 

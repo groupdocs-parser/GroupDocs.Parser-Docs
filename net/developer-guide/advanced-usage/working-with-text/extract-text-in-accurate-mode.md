@@ -7,6 +7,7 @@ description: "This article explains that how to extract text in Accurate mode."
 keywords: extract text, extract text in Accurate mode
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract text from documents.
 

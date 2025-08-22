@@ -7,6 +7,7 @@ description: "This article shows how to extract data (text, images, PDF forms) f
 keywords: Extract data, PDF forms, ZIP-archived documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 It is easy to extract data, text, images and use any GroupDocs.Parser feature for ZIP-archived documents. The same feature allows to get attachments from  PDF and Emails and extract data from them.
 

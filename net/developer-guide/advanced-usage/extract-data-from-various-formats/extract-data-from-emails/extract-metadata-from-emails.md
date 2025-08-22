@@ -7,6 +7,7 @@ description: "Extract metadata from emails by using GetMetaData method."
 keywords: extract metadata,extract metadata from emails
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract metadata from emails [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method is used. This method allows to extract the following metadata:
 

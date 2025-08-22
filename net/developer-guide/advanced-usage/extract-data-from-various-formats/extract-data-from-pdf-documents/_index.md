@@ -7,6 +7,7 @@ description: ""
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract data from PDF documents. Also [password-protected]({{< ref "parser/net/developer-guide/advanced-usage/loading/password-protected-documents.md" >}})  PDFs and PDF portfolios are supported.
 

@@ -7,6 +7,7 @@ description: "Document template is set by Template class. It contains template i
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 Document template is set by [Template](https://reference.groupdocs.com/net/parser/groupdocs.parser.templates/template) class. It contains template items - fields and tables. Each item has the unique (in the template bounds) name and optional page index - value that represents the index of the page where the template item is located; *null* if the template item is located on any page.
 

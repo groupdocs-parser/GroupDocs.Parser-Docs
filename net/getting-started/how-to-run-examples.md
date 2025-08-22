@@ -7,6 +7,7 @@ description:  "This article describes how to run .NET parser API code examples."
 keywords:  parser api
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 {{< alert style="warning" >}}Before running an example make sure that GroupDocs.Parser has been installed successfully.{{< /alert >}}
 

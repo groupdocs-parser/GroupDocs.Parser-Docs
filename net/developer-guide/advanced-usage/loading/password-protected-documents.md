@@ -7,6 +7,7 @@ description: "Learn how to open the password-protected documents."
 keywords: open the password-protected documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to open the password-protected documents.
 

@@ -7,6 +7,7 @@ description: " a feature-rich document data parsing API that allows to create a 
 keywords: parse data, parse, extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 {{< alert style="info" >}}GroupDocs.Parser is a feature-rich document data parsing API. Here you may find description of the most important features.{{< /alert >}}
 

@@ -7,6 +7,7 @@ description: "To extract metadata from EPUB e-books GetMetadata method is used"
 keywords: extract metadata, extract metadata from EPUB
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract metadata from EPUB e-books [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method is used. This method allows to extract the following metadata:
 

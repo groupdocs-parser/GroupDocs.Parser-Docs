@@ -7,6 +7,7 @@ description: "This article shows how to check if feature supported for the docum
 keywords: Feature,s Parser, C#, CSharp, .Net, dotNet
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 The set of the supported features depends on the document format. GroupDocs.Parser provides the functionality to check if feature supported for the document. [Features](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/properties/features) property is used for this purposes.
 

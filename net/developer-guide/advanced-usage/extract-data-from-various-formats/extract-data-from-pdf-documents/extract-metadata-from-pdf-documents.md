@@ -1,53 +1,76 @@
 ---
 id: extract-metadata-from-pdf-documents
 url: parser/net/extract-metadata-from-pdf-documents
-title: Extract metadata from PDF documents
+title: Extract Metadata from PDF Documents in C# .NET
 weight: 2
-description: "This article explains that how to extract metadata from PDF documents"
-keywords: extract metadata, extract metadata from PDF documents
+description: "Learn how to extract metadata from PDF files in C# using GroupDocs.Parser for .NET. Get document properties such as title, author, subject, creation date, and more."
+keywords: extract PDF metadata C#, PDF metadata .NET, read PDF document properties C#, get PDF file information, GroupDocs.Parser metadata extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
-To extract metadata from PDF documents [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method is used. This method allows to extract the following metadata:
 
-| Name | Description |
+# Extract Metadata from PDF Documents in C# .NET
+
+PDF files often contain **metadata** such as the title, subject, author, creation date, and application used to generate the document. With **GroupDocs.Parser for .NET**, you can easily read these metadata properties programmatically using the [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method.  
+
+This guide shows how to extract metadata from PDF documents in C# step by step.
+
+---
+
+## What Metadata Can Be Extracted?
+
+The `GetMetadata` method can return the following properties from a PDF document:
+
+| Metadata Field | Description |
 | --- | --- |
-| title | The title of the presentation. |
-| subject | The subject of the presentation. |
-| keywords | The keyword of the presentation. |
-| author | The name of the presentation's author. |
-| application | The name of the application. |
-| application-version | The version number of the application that created the presentation. |
-| created-time | The time of the presentation creation. |
-| last-saved-time | The time of the the presentation when it was last saved. |
+| **title** | Title of the PDF document |
+| **subject** | Subject of the PDF document |
+| **keywords** | Keywords associated with the document |
+| **author** | Author of the document |
+| **application** | Application that created the PDF |
+| **application-version** | Version of the application |
+| **created-time** | Date and time the PDF was created |
+| **last-saved-time** | Date and time the PDF was last modified |
 
-Here are the steps to extract metadata from PDF document:
+⚡ *Note: The available metadata depends on the PDF file itself. Not all fields may be present in every document.*
 
-*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method and obtain collection of document metadata objects;
-*   Iterate through the collection and get metadata names and values.
+---
+
+## How to Extract PDF Metadata in C#
+
+Follow these steps to get metadata from a PDF document:
+
+1. **Create a `Parser` object** and load the PDF file.  
+2. **Call the `GetMetadata` method** to retrieve metadata items.  
+3. **Iterate through the collection** and read metadata names and values.  
+
+### Example: Extract PDF Metadata in C#
+```csharp
+// Load the PDF file
+using (Parser parser = new Parser(filePath))
+{
+    // Extract metadata
+    IEnumerable<MetadataItem> metadata = parser.GetMetadata();
+  
+    // Display metadata fields
+    foreach (MetadataItem item in metadata)
+    {
+        Console.WriteLine($"{item.Name}: {item.Value}");
+    }
+}
+```
 
 {{< alert style="warning" >}}
 [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method returns *null* value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for TXT files. Therefore, for TXT file [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method returns *null*. If PDF document has no metadata, [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method returns an empty collection.
 {{< /alert >}}
 
-The following example demonstrates how to extract metadata from PDF document:
+## Why Extract PDF Metadata?
 
-```csharp
-// Create an instance of Parser class
-using(Parser parser = new Parser(filePath))
-{
-    // Extract metadata from the document
-    IEnumerable<MetadataItem> metadata = parser.GetMetadata();
-  
-    // Iterate over metadata items
-    foreach(MetadataItem item in metadata)
-    {
-        // Print the item name and value
-        Console.WriteLine(string.Format("{0}: {1}", item.Name, item.Value));
-    }
-}
-```
+Extracting PDF metadata is useful for:
+*   Document management – quickly find and categorize files by author, subject, or keywords.
+*   Compliance checks – verify creation and modification dates.
+*   Search indexing – improve search accuracy by including document properties.
 
 ## More resources
 

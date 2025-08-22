@@ -7,6 +7,7 @@ description: "This article explains that how to extract text from Microsoft Offi
 keywords: extract text, extract text from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract a text from Microsoft Office Word documents [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) and [GetText(pageIndex)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/2) methods are used. These methods allow to extract a text from the entire document or a text from the selected page. [TextOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/textoptions) parameter is ignored for Microsoft Office Words documents.
 

@@ -7,6 +7,7 @@ description: "This article shows how to to extract data from Microsoft Office Ex
 keywords: extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract data from Microsoft Office Excel spreadsheets. Both classic (xls, xlt) and Open XML (xlsx, xltx) formats are supported. Also LibreOffice Calc (OpenOffice.org Calc) formats, CSV and Apple iWork Numbers are supported.
 

@@ -7,6 +7,7 @@ description: "This article explains that how to extract text from Microsoft OneN
 keywords: extract text, extract text from Microsoft Office PowerPoint
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract a text from Microsoft OneNote Sections [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) and [GetText(pageIndex)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/2) methods are used. These methods allow to extract a text from the entire document or a text from the selected page. Raw mode is not supported for Microsoft OneNote.
 

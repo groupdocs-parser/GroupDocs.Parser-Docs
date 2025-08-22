@@ -7,6 +7,7 @@ description: "This article explains that how to extract formatted text from docu
 keywords: extract formatted text, extract formatted text from documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract formatted text from documents by the [GetFormattedText(FormattedTextOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getformattedtext) method:
 

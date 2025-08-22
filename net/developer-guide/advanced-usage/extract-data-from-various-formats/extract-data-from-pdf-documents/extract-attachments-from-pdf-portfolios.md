@@ -7,6 +7,7 @@ description: "This article explains that how to extract attachments from PDF doc
 keywords: extract attachments, extract attachments from PDF documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract attachments from emails [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method is used. This method returns the collection of [ContainerItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects.
 

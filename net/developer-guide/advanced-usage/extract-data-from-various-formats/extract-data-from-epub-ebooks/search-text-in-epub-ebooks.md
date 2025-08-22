@@ -7,6 +7,7 @@ description: "To search a keyword in EPUB e-books Search(String) method is used
 keywords: search a keyword in EPUB, search a keyword
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To search a keyword in EPUB e-books [Search(String)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) method is used. This method returns the collection of [SearchResult](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/searchresult) objects. For details, see [Search Text]({{< ref "parser/net/developer-guide/advanced-usage/working-with-text/search-text.md" >}}).
 

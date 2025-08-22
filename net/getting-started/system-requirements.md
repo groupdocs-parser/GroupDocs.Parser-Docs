@@ -7,6 +7,7 @@ description: "GroupDocs.Parser for .NET supports any 32-bit or 64-bit operatin
 keywords: parser, GroupDocs.Parser for .NET
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 ## Overview
 

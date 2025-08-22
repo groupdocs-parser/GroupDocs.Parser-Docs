@@ -7,6 +7,7 @@ description: "This article shows how to extract table of contents from Microsoft
 keywords: extract table of contents, DOC, DOCX, CHM, EPUB
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser allows to extract table of contents from Microsoft Word (DOC, DOCX etc), PDF documents and Ebooks.
 

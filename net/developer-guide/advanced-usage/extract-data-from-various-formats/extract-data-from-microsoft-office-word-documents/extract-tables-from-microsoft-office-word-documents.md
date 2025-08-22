@@ -1,82 +1,186 @@
 ---
 id: extract-tables-from-microsoft-office-word-documents
 url: parser/net/extract-tables-from-microsoft-office-word-documents
-title: Extract tables from Microsoft Office Word documents
+title: Extract Tables from Microsoft Office Word Documents
 weight: 5
-description: "This article explains that how to extract tables from Microsoft Office Word (.doc, .docx) documents"
-keywords: extract tables, extract tables from Microsoft Office Word,.doc, .docx
+description: "Learn how to easily extract table content from Word documents (.doc, .docx) using GroupDocs.Parser for .NET."
+keywords: extract tables, extract tables from Word, .doc, .docx, table parsing
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
-To extract tables from Microsoft Office Word document [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method is used. This method returns XML representation of the document. Tables are represented by "table" tag. For more details, see [Extract text structure]({{< ref "parser/net/developer-guide/advanced-usage/working-with-text/extract-text-structure.md" >}}).
+
+This guide explains how to extract tables from Microsoft Office Word documents (`.doc`, `.docx`) using GroupDocs.Parser for .NET.
+
+## How Table Extraction Works
+
+GroupDocs.Parser converts a document's layout into a structured XML format. Tables are represented by `<table>` tags within this XML. The extraction process involves reading this XML structure to identify and process table content.
 
 {{< alert style="warning" >}}
 [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method returns *null* value if text structure extraction isn't supported for the document. For example, text structure extraction isn't supported for TXT files. Therefore, for TXT file [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method returns *null*. If Microsoft Office Word document has no text, [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure)[](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata)method returns an empty [XmlReader](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=netframework-2.0) object.
 {{< /alert >}}
 
-Here are the steps to extract tables from Microsoft Office Word documents:
+## Step-by-Step Guide
 
-*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-*   Call [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method and obtain [XmlReader](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=netframework-2.0) object;
-*   Iterate through the XML document.
-
-The following example demonstrates how to extract tables from Microsoft Office Word document:
+### 1. Create a Parser Instance
+Begin by initializing the Parser with your document path.
 
 ```csharp
-// Create an instance of Parser class
-using (Parser parser = new Parser(filePath))
+using (Parser parser = new Parser("YourDocument.docx"))
 {
-    // Get the reader object for the document XML representation
-    using (XmlReader reader = parser.GetStructure())
+    // Extraction code goes here
+}
+```
+
+### 2. Retrieve Document Structure
+Get the XML representation of the document's structure.
+
+```csharp
+using (XmlReader reader = parser.GetStructure())
+{
+    if (reader == null)
     {
-        // Iterate over the document
+        Console.WriteLine("Text structure extraction isn't supported for this document.");
+        return;
+    }
+    // Process the XML structure
+}
+``` 
+
+### 3. Find and Process Tables
+Iterate through the XML to locate and process table elements.
+
+```csharp
+while (reader.Read())
+{
+    // Look for table start elements
+    if (reader.NodeType == XmlNodeType.Element && reader.Name == "table")
+    {
+        Console.WriteLine("Found a table:");
+        ProcessTable(reader);
+    }
+}
+```
+
+### 4. Table Processing Method
+This method handles the extraction of rows and cells from each table.
+
+```csharp
+private static void ProcessTable(XmlReader reader)
+{
+    StringBuilder cellValue = new StringBuilder();
+    int rowIndex = 0;
+
+    while (reader.Read())
+    {
+        // Exit when table ends
+        if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "table")
+        {
+            break;
+        }
+
+        // Detect new rows
+        if (reader.NodeType == XmlNodeType.Element && reader.Name == "tr")
+        {
+            rowIndex++;
+            Console.WriteLine($"[Row {rowIndex}]");
+        }
+
+        // Reset cell value at cell start
+        if (reader.NodeType == XmlNodeType.Element && reader.Name == "td")
+        {
+            cellValue.Clear();
+        }
+
+        // Output cell value at cell end
+        if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "td")
+        {
+            Console.WriteLine($"  {cellValue}");
+        }
+
+        // Accumulate cell text content
+        if (reader.NodeType == XmlNodeType.Text)
+        {
+            cellValue.Append(reader.Value);
+        }
+    }
+}
+```
+
+### Complete Example
+Here's a complete working example that extracts and displays tables from a Word document:
+
+```csharp
+using System;
+using System.Text;
+using System.Xml;
+using GroupDocs.Parser;
+
+public static class WordTableExtractor
+{
+    public static void ExtractTables(string filePath)
+    {
+        using (Parser parser = new Parser(filePath))
+        {
+            using (XmlReader reader = parser.GetStructure())
+            {
+                if (reader == null)
+                {
+                    Console.WriteLine("Text structure extraction isn't supported for this document.");
+                    return;
+                }
+
+                Console.WriteLine($"Analyzing: {filePath}");
+                Console.WriteLine("----------------------------------------");
+
+                while (reader.Read())
+                {
+                    if (reader.NodeType == XmlNodeType.Element && reader.Name == "table")
+                    {
+                        Console.WriteLine("\n>>> TABLE FOUND");
+                        ProcessTable(reader);
+                    }
+                }
+            }
+        }
+    }
+
+    private static void ProcessTable(XmlReader reader)
+    {
+        StringBuilder cellValue = new StringBuilder();
+        int rowIndex = 0;
+
         while (reader.Read())
         {
-            // Check if this is the start of the table
-            if (reader.IsStartElement() && reader.Name == "table")
+            if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "table")
             {
-                // Process the table
-                ProcessTable(reader);
+                break;
+            }
+
+            if (reader.NodeType == XmlNodeType.Element && reader.Name == "tr")
+            {
+                rowIndex++;
+                Console.WriteLine($"[Row {rowIndex}]");
+            }
+
+            if (reader.NodeType == XmlNodeType.Element && reader.Name == "td")
+            {
+                cellValue.Clear();
+            }
+
+            if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "td")
+            {
+                Console.WriteLine($"  {cellValue}");
+            }
+
+            if (reader.NodeType == XmlNodeType.Text)
+            {
+                cellValue.Append(reader.Value);
             }
         }
     }
 }
- 
-private static void ProcessTable(XmlReader reader)
-{
-    Console.WriteLine("table");
-    // Create an instance of StringBuilder to store the cell value
-    StringBuilder value = new StringBuilder();
-    // Iterate over the table
-    while (reader.Read())
-    {
-        // Check if the current tag is the end of the table
-        bool isTableEnd = !reader.IsStartElement() && reader.Name == "table";
-        // Check if the current tag is the start of the row or the cell
-        bool isRowOrCellStart = reader.IsStartElement() && (reader.Name == "tr" || reader.Name == "td");
-        // Print the cell value if this is the end of the table or the start of the row or the cell
-        if ((isTableEnd || isRowOrCellStart) && value.Length > 0)
-        {
-            Console.Write("  ");
-            Console.WriteLine(value.ToString());
-            value = new StringBuilder();
-        }
-        // If this is the end of the table - return to the main function
-        if (isTableEnd)
-        {
-            return;
-        }
-        // If this is the start of the row or the cell - print the tag name
-        if (isRowOrCellStart)
-        {
-            Console.WriteLine(reader.Name);
-            continue;
-        }
-        // If this code line is reached then this is the value of the cell
-        value.Append(reader.Value);
-    }
-}
-```
+``` 
 
 ## More resources
 

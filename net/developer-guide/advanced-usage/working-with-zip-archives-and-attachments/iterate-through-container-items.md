@@ -7,6 +7,7 @@ description: "This article explains that how to extract containers items and ite
 keywords: extract containers items, iterate through container items
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract items from containers by the [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method:
 

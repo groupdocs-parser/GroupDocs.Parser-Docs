@@ -7,6 +7,7 @@ description: "This article shows how to extract data from documents of various f
 keywords: Document parsing,document parsing feature,DOC, DOCX,XLS, XLSX,PDF
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides Document Parser feature that allows you to extract data from documents of various formats including PDF, Microsoft Word, Excel, LibreOffice formats etc. (see [full supported list]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}))).
 

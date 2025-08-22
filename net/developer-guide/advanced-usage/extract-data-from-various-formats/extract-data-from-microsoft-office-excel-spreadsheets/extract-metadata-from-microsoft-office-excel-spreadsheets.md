@@ -1,61 +1,75 @@
 ---
 id: extract-metadata-from-microsoft-office-excel-spreadsheets
 url: parser/net/extract-metadata-from-microsoft-office-excel-spreadsheets
-title: Extract metadata from Microsoft Office Excel spreadsheets
+title: Extract Metadata from Excel Spreadsheets in C# .NET
 weight: 2
-description: "This article explains that how to extract metadata from Microsoft Office Excel (.xls, .xlsx) spreadsheets."
-keywords: extract metadata from Microsoft Office Excel, .xls, .xlsx
+description: "Learn how to extract metadata from Microsoft Excel spreadsheets (.xls, .xlsx) in C# using GroupDocs.Parser for .NET. Step-by-step guide with code example."
+keywords: extract Excel metadata C#, Excel spreadsheet metadata .NET, get Excel file properties C#, read Excel document metadata, GroupDocs.Parser metadata extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
-To extract metadata from Microsoft Office Excel spreadsheets [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method is used. This method allows to extract the following metadata:
 
-| Name | Description |
+# Extract Metadata from Excel Spreadsheets in C# .NET
+
+Microsoft Excel files often contain hidden **metadata** such as the author, company, creation date, last modification time, and more. With **GroupDocs.Parser for .NET**, you can easily extract this metadata from Excel spreadsheets (`.xls` and `.xlsx`) using the [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method.  
+
+This guide explains how to extract Excel file metadata programmatically in just a few steps.
+
+---
+
+## What Metadata Can Be Extracted?
+
+
+The `GetMetadata` method allows you to access a wide range of Excel spreadsheet properties:
+
+| Metadata Field | Description |
 | --- | --- |
-| title | The title of the spreadsheet. |
-| subject | The subject of the spreadsheet. |
-| keywords | The keyword of the spreadsheet. |
-| comments | The comments of the spreadsheet. |
-| content-status | The content status of the spreadsheet. |
-| category | The category of the spreadsheet. |
-| company | The company of the spreadsheet. |
-| manager | The manager of the spreadsheet. |
-| author | The name of the spreadsheet's author. |
-| last-author | The name of the last spreadsheet's author. |
-| hyperlink-base | The base string used for evaluating relative hyperlinks in this spreadsheet. |
-| application | The name of the application. |
-| application-version | The version number of the application that created the spreadsheet. |
-| template | The informational name of the spreadsheet template. |
-| created-time | The time of the spreadsheet creation. |
-| last-saved-time | The time of the the spreadsheet when it was last saved. |
-| last-printed-time | The time of the spreadsheet when it was last printed. |
-| revision-number | The spreadsheet revision number. |
-| total-editing-time | The total editing time in minutes. |
+| **title** | Spreadsheet title |
+| **subject** | Spreadsheet subject |
+| **keywords** | Spreadsheet keywords |
+| **comments** | User comments |
+| **content-status** | Status of the spreadsheet |
+| **category** | Spreadsheet category |
+| **company** | Company name |
+| **manager** | Manager name |
+| **author** | Original author |
+| **last-author** | Last modified by |
+| **hyperlink-base** | Base URL for relative hyperlinks |
+| **application** | Application used to create the file |
+| **application-version** | Version of the application |
+| **template** | Template name |
+| **created-time** | Creation time |
+| **last-saved-time** | Last saved timestamp |
+| **last-printed-time** | Last printed timestamp |
+| **revision-number** | Revision number |
+| **total-editing-time** | Total editing time (in minutes) |
 
-Here are the steps to extract metadata from Microsoft Office Excel spreadsheet:
-
-*   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial spreadsheet;
-*   Call [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method and obtain collection of document metadata objects;
-*   Iterate through the collection and get metadata names and values.
+---
 
 {{< alert style="warning" >}}
 [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method returns *null* value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for CSV files. Therefore, for CSV file [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method returns *null*. If Microsoft Office Excel spreadsheet has no metadata, [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method returns an empty collection.
 {{< /alert >}}
 
-The following example demonstrates how to extract metadata from Excel spreadsheet:
+## How to Extract Excel Metadata in C#
+
+Follow these steps to extract metadata from an Excel file:
+
+1. **Instantiate the Parser object** for the Excel spreadsheet.  
+2. **Call the `GetMetadata` method** to retrieve all metadata items.  
+3. **Iterate through the collection** and print metadata names and values.  
 
 ```csharp
-// Create an instance of Parser class
-using(Parser parser = new Parser(filePath))
+// Load the Excel file
+using (Parser parser = new Parser(filePath))
 {
-    // Extract metadata from the spreadsheet
+    // Extract metadata
     IEnumerable<MetadataItem> metadata = parser.GetMetadata();
  
-    // Iterate over metadata items
-    foreach(MetadataItem item in metadata)
+    // Iterate through metadata items
+    foreach (MetadataItem item in metadata)
     {
-        // Print the item name and value
-        Console.WriteLine(string.Format("{0}: {1}", item.Name, item.Value));
+        Console.WriteLine($"{item.Name}: {item.Value}");
     }
 }
 ```

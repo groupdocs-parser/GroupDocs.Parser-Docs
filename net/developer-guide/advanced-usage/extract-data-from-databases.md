@@ -7,6 +7,7 @@ description: "This article shows the data extraction from database via ADO.NET u
 keywords: data extraction from database, Extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract data from databases via ADO.NET.
 

@@ -7,6 +7,7 @@ description: "Learn how to Load specific file formats."
 keywords: Load specific file formats
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 In some cases it's required to specify the document format manually to guarantee correct output produced by GroupDocs.Parser. The following are the cases when the document format must be specified manually:
 

@@ -7,6 +7,7 @@ description: "This article shows how to extract data from PDF forms easily with 
 keywords: Extract data, PDF form, extract pdf form data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser allows to parse form data from PDF documents.
 

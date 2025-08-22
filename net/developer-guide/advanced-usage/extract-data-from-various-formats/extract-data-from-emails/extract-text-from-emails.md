@@ -7,6 +7,7 @@ description: "Extract text from emails using GetText method."
 keywords: extract text from emails
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract a text from emails [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method is used. This method allows to extract a text from the entire document. Pagination and raw mode is not supported for emails.
 

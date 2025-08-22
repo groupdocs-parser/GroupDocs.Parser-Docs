@@ -7,6 +7,7 @@ description: "GroupDocs.Parser allows you to extract emails from remote servers 
 keywords: Extract emails, Extract emails from remote server, POP, IMAP, EWS
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser allows you to extract emails from remote servers and data from the emails. The following email protocols are supported:
 

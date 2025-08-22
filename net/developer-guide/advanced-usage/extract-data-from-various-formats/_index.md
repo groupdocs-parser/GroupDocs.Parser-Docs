@@ -7,4 +7,5 @@ description: "The articles below explain that how to extract data from various f
 keywords: extract data
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---

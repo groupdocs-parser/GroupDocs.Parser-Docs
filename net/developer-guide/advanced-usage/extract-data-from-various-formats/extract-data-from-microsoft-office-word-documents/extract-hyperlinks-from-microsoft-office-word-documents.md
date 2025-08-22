@@ -7,6 +7,7 @@ description: "This article explains that how to extract hyperlinks from Microsof
 keywords: extract hyperlink, extract hyperlinks from Microsoft Office Word,.doc, .docx
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract hyperlinks from Microsoft Office Word document [GetStructure](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getstructure) method is used. This method returns XML representation of the document. Hyperlinks are represented by "hyperlink" tag; "link" attribute contains hyperlink's URL. For more details, see [Extract text structure]({{< ref "parser/net/developer-guide/advanced-usage/working-with-text/extract-text-structure.md" >}}). Hyperlink can contain a text:
 

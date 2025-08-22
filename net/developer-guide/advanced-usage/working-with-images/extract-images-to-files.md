@@ -7,6 +7,7 @@ description: "This article explains that how to extract images to files."
 keywords: extract images to files, extract images
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 Here are the steps to extract images to files:
 

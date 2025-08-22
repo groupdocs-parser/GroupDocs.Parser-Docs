@@ -7,6 +7,7 @@ description: "This article explains that how to search text from documents."
 keywords: search text, search text from documents
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to search text from documents by the [Search(string)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) and [Search(string, SearchOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/search/methods/1) methods:
 

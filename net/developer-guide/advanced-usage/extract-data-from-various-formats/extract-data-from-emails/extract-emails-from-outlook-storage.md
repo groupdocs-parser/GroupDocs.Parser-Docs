@@ -7,6 +7,7 @@ description: "Extract emails from Outlook using GroupDocs.Parser for .NET"
 keywords: Extract emails from Outlook
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 To extract emails from Outlook Storage [GetContainer](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getcontainer) method is used. This method returns the collection of [ContainerItem](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/containeritem) objects.
 

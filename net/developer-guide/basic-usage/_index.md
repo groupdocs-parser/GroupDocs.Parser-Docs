@@ -7,6 +7,7 @@ description: ""
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 ## Quick Start section for GroupDocs.Parser API
 

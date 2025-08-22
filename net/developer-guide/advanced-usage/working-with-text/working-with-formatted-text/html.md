@@ -7,6 +7,7 @@ description: "This article explains that how to extract HTML formatted text from
 keywords: extract HTML formatted text, extract HTML formatted text from document page
 productName: GroupDocs.Parser for .NET
 hideChildren: False
+toc: true
 ---
 The following example shows how to extract HTML formatted text:
 
