@@ -1,7 +1,7 @@
 ---
 id: best-ways-extract-tables-from-pdf
 url: parser/net/best-ways-extract-tables-from-pdf
-title: Best Ways to Extract Tables from PDF Documents with C# - Complete Guide
+title: Extract Tables from PDF Documents
 weight: 1
 description: "Learn how to extract tables from PDF documents using GroupDocs.Parser for .NET. Compare multiple extraction methods from basic page-specific extraction to advanced document-wide processing with complete code examples."
 keywords: extract tables from PDF, parse document tables, extract document data, extract tables programmatically, PDF table extraction C#, .NET table parser, extract table values, parse PDF tables, C# extract tables, document table extraction, table data extraction, structured data extraction
