@@ -3,11 +3,13 @@ id: extract-text-areas
 url: parser/net/extract-text-areas
 title: Extract text areas
 weight: 7
-description: "This article explains that how to extract text areas from documents."
-keywords: extract text areas, extract text areas from documents
+version: 23.5
+description: "Learn how to extract text areas with coordinates and formatting information from documents using GroupDocs.Parser for .NET. Extract text with position data, rectangles, and text styles in C#."
+keywords: extract text areas, extract text areas from documents, extract text with coordinates, text position extraction, text area extraction C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, text-areas, coordinates, text-positioning, v23.5
 ---
 GroupDocs.Parser provides the functionality to extract text areas from documents by the following methods:
 

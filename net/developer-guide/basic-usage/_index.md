@@ -3,7 +3,8 @@ id: basic-usage
 url: parser/net/basic-usage
 title: Basic usage
 weight: 1
-description: ""
+version: 23.5
+description: "Basic usage examples for GroupDocs.Parser for .NET. Learn how to extract text, metadata, images, table of contents, and parse data from documents in C#."
 keywords: 
 productName: GroupDocs.Parser for .NET
 hideChildren: False

@@ -3,11 +3,13 @@ id: extract-table-of-contents
 url: parser/net/extract-table-of-contents
 title: Extract table of contents
 weight: 11
-description: "This article shows how to extract table of contents from Microsoft Word (DOC, DOCX etc), PDF documents and Ebooks (CHM, EPUB)."
-keywords: extract table of contents, DOC, DOCX, CHM, EPUB
+version: 23.5
+description: "Learn how to extract table of contents (TOC) from Word documents, PDF files, and eBooks using GroupDocs.Parser for .NET. Extract TOC items with page numbers and depth levels in C#."
+keywords: extract table of contents, TOC extraction, DOC, DOCX, CHM, EPUB, PDF table of contents, extract TOC C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, table-of-contents, toc, v23.5
 ---
 GroupDocs.Parser allows to extract table of contents from Microsoft Word (DOC, DOCX etc), PDF documents and Ebooks.
 

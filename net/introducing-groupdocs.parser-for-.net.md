@@ -4,7 +4,8 @@ url: parser/net/introducing-groupdocs-parser-for-net
 title: Introducing GroupDocs.Parser for .NET
 weight: 1
 description: "Powerful .NET document parsing API for extracting text, images, metadata, and structured data from 50+ file formats including PDF, Word, Excel, PowerPoint. Features template-based extraction, full-text search, and enterprise-ready document processing capabilities."
-keywords: "GroupDocs.Parser, .NET document parser, text extraction API, PDF parser, document data extraction, template parsing, metadata extraction, C# document processing, file format parser, enterprise document management, text mining, data extraction library"
+keywords: "GroupDocs.Parser, .NET document parser, text extraction API, PDF parser, document data extraction, template parsing, metadata extraction, C# document processing, file format parser, enterprise document management, text mining, data extraction library, PDF text extraction library C#, extract text from PDF C#, extract tables from Excel C#"
+version: 23.5
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
@@ -88,6 +89,6 @@ Full List of Supported [Formats]({{< ref "parser/net/getting-started/supported-d
 ## Resources
 
 * [API Reference](https://reference.groupdocs.com/net/parser)
-* [Examples on GitHub](https://github.com/groupdocs/GroupDocs.Parser-for-.NET)
+* [Examples on GitHub](https://github.com/groupdocs-parser/GroupDocs.Parser-for-.NET)
 * [Licensing](https://purchase.groupdocs.com/policies/use-license/)
-* [Free Trial](https://purchase.groupdocs.com/temporary-license/)
+* [Free Trial](https://purchase.groupdocs.com/temp-license/100308)

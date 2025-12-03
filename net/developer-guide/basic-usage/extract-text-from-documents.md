@@ -3,11 +3,13 @@ id: extract-text-from-documents
 url: parser/net/extract-text-from-documents
 title: Extract text from documents
 weight: 5
-description: "This article shows how to extract text with GroupDocs.Parser from PDF, Emails, Ebooks (EPUB, FB2, CHM), Microsoft Office formats: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others."
-keywords: Extract text, EPUB, FB2, CHM, pdf, DOC, DOCX, PPT, PPTX, XLS, XLSX
+version: 23.5
+description: "Learn how to extract text from PDF, Word, Excel, PowerPoint, and 50+ document formats using GroupDocs.Parser for .NET. Simple C# code examples for extract text from PDF C# scenarios."
+keywords: Extract text, extract text from PDF C#, PDF text extraction library C#, EPUB, FB2, CHM, pdf, DOC, DOCX, PPT, PPTX, XLS, XLSX, text extraction C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, text-extraction, v23.5
 ---
 GroupDocs.Parser allows to extract text from PDF, Emails, Ebooks, Microsoft Office formats: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others (see full list at [supported document formats]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}) article).
 
@@ -34,21 +36,77 @@ Here are the steps to extract a text from the document:
 *   Check if *reader* isn't *null* (text extraction is supported for the document);
 *   Read a text from *reader*.
 
-The following example shows how to extract a text from a document:
+The following example shows how to extract text from a document with error handling:
 
 ```csharp
-// Create an instance of Parser class
-using(Parser parser = new Parser(filePath))
+using GroupDocs.Parser;
+using GroupDocs.Parser.Exceptions;
+using System;
+using System.IO;
+
+try
 {
-    // Extract a text into the reader
-    using(TextReader reader = parser.GetText())
+    // Create an instance of Parser class
+    using (Parser parser = new Parser(filePath))
     {
-        // Print a text from the document
-        // If text extraction isn't supported, a reader is null
-        Console.WriteLine(reader == null ? "Text extraction isn't supported" : reader.ReadToEnd());
+        // Extract text into the reader
+        using (TextReader reader = parser.GetText())
+        {
+            // Check if text extraction is supported for this document format
+            if (reader == null)
+            {
+                Console.WriteLine("Text extraction isn't supported for this document format.");
+                return;
+            }
+            
+            // Read and print the extracted text
+            string extractedText = reader.ReadToEnd();
+            Console.WriteLine(extractedText);
+        }
     }
 }
+catch (FileNotFoundException)
+{
+    Console.WriteLine($"Error: File not found at path '{filePath}'");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error extracting text: {ex.Message}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Unexpected error: {ex.Message}");
+}
+```
 
+### Example: Extract Text with Null Check
+
+```csharp
+using GroupDocs.Parser;
+
+using (Parser parser = new Parser(filePath))
+{
+    using (TextReader reader = parser.GetText())
+    {
+        if (reader != null)
+        {
+            string text = reader.ReadToEnd();
+            if (string.IsNullOrEmpty(text))
+            {
+                Console.WriteLine("Document appears to be empty.");
+            }
+            else
+            {
+                Console.WriteLine($"Extracted {text.Length} characters of text.");
+                Console.WriteLine(text);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Text extraction is not supported for this file format.");
+        }
+    }
+}
 ```
 
 ## More resources

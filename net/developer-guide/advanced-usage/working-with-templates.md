@@ -3,11 +3,13 @@ id: working-with-templates
 url: parser/net/working-with-templates
 title: Working with templates
 weight: 101
-description: "Document template is set by Template class. It contains template items - fields and tables."
-keywords: 
+version: 23.5
+description: "Complete guide to creating and using templates for structured data extraction with GroupDocs.Parser for .NET. Learn template-based extraction for invoices, forms, and documents in C#."
+keywords: template-based extraction, document templates, template parsing, invoice parsing, structured data extraction, template fields, template tables
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, templates, template-extraction, structured-data, v23.5
 ---
 Document template is set by [Template](https://reference.groupdocs.com/net/parser/groupdocs.parser.templates/template) class. It contains template items - fields and tables. Each item has the unique (in the template bounds) name and optional page index - value that represents the index of the page where the template item is located; *null* if the template item is located on any page.
 

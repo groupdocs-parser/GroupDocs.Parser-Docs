@@ -3,15 +3,34 @@ id: installation
 url: parser/net/installation
 title: Installation
 weight: 4
-description: ""
-keywords: 
+version: 23.5
+description: "Installation guide for GroupDocs.Parser for .NET. Learn how to install via NuGet, configure for .NET Core/.NET 5+, and set up prerequisites for different frameworks."
+keywords: install GroupDocs.Parser, NuGet package, .NET Core installation, .NET Framework setup
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, installation, setup, v23.5
 ---
-## Install from Nuget
+## Prerequisites
 
-NuGet is the easiest way to download and install GroupDocs.Parser for .NET. There are ways to install it in your project.
+### Framework Requirements
+
+GroupDocs.Parser for .NET supports the following frameworks:
+
+| Framework | Minimum Version | Package |
+|-----------|----------------|---------|
+| .NET Framework | 4.6.1 | `GroupDocs.Parser.Framework` |
+| .NET Core | 2.0 | `GroupDocs.Parser` |
+| .NET Standard | 2.0 | `GroupDocs.Parser` |
+| .NET | 5.0+ | `GroupDocs.Parser` |
+
+{{< alert style="info" >}}
+**For .NET Framework 4.5 and earlier:** You need to upgrade to .NET Framework 4.6.1 or higher, or target .NET Standard 2.0 compatible packages. GroupDocs.Parser requires .NET Standard 2.0 compatibility.
+{{< /alert >}}
+
+## Install from NuGet
+
+NuGet is the easiest way to download and install GroupDocs.Parser for .NET. There are multiple ways to install it in your project.
 
 #### Install via Package Manager GUI
 
@@ -31,8 +50,69 @@ You can follow the steps below to reference GroupDocs.Parser for .NET using the 
 
 *   Open your solution/project in Visual Studio.
 *   Select Tools -> NuGet Package Manager -> Package Manager Console from the menu to open package manager console.
-*   Type the command "Install-Package GroupDocs.Parser" and press enter to install the latest release into your application.
+*   Type the command based on your target framework:
+    - For .NET Core/.NET 5+: `Install-Package GroupDocs.Parser`
+    - For .NET Framework: `Install-Package GroupDocs.Parser.Framework`
+*   Press enter to install the latest release into your application.
 *   After successful installation, GroupDocs.Parser will be referenced in your application.
+
+#### Using .NET CLI (.NET Core/.NET 5+)
+
+For .NET Core, .NET 5, .NET 6, or later projects:
+
+```bash
+# Create a new console project
+dotnet new console -n MyParserApp
+cd MyParserApp
+
+# Add the package
+dotnet add package GroupDocs.Parser
+
+# Restore packages
+dotnet restore
+```
+
+#### Quick Start with .NET Core
+
+Here's a complete example for setting up a .NET Core project:
+
+```bash
+# 1. Create new project
+dotnet new console -n GroupDocsParserDemo
+cd GroupDocsParserDemo
+
+# 2. Install package
+dotnet add package GroupDocs.Parser
+
+# 3. Run the project
+dotnet run
+```
+
+Then update `Program.cs`:
+
+```csharp
+using GroupDocs.Parser;
+
+namespace GroupDocsParserDemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            using (Parser parser = new Parser("sample.pdf"))
+            {
+                using (var reader = parser.GetText())
+                {
+                    if (reader != null)
+                    {
+                        Console.WriteLine(reader.ReadToEnd());
+                    }
+                }
+            }
+        }
+    }
+}
+```
 
 ![](/parser/net/images/installation_1.png)
 

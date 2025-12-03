@@ -3,11 +3,13 @@ id: extract-data-from-attachments-and-zip-archives
 url: parser/net/extract-data-from-attachments-and-zip-archives
 title: Extract data from attachments and ZIP archives
 weight: 9
-description: "This article shows how to extract data (text, images, PDF forms) from ZIP-archived documents with GroupDocs.Parser."
-keywords: Extract data, PDF forms, ZIP-archived documents
+version: 23.5
+description: "Learn how to extract text, images, and data from ZIP archives, PDF portfolios, email attachments, and Outlook storage files using GroupDocs.Parser for .NET in C#."
+keywords: Extract data, PDF forms, ZIP-archived documents, extract from attachments, email attachments, PDF portfolios, container extraction C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, attachments, zip-archives, container, v23.5
 ---
 It is easy to extract data, text, images and use any GroupDocs.Parser feature for ZIP-archived documents. The same feature allows to get attachments from  PDF and Emails and extract data from them.
 
@@ -43,41 +45,94 @@ Here are the steps to extract an email text from outlook storage:
 *   Check if *collection* isn't *null* (container extraction is supported for the document);
 *   Iterate through the collection and obtain [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object to extract a text.
 
-The following example shows how to extract a text from from zip entities:
+The following example shows how to extract text from ZIP archive files with comprehensive error handling:
 
 ```csharp
-// Create an instance of Parser class
-using (Parser parser = new Parser(filePath))
+using GroupDocs.Parser;
+using GroupDocs.Parser.Data;
+using GroupDocs.Parser.Exceptions;
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+try
 {
-    // Extract attachments from the container
-    IEnumerable<ContainerItem> attachments = parser.GetContainer();
-    // Check if container extraction is supported
-    if (attachments == null)
+    // Create an instance of Parser class
+    using (Parser parser = new Parser(filePath))
     {
-        Console.WriteLine("Container extraction isn't supported");
-    }
-    // Iterate over zip entities
-    foreach (ContainerItem item in attachments)
-    {
-        // Print the file path
-        Console.WriteLine(item.FilePath);
-        try
+        // Extract attachments from the container
+        IEnumerable<ContainerItem> attachments = parser.GetContainer();
+        
+        // Check if container extraction is supported
+        if (attachments == null)
         {
-            // Create Parser object for the zip entity content
-            using (Parser attachmentParser = item.OpenParser())
+            Console.WriteLine("Container extraction isn't supported for this file format.");
+            return;
+        }
+        
+        // Iterate over container items (ZIP entries, attachments, etc.)
+        int itemIndex = 0;
+        foreach (ContainerItem item in attachments)
+        {
+            itemIndex++;
+            Console.WriteLine($"\n=== Item {itemIndex}: {item.FilePath} ===");
+            Console.WriteLine($"Size: {item.Size} bytes");
+            Console.WriteLine($"Directory: {item.Directory}");
+            
+            try
             {
-                // Extract an zip entity text
-                using (TextReader reader = attachmentParser.GetText())
+                // Create Parser object for the container item content
+                using (Parser attachmentParser = item.OpenParser())
                 {
-                    Console.WriteLine(reader == null ? "No text" : reader.ReadToEnd());
+                    // Extract text from the item
+                    using (TextReader reader = attachmentParser.GetText())
+                    {
+                        if (reader == null)
+                        {
+                            Console.WriteLine("Text extraction is not supported for this item.");
+                        }
+                        else
+                        {
+                            string text = reader.ReadToEnd();
+                            if (string.IsNullOrEmpty(text))
+                            {
+                                Console.WriteLine("Item contains no text.");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Extracted {text.Length} characters of text.");
+                                // Uncomment to see full text: Console.WriteLine(text);
+                            }
+                        }
+                    }
                 }
             }
-        }
-        catch (UnsupportedDocumentFormatException)
-        {
-            Console.WriteLine("Isn't supported.");
+            catch (UnsupportedDocumentFormatException)
+            {
+                Console.WriteLine("Document format is not supported for this item.");
+            }
+            catch (ParserException ex)
+            {
+                Console.WriteLine($"Error parsing item: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+            }
         }
     }
+}
+catch (FileNotFoundException)
+{
+    Console.WriteLine($"Error: File not found at path '{filePath}'");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Unexpected error: {ex.Message}");
 }
 ```
 

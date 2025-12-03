@@ -3,16 +3,22 @@ id: evaluation-limitations-and-licensing
 url: parser/net/evaluation-limitations-and-licensing
 title: Evaluation Limitations and Licensing
 weight: 5
-description: "free parser api version is available to evaluate the API which will be similar as licensed but with few limitations."
-keywords: free parser api, parser api
+version: 23.5
+description: "Learn about evaluation limitations and licensing options for GroupDocs.Parser for .NET. Free trial limitations include 100 files per session, 5 pages per document, and evaluation watermarks."
+keywords: free parser api, parser api, evaluation limitations, free trial, licensing, temporary license
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, licensing, evaluation, trial, v23.5
 ---
   
   
 
-{{< alert style="info" >}}You can use GroupDocs.Parser without the license. The usage and functionalities are pretty much same as the licensed one but you will face few limitations while using the non-licensed API.{{< /alert >}}
+{{< alert style="info" >}}You can use GroupDocs.Parser without the license. The usage and functionalities are pretty much same as the licensed one but you will face few limitations while using the non-licensed API. You can [get a free temporary license](https://purchase.groupdocs.com/temp-license/100308) for evaluation purposes.{{< /alert >}}
+
+{{< alert style="warning" >}}
+**Important:** For a full-featured evaluation without limitations, request a [temporary license](https://purchase.groupdocs.com/temp-license/100308) which allows you to test all features for 30 days.
+{{< /alert >}}
 
 ## Evaluation Limitations
 

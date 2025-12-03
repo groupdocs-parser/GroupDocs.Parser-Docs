@@ -3,11 +3,13 @@ id: search-text
 url: parser/net/search-text
 title: Search text
 weight: 4
-description: "This article explains that how to search text from documents."
-keywords: search text, search text from documents
+version: 23.5
+description: "Learn how to search for keywords and use regular expressions to find text in documents using GroupDocs.Parser for .NET. Search text with case sensitivity and whole word options in C#."
+keywords: search text, search text from documents, text search C#, keyword search, regex search, document search
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, text-search, regex, search, v23.5
 ---
 GroupDocs.Parser provides the functionality to search text from documents by the [Search(string)](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/search) and [Search(string, SearchOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/search/methods/1) methods:
 

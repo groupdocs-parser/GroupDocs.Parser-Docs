@@ -3,11 +3,13 @@ id: extract-text-in-raw-mode
 url: parser/net/extract-text-in-raw-mode
 title: Extract text in Raw mode
 weight: 2
-description: "This article explains that how to extract text in Raw mode."
-keywords: extract text, extract text in Raw mode
+version: 23.5
+description: "Learn how to extract text in Raw mode for maximum performance using GroupDocs.Parser for .NET. Fast text extraction mode for bulk processing and performance-critical scenarios in C#."
+keywords: extract text, extract text in Raw mode, raw text extraction, fast text extraction, performance mode, bulk text extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, text-extraction, raw-mode, performance, v23.5
 ---
 GroupDocs.Parser provides the functionality to extract a text from documents.
 

@@ -3,11 +3,13 @@ id: extract-tables-from-document-page
 url: parser/net/extract-tables-from-document-page
 title: Extract tables from document page
 weight: 4
-description: "This article explains that how to extract tables from document page."
-keywords: extract tables, extract tables from document page
+version: 23.5
+description: "Learn how to extract tables from a specific document page using GroupDocs.Parser for .NET. Extract tables from Excel, Word, PDF pages by page index in C#."
+keywords: extract tables, extract tables from document page, extract tables from Excel page, page-specific table extraction, extract tables from XLSX page
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, table-extraction, page-extraction, v23.5
 ---
 
 GroupDocs.Parser provides the functionality to extract tables from document page by the [GetTables(Int32, PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gettables/methods/1) method:
@@ -30,12 +32,13 @@ This method returns a collection of [PageTableArea](https://reference.groupdocs.
 
 [GetTables(Int32, PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gettables/methods/1) accepts [PageTableAreaOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/pagetableareaoptions) object that contains [TemplateTableLayout](https://reference.groupdocs.com/parser/net/groupdocs.parser.templates/templatetablelayout) object with table layout (see [this article]({{< ref "parser/net/developer-guide/advanced-usage/working-with-templates.md" >}}) for more details).
 
-Here are the steps to extract tables from the document page:
+Here are the steps to extract tables from a specific document page:
 
-- Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-- Check if the document supports hyperlink extraction;
-- Call [GetTables(Int32, PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gettables/methods/1) method with page index and obtain collection of [PageTableArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagetablearea) objects;
-- Iterate through the collection and print table cells.
+1. Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the document;
+2. Check if the document supports **table extraction** using `Features.Tables` property;
+3. Get document info to determine total page count;
+4. Call [GetTables(Int32, PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/gettables/methods/1) method with page index and obtain collection of [PageTableArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagetablearea) objects;
+5. Iterate through the collection and access table cells.
 
 The following example shows how to extract tables from the document page:
 

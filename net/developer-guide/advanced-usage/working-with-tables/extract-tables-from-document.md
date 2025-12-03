@@ -3,14 +3,20 @@ id: extract-tables-from-document
 url: parser/net/extract-tables-from-document
 title: Extract tables from document
 weight: 4
-description: "This article explains that how to extract tables from document."
-keywords: extract tables, extract tables from document
+version: 23.5
+description: "Learn how to extract tables from documents including Excel spreadsheets, Word documents, and PDFs using GroupDocs.Parser for .NET. Complete guide with code examples for extract tables from Excel C# scenarios."
+keywords: extract tables, extract tables from document, extract tables from Excel C#, Excel table extraction, extract tables from XLSX, C# table parser
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, table-extraction, excel-tables, v23.5
 ---
 
-GroupDocs.Parser provides the functionality to extract tables from documents by the [GetTables(PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gettables) method:
+GroupDocs.Parser provides the functionality to extract tables from documents including **Excel spreadsheets (XLS, XLSX)**, Word documents, PDFs, and other supported formats using the [GetTables(PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gettables) method.
+
+## Extract Tables from Excel C#
+
+To **extract tables from Excel C#** applications, GroupDocs.Parser supports extracting structured table data from Excel spreadsheets. This is especially useful for processing data-rich Excel files programmatically.
 
 ```csharp
 IEnumerable<PageTableArea> GetTables(PageTableAreaOptions options);
@@ -30,14 +36,68 @@ This method returns a collection of [PageTableArea](https://reference.groupdocs.
 
 [GetTables(PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gettables) accepts [PageTableAreaOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/pagetableareaoptions) object that contains [TemplateTableLayout](https://reference.groupdocs.com/parser/net/groupdocs.parser.templates/templatetablelayout) object with table layout (see [this article]({{< ref "parser/net/developer-guide/advanced-usage/working-with-templates.md" >}}) for more details).
 
-Here are the steps to extract tables from the whole document:
+### Basic Steps
 
-- Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
-- Check if the document supports hyperlink extraction;
-- Call [GetTables(PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gettables) method and obtain collection of [PageTableArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagetablearea) objects;
-- Iterate through the collection and print table cells.
+Here are the basic steps to extract tables from documents:
 
-The following example shows how to extract tables from the whole document:
+1. Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the document (Excel, Word, PDF, etc.);
+2. Check if the document supports **table extraction** using `Features.Tables` property;
+3. Call [GetTables(PageTableAreaOptions)](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/gettables) method and obtain collection of [PageTableArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagetablearea) objects;
+4. Iterate through the collection and access table cells.
+
+### Example: Extract Tables from Excel Spreadsheet
+
+```csharp
+using GroupDocs.Parser;
+using GroupDocs.Parser.Options;
+using GroupDocs.Parser.Data;
+using GroupDocs.Parser.Templates;
+
+// Excel file path
+string excelPath = "sample.xlsx";
+
+using (Parser parser = new Parser(excelPath))
+{
+    // Check if table extraction is supported for Excel
+    if (!parser.Features.Tables)
+    {
+        Console.WriteLine("Table extraction is not supported for this Excel file.");
+        return;
+    }
+    
+    // Extract all tables from the Excel spreadsheet
+    // Pass null to extract tables automatically
+    IEnumerable<PageTableArea> tables = parser.GetTables(null);
+    
+    int tableIndex = 0;
+    foreach (PageTableArea table in tables)
+    {
+        Console.WriteLine($"\n=== Table {++tableIndex} ===");
+        Console.WriteLine($"Rows: {table.RowCount}, Columns: {table.ColumnCount}");
+        
+        // Iterate over rows
+        for (int row = 0; row < table.RowCount; row++)
+        {
+            // Iterate over columns
+            for (int column = 0; column < table.ColumnCount; column++)
+            {
+                // Get the table cell
+                PageTableAreaCell cell = table[row, column];
+                if (cell != null)
+                {
+                    // Print the cell text
+                    Console.Write($"{cell.Text}\t");
+                }
+            }
+            Console.WriteLine();
+        }
+    }
+}
+```
+
+### Example: Extract Tables with Custom Layout
+
+The following example shows how to extract tables from documents when you know the exact table structure (columns and rows positions):
 
 ```csharp
 // Create an instance of Parser class

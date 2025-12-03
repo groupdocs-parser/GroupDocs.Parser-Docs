@@ -3,13 +3,23 @@ id: extract-data-from-microsoft-office-excel-spreadsheets
 url: parser/net/extract-data-from-microsoft-office-excel-spreadsheets
 title: Extract data from Microsoft Office Excel spreadsheets
 weight: 2
-description: "This article shows how to to extract data from Microsoft Office Excel spreadsheets."
-keywords: extract data
+version: 23.5
+description: "Complete guide to extracting data, text, and tables from Excel spreadsheets (.xls, .xlsx) using GroupDocs.Parser for .NET. Learn how to extract tables from Excel C# with code examples."
+keywords: extract data, extract tables from Excel C#, Excel data extraction, XLSX parser, extract tables from XLSX, C# Excel parser
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, excel, table-extraction, v23.5
 ---
-GroupDocs.Parser provides the functionality to extract data from Microsoft Office Excel spreadsheets. Both classic (xls, xlt) and Open XML (xlsx, xltx) formats are supported. Also LibreOffice Calc (OpenOffice.org Calc) formats, CSV and Apple iWork Numbers are supported.
+GroupDocs.Parser provides comprehensive functionality to **extract tables from Excel C#** applications and extract data from Microsoft Office Excel spreadsheets. Both classic (xls, xlt) and Open XML (xlsx, xltx) formats are supported. Also LibreOffice Calc (OpenOffice.org Calc) formats, CSV and Apple iWork Numbers are supported.
+
+You can extract:
+- **Text content** from entire spreadsheets or individual sheets
+- **Tables** with preserved structure and formatting
+- **Metadata** such as author, creation date, and document properties
+- **Images** embedded in Excel files
+
+For detailed table extraction examples, see the [Extract Tables from Document]({{< ref "parser/net/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document.md" >}}) guide.
 
 The following table provides the list of supported formats:
 

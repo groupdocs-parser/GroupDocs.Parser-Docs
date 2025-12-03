@@ -3,11 +3,13 @@ id: get-document-info
 url: parser/net/get-document-info
 title: Get document info
 weight: 2
-description: "This article shows how to get the basic document info."
-keywords: Document Info, Parser, C#, CSharp, .Net, dotNet
+version: 23.5
+description: "Learn how to get basic document information including file type, page count, and file size using GroupDocs.Parser for .NET. Get document properties in C#."
+keywords: Document Info, Parser, C#, CSharp, .Net, dotNet, get file type, get page count, document properties, file information
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, document-info, file-properties, v23.5
 ---
 GroupDocs.Parser provides the functionality to get the basic document info by the [GetDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method:
 
@@ -30,20 +32,57 @@ Here are the steps to get document info:
 *   Call [GetDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getdocumentinfo) method and obtain the object with [IDocumentInfo](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo) interface;
 *   Call properties such as [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/filetype), [PageCount](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/pagecount) or [Size](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/idocumentinfo/properties/size).
 
-The following example shows how to get document info:
+The following example shows how to get document info with error handling:
 
 ```csharp
-// Create an instance of Parser class
-using(Parser parser = new Parser(filePath))
+using GroupDocs.Parser;
+using GroupDocs.Parser.Options;
+using GroupDocs.Parser.Exceptions;
+using System;
+using System.IO;
+
+try
 {
-    // Get the document info
-    IDocumentInfo info = parser.GetDocumentInfo();
-
-    Console.WriteLine(string.Format("FileType: {0}", info.FileType));
-    Console.WriteLine(string.Format("PageCount: {0}", info.PageCount));
-    Console.WriteLine(string.Format("Size: {0}", info.Size));
+    // Create an instance of Parser class
+    using (Parser parser = new Parser(filePath))
+    {
+        // Get the document info
+        IDocumentInfo info = parser.GetDocumentInfo();
+        
+        if (info == null)
+        {
+            Console.WriteLine("Unable to retrieve document information.");
+            return;
+        }
+        
+        // Display document information
+        Console.WriteLine("=== Document Information ===");
+        Console.WriteLine($"File Type: {info.FileType}");
+        Console.WriteLine($"Page Count: {info.PageCount}");
+        Console.WriteLine($"File Size: {info.Size:N0} bytes ({info.Size / 1024.0:F2} KB)");
+        
+        // Additional info if available
+        if (info is ITextDocumentInfo textInfo)
+        {
+            if (textInfo.Encoding != null)
+            {
+                Console.WriteLine($"Encoding: {textInfo.Encoding.EncodingName}");
+            }
+        }
+    }
 }
-
+catch (FileNotFoundException)
+{
+    Console.WriteLine($"Error: File not found at path '{filePath}'");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error getting document info: {ex.Message}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Unexpected error: {ex.Message}");
+}
 ```
 
 ## More resources

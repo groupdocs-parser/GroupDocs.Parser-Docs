@@ -3,11 +3,13 @@ id: extract-formatted-text-from-documents
 url: parser/net/extract-formatted-text-from-documents
 title: Extract formatted text from documents
 weight: 6
-description: "This article shows how to extract formatted text represented as HTML or Markdown with GroupDocs.Parser from documents of various formats like Emails, Ebooks (EPUB, FB2, CHM), Microsoft Office formats: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others."
-keywords: Extract formatted text, Extract data, EPUB, FB2, CHM, DOC, DOCX, PPT, PPTX, XLS, XLSX
+version: 23.5
+description: "Learn how to extract formatted text as HTML, Markdown, or PlainText from PDF, Word, Excel, and 50+ document formats using GroupDocs.Parser for .NET. Preserve formatting with C# code examples."
+keywords: Extract formatted text, Extract data, HTML text extraction, Markdown extraction, EPUB, FB2, CHM, DOC, DOCX, PPT, PPTX, XLS, XLSX, formatted text C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, formatted-text, html, markdown, v23.5
 ---
 GroupDocs.Parser allows to extract formatted text from documents for those cases when simple plain text is not enough and you may need to keep formatting like text style, table layout etc.
 
@@ -45,21 +47,92 @@ Here are the steps to extract a HTML formatted text from the document:
 *   Check if *reader* isn't *null* (formatted text extraction is supported for the document);
 *   Read a text from *reader*.
 
-The following example shows how to extract a document text as HTML text:
+The following example shows how to extract document text as HTML with error handling:
 
 ```csharp
-// Create an instance of Parser class
-using (Parser parser = new Parser(filePath))
+using GroupDocs.Parser;
+using GroupDocs.Parser.Options;
+using GroupDocs.Parser.Exceptions;
+using System;
+using System.IO;
+
+try
 {
-    // Extract a formatted text into the reader
-    using (TextReader reader = parser.GetFormattedText(new FormattedTextOptions(FormattedTextMode.Html)))
+    // Create an instance of Parser class
+    using (Parser parser = new Parser(filePath))
     {
-        // Print a formatted text from the document
-        // If formatted text extraction isn't supported, a reader is null
-        Console.WriteLine(reader == null ? "Formatted text extraction isn't supported" : reader.ReadToEnd());
+        // Extract formatted text as HTML
+        using (TextReader reader = parser.GetFormattedText(new FormattedTextOptions(FormattedTextMode.Html)))
+        {
+            // Check if formatted text extraction is supported
+            if (reader == null)
+            {
+                Console.WriteLine("Formatted text extraction isn't supported for this document format.");
+                return;
+            }
+            
+            // Read and print the formatted text
+            string htmlText = reader.ReadToEnd();
+            Console.WriteLine(htmlText);
+        }
     }
 }
+catch (FileNotFoundException)
+{
+    Console.WriteLine($"Error: File not found at path '{filePath}'");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error extracting formatted text: {ex.Message}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Unexpected error: {ex.Message}");
+}
+```
 
+### Example: Extract Text as Markdown
+
+```csharp
+using GroupDocs.Parser;
+using GroupDocs.Parser.Options;
+
+using (Parser parser = new Parser(filePath))
+{
+    // Extract formatted text as Markdown
+    using (TextReader reader = parser.GetFormattedText(new FormattedTextOptions(FormattedTextMode.Markdown)))
+    {
+        if (reader != null)
+        {
+            string markdownText = reader.ReadToEnd();
+            Console.WriteLine(markdownText);
+        }
+        else
+        {
+            Console.WriteLine("Markdown extraction is not supported for this format.");
+        }
+    }
+}
+```
+
+### Example: Extract Formatted Plain Text
+
+```csharp
+using GroupDocs.Parser;
+using GroupDocs.Parser.Options;
+
+using (Parser parser = new Parser(filePath))
+{
+    // Extract formatted text as PlainText (with ASCII formatting symbols)
+    using (TextReader reader = parser.GetFormattedText(new FormattedTextOptions(FormattedTextMode.PlainText)))
+    {
+        if (reader != null)
+        {
+            string formattedPlainText = reader.ReadToEnd();
+            Console.WriteLine(formattedPlainText);
+        }
+    }
+}
 ```
 
 ## More resources

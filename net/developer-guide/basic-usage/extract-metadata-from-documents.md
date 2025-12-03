@@ -3,11 +3,13 @@ id: extract-metadata-from-documents
 url: parser/net/extract-metadata-from-documents
 title: Extract metadata from documents
 weight: 7
-description: "This article shows how to extract metadata with GroupDocs.Parser from documents of various formats: PDF, Emails, Ebooks, Microsoft Office: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others."
-keywords: Extract metadata, extract basic metadata, extract metadata from image
+version: 23.5
+description: "Learn how to extract metadata from PDF, Word, Excel, PowerPoint and 50+ document formats using GroupDocs.Parser for .NET. Get document properties like author, title, creation date in C#."
+keywords: Extract metadata, extract basic metadata, extract metadata from image, document properties C#, PDF metadata extraction, document info C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, metadata-extraction, document-properties, v23.5
 ---
 GroupDocs.Parser allows to extract basic metadata from documents of various formats: PDF, Emails, Ebooks, Microsoft Office: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others (see full list at [supported document formats]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}) article).
 
@@ -34,28 +36,86 @@ Here are the steps to extract metadata from the document:
 *   Check if *collection* isn't null (metadata extraction is supported for the document);
 *   Iterate through the collection and get metadata names and values.
 
-The following example shows how to extract metadata from a document:
+The following example shows how to extract metadata from a document with error handling:
 
 ```csharp
-// Create an instance of Parser class
-using(Parser parser = new Parser(filePath))
-{
-    // Extract metadata from the document
-    IEnumerable<MetadataItem> metadata = parser.GetMetadata();
-    // Check if metadata extraction is supported
-    if(metadata == null)
-    {
-        Console.WriteLine("Metatada extraction isn't supported");
-    }
+using GroupDocs.Parser;
+using GroupDocs.Parser.Data;
+using GroupDocs.Parser.Exceptions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-    // Iterate over metadata items
-    foreach(MetadataItem item in metadata)
+try
+{
+    // Create an instance of Parser class
+    using (Parser parser = new Parser(filePath))
     {
-        // Print an item name and value
-        Console.WriteLine(string.Format("{0}: {1}", item.Name, item.Value));
+        // Extract metadata from the document
+        IEnumerable<MetadataItem> metadata = parser.GetMetadata();
+        
+        // Check if metadata extraction is supported
+        if (metadata == null)
+        {
+            Console.WriteLine("Metadata extraction isn't supported for this document format.");
+            return;
+        }
+        
+        // Convert to list to avoid multiple enumeration
+        var metadataList = metadata.ToList();
+        
+        if (metadataList.Count == 0)
+        {
+            Console.WriteLine("No metadata found in this document.");
+            return;
+        }
+        
+        // Iterate over metadata items
+        Console.WriteLine("=== Document Metadata ===");
+        foreach (MetadataItem item in metadataList)
+        {
+            // Print item name and value
+            Console.WriteLine($"{item.Name}: {item.Value ?? "(null)"}");
+        }
     }
 }
+catch (FileNotFoundException)
+{
+    Console.WriteLine($"Error: File not found at path '{filePath}'");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error extracting metadata: {ex.Message}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Unexpected error: {ex.Message}");
+}
+```
 
+### Example: Extract Specific Metadata Fields
+
+```csharp
+using GroupDocs.Parser;
+using GroupDocs.Parser.Data;
+using System.Linq;
+
+using (Parser parser = new Parser(filePath))
+{
+    var metadata = parser.GetMetadata();
+    
+    if (metadata != null)
+    {
+        // Get specific metadata fields
+        var author = metadata.FirstOrDefault(m => m.Name == "author")?.Value;
+        var title = metadata.FirstOrDefault(m => m.Name == "title")?.Value;
+        var createdDate = metadata.FirstOrDefault(m => m.Name == "created-time")?.Value;
+        
+        Console.WriteLine($"Author: {author ?? "Not available"}");
+        Console.WriteLine($"Title: {title ?? "Not available"}");
+        Console.WriteLine($"Created: {createdDate ?? "Not available"}");
+    }
+}
 ```
 
 ## More resources

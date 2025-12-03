@@ -3,11 +3,13 @@ id: system-requirements
 url: parser/net/system-requirements
 title: System Requirements
 weight: 3
-description: "GroupDocs.Parser for .NET supports any 32-bit or 64-bit operating system where .NET or Mono framework is installed."
-keywords: parser, GroupDocs.Parser for .NET
+version: 23.5
+description: "System requirements for GroupDocs.Parser for .NET including supported operating systems, .NET Framework versions, .NET Core, and development environments."
+keywords: parser, GroupDocs.Parser for .NET, system requirements, .NET Framework, .NET Core, .NET 5, .NET 6, prerequisites
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, system-requirements, prerequisites, v23.5
 ---
 ## Overview
 
@@ -50,24 +52,17 @@ Any type of .NET Standard 2.0 application is supported.
 
 ### .NET Frameworks
 
-*   .NET Framework 2.0
-*   .NET Framework 3.5
-*   .NET Framework 4.0
-*   .NET Framework 4.0\_ClientProfile
-*   .NET Framework 4.5.0
-*   .NET Framework 4.5.1
-*   .NET Framework 4.5.2
-*   .NET Framework 4.6.0
-*   .NET Framework 4.6.2
-*   .NET Framework 4.5.0
-*   .NET Framework 4.5.1
-*   .NET Framework 4.6.0
-*   .NET Framework 4.6.2
-*   .NET Framework 4.7
-*   .NET Framework 4.7.2
-*   .NET Standard 2.0 
-*   .NET Core 2.0
-*   .NET Core 2.1
+*   .NET Framework 4.6.1 or higher (recommended)
+*   .NET Core 2.0 or higher
+*   .NET Standard 2.0 or higher
+*   .NET 5.0 or higher
+*   .NET 6.0 or higher
+*   .NET 7.0 or higher
+*   .NET 8.0 or higher
+
+{{< alert style="info" >}}
+**Note:** For .NET Framework 4.5 and earlier, you must target .NET Standard 2.0 compatible packages. The minimum recommended version is .NET Framework 4.6.1.
+{{< /alert >}}
 
 ### Mono Framework
 

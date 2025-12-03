@@ -3,11 +3,13 @@ id: how-to-run-examples
 url: parser/net/how-to-run-examples
 title: How to Run Examples
 weight: 6
-description:  "This article describes how to run .NET parser API code examples."
-keywords:  parser api
+version: 23.5
+description: "Step-by-step guide to run GroupDocs.Parser for .NET code examples. Learn how to build projects from scratch, use GitHub examples, and set up your development environment."
+keywords: parser api, run examples, .NET examples, GitHub examples, code samples
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, examples, setup, v23.5
 ---
 {{< alert style="warning" >}}Before running an example make sure that GroupDocs.Parser has been installed successfully.{{< /alert >}}
 

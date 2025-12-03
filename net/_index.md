@@ -3,8 +3,9 @@ id: home
 url: parser/net
 title: GroupDocs.Parser for .NET
 weight: 1
-description: "A convenient text extractor API that permits users to extract raw or formatted text from different document formats. Besides, it is not only a text extractor API, the user can extract metadata from the document as well. "
-keywords: parser api, text extractor, extract raw, extract metadata
+version: 23.5
+description: "A convenient text extractor API that permits users to extract raw or formatted text from different document formats. Besides, it is not only a text extractor API, the user can extract metadata from the document as well. "
+keywords: parser api, text extractor, extract raw, extract metadata, PDF text extraction library C#, extract text from PDF C#, C# document parser
 productName: GroupDocs.Parser for .NET
 hideChildren: True
 ---
@@ -18,7 +19,7 @@ GroupDocs.Parser is a convenient text extractor API that permits users to extrac
 
 ## Overview
 
-GroupDocs.Parser for .NET is a powerful document data extraction API that enables developers to parse and extract information from over 50 document types. This robust library allows you to extract text, metadata, images, tables, and other structured data from various file formats without requiring additional software installations.
+GroupDocs.Parser for .NET is a powerful **PDF text extraction library C#** that enables developers to parse and extract information from over 50 document types. This robust library allows you to **extract text from PDF** files, Word documents, Excel spreadsheets, and more. You can extract raw or formatted text, metadata, images, tables, and other structured data from various file formats. The library works without requiring additional software installations for most formats, though some advanced PDF features may require optional dependencies (see [Installation](#installation)).
 
 ### Key Highlights
 
@@ -47,21 +48,48 @@ One of the most powerful features is parsing documents with predefined templates
 
 ## Installation
 
-Install via NuGet Package Manager:
+### .NET Core / .NET 5+ / .NET 6+
+
+For .NET Core, .NET 5, .NET 6, or later projects:
+
+```bash
+dotnet new console -n MyParserApp
+cd MyParserApp
+dotnet add package GroupDocs.Parser
+```
+
+Or via NuGet Package Manager:
 
 ```powershell
 Install-Package GroupDocs.Parser
 ```
 
-Or via .NET CLI:
-```bash
-dotnet add package GroupDocs.Parser
+### .NET Framework
+
+For .NET Framework projects, use the Framework-specific package:
+
+```powershell
+Install-Package GroupDocs.Parser.Framework
 ```
+
+### Prerequisites
+
+**For .NET Framework 4.5 and earlier:** Ensure your project targets .NET Standard 2.0 compatible packages or upgrade to .NET Framework 4.6.1 or higher.
+
+**For Linux:** Install the following packages:
+- `libgdiplus`
+- `libc6-dev`
+- `ttf-mscorefonts-installer` (Microsoft compatible fonts)
+
+See the [Installation Guide]({{< ref "parser/net/getting-started/installation.md" >}}) for detailed setup instructions.
 
 ## Quick Start Example
 
+**Extract text from PDF in C#:**
+
 ```csharp
 using GroupDocs.Parser;
+using System;
 
 // Create an instance of Parser class
 using (Parser parser = new Parser("sample.pdf"))
@@ -78,6 +106,28 @@ using (Parser parser = new Parser("sample.pdf"))
         else
         {
             Console.WriteLine("Text extraction isn't supported for this format");
+        }
+    }
+}
+```
+
+**For .NET Core / .NET 5+ async usage:**
+
+```csharp
+using GroupDocs.Parser;
+using System.Threading.Tasks;
+
+public async Task ExtractTextAsync(string filePath)
+{
+    using (Parser parser = new Parser(filePath))
+    {
+        using (TextReader reader = parser.GetText())
+        {
+            if (reader != null)
+            {
+                string text = await reader.ReadToEndAsync();
+                Console.WriteLine(text);
+            }
         }
     }
 }
@@ -207,7 +257,7 @@ foreach (string file in files)
 
 ## Licensing & Trial
 
-- [Free Trial](https://purchase.groupdocs.com/temporary-license/) - Evaluate all features with temporary license
+- [Free Trial](https://purchase.groupdocs.com/temp-license/100308) - Evaluate all features with temporary license
 - [Licensing Options](https://purchase.groupdocs.com/policies/use-license/) - Flexible licensing for different use cases
 - [Purchase](https://purchase.groupdocs.com/buy) - Get your production license
 
@@ -234,4 +284,4 @@ Following are the links to some useful resources you may need to accomplish your
 *   [GroupDocs.Parser for .NET Paid Support Helpdesk](https://helpdesk.groupdocs.com/)
 
 
-**Ready to start extracting data from your documents?** [Download the free trial](https://purchase.groupdocs.com/temporary-license/) and begin parsing documents in minutes!
+**Ready to start extracting data from your documents?** [Download the free trial](https://purchase.groupdocs.com/temp-license/100308) and begin parsing documents in minutes!

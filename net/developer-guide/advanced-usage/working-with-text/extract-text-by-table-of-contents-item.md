@@ -3,11 +3,13 @@ id: extract-text-by-table-of-contents-item
 url: parser/net/extract-text-by-table-of-contents-item
 title: Extract text by table of contents item
 weight: 9
-description: "This article explains that how to extract text by table of contents item."
-keywords: extract text, extract text by table of contents item
+version: 23.5
+description: "Learn how to extract text by specific table of contents items using GroupDocs.Parser for .NET. Extract chapter content from Word documents, PDFs, and eBooks by TOC item in C#."
+keywords: extract text, extract text by table of contents item, extract chapter text, TOC item extraction, extract by heading C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, toc, table-of-contents, chapter-extraction, v23.5
 ---
 GroupDocs.Parser provides the functionality to extract a text by an item of table of contents. This feature is supported for Word Processing, PDF, ePUB and CHM documents (for more details, see [Supported Document Formats]({{< ref "parser/net/getting-started/supported-document-formats.md" >}})).
 
@@ -52,29 +54,109 @@ Here are the steps to extract a text by an item of table of contents:
 *   Check if *collection* isn't *null* (table of contents extraction is supported for the document);
 *   Iterate through the collection and extract a text by [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/gettext) method.  
 
-The following example shows how to extract a text by an item of table of contents:      
-    
+The following example shows how to extract text by table of contents items with error handling:
+
 ```csharp
-// Create an instance of Parser class
-using (Parser parser = new Parser(Constants.SampleDocxWithToc))
+using GroupDocs.Parser;
+using GroupDocs.Parser.Data;
+using GroupDocs.Parser.Exceptions;
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+try
 {
-    // Get table of contents
-    IEnumerable<TocItem> tocItems = parser.GetToc();
-    // Check if toc extraction is supported
-    if (tocItems == null)
+    // Create an instance of Parser class
+    using (Parser parser = new Parser(filePath))
     {
-        Console.WriteLine("Table of contents extraction isn't supported");
-    }
-    // Iterate over items
-    foreach (TocItem tocItem in tocItems)
-    {
-        // Print the text of the chapter
-        using (TextReader reader = tocItem.ExtractText())
+        // Get table of contents
+        IEnumerable<TocItem> tocItems = parser.GetToc();
+        
+        // Check if TOC extraction is supported
+        if (tocItems == null)
         {
-            Console.WriteLine("----");
-            Console.WriteLine(reader.ReadToEnd());
+            Console.WriteLine("Table of contents extraction isn't supported for this document format.");
+            return;
+        }
+        
+        var tocList = new List<TocItem>(tocItems);
+        
+        if (tocList.Count == 0)
+        {
+            Console.WriteLine("Document has no table of contents items.");
+            return;
+        }
+        
+        Console.WriteLine($"Found {tocList.Count} TOC item(s)\n");
+        
+        // Iterate over items
+        foreach (TocItem tocItem in tocList)
+        {
+            Console.WriteLine($"=== {tocItem.Text} ===");
+            Console.WriteLine($"Depth: {tocItem.Depth}");
+            
+            // Check if page index is available
+            if (tocItem.PageIndex == null)
+            {
+                Console.WriteLine("Page index is not available for this item.\n");
+                continue;
+            }
+            
+            Console.WriteLine($"Page: {tocItem.PageIndex.Value + 1}");
+            
+            try
+            {
+                // Extract text for this chapter/item
+                using (TextReader reader = tocItem.ExtractText())
+                {
+                    if (reader != null)
+                    {
+                        string chapterText = reader.ReadToEnd();
+                        if (!string.IsNullOrEmpty(chapterText))
+                        {
+                            Console.WriteLine($"Text length: {chapterText.Length} characters");
+                            Console.WriteLine("---");
+                            // Display first 200 characters as preview
+                            Console.WriteLine(chapterText.Length > 200 
+                                ? chapterText.Substring(0, 200) + "..." 
+                                : chapterText);
+                        }
+                        else
+                        {
+                            Console.WriteLine("No text found for this item.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Text extraction returned null.");
+                    }
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("This usually means the page index is null.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error extracting text: {ex.Message}");
+            }
+            
+            Console.WriteLine();
         }
     }
+}
+catch (FileNotFoundException)
+{
+    Console.WriteLine($"Error: File not found at path '{filePath}'");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Unexpected error: {ex.Message}");
 }
 ```
 

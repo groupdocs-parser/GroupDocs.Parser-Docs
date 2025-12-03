@@ -3,11 +3,13 @@ id: loading-specific-file-formats
 url: parser/net/loading-specific-file-formats
 title: Loading specific file formats
 weight: 1
-description: "Learn how to Load specific file formats."
-keywords: Load specific file formats
+version: 23.5
+description: "Learn how to load specific file formats manually using LoadOptions in GroupDocs.Parser for .NET. Required for Markdown, MHTML, databases, and remote email files in C#."
+keywords: Load specific file formats, LoadOptions, FileFormat, manual format specification, markdown, MHTML, database loading
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, loading, loadoptions, file-format, v23.5
 ---
 In some cases it's required to specify the document format manually to guarantee correct output produced by GroupDocs.Parser. The following are the cases when the document format must be specified manually:
 

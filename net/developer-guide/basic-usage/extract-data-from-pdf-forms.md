@@ -3,11 +3,13 @@ id: extract-data-from-pdf-forms
 url: parser/net/extract-data-from-pdf-forms
 title: Extract data from PDF forms
 weight: 10
-description: "This article shows how to extract data from PDF forms easily with GroupDocs.Parser."
-keywords: Extract data, PDF form, extract pdf form data
+version: 23.5
+description: "Learn how to extract fillable fields from PDF forms using GroupDocs.Parser for .NET. Includes code examples with error handling for password-protected PDFs."
+keywords: Extract data, PDF form, extract pdf form data, extract form fields C#, PDF form extraction .NET
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, pdf-form-extraction, v23.5
 ---
 GroupDocs.Parser allows to parse form data from PDF documents.
 
@@ -27,28 +29,88 @@ Here are the steps to parse form of the document:
 *   Check if *data* isn't *null* (parse form is supported for the document);
 *   Iterate over field data to obtain form data.
 
-The following example shows how to parse a form of the document:
+The following example shows how to parse a form of the document with error handling:
 
 ```csharp
+using GroupDocs.Parser;
+using GroupDocs.Parser.Exceptions;
+using System;
+
 // Create an instance of Parser class
-using (Parser parser = new Parser(filePath))
+try
 {
-    // Extract data from PDF document
-    DocumentData data = parser.ParseForm();
-    // Check if form extraction is supported
-	if(data == null) {
-		Console.WriteLine("Form extraction isn't supported.");
-		return;
-    }
-    // Iterate over extracted data
-    for (int i = 0; i < data.Count; i++)
+    using (Parser parser = new Parser(filePath))
     {
-        Console.Write(data[i].Name + ": ");
-        PageTextArea area = data[i].PageArea as PageTextArea;
-        Console.WriteLine(area == null ? "Not a template field" : area.Text);
+        // Extract data from PDF document
+        DocumentData data = parser.ParseForm();
+        
+        // Check if form extraction is supported
+        if (data == null)
+        {
+            Console.WriteLine("Form extraction isn't supported for this document.");
+            return;
+        }
+        
+        // Iterate over extracted data
+        for (int i = 0; i < data.Count; i++)
+        {
+            Console.Write(data[i].Name + ": ");
+            PageTextArea area = data[i].PageArea as PageTextArea;
+            Console.WriteLine(area == null ? "Not a template field" : area.Text);
+        }
     }
 }
+catch (InvalidPasswordException)
+{
+    Console.WriteLine("The PDF is password-protected. Please provide the password using LoadOptions.");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error extracting form data: {ex.Message}");
+}
+```
 
+### Handling Password-Protected PDF Forms
+
+If your PDF form is password-protected, use `LoadOptions` to provide the password:
+
+```csharp
+using GroupDocs.Parser;
+using GroupDocs.Parser.Exceptions;
+using GroupDocs.Parser.Options;
+
+string password = "your-password-here";
+
+try
+{
+    // Create LoadOptions with password for encrypted PDF
+    LoadOptions loadOptions = new LoadOptions(password);
+    
+    using (Parser parser = new Parser(filePath, loadOptions))
+    {
+        DocumentData data = parser.ParseForm();
+        
+        if (data == null)
+        {
+            Console.WriteLine("Form extraction isn't supported.");
+            return;
+        }
+        
+        // Process form fields
+        foreach (FieldData field in data)
+        {
+            Console.WriteLine($"Field: {field.Name}, Value: {field.PageArea}");
+        }
+    }
+}
+catch (InvalidPasswordException)
+{
+    Console.WriteLine("Invalid password provided.");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}
 ```
 
 ## More resources

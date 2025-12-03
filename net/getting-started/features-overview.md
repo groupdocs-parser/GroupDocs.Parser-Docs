@@ -3,11 +3,13 @@ id: features-overview
 url: parser/net/features-overview
 title: Features Overview
 weight: 1
-description: " a feature-rich document data parsing API that allows to create a template with data field definitions, table definitions. Then it's easy to use the template to parse and extract data such as prices, invoices, tables from your typical documents."
-keywords: parse data, parse, extract data
+version: 23.5
+description: "Comprehensive overview of GroupDocs.Parser for .NET features including text extraction, metadata extraction, image extraction, template-based parsing, and PDF form data extraction from 50+ document formats."
+keywords: parse data, parse, extract data, PDF text extraction library C#, document parser features, extract text from PDF C#, template parsing, metadata extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, features, overview, v23.5
 ---
 {{< alert style="info" >}}GroupDocs.Parser is a feature-rich document data parsing API. Here you may find description of the most important features.{{< /alert >}}
 

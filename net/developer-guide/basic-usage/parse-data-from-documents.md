@@ -3,11 +3,13 @@ id: parse-data-from-documents
 url: parser/net/parse-data-from-documents
 title: Parse data from documents
 weight: 4
-description: "This article shows how to extract data from documents of various formats including PDF, Microsoft Word (DOC, DOCX), Excel (XLS, XLSX), LibreOffice formats etc."
-keywords: Document parsing,document parsing feature,DOC, DOCX,XLS, XLSX,PDF
+version: 23.5
+description: "Learn how to parse and extract structured data from documents using template-based extraction with GroupDocs.Parser for .NET. Extract invoice data, tables, and fields in C#."
+keywords: Document parsing, document parsing feature, template-based extraction, extract invoice data, DOC, DOCX, XLS, XLSX, PDF, template parsing C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, template-parsing, data-extraction, invoices, v23.5
 ---
 GroupDocs.Parser provides Document Parser feature that allows you to extract data from documents of various formats including PDF, Microsoft Word, Excel, LibreOffice formats etc. (see [full supported list]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}))).
 

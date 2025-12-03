@@ -3,11 +3,13 @@ id: get-supported-features
 url: parser/net/get-supported-features
 title: Get supported features
 weight: 3
-description: "This article shows how to check if feature supported for the document."
-keywords: Feature,s Parser, C#, CSharp, .Net, dotNet
+version: 23.5
+description: "Learn how to check which features are supported for a document using GroupDocs.Parser for .NET. Check text extraction, metadata, images, tables, and other feature support in C#."
+keywords: Features, Parser, C#, CSharp, .Net, dotNet, check feature support, supported features, feature detection
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, features, feature-detection, v23.5
 ---
 The set of the supported features depends on the document format. GroupDocs.Parser provides the functionality to check if feature supported for the document. [Features](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/properties/features) property is used for this purposes.
 

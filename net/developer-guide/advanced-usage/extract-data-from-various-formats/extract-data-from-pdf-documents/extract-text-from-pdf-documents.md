@@ -3,11 +3,13 @@ id: extract-text-from-pdf-documents
 url: parser/net/extract-text-from-pdf-documents
 title: Extract text from PDF documents
 weight: 1
-description:  "This article explains that how to extract text from PDF documents"
-keywords: extract text, extract text from PDF documents
+version: 23.5
+description: "Learn how to extract text from PDF documents using GroupDocs.Parser for .NET. Extract text from entire PDF or specific pages with error handling. Includes PDF text extraction library C# examples."
+keywords: extract text, extract text from PDF documents, extract text from PDF C#, PDF text extraction library C#, PDF parser C#, read PDF text
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
+tags: csharp, parser, pdf, text-extraction, v23.5
 ---
 To extract a text from PDF documents [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) and [GetText(pageIndex)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/gettext/methods/2) method is used. These methods allow to extract a text from the entire document or a text from the selected page.
 
@@ -21,18 +23,59 @@ Here are the steps to extract a text from PDF document:
 [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method returns *null* value if text extraction isn't supported for the document. For example, text extraction isn't supported for Zip archive. Therefore, for Zip archive [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method returns *null*. For empty PDF document [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method returns an empty [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object ([reader.ReadToEnd](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader.readtoend?view=netframework-2.0) method returns an empty string).
 {{< /alert >}}
 
-The following example demonstrates how to extract a text from PDF document:
+The following example demonstrates how to extract text from a PDF document with error handling:
 
 ```csharp
-// Create an instance of Parser class
-using(Parser parser = new Parser(filePath))
+using GroupDocs.Parser;
+using GroupDocs.Parser.Exceptions;
+using System;
+using System.IO;
+
+try
 {
-    // Extract a text into the reader
-    using(TextReader reader = parser.GetText())
+    // Create an instance of Parser class
+    using (Parser parser = new Parser(filePath))
     {
-        // Print a text from the document
-        Console.WriteLine(reader.ReadToEnd());
+        // Extract text into the reader
+        using (TextReader reader = parser.GetText())
+        {
+            // Check if text extraction is supported
+            if (reader == null)
+            {
+                Console.WriteLine("Text extraction isn't supported for this PDF file.");
+                return;
+            }
+            
+            // Read and print the text
+            string extractedText = reader.ReadToEnd();
+            
+            if (string.IsNullOrEmpty(extractedText))
+            {
+                Console.WriteLine("The PDF document appears to be empty or contains no extractable text.");
+            }
+            else
+            {
+                Console.WriteLine($"Extracted {extractedText.Length} characters of text:");
+                Console.WriteLine(extractedText);
+            }
+        }
     }
+}
+catch (FileNotFoundException)
+{
+    Console.WriteLine($"Error: PDF file not found at path '{filePath}'");
+}
+catch (InvalidPasswordException)
+{
+    Console.WriteLine("Error: The PDF is password-protected. Use LoadOptions to provide the password.");
+}
+catch (ParserException ex)
+{
+    Console.WriteLine($"Error extracting text from PDF: {ex.Message}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Unexpected error: {ex.Message}");
 }
 ```
 
