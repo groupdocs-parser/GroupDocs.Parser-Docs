@@ -19,7 +19,7 @@ GroupDocs.Parser is a convenient text extractor API that permits users to extrac
 
 ## Overview
 
-GroupDocs.Parser for .NET is a powerful **PDF text extraction library C#** that enables developers to parse and extract information from over 50 document types. This robust library allows you to **extract text from PDF** files, Word documents, Excel spreadsheets, and more. You can extract raw or formatted text, metadata, images, tables, and other structured data from various file formats. The library works without requiring additional software installations for most formats, though some advanced PDF features may require optional dependencies (see [Installation](#installation)).
+GroupDocs.Parser for .NET is a powerful **PDF text extraction library C#** that enables developers to parse and extract information from over 50 document types. This robust library provides **C# PDF text extraction** capabilities, allowing you to **extract text from PDF** files, Word documents, Excel spreadsheets, and more. You can extract raw or formatted text, metadata, images, tables, and other structured data from various file formats. The library works without requiring additional software installations for most formats, though some advanced PDF features may require optional dependencies (see [Installation](#installation)).
 
 ### Key Highlights
 

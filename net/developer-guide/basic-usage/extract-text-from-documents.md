@@ -33,78 +33,20 @@ Here are the steps to extract a text from the document:
 
 *   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
 *   Call [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method and obtain [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object;
-*   Check if *reader* isn't *null* (text extraction is supported for the document);
 *   Read a text from *reader*.
 
-The following example shows how to extract text from a document with error handling:
+The following example shows how to extract a text from a document:
 
 ```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Exceptions;
-using System;
-using System.IO;
-
-try
-{
-    // Create an instance of Parser class
-    using (Parser parser = new Parser(filePath))
-    {
-        // Extract text into the reader
-        using (TextReader reader = parser.GetText())
-        {
-            // Check if text extraction is supported for this document format
-            if (reader == null)
-            {
-                Console.WriteLine("Text extraction isn't supported for this document format.");
-                return;
-            }
-            
-            // Read and print the extracted text
-            string extractedText = reader.ReadToEnd();
-            Console.WriteLine(extractedText);
-        }
-    }
-}
-catch (FileNotFoundException)
-{
-    Console.WriteLine($"Error: File not found at path '{filePath}'");
-}
-catch (ParserException ex)
-{
-    Console.WriteLine($"Error extracting text: {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Unexpected error: {ex.Message}");
-}
-```
-
-### Example: Extract Text with Null Check
-
-```csharp
-using GroupDocs.Parser;
-
+// Create an instance of Parser class
 using (Parser parser = new Parser(filePath))
 {
+    // Extract a text into the reader
     using (TextReader reader = parser.GetText())
     {
-        if (reader != null)
-        {
-            string text = reader.ReadToEnd();
-            if (string.IsNullOrEmpty(text))
-            {
-                Console.WriteLine("Document appears to be empty.");
-            }
-            else
-            {
-                Console.WriteLine($"Extracted {text.Length} characters of text.");
-                Console.WriteLine(text);
-            }
-        }
-        else
-        {
-            Console.WriteLine("Text extraction is not supported for this file format.");
-        }
+        // Print a text from the document
+        // If text extraction isn't supported, reader is null
+        Console.WriteLine(reader == null ? "Text extraction isn't supported" : reader.ReadToEnd());
     }
 }
 ```

@@ -46,110 +46,30 @@ Here are the steps to extract images from the whole document:
 *   Check if *collection* isn't null (images extraction is supported for the document);
 *   Iterate through the collection and get sizes, image types and image contents.
 
-The following example shows how to extract all images from a document with error handling:
+The following example shows how to extract images from a document:
 
 ```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Data;
-using GroupDocs.Parser.Exceptions;
-using System;
-using System.IO;
-using System.Linq;
-
-try
-{
-    // Create an instance of Parser class
-    using (Parser parser = new Parser(filePath))
-    {
-        // Extract images
-        IEnumerable<PageImageArea> images = parser.GetImages();
-        
-        // Check if image extraction is supported
-        if (images == null)
-        {
-            Console.WriteLine("Image extraction isn't supported for this document format.");
-            return;
-        }
-        
-        var imagesList = images.ToList();
-        
-        if (imagesList.Count == 0)
-        {
-            Console.WriteLine("No images found in this document.");
-            return;
-        }
-        
-        Console.WriteLine($"Found {imagesList.Count} image(s) in the document.");
-        
-        // Iterate over images
-        int imageIndex = 0;
-        foreach (PageImageArea image in imagesList)
-        {
-            imageIndex++;
-            // Print page index, rectangle position, and image type
-            Console.WriteLine($"Image {imageIndex}: Page {image.Page.Index + 1}, " +
-                            $"Position: {image.Rectangle}, Type: {image.FileType}");
-        }
-    }
-}
-catch (FileNotFoundException)
-{
-    Console.WriteLine($"Error: File not found at path '{filePath}'");
-}
-catch (ParserException ex)
-{
-    Console.WriteLine($"Error extracting images: {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Unexpected error: {ex.Message}");
-}
-```
-
-### Example: Extract Images with Coordinates and Save to Files
-
-This example demonstrates how to extract images with position information and save them to disk:
-
-```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Data;
-using System;
-using System.IO;
-
+// Create an instance of Parser class
 using (Parser parser = new Parser(filePath))
 {
-    var images = parser.GetImages();
+    // Extract images
+    IEnumerable<PageImageArea> images = parser.GetImages();
     
-    if (images != null)
+    // Check if image extraction is supported
+    if (images == null)
     {
-        string outputDir = "extracted_images";
-        Directory.CreateDirectory(outputDir);
-        
-        int imageIndex = 0;
-        foreach (PageImageArea image in images)
-        {
-            imageIndex++;
-            
-            // Get image position information
-            Console.WriteLine($"Image {imageIndex}:");
-            Console.WriteLine($"  Page: {image.Page.Index + 1}");
-            Console.WriteLine($"  Position: X={image.Rectangle.X}, Y={image.Rectangle.Y}");
-            Console.WriteLine($"  Size: Width={image.Rectangle.Width}, Height={image.Rectangle.Height}");
-            Console.WriteLine($"  Rotation: {image.Rotation}°");
-            Console.WriteLine($"  Format: {image.FileType}");
-            
-            // Save image to file preserving original format
-            string imagePath = Path.Combine(outputDir, $"image_{imageIndex}.{image.FileType.Extension}");
-            image.Save(imagePath);
-            Console.WriteLine($"  Saved to: {imagePath}\n");
-        }
+        Console.WriteLine("Image extraction isn't supported");
+        return;
+    }
+    
+    // Iterate over images
+    foreach (PageImageArea image in images)
+    {
+        // Print page index and image type
+        Console.WriteLine($"Page: {image.Page.Index + 1}, Type: {image.FileType}");
     }
 }
 ```
-
-{{< alert style="info" >}}
-**Note:** The `PageImageArea` object contains `Rectangle` property that provides the position (X, Y coordinates) and size (Width, Height) of the image on the page. This is useful for preserving the document layout or extracting images from specific regions.
-{{< /alert >}}
 
 ## More resources
 

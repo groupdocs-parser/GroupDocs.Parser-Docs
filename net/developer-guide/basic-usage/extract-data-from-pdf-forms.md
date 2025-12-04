@@ -29,87 +29,29 @@ Here are the steps to parse form of the document:
 *   Check if *data* isn't *null* (parse form is supported for the document);
 *   Iterate over field data to obtain form data.
 
-The following example shows how to parse a form of the document with error handling:
+The following example shows how to parse a form of the document:
 
 ```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Exceptions;
-using System;
-
 // Create an instance of Parser class
-try
+using (Parser parser = new Parser(filePath))
 {
-    using (Parser parser = new Parser(filePath))
-    {
-        // Extract data from PDF document
-        DocumentData data = parser.ParseForm();
-        
-        // Check if form extraction is supported
-        if (data == null)
-        {
-            Console.WriteLine("Form extraction isn't supported for this document.");
-            return;
-        }
-        
-        // Iterate over extracted data
-        for (int i = 0; i < data.Count; i++)
-        {
-            Console.Write(data[i].Name + ": ");
-            PageTextArea area = data[i].PageArea as PageTextArea;
-            Console.WriteLine(area == null ? "Not a template field" : area.Text);
-        }
-    }
-}
-catch (InvalidPasswordException)
-{
-    Console.WriteLine("The PDF is password-protected. Please provide the password using LoadOptions.");
-}
-catch (ParserException ex)
-{
-    Console.WriteLine($"Error extracting form data: {ex.Message}");
-}
-```
-
-### Handling Password-Protected PDF Forms
-
-If your PDF form is password-protected, use `LoadOptions` to provide the password:
-
-```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Exceptions;
-using GroupDocs.Parser.Options;
-
-string password = "your-password-here";
-
-try
-{
-    // Create LoadOptions with password for encrypted PDF
-    LoadOptions loadOptions = new LoadOptions(password);
+    // Extract data from PDF document
+    DocumentData data = parser.ParseForm();
     
-    using (Parser parser = new Parser(filePath, loadOptions))
+    // Check if form extraction is supported
+    if (data == null)
     {
-        DocumentData data = parser.ParseForm();
-        
-        if (data == null)
-        {
-            Console.WriteLine("Form extraction isn't supported.");
-            return;
-        }
-        
-        // Process form fields
-        foreach (FieldData field in data)
-        {
-            Console.WriteLine($"Field: {field.Name}, Value: {field.PageArea}");
-        }
+        Console.WriteLine("Form extraction isn't supported");
+        return;
     }
-}
-catch (InvalidPasswordException)
-{
-    Console.WriteLine("Invalid password provided.");
-}
-catch (ParserException ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
+    
+    // Iterate over extracted data
+    for (int i = 0; i < data.Count; i++)
+    {
+        Console.Write(data[i].Name + ": ");
+        PageTextArea area = data[i].PageArea as PageTextArea;
+        Console.WriteLine(area == null ? "Not a template field" : area.Text);
+    }
 }
 ```
 

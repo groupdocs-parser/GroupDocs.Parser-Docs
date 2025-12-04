@@ -23,59 +23,18 @@ Here are the steps to extract a text from Microsoft Office Word document:
 [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method returns *null* value if text extraction isn't supported for the document. For example, text extraction isn't supported for Zip archive. Therefore, for Zip archive [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method returns *null*. For empty Microsoft Office Word document [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/gettext) method returns an empty [TextReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=netframework-2.0) object ([reader.ReadToEnd](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader.readtoend?view=netframework-2.0) method returns an empty string).
 {{< /alert >}}
 
-The following example demonstrates how to extract text from a Word document with error handling:
+The following example demonstrates how to extract text from a Word document:
 
 ```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Exceptions;
-using System;
-using System.IO;
-
-try
+// Create an instance of Parser class
+using (Parser parser = new Parser(filePath))
 {
-    // Create an instance of Parser class
-    using (Parser parser = new Parser(filePath))
+    // Extract text into the reader
+    using (TextReader reader = parser.GetText())
     {
-        // Extract text into the reader
-        using (TextReader reader = parser.GetText())
-        {
-            // Check if text extraction is supported
-            if (reader == null)
-            {
-                Console.WriteLine("Text extraction isn't supported for this Word document.");
-                return;
-            }
-            
-            // Read and print the text
-            string extractedText = reader.ReadToEnd();
-            
-            if (string.IsNullOrEmpty(extractedText))
-            {
-                Console.WriteLine("The Word document appears to be empty or contains no extractable text.");
-            }
-            else
-            {
-                Console.WriteLine($"Extracted {extractedText.Length} characters of text:");
-                Console.WriteLine(extractedText);
-            }
-        }
+        // If text extraction isn't supported, reader is null
+        Console.WriteLine(reader == null ? "Text extraction isn't supported" : reader.ReadToEnd());
     }
-}
-catch (FileNotFoundException)
-{
-    Console.WriteLine($"Error: Word document not found at path '{filePath}'");
-}
-catch (InvalidPasswordException)
-{
-    Console.WriteLine("Error: The Word document is password-protected. Use LoadOptions to provide the password.");
-}
-catch (ParserException ex)
-{
-    Console.WriteLine($"Error extracting text from Word document: {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Unexpected error: {ex.Message}");
 }
 ```
 

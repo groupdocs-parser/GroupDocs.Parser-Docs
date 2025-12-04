@@ -45,94 +45,41 @@ Here are the steps to extract an email text from outlook storage:
 *   Check if *collection* isn't *null* (container extraction is supported for the document);
 *   Iterate through the collection and obtain [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object to extract a text.
 
-The following example shows how to extract text from ZIP archive files with comprehensive error handling:
+The following example shows how to extract a text from zip entities:
 
 ```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Data;
-using GroupDocs.Parser.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.IO;
-
-try
+// Create an instance of Parser class
+using (Parser parser = new Parser(filePath))
 {
-    // Create an instance of Parser class
-    using (Parser parser = new Parser(filePath))
+    // Extract attachments from the container
+    IEnumerable<ContainerItem> attachments = parser.GetContainer();
+    // Check if container extraction is supported
+    if (attachments == null)
     {
-        // Extract attachments from the container
-        IEnumerable<ContainerItem> attachments = parser.GetContainer();
-        
-        // Check if container extraction is supported
-        if (attachments == null)
+        Console.WriteLine("Container extraction isn't supported");
+    }
+    // Iterate over zip entities
+    foreach (ContainerItem item in attachments)
+    {
+        // Print the file path
+        Console.WriteLine(item.FilePath);
+        try
         {
-            Console.WriteLine("Container extraction isn't supported for this file format.");
-            return;
-        }
-        
-        // Iterate over container items (ZIP entries, attachments, etc.)
-        int itemIndex = 0;
-        foreach (ContainerItem item in attachments)
-        {
-            itemIndex++;
-            Console.WriteLine($"\n=== Item {itemIndex}: {item.FilePath} ===");
-            Console.WriteLine($"Size: {item.Size} bytes");
-            Console.WriteLine($"Directory: {item.Directory}");
-            
-            try
+            // Create Parser object for the zip entity content
+            using (Parser attachmentParser = item.OpenParser())
             {
-                // Create Parser object for the container item content
-                using (Parser attachmentParser = item.OpenParser())
+                // Extract a zip entity text
+                using (TextReader reader = attachmentParser.GetText())
                 {
-                    // Extract text from the item
-                    using (TextReader reader = attachmentParser.GetText())
-                    {
-                        if (reader == null)
-                        {
-                            Console.WriteLine("Text extraction is not supported for this item.");
-                        }
-                        else
-                        {
-                            string text = reader.ReadToEnd();
-                            if (string.IsNullOrEmpty(text))
-                            {
-                                Console.WriteLine("Item contains no text.");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Extracted {text.Length} characters of text.");
-                                // Uncomment to see full text: Console.WriteLine(text);
-                            }
-                        }
-                    }
+                    Console.WriteLine(reader == null ? "No text" : reader.ReadToEnd());
                 }
             }
-            catch (UnsupportedDocumentFormatException)
-            {
-                Console.WriteLine("Document format is not supported for this item.");
-            }
-            catch (ParserException ex)
-            {
-                Console.WriteLine($"Error parsing item: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Unexpected error: {ex.Message}");
-            }
+        }
+        catch (UnsupportedDocumentFormatException)
+        {
+            Console.WriteLine("Isn't supported.");
         }
     }
-}
-catch (FileNotFoundException)
-{
-    Console.WriteLine($"Error: File not found at path '{filePath}'");
-}
-catch (ParserException ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Unexpected error: {ex.Message}");
 }
 ```
 

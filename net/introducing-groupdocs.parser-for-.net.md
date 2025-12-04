@@ -21,7 +21,7 @@ If you want to extract PDF forms, GroupDocs.Parser also allows to do it.
 
 ## Why Use GroupDocs.Parser?  
 
-*   No additional software is required to extract data from the documents;
+*   No additional software is required for most document formats - extract text, metadata, and images from PDF, Office documents, and 50+ formats out of the box. Note: OCR functionality for scanned documents uses built-in OCR for English text, or you can integrate optional third-party OCR solutions for advanced needs (see [OCR usage]({{< ref "parser/net/developer-guide/advanced-usage/using-ocr/_index.md" >}}));
 *   Online free document data extraction App for simple cases and powerful .Net library for many data extraction scenarios;     
 *   Accurate and fast Raw text extraction modes;
 *   Document information extraction - file type, page count etc;

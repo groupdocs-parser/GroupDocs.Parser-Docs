@@ -54,109 +54,36 @@ Here are the steps to extract a text by an item of table of contents:
 *   Check if *collection* isn't *null* (table of contents extraction is supported for the document);
 *   Iterate through the collection and extract a text by [GetText](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/tocitem/methods/gettext) method.  
 
-The following example shows how to extract text by table of contents items with error handling:
+The following example shows how to extract text by table of contents items:
 
 ```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Data;
-using GroupDocs.Parser.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.IO;
-
-try
+// Create an instance of Parser class
+using (Parser parser = new Parser(filePath))
 {
-    // Create an instance of Parser class
-    using (Parser parser = new Parser(filePath))
+    // Get table of contents
+    IEnumerable<TocItem> toc = parser.GetToc();
+    
+    // Check if TOC extraction is supported
+    if (toc == null)
     {
-        // Get table of contents
-        IEnumerable<TocItem> tocItems = parser.GetToc();
-        
-        // Check if TOC extraction is supported
-        if (tocItems == null)
+        Console.WriteLine("Table of contents extraction isn't supported");
+        return;
+    }
+    
+    // Iterate over items
+    foreach (TocItem i in toc)
+    {
+        // Check if page index has a value
+        if (i.PageIndex == null)
         {
-            Console.WriteLine("Table of contents extraction isn't supported for this document format.");
-            return;
+            continue;
         }
-        
-        var tocList = new List<TocItem>(tocItems);
-        
-        if (tocList.Count == 0)
+        // Extract a page text
+        using (TextReader reader = i.ExtractText())
         {
-            Console.WriteLine("Document has no table of contents items.");
-            return;
-        }
-        
-        Console.WriteLine($"Found {tocList.Count} TOC item(s)\n");
-        
-        // Iterate over items
-        foreach (TocItem tocItem in tocList)
-        {
-            Console.WriteLine($"=== {tocItem.Text} ===");
-            Console.WriteLine($"Depth: {tocItem.Depth}");
-            
-            // Check if page index is available
-            if (tocItem.PageIndex == null)
-            {
-                Console.WriteLine("Page index is not available for this item.\n");
-                continue;
-            }
-            
-            Console.WriteLine($"Page: {tocItem.PageIndex.Value + 1}");
-            
-            try
-            {
-                // Extract text for this chapter/item
-                using (TextReader reader = tocItem.ExtractText())
-                {
-                    if (reader != null)
-                    {
-                        string chapterText = reader.ReadToEnd();
-                        if (!string.IsNullOrEmpty(chapterText))
-                        {
-                            Console.WriteLine($"Text length: {chapterText.Length} characters");
-                            Console.WriteLine("---");
-                            // Display first 200 characters as preview
-                            Console.WriteLine(chapterText.Length > 200 
-                                ? chapterText.Substring(0, 200) + "..." 
-                                : chapterText);
-                        }
-                        else
-                        {
-                            Console.WriteLine("No text found for this item.");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Text extraction returned null.");
-                    }
-                }
-            }
-            catch (InvalidOperationException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                Console.WriteLine("This usually means the page index is null.");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error extracting text: {ex.Message}");
-            }
-            
-            Console.WriteLine();
+            Console.WriteLine(reader == null ? "No text" : reader.ReadToEnd());
         }
     }
-}
-catch (FileNotFoundException)
-{
-    Console.WriteLine($"Error: File not found at path '{filePath}'");
-}
-catch (ParserException ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Unexpected error: {ex.Message}");
 }
 ```
 

@@ -34,73 +34,28 @@ Here are the steps to extract a barcode from file:
 - Call [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/methods/getbarcodes) method and obtain collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) objects;
 - Iterate through the collection and get a barcode value.
 
-The following example shows how to scan barcodes with error handling:
+The following example shows how to scan barcodes:
 
 ```csharp
-using GroupDocs.Parser;
-using GroupDocs.Parser.Data;
-using GroupDocs.Parser.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-try
+// Create an instance of Parser class
+using (Parser parser = new Parser(filePath))
 {
-    // Create an instance of Parser class
-    using (Parser parser = new Parser(filePath))
+    // Check if the file supports barcode extraction
+    if (!parser.Features.Barcodes)
     {
-        // Check if the file supports barcode extraction
-        if (!parser.Features.Barcodes)
-        {
-            Console.WriteLine("The file doesn't support barcode extraction.");
-            return;
-        }
-
-        // Scan barcodes from the file
-        IEnumerable<PageBarcodeArea> barcodes = parser.GetBarcodes();
-        
-        if (barcodes == null)
-        {
-            Console.WriteLine("Barcode extraction returned null.");
-            return;
-        }
-        
-        var barcodesList = barcodes.ToList();
-        
-        if (barcodesList.Count == 0)
-        {
-            Console.WriteLine("No barcodes found in the document.");
-            return;
-        }
-        
-        Console.WriteLine($"Found {barcodesList.Count} barcode(s) in the document.\n");
-
-        // Iterate over barcodes
-        int barcodeIndex = 0;
-        foreach (PageBarcodeArea barcode in barcodesList)
-        {
-            barcodeIndex++;
-            Console.WriteLine($"=== Barcode {barcodeIndex} ===");
-            Console.WriteLine($"Page: {barcode.Page.Index + 1}");
-            Console.WriteLine($"Value: {barcode.Value}");
-            Console.WriteLine($"Type: {barcode.Type}");
-            Console.WriteLine($"Position: {barcode.Rectangle}");
-            Console.WriteLine();
-        }
+        Console.WriteLine("The file doesn't support barcode extraction.");
+        return;
     }
-}
-catch (FileNotFoundException)
-{
-    Console.WriteLine($"Error: File not found at path '{filePath}'");
-}
-catch (ParserException ex)
-{
-    Console.WriteLine($"Error scanning barcodes: {ex.Message}");
-}
-catch (Exception ex)
-{
-    Console.WriteLine($"Unexpected error: {ex.Message}");
+
+    // Scan barcodes from the file
+    IEnumerable<PageBarcodeArea> barcodes = parser.GetBarcodes();
+    
+    // Iterate over barcodes
+    foreach (PageBarcodeArea barcode in barcodes)
+    {
+        // Print a barcode value
+        Console.WriteLine(barcode.Value);
+    }
 }
 ```
 
