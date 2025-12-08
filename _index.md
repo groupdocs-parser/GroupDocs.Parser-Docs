@@ -103,7 +103,7 @@ showFeedbackForm: false
             </div>
         </div>
          -->
-        {{< button size="large" href="python" >}} MORE {{< icon "gdoc_keyboard_arrow_right" >}}{{< /button >}}
+        {{< button size="large" href="python-net" >}} MORE {{< icon "gdoc_keyboard_arrow_right" >}}{{< /button >}}
     </div>
 </div>
 
