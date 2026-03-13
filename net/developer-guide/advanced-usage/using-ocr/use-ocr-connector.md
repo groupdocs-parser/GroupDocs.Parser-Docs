@@ -9,10 +9,10 @@ productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
 ---
-GroupDocs.Parser includes built-in OCR functionality that provides text recognition from images and scanned PDFs in English. This built-in OCR is included with the library and requires no additional packages or setup for basic use—you just need to explicitly request OCR when extracting text or parsing a document. For image files, OCR is automatically applied during text extraction.
+GroupDocs.Parser includes built-in OCR functionality that provides text recognition from images and scanned PDFs. This built-in OCR is included with the library and requires no additional packages or setup for basic use—you just need to explicitly request OCR when extracting text or parsing a document. For image files, OCR is automatically applied during text extraction.
 
 {{< alert style="info" >}}
-**Note:** The built-in OCR supports English language and is suitable for most basic text recognition scenarios. For advanced OCR needs, multiple languages, or higher accuracy requirements, you can integrate optional third-party OCR solutions using the connector mechanism described below.
+**Note:** The built-in OCR supports languages represented by [Language](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/language/) class and is suitable for most basic text recognition scenarios. For advanced OCR needs, multiple languages, or higher accuracy requirements, you can integrate optional third-party OCR solutions using the connector mechanism described below.
 {{< /alert >}}
 
 If the capabilities of the built-in OCR are not sufficient, you can use the mechanism to connect a third-party OCR. To do this, you need to write your own OCR connector and pass it when creating the Parser class:
