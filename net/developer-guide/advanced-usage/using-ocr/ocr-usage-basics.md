@@ -9,30 +9,36 @@ productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
 ---
-GroupDocs.Parser for .NET provides the ability to extract a text from images and PDFs (which don't contain a plain text) for English language.
+GroupDocs.Parser for .NET enables text recognition (OCR) in image files and PDF files composed of images.
 
-[GetText](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettext#gettext_1) and [GetTextAreas](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettextareas#gettextareas_1) methods from [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) class are used to recognize a text from images.
+It should be noted that not all languages ​​represented by the [Language](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/language/) class are currently supported for recognition without implicitly downloading additional resources from the internet. However, if internet access is available, all necessary resources will be downloaded implicitly when selecting any recognition language. Currently supported languages ​​without additional downloads: English, Chinese, Japanese.
 
-To extract a text from image files or non-text PDF documents GetText method is used:
+[GetText](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettext#gettext_1) and [GetTextAreas](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettextareas#gettextareas_1) methods from [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) class are used to extract text from images.
+
+To extract text from image files or non-text PDF documents GetText method is used:
 
 * Instantiate [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) object;
 * Instantiate [TextOptions](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/textoptions/) object with useOcr = true;
 * Call [GetText](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettext#gettext_1)(TextOptions) method with TextOptions parameter and obtain TextReader object;
 * Check if the reader isn’t null (text extraction is supported for the document);
-* Read a text from the reader.
+* Read text from the reader.
 
-The following example shows how to extract a text from the image file:
+The following example shows how to extract text from an image file:
 
 ```C#
 // Create an instance of Parser class
 using (Parser parser = new Parser(Constants.SampleScan))
 {
-    // Create an instance of TextOptions to use OCR
+    // Set OCR options
     TextOptions options = new TextOptions(false, true);
-    // Extract a text using OCR
-    using(TextReader reader = parser.GetText(options))
+    options.OcrOptions = new OcrOptions();
+    options.OcrOptions.Language = Language.Jpn;
+    options.OcrOptions.PagePreviewOptions = new PagePreviewOptions();
+    options.OcrOptions.PagePreviewOptions.Dpi = 144;
+    // Extract text using OCR
+    using (TextReader reader = parser.GetText(options))
     {
-        // Print a text or 'not supported' message
+        // Print text or 'not supported' message
         Console.WriteLine(reader == null ? "Text extraction isn't supported" : reader.ReadToEnd());
     }
 }
@@ -68,7 +74,7 @@ using (Parser parser = new Parser(Constants.SampleScan))
     // Iterate over text areas
     foreach (PageTextArea a in areas)
     {
-        // Print a text, position and size for each text area
+        // Print text, position and size for each text area
         Console.WriteLine(a.Text);
         Console.WriteLine("\tPosition: ({0}; {1})", a.Rectangle.Left, a.Rectangle.Top);
         Console.WriteLine("\tSize: ({0}; {1})", a.Rectangle.Size.Width, a.Rectangle.Size.Height);
@@ -100,10 +106,10 @@ using (Parser parser = new Parser(Constants.SampleScan))
 
     // Create an instance of TextOptions to use OCR
     TextOptions options = new TextOptions(false, true, ocrOptions);
-    // Extract a text using OCR
+    // Extract text using OCR
     using (TextReader reader = parser.GetText(options))
     {
-        // Print a text or 'not supported' message
+        // Print text or 'not supported' message
         Console.WriteLine(reader == null ? "Text extraction isn't supported" : reader.ReadToEnd());
     }
 }
@@ -127,10 +133,10 @@ using (Parser parser = new Parser(Constants.SampleScan))
 
     // Create an instance of TextOptions to use OCR
     TextOptions options = new TextOptions(false, true, ocrOptions);
-    // Extract a text using OCR
+    // Extract text using OCR
     using (TextReader reader = parser.GetText(options))
     {
-        // Print a text or 'not supported' message
+        // Print text or 'not supported' message
         Console.WriteLine(reader == null ? "Text extraction isn't supported" : reader.ReadToEnd());
     }
 
