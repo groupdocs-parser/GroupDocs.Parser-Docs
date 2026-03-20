@@ -41,7 +41,7 @@ using (Parser parser = new Parser(filePath))
     foreach (ContainerItem item in attachments)
     {
         // Detect the file type
-        Options.FileType fileType = item.DetectFileType(Options.FileTypeDetectionMode.Default);
+        GroupDocs.Parser.Options.FileType fileType = item.DetectFileType(GroupDocs.Parser.Options.FileTypeDetectionMode.Default);
          
         // Print the name and file type
         Console.WriteLine(string.Format("{0}: {1}", item.Name, fileType));
