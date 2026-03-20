@@ -26,28 +26,6 @@ Here is brief comparison of how to extract data using the old and new API.
 
 #### Text
 
-**Old coding style**
-
-```csharp
-// Create an extractor factory
-ExtractorFactory factory = new ExtractorFactory();
-// Create a text extractor
-using (TextExtractor extractor = factory.CreateTextExtractor(filePath))
-{
-    // Extract a text from the text extractor
-    string textLine = null;
-    do
-    {
-        textLine = extractor.ExtractLine();
-        if (textLine != null)
-        {
-            Console.WriteLine(textLine);
-        }
-    }
-    while (textLine != null);
-}
-```
-
 **New coding style**
 
 ```csharp
@@ -80,24 +58,6 @@ using (Parser parser = new Parser(filePath))
 
 #### Text Page
 
-**Old coding style**
-
-```csharp
-// Create an extractor factory
-ExtractorFactory factory = new ExtractorFactory();
-// Create a text extractor
-using (TextExtractor extractor = factory.CreateTextExtractor(filePath))
-{
-    // Check if the extractor supports pagination
-    IPageTextExtractor pte = extractor as IPageTextExtractor;
-    if (pte != null)
-    {
-        // Extract the first page
-        Console.WriteLine(pte.ExtractPage(0));
-    }
-}
-```
-
 **New coding style**
 
 ```csharp
@@ -118,31 +78,6 @@ using (Parser parser = new Parser(filePath))
 ```  
 
 #### Search
-
-**Old coding style**
-
-```csharp
-// Create an extractor factory
-ExtractorFactory factory = new ExtractorFactory();
-// Create a text extractor
-using (TextExtractor extractor = factory.CreateTextExtractor(filePath))
-{
-    // Check if the extractor supports search
-    ISearchable se = extractor as ISearchable;
-    if (se != null)
-    {
-        // Create a handler
-        ListSearchHandler handler = new ListSearchHandler();
-        // Search "keyword" in the document
-        se.Search(new SearchOptions(null), handler, new string[] { "keyword" });
-        // Print search results
-        foreach (SearchResult result in handler.List)
-        {
-            Console.WriteLine(string.Format("at {0}: {1}", result.Index, result.FoundText));
-        }
-    }
-}
-```
 
 **New coding style**
 
@@ -168,13 +103,6 @@ using (Parser parser = new Parser(filePath))
 
 #### File Type Detection
 
-**Old coding style**
-
-```csharp
-// Detect and print file type
-Console.WriteLine(CompositeMediaTypeDetector.Default.Detect(filePath));
-```
-
 **New coding style**
 
 ```csharp
@@ -186,25 +114,7 @@ using (Parser parser = new Parser(filePath))
 }
 ```
 
-  
-
 #### Metadata
-
-**Old coding style**
-
-```csharp
-// Create an extractor factory
-ExtractorFactory factory = new ExtractorFactory();
-// Create a metadata extractor
-MetadataExtractor extractor = factory.CreateMetadataExtractor(filePath);
-// Extract metadata
-MetadataCollection metadata = extractor.ExtractMetadata(filePath);
-// Print metadata
-foreach (KeyValuePair<string, string> item in metadata)
-{
-    Console.WriteLine(string.Format("{0} = {1}", item.Key, item.Value));
-}
-```
 
 **New coding style**
 
@@ -228,49 +138,7 @@ using (Parser parser = new Parser(filePath))
 }
 ```
 
-  
-
 #### Structure
-
-**Old coding style**
-
-```csharp
-// Create an extractor factory
-ExtractorFactory factory = new ExtractorFactory();
-// Create a text extractor
-using (TextExtractor extractor = factory.CreateTextExtractor(filePath))
-{
-    // Check if the extractor supports text structure extraction
-    IStructuredExtractor se = extractor as IStructuredExtractor;
-    if (se != null)
-    {
-        // Create a handler
-        Handler handler = new Handler();
-        // Extract text structure
-        se.ExtractStructured(handler);
-        // Print hyperlinks
-        foreach (string link in handler.Links)
-        {
-            Console.WriteLine(link);
-        }
-    }
-}
-
-// Handler for the hyperlink extraction
-private class Handler : StructuredHandler
-{
-    public Handler()
-    {
-        Links = new List<string>();
-    }
-    public List<string> Links { get; private set; }
-    // Override the method to catch hyperlinks
-    protected override void OnStartHyperlink(HyperlinkProperties properties)
-    {
-        Links.Add(properties.Link);
-    }
-}
-```
 
 **New coding style**
 
