@@ -39,6 +39,7 @@ using GroupDocs.Parser;
 using GroupDocs.Parser.Options;
 using GroupDocs.Parser.Exceptions;
 using System;
+using System.IO;
 
 try
 {
@@ -81,7 +82,7 @@ catch (UnsupportedDocumentFormatException ex)
     // Thrown when document format is not supported
     Console.WriteLine($"Unsupported format: {ex.Message}");
 }
-catch (ParserException ex)
+catch (GroupDocsParserException ex)
 {
     // General parsing exception
     Console.WriteLine($"Parsing error: {ex.Message}");
@@ -96,17 +97,24 @@ When working with password-protected documents, the following exceptions may be 
 |-----------|------------------|------------|
 | [InvalidPasswordException](https://reference.groupdocs.com/net/parser/groupdocs.parser.exceptions/invalidpasswordexception) | Password is incorrect, empty, or not provided | Provide the correct password in LoadOptions |
 | [UnsupportedDocumentFormatException](https://reference.groupdocs.com/net/parser/groupdocs.parser.exceptions/unsupporteddocumentformatexception) | Document format is not supported | Check if the file format is in the [supported formats list]({{< ref "parser/net/getting-started/supported-document-formats.md" >}}) |
-| [ParserException](https://reference.groupdocs.com/net/parser/groupdocs.parser.exceptions/parserexception) | General parsing error (corrupted file, insufficient permissions, etc.) | Verify file integrity and access permissions |
+| [GroupDocsParserException](https://reference.groupdocs.com/net/parser/groupdocs.parser.exceptions/groupdocsparserexception) | General parsing error (corrupted file, insufficient permissions, etc.) | Verify file integrity and access permissions |
 
 ## Check if Document is Password-Protected
 
 Before attempting to open a document, you can check if it requires a password:
 
 ```csharp
+using GroupDocs.Parser;
 using GroupDocs.Parser.Options;
+using GroupDocs.Parser.Exceptions;
+using System.IO;
 
 // Get file information
-FileInfo info = Parser.GetFileInfo(document);
+FileInfo info;
+using (Parser parserInfo = new Parser(document))
+{
+    info = parserInfo.GetFileInfo(document);
+}
 
 // Check if the document is encrypted/password-protected
 if (info.IsEncrypted)
@@ -137,13 +145,19 @@ else
 using GroupDocs.Parser;
 using GroupDocs.Parser.Options;
 using GroupDocs.Parser.Exceptions;
+using System;
+using System.IO;
 
 public void ExtractTextFromProtectedPdf(string filePath, string password)
 {
     try
     {
         // Check if password is needed
-        FileInfo fileInfo = Parser.GetFileInfo(filePath);
+        FileInfo fileInfo;
+        using (Parser parserInfo = new Parser(filePath))
+        {
+            fileInfo = parserInfo.GetFileInfo(filePath);
+        }
         
         LoadOptions loadOptions = fileInfo.IsEncrypted 
             ? new LoadOptions(password) 
