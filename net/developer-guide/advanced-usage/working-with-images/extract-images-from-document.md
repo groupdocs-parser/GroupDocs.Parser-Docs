@@ -24,8 +24,8 @@ The methods return a collection of [PageImageArea](https://reference.groupdocs.c
 | [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area. |
 | [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
 | [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/properties/filetype) | The format of the image. |
-| [Rotation](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/properties/rotation) | The rotation angle of the image. |
-| Stream [GetImageStream()](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/methods/getimagestream) | Returns the image stream. |
+| [Rotation](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/properties/rotation) | The rotation angle of the image. |
+| Stream [GetImageStream()](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/methods/getimagestream) | Returns the image stream. |
 | Stream [GetImageStream(ImageOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/getimagestream/methods/1) | Returns the image stream in a different format. |
 | [Save(string)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/methods/save) | Saves the image to the file. |
 | [Save(string, ImageOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/save/methods/1) | Saves the image to the file in a different format. |
@@ -43,7 +43,7 @@ Here are the steps to extract images from the whole document:
 *   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
 *   Call [GetImages](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getimages) method and obtain collection of [PageImageArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea) objects;
 *   Check if *collection* isn't *null* (images extraction is supported for the document);
-*   Iterate through the collection and get sizes, image types and image contents.
+*   Iterate through the collection and get image types and contents.
 
 The following example shows how to extract images from a document:
 
@@ -64,8 +64,11 @@ using (Parser parser = new Parser(filePath))
     // Iterate over images
     foreach (PageImageArea image in images)
     {
-        // Print page index and image type
-        Console.WriteLine($"Page: {image.Page.Index + 1}, Type: {image.FileType}");
+        // Print image type
+        Console.WriteLine($"Type: {image.FileType}");
+        
+        // Optionally, save the image to a file
+        // image.Save($"image_page{image.Page.Index + 1}_{image.FileType}.png");
     }
 }
 ```
