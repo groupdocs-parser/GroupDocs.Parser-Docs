@@ -30,9 +30,15 @@ The following example shows how to generate document page previews:
 using (Parser parser = new Parser(Constants.SamplePdfWithToc))
 {
     // Create preview options
-    PreviewOptions previewOptions = new PreviewOptions(pageNumber => File.Create(GetOutputPath($"preview_{pageNumber}.png")));
+    PreviewOptions previewOptions = new PreviewOptions();
+
+    // Set the delegate that creates a stream for each page preview
+    previewOptions.CreatePageStream = pageNumber => 
+        File.Create(GetOutputPath($"preview_{pageNumber}.png"));
+
     // Set PNG as an output image format
-    previewOptions.PreviewFormat = PreviewFormats.PNG;
+    previewOptions.PreviewFormat = PagePreviewFormat.Png;
+
     // Set DPI for the output image
     previewOptions.Dpi = 72;
 
@@ -69,11 +75,18 @@ using (Parser parser = new Parser(Constants.SampleXlsx))
     PageRenderInfo renderInfo = null;
 
     // Create preview options
-    PreviewOptions previewOptions = new PreviewOptions(pageNumber => File.Create(GetOutputPath(renderInfo, pageNumber)));
+    PreviewOptions previewOptions = new PreviewOptions();
+
+    // Set the delegate that creates a stream for each page preview
+    previewOptions.CreatePageStream = pageNumber => 
+        File.Create(GetOutputPath(renderInfo, pageNumber));
+
     // Set delegate to obtain the render info
     previewOptions.PreviewPageRender = info => renderInfo = info;
+
     // Set PNG as an output image format
-    previewOptions.PreviewFormat = PreviewFormats.PNG;
+    previewOptions.PreviewFormat = PagePreviewFormat.Png;
+
     // Set DPI for the output image
     previewOptions.Dpi = 72;
 
