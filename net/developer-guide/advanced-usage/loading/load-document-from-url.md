@@ -16,7 +16,7 @@ The following example shows how to load the document from the url:
 
 ```csharp
 // Create an instance of Parser class with the url
-using (Parser parser = new Parser(url))
+using (Parser parser = new Parser(new Uri(url)))
 {
     // Extract a text into the reader
     using (TextReader reader = parser.GetText())
