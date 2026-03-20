@@ -13,7 +13,6 @@ tags: csharp, parser, licensing, evaluation, trial, v23.5
 ---
   
   
-
 {{< alert style="info" >}}You can use GroupDocs.Parser without the license. The usage and functionalities are pretty much same as the licensed one but you will face few limitations while using the non-licensed API. You can [get a free temporary license](https://purchase.groupdocs.com/temp-license/100308) for evaluation purposes.{{< /alert >}}
 
 {{< alert style="warning" >}}
@@ -25,7 +24,6 @@ tags: csharp, parser, licensing, evaluation, trial, v23.5
   
 You can easily download GroupDocs.Parser for evaluation. The evaluation download is the same as the purchased download. The evaluation version simply becomes licensed when you add a few lines of code to apply the license. You will face following limitations while using the API without the license:    
   
-
 | API | Limit |
 | --- | --- |
 |   | Only 100 files per session |
@@ -93,10 +91,10 @@ Metered metered = new Metered();
 metered.SetMeteredKey(publicKey, privateKey);
 
 // Get amount (MB) consumed
-decimal amountConsumed = GroupDocs.Parser.Metered.GetConsumptionQuantity();
+decimal amountConsumed = metered.GetConsumptionQuantity();
 Console.WriteLine("Amount (MB) consumed: " + amountConsumed);
 
 // Get count of credits consumed
-decimal creditsConsumed = GroupDocs.Parser.Metered.GetConsumptionCredit();
+decimal creditsConsumed = metered.GetConsumptionCredit();
 Console.WriteLine("Credits consumed: " + creditsConsumed);
 ```
