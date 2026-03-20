@@ -25,7 +25,7 @@ using (Parser parser = new Parser(Constants.SamplePdfWithBarcodes))
     }
 
     // Create the options which are used for barcodes extraction
-    BarcodeOptions options = new BarcodeOptions(QualityMode.Low, QualityMode.Low, "QR");
+    BarcodeOptions options = new BarcodeOptions(QualityMode.Low, QualityMode.Low, new string[] { "QR" });
 
     // Extract barcodes from the document
     IEnumerable<PageBarcodeArea> barcodes = parser.GetBarcodes(options);
