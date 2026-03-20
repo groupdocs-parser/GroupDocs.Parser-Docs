@@ -13,7 +13,7 @@ toc: true
 
 ## Overview
 
-Extracting structured table data from PDF documents is a critical requirement for modern business automation. Manual data entry from PDF tables is time-consuming, error-prone, and doesn't scale. This guide demonstrates **multiple professional table extraction methods** using GroupDocs.Parser for .NET, ranging from simple page-specific extraction to comprehensive document-wide processing that automatically detects and extracts all tables.
+Extracting structured table data from PDF documents is a critical requirement for modern business automation. Manual data entry from PDF tables is time‑consuming, error‑prone, and doesn't scale. This guide demonstrates **multiple professional table extraction methods** using GroupDocs.Parser for .NET, ranging from simple page‑specific extraction to comprehensive document‑wide processing that automatically detects and extracts all tables.
 
 **What you'll learn:**
 - Why automated table extraction is essential for business document processing
@@ -24,7 +24,7 @@ Extracting structured table data from PDF documents is a critical requirement fo
 
 ## Business Needs Challenge
 
-Modern businesses face the critical challenge of efficiently **extracting document data** from PDF files containing structured tables. Manual data entry is time-consuming, error-prone, and doesn't scale. Organizations need automated solutions to **parse document** structures and **extract tables** programmatically to access critical business information.
+Modern businesses face the critical challenge of efficiently **extracting document data** from PDF files containing structured tables. Manual data entry is time‑consuming, error‑prone, and doesn't scale. Organizations need automated solutions to **parse document** structures and **extract tables** programmatically to access critical business information.
 
 ### Common Document Processing Requirements
 
@@ -36,7 +36,7 @@ Businesses receive hundreds of invoices, receipts, and financial statements dail
 - **Extract tables** containing payment terms, discounts, and shipping information
 - Automatically process vendor invoices for accounts payable automation
 
-**Solution:** Automatic **table extraction** eliminates manual data entry, reduces processing time from hours to seconds, and ensures 100% accuracy when **extracting tables** from financial documents. With programmatic **table extraction**, businesses can process thousands of invoices daily, extract all relevant data, and integrate directly into accounting systems.
+**Solution:** Automatic **table extraction** eliminates manual data entry, reduces processing time from hours to seconds, and ensures 100 % accuracy when **extracting tables** from financial documents. With programmatic **table extraction**, businesses can process thousands of invoices daily, extract all relevant data, and integrate directly into accounting systems.
 
 **2. Report and Analytics Data Extraction**
 
@@ -46,7 +46,7 @@ Organizations generate and receive numerous reports containing analytical data i
 - **Extract tables** from operational reports with inventory levels, production metrics, and resource utilization
 - Process regulatory compliance reports with structured data requirements
 
-**Solution:** Automated **table extraction** enables businesses to **extract tables** from reports programmatically, transforming static PDF documents into actionable data. This allows for real-time data analysis, automated reporting pipelines, and seamless integration with business intelligence tools. By **extracting document data** automatically, organizations can make data-driven decisions faster and maintain accurate records.
+**Solution:** Automated **table extraction** enables businesses to **extract tables** from reports programmatically, transforming static PDF documents into actionable data. This allows for real‑time data analysis, automated reporting pipelines, and seamless integration with business intelligence tools. By **extracting document data** automatically, organizations can make data‑driven decisions faster and maintain accurate records.
 
 **3. Purchase Orders and Supply Chain Documents**
 
@@ -64,8 +64,8 @@ Traditional manual data extraction is inefficient and costly. **Table extraction
 
 - **Eliminating Manual Errors:** Automated **table extraction** ensures consistent, accurate data capture
 - **Scaling Operations:** **Extract tables** from hundreds of documents in minutes, not days
-- **Reducing Costs:** Cut data entry costs by up to 90% with automated **table extraction**
-- **Improving Speed:** **Parse document** files instantly and **extract document data** in real-time
+- **Reducing Costs:** Cut data entry costs by up to 90 % with automated **table extraction**
+- **Improving Speed:** **Parse document** files instantly and **extract document data** in real‑time
 - **Enabling Integration:** **Extract tables** directly into databases, ERP systems, and analytics platforms
 
 {{< alert style="info" >}} For the **complete working code** and detailed explanations, please refer to the [full repository here](https://github.com/groupdocs-parser/Pdf-tables-extraction-using-groupdocs-parser).  
@@ -73,42 +73,43 @@ Traditional manual data extraction is inefficient and costly. **Table extraction
 
 ## 📂 Repository Structure
 
-    Pdf-tables-extraction-using-groupdocs-parser/
-    │
-    ├── Program.cs                 # Entry point: table extraction methods
-    │   ├── ExtractTablesPerParticluarPage    # Extract tables from specific page
-    │   ├── ExtractAllTablesFromDocument      # Extract all tables from document
-    │   ├── ProcessTable                      # Format and display tables
-    │   └── GetCellText                       # Access individual cells
-    ├── Invoices.pdf              # Sample PDF with invoice tables
-    ├── TablesReport.pdf          # Sample PDF with multiple tables
-    ├── Operations.pdf            # Sample PDF document
-    ├── document-page-01.png      # Source document preview
-    ├── console-output-01.png     # Extracted tables output
-    └── README.md                 # Documentation
+```
+Pdf-tables-extraction-using-groupdocs-parser/
+│
+├── Program.cs                 # Entry point: table extraction methods
+│   ├── ExtractTablesPerParticularPage    # Extract tables from specific page
+│   ├── ExtractAllTablesFromDocument      # Extract all tables from document
+│   ├── ProcessTable                      # Format and display tables
+│   └── GetCellText                       # Access individual cells
+├── Invoices.pdf              # Sample PDF with invoice tables
+├── TablesReport.pdf          # Sample PDF with multiple tables
+├── Operations.pdf            # Sample PDF document
+├── document-page-01.png      # Source document preview
+├── console-output-01.png     # Extracted tables output
+└── README.md                 # Documentation
+```
 
 ## Method 1: Extract Tables from a Specific Page
 
-**Use Case:** Page-specific extraction | **Difficulty:** Easy | **Best For:** Documents with known table locations, single-page processing
+**Use Case:** Page‑specific extraction | **Difficulty:** Easy | **Best For:** Documents with known table locations, single‑page processing
 
 This method extracts tables from a specific page of a PDF document. It's ideal when you know which page contains the tables you need, such as extracting invoice line items from the first page or processing specific report sections.
 
 ### Implementation
 
 ```csharp
-static void ExtractTablesPerParticluarPage()
+static void ExtractTablesPerParticularPage()
 {
     string sample = "Invoices.pdf";
-    
+
     // Initialize parser with PDF document
     using (var parser = new Parser(sample))
     {
-        // Get document information
+        // Get document information (optional, e.g., to know page count)
         var documentInfo = parser.GetDocumentInfo();
-        int pageCount = documentInfo.PageCount;
-        
-        // Extract tables from first page (pageIndex = 0)
-        var pageIndex = 0;
+
+        // Extract tables from the first page (pageIndex = 0)
+        int pageIndex = 0;
         var tables = parser.GetTables(pageIndex);
 
         if (tables != null && tables.Any())
@@ -116,7 +117,6 @@ static void ExtractTablesPerParticluarPage()
             int tableNumber = 1;
             foreach (var table in tables)
             {
-                // Process each table
                 // Display table dimensions and content
                 Console.WriteLine($"  Table {tableNumber}: {table.RowCount} rows x {table.ColumnCount} columns");
                 ProcessTable(table);
@@ -135,23 +135,23 @@ static void ExtractTablesPerParticluarPage()
 
 ### Key Features
 
-- **Page Targeting:** Specify exact page index (0-based) for precise extraction
-- **Multiple Tables:** Automatically detects and extracts all tables on the specified page
-- **Table Metadata:** Access row count, column count, and page information
-- **Ideal For:** Invoices, single-page reports, forms with known structure
+- **Page Targeting:** Specify exact page index (0‑based) for precise extraction  
+- **Multiple Tables:** Automatically detects and extracts all tables on the specified page  
+- **Table Metadata:** Access row count, column count, and page information  
+- **Ideal For:** Invoices, single‑page reports, forms with known structure  
 
 ### When to Use This Method
 
-- Processing invoices where line items are always on page 1
-- Extracting data from specific report sections
-- Working with forms that have consistent page layouts
-- Quick extraction from known document locations
+- Processing invoices where line items are always on page 1  
+- Extracting data from specific report sections  
+- Working with forms that have consistent page layouts  
+- Quick extraction from known document locations  
 
-## Method 2: Extract All Tables from Entire Document
+## Method 2: Extract All Tables from the Entire Document
 
-**Use Case:** Full document processing | **Difficulty:** Easy | **Best For:** Multi-page documents, comprehensive data extraction
+**Use Case:** Full document processing | **Difficulty:** Easy | **Best For:** Multi‑page documents, comprehensive data extraction
 
-This method extracts all tables from all pages of a PDF document and organizes them by page. It's perfect for processing complete documents where you need comprehensive table data across multiple pages.
+This method extracts all tables from every page of a PDF document and processes them page‑by‑page. It’s perfect for handling complete documents where you need table data across multiple pages.
 
 ### Implementation
 
@@ -161,25 +161,23 @@ static void ExtractAllTablesFromDocument()
     string sample = "TablesReport.pdf";
 
     using (var parser = new Parser(sample))
-    {   
-        // Get all tables from entire document
-        var tables = parser.GetTables();
+    {
+        // Obtain total number of pages (optional, but useful for iteration)
+        var documentInfo = parser.GetDocumentInfo();
+        int pageCount = documentInfo.PageCount;
 
-        if (tables != null && tables.Any())
+        // Iterate through each page and extract tables
+        for (int pageIndex = 0; pageIndex < pageCount; pageIndex++)
         {
-            // Group tables by page index
-            var tablesByPage = tables
-                .GroupBy(table => table.Page.Index)
-                .OrderBy(group => group.Key);
+            var tables = parser.GetTables(pageIndex);
 
-            foreach (var pageGroup in tablesByPage)
+            if (tables != null && tables.Any())
             {
-                int pageIndex = pageGroup.Key;
-                Console.WriteLine($"Tables in the Page {pageIndex + 1}");
+                Console.WriteLine($"Tables in Page {pageIndex + 1}");
                 Console.WriteLine();
 
                 int tableNumber = 1;
-                foreach (var table in pageGroup)
+                foreach (var table in tables)
                 {
                     Console.WriteLine($"  Table {tableNumber}: {table.RowCount} rows x {table.ColumnCount} columns");
                     ProcessTable(table);
@@ -194,21 +192,21 @@ static void ExtractAllTablesFromDocument()
 
 ### Key Features
 
-- **Complete Coverage:** Extracts tables from every page automatically
-- **Page Organization:** Groups tables by page for easy navigation
-- **Scalable Processing:** Handles documents with hundreds of pages
-- **Ideal For:** Financial reports, multi-page invoices, comprehensive data extraction
+- **Complete Coverage:** Extracts tables from every page automatically  
+- **Page Organization:** Processes tables page‑by‑page for easy navigation  
+- **Scalable Processing:** Handles documents with dozens or hundreds of pages  
+- **Ideal For:** Financial reports, multi‑page invoices, comprehensive data extraction  
 
 ### When to Use This Method
 
-- Processing complete financial reports with tables across multiple pages
-- Extracting all data from multi-page invoices
-- Comprehensive document analysis requiring all table data
-- Batch processing scenarios where complete extraction is needed
+- Processing complete financial reports with tables across multiple pages  
+- Extracting all data from multi‑page invoices  
+- Comprehensive document analysis requiring every table  
+- Batch processing scenarios where full extraction is needed  
 
 ## Method 3: Access Individual Table Cells with Formatted Output
 
-**Use Case:** Cell-level processing | **Difficulty:** Medium | **Best For:** Data transformation, custom formatting, cell-by-cell analysis
+**Use Case:** Cell‑level processing | **Difficulty:** Medium | **Best For:** Data transformation, custom formatting, cell‑by‑cell analysis
 
 This method provides granular access to individual table cells and formats the output for display or further processing. It calculates optimal column widths and creates formatted table displays with proper alignment.
 
@@ -219,14 +217,15 @@ static void ProcessTable(PageTableArea table)
 {
     // Calculate column widths for proper alignment using LINQ
     int[] columnWidths = Enumerable.Range(0, table.ColumnCount)
-        .Select(col => Math.Max(3, Enumerable.Range(0, table.RowCount)
-            .Max(row => table[row, col]?.Text?.Length ?? 0)))
+        .Select(col => Math.Max(3,
+            Enumerable.Range(0, table.RowCount)
+                .Max(row => table[row, col]?.Text?.Length ?? 0)))
         .ToArray();
 
-    // Display table with borders
+    // Build a separator line (e.g., +-----+------+-----+)
     string separator = "+" + string.Join("+", columnWidths.Select(w => new string('-', w + 2))) + "+";
-    
-    // Display header row (first row)
+
+    // Header row (first row)
     Console.WriteLine("    " + separator);
     Console.Write("    |");
     for (int col = 0; col < table.ColumnCount; col++)
@@ -237,7 +236,7 @@ static void ProcessTable(PageTableArea table)
     Console.WriteLine();
     Console.WriteLine("    " + separator);
 
-    // Display data rows
+    // Data rows
     for (int row = 1; row < table.RowCount; row++)
     {
         Console.Write("    |");
@@ -253,32 +252,34 @@ static void ProcessTable(PageTableArea table)
 
 static string GetCellText(PageTableArea table, int row, int col)
 {
-    return table[row, col]?.Text ?? "";
+    // Safely retrieve cell text; return empty string if cell is null
+    return table[row, col]?.Text ?? string.Empty;
 }
 ```
 
 ### Key Features
 
-- **Dynamic Column Sizing:** Automatically calculates optimal column widths based on content
-- **Formatted Display:** Creates professional table borders and alignment
-- **Cell-Level Access:** Direct access to any cell by row and column index
-- **Header Separation:** Visually separates header row from data rows
-- **Ideal For:** Console output, data validation, custom formatting requirements
+- **Dynamic Column Sizing:** Automatically calculates optimal column widths based on content  
+- **Formatted Display:** Creates professional table borders and alignment for console output  
+- **Cell‑Level Access:** Direct access to any cell by row and column index  
+- **Header Separation:** Visually separates header row from data rows  
+- **Ideal For:** Console output, data validation, custom formatting requirements  
 
 ### Advanced Cell Processing
 
 You can extend this method to:
-- Filter specific columns or rows
-- Apply data transformations to cell values
-- Validate cell content against business rules
-- Export to CSV, Excel, or database formats
-- Perform calculations on numeric cells
+
+- Filter specific columns or rows  
+- Apply data transformations to cell values  
+- Validate cell content against business rules  
+- Export to CSV, Excel, or database formats  
+- Perform calculations on numeric cells  
 
 ## Method 4: Extract Tables with LINQ for Efficient Processing
 
 **Use Case:** Advanced filtering and processing | **Difficulty:** Medium | **Best For:** Complex data extraction, filtering, and transformation
 
-This method demonstrates how to use LINQ queries to filter, group, and process extracted tables efficiently. It's ideal for scenarios requiring conditional extraction or data transformation.
+This method demonstrates how to use LINQ queries to filter, group, and process extracted tables efficiently. It’s ideal for scenarios requiring conditional extraction or data transformation.
 
 ### Implementation
 
@@ -293,28 +294,29 @@ static void ExtractTablesWithFiltering()
 
         if (tables != null && tables.Any())
         {
-            // Filter tables with more than 5 rows
+            // Example 1: Filter tables that have more than 5 rows
             var largeTables = tables
-                .Where(table => table.RowCount > 5)
+                .Where(t => t.RowCount > 5)
                 .ToList();
 
-            // Group by page and count tables per page
-            var tablesPerPage = tables
-                .GroupBy(table => table.Page.Index)
-                .Select(group => new
-                {
-                    Page = group.Key + 1,
-                    TableCount = group.Count(),
-                    TotalRows = group.Sum(t => t.RowCount)
-                })
-                .OrderBy(x => x.Page);
+            // Example 2: Group tables by page index (by iterating pages)
+            var documentInfo = parser.GetDocumentInfo();
+            int pageCount = documentInfo.PageCount;
 
-            // Extract specific columns from all tables
+            for (int pageIndex = 0; pageIndex < pageCount; pageIndex++)
+            {
+                var pageTables = parser.GetTables(pageIndex);
+                if (pageTables != null && pageTables.Any())
+                {
+                    Console.WriteLine($"Page {pageIndex + 1} contains {pageTables.Count()} table(s).");
+                }
+            }
+
+            // Example 3: Extract first two columns from every table
             foreach (var table in tables)
             {
                 if (table.ColumnCount >= 2)
                 {
-                    // Extract first two columns from each table
                     var firstTwoColumns = Enumerable.Range(0, table.RowCount)
                         .Select(row => new
                         {
@@ -322,6 +324,8 @@ static void ExtractTablesWithFiltering()
                             Column2 = GetCellText(table, row, 1)
                         })
                         .ToList();
+
+                    // Process firstTwoColumns as needed (e.g., export, analysis)
                 }
             }
         }
@@ -331,45 +335,45 @@ static void ExtractTablesWithFiltering()
 
 ### Key Features
 
-- **LINQ Integration:** Leverage powerful LINQ queries for table processing
-- **Flexible Filtering:** Filter tables by size, page, or content criteria
-- **Data Aggregation:** Calculate statistics across multiple tables
-- **Selective Extraction:** Extract specific columns or rows based on conditions
-- **Ideal For:** Complex data analysis, conditional extraction, data transformation pipelines
+- **LINQ Integration:** Leverage powerful LINQ queries for table processing  
+- **Flexible Filtering:** Filter tables by size, page, or content criteria  
+- **Data Aggregation:** Calculate statistics across multiple tables  
+- **Selective Extraction:** Extract specific columns or rows based on conditions  
+- **Ideal For:** Complex data analysis, conditional extraction, data‑transformation pipelines  
 
 ## Choosing the Right Extraction Method
 
 | Method | Use Case | Difficulty | Best For | Processing Speed |
 |--------|----------|------------|----------|------------------|
-| Page-Specific Extraction | Known table location | Easy | Single-page documents, invoices | Fast |
-| Full Document Extraction | Complete data extraction | Easy | Multi-page reports, comprehensive analysis | Medium |
-| Cell-Level Processing | Custom formatting, validation | Medium | Data transformation, custom output | Fast |
-| LINQ-Based Processing | Complex filtering, aggregation | Medium | Advanced data analysis, conditional extraction | Medium |
+| Page‑Specific Extraction | Known table location | Easy | Single‑page documents, invoices | Fast |
+| Full Document Extraction | Complete data extraction | Easy | Multi‑page reports, comprehensive analysis | Medium |
+| Cell‑Level Processing | Custom formatting, validation | Medium | Data transformation, custom output | Fast |
+| LINQ‑Based Processing | Complex filtering, aggregation | Medium | Advanced data analysis, conditional extraction | Medium |
 
 ## Key Features of GroupDocs.Parser Table Extraction
 
 ### Automatic Table Detection
 
-- **No Templates Required:** Automatically detects table structures in PDF documents
-- **Smart Recognition:** Identifies table boundaries, rows, and columns automatically
-- **Multiple Table Support:** Extracts multiple tables from a single page or document
-- **Format Preservation:** Maintains table structure and cell relationships
+- **No Templates Required:** Automatically detects table structures in PDF documents  
+- **Smart Recognition:** Identifies table boundaries, rows, and columns automatically  
+- **Multiple Table Support:** Extracts several tables from a single page or document  
+- **Format Preservation:** Maintains table structure and cell relationships  
 
 ### Extraction Capabilities
 
-- **Page-Specific Extraction:** Target tables on specific pages for efficient processing
-- **Full Document Processing:** Extract all tables across entire documents
-- **Cell-Level Access:** Access individual cells by row and column coordinates
-- **Table Metadata:** Retrieve table dimensions (rows × columns) and page information
-- **Structured Output:** Formatted table display with headers and values
+- **Page‑Specific Extraction:** Target tables on specific pages for efficient processing  
+- **Full Document Processing:** Extract all tables across entire documents  
+- **Cell‑Level Access:** Access individual cells by row and column coordinates  
+- **Table Metadata:** Retrieve table dimensions (rows × columns) and page information  
+- **Structured Output:** Formatted table display with headers and values  
 
 ### What You Can Extract
 
-- Table headers and data rows with precise positioning
-- Cell values with accurate text extraction
-- Table dimensions (rows × columns) for validation
-- Multi-page table extraction with page organization
-- Tables organized by page for easy navigation
+- Table headers and data rows with precise positioning  
+- Cell values with accurate text extraction  
+- Table dimensions (rows × columns) for validation  
+- Multi‑page table extraction with page organization  
+- Tables organized by page for easy navigation  
 
 ## Common Questions
 
@@ -377,32 +381,32 @@ static void ExtractTablesWithFiltering()
 A: No. GroupDocs.Parser automatically detects table structures in PDF documents without requiring templates. Templates are optional and used for advanced scenarios with scanned documents or complex layouts.
 
 **Q: Can I extract tables from scanned PDFs?**  
-A: Yes, with OCR support. GroupDocs.Parser can work with OCR connectors to extract tables from scanned PDFs. Template-based extraction is recommended for scanned documents with consistent layouts.
+A: Yes, with OCR support. GroupDocs.Parser can work with OCR connectors to extract tables from scanned PDFs. Template‑based extraction is recommended for scanned documents with consistent layouts.
 
 **Q: How accurate is automatic table detection?**  
-A: Automatic table detection works excellently for text-based PDFs with clear table structures. Accuracy depends on document quality and table formatting. Well-structured tables achieve near-perfect extraction.
+A: Automatic table detection works excellently for text‑based PDFs with clear table structures. Accuracy depends on document quality and table formatting. Well‑structured tables achieve near‑perfect extraction.
 
 **Q: Can I extract specific columns or rows?**  
 A: Yes. Once tables are extracted, you can access individual cells by row and column index, allowing you to filter, transform, or extract specific data elements.
 
 **Q: Does GroupDocs.Parser support other document formats?**  
-A: Yes. GroupDocs.Parser supports 50+ document formats including Word, Excel, PowerPoint, and more. However, this guide focuses on PDF table extraction.
+A: Yes. GroupDocs.Parser supports 50 + document formats including Word, Excel, PowerPoint, and more. This guide focuses on PDF table extraction.
 
 **Q: How do I handle documents with multiple tables per page?**  
-A: The `GetTables()` method returns all tables found on a page. You can iterate through the collection and process each table individually, or filter them based on size, position, or content.
+A: The `GetTables(pageIndex)` method returns all tables found on a page. Iterate through the collection and process each table individually, or filter them based on size, position, or content.
 
 **Q: Can I export extracted tables to other formats?**  
 A: Yes. After extraction, you can process table data and export to CSV, Excel, JSON, or database formats using standard .NET libraries or GroupDocs conversion APIs.
 
 ## Conclusion
 
-Extracting tables from PDF documents is essential for modern business automation. GroupDocs.Parser for .NET provides multiple extraction methods, from simple page-specific extraction to comprehensive document-wide processing with advanced filtering and formatting capabilities.
+Extracting tables from PDF documents is essential for modern business automation. GroupDocs.Parser for .NET provides multiple extraction methods, from simple page‑specific extraction to comprehensive document‑wide processing with advanced filtering and formatting capabilities.
 
 Choose the extraction method that matches your requirements:
-- Use **page-specific extraction** for documents with known table locations
-- Implement **full document extraction** for comprehensive data collection
-- Apply **cell-level processing** for custom formatting and validation
-- Deploy **LINQ-based processing** for complex filtering and transformation
 
-Whether you need to **extract document data** from invoices, **parse document** reports, or **extract tables** from any PDF document, GroupDocs.Parser provides the solution to transform unstructured PDF documents into structured, actionable data. Start extracting tables programmatically today and eliminate manual data entry from your document processing workflows.
+- Use **page‑specific extraction** for documents with known table locations  
+- Implement **full document extraction** for comprehensive data collection  
+- Apply **cell‑level processing** for custom formatting and validation  
+- Deploy **LINQ‑based processing** for complex filtering and transformation  
 
+Whether you need to **extract document data** from invoices, **parse document** reports, or **extract tables** from any PDF, GroupDocs.Parser provides the solution to transform unstructured PDFs into structured, actionable data. Start extracting tables programmatically today and eliminate manual data entry from your document processing workflows.
