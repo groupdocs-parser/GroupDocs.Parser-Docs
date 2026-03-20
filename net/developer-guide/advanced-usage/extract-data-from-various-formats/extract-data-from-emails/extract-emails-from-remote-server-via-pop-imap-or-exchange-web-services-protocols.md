@@ -45,10 +45,11 @@ The following example shows how to extract emails from Exchange Server:
 ```csharp
 // Create the connection object for Exchange Web Services protocol 
 EmailConnection connection = new EmailEwsConnection(
-    "https://outlook.office365.com/ews/exchange.asmx",
-    "email@server",
-    "password");
- 
+    "outlook.office365.com",                     // Domain
+    "https://outlook.office365.com/ews/exchange.asmx", // Mailbox URI
+    "email@server",                             // User name
+    "password");                                // Password
+
 // Create an instance of Parser class to extract emails from the remote server
 using (Parser parser = new Parser(connection))
 {
@@ -58,10 +59,10 @@ using (Parser parser = new Parser(connection))
         Console.WriteLine("Container extraction isn't supported.");
         return;
     }
- 
+
     // Extract email messages from the server
     IEnumerable<ContainerItem> emails = parser.GetContainer();
- 
+
     // Iterate over attachments
     foreach (ContainerItem item in emails)
     {
