@@ -86,7 +86,7 @@ using (Parser parser = new Parser(Constants.SampleXlsx))
         info.MaxColumnIndex);
 
     // Get the worksheet cells from the first two rows
-    IEnumerable<WorksheetCell> cells = parser.GetWorksheetCells(0, new WorksheetOptions(range));
+    IEnumerable<WorksheetCell> cells = parser.GetWorksheetCells(0, new WorksheetOptions(new [] { range }));
 
     // Iterate over cells
     foreach (WorksheetCell c in cells)
