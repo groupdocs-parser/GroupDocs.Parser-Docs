@@ -13,29 +13,29 @@ toc: true
 GroupDocs.Parser provides the functionality to extract barcodes from documents by the [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/1) method:
 
 ```csharp
-IEnumerable<PageBarcodeArea> GetBarcodes(PageAreaOptions options);
+IEnumerable<PageBarcodeArea> GetBarcodes(BarcodeOptions options);
 ```
 
 This method returns a collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) objects:
 
 | Member | Description |
 | --- | --- |
-| [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area.                        |
-| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
-| [Value](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/properties/value) | A string value that represents a value of the barcode page area. |
-| [CodeTypeName](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/properties/codetypename) | A string value than represents a type name of the barcode. |
-| [Confidence](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/confidence/) | The level of confidence of the parsered barcode. |
-| [Angle](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea/angle/) | The angle of the barcode. |
+| [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pagearea/properties/page) | The page that contains the text area.                        |
+| [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
+| [Value](https://reference.groupdocs.com/parser/net/groupdocs.parser.data.pagebarcodearea/properties/value) | A string value that represents a value of the barcode page area. |
+| [CodeTypeName](https://reference.groupdocs.com/parser/net/groupdocs.parser.data.pagebarcodearea/properties/codetypename) | A string value than represents a type name of the barcode. |
+| [Confidence](https://reference.groupdocs.com/parser/net/groupdocs.parser.data.pagebarcodearea/confidence/) | The level of confidence of the parsered barcode. |
+| [Angle](https://reference.groupdocs.com/parser/net/groupdocs.parser.data.pagebarcodearea/angle/) | The angle of the barcode. |
 
 Here are the steps to extract all barcodes from the whole document:
 
 - Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
 - Check if the document supports barcodes extraction;
 - Instantiate [BarcodeOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/BarcodeOptions) with the rectangular area;
-- Call [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/1) method and obtain collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data/pagebarcodearea) objects;
+- Call [GetBarcodes](https://reference.groupdocs.com/parser/net/groupdocs.parser.parser/getbarcodes/methods/1) method and obtain collection of [PageBarcodeArea](https://reference.groupdocs.com/parser/net/groupdocs.parser.data.pagebarcodearea) objects;
 - Iterate through the collection and get a barcode value.
 
-The following example shows how to extract barcodes from the upper-right corner:
+The following example shows how to extract barcodes from the upper‑right corner:
 
 ```csharp
 // Create an instance of Parser class
