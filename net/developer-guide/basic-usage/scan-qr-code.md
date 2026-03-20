@@ -46,15 +46,14 @@ using (Parser parser = new Parser(Constants.SamplePdfWithBarcodes))
     }
 
     // Scan barcodes with type "QR" from your file.
-    IEnumerable<PageBarcodeArea> qrcodes = parser.GetBarcodes().Where(i => i.CodeTypeName == "QR");
+    IEnumerable<PageBarcodeArea> qrcodes = parser.GetBarcodes()
+                                                .Where(i => i.CodeTypeName == "QR");
 
     // Iterate over barcodes
     foreach (PageBarcodeArea qrcode in qrcodes)
     {
-        // Print the page index
-        Console.WriteLine("Page: " + qrcode.Page.Index.ToString());
-        // Print the qrcode value
-        Console.WriteLine("Value: " + qrcode.Value);
+        // Print the QR code value
+        Console.WriteLine($"Value: {qrcode.Value}");
     }
 }
 ```
