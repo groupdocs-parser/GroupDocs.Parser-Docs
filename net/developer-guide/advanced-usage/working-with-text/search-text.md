@@ -5,7 +5,7 @@ title: Search text
 weight: 4
 version: 23.5
 description: "Learn how to search for keywords and use regular expressions to find text in documents using GroupDocs.Parser for .NET. Search text with case sensitivity and whole word options in C#."
-keywords: search text, search text from documents, text search C#, keyword search, regex search, document search
+keywords: search text, search text from documents, text search C#, keyword search, regex, document search
 productName: GroupDocs.Parser for .NET
 hideChildren: False
 toc: true
@@ -89,7 +89,8 @@ The following example shows how to search with a regular expression in a documen
 using(Parser parser = new Parser(filePath))
 {
     // Search with a regular expression with case matching
-    IEnumerable<SearchResult> sr = parser.Search("page number: [0-9]+", new SearchOptions(true, false, true));
+    // UseSearchOptions constructor with (matchCase, matchWholeWord, searchByPages, useRegularExpression)
+    IEnumerable<SearchResult> sr = parser.Search("page number: [0-9]+", new SearchOptions(true, false, false, true));
     // Check if search is supported
     if(sr == null)
     {
@@ -158,7 +159,7 @@ The following example shows how to search a text with page numbers:
 using(Parser parser = new Parser(Constants.SamplePdf))
 {
     // Search a keyword with page numbers
-    IEnumerable<SearchResult> sr = parser.Search("lorem", new SearchOptions(false, false, false, true));
+    IEnumerable<SearchResult> sr = parser.Search("lorem", new SearchOptions(false, false, true));
     // Check if search is supported
     if(sr == null)
     {
