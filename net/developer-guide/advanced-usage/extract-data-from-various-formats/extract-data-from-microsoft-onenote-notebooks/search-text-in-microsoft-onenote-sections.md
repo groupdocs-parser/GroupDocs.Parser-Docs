@@ -25,13 +25,13 @@ The following example shows how to find a keyword in Microsoft OneNote section:
 
 ```csharp
 // Create an instance of Parser class
-using(Parser parser = new Parser(filePath))
+using (Parser parser = new Parser(filePath))
 {
     // Search a keyword:
     IEnumerable<SearchResult> sr = parser.Search("page number");
    
     // Iterate over search results
-    foreach(SearchResult s in sr)
+    foreach (SearchResult s in sr)
     {
         // Print an index and found text:
         Console.WriteLine(string.Format("At {0}: {1}", s.Position, s.Text));
@@ -52,12 +52,18 @@ The following example shows how to search with a regular expression in Microsoft
 
 ```csharp
 // Create an instance of Parser class
-using(Parser parser = new Parser(filePath))
+using (Parser parser = new Parser(filePath))
 {
-    // Search with a regular expression with case matching
-    IEnumerable<SearchResult> sr = parser.Search("page number: [0-9]+", new SearchOptions(true, false, true));
+    // Configure search options
+    SearchOptions options = new SearchOptions();
+    options.UseRegularExpression = true;   // enable regular expression search
+    options.MatchCase = true;              // case‑sensitive search (optional)
+
+    // Search with a regular expression
+    IEnumerable<SearchResult> sr = parser.Search("page number: [0-9]+", options);
+    
     // Iterate over search results
-    foreach(SearchResult s in sr)
+    foreach (SearchResult s in sr)
     {
         // Print an index and found text:
         Console.WriteLine(string.Format("At {0}: {1}", s.Position, s.Text));
