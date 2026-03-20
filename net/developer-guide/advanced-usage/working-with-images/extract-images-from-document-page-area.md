@@ -14,7 +14,6 @@ GroupDocs.Parser provides the functionality to extract images from document page
 ```csharp
 IEnumerable<PageImageArea> GetImages(PageAreaOptions options);
 IEnumerable<PageImageArea> GetImages(int pageIndex, PageAreaOptions options);
-
 ```
 
 The methods return a collection of [PageImageArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea) objects:
@@ -23,8 +22,8 @@ The methods return a collection of [PageImageArea](https://reference.groupdocs.c
 | --- | --- |
 | [Page](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/page) | The page that contains the text area. |
 | [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pagearea/properties/rectangle) | The rectangular area on the page that contains the text area. |
-| [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/properties/filetype) | The format of the image. |
-| [Rotation](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/properties/rotation) | The rotation angle of the image. |
+| [FileType](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/properties/filetype) | The format of the image. |
+| [Rotation](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/properties/rotation) | The rotation angle of the image. |
 | Stream [GetImageStream()](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/methods/getimagestream) | Returns the image stream. |
 | Stream [GetImageStream(ImageOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data.pageimagearea/getimagestream/methods/1) | Returns the image stream in a different format. |
 | [Save(string)](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea/methods/save) | Saves the image to the file. |
@@ -38,44 +37,50 @@ The methods return a collection of [PageImageArea](https://reference.groupdocs.c
 *   Png
 *   WebP
 
-[PageAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) parameter is used to customize text areas extraction process. This class has the following members:
+[PageAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) parameter is used to customize image extraction process. This class has the following members:
 
 | Member | Description |
 | --- | --- |
 | [Rectangle](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions/properties/rectangle) | The rectangular area that contains a text area. |
 
-Here are the steps to extract images from the upper-left corner:
+Here are the steps to extract images from the upper‑left corner:
 
 *   Instantiate [Parser](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser) object for the initial document;
 *   Instantiate [PageAreaOptions](https://reference.groupdocs.com/net/parser/groupdocs.parser.options/pageareaoptions) with the rectangular area;
 *   Call [GetImages(PageAreaOptions)](https://reference.groupdocs.com/net/parser/groupdocs.parser.parser/getimages/methods/1) method and obtain collection of [PageImageArea](https://reference.groupdocs.com/net/parser/groupdocs.parser.data/pageimagearea) objects;
 *   Check if *collection* isn't *null* (images extraction is supported for the document);
-*   Iterate through the collection and get sizes, image types and image contents.
+*   Iterate through the collection and get image type and content.
 
-The following example shows how to extract only images from the upper-left corner:
+The following example shows how to extract only images from the upper‑left corner:
 
 ```csharp
 // Create an instance of Parser class
 using (Parser parser = new Parser(filePath))
 {
     // Create the options which are used for images extraction
-    PageAreaOptions options = new PageAreaOptions(new Rectangle(new Point(0, 0), new Size(300, 100)));
-    // Extract images from the upper-left corner of a page:
+    PageAreaOptions options = new PageAreaOptions(
+        new Rectangle(new Point(0, 0), new Size(300, 100)));
+
+    // Extract images from the upper‑left corner of a page:
     IEnumerable<PageImageArea> images = parser.GetImages(options);
+
     // Check if images extraction is supported
     if (images == null)
     {
         Console.WriteLine("Page images extraction isn't supported");
         return;
     }
+
     // Iterate over images
     foreach (PageImageArea image in images)
     {
-        // Print a page index, rectangle and image type:
-        Console.WriteLine(string.Format("Page: {0}, R: {1}, Type: {2}", image.Page.Index, image.Rectangle, image.FileType));
+        // Print the image type:
+        Console.WriteLine($"Image type: {image.FileType}");
+
+        // Optionally, save the image to a file:
+        // image.Save("output_image." + image.FileType.Extension);
     }
 }
-
 ```
 
 ## More resources
