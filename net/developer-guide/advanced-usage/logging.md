@@ -29,8 +29,15 @@ try
 {
     // Create an instance of Logger class
     Logger logger = new Logger();
+
+    // Create load options with password (if needed)
+    var loadOptions = new LoadOptions
+    {
+        Password = Constants.SamplePassword // replace with your document password if required
+    };
+
     // Create an instance of Parser class with the parser settings
-    using (Parser parser = new Parser(Constants.SamplePassword, null, new ParserSettings(logger)))
+    using (Parser parser = new Parser(Constants.SampleFilePath, loadOptions, new ParserSettings(logger)))
     {
         // Check if text extraction is supported
         if (!parser.Features.Text)
@@ -38,6 +45,7 @@ try
             Console.WriteLine("Text extraction isn't supported.");
             return;
         }
+
         // Print the document text
         using (TextReader reader = parser.GetText())
         {
@@ -47,7 +55,7 @@ try
 }
 catch (InvalidPasswordException)
 {
-    ; // Ignore the exception
+    // Ignore the exception
 }
 
 private class Logger : ILogger
@@ -57,11 +65,13 @@ private class Logger : ILogger
         // Print error message
         Console.WriteLine("Error: " + message);
     }
+
     public void Trace(string message)
     {
         // Print event message
         Console.WriteLine("Event: " + message);
     }
+
     public void Warning(string message)
     {
         // Print warning message
