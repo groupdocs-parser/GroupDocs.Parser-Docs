@@ -1,4 +1,3 @@
-
 id: search-text-in-html-documents
 url: parser/net/search-text-in-html-documents
 title: Search text in HTML documents
@@ -90,10 +89,13 @@ using (Parser parser = new Parser("sample.zip")) // ZIP archives are not searcha
 
 ### Example 2: Search in an empty HTML file (returns empty collection)
 ```csharp
+using System.Linq;
+
+// Create an instance of Parser class
 using (Parser parser = new Parser("empty.html")) // Empty HTML without text
 {
     var results = parser.Search("example");
-    if (results != null && results.Count == 0)
+    if (results != null && !results.Any())
         Console.WriteLine("Search returned empty collection: no text found in the document.");
 }
 ```
