@@ -13,7 +13,7 @@ GroupDocs.Parser for .NET provides the ability to extract text from image files 
 
 {{< alert style="info" >}}To use the OCR functionality in .NET Framework set PlatformTarget to x64. If downloadable (msi or zip) version of GroupDocs.Parser is used, see readme.txt file for the additional information.{{< /alert >}}
 
-It should be noted that not all languages ​​represented by the [Language](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/language/) class are currently supported for recognition without implicitly downloading additional resources from the internet. However, if internet access is available, all necessary resources will be downloaded implicitly when selecting any recognition language. Currently supported languages ​​without additional downloads: English, Chinese, Japanese.
+It should be noted that not all languages ​​represented by the [Language](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/language/) class are currently supported for recognition without implicitly downloading additional resources from the internet. However, if internet access is available, all necessary resources will be downloaded implicitly when selecting any recognition language. Currently supported languages ​​without additional downloads: English, Chinese, Japanese, Korean, Arabic.
 
 The following example shows how to extract text from images and PDFs:
 

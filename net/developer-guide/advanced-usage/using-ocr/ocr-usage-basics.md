@@ -11,7 +11,7 @@ toc: true
 ---
 GroupDocs.Parser for .NET enables text recognition (OCR) in image files and PDF files composed of images.
 
-It should be noted that not all languages ​​represented by the [Language](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/language/) class are currently supported for recognition without implicitly downloading additional resources from the internet. However, if internet access is available, all necessary resources will be downloaded implicitly when selecting any recognition language. Currently supported languages ​​without additional downloads: English, Chinese, Japanese.
+It should be noted that not all languages ​​represented by the [Language](https://reference.groupdocs.com/parser/net/groupdocs.parser.options/language/) class are currently supported for recognition without implicitly downloading additional resources from the internet. However, if internet access is available, all necessary resources will be downloaded implicitly when selecting any recognition language. Currently supported languages ​​without additional downloads: English, Chinese, Japanese, Korean, Arabic.
 
 [GetText](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettext#gettext_1) and [GetTextAreas](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/gettextareas#gettextareas_1) methods from [Parser](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/) class are used to extract text from images.
 
