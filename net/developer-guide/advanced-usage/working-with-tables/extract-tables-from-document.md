@@ -67,7 +67,7 @@ using (Parser parser = new Parser(excelPath))
     
     // Extract all tables from the Excel spreadsheet
     // Pass null to extract tables automatically
-    IEnumerable<PageTableArea> tables = parser.GetTables(null);
+    IEnumerable<PageTableArea> tables = parser.GetTables();
     
     int tableIndex = 0;
     foreach (PageTableArea table in tables)
