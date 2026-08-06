@@ -10,8 +10,6 @@ hideChildren: False
 toc: true
 ---
 
-# Extract Annotations from PDF Documents in C# .NET
-
 PDF files often contain **annotations** – comments, notes, highlights, and other markup added by reviewers. With **GroupDocs.Parser for .NET**, you can easily read these annotations programmatically using the [GetAnnotations](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/getannotations/#getannotations) method.
 
 This guide shows how to extract annotations from PDF documents in C# step by step.

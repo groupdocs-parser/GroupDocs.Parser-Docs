@@ -10,8 +10,6 @@ hideChildren: False
 toc: true
 ---
 
-# Extract Metadata from PDF Documents in C# .NET
-
 PDF files often contain **metadata** such as the title, subject, author, creation date, and application used to generate the document. With **GroupDocs.Parser for .NET**, you can easily read these metadata properties programmatically using the [GetMetadata](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getmetadata) method.  
 
 This guide shows how to extract metadata from PDF documents in C# step by step.
