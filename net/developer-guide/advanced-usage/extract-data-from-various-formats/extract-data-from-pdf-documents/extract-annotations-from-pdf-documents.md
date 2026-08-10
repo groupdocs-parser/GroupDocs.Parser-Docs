@@ -42,7 +42,7 @@ Follow these steps to get annotations from a PDF document:
 ### Example: Extract PDF Annotations in C#
 
 ```csharp
-using (Parser parser = new Parser(@"C:\MyDocuments\MyDocument.pdf"))
+using (Parser parser = new Parser(@"MyDocument.pdf"))
 {
     // Extract annotations
     IEnumerable<AnnotationItem> annotations = parser.GetAnnotations();
@@ -66,7 +66,7 @@ Sometimes it's useful to get the document's text and its annotations in one pass
 ### Example: Extract Text with Annotations in C#
 
 ```csharp
-using (Parser parser = new Parser(@"C:\MyDocuments\MyDocument.pdf"))
+using (Parser parser = new Parser(@"MyDocument.pdf"))
 {
     TextOptions options = new TextOptions
     {
