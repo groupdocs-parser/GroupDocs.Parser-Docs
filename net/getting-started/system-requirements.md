@@ -15,6 +15,8 @@ tags: csharp, parser, system-requirements, prerequisites, v23.5
 
 GroupDocs.Parser for .NET does not require any external software or third party tool to be installed. Just follow one of the way as described in [Development Environment, Installation and Configuration]({{< ref "parser/net/getting-started/installation.md" >}}).
 
+An internet connection is not required to run GroupDocs.Parser or to validate a license. Note, however, that documents referencing remote images or stylesheets can cause outbound requests during extraction — see [Network access and data privacy]({{< ref "parser/net/getting-started/network-access-and-data-privacy.md" >}}).
+
 ## Supported Operating Systems
 
 GroupDocs.Parser for .NET supports any 32-bit or 64-bit operating system where .NET or Mono framework is installed including, but not limited to:

@@ -28,6 +28,10 @@ using (Parser parser = new Parser(url))
 }
 ```
 
+{{< alert style="info" >}}
+This constructor makes GroupDocs.Parser download the document itself. If the URL comes from untrusted input, validate it before use. See [Network access and data privacy]({{< ref "parser/net/getting-started/network-access-and-data-privacy.md" >}}) for the full list of situations in which the library performs outbound network requests.
+{{< /alert >}}
+
 ## More resources
 
 ### GitHub examples

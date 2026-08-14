@@ -58,6 +58,12 @@ private class Handler : ExternalResourceHandler
 }
 ```
 
+{{< alert style="warning" >}}
+Loading of external resources is enabled by default, which means that parsing a document from an untrusted source may cause outbound HTTP requests to hosts named inside that document — for example remote images or stylesheets referenced by an HTML or MHTML file or by the HTML body of an email, linked images in Word processing documents, and `INCLUDEPICTURE` fields.
+
+As of version 26.6.1, `ExternalResourceHandler` intercepts image extraction from HTML and MHTML only; other extraction methods and other formats do not route through it. To guarantee that no outbound request is made, block egress at the network or process level. See [Network access and data privacy]({{< ref "parser/net/getting-started/network-access-and-data-privacy.md" >}}) for the measured per-format behaviour.
+{{< /alert >}}
+
 ## More resources
 
 ### GitHub examples

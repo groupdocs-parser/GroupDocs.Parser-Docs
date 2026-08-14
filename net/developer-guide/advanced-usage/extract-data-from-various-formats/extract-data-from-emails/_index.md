@@ -21,6 +21,10 @@ The following table provides the list of supported formats:
 | [PST](https://wiki.fileformat.com/email/pst/) | Microsoft Outlook Personal Information Store File |
 | [OST](https://wiki.fileformat.com/email/ost/) | Microsoft Outlook Offline Data File |
 
+{{< alert style="warning" >}}
+Messages with an HTML body may reference images and stylesheets hosted on remote servers. Extracting formatted text or document structure from such a message causes GroupDocs.Parser to request those resources, which means tracking pixels in an inbound message will fire. `GetText` is not affected. If you process email that arrives from outside your organisation, read [Network access and data privacy]({{< ref "parser/net/getting-started/network-access-and-data-privacy.md" >}}).
+{{< /alert >}}
+
 ## More resources
 
 ### GitHub examples

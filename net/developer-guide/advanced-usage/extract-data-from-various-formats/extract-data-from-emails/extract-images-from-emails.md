@@ -44,6 +44,10 @@ using (Parser parser = new Parser(filePath))
 }
 ```
 
+{{< alert style="info" >}}
+Extracting images from an email does not issue outbound requests: images that the HTML body references by an absolute URL are not downloaded by [GetImages](https://reference.groupdocs.com/net/parser/groupdocs.parser/parser/methods/getimages). Other extraction methods behave differently — see [Network access and data privacy]({{< ref "parser/net/getting-started/network-access-and-data-privacy.md" >}}).
+{{< /alert >}}
+
 ## More resources
 
 ### GitHub examples

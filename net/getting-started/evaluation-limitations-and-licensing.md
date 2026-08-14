@@ -71,6 +71,10 @@ Calling [License.SetLicense(String)](https://reference.groupdocs.com/net/parser/
 {{< alert style="info" >}}
 You can also set Metered license as an alternative to license file. It is a new licensing mechanism that will be used along with existing licensing method. It is useful for the customers who want to be billed based on the usage of the API features. For more details, please refer to Metered Licensing FAQ section.
 {{< /alert >}}
+
+{{< alert style="warning" >}}
+A metered license requires network connectivity. The key is validated when you call [SetMeteredKey](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered/methods/setmeteredkey), and consumption data is uploaded to the licensing endpoint on a recurring basis afterwards. Usage volume is transmitted — never your document content. If consumption data cannot be uploaded for more than 24 hours, the license reverts to evaluation status, so a metered license is not suitable for air-gapped deployments. See [Network access and data privacy]({{< ref "parser/net/getting-started/network-access-and-data-privacy.md" >}}).
+{{< /alert >}}
   
 Here are the simple steps to use the [Metered](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered) class.
 *       Create an instance of [Metered](https://reference.groupdocs.com/net/parser/groupdocs.parser/metered) class.

@@ -2,7 +2,7 @@
 id: how-to-run-examples
 url: parser/net/how-to-run-examples
 title: How to Run Examples
-weight: 6
+weight: 7
 version: 23.5
 description: "Step-by-step guide to run GroupDocs.Parser for .NET code examples. Learn how to build projects from scratch, use GitHub examples, and set up your development environment."
 keywords: parser api, run examples, .NET examples, GitHub examples, code samples

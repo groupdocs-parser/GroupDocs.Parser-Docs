@@ -58,6 +58,10 @@ using (Parser parser = new Parser(filePath))
 }
 ```
 
+{{< alert style="info" >}}
+Hyperlinks are read from the document as text — GroupDocs.Parser never resolves, follows, or requests them. See [Network access and data privacy]({{< ref "parser/net/getting-started/network-access-and-data-privacy.md" >}}) for the complete list of operations that do and do not generate network traffic.
+{{< /alert >}}
+
 ## More resources
 
 ### GitHub examples
