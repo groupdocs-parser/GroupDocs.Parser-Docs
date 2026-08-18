@@ -10,7 +10,7 @@ productName: GroupDocs.Parser for .NET
 hideChildren: True
 ---
 {{< alert style="info" >}}
-![](/parser/net/images/home.png) **Welcome to the GroupDocs.Parser for .NET**  
+<img src="/logo/128x128/groupdocs-parser-net.png" alt="groupdocs-parser-net-home" align="left" style="width:110px; margin: 0 30px 30px 0"/> **Welcome to the GroupDocs.Parser for .NET**  
 GroupDocs.Parser is a convenient text extractor API that permits users to extract raw or formatted text from different document formats. Besides, it is not only a text extractor API, the user can extract metadata from the document as well.
 {{< /alert >}}
 

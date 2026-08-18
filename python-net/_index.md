@@ -12,7 +12,7 @@ fullWidth: True
 AddLibInfoScript: True
 ---
 
-<img src="/parser/python-net/images/home.png" alt="groupdocs parser python logo" align="left" style="width:110px; margin: 0 30px 0 0"/>
+<img src="/logo/128x128/groupdocs-parser-python.png" alt="groupdocs-parser-python-net-home" align="left" style="width:110px; margin: 0 30px 30px 0"/>
 
 <a href="https://pypi.org/project/groupdocs-parser-net/">
 	<img src="https://img.shields.io/pypi/v/groupdocs-parser-net?label=GroupDocs.Parser%20for%20Python%20PyPI&cacheSeconds=3600" alt="PyPI package">
