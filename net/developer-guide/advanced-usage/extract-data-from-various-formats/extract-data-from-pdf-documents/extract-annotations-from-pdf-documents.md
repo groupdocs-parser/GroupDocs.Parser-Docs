@@ -59,6 +59,36 @@ using (Parser parser = new Parser(@"MyDocument.pdf"))
 [GetAnnotations](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/getannotations/#getannotations) method returns *null* if annotation extraction isn't supported for the document. If the PDF document has no annotations, [GetAnnotations](https://reference.groupdocs.com/parser/net/groupdocs.parser/parser/getannotations/#getannotations) method returns an empty collection.
 {{< /alert >}}
 
+## Additional Annotation Metadata
+
+Starting with version 26.8, the `AnnotationItem` class exposes extra metadata that gives more context about each annotation:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `AnnotationType` | `string` | The annotation type. |
+| `PageIndex` | `int` | Zero-based index of the page (or slide) where the annotation is located. |
+| `Timestamp` | `DateTime?` | Date and time when the annotation was created or last modified. |
+| `AuthorName` | `string` | Name of the author who created or last modified the annotation. |
+| `AuthorInitials` | `string` | Initials of the author who created or last modified the annotation. |
+
+### Example: Read Annotation Metadata in C#
+
+```csharp
+using (Parser parser = new Parser(@"MyDocument.pdf"))
+{
+    foreach (AnnotationItem annotation in parser.GetAnnotations())
+    {
+        Console.WriteLine($"Type: {annotation.AnnotationType}");
+        Console.WriteLine($"Author: {annotation.AuthorName} ({annotation.AuthorInitials})");
+        Console.WriteLine($"Created/Modified: {annotation.Timestamp}");
+        Console.WriteLine($"Page: {annotation.PageIndex}");
+        Console.WriteLine($"Content: {annotation.Value}");
+    }
+}
+```
+
+This metadata makes it easier to filter annotations by author or type, sort them by time, or map them back to a specific page without extra lookups.
+
 ## Extract PDF Document Text Together with Annotations
 
 Sometimes it's useful to get the document's text and its annotations in one pass, instead of calling `GetAnnotations` separately. Set `IncludeAnnotations` to `true` on `TextOptions` and pass it to the `GetText` method – the annotation text will be included in the extracted output alongside the regular document text.
