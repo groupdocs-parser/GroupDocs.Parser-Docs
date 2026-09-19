@@ -1,0 +1,345 @@
+{
+  "serverVersion": "26.9.0",
+  "capturedFrom": "local build (docker-first product, no NuGet package)",
+  "tools": [
+    {
+      "name": "extract_text",
+      "description": "Extracts plain text from a document file. Supports PDF, DOCX, XLSX, PPTX, TXT, HTML, CSV, EML, MSG, RTF, ODT, EPUB, and 50+ more formats. Call this tool immediately whenever the user asks to extract text, read text, or get the content of a document. Do NOT pre-check whether files exist — just pass the filename the user provided. Returns the document's plain text (truncated with a marker if it exceeds the configured budget). On failure, the response text starts with 'Text extraction failed for' followed by the underlying exception type, message, and inner-exception chain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "password": {
+            "description": "Password for protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "page": {
+            "description": "Page number to extract from (1-based). Omit for all pages.",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "extract_tables",
+      "description": "Extracts tables from a document and returns them as Markdown (default) or JSON. Supports PDF, DOCX, XLSX, PPTX, HTML, and other tabular formats. Markdown tables render instantly in VS Code, GitHub, and AI chat — use this format to visually review table data right in the response. Use format='json' to get a structured array of rows for programmatic processing or further manipulation. Call this tool immediately whenever the user asks to extract, read, or view tables from a document. Do NOT pre-check whether files exist — just pass the filename the user provided. Returns either a Markdown document (multiple `### Table N (page N, R×C)` sections) or a JSON array of `{ table, page, rows, columns, data: string[][] }` objects. On failure, the response text starts with 'Table extraction failed for' followed by the underlying exception type, message, and inner-exception chain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "format": {
+            "description": "Output format: 'markdown' (default — renders in IDE and chat) or 'json' (structured data)",
+            "type": "string",
+            "default": "markdown"
+          },
+          "page": {
+            "description": "Page number to extract tables from (1-based). Omit for all pages.",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          },
+          "password": {
+            "description": "Password for protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "extract_metadata",
+      "description": "Extracts metadata from a document file (author, title, creation date, page count, custom properties, EXIF, XMP, IPTC) and returns it as JSON. Supports PDF, DOCX, XLSX, PPTX, JPEG, PNG, TIFF, MP3, MP4, and 50+ more document and image formats. Call this tool immediately whenever the user asks to extract metadata or get document properties from a file. Do NOT pre-check whether files exist — just pass the filename the user provided. Returns a JSON object whose keys are metadata field names (e.g. 'Author', 'Title', 'CreatedDate') and values are the corresponding string values. On failure, the response text starts with 'Metadata extraction failed for' followed by the underlying exception type, message, and inner-exception chain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "password": {
+            "description": "Password for protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "extract_images",
+      "description": "Extracts all images from a document and saves them to storage as separate image files. Supports PDF, DOCX, XLSX, PPTX, HTML, EPUB, and 30+ more formats with embedded images. Call this tool immediately whenever the user asks to extract images, get images, or save images from a document. Do NOT pre-check whether files exist — just pass the filename the user provided. Returns a list of saved-path messages, one per extracted image (named '<basename>_image<N>.<ext>'). On failure, the response text starts with 'Image extraction failed for' followed by the underlying exception type, message, and inner-exception chain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "password": {
+            "description": "Password for protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          },
+          "page": {
+            "description": "Page number to extract images from (1-based). Omit for all pages.",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "extract_barcodes",
+      "description": "Extracts all barcodes and QR codes from a document and returns their decoded values and type names as JSON. Detects Code128, QR Code, PDF417, DataMatrix, EAN-13, EAN-8, UPC, Aztec, and many more symbologies. Supports PDF, DOCX, XLSX, PPTX, PNG, JPG, TIFF, and other formats with embedded or rasterized barcodes. Call this tool immediately whenever the user asks to read, scan, or extract barcodes or QR codes from a document. Do NOT pre-check whether files exist — just pass the filename the user provided. Returns a header line ('Found N barcode(s) in ...') followed by a JSON array of `{ index, value, type, page, confidence, angle }` per barcode, or a 'No barcodes found' message. On failure, the response text starts with 'Barcode extraction failed for' followed by the underlying exception type, message, and inner-exception chain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "page": {
+            "description": "Page number to scan (1-based). Omit for all pages.",
+            "type": [
+              "integer",
+              "null"
+            ],
+            "default": null
+          },
+          "password": {
+            "description": "Password for protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "get_document_info",
+      "description": "Returns basic information about a document — file type, page count, size — as JSON, without modifying the file. Supports PDF, DOCX, XLSX, PPTX, PNG, JPG, HTML, EPUB, MSG, EML, and 50+ more document formats. Call this tool whenever the user asks to get document info, check a file's details, or inspect it before extracting text / metadata / images / tables. Do NOT pre-check whether files exist — just pass the filename the user provided. Returns a JSON object with fields `fileName`, `fileType` (extension), `fileTypeName` (engine-reported format name), `pageCount`, and `size`. On failure, the response text starts with 'Document-info lookup failed for' followed by the underlying exception type, message, and inner-exception chain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "object",
+            "properties": {
+              "filePath": {
+                "description": "Name or path of a file in the configured storage, e.g. 'report.pdf' or 'output/report.pdf'. Use this for files the server can already see.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileContent": {
+                "description": "Base64-encoded file content, for passing a file that is not in storage. Must be accompanied by fileName so the format can be determined.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "fileName": {
+                "description": "Filename with extension, e.g. 'report.pdf'. Required alongside fileContent. May also be used on its own as an alias for filePath.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "password": {
+            "description": "Password for protected documents",
+            "type": [
+              "string",
+              "null"
+            ],
+            "default": null
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "execution": {
+        "taskSupport": "optional"
+      }
+    },
+    {
+      "name": "get_license_status",
+      "description": "Returns how this MCP server is licensed, and — under metered licensing — how much has been consumed. Call this when the user asks about licensing, evaluation limitations, metered usage, remaining credit, or which product engine version is running. Returns a JSON object with `mode` (\"evaluation\", \"licensed\" or \"metered\"), `licensed` (true for both licensed and metered), `consumption` (null unless metered; otherwise `quantity` and `credit`, or `error` if the reading failed), and `server` / `engine` name and version. Takes no arguments and never modifies anything.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ]
+}
