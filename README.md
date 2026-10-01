@@ -6,7 +6,7 @@ This repository contains Markdown files used to generate [GroupDocs.Parser](http
 
 [GroupDocs.Parser](https://products.groupdocs.com/parser/) is a document parsing SDK that enables you to extract data such as text, tables, images, and barcodes from documents in various formats.
 
-Available for .NET, Java, and Python.
+Available for .NET, Java, Node.js, and Python.
 
 ## Repository Purpose
 

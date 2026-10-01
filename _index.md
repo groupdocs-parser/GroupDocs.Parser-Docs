@@ -76,6 +76,35 @@ showFeedbackForm: false
     </div>
     <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
         <h3>
+            <a class="home-resource-link" rel="nofollow" href='/parser/nodejs-java/'> {{< icon-large "nodejs" >}}
+                <br/><br/> 
+                GroupDocs.Parser for Node.js via Java
+            </a>
+        </h3>
+        <div class="gdoc-columns gdoc-columns--regular flex flex-gap flex-mobile-column">
+            <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
+                <h4>{{< icon-large "gdoc_timer" >}} Getting Started</h4>
+                <p>Start quickly with our getting started documentation</p>
+                <ul style="text-align: left;list-style:none">
+                    <li>{{< icon "file-alt" >}} <a href='/parser/nodejs-java/features-overview/'>Features Overview</a></li>
+                    <li>{{< icon "file-alt" >}} <a href='/parser/nodejs-java/supported-document-formats/'>Supported Document Formats</a></li>
+                    <li>{{< icon "file-alt" >}} <a href='/parser/nodejs-java/system-requirements/'>System Requirements</a></li>
+                    <li>{{< icon "file-alt" >}} <a href='/parser/nodejs-java/installation/'>Installation</a></li>
+                </ul>
+            </div>
+            <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
+                <h4>{{< icon-large "book" >}} Developer Guide</h4>
+                <p>Articles and guidelines for basic and advanced development</p>
+                <ul style="text-align: left;list-style:none">
+                    <li>{{< icon "file-alt" >}} <a href='/parser/nodejs-java/basic-usage/'>Basic Usage</a></li>
+                    <li>{{< icon "file-alt" >}} <a href='/parser/nodejs-java/advanced-usage/'>Advanced Usage</a></li>
+                </ul>
+            </div>
+        </div>
+        {{< button size="large" href="nodejs-java" >}} MORE {{< icon "gdoc_keyboard_arrow_right" >}}{{< /button >}}
+    </div>
+    <div class="gdoc-columns__content gdoc-markdown--nested flex-even" style="margin-top: 1rem !important">
+        <h3>
             <a class="home-resource-link" rel="nofollow" href='{{< ref "/parser/python-net" >}}'> {{< icon-large "python" >}}
                 <br/><br/> 
                 GroupDocs.Parser for Python via .NET
