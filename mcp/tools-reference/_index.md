@@ -19,7 +19,7 @@ Complete reference of every tool the GroupDocs.Parser MCP server exposes to AI a
 | [`extract_tables`]({{< ref "parser/mcp/tools-reference/extract-tables.md" >}}) | Extracts tables as Markdown (renders in chat) or structured JSON |
 | [`extract_metadata`]({{< ref "parser/mcp/tools-reference/extract-metadata.md" >}}) | Extracts author, title, dates, custom properties, EXIF, XMP, IPTC as JSON |
 | [`extract_images`]({{< ref "parser/mcp/tools-reference/extract-images.md" >}}) | Extracts embedded images and saves them to storage as files |
-| [`extract_barcodes`]({{< ref "parser/mcp/tools-reference/extract-barcodes.md" >}}) | Decodes barcodes and QR codes, returning values, types, and positions |
+| [`extract_barcodes`]({{< ref "parser/mcp/tools-reference/extract-barcodes.md" >}}) | Decodes barcodes and QR codes, returning values, types, pages, confidence and angle |
 | [`get_document_info`]({{< ref "parser/mcp/tools-reference/get-document-info.md" >}}) | Returns file type, page count, and size without extracting anything |
 | [`get_license_status`]({{< ref "parser/mcp/tools-reference/get-license-status.md" >}}) | Reports the active licensing mode and, under metered licensing, consumption |
 

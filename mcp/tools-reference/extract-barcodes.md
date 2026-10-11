@@ -11,7 +11,7 @@ serverVersion: 26.9.0
 toc: True
 ---
 
-`extract_barcodes` finds barcodes and QR codes and returns their **decoded values, types, and positions** as JSON. It detects Code128, QR Code, PDF417, DataMatrix, EAN-13, EAN-8, UPC, Aztec and many more — including on rasterized content. Example prompt: *"Read the barcodes on these shipping documents."*
+`extract_barcodes` finds barcodes and QR codes and returns their **decoded values, types, pages, confidence and angle** as JSON. It detects Code128, QR Code, PDF417, DataMatrix, EAN-13, EAN-8, UPC, Aztec and many more — including on rasterized content. Example prompt: *"Read the barcodes on these shipping documents."*
 
 **Tool description (as the AI agent sees it):**
 
@@ -40,7 +40,7 @@ toc: True
 
 ## Result
 
-A JSON array of detected codes: decoded value, symbology name, page, and position.
+A JSON array of detected codes: index, decoded value, symbology name, page, confidence, and angle.
 
 This is the tool that works where text extraction does not. Scanned pages have no text layer, but the engine's models detect codes in the rasterized image — which is why a scanned delivery note can still yield its tracking number.
 

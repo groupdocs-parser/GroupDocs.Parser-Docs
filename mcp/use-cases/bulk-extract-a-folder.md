@@ -15,7 +15,7 @@ structuredData:
         description: "Extract text, tables, or barcodes from many documents in one prompt with an AI agent over MCP, and get one consolidated result."
         steps:
         - name: "Install the server"
-          text: "Run the GroupDocs.Parser MCP server with Docker or dnx and register it in your AI client."
+          text: "Run the GroupDocs.Parser MCP server with Docker and register it in your AI client."
         - name: "Put the documents in the storage folder"
           text: "Point GROUPDOCS_MCP_STORAGE_PATH at the folder that holds the files the agent should use."
         - name: "Ask the agent"
@@ -63,3 +63,8 @@ The agent holds structured data at this point, so the useful follow-ups are ordi
 > Write the totals to a CSV in the output folder.
 
 All of it from documents that never left the machine — [architecture]({{< ref "parser/mcp/use-cases/on-premise-document-extraction.md" >}}).
+
+## Read more
+
+* [Enforce consistent data capture with automated extraction workflows using MCP](https://blog.groupdocs.com/parser/enforce-consistent-data-capture-bulk-extraction-mcp/) — the same scenario on the GroupDocs blog, with worked examples and the trade-offs.
+

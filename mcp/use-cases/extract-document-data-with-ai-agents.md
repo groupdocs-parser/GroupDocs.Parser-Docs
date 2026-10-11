@@ -15,7 +15,7 @@ structuredData:
         description: "Extract text, tables, metadata, images, and barcodes from documents with an AI agent over MCP — locally, across 50+ formats."
         steps:
         - name: "Install the server"
-          text: "Run the GroupDocs.Parser MCP server with Docker or dnx and register it in your AI client."
+          text: "Run the GroupDocs.Parser MCP server with Docker and register it in your AI client."
         - name: "Put the documents in the storage folder"
           text: "Point GROUPDOCS_MCP_STORAGE_PATH at the folder that holds the files the agent should use."
         - name: "Ask the agent"
@@ -71,9 +71,16 @@ docker run --rm -i -v $(pwd)/documents:/data \
 
 **Docker only** — this product has no `dnx` channel ([why]({{< ref "parser/net/mcp/_index.md" >}})). Per-client config: [Register in AI clients]({{< ref "parser/net/mcp/install-in-ai-clients.md" >}}), or run the [installer]({{< ref "parser/mcp/getting-started/_index.md" >}}).
 
+Unlicensed extraction is limited; check [`get_license_status`]({{< ref "parser/mcp/tools-reference/get-license-status.md" >}}) first and treat unlicensed output as a smoke test — see [Licensing]({{< ref "parser/mcp/getting-started/licensing.md" >}}).
+
 ## Where to go next
 
 * [Extract tables into structured data]({{< ref "parser/mcp/use-cases/extract-tables-into-structured-data.md" >}}) — Markdown to read, JSON to compute.
 * [Read barcodes from scanned documents]({{< ref "parser/mcp/use-cases/read-barcodes-from-scans.md" >}}) — where text extraction stops.
 * [Extract from a folder in bulk]({{< ref "parser/mcp/use-cases/bulk-extract-a-folder.md" >}}) — one prompt, many files.
 * [On-premise architecture]({{< ref "parser/mcp/use-cases/on-premise-document-extraction.md" >}}) — the corpus stays put.
+
+## Read more
+
+* [3 ways to extract document data with AI agents and MCP (text, tables, images)](https://blog.groupdocs.com/parser/3-ways-extract-document-data-ai-agents-mcp/) — the same scenario on the GroupDocs blog, with worked examples and the trade-offs.
+

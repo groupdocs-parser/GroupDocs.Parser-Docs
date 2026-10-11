@@ -15,7 +15,7 @@ structuredData:
         description: "Extract tables from PDFs and Office documents with an AI agent over MCP, as Markdown for review or JSON rows for processing."
         steps:
         - name: "Install the server"
-          text: "Run the GroupDocs.Parser MCP server with Docker or dnx and register it in your AI client."
+          text: "Run the GroupDocs.Parser MCP server with Docker and register it in your AI client."
         - name: "Put the documents in the storage folder"
           text: "Point GROUPDOCS_MCP_STORAGE_PATH at the folder that holds the files the agent should use."
         - name: "Ask the agent"
@@ -59,3 +59,9 @@ That is two tools ([`extract_tables`]({{< ref "parser/mcp/tools-reference/extrac
 * **Scans have no tables to find.** No text layer means no table structure; the extraction comes back empty. That is the file, not the tool.
 * **Complex layouts vary.** Merged cells, nested tables, and multi-page tables do not always survive as cleanly as a simple grid. Spot-check one document before trusting a batch of two hundred.
 * **Verify totals, do not assume them.** When the arithmetic matters, have the agent show the rows it summed.
+* **Licence first.** Unlicensed extraction is limited, so a table can come back incomplete — check [`get_license_status`]({{< ref "parser/mcp/tools-reference/get-license-status.md" >}}) before a real run.
+
+## Read more
+
+* [Tables out of PDFs, into JSON, without an LLM guessing the cells](https://blog.groupdocs.com/parser/extract-tables-pdf-to-json-ai-agent-mcp/) — the same scenario on the GroupDocs blog, with worked examples and the trade-offs.
+

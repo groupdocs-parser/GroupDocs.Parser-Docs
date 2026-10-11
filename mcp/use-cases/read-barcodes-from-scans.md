@@ -15,7 +15,7 @@ structuredData:
         description: "Decode barcodes and QR codes from scanned documents and images with an AI agent over MCP, locally — including rasterized pages with no text layer."
         steps:
         - name: "Install the server"
-          text: "Run the GroupDocs.Parser MCP server with Docker or dnx and register it in your AI client."
+          text: "Run the GroupDocs.Parser MCP server with Docker and register it in your AI client."
         - name: "Put the documents in the storage folder"
           text: "Point GROUPDOCS_MCP_STORAGE_PATH at the folder that holds the files the agent should use."
         - name: "Ask the agent"
@@ -32,7 +32,7 @@ The commands and config snippets on this page are for the **.NET** build of the 
 
 > Read the barcodes in these scanned delivery notes and list the values with the file they came from.
 
-[`extract_barcodes`]({{< ref "parser/mcp/tools-reference/extract-barcodes.md" >}}) returns the decoded value, the symbology (Code128, QR Code, PDF417, DataMatrix, EAN-13, EAN-8, UPC, Aztec and more), the page, and the position.
+[`extract_barcodes`]({{< ref "parser/mcp/tools-reference/extract-barcodes.md" >}}) returns the decoded value, the symbology (Code128, QR Code, PDF417, DataMatrix, EAN-13, EAN-8, UPC, Aztec and more), the page, a confidence score and the rotation angle.
 
 ## Why this matters operationally
 
@@ -59,3 +59,8 @@ On a mixed batch — some born-digital, some scanned — let the agent branch:
 > For each file: try text extraction. If it comes back empty, read the barcodes instead and tell me which files needed that.
 
 The list of files that fell through to barcodes is, incidentally, an inventory of which parts of your archive are scans — useful in its own right when planning an ingestion project ([Markdown server](/markdown/mcp/) has the same blind spot for the same reason).
+
+## Read more
+
+* [Scan-to-record automation with AI agents](https://blog.groupdocs.com/parser/read-barcodes-qr-codes-scanned-documents-ai/) — the same scenario on the GroupDocs blog, with worked examples and the trade-offs.
+

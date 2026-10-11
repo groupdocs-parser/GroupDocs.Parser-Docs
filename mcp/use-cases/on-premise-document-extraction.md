@@ -47,7 +47,7 @@ Here the "MCP server process" is a **container**: your AI client runs `docker ru
 
 ## Docker-only, and why that is a feature here
 
-{WHY_DOCKER}
+GroupDocs.Parser's engine embeds around 234 MB of ONNX models, which puts the packed tool over nuget.org's 250 MB package limit — so this product ships **via Docker only**, and there is no `dnx` command for it.
 
 For a security review, a single pinned image is easier to reason about than a package plus a runtime plus native dependencies: the contents are fixed, the digest is verifiable, and there is no SDK on the host to keep patched.
 
@@ -94,3 +94,8 @@ Both are covered in [Licensing]({{< ref "parser/mcp/getting-started/licensing.md
 **What ports does it open?** None. stdio only.
 
 **How do I prove that?** The [verification script]({{< ref "parser/net/mcp/troubleshooting.md" >}}#verifying-an-installation-end-to-end) performs a real handshake and a real engine call so you can watch exactly what happens.
+
+## Read more
+
+* [3 architectures for AI document processing, and the one that keeps files inside your network](https://blog.groupdocs.com/total/on-premise-ai-document-processing-mcp/) — the same scenario on the GroupDocs blog, with worked examples and the trade-offs.
+
