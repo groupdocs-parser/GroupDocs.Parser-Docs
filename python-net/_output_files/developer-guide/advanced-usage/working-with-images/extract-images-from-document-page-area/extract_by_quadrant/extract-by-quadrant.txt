@@ -1,0 +1,4 @@
+Top-Left: 2 images
+Top-Right: 1 images
+Bottom-Left: 4 images
+Bottom-Right: 3 images

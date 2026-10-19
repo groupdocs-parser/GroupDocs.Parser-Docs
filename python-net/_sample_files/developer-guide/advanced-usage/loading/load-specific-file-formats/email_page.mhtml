@@ -1,0 +1,69 @@
+Subject: Harbor Lane Provisions - Wholesale specialty food
+Date: Thu, 15 Jan 2026 09:00:00 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related; type="text/html"; boundary="----=_HarborLane_Archive_2026"
+
+------=_HarborLane_Archive_2026
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+Content-Location: https://harborlane.example/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Harbor Lane Provisions - Wholesale specialty food</title>
+<meta name="description" content="Harbor Lane Provisions supplies specialty food to grocers, cafes and restaurants.">
+<style>
+body { margin: 0; font-family: Arial, sans-serif; color: #23303D; background: #F5F7F8; }
+header { background: #1F3A5F; padding: 12px 24px; }
+header a { color: #E9D8B4; margin-right: 18px; text-decoration: none; }
+main { display: flex; gap: 24px; padding: 24px; }
+article { flex: 3; }
+aside { flex: 1; background: #E9D8B4; padding: 12px; }
+a { color: #2E8B7A; }
+footer { background: #1F3A5F; color: #F5F7F8; padding: 12px 24px; }
+footer a { color: #E9D8B4; margin-right: 12px; }
+</style>
+</head>
+<body>
+<header>
+<img src="https://harborlane.example/images/logo.png" alt="Harbor Lane Provisions logo" width="200" height="60">
+<nav>
+<a href="https://harborlane.example/">Home</a>
+<a href="https://harborlane.example/catalog">Catalog</a>
+<a href="https://harborlane.example/ordering">How to order</a>
+<a href="https://harborlane.example/about">About us</a>
+<a href="https://harborlane.example/contact">Contact</a>
+</nav>
+</header>
+<main>
+<article>
+<h1>Specialty food wholesale from the Quayside</h1>
+<p>Harbor Lane Provisions supplies 1,265 independent grocers, cafes and restaurants with coffee, oils, preserves, cheese and bakery lines from 27 producers. Order by 4 pm for next-day delivery.</p>
+<h2>The Autumn Harvest range</h2>
+<p>Eight seasonal lines, from the <a href="https://harborlane.example/catalog/HLP-CF-105">Autumn Harvest spiced roast</a> blended by Northwind Coffee Roasters to <a href="https://harborlane.example/catalog/HLP-HN-305">apple butter</a> and <a href="https://harborlane.example/catalog/HLP-CN-905">squash soup</a>. Order by 15 October to secure your share of the harvest.</p>
+<img src="https://cdn.harborlane.example/images/quayside-at-dawn.jpg" alt="The Quayside warehouse at dawn" width="480" height="300">
+<h2>Our new cold room</h2>
+<p>Cold room 3 opened in April and keeps 140 pallets of cheese and dairy at 2 C.</p>
+<img src="https://harborlane.example/images/cold-room-installation.png" alt="Cold room 3" width="400" height="250">
+</article>
+<aside>
+<h3>Downloads</h3>
+<p><a href="https://harborlane.example/downloads/autumn-harvest-catalog-2025.pdf">Autumn Harvest catalog (PDF)</a></p>
+<p><a href="https://harborlane.example/downloads/price-list-2026.pdf">Price list 2026 (PDF)</a></p>
+<p><a href="https://harborlane.example/downloads/terms-of-trade.pdf">Terms of trade (PDF)</a></p>
+</aside>
+</main>
+<footer>
+<p>Harbor Lane Provisions, 18 Quayside Road, Port Ellery. Phone +1 555 0142 300.</p>
+<p>
+<a href="https://www.linkedin.com/company/harbor-lane-provisions-example">LinkedIn</a>
+<a href="https://www.instagram.com/harborlane.example">Instagram</a>
+<a href="https://www.facebook.com/harborlane.example">Facebook</a>
+</p>
+</footer>
+</body>
+</html>
+
+------=_HarborLane_Archive_2026--

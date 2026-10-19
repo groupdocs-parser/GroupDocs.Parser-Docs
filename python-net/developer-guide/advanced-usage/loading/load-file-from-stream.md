@@ -53,7 +53,7 @@ with open("sample.docx", "rb") as stream:
         
         if text_reader is not None:
             # Print the extracted text
-            print(text_reader)
+            print(text_reader.read_to_end())
         else:
             print("Text extraction isn't supported for this format")
 ```
@@ -126,8 +126,8 @@ def process_uploaded_file(file_content, filename):
             
             # Extract text
             text_reader = parser.get_text()
-            if text_reader:
-                text = text_reader
+            if text_reader is not None:
+                text = text_reader.read_to_end()
                 
                 return {
                     "success": True,
@@ -162,6 +162,16 @@ print(result)
 {{< tab-text >}}
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-stream/sample.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "process-uploaded-file.txt" >}}  
+```text
+Processing uploaded file: sample.docx
+File type: Microsoft Word Open XML Document
+Pages: 2
+{'success': True, 'filename': 'sample.docx', 'type': 'Microsoft Word Open XML Document', 'pages': 2, 'text_length': 2584, 'text': 'Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential\r\n\r\n\r\n\r\nSupply Agreement\r\nHarbor Lane Provisions and Northwind Coffee Roasters\r\n1. Parties\r\nBuyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena 
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-file-from-stream/process_uploaded_file/process-uploaded-file.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

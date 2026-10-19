@@ -1,0 +1,3 @@
+# Sample inputs are stored byte for byte: GroupDocs.Parser-SampleFiles hashes them, and its
+# MHTML sample uses CRLF, as MIME requires.
+python-net/_sample_files/** -text

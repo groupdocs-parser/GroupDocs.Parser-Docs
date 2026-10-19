@@ -1,0 +1,7 @@
+#    Name                                    Size           Path                          
+------------------------------------------------------------------------------------------
+1    invoice-HLP-2025-0412.pdf               212,328 bytes  finance/invoice-HLP-2025-041  
+2    supply-agreement-northwind.docx         101,710 bytes  finance/supply-agreement-nor  
+3    inventory.xlsx                          15,600 bytes   operations/inventory.xlsx     
+4    inventory.csv                           3,625 bytes    operations/inventory.csv      
+5    cold-room-3.png                         8,725 bytes    operations/cold-room-3.png

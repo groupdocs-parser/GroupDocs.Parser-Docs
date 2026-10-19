@@ -13,7 +13,7 @@ structuredData:
   showOrganization: True
   application:
     name: Document Parser Tool
-    description: The product allows to extract text, images, metadata, tables, and structured data from PDF, Word, Excel, PowerPoint and 50+ other file formats. Parser API also supports template-based extraction, document information retrieval, and container processing.
+    description: The product allows to extract text, images, metadata, tables, and structured data from PDF, Word, Excel, PowerPoint and 60+ other file formats. Parser API also supports template-based extraction, document information retrieval, and container processing.
     productCode: parser
     productPlatform: python-net
 ---
@@ -22,18 +22,20 @@ structuredData:
 
 The API provides the following features:
 
-- GroupDocs.Parser supports 50+ file formats without any additional software
+- GroupDocs.Parser supports 60+ file formats without any additional software
 - Wide range of options to customize the extraction process
 - Information extraction – file type, page count, etc.
 - Text extraction in raw and formatted modes
 - Template-based structured data extraction
 - Metadata, images, tables, and attachments extraction
+- Annotations (comments and notes) with their authors, pages and timestamps
+- A `groupdocs-parser` command line for text, metadata, images and annotations
 - Container processing (ZIP archives, email attachments, PDF portfolios)
 
 You can use GroupDocs.Parser across multiple platforms and operation systems:
 
-* Windows, Linux, and macOS
-* Python versions 3.5–3.13 supported
+* Windows x64, Linux x64 and macOS 13+ (Intel and Apple Silicon; OCR needs macOS 13.3+)
+* Python versions 3.5-3.14 supported (64-bit)
 
 ## Get started with GroupDocs.Parser for Python via .NET
 

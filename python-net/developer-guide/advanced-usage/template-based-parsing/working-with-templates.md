@@ -3,12 +3,12 @@ id: working-with-templates
 url: parser/python-net/working-with-templates
 title: Working with Templates
 weight: 3
-version: 25.12
+version: 26.10
 description: "Create templates with fields and tables to extract structured data using GroupDocs.Parser for Python via .NET."
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: false
 toc: true
-tags: python, parser, templates, structured-data, v25.12
+tags: python, parser, templates, structured-data, v26.10
 ---
 
 Templates let you extract structured values (fields, tables, barcodes) from recurring documents. The Python API mirrors the .NET template classes; see [`groupdocs.parser.templates`](https://reference.groupdocs.com/parser/python-net/groupdocs.parser.templates/) for the full list.
@@ -32,9 +32,11 @@ template = Template([
 
 with Parser("./invoice.pdf") as parser:
     data = parser.parse_by_template(template)
-    if data:
-        invoice_number = data["InvoiceNumber"].page_area.text
-        print(f"Invoice number: {invoice_number}")
+    if data is not None:
+        fields = data.get_fields_by_name("InvoiceNumber")
+        if fields:
+            invoice_number = fields[0].text
+            print(f"Invoice number: {invoice_number}")
 ```
 
 {{< /tab >}}
@@ -61,22 +63,23 @@ from groupdocs.parser.templates import (
     TemplateTableParameters,
 )
 
-table_area = Rectangle(Point(175.0, 350.0), Size(400.0, 200.0))
-columns = [185.0, 370.0, 425.0, 485.0, 545.0]
+table_area = Rectangle(Point(40.0, 300.0), Size(515.0, 98.0))
+columns = [40.0, 120.0, 330.0, 390.0, 470.0, 555.0]
 
 table = TemplateTable(
-    TemplateTableParameters(table_area, columns),
-    "Details",
-    0,  # restrict to the first page; omit to scan all pages
+    parameters=TemplateTableParameters(table_area, columns),
+    name="Details",
 )
 
 template = Template([table])
 
 with Parser("./invoice.pdf") as parser:
     data = parser.parse_by_template(template)
-    if data:
-        details = data["Details"].page_area
-        print(f"Rows extracted: {details.row_count}")
+    if data is not None:
+        fields = data.get_fields_by_name("Details")
+        if fields:
+            details = fields[0].page_area
+            print(f"Rows extracted: {details.row_count}")
 ```
 
 {{< /tab >}}

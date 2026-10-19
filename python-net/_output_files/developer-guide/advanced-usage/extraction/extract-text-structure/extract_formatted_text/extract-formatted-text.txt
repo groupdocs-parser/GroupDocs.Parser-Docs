@@ -1,0 +1,24 @@
+Bold text:
+  - Supply Agreement
+  - 1. Parties
+  - Buyer:
+  - Supplier:
+  - 2.1 Autumn Harvest allocation
+  - 3. Prices and fees
+  - Product
+  - Unit
+  - Price
+  - Minimum order
+  - 3.1 Price review
+  - 4. Delivery
+  - 5. Quality and audits
+  - 6. Payment
+  - 7. Term and renewal
+  - 8. Signatures
+  - For Harbor Lane Provisions:
+  - For Northwind Coffee Roasters:
+
+Italic text:
+  - 2.1 Autumn Harvest allocation
+  - Unordered volume is released on 15 October.
+  - 3.1 Price review

@@ -1,0 +1,29 @@
+Archive Metadata Report:
+
+File: invoice-HLP-2025-0412.pdf
+  Size: 212328 bytes
+  Type: .pdf
+  Pages: 1
+  Metadata: 7 properties
+
+File: supply-agreement-northwind.docx
+  Size: 101710 bytes
+  Type: .docx
+  Pages: 2
+  Metadata: 14 properties
+
+File: inventory.xlsx
+  Size: 15600 bytes
+  Type: .xlsx
+  Pages: 2
+  Metadata: 10 properties
+
+File: inventory.csv
+  Size: 3625 bytes
+  Type: .csv
+  Pages: 1
+
+File: cold-room-3.png
+  Size: 8725 bytes
+  Type: .png
+  Pages: 1

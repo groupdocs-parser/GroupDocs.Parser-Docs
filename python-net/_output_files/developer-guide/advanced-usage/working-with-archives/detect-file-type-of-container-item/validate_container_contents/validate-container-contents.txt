@@ -1,0 +1,10 @@
+Validation Results:
+  Valid items: 2
+  Invalid items: 3
+
+Invalid items:
+  inventory.xlsx: .xlsx - Unexpected type
+  inventory.csv: .csv - Unexpected type
+  cold-room-3.png: .png - Unexpected type
+
+Container is valid: False

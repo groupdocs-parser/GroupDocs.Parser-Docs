@@ -1,0 +1,55 @@
+{
+  "container": "archive.zip",
+  "items": [
+    {
+      "name": "invoice-HLP-2025-0412.pdf",
+      "size": 212328,
+      "path": "finance/invoice-HLP-2025-0412.pdf",
+      "file_type": "Portable Document Format File",
+      "extension": ".pdf",
+      "page_count": 1
+    },
+    {
+      "name": "supply-agreement-northwind.docx",
+      "size": 101710,
+      "path": "finance/supply-agreement-northwind.docx",
+      "file_type": "Microsoft Word Open XML Document",
+      "extension": ".docx",
+      "page_count": 2
+    },
+    {
+      "name": "inventory.xlsx",
+      "size": 15600,
+      "path": "operations/inventory.xlsx",
+      "file_type": "Microsoft Excel Open XML Spreadsheet",
+      "extension": ".xlsx",
+      "page_count": 2
+    },
+    {
+      "name": "inventory.csv",
+      "size": 3625,
+      "path": "operations/inventory.csv",
+      "file_type": "Comma Separated Values File",
+      "extension": ".csv",
+      "page_count": 1
+    },
+    {
+      "name": "cold-room-3.png",
+      "size": 8725,
+      "path": "operations/cold-room-3.png",
+      "file_type": "Portable Network Graphic",
+      "extension": ".png",
+      "page_count": 1
+    }
+  ],
+  "summary": {
+    "total_items": 5,
+    "type_distribution": {
+      "Portable Document Format File": 1,
+      "Microsoft Word Open XML Document": 1,
+      "Microsoft Excel Open XML Spreadsheet": 1,
+      "Comma Separated Values File": 1,
+      "Portable Network Graphic": 1
+    }
+  }
+}

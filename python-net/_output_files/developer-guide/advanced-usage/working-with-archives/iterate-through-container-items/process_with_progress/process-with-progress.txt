@@ -1,0 +1,9 @@
+Processing 5 items...
+
+[ 20.0%] Processing: invoice-HLP-2025-0412.pdf
+[ 40.0%] Processing: supply-agreement-northwind.docx
+[ 60.0%] Processing: inventory.xlsx
+[ 80.0%] Processing: inventory.csv
+[100.0%] Processing: cold-room-3.png
+
+Processing complete!

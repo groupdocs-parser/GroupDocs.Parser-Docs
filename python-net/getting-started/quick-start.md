@@ -28,20 +28,16 @@ The most common task is extracting text from documents. Here's how to do it:
 ```python
 from groupdocs.parser import Parser
 
-def extract_text_from_document():
-    # Create an instance of Parser class
-    with Parser("./sample.pdf") as parser:
-        # Extract text from the document
-        text_reader = parser.get_text()
-        
-        if text_reader is not None:
-            # Print the extracted text
-            print(text_reader)
-        else:
-            print("Text extraction isn't supported for this format")
+# Create an instance of Parser class
+with Parser("./sample.pdf") as parser:
+    # Extract text from the document
+    text_reader = parser.get_text()
 
-if __name__ == "__main__":
-    extract_text_from_document()
+    if text_reader is None:
+        print("Text extraction isn't supported for this format")
+    else:
+        # Print the extracted text
+        print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -61,18 +57,14 @@ You can retrieve basic information about a document:
 ```python
 from groupdocs.parser import Parser
 
-def get_document_information():
-    # Create an instance of Parser class
-    with Parser("./sample.pdf") as parser:
-        # Get document info
-        info = parser.get_document_info()
-        
-        print(f"File type: {info.file_type.file_format}")
-        print(f"Page count: {info.page_count}")
-        print(f"Size: {info.size} bytes")
+# Create an instance of Parser class
+with Parser("./sample.pdf") as parser:
+    # Get document info
+    info = parser.get_document_info()
 
-if __name__ == "__main__":
-    get_document_information()
+    print(f"File type: {info.file_type.file_format}")
+    print(f"Page count: {info.page_count}")
+    print(f"Size: {info.size} bytes")
 ```
 
 {{< /tab >}}
@@ -92,18 +84,16 @@ Extract metadata properties from documents:
 ```python
 from groupdocs.parser import Parser
 
-def extract_metadata():
-    # Create an instance of Parser class
-    with Parser("./sample.pdf") as parser:
-        # Extract metadata
-        metadata = parser.get_metadata()
-        
-        if metadata is not None:
-            for item in metadata:
-                print(f"{item.name}: {item.value}")
+# Create an instance of Parser class
+with Parser("./sample.pdf") as parser:
+    # Extract metadata
+    metadata = parser.get_metadata()
 
-if __name__ == "__main__":
-    extract_metadata()
+    if metadata is None:
+        print("Metadata extraction isn't supported for this format")
+    else:
+        for item in metadata:
+            print(f"{item.name}: {item.value}")
 ```
 
 {{< /tab >}}
@@ -123,20 +113,18 @@ Extract images from documents:
 ```python
 from groupdocs.parser import Parser
 
-def extract_images():
-    # Create an instance of Parser class
-    with Parser("./sample.pdf") as parser:
-        # Extract images
-        images = parser.get_images()
-        
-        if images is not None:
-            for i, image in enumerate(images):
-                # Save image to file
-                with open(f"image_{i}.{image.file_type.extension}", "wb") as file:
-                    file.write(image.get_image_stream().read())
+# Create an instance of Parser class
+with Parser("./sample.pdf") as parser:
+    # Extract images
+    images = parser.get_images()
 
-if __name__ == "__main__":
-    extract_images()
+    if images is None:
+        print("Image extraction isn't supported for this format")
+    else:
+        print(f"Found {len(images)} images")
+        for i, image in enumerate(images, start=1):
+            # Save the image to a file (the extension includes the dot, e.g. ".jpeg")
+            image.save(f"image_{i}{image.file_type.extension}")
 ```
 
 {{< /tab >}}
@@ -156,21 +144,15 @@ Extract text from a particular page:
 ```python
 from groupdocs.parser import Parser
 
-def extract_text_from_specific_page():
-    # Create an instance of Parser class
-    with Parser("./sample.pdf") as parser:
-        # Get document info to check page count
-        info = parser.get_document_info()
-        
-        if info.page_count > 0:
-            # Extract text from the first page (page index is 0-based)
-            text_reader = parser.get_text(0)
-            
-            if text_reader is not None:
-                print(text_reader)
+# Create an instance of Parser class
+with Parser("./sample.pdf") as parser:
+    # Extract text from the first page (page index is 0-based)
+    text_reader = parser.get_text(0)
 
-if __name__ == "__main__":
-    extract_text_from_specific_page()
+    if text_reader is None:
+        print("Page text extraction isn't supported for this format")
+    else:
+        print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -189,22 +171,21 @@ Before processing a document, you can check if the format is supported:
 
 ```python
 from groupdocs.parser import Parser
+from groupdocs.parser.options import FileType
 
-def check_format_support():
-    # Check if file format is supported
-    if Parser.get_file_info("./sample.pdf").file_type.file_format != "Unknown":
-        print("Format is supported")
-        
-        # Process the document
-        with Parser("./sample.pdf") as parser:
-            text_reader = parser.get_text()
-            if text_reader is not None:
-                print(text_reader)
-    else:
-        print("Format is not supported")
+# Detect the file type
+file_info = Parser.get_file_info("./sample.pdf")
 
-if __name__ == "__main__":
-    check_format_support()
+if file_info.file_type == FileType.UNKNOWN:
+    print("Format is not supported")
+else:
+    print(f"Format is supported: {file_info.file_type.file_format}")
+
+    # Process the document
+    with Parser("./sample.pdf") as parser:
+        text_reader = parser.get_text()
+        if text_reader is not None:
+            print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}

@@ -1,0 +1,16 @@
+Files categorized by type:
+
+Comma Separated Values File: 1 files
+  - inventory.csv
+
+Microsoft Excel Open XML Spreadsheet: 1 files
+  - inventory.xlsx
+
+Microsoft Word Open XML Document: 1 files
+  - supply-agreement-northwind.docx
+
+Portable Document Format File: 1 files
+  - invoice-HLP-2025-0412.pdf
+
+Portable Network Graphic: 1 files
+  - cold-room-3.png

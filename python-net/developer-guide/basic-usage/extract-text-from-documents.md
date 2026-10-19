@@ -3,7 +3,7 @@ id: extract-text-from-documents
 url: parser/python-net/extract-text-from-documents
 title: Extract text from documents
 weight: 3
-description: "This article demonstrates how to extract text from PDF, Word, Excel, PowerPoint, Outlook, OneNote, HTML, AutoCAD, and 50+ other documents using GroupDocs.Parser for Python via .NET."
+description: "This article demonstrates how to extract text from PDF, Word, Excel, PowerPoint, Outlook, OneNote, HTML, and 60+ other documents using GroupDocs.Parser for Python via .NET."
 keywords: Extract text, document text extraction in Python, extract text from PDF
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: False
@@ -25,7 +25,7 @@ structuredData:
       - name: Extract text
         text: Call the get_text method to extract text from the document.
       - name: Read extracted text
-        text: Use the text reader object to read the extracted text.
+        text: Use the returned string, or None when the format has no text.
 ---
 
 Text extraction is one of the most fundamental features of [GroupDocs.Parser](https://products.groupdocs.com/parser/python-net). The API allows you to extract text from:
@@ -35,7 +35,7 @@ Text extraction is one of the most fundamental features of [GroupDocs.Parser](ht
 *   Email messages
 *   Images (with OCR)
 *   eBooks (EPUB, FB2, CHM)
-*   And 50+ other formats
+*   And 60+ other formats
 
 GroupDocs.Parser's text extractor is easy to use and powerful at the same time. For advanced text extraction scenarios, refer to the [advanced usage section]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/_index.md" >}}).
 
@@ -49,19 +49,20 @@ To extract text from documents, simply call the `get_text` method:
 from groupdocs.parser import Parser
 
 with Parser("./sample.docx") as parser:
-  text_reader = parser.get_text()
+    text = parser.get_text()
+    print(text)
 ```
 
 {{< /tab >}}
 {{< /tabs >}}
 
-The method returns a text reader object with the extracted text.
+The method returns the extracted text as a `str`, or `None` if text extraction isn't supported for the document format. The returned string also has a `read_to_end()` method, so code written for earlier versions, which returned a reader, keeps working.
 
 Here are the steps to extract text from a document:
 
 1. Instantiate the `Parser` object with the source document path
-2. Call the `get_text` method and obtain the text reader object
-3. Read the text from the reader
+2. Call the `get_text` method
+3. Check the result for `None`, then use the text
 
 The following code snippet shows how to extract text from a document:
 
@@ -76,13 +77,12 @@ from groupdocs.parser import Parser
 with Parser("./sample.docx") as parser:
     # Extract text into the reader
     text_reader = parser.get_text()
-    
-    if text_reader is not None:
-        # Print the extracted text
-        extracted_text = text_reader
-        print(extracted_text)
-    else:
+
+    if text_reader is None:
         print("Text extraction isn't supported for this format")
+    else:
+        # Print the extracted text
+        print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -106,13 +106,12 @@ with open("sample.pdf", "rb") as stream:
     with Parser(stream) as parser:
         # Extract text into the reader
         text_reader = parser.get_text()
-        
-        if text_reader is not None:
-            # Print the extracted text
-            extracted_text = text_reader
-            print(extracted_text)
-        else:
+
+        if text_reader is None:
             print("Text extraction isn't supported for this format")
+        else:
+            # Print the extracted text
+            print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -135,15 +134,17 @@ from groupdocs.parser import Parser
 with Parser("./sample.pdf") as parser:
     # Get document info to check page count
     doc_info = parser.get_document_info()
-    
+
     # Check if the document has pages
     if doc_info.page_count > 0:
         # Extract text from the first page (page index is 0-based)
         text_reader = parser.get_text(0)
-        
-        if text_reader:
-            print(f"Text from page 1:")
-            print(text_reader)
+
+        if text_reader is None:
+            print("Page text extraction isn't supported for this format")
+        else:
+            print("Text from page 1:")
+            print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}

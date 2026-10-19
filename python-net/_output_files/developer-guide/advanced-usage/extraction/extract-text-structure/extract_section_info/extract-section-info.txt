@@ -1,0 +1,19 @@
+Document has 3 sections:
+
+Section: Section 1
+  Style: default
+  Paragraphs: 2
+  Tables: 0
+  Lists: 0
+
+Section: Section 2
+  Style: default
+  Paragraphs: 2
+  Tables: 0
+  Lists: 0
+
+Section: Section 3
+  Style: default
+  Paragraphs: 26
+  Tables: 1
+  Lists: 0

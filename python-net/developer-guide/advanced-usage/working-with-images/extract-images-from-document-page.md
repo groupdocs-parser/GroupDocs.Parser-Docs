@@ -32,16 +32,18 @@ with Parser("./sample.pdf") as parser:
     # Check if image extraction is supported
     if not parser.features.images:
         print("Document doesn't support image extraction")
-        return
+    else:
+        # Extract images from page 0 (first page)
+        page_index = 0
+        images = parser.get_images(page_index)
     
-    # Extract images from page 0 (first page)
-    page_index = 0
-    images = parser.get_images(page_index)
-    
-    if images:
-        print(f"Images on page {page_index + 1}:")
-        for idx, image in enumerate(images):
-            print(f"  Image {idx + 1}: {image.file_type}, size: {image.rectangle.width}x{image.rectangle.height}")
+        if images:
+            print(f"Images on page {page_index + 1}:")
+            for idx, image in enumerate(images):
+                size = image.rectangle.size
+                print(f"  Image {idx + 1}: {image.file_type}, size: {size.width}x{size.height}")
+        else:
+            print(f"No images on page {page_index + 1}")
 ```
 
 {{< /tab >}}
@@ -68,38 +70,34 @@ with Parser("./sample.pptx") as parser:
     # Check if image extraction is supported
     if not parser.features.images:
         print("Document doesn't support image extraction")
-        return
+    else:
+        # Get document info
+        info = parser.get_document_info()
     
-    # Get document info
-    info = parser.get_document_info()
-    
-    # Check if document has pages
-    if info.page_count == 0:
-        print("Document has no pages")
-        return
-    
-    # Iterate over pages
-    total_images = 0
-    for page_index in range(info.page_count):
-        print(f"
-Page {page_index + 1}/{info.page_count}:")
-        
-        # Extract images from the current page
-        images = parser.get_images(page_index)
-        
-        if images:
-            page_image_count = 0
-            for image in images:
-                print(f"  Type: {image.file_type}, Position: ({image.rectangle.left}, {image.rectangle.top})")
-                page_image_count += 1
-            
-            print(f"  Total images on this page: {page_image_count}")
-            total_images += page_image_count
+        # Check if document has pages
+        if info.page_count == 0:
+            print("Document has no pages")
         else:
-            print("  No images on this page")
+            # Iterate over pages
+            total_images = 0
+            for page_index in range(info.page_count):
+                print(f"\nPage {page_index + 1}/{info.page_count}:")
+        
+                # Extract images from the current page
+                images = parser.get_images(page_index)
+        
+                if images:
+                    page_image_count = 0
+                    for image in images:
+                        print(f"  Type: {image.file_type}, Position: ({image.rectangle.left}, {image.rectangle.top})")
+                        page_image_count += 1
+            
+                    print(f"  Total images on this page: {page_image_count}")
+                    total_images += page_image_count
+                else:
+                    print("  No images on this page")
     
-    print(f"
-Total images in document: {total_images}")
+            print(f"\nTotal images in document: {total_images}")
 ```
 
 {{< /tab >}}
@@ -130,29 +128,30 @@ os.makedirs(output_dir, exist_ok=True)
 with Parser("./sample.pdf") as parser:
     if not parser.features.images:
         print("Image extraction not supported")
-        return
+    else:
+        # Get document info
+        info = parser.get_document_info()
     
-    # Get document info
-    info = parser.get_document_info()
-    
-    # Process each page
-    for page_index in range(info.page_count):
-        # Create page-specific directory
-        page_dir = os.path.join(output_dir, f"page_{page_index + 1}")
-        os.makedirs(page_dir, exist_ok=True)
+        # Process each page
+        for page_index in range(info.page_count):
+            # Create page-specific directory
+            page_dir = os.path.join(output_dir, f"page_{page_index + 1}")
+            os.makedirs(page_dir, exist_ok=True)
         
-        # Extract images from page
-        images = parser.get_images(page_index)
+            # Extract images from page
+            images = parser.get_images(page_index)
         
-        if images:
-            for img_idx, image in enumerate(images):
-                # Generate filename
-                filename = f"image_{img_idx + 1}{image.file_type.extension}"
-                filepath = os.path.join(page_dir, filename)
+            if images:
+                for img_idx, image in enumerate(images):
+                    # Generate filename
+                    filename = f"image_{img_idx + 1}{image.file_type.extension}"
+                    filepath = os.path.join(page_dir, filename)
                 
-                # Save image
-                image.save(filepath)
-                print(f"Saved: {filepath}")
+                    # Save image
+                    image.save(filepath)
+                    print(f"Saved: {filepath}")
+            else:
+                print(f"No images on page {page_index + 1}")
 ```
 
 {{< /tab >}}
@@ -179,29 +178,34 @@ import os
 with Parser("./sample.docx") as parser:
     if not parser.features.images:
         print("Image extraction not supported")
-        return
+    else:
+        # Define pages to process (e.g., pages 1, 3, and 5)
+        pages_to_process = [0, 2, 4]  # Zero-based indices
     
-    # Define pages to process (e.g., pages 1, 3, and 5)
-    pages_to_process = [0, 2, 4]  # Zero-based indices
+        output_dir = "selected_page_images"
+        os.makedirs(output_dir, exist_ok=True)
+
+        # A page index past the last page raises an error, so check the page count
+        page_count = parser.get_document_info().page_count
     
-    output_dir = "selected_page_images"
-    os.makedirs(output_dir, exist_ok=True)
-    
-    for page_index in pages_to_process:
-        print(f"
-Processing page {page_index + 1}...")
+        for page_index in pages_to_process:
+            if page_index >= page_count:
+                print(f"\nPage {page_index + 1} skipped: the document has {page_count} pages")
+                continue
+
+            print(f"\nProcessing page {page_index + 1}...")
         
-        # Extract images from this page
-        images = parser.get_images(page_index)
+            # Extract images from this page
+            images = parser.get_images(page_index)
         
-        if images:
-            for img_idx, image in enumerate(images):
-                filename = f"page{page_index + 1}_img{img_idx + 1}{image.file_type.extension}"
-                filepath = os.path.join(output_dir, filename)
-                image.save(filepath)
-                print(f"  Saved: {filename}")
-        else:
-            print(f"  No images found on page {page_index + 1}")
+            if images:
+                for img_idx, image in enumerate(images):
+                    filename = f"page{page_index + 1}_img{img_idx + 1}{image.file_type.extension}"
+                    filepath = os.path.join(output_dir, filename)
+                    image.save(filepath)
+                    print(f"  Saved: {filename}")
+            else:
+                print(f"  No images found on page {page_index + 1}")
 ```
 
 {{< /tab >}}
@@ -260,8 +264,7 @@ def analyze_image_distribution(file_path):
         print(f"Document: {file_path}")
         print(f"Total pages: {info.page_count}")
         print(f"Total images: {total_images}")
-        print(f"Average images per page: {total_images / info.page_count:.2f}
-")
+        print(f"Average images per page: {total_images / info.page_count:.2f}\n")
         
         # Print per-page details
         for stat in image_stats:
@@ -277,6 +280,20 @@ analyze_image_distribution("sample.pdf")
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "analyze-image-distribution.txt" >}}  
+```text
+Document: sample.pdf
+Total pages: 4
+Total images: 5
+Average images per page: 1.25
+
+Page 1: 2 images (.jpeg)
+Page 2: 1 images (.jpeg)
+Page 3: 1 images (.jpeg)
+Page 4: 1 images (.jpeg)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/analyze_image_distribution/analyze-image-distribution.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -298,23 +315,23 @@ os.makedirs(output_dir, exist_ok=True)
 with Parser("./sample.pdf") as parser:
     if not parser.features.images:
         print("Image extraction not supported")
-        return
+    else:
+        info = parser.get_document_info()
     
-    info = parser.get_document_info()
-    
-    for page_index in range(info.page_count):
-        # Extract images from page
-        images = parser.get_images(page_index)
+        for page_index in range(info.page_count):
+            # Extract images from page
+            images = parser.get_images(page_index)
         
-        if images:
-            # Get first image only
-            first_image = next(iter(images), None)
-            
-            if first_image:
+            if images:
+                # Get first image only
+                first_image = images[0]
+
                 filename = f"page_{page_index + 1}_first{first_image.file_type.extension}"
                 filepath = os.path.join(output_dir, filename)
                 first_image.save(filepath)
                 print(f"Saved first image from page {page_index + 1}: {filename}")
+            else:
+                print(f"No images on page {page_index + 1}")
 ```
 
 {{< /tab >}}

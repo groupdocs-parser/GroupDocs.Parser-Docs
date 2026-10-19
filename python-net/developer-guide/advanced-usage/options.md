@@ -3,12 +3,12 @@ id: options
 url: parser/python-net/options
 title: Options and Configuration
 weight: 6
-version: 25.12
+version: 26.10
 description: "Control parsing behavior with options from groupdocs.parser.options in GroupDocs.Parser for Python via .NET."
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: false
 toc: true
-tags: python, parser, options, configuration, v25.12
+tags: python, parser, options, configuration, v26.10
 ---
 
 Most parsing scenarios work with defaults, but `groupdocs.parser.options` exposes classes to control how documents are opened and processed. Use these options to handle passwords, guide format detection, or tune search and text extraction modes.
@@ -22,17 +22,17 @@ from groupdocs.parser import Parser
 from groupdocs.parser.options import LoadOptions
 
 # Pass a password and open from a stream
-with open("input/protected.pdf", "rb") as stream:
-    options = LoadOptions("secret-password")
+with open("./protected.pdf", "rb") as stream:
+    options = LoadOptions("123456")
     with Parser(stream, options) as parser:
         reader = parser.get_text()
-        print(reader if reader else "Text extraction isn't supported.")
+        print(reader.read_to_end() if reader is not None else "Text extraction isn't supported.")
 ```
 
 {{< /tab >}}
 {{< tab "protected.pdf" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [protected.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/options/input/protected.pdf)
+The following sample file is used in this example: [protected.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/options/protected.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< /tabs >}}

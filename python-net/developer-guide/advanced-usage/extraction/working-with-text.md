@@ -3,12 +3,12 @@ id: working-with-text
 url: parser/python-net/working-with-text
 title: Working with Text
 weight: 2
-version: 25.12
+version: 26.10
 description: "Perform keyword or regex searches and inspect text extraction features with GroupDocs.Parser for Python via .NET."
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: false
 toc: true
-tags: python, parser, text-search, formatted-text, v25.12
+tags: python, parser, text-search, formatted-text, v26.10
 ---
 
 Beyond basic text extraction, you can search inside documents and control how text is returned. This page shows common tasks; consult the [API reference](https://reference.groupdocs.com/parser/python-net/) for the full list of text-related methods and options.
@@ -19,14 +19,17 @@ Beyond basic text extraction, you can search inside documents and control how te
 
 ```python
 from groupdocs.parser import Parser
+from groupdocs.parser.options import SearchOptions
 
 with Parser("sample.pdf") as parser:
-    results = parser.search("GroupDocs")
+    # match_case, match_whole_word, use_regular_expression, search_by_pages
+    options = SearchOptions(False, False, False, True)
+    results = parser.search("harvest", options)
     if results is None:
         print("Search isn't supported for this format.")
     else:
         for result in results:
-            print(f"Found on page {result.page.index + 1}: {result.text}")
+            print(f"Found on page {result.page_index + 1}: {result.text}")
 ```
 
 {{< /tab >}}
@@ -39,7 +42,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 
 ### Notes
 
-- `parser.search()` returns occurrences with page indexes and matched text.  
+- `parser.search()` returns occurrences with matched text; set `search_by_pages` in `SearchOptions` to get page indexes.  
 - For regex or case-sensitive searches, use search options from `groupdocs.parser.options` (see the API reference for available parameters).  
 - Combine search with `get_text()` or `get_text()` per page to extract surrounding content.
 
@@ -51,11 +54,12 @@ GroupDocs.Parser can return formatted text (HTML/Markdown/plain) and structured 
 
 ```python
 from groupdocs.parser import Parser
+from groupdocs.parser.options import FormattedTextOptions, FormattedTextMode
 
 with Parser("sample.pptx") as parser:
-    # Use format-specific text extraction methods exposed in the API reference
-    reader = parser.get_text()
-    print(reader if reader else "Formatted text isn't available.")
+    # Extract formatted text as Markdown (HTML and PLAIN_TEXT modes are also available)
+    reader = parser.get_formatted_text(FormattedTextOptions(FormattedTextMode.MARKDOWN))
+    print(reader.read_to_end() if reader is not None else "Formatted text isn't available.")
 ```
 
 {{< /tab >}}

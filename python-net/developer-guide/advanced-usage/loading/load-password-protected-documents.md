@@ -47,7 +47,7 @@ from groupdocs.parser import Parser
 from groupdocs.parser.options import LoadOptions
 
 # Document password
-password = "your-password"
+password = "123456"
 
 # Create LoadOptions with the password
 load_options = LoadOptions(password)
@@ -59,7 +59,7 @@ with Parser("protected_document.pdf", load_options) as parser:
     
     if text_reader is not None:
         # Print the extracted text
-        print(text_reader)
+        print(text_reader.read_to_end())
     else:
         print("Text extraction isn't supported for this format")
 ```
@@ -100,15 +100,15 @@ def load_protected_document(file_path, password):
             
             # Extract text
             text_reader = parser.get_text()
-            if text_reader:
-                return text_reader
+            if text_reader is not None:
+                return text_reader.read_to_end()
             
     except Exception as e:
         print(f"Error loading document: {e}")
         return None
 
 # Try loading with password
-text = load_protected_document("protected.docx", "correct-password")
+text = load_protected_document("protected.docx", "123456")
 ```
 
 {{< /tab >}}
@@ -116,6 +116,14 @@ text = load_protected_document("protected.docx", "correct-password")
 {{< tab-text >}}
 The following sample file is used in this example: [protected.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-password-protected-documents/protected.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "load-protected-document.txt" >}}  
+```text
+Document loaded successfully!
+Type: Microsoft Word Open XML Document
+Pages: 2
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-password-protected-documents/load_protected_document/load-protected-document.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -156,13 +164,13 @@ if is_protected:
     load_options = LoadOptions(password)
     with Parser("./sample.pdf", load_options) as parser:
         text_reader = parser.get_text()
-        if text_reader:
-            print(text_reader)
+        if text_reader is not None:
+            print(text_reader.read_to_end())
 else:
     with Parser("./sample.pdf") as parser:
         text_reader = parser.get_text()
-        if text_reader:
-            print(text_reader)
+        if text_reader is not None:
+            print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -175,6 +183,22 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-password-protected-documents/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "check-if-protected.txt" >}}  
+```text
+Document is not password-protected
+                                                                                       Investor relations
+
+
+Annual Report 2025  |  Port Ellery
+Annual Report 2025
+
+
+1. Overview
+Harbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-password-protected-documents/check_if_protected/check-if-protected.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -198,8 +222,8 @@ def extract_from_protected(file_path, password, extract_type="text"):
             if extract_type == "text":
                 # Extract text
                 text_reader = parser.get_text()
-                if text_reader:
-                    return text_reader
+                if text_reader is not None:
+                    return text_reader.read_to_end()
                     
             elif extract_type == "metadata":
                 # Extract metadata
@@ -221,7 +245,7 @@ def extract_from_protected(file_path, password, extract_type="text"):
         return None
 
 # Extract text from protected PDF
-text = extract_from_protected("protected.pdf", "password123", "text")
+text = extract_from_protected("protected.pdf", "123456", "text")
 ```
 
 {{< /tab >}}
@@ -253,8 +277,7 @@ def process_protected_documents(directory, password):
             continue
         
         try:
-            print(f"
-Processing: {filename}")
+            print(f"\nProcessing: {filename}")
             
             # Create LoadOptions with password
             load_options = LoadOptions(password)
@@ -266,7 +289,7 @@ Processing: {filename}")
                 
                 # Extract text
                 text_reader = parser.get_text()
-                text = text_reader if text_reader else ""
+                text = text_reader.read_to_end() if text_reader is not None else ""
                 
                 results.append({
                     "filename": filename,
@@ -289,14 +312,27 @@ Processing: {filename}")
     return results
 
 # Process all protected documents
-results = process_protected_documents("./protected_docs", "common-password")
+results = process_protected_documents("./protected_docs", "123456")
 
 # Print summary
 successful = [r for r in results if r.get("success")]
-print(f"
-{len(successful)}/{len(results)} documents processed successfully")
+print(f"\n{len(successful)}/{len(results)} documents processed successfully")
 ```
 
+{{< /tab >}}
+{{< tab "protected_docs/payroll-summary.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [protected_docs/payroll-summary.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-password-protected-documents/protected_docs/payroll-summary.pdf)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "process-protected-documents.txt" >}}  
+```text
+Processing: payroll-summary.pdf
+  ✓ Success - 809 characters extracted
+
+1/1 documents processed successfully
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-password-protected-documents/process_protected_documents/process-protected-documents.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

@@ -35,6 +35,8 @@ with Parser("./sample.pdf") as parser:
     # Check if image extraction is supported
     if images is None:
         print("Image extraction isn't supported")
+    elif not images:
+        print("No images found")
     else:
         # Iterate over images
         for idx, image in enumerate(images):
@@ -42,7 +44,7 @@ with Parser("./sample.pdf") as parser:
             print(f"Image {idx + 1}:")
             print(f"  Page: {image.page.index + 1}")
             print(f"  Type: {image.file_type}")
-            print(f"  Size: {image.rectangle.width}x{image.rectangle.height}")
+            print(f"  Size: {image.rectangle.size.width}x{image.rectangle.size.height}")
             print(f"  Position: ({image.rectangle.left}, {image.rectangle.top})")
 ```
 
@@ -77,6 +79,8 @@ with Parser("./sample.docx") as parser:
     
     if images is None:
         print("Image extraction isn't supported")
+    elif not images:
+        print("No images found")
     else:
         # Iterate over images and save them
         for idx, image in enumerate(images):
@@ -116,25 +120,24 @@ with Parser("./sample.pptx") as parser:
     # Check if image extraction is supported
     if not parser.features.images:
         print("Document doesn't support image extraction")
-        return
+    else:
+        # Extract images
+        images = parser.get_images()
     
-    # Extract images
-    images = parser.get_images()
-    
-    if images:
-        print(f"Found {len(list(images))} images
-")
-        
-        images = parser.get_images()  # Re-extract as iterator was consumed
-        for idx, image in enumerate(images):
-            print(f"Image {idx + 1}:")
-            print(f"  Page: {image.page.index + 1}")
-            print(f"  Format: {image.file_type}")
-            print(f"  Rotation: {image.rotation}°")
-            print(f"  Rectangle: {image.rectangle}")
-            print(f"  Width: {image.rectangle.width}")
-            print(f"  Height: {image.rectangle.height}")
-            print()
+        if images:
+            print(f"Found {len(images)} images\n")
+
+            for idx, image in enumerate(images):
+                print(f"Image {idx + 1}:")
+                print(f"  Page: {image.page.index + 1}")
+                print(f"  Format: {image.file_type}")
+                print(f"  Rotation: {image.rotation} degrees")
+                print(f"  Rectangle: {image.rectangle}")
+                print(f"  Width: {image.rectangle.size.width}")
+                print(f"  Height: {image.rectangle.size.height}")
+                print()
+        else:
+            print("No images found")
 ```
 
 {{< /tab >}}
@@ -164,29 +167,26 @@ with Parser("./sample.pdf") as parser:
     
     if images:
         for idx, image in enumerate(images):
-            # Get image stream
+            # Get image stream (a .NET MemoryStream)
             image_stream = image.get_image_stream()
             
-            # Read image data
-            image_data = image_stream.read()
+            # Read image data: to_array() returns the stream content as bytes
+            image_data = image_stream.to_array()
             print(f"Image {idx + 1}: {len(image_data)} bytes, format: {image.file_type}")
             
             # Optionally convert to PNG
             png_options = ImageOptions(ImageFormat.PNG)
             png_stream = image.get_image_stream(png_options)
-            png_data = png_stream.read()
+            png_data = png_stream.to_array()
             print(f"  Converted to PNG: {len(png_data)} bytes")
+    else:
+        print("No images found")
 ```
 
 {{< /tab >}}
 {{< tab "sample.pdf" >}}
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/sample.pdf)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< tab "ImageFormat.PNG" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [ImageFormat.PNG](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/ImageFormat.PNG)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< /tabs >}}
@@ -225,17 +225,14 @@ with Parser("./sample.pdf") as parser:
             # Save with conversion
             image.save(filepath, png_options)
             print(f"Saved as PNG: {filepath}")
+    else:
+        print("No images found")
 ```
 
 {{< /tab >}}
 {{< tab "sample.pdf" >}}
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/sample.pdf)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< tab "ImageFormat.PNG" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [ImageFormat.PNG](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/ImageFormat.PNG)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< /tabs >}}
@@ -264,8 +261,7 @@ def extract_images_from_directory(input_dir, output_dir):
     
     for file_path in Path(input_dir).rglob('*'):
         if file_path.suffix.lower() in extensions:
-            print(f"
-Processing: {file_path.name}")
+            print(f"\nProcessing: {file_path.name}")
             
             try:
                 with Parser(str(file_path)) as parser:

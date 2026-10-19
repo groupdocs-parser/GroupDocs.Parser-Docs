@@ -1,0 +1,66 @@
+============================================================
+File: invoice-HLP-2025-0412.pdf
+Type: Portable Document Format File
+
+Metadata:
+  title: Invoice HLP-2025-0412
+  subject: Invoice to Harbor Lane Provisions
+  keywords: invoice, coffee, wholesale
+  author: Alex Chen
+  application: Harbor Lane Provisions
+  created-time: 11/04/2025 14:00:00
+  last-saved-time: 11/04/2025 14:00:00
+
+Pages: 1
+
+============================================================
+File: supply-agreement-northwind.docx
+Type: Microsoft Word Open XML Document
+
+Metadata:
+  title: Supply Agreement - Northwind Coffee Roasters
+  subject: Coffee supply agreement 2026-2028
+  keywords: supply agreement, coffee, Autumn Harvest, Northwind
+  category: Back office
+  company: Harbor Lane Provisions
+  manager: Amara Osei
+  author: Lena Park
+  last-author: Amara Osei
+  application: Microsoft Office Word
+  application-version: 786432
+  template: Normal.dot
+  created-time: 12/15/2025 10:00:00
+  last-saved-time: 01/12/2026 09:00:00
+  revision-number: 3
+
+Pages: 2
+
+============================================================
+File: inventory.xlsx
+Type: Microsoft Excel Open XML Spreadsheet
+
+Metadata:
+  title: Warehouse inventory - December 2025
+  subject: Stock on hand at the Quayside warehouse
+  keywords: inventory, stock, SKU, warehouse
+  company: Harbor Lane Provisions
+  author: Jonas Weber
+  last-author: Jonas Weber
+  application: Microsoft Excel
+  application-version: 14.0300
+  created-time: 12/31/2025 17:00:00
+  last-saved-time: 12/31/2025 17:00:00
+
+Pages: 2
+
+============================================================
+File: inventory.csv
+Type: Comma Separated Values File
+
+Pages: 1
+
+============================================================
+File: cold-room-3.png
+Type: Portable Network Graphic
+
+Pages: 1

@@ -32,18 +32,19 @@ with Parser("./document.pdf") as parser:
     # Check if hyperlink extraction is supported
     if not parser.features.hyperlinks:
         print("Hyperlink extraction not supported")
-        return
+    else:
+        # Extract hyperlinks from page 0 (first page)
+        page_index = 0
+        hyperlinks = parser.get_hyperlinks(page_index)
     
-    # Extract hyperlinks from page 0 (first page)
-    page_index = 0
-    hyperlinks = parser.get_hyperlinks(page_index)
-    
-    if hyperlinks:
-        print(f"Hyperlinks on page {page_index + 1}:")
-        for link in hyperlinks:
-            print(f"  Text: {link.text}")
-            print(f"  URL: {link.url}")
-            print()
+        if hyperlinks:
+            print(f"Hyperlinks on page {page_index + 1}:")
+            for link in hyperlinks:
+                print(f"  Text: {link.text}")
+                print(f"  URL: {link.url}")
+                print()
+        else:
+            print(f"No hyperlinks on page {page_index + 1}")
 ```
 
 {{< /tab >}}
@@ -69,38 +70,34 @@ from groupdocs.parser import Parser
 with Parser("report.docx") as parser:
     if not parser.features.hyperlinks:
         print("Hyperlink extraction not supported")
-        return
+    else:
+        # Get document info
+        info = parser.get_document_info()
     
-    # Get document info
-    info = parser.get_document_info()
-    
-    if info.page_count == 0:
-        print("Document has no pages")
-        return
-    
-    # Iterate over pages
-    total_links = 0
-    
-    for page_index in range(info.page_count):
-        print(f"
-=== Page {page_index + 1}/{info.page_count} ===")
-        
-        # Extract hyperlinks from current page
-        hyperlinks = parser.get_hyperlinks(page_index)
-        
-        if hyperlinks:
-            page_links = list(hyperlinks)
-            print(f"Found {len(page_links)} hyperlinks:")
-            
-            for link in page_links:
-                print(f"  • {link.text} -> {link.url}")
-            
-            total_links += len(page_links)
+        if info.page_count == 0:
+            print("Document has no pages")
         else:
-            print("No hyperlinks on this page")
+            # Iterate over pages
+            total_links = 0
     
-    print(f"
-Total hyperlinks: {total_links}")
+            for page_index in range(info.page_count):
+                print(f"\n=== Page {page_index + 1}/{info.page_count} ===")
+        
+                # Extract hyperlinks from current page
+                hyperlinks = parser.get_hyperlinks(page_index)
+        
+                if hyperlinks:
+                    page_links = list(hyperlinks)
+                    print(f"Found {len(page_links)} hyperlinks:")
+            
+                    for link in page_links:
+                        print(f"  • {link.text} -> {link.url}")
+            
+                    total_links += len(page_links)
+                else:
+                    print("No hyperlinks on this page")
+    
+            print(f"\nTotal hyperlinks: {total_links}")
 ```
 
 {{< /tab >}}
@@ -175,10 +172,21 @@ export_page_hyperlinks("document.pdf", "hyperlinks_by_page.json")
 The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
-{{< tab "hyperlinks_by_page.json" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [hyperlinks_by_page.json](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/hyperlinks_by_page.json)
-{{< /tab-text >}}
+{{< tab "hyperlinks_by_page.json" >}}  
+```text
+{
+  "file": "document.pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "page_number": 1,
+      "hyperlinks": [
+        {
+          "text": "harborlane.example",
+          "url": "https://harborlane.example/"
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/export_page_hyperlinks/hyperlinks_by_page.json)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -228,8 +236,7 @@ def find_pages_with_external_links(file_path):
 # Usage
 pages = find_pages_with_external_links("article.pdf")
 
-print(f"Pages with external links: {len(pages)}
-")
+print(f"Pages with external links: {len(pages)}\n")
 for page_info in pages:
     print(f"Page {page_info['page']}: {len(page_info['links'])} external links")
     for url in page_info['links'][:3]:  # Show first 3
@@ -241,6 +248,22 @@ for page_info in pages:
 {{< tab-text >}}
 The following sample file is used in this example: [article.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/article.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "find-pages-with-external-links.txt" >}}  
+```text
+Pages with external links: 4
+
+Page 1: 2 external links
+  - https://harborlane.example/
+  - https://harborlane.example/investors
+Page 2: 1 external links
+  - https://harborlane.example/
+Page 3: 1 external links
+  - https://harborlane.example/
+Page 4: 4 external links
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/find_pages_with_external_links/find-pages-with-external-links.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -301,8 +324,7 @@ def analyze_hyperlink_distribution(file_path):
         for stat in stats:
             print(f"{stat['page']:<10}{stat['count']:<10}{stat['unique_urls']:<15}")
         
-        print(f"
-Top domains:")
+        print(f"\nTop domains:")
         for domain, count in sorted(domain_frequency.items(), key=lambda x: x[1], reverse=True)[:5]:
             print(f"  {domain}: {count}")
 
@@ -315,6 +337,21 @@ analyze_hyperlink_distribution("documentation.pdf")
 {{< tab-text >}}
 The following sample file is used in this example: [documentation.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/documentation.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "analyze-hyperlink-distribution.txt" >}}  
+```text
+Hyperlink Distribution Analysis:
+Page      Links     Unique URLs    
+-----------------------------------
+1         2         2              
+2         1         1              
+3         1         1              
+4         4         4              
+
+Top domains:
+  harborlane.example: 8
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/analyze_hyperlink_distribution/analyze-hyperlink-distribution.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -366,8 +403,7 @@ def extract_hyperlinks_from_range(file_path, start_page, end_page):
 
 # Usage - extract hyperlinks from pages 1-5
 links = extract_hyperlinks_from_range("document.pdf", 1, 5)
-print(f"Found {len(links)} hyperlinks in pages 1-5
-")
+print(f"Found {len(links)} hyperlinks in pages 1-5\n")
 
 for link in links:
     print(f"Page {link['page']}: {link['text']} -> {link['url']}")
@@ -378,6 +414,21 @@ for link in links:
 {{< tab-text >}}
 The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/document.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-hyperlinks-from-range.txt" >}}  
+```text
+Found 8 hyperlinks in pages 1-5
+
+Page 1: harborlane.example -> https://harborlane.example/
+Page 1: Investor relations -> https://harborlane.example/investors
+Page 2: harborlane.example -> https://harborlane.example/
+Page 3: harborlane.example -> https://harborlane.example/
+Page 4: harborlane.example -> https://harborlane.example/
+Page 4: harborlane.example/investors/2025 -> https://harborlane.example/investors/2025
+Page 4: harborlane.example/suppliers/charter -> https://harborlane.example/suppli
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/extract_hyperlinks_from_range/extract-hyperlinks-from-range.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

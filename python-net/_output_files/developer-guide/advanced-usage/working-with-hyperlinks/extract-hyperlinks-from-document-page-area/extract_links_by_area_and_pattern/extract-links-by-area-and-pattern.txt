@@ -1,0 +1,2 @@
+Hyperlink extraction not supported
+PDF download links in sidebar: 0

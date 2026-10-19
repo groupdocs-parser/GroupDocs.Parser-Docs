@@ -47,6 +47,13 @@ The evaluation version comes with the following limitations:
 - **Text extraction:** Only 20 lines per file, only the first 1600 symbols, only the first 5 pages + evaluation marks
 - **Metadata extraction:** Only 5 properties per file
 
+In evaluation mode the output itself tells you so:
+
+- `get_text()` returns about the first 20 lines of the document, followed by the line `Evaluation only. Created with GroupDocs.Parser for .NET. Copyright 2026 Aspose Pty Ltd.`
+- `get_metadata()` returns the first 5 properties, followed by an extra item whose name is that evaluation line and whose value starts with `Only the first 5 metadata items can be returned.`
+
+If you see these marks after setting a license, the license was not applied: check the path, or set it before the first `Parser` is created.
+
 ### Temporary License
 
 If you wish to test GroupDocs.Parser without the limitations of the trial version, you can also request a 30-day Temporary License. For details, see the ["Get a Temporary License"](https://purchase.groupdocs.com/temporary-license) page.
@@ -79,14 +86,19 @@ The following code snippet shows how to set a license from a file:
 {{< tab "Python" >}}
 
 ```python
+import os
 from groupdocs.parser import License
 
 def set_license_from_file():
-    # Create an instance of License class
-    license = License()
-    
-    # Set the license from file path
-    license.set_license("path/to/GroupDocs.Parser.lic")
+    # Resolve the license path from the environment, with a local fallback
+    license_path = os.environ.get("GROUPDOCS_LIC_PATH", "./GroupDocs.Parser.lic")
+
+    # Apply the license before parsing any document
+    if os.path.exists(license_path):
+        License().set_license(license_path)
+        print("License set successfully.")
+    else:
+        print("License file not found. Running in evaluation mode.")
 
 if __name__ == "__main__":
     set_license_from_file()
@@ -102,16 +114,20 @@ The following code snippet shows how to set a license from a stream:
 {{< tab "Python" >}}
 
 ```python
+import os
 from groupdocs.parser import License
 
 def set_license_from_stream():
-    # Open the license file
-    with open("path/to/GroupDocs.Parser.lic", "rb") as stream:
-        # Create an instance of License class
-        license = License()
-        
-        # Set the license from stream
-        license.set_license(stream)
+    # Resolve the license path from the environment, with a local fallback
+    license_path = os.environ.get("GROUPDOCS_LIC_PATH", "./GroupDocs.Parser.lic")
+
+    # Apply the license from an open binary stream
+    if os.path.exists(license_path):
+        with open(license_path, "rb") as stream:
+            License().set_license(stream)
+        print("License set successfully.")
+    else:
+        print("License file not found. Running in evaluation mode.")
 
 if __name__ == "__main__":
     set_license_from_stream()
@@ -119,6 +135,16 @@ if __name__ == "__main__":
 
 {{< /tab >}}
 {{< /tabs >}}
+
+### Set License from an Environment Variable
+
+Set the `GROUPDOCS_LIC_PATH` environment variable to the path of a license file (or to a URL that serves one) and the license is applied automatically when `groupdocs.parser` is imported. No license code is needed:
+
+```bash
+export GROUPDOCS_LIC_PATH="path/to/GroupDocs.Parser.lic"
+```
+
+On Windows PowerShell use `$env:GROUPDOCS_LIC_PATH = "path\to\GroupDocs.Parser.lic"`. A missing or invalid file does not raise an error; the library stays in evaluation mode, so check the output for the evaluation marks described above.
 
 ### Set Metered License
 
@@ -132,18 +158,23 @@ The following sample demonstrates how to use metered licensing:
 from groupdocs.parser import Metered
 
 def set_metered_license():
-    # Set your public and private keys
+    # Replace these placeholders with your real metered public/private keys
     public_key = "******"
     private_key = "******"
-    
+
+    # Skip the call until real keys are supplied (placeholder keys are rejected)
+    if "*" in public_key or "*" in private_key:
+        print("Provide real metered keys to enable metered licensing.")
+        return
+
     # Instantiate Metered and set keys
     metered = Metered()
     metered.set_metered_key(public_key, private_key)
-    
+
     # Get amount (MB) consumed
     consumption_quantity = Metered.get_consumption_quantity()
     print(f"Amount (MB) consumed: {consumption_quantity}")
-    
+
     # Get count of credits consumed
     consumption_credit = Metered.get_consumption_credit()
     print(f"Credits consumed: {consumption_credit}")

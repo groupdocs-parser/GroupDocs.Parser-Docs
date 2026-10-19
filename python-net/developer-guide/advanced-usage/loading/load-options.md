@@ -3,7 +3,7 @@ id: load-options
 url: parser/python-net/load-options
 title: Load Options
 weight: 1
-version: 25.12
+version: 26.10
 description: "Open password-protected files and streams using load options in GroupDocs.Parser for Python via .NET."
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: false
@@ -20,11 +20,12 @@ Use `groupdocs.parser.options.LoadOptions` to pass extra parameters when opening
 from groupdocs.parser import Parser
 from groupdocs.parser.options import LoadOptions
 
-options = LoadOptions("secret-password")
+options = LoadOptions("123456")
 
 with Parser("protected.pdf", options) as parser:
     reader = parser.get_text()
-    print(reader if reader else "Text extraction isn't supported.")
+    text = reader.read_to_end() if reader is not None else None
+    print(text if text is not None else "Text extraction isn't supported.")
 ```
 
 {{< /tab >}}
@@ -45,11 +46,12 @@ When you read from a stream, provide `LoadOptions` so the parser knows how to op
 from groupdocs.parser import Parser
 from groupdocs.parser.options import LoadOptions
 
-with open("resources/protected.pdf", "rb") as stream:
-    options = LoadOptions("secret-password")
+with open("protected.pdf", "rb") as stream:
+    options = LoadOptions("123456")
     with Parser(stream, options) as parser:
         reader = parser.get_text()
-        print(reader if reader else "Text extraction isn't supported.")
+        text = reader.read_to_end() if reader is not None else None
+        print(text if text is not None else "Text extraction isn't supported.")
 ```
 
 {{< /tab >}}

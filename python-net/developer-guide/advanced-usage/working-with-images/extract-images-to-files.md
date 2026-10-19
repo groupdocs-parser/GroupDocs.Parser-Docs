@@ -40,6 +40,8 @@ with Parser("./document.pdf") as parser:
     # Check if image extraction is supported
     if images is None:
         print("Image extraction isn't supported")
+    elif not images:
+        print("No images found")
     else:
         # Iterate over images and save them
         for idx, image in enumerate(images):
@@ -84,6 +86,8 @@ with Parser("presentation.pptx") as parser:
     
     if images is None:
         print("Image extraction not supported")
+    elif not images:
+        print("No images found")
     else:
         # Create image options for PNG format
         png_options = ImageOptions(ImageFormat.PNG)
@@ -102,11 +106,6 @@ with Parser("presentation.pptx") as parser:
 {{< tab "presentation.pptx" >}}
 {{< tab-text >}}
 The following sample file is used in this example: [presentation.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/presentation.pptx)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< tab "ImageFormat.PNG" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [ImageFormat.PNG](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/ImageFormat.PNG)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< /tabs >}}
@@ -156,10 +155,24 @@ def save_images_with_custom_names(file_path, output_dir, prefix="doc"):
 
 # Usage
 count = save_images_with_custom_names("report.pdf", "saved_images", prefix="report")
-print(f"
-Total images saved: {count}")
+print(f"\nTotal images saved: {count}")
 ```
 
+{{< /tab >}}
+{{< tab "report.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/report.pdf)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "save-images-with-custom-names-outputs.zip" >}}  
+```text
+saved_images/report_20261016_184736_page1_img1.jpeg (9 KB)
+saved_images/report_20261016_184736_page1_img2.jpeg (46 KB)
+saved_images/report_20261016_184736_page2_img3.jpeg (60 KB)
+saved_images/report_20261016_184736_page3_img4.jpeg (50 KB)
+saved_images/report_20261016_184736_page4_img5.jpeg (61 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_with_custom_names/save-images-with-custom-names-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -193,8 +206,7 @@ with Parser("document.docx") as parser:
         }
         
         for idx, image in enumerate(images):
-            print(f"
-Processing image {idx + 1}:")
+            print(f"\nProcessing image {idx + 1}:")
             
             # Save in each format
             for format_name, options in formats.items():
@@ -203,27 +215,14 @@ Processing image {idx + 1}:")
                 
                 image.save(filepath, options)
                 print(f"  Saved as {format_name.upper()}")
+    else:
+        print("No images found")
 ```
 
 {{< /tab >}}
 {{< tab "document.docx" >}}
 {{< tab-text >}}
 The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/document.docx)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< tab "ImageFormat.PNG" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [ImageFormat.PNG](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/ImageFormat.PNG)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< tab "ImageFormat.JPEG" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [ImageFormat.JPEG](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/ImageFormat.JPEG)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< tab "ImageFormat.BMP" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [ImageFormat.BMP](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/ImageFormat.BMP)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< /tabs >}}
@@ -270,8 +269,7 @@ def save_images_by_page(file_path, output_dir):
             page_dir = os.path.join(output_dir, f"page_{page_num}")
             os.makedirs(page_dir, exist_ok=True)
             
-            print(f"
-Page {page_num}: {len(page_images)} images")
+            print(f"\nPage {page_num}: {len(page_images)} images")
             
             for img_idx, image in enumerate(page_images):
                 filename = f"image_{img_idx + 1}{image.file_type.extension}"
@@ -281,13 +279,27 @@ Page {page_num}: {len(page_images)} images")
                 print(f"  Saved: {filename}")
                 total_saved += 1
         
-        print(f"
-Total images saved: {total_saved}")
+        print(f"\nTotal images saved: {total_saved}")
 
 # Usage
 save_images_by_page("multi_page.pdf", "images_by_page")
 ```
 
+{{< /tab >}}
+{{< tab "multi_page.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [multi_page.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/multi_page.pdf)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "save-images-by-page-outputs.zip" >}}  
+```text
+images_by_page/page_1/image_1.jpeg (9 KB)
+images_by_page/page_1/image_2.jpeg (46 KB)
+images_by_page/page_2/image_1.jpeg (60 KB)
+images_by_page/page_3/image_1.jpeg (50 KB)
+images_by_page/page_4/image_1.jpeg (61 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_by_page/save-images-by-page-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -338,13 +350,22 @@ def save_images_by_type(file_path, output_dir, target_extensions):
                 print(f"Skipped: image_{idx + 1}{ext}")
                 skipped_count += 1
         
-        print(f"
-Saved: {saved_count}, Skipped: {skipped_count}")
+        print(f"\nSaved: {saved_count}, Skipped: {skipped_count}")
 
 # Usage - save only JPG and PNG images
 save_images_by_type("document.pdf", "filtered_images", ['.jpg', '.jpeg', '.png'])
 ```
 
+{{< /tab >}}
+{{< tab "save-images-by-type-outputs.zip" >}}  
+```text
+filtered_images/image_1.jpeg (9 KB)
+filtered_images/image_2.jpeg (46 KB)
+filtered_images/image_3.jpeg (60 KB)
+filtered_images/image_4.jpeg (50 KB)
+filtered_images/image_5.jpeg (61 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_by_type/save-images-by-type-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -371,8 +392,7 @@ def batch_save_images(input_dir, output_dir):
     
     for file_path in Path(input_dir).rglob('*'):
         if file_path.suffix.lower() in extensions:
-            print(f"
-Processing: {file_path.name}")
+            print(f"\nProcessing: {file_path.name}")
             
             # Create subdirectory for this document
             doc_output_dir = os.path.join(output_dir, file_path.stem)

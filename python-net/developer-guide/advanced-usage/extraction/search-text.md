@@ -30,7 +30,7 @@ from groupdocs.parser import Parser
 # Create an instance of Parser class
 with Parser("./sample.pdf") as parser:
     # Search for a keyword
-    search_results = parser.search("invoice")
+    search_results = parser.search("harvest")
     
     # Check if search is supported
     if search_results is None:
@@ -69,7 +69,7 @@ with Parser("./sample.pdf") as parser:
     options = SearchOptions(True, False, True)
     
     # Search with a regular expression (case-sensitive)
-    search_results = parser.search(r"page number: \d+", options)
+    search_results = parser.search(r"\d+\. [A-Z]\w+", options)
     
     # Check if search is supported
     if search_results is None:
@@ -104,10 +104,10 @@ with Parser("./sample.docx") as parser:
     # Parameters: match_case=False, match_whole_word=True, use_regular_expression=False
     options = SearchOptions(False, True, False)
     
-    search_results = parser.search("invoice", options)
+    search_results = parser.search("harvest", options)
     
     if search_results:
-        print(f"Found {len(list(search_results))} occurrences of 'invoice' as whole word")
+        print(f"Found {len(list(search_results))} occurrences of 'harvest' as whole word")
 ```
 
 {{< /tab >}}
@@ -143,15 +143,15 @@ with Parser("./sample.pdf") as parser:
     )
     
     # Search with highlights
-    search_results = parser.search("lorem", search_options)
+    search_results = parser.search("harvest", search_options)
     
     if search_results is None:
         print("Search isn't supported")
     else:
         # Iterate over search results and print with highlights
         for result in search_results:
-            left_text = result.left_highlight_item.text if result.left_highlight_item else ""
-            right_text = result.right_highlight_item.text if result.right_highlight_item else ""
+            left_text = result.left_highlight_item.text if result.left_highlight_item is not None else ""
+            right_text = result.right_highlight_item.text if result.right_highlight_item is not None else ""
             print(f"{left_text}[{result.text}]{right_text}")
 ```
 
@@ -182,7 +182,7 @@ with Parser("./sample.pdf") as parser:
     options = SearchOptions(False, False, False, True)
     
     # Search with page numbers
-    search_results = parser.search("lorem", options)
+    search_results = parser.search("harvest", options)
     
     if search_results is None:
         print("Search isn't supported")
@@ -246,8 +246,8 @@ def advanced_search(file_path, pattern, case_sensitive=False, use_regex=False):
                     'text': result.text,
                     'position': result.position,
                     'page': result.page_index + 1,
-                    'left_context': result.left_highlight_item.text if result.left_highlight_item else "",
-                    'right_context': result.right_highlight_item.text if result.right_highlight_item else ""
+                    'left_context': result.left_highlight_item.text if result.left_highlight_item is not None else "",
+                    'right_context': result.right_highlight_item.text if result.right_highlight_item is not None else ""
                 })
             
             return found_items
@@ -257,11 +257,22 @@ def advanced_search(file_path, pattern, case_sensitive=False, use_regex=False):
         return []
 
 # Usage
-results = advanced_search("sample.pdf", r"\d{4}-\d{2}-\d{2}", use_regex=True)
+results = advanced_search("sample.pdf", r"\d+\.\s+\w+", use_regex=True)
 for item in results:
     print(f"Page {item['page']}: {item['left_context']}[{item['text']}]{item['right_context']}")
 ```
 
+{{< /tab >}}
+{{< tab "advanced-search.txt" >}}  
+```text
+Page 1: [1. Overview]
+Page 2: [2. Operations]
+Page 2: [3. The] Autumn Harvest rang
+Page 3: [4. Financial] summary
+Page 4: [5. Sustainability]
+Page 4: [6. Outlook]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/search-text/advanced_search/advanced-search.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -269,7 +280,7 @@ for item in results:
 
 - The `search()` method returns `None` if search is not supported for the document format
 - Use `parser.features.search` to check if search is available before calling `search()`
-- Regular expressions follow Python's regex syntax
+- Regular expressions are evaluated by .NET (`System.Text.RegularExpressions`), whose syntax matches Python's `re` for common patterns
 - Highlight extraction adds minimal performance overhead
 - Page-based search (`search_by_pages=True`) is useful for large documents
 

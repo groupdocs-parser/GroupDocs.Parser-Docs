@@ -1,0 +1,33 @@
+Table 1:
+Total size: 40 rows x 9 columns
+
+Header:
+
+Showing first 10 rows:
+ |  |  |  |  |  |  |  | 
+HLP-CF-101 | Harbor Blend whole b | Coffee | Northwind Coffee Roa | 1 kg bag | $18.40 | 240 | 80 | A-01
+HLP-CF-102 | Dockside Decaf whole | Coffee | Northwind Coffee Roa | 1 kg bag | $19.10 | 96 | 40 | A-01
+HLP-CF-103 | Lighthouse Espresso  | Coffee | Northwind Coffee Roa | 1 kg bag | $21.75 | 180 | 60 | A-02
+HLP-CF-104 | Cold brew concentrat | Coffee | Northwind Coffee Roa | 1 L bottle | $9.60 | 150 | 50 | A-02
+HLP-CF-105 | Autumn Harvest spice | Coffee | Northwind Coffee Roa | 500 g bag | $11.20 | 210 | 70 | A-03
+HLP-OL-201 | Cold-pressed olive o | Oils & Vinegars | Grove & Press | 750 ml tin | $12.90 | 320 | 100 | B-04
+HLP-OL-202 | Pumpkin seed oil | Oils & Vinegars | Grove & Press | 250 ml bottle | $8.75 | 140 | 40 | B-04
+HLP-OL-203 | Apple cider vinegar | Oils & Vinegars | Orchard Row | 500 ml bottle | $4.30 | 260 | 80 | B-05
+HLP-OL-204 | Aged balsamic vinega | Oils & Vinegars | Grove & Press | 250 ml bottle | $14.60 | 85 | 30 | B-05
+
+Table 2:
+Total size: 11 rows x 4 columns
+
+Header:
+
+Showing first 10 rows:
+ |  |  | 
+Coastline Creamery | Cheese & Dairy | 4 | orders@coastlinecrea
+Grove & Press | Oils & Vinegars | 3 | orders@grovepress.ex
+Hillside Apiaries | Honey & Preserves | 2 | orders@hillsideapiar
+Leaf & Kettle | Tea | 3 | orders@leafkettle.ex
+Mill Creek Farms | Grains & Cereals | 5 | orders@millcreekfarm
+Northwind Coffee Roa | Coffee | 5 | alex.chen@northwindr
+Orchard Row | Oils & Vinegars, Hon | 4 | orders@orchardrow.ex
+Quayside Bakehouse | Bakery | 4 | orders@quaysidebakeh
+Saltmarsh Co. | Spices & Salts | 1 | orders@saltmarshco.e

@@ -49,7 +49,7 @@ with Parser(file_path) as parser:
     
     if text_reader is not None:
         # Print the extracted text
-        print(text_reader)
+        print(text_reader.read_to_end())
     else:
         print("Text extraction isn't supported for this format")
 ```
@@ -110,8 +110,7 @@ def process_files_from_directory(directory_path):
             continue
         
         try:
-            print(f"
-Processing: {filename}")
+            print(f"\nProcessing: {filename}")
             
             # Create parser instance
             with Parser(file_path) as parser:
@@ -122,8 +121,8 @@ Processing: {filename}")
                 
                 # Extract text
                 text_reader = parser.get_text()
-                if text_reader:
-                    text = text_reader
+                if text_reader is not None:
+                    text = text_reader.read_to_end()
                     print(f"  Characters: {len(text)}")
                     
         except Exception as e:
@@ -164,12 +163,17 @@ def safe_load_document(file_path):
 # Try to load a document
 parser = safe_load_document("sample.pdf")
 
-if parser:
+if parser is not None:
     try:
         # Extract data
         text_reader = parser.get_text()
-        if text_reader:
-            print(text_reader)
+        if text_reader is not None:
+            print(text_reader.read_to_end())
+        else:
+            print("Text extraction isn't supported for this format")
+    finally:
+        # Always release the parser
+        parser.dispose()
 
 ```
 
@@ -178,6 +182,22 @@ if parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "safe-load-document.txt" >}}  
+```text
+Document loaded successfully: sample.pdf
+                                                                                       Investor relations
+
+
+Annual Report 2025  |  Port Ellery
+Annual Report 2025
+
+
+1. Overview
+Harbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/safe_load_document/safe-load-document.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

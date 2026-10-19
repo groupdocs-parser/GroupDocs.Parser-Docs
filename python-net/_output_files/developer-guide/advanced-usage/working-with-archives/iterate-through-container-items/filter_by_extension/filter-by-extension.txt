@@ -1,0 +1,4 @@
+Found 2 PDF/Word documents:
+
+  invoice-HLP-2025-0412.pdf (212,328 bytes)
+  supply-agreement-northwind.docx (101,710 bytes)

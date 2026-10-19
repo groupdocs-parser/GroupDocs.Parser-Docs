@@ -1,0 +1,4 @@
+Processing: payroll-summary.pdf
+  ✓ Success - 809 characters extracted
+
+1/1 documents processed successfully

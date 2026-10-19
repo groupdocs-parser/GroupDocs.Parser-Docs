@@ -1,45 +1,57 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Harbor Lane Provisions - Wholesale specialty food</title>
+<meta name="description" content="Harbor Lane Provisions supplies specialty food to grocers, cafes and restaurants.">
+<style>
+body { margin: 0; font-family: Arial, sans-serif; color: #23303D; background: #F5F7F8; }
+header { background: #1F3A5F; padding: 12px 24px; }
+header a { color: #E9D8B4; margin-right: 18px; text-decoration: none; }
+main { display: flex; gap: 24px; padding: 24px; }
+article { flex: 3; }
+aside { flex: 1; background: #E9D8B4; padding: 12px; }
+a { color: #2E8B7A; }
+footer { background: #1F3A5F; color: #F5F7F8; padding: 12px 24px; }
+footer a { color: #E9D8B4; margin-right: 12px; }
+</style>
+</head>
 <body>
-	<h1>Installation</h1>
-	<h2>Install from Nuget</h2>
-	<p>
-		NuGet is the easiest way to download and install GroupDocs.Parser for .NET. There are ways to install it in your
-		project.
-		Install via Package Manager GUI
-	</p>
-
-	<p>Follow these steps to reference GroupDocs.Parser using Package Manager GUI:</p>
-
-	<ul>
-	<li>Open your solution/project in Visual Studio.</li>
-	<li>Click Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution.
-	You can also access the same option through the Solution Explorer. Right-click the solution or project and select
-	Manage NuGet Packages from the context menu</li>
-	<li>Select Browse tab and type “GroupDocs.Parser” in the search text box.</li>
-	<li>Click the Install button to install the latest version of the API into your project as shown in the following
-	screenshot.</li></ul>
-
-	<img src="installation.png" style="width:600px;"/>
-
-	<h2>Using Package Manager Console</h2>
-
-	<p>You can follow the steps below to reference GroupDocs.Parser for .NET using the Package Manager Console:</p>
-
-	<ul>
-		<li>Open your solution/project in Visual Studio.</li>
-		<li>Select Tools -> NuGet Package Manager -> Package Manager Console from the menu to open package manager console.</li>
-		<li>Type the command “Install-Package GroupDocs.Parser” and press enter to install the latest release into your
-	application.</li>
-		<li>After successful installation, GroupDocs.Parser will be referenced in your application.</li>
-	</ul>
-	
-	<img src="installation_1.png" style="width:600px;"/>
-	<br>
-	<img src="installation_2.png" style="width:600px;"/>
-	
+<header>
+<img src="data:image/png;base64,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" alt="Harbor Lane Provisions logo" width="200" height="60">
+<nav>
+<a href="https://harborlane.example/">Home</a>
+<a href="https://harborlane.example/catalog">Catalog</a>
+<a href="https://harborlane.example/ordering">How to order</a>
+<a href="https://harborlane.example/about">About us</a>
+<a href="https://harborlane.example/contact">Contact</a>
+</nav>
+</header>
+<main>
+<article>
+<h1>Specialty food wholesale from the Quayside</h1>
+<p>Harbor Lane Provisions supplies 1,265 independent grocers, cafes and restaurants with coffee, oils, preserves, cheese and bakery lines from 27 producers. Order by 4 pm for next-day delivery.</p>
+<h2>The Autumn Harvest range</h2>
+<p>Eight seasonal lines, from the <a href="https://harborlane.example/catalog/HLP-CF-105">Autumn Harvest spiced roast</a> blended by Northwind Coffee Roasters to <a href="https://harborlane.example/catalog/HLP-HN-305">apple butter</a> and <a href="https://harborlane.example/catalog/HLP-CN-905">squash soup</a>. Order by 15 October to secure your share of the harvest.</p>
+<img src="https://cdn.harborlane.example/images/quayside-at-dawn.jpg" alt="The Quayside warehouse at dawn" width="480" height="300">
+<h2>Our new cold room</h2>
+<p>Cold room 3 opened in April and keeps 140 pallets of cheese and dairy at 2 C.</p>
+<img src="cold-room-installation.png" alt="Cold room 3" width="400" height="250">
+</article>
+<aside>
+<h3>Downloads</h3>
+<p><a href="https://harborlane.example/downloads/autumn-harvest-catalog-2025.pdf">Autumn Harvest catalog (PDF)</a></p>
+<p><a href="https://harborlane.example/downloads/price-list-2026.pdf">Price list 2026 (PDF)</a></p>
+<p><a href="https://harborlane.example/downloads/terms-of-trade.pdf">Terms of trade (PDF)</a></p>
+</aside>
+</main>
+<footer>
+<p>Harbor Lane Provisions, 18 Quayside Road, Port Ellery. Phone +1 555 0142 300.</p>
+<p>
+<a href="https://www.linkedin.com/company/harbor-lane-provisions-example">LinkedIn</a>
+<a href="https://www.instagram.com/harborlane.example">Instagram</a>
+<a href="https://www.facebook.com/harborlane.example">Facebook</a>
+</p>
+</footer>
 </body>
-
 </html>

@@ -1,0 +1,10 @@
+Hyperlink Distribution Analysis:
+Page      Links     Unique URLs    
+-----------------------------------
+1         2         2              
+2         1         1              
+3         1         1              
+4         4         4              
+
+Top domains:
+  harborlane.example: 8

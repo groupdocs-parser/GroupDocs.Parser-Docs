@@ -3,12 +3,12 @@ id: parse-data-from-documents
 url: parser/python-net/parse-data-from-documents
 title: Parse Data from Documents
 weight: 4
-version: 25.12
+version: 26.10
 description: "Extract structured data from documents using templates with GroupDocs.Parser for Python via .NET."
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: false
 toc: true
-tags: python, parser, template-parsing, data-extraction, v25.12
+tags: python, parser, template-parsing, data-extraction, v26.10
 ---
 
 Use template-based parsing to pull structured values (like invoice numbers, dates, tables) from documents.
@@ -28,7 +28,7 @@ template = Template([
         "CompanyName",
     ),
     TemplateField(
-        TemplateFixedPosition(Rectangle(Point(35.0, 150.0), Size(100.0, 10.0))),
+        TemplateFixedPosition(Rectangle(Point(440.0, 115.0), Size(110.0, 15.0))),
         "InvoiceNumber",
     ),
 ])
@@ -41,9 +41,7 @@ with Parser("./invoice.pdf") as parser:
         # DocumentData exposes extracted fields as an indexed collection.
         for i in range(data.count):
             field = data[i]
-            area = field.page_area
-            text = getattr(area, "text", None)
-            print(f"{field.name}: {text if text is not None else '[non-text value]'}")
+            print(f"{field.name}: {field.text}")
 ```
 
 {{< /tab >}}

@@ -116,8 +116,8 @@ def process_document(file_path):
         if doc_info.page_count > 0:
             print("Document has pages, proceeding with text extraction...")
             text_reader = parser.get_text()
-            if text_reader:
-                print(text_reader)
+            if text_reader is not None:
+                print(text_reader.read_to_end())
         else:
             print("Document has no pages or page count is not available")
 
@@ -130,6 +130,22 @@ process_document("sample.pdf")
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/basic-usage/get-document-info/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "process-document.txt" >}}  
+```text
+Processing: sample.pdf
+Type: Portable Document Format File
+Pages: 4
+Size: 320.61 KB
+Document has pages, proceeding with text extraction...
+                                                                                       Investor relations
+
+
+Annual Report 2025  |  Port Ellery
+Annual Report 2025
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-document-info/process_document/process-document.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -151,11 +167,10 @@ with Parser("./sample.docx") as parser:
     # Iterate through pages
     for page_index in range(doc_info.page_count):
         # Extract text from each page
-        print(f"
---- Page {page_index + 1} ---")
+        print(f"\n--- Page {page_index + 1} ---")
         text_reader = parser.get_text(page_index)
-        if text_reader:
-            page_text = text_reader
+        if text_reader is not None:
+            page_text = text_reader.read_to_end()
             print(f"Characters: {len(page_text)}")
 ```
 
@@ -175,22 +190,20 @@ If a document format doesn't support certain features, the API returns appropria
 
 ```python
 from groupdocs.parser import Parser
+from groupdocs.parser.exceptions import UnsupportedDocumentFormatException
 
 try:
     with Parser("./unknown.format") as parser:
         doc_info = parser.get_document_info()
-        
-        if doc_info:
-            print(f"File type: {doc_info.file_type.file_format}")
-            
-            # Some formats may not have page count
-            if doc_info.page_count == 0:
-                print("Page count is not available for this format")
-        else:
-            print("Could not retrieve document information")
-            
-except Exception as e:
-    print(f"Error: {e}")
+        print(f"File type: {doc_info.file_type.file_format}")
+
+        # Some formats may not have page count
+        if doc_info.page_count == 0:
+            print("Page count is not available for this format")
+except UnsupportedDocumentFormatException:
+    print("This document format isn't supported")
+except FileNotFoundError:
+    print("File not found: ./unknown.format")
 ```
 
 {{< /tab >}}

@@ -12,7 +12,7 @@ structuredData:
   showOrganization: True
   application:
     name: Document Parser Tool
-    description: The product allows to extract text, images, metadata, tables, and structured data from PDF, Word, Excel, PowerPoint and 50+ other file formats. Parser API also supports template-based extraction and container processing.
+    description: The product allows to extract text, images, metadata, tables, and structured data from PDF, Word, Excel, PowerPoint and 60+ other file formats. Parser API also supports template-based extraction and container processing.
     productCode: parser
     productPlatform: python-net
   howTo:
@@ -24,36 +24,36 @@ structuredData:
       - name: Install package
         text: Install GroupDocs.Parser package using pip
       - name: Run examples
-        text: Execute run_examples.py to run the examples
+        text: Execute run_all_examples.py to run the examples
 ---
 
 The complete project [GroupDocs.Parser Examples](https://github.com/groupdocs-parser/GroupDocs.Parser-for-Python-via-.NET) with code examples and sample files is hosted on GitHub.
 
 ## Run examples using PyPI
 
-To get started make sure that [Python](https://python.org/) is installed (version 3.5 or higher).
+To get started make sure that [Python](https://python.org/) is installed. The package supports Python 3.5-3.14; the examples use f-strings and need 3.6 or higher.
 
 1. Clone repository with examples:
    ```bash
    git clone https://github.com/groupdocs-parser/GroupDocs.Parser-for-Python-via-.NET.git
    ```
 
-2. Navigate to the project folder:
+2. Navigate to the `Examples` folder:
    ```bash
-   cd ./GroupDocs.Parser-for-Python-via-.NET
+   cd ./GroupDocs.Parser-for-Python-via-.NET/Examples
    ```
 
 3. Install the necessary packages:
    ```bash
-   pip install groupdocs-parser-net
+   pip install -r requirements.txt
    ```
 
 4. Run the examples:
    ```bash
-   python run_examples.py
+   python run_all_examples.py
    ```
 
-To check what examples are available, open the `run_examples.py` file in your favorite text editor. Uncomment examples you want to run and type `python run_examples.py` to start them.
+Each example is a separate script in a folder that mirrors this documentation, next to its input files, so you can also run one on its own from its folder, for example `cd developer-guide/basic-usage/extract-text-from-documents` and then `python example-1.py`. Set `GROUPDOCS_LIC_PATH` to your licence file first to run them without the evaluation limits.
 
 ## Build project from scratch
 
@@ -76,21 +76,16 @@ Create a new Python file (e.g., `example.py`) and add the following code:
 ```python
 from groupdocs.parser import Parser
 
-def extract_text_from_document():
-    # Create an instance of Parser class
-    with Parser("./sample.docx") as parser:
-        # Extract text from the document
-        text_reader = parser.get_text()
-        
-        if text_reader is not None:
-            # Print the extracted text
-            extracted_text = text_reader
-            print(extracted_text)
-        else:
-            print("Text extraction isn't supported for this format")
+# Create an instance of Parser class
+with Parser("./sample.docx") as parser:
+    # Extract text from the document
+    text_reader = parser.get_text()
 
-if __name__ == "__main__":
-    extract_text_from_document()
+    if text_reader is None:
+        print("Text extraction isn't supported for this format")
+    else:
+        # Print the extracted text
+        print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -120,14 +115,10 @@ The extracted text will appear in the console.
 ```python
 from groupdocs.parser import Parser
 
-def extract_text_from_pdf():
-    with Parser("./sample.pdf") as parser:
-        text_reader = parser.get_text()
-        if text_reader:
-            print(text_reader)
-
-if __name__ == "__main__":
-    extract_text_from_pdf()
+with Parser("./sample.pdf") as parser:
+    text_reader = parser.get_text()
+    if text_reader is not None:
+        print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -145,15 +136,11 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 ```python
 from groupdocs.parser import Parser
 
-def extract_metadata_example():
-    with Parser("./sample.docx") as parser:
-        metadata = parser.get_metadata()
-        if metadata:
-            for item in metadata:
-                print(f"{item.name}: {item.value}")
-
-if __name__ == "__main__":
-    extract_metadata_example()
+with Parser("./sample.docx") as parser:
+    metadata = parser.get_metadata()
+    if metadata is not None:
+        for item in metadata:
+            print(f"{item.name}: {item.value}")
 ```
 
 {{< /tab >}}
@@ -171,17 +158,13 @@ The following sample file is used in this example: [sample.docx](/parser/python-
 ```python
 from groupdocs.parser import Parser
 
-def extract_images_example():
-    with Parser("./sample.pdf") as parser:
-        images = parser.get_images()
-        if images:
-            for i, image in enumerate(images):
-                with open(f"image_{i}.png", "wb") as file:
-                    image_stream = image.get_image_stream()
-                    file.write(image_stream.read())
-
-if __name__ == "__main__":
-    extract_images_example()
+with Parser("./sample.pdf") as parser:
+    images = parser.get_images()
+    if images is not None:
+        print(f"Found {len(images)} images")
+        for i, image in enumerate(images, start=1):
+            # The extension includes the dot, e.g. ".jpeg"
+            image.save(f"image_{i}{image.file_type.extension}")
 ```
 
 {{< /tab >}}

@@ -1,9 +1,9 @@
 ---
-id: extract-metadata-from-documents
-url: parser/python-net/extract-metadata-from-documents
+id: extract-metadata-from-documents-advanced
+url: parser/python-net/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents
 title: Extract metadata from documents
 weight: 1
-description: "Learn how to extract metadata from PDF, Word, Excel, PowerPoint and 50+ document formats using GroupDocs.Parser for Python via .NET. Get document properties like author, title, creation date."
+description: "Learn how to extract metadata from PDF, Word, Excel, PowerPoint and 60+ document formats using GroupDocs.Parser for Python via .NET. Get document properties like author, title, creation date."
 keywords: Extract metadata, extract basic metadata, extract metadata from image, document properties, PDF metadata extraction, document info
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: False
@@ -56,13 +56,13 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 
 Typical metadata properties include:
 
-- **Author:** Document creator
-- **Title:** Document title
-- **Subject:** Document subject or description
-- **Keywords:** Document keywords
-- **CreatedTime:** Creation date and time
-- **ModifiedTime:** Last modification date and time
-- **Application:** Application used to create the document
+- **author:** Document creator
+- **title:** Document title
+- **subject:** Document subject or description
+- **keywords:** Document keywords
+- **created-time:** Creation date and time
+- **last-saved-time:** Last modification date and time
+- **application:** Application used to create the document
 - **Pages:** Number of pages (for some formats)
 
 ## Extract specific metadata fields
@@ -92,14 +92,14 @@ with Parser("document.docx") as parser:
         # Convert to list for reuse
         metadata_list = list(metadata)
         
-        # Extract specific fields
-        author = get_metadata_value(metadata_list, "Author")
-        title = get_metadata_value(metadata_list, "Title")
-        created = get_metadata_value(metadata_list, "CreatedTime")
-        modified = get_metadata_value(metadata_list, "ModifiedTime")
+        # Extract specific fields (the names the engine reports)
+        author = get_metadata_value(metadata_list, "author")
+        title = get_metadata_value(metadata_list, "title")
+        created = get_metadata_value(metadata_list, "created-time")
+        modified = get_metadata_value(metadata_list, "last-saved-time")
         
         # Print specific metadata
-        print(f"Document Information:")
+        print("Document Information:")
         print(f"  Title: {title}")
         print(f"  Author: {author}")
         print(f"  Created: {created}")
@@ -111,6 +111,16 @@ with Parser("document.docx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/document.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "get-metadata-value.txt" >}}  
+```text
+Document Information:
+  Title: Supply Agreement - Northwind Coffee Roasters
+  Author: Lena Park
+  Created: 12/15/2025 10:00:00
+  Modified: 01/12/2026 09:00:00
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/get_metadata_value/get-metadata-value.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -158,6 +168,18 @@ else:
 {{< tab-text >}}
 The following sample file is used in this example: [report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/report.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-metadata-as-dict.txt" >}}  
+```text
+Document Metadata:
+  title: Harbor Lane Provisions - Annual Report 2025
+  subject: Annual report and financial summary
+  keywords: annual report, wholesale, Autumn Harvest, revenue, logistics
+  author: Amara Osei
+  application: Aspose Pty Ltd.
+  last-saved-time: 02/16/2026 12:00:00
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/extract_metadata_as_dict/extract-metadata-as-dict.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -212,10 +234,21 @@ export_metadata_to_json("sample.docx", "metadata.json")
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
-{{< tab "metadata.json" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [metadata.json](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/metadata.json)
-{{< /tab-text >}}
+{{< tab "metadata.json" >}}  
+```text
+{
+  "file_path": "sample.docx",
+  "properties": {
+    "title": "Supply Agreement - Northwind Coffee Roasters",
+    "subject": "Coffee supply agreement 2026-2028",
+    "keywords": "supply agreement, coffee, Autumn Harvest, Northwind",
+    "category": "Back office",
+    "company": "Harbor Lane Provisions",
+    "manager": "Amara Osei",
+    "author": "Lena Park",
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/export_metadata_to_json/metadata.json)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -229,36 +262,31 @@ To extract metadata from multiple documents:
 
 ```python
 from groupdocs.parser import Parser
-from pathlib import Path
 import csv
 
-def batch_extract_metadata(input_dir, output_csv):
+def batch_extract_metadata(file_paths, output_csv):
     """
-    Extract metadata from all documents in a directory and save to CSV.
+    Extract metadata from several documents and save to CSV.
     """
-    extensions = ['.pdf', '.docx', '.doc', '.xlsx', '.xls', '.pptx', '.ppt']
-    
     results = []
     
-    for file_path in Path(input_dir).rglob('*'):
-        if file_path.suffix.lower() in extensions:
-            print(f"Processing: {file_path.name}")
+    for file_path in file_paths:
+        print(f"Processing: {file_path}")
+        
+        with Parser(file_path) as parser:
+            metadata = parser.get_metadata()
             
-            try:
-                with Parser(str(file_path)) as parser:
-                    metadata = parser.get_metadata()
-                    
-                    if metadata:
-                        # Extract common fields
-                        meta_dict = {'file_name': file_path.name}
-                        
-                        for item in metadata:
-                            meta_dict[item.name] = str(item.value) if item.value else ""
-                        
-                        results.append(meta_dict)
-                    
-            except Exception as e:
-                print(f"  Error: {e}")
+            if metadata is None:
+                print("  Metadata extraction isn't supported for this format")
+                continue
+            
+            # Extract common fields
+            meta_dict = {'file_name': file_path}
+            
+            for item in metadata:
+                meta_dict[item.name] = item.value or ""
+            
+            results.append(meta_dict)
     
     # Save to CSV
     if results:
@@ -273,23 +301,26 @@ def batch_extract_metadata(input_dir, output_csv):
             writer.writeheader()
             writer.writerows(results)
         
-        print(f"
-Extracted metadata from {len(results)} documents")
+        print(f"\nExtracted metadata from {len(results)} documents")
         print(f"Saved to {output_csv}")
 
 # Usage
-batch_extract_metadata("documents", "metadata_report.csv")
+batch_extract_metadata(["sample.pdf", "sample.docx", "report.pdf"], "metadata_report.csv")
 ```
 
 {{< /tab >}}
-{{< tab "metadata_report.csv" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [metadata_report.csv](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/metadata_report.csv)
-{{< /tab-text >}}
+{{< tab "metadata_report.csv" >}}  
+```text
+application,application-version,author,category,company,created-time,file_name,keywords,last-author,last-saved-time,manager,revision-number,subject,template,title
+Aspose Pty Ltd.,,Amara Osei,,,,sample.pdf,"annual report, wholesale, Autumn Harvest, revenue, logistics",,02/16/2026 12:00:00,,,Annual report and financial summary,,Harbor Lane Provisions - Annual Report 2025
+Microsoft Office Word,786432,Lena Park,Back office,Harbor Lane Provisions,12/15/2025 10:00:00,sample.docx,"supply agreement, cof
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/batch_extract_metadata/metadata_report.csv)
 {{< /tab >}}
 {{< /tabs >}}
 
-**Expected behavior:** Processes all documents in a directory, extracts metadata, and generates a CSV report.
+**Expected behavior:** Processes each listed document, extracts metadata, and generates a CSV report.
 
 ## Metadata comparison
 
@@ -318,8 +349,7 @@ def compare_metadata(file1, file2):
     all_fields = set(metadata1.keys()) | set(metadata2.keys())
     common_fields = set(metadata1.keys()) & set(metadata2.keys())
     
-    print(f"Comparing: {file1} vs {file2}
-")
+    print(f"Comparing: {file1} vs {file2}\n")
     print(f"{'Field':<20} {'File 1':<30} {'File 2':<30} {'Match':<10}")
     print("-" * 95)
     
@@ -344,6 +374,19 @@ The following sample file is used in this example: [version1.docx](/parser/pytho
 {{< tab-text >}}
 The following sample file is used in this example: [version2.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/version2.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "get-metadata-dict.txt" >}}  
+```text
+Comparing: version1.docx vs version2.docx
+
+Field                File 1                         File 2                         Match     
+-----------------------------------------------------------------------------------------------
+application          Microsoft Office Word          Microsoft Office Word          Yes       
+application-version  786432                         786432                         Yes       
+author               Lena Park                      Lena Park                  
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/get_metadata_dict/get-metadata-dict.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

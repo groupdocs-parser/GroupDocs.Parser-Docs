@@ -40,7 +40,7 @@ from groupdocs.parser.options import TextOptions
 # Create an instance of Parser class
 with Parser("./sample.pdf") as parser:
     # Create text options for raw mode
-    options = TextOptions(False)  # False = Raw mode, True = Accurate mode
+    options = TextOptions(True)  # True = Raw mode, False = Accurate mode
     
     # Extract text in raw mode
     text_reader = parser.get_text(options)
@@ -50,7 +50,7 @@ with Parser("./sample.pdf") as parser:
         print("Text extraction isn't supported")
     else:
         # Print the extracted text
-        print(text_reader)
+        print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -81,21 +81,19 @@ with Parser("./sample.pdf") as parser:
     # Check if document has pages
     if info.raw_page_count == 0:
         print("Document has no pages")
-        return
+    else:
+        # Create text options for raw mode
+        options = TextOptions(True)
     
-    # Create text options for raw mode
-    options = TextOptions(False)
-    
-    # Iterate over pages
-    for page_index in range(info.raw_page_count):
-        print(f"
-Page {page_index + 1}/{info.raw_page_count}")
+        # Iterate over pages
+        for page_index in range(info.raw_page_count):
+            print(f"\nPage {page_index + 1}/{info.raw_page_count}")
         
-        # Extract text from page in raw mode
-        text_reader = parser.get_text(page_index, options)
+            # Extract text from page in raw mode
+            text_reader = parser.get_text(page_index, options)
         
-        if text_reader is not None:
-            print(text_reader)
+            if text_reader is not None:
+                print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -155,11 +153,11 @@ def compare_extraction_modes(file_path):
     Compare performance between Accurate and Raw modes.
     """
     # Accurate mode
-    start_time = time.time()
     with Parser(file_path) as parser:
+        start_time = time.time()
         text_reader = parser.get_text()
-        if text_reader:
-            accurate_text = text_reader
+        if text_reader is not None:
+            accurate_text = text_reader.read_to_end()
             accurate_time = time.time() - start_time
             accurate_length = len(accurate_text)
         else:
@@ -167,12 +165,12 @@ def compare_extraction_modes(file_path):
             return
     
     # Raw mode
-    start_time = time.time()
     with Parser(file_path) as parser:
-        options = TextOptions(False)
+        start_time = time.time()
+        options = TextOptions(True)
         text_reader = parser.get_text(options)
-        if text_reader:
-            raw_text = text_reader
+        if text_reader is not None:
+            raw_text = text_reader.read_to_end()
             raw_time = time.time() - start_time
             raw_length = len(raw_text)
     
@@ -192,6 +190,16 @@ compare_extraction_modes("sample.pdf")
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "compare-extraction-modes.txt" >}}  
+```text
+Performance Comparison:
+Mode            Time (s)        Length          Speed          
+------------------------------------------------------------
+Accurate        0.202           4414            1.0x           
+Raw             0.166           3375            1.22x faster
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/compare_extraction_modes/compare-extraction-modes.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -222,7 +230,7 @@ def batch_extract_raw(input_dir, output_dir):
     processed_count = 0
     
     # Create raw mode options
-    options = TextOptions(False)
+    options = TextOptions(True)
     
     for file_path in Path(input_dir).rglob('*'):
         if file_path.suffix.lower() in extensions:
@@ -232,11 +240,11 @@ def batch_extract_raw(input_dir, output_dir):
                 with Parser(str(file_path)) as parser:
                     text_reader = parser.get_text(options)
                     
-                    if text_reader:
+                    if text_reader is not None:
                         # Save extracted text
                         output_file = output_path / f"{file_path.stem}.txt"
                         with open(output_file, 'w', encoding='utf-8') as f:
-                            f.write(text_reader)
+                            f.write(text_reader.read_to_end())
                         
                         processed_count += 1
                 
@@ -244,14 +252,20 @@ def batch_extract_raw(input_dir, output_dir):
                 print(f"  Error: {e}")
     
     elapsed_time = time.time() - start_time
-    print(f"
-Processed {processed_count} documents in {elapsed_time:.2f} seconds")
-    print(f"Average: {elapsed_time/processed_count:.2f} seconds per document")
+    print(f"\nProcessed {processed_count} documents in {elapsed_time:.2f} seconds")
+    if processed_count > 0:
+        print(f"Average: {elapsed_time/processed_count:.2f} seconds per document")
 
 # Usage
 batch_extract_raw("input_documents", "extracted_text")
 ```
 
+{{< /tab >}}
+{{< tab "batch-extract-raw.txt" >}}  
+```text
+Processed 0 documents in 0.00 seconds
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/batch_extract_raw/batch-extract-raw.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -290,7 +304,7 @@ def create_search_index(input_dir, index_file):
     Create a search index from documents using Raw mode.
     """
     index = {}
-    options = TextOptions(False)  # Raw mode for speed
+    options = TextOptions(True)  # Raw mode for speed
     
     for file_path in Path(input_dir).rglob('*'):
         if file_path.suffix.lower() in ['.pdf', '.docx', '.doc', '.txt']:
@@ -298,8 +312,8 @@ def create_search_index(input_dir, index_file):
                 with Parser(str(file_path)) as parser:
                     text_reader = parser.get_text(options)
                     
-                    if text_reader:
-                        text = text_reader
+                    if text_reader is not None:
+                        text = text_reader.read_to_end()
                         
                         # Create index entry
                         index[str(file_path)] = {
@@ -318,14 +332,19 @@ def create_search_index(input_dir, index_file):
     with open(index_file, 'w', encoding='utf-8') as f:
         json.dump(index, f, indent=2, ensure_ascii=False)
     
-    print(f"
-Created index with {len(index)} documents")
+    print(f"\nCreated index with {len(index)} documents")
     return index
 
 # Usage
 index = create_search_index("documents", "search_index.json")
 ```
 
+{{< /tab >}}
+{{< tab "search_index.json" >}}  
+```text
+{}
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/create_search_index/search_index.json)
 {{< /tab >}}
 {{< /tabs >}}
 

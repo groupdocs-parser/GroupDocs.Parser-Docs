@@ -1,0 +1,9 @@
+Document: sample.pdf
+Total pages: 4
+Total images: 5
+Average images per page: 1.25
+
+Page 1: 2 images (.jpeg)
+Page 2: 1 images (.jpeg)
+Page 3: 1 images (.jpeg)
+Page 4: 1 images (.jpeg)

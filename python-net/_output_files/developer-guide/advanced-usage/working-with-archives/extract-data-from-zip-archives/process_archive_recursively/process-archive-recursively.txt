@@ -1,0 +1,16 @@
+Archive Structure:
+
+ readme.txt (188 bytes)
+  └─ Text: 188 characters
+ records.zip (329903 bytes)
+  └─ [Archive - processing nested items]
+     invoice-HLP-2025-0412.pdf (212328 bytes)
+      └─ Text: 2177 characters
+     supply-agreement-northwind.docx (101710 bytes)
+      └─ Text: 2584 characters
+     inventory.xlsx (15600 bytes)
+      └─ Text: 4352 characters
+     inventory.csv (3625 bytes)
+      └─ Text: 3604 characters
+     cold-room-3.png (8725 bytes)
+      └─ Text: 19 characters

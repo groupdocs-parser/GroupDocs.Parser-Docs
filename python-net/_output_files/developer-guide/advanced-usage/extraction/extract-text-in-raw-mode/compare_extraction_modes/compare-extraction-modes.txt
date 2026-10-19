@@ -1,0 +1,5 @@
+Performance Comparison:
+Mode            Time (s)        Length          Speed          
+------------------------------------------------------------
+Accurate        0.202           4414            1.0x           
+Raw             0.166           3375            1.22x faster

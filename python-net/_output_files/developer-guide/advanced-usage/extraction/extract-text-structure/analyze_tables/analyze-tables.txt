@@ -1,0 +1,9 @@
+Found 2 tables:
+
+Table 1:
+  Rows: 41
+  Columns: 9
+
+Table 2:
+  Rows: 12
+  Columns: 4

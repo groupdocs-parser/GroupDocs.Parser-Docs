@@ -32,21 +32,22 @@ with Parser("./sample.pdf") as parser:
     # Check if hyperlink extraction is supported
     if not parser.features.hyperlinks:
         print("Document doesn't support hyperlink extraction")
-        return
+    else:
+        # Extract hyperlinks from the document
+        hyperlinks = parser.get_hyperlinks()
     
-    # Extract hyperlinks from the document
-    hyperlinks = parser.get_hyperlinks()
-    
-    if hyperlinks:
-        # Iterate over hyperlinks
-        for hyperlink in hyperlinks:
-            # Print the hyperlink text
-            print(f"Text: {hyperlink.text}")
-            # Print the hyperlink URL
-            print(f"URL: {hyperlink.url}")
-            # Print page number
-            print(f"Page: {hyperlink.page.index + 1}")
-            print()
+        if hyperlinks:
+            # Iterate over hyperlinks
+            for hyperlink in hyperlinks:
+                # Print the hyperlink text
+                print(f"Text: {hyperlink.text}")
+                # Print the hyperlink URL
+                print(f"URL: {hyperlink.url}")
+                # Print page number
+                print(f"Page: {hyperlink.page.index + 1}")
+                print()
+        else:
+            print("No hyperlinks found")
 ```
 
 {{< /tab >}}
@@ -73,20 +74,21 @@ with Parser("document.docx") as parser:
     # Check if hyperlink extraction is supported
     if not parser.features.hyperlinks:
         print("Hyperlink extraction not supported")
-        return
+    else:
+        # Extract hyperlinks
+        hyperlinks = parser.get_hyperlinks()
     
-    # Extract hyperlinks
-    hyperlinks = parser.get_hyperlinks()
-    
-    if hyperlinks:
-        for idx, hyperlink in enumerate(hyperlinks):
-            print(f"Hyperlink {idx + 1}:")
-            print(f"  Text: {hyperlink.text}")
-            print(f"  URL: {hyperlink.url}")
-            print(f"  Page: {hyperlink.page.index + 1}")
-            print(f"  Position: ({hyperlink.rectangle.left}, {hyperlink.rectangle.top})")
-            print(f"  Size: {hyperlink.rectangle.width}x{hyperlink.rectangle.height}")
-            print()
+        if hyperlinks:
+            for idx, hyperlink in enumerate(hyperlinks):
+                print(f"Hyperlink {idx + 1}:")
+                print(f"  Text: {hyperlink.text}")
+                print(f"  URL: {hyperlink.url}")
+                print(f"  Page: {hyperlink.page.index + 1}")
+                print(f"  Position: ({hyperlink.rectangle.left}, {hyperlink.rectangle.top})")
+                print(f"  Size: {hyperlink.rectangle.size.width}x{hyperlink.rectangle.size.height}")
+                print()
+        else:
+            print("No hyperlinks found")
 ```
 
 {{< /tab >}}
@@ -125,34 +127,39 @@ def is_valid_url(url):
 with Parser("webpage.html") as parser:
     if not parser.features.hyperlinks:
         print("Hyperlink extraction not supported")
-        return
+    else:
+        # Extract hyperlinks
+        hyperlinks = parser.get_hyperlinks()
     
-    # Extract hyperlinks
-    hyperlinks = parser.get_hyperlinks()
-    
-    if hyperlinks:
-        valid_links = []
-        invalid_links = []
+        if hyperlinks:
+            valid_links = []
+            invalid_links = []
         
-        for hyperlink in hyperlinks:
-            if is_valid_url(hyperlink.url):
-                valid_links.append(hyperlink)
-            else:
-                invalid_links.append(hyperlink)
+            for hyperlink in hyperlinks:
+                if is_valid_url(hyperlink.url):
+                    valid_links.append(hyperlink)
+                else:
+                    invalid_links.append(hyperlink)
         
-        print(f"Valid hyperlinks: {len(valid_links)}")
-        print(f"Invalid hyperlinks: {len(invalid_links)}")
+            print(f"Valid hyperlinks: {len(valid_links)}")
+            print(f"Invalid hyperlinks: {len(invalid_links)}")
         
-        print("\nValid URLs:")
-        for link in valid_links[:10]:  # Show first 10
-            print(f"  {link.text} -> {link.url}")
+            print("\nValid URLs:")
+            for link in valid_links[:10]:  # Show first 10
+                print(f"  {link.text} -> {link.url}")
 ```
 
 {{< /tab >}}
-{{< tab "webpage.htm" >}}
+{{< tab "webpage.html" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [webpage.htm](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/webpage.htm)
+The following sample file is used in this example: [webpage.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/webpage.html)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "is-valid-url.txt" >}}  
+```text
+Hyperlink extraction not supported
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/is_valid_url/is-valid-url.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -197,8 +204,8 @@ def export_hyperlinks_to_csv(file_path, output_csv):
                     'Page': hyperlink.page.index + 1,
                     'X': hyperlink.rectangle.left,
                     'Y': hyperlink.rectangle.top,
-                    'Width': hyperlink.rectangle.width,
-                    'Height': hyperlink.rectangle.height
+                    'Width': hyperlink.rectangle.size.width,
+                    'Height': hyperlink.rectangle.size.height
                 })
         
         print(f"Hyperlinks exported to {output_csv}")
@@ -214,10 +221,17 @@ export_hyperlinks_to_csv("document.pdf", "hyperlinks.csv")
 The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
-{{< tab "hyperlinks.csv" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [hyperlinks.csv](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/hyperlinks.csv)
-{{< /tab-text >}}
+{{< tab "hyperlinks.csv" >}}  
+```text
+Text,URL,Page,X,Y,Width,Height
+harborlane.example,https://harborlane.example/,1,267.14501953,801.7009887700001,74.71099853999999,11.19900131
+Investor relations,https://harborlane.example/investors,1,469.46801758,41,72.53198242000002,12.348999020000065
+harborlane.example,https://harborlane.example/,2,267.14501953,801.7009887700001,74.71099853999999,11.19900131
+harborlane.example,https://harborlane.example/,3,267.14501953,801.7009887700001,74.71099853999999,11.19900131
+harborlane.example,https://h
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/export_hyperlinks_to_csv/hyperlinks.csv)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -262,8 +276,7 @@ def analyze_hyperlinks_by_domain(file_path):
         
         # Print statistics
         print(f"Total hyperlinks: {sum(len(links) for links in by_domain.values())}")
-        print(f"Unique domains: {len(by_domain)}
-")
+        print(f"Unique domains: {len(by_domain)}\n")
         
         # Sort by count
         sorted_domains = sorted(by_domain.items(), key=lambda x: len(x[1]), reverse=True)
@@ -278,10 +291,16 @@ analyze_hyperlinks_by_domain("article.html")
 ```
 
 {{< /tab >}}
-{{< tab "article.htm" >}}
+{{< tab "article.html" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [article.htm](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/article.htm)
+The following sample file is used in this example: [article.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/article.html)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "analyze-hyperlinks-by-domain.txt" >}}  
+```text
+Hyperlink extraction not supported
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/analyze_hyperlinks_by_domain/analyze-hyperlinks-by-domain.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -343,15 +362,26 @@ print(f"Found {len(external_links)} external links")
 ```
 
 {{< /tab >}}
-{{< tab "document.htm" >}}
+{{< tab "document.html" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [document.htm](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/document.htm)
+The following sample file is used in this example: [document.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/document.html)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab ".pdf" >}}
 {{< tab-text >}}
 The following sample file is used in this example: [.pdf](../../../../../../../../../.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-filtered-hyperlinks.txt" >}}  
+```text
+Hyperlink extraction not supported
+Found 0 PDF links
+Hyperlink extraction not supported
+Found 0 download links
+Hyperlink extraction not supported
+Found 0 external links
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/extract_filtered_hyperlinks/extract-filtered-hyperlinks.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -409,8 +439,7 @@ def batch_extract_hyperlinks(input_dir, output_json):
         json.dump(all_hyperlinks, f, indent=2, ensure_ascii=False)
     
     total_links = sum(doc['count'] for doc in all_hyperlinks.values())
-    print(f"
-Total documents: {len(all_hyperlinks)}")
+    print(f"\nTotal documents: {len(all_hyperlinks)}")
     print(f"Total hyperlinks: {total_links}")
     print(f"Saved to {output_json}")
 
@@ -419,10 +448,11 @@ batch_extract_hyperlinks("documents", "all_hyperlinks.json")
 ```
 
 {{< /tab >}}
-{{< tab "all_hyperlinks.json" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [all_hyperlinks.json](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/all_hyperlinks.json)
-{{< /tab-text >}}
+{{< tab "all_hyperlinks.json" >}}  
+```text
+{}
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/batch_extract_hyperlinks/all_hyperlinks.json)
 {{< /tab >}}
 {{< /tabs >}}
 

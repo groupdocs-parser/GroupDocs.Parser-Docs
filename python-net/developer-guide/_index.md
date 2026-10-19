@@ -35,8 +35,12 @@ Explore advanced parsing techniques and features:
 - [Working with hyperlinks]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-hyperlinks" >}})
 - [Working with archives]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-archives" >}})
 - [Template-based parsing]({{< ref "parser/python-net/developer-guide/advanced-usage/template-based-parsing" >}})
+- [Working with annotations]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-annotations" >}})
 
 ## Additional Topics
 
 - [Parser options]({{< ref "parser/python-net/developer-guide/advanced-usage/options" >}})
 - [Error handling]({{< ref "parser/python-net/developer-guide/advanced-usage/errors-and-exceptions" >}})
+- [Logging]({{< ref "parser/python-net/developer-guide/advanced-usage/logging" >}})
+- [Handle loading of external resources]({{< ref "parser/python-net/developer-guide/advanced-usage/loading/handle-loading-of-external-resources" >}})
+- [Command line interface]({{< ref "parser/python-net/developer-guide/command-line-interface" >}})

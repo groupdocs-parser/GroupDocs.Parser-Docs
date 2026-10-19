@@ -1,0 +1,79 @@
+invoice-HLP-2025-0412.pdf:                                                                                            INVOICE
+
+
+   FROM                                                                     Invoice Number      HLP-2025-0412
+   Northwind Coffee Roasters                                                Invoice Date        4 November 2025
+   4 Roastery Lane, Millbrook                                               Due Date            4 December 2025
+   alex.chen@northwindroasters.example                                      Order Reference     PO-7731
+
+   BILL TO                                                                  SHIP TO
+   Harbor Lane Provisions                                                   Quayside warehouse, dock 2
+   18 Quayside Road, Port Ellery                                            18 Quayside Road, Port Ellery
+   Attn: Lena Park, Procurement Lead
+
+
+ SKU                Description                                       Qty           Unit price         Amount
+
+ HLP-CF-101         Harbor Blend whole bean coffee, 1 kg              120           $18.40             $2,208.00
+
+ HLP-CF-102         Dockside Decaf whole bean coffee, 1 kg            48            $19.10             $916.80
+
+ HLP-CF-103         Lighthouse Espresso beans, 1 kg                   90            $21.75             $1,957.50
+
+ HLP-CF-105         Autumn Harvest spiced roast, 500 g                150           $11.20             $1,680.00
+
+                                                                                   Subtotal                     $6,762.30
+                                                                                   Sales tax 5%                  $338.12
+                                                                                   Total due                    $7,100.42
+
+Payment terms
+Payment within 30 days of the invoice date by bank transfer.
+Bank: Millbrook Savings  |  Account 0042-118-2271  |  Reference HLP-2025-0412
+
+Thank you for your business. Questions about this invoice: alex.chen@northwindroasters.example
+
+
+Northwind Coffee Roasters  |  4 Roastery Lane, Millbrook  |  northwindroasters.example
+
+supply-agreement-northwind.docx: Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential
+
+
+
+Supply Agreement
+Harbor Lane Provisions and Northwind Coffee Roasters
+1. Parties
+Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.
+Supplier: Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+2. Products
+The Supplier roasts and delivers the following coffees to the Buyer's Quayside warehouse:
+Harbor Blend whole bean coffee, 1 kg bags
+Dockside Decaf whole bean coffee, 1 kg bags
+Lighthouse Espresso beans, 1 kg bags
+Cold brew concentrate, 1 L bottles
+Autumn Harvest spiced roast, 500 g bags (September to December)
+2.1 Autumn Harvest allocation
+For each harvest season the Supplier reserves 2,400 kg of the spiced roast for the Buyer. Unordered volume is released on 15 October.
+
+
+3. Prices and fees
+Prices are per unit, delivered, excluding sales tax, and fixed until 31 December 2026.
+ProductUnitPriceMinimum orderHarbor Blend1 kg bag$18.4040 bagsDockside Decaf1 kg bag$19.1020 bagsLighthouse Espresso1 kg bag$21.7530 bagsCold brew concentrate1 L bottle$9.6024 bottlesAutumn Harvest spiced roast500 g bag$11.2050 bags3.1 Price review
+Either party may ask for a price review once a year, with 60 days' notice, if green coffee prices move by more than 12%.
+4. Delivery
+Deliveries arrive on Tuesdays and Fridays between 06:00 and 10:00.
+
+Coffee is roasted no more than five days before delivery.
+The Buyer confirms each delivery against the order within one working day.
+5. Quality and audits
+The Supplier follows the Buyer's  HYPERLINK "https://harborlane.example/suppliers/charter" supplier quality charter and publishes its sourcing data at  HYPERLINK "https://northwindroasters.example/quality" northwindroasters.example/quality. The Buyer may audit the roastery once a year.
+
+6. Payment
+The Supplier invoices each delivery. The Buyer pays within 30 days of the invoice date by bank transfer.
+
+7. Term and renewal
+The agreement runs for three years and renews for one year at a time unless either party gives 90 days' written notice. Full terms:  HYPERLINK "https://harborlane.example/terms" harborlane.example/terms.
+8. Signatures
+For Harbor Lane Provisions: Lena Park, Procurement Lead
+For Northwind Coffee Roasters: Alex Chen, Head of Wholesale
+Questions:  HYPERLINK "mailto:lena.park@harborlane.example" lena.park@harborlane.example

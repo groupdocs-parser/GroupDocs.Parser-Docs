@@ -1,0 +1,8 @@
+Supported files (5):
+  invoice-HLP-2025-0412.pdf [Portable Document Format File]
+  supply-agreement-northwind.docx [Microsoft Word Open XML Document]
+  inventory.xlsx [Microsoft Excel Open XML Spreadsheet]
+  inventory.csv [Comma Separated Values File]
+  cold-room-3.png [Portable Network Graphic]
+
+Unsupported files (0):

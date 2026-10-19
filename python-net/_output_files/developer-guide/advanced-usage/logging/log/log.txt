@@ -1,0 +1,2 @@
+ERROR groupdocs.parser: Exception of type 'GroupDocs.Parser.Exceptions.InvalidPasswordException' was thrown.
+INFO groupdocs.parser: Skipped a protected document

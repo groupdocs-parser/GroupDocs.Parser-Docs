@@ -1,0 +1,5 @@
+.pdf - Supported
+.docx - Supported
+.xlsx - Supported
+.txt - Supported
+.unknown - Not Supported

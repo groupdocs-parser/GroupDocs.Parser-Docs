@@ -26,30 +26,30 @@ To extract images from a specific rectangular area:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageAreaOptions, Rectangle, Point, Size
+from groupdocs.parser.options import PageAreaOptions
+from groupdocs.parser.data import Rectangle, Point, Size
 
 # Create an instance of Parser class
 with Parser("./sample.pdf") as parser:
     # Check if image extraction is supported
     if not parser.features.images:
         print("Image extraction not supported")
-        return
-    
-    # Define the area (upper-left corner, 300x100 pixels)
-    area = Rectangle(Point(0, 0), Size(300, 100))
-    
-    # Create options for the area
-    options = PageAreaOptions(area)
-    
-    # Extract images from the specified area
-    images = parser.get_images(options)
-    
-    if images:
-        print(f"Images found in area:")
-        for idx, image in enumerate(images):
-            print(f"  Image {idx + 1}: {image.file_type}, Page {image.page.index + 1}")
     else:
-        print("No images found in the specified area")
+        # Define the area (upper-left corner, 300x100 pixels)
+        area = Rectangle(Point(0, 0), Size(300, 100))
+    
+        # Create options for the area
+        options = PageAreaOptions(area)
+    
+        # Extract images from the specified area
+        images = parser.get_images(options)
+    
+        if images:
+            print(f"Images found in area:")
+            for idx, image in enumerate(images):
+                print(f"  Image {idx + 1}: {image.file_type}, Page {image.page.index + 1}")
+        else:
+            print("No images found in the specified area")
 ```
 
 {{< /tab >}}
@@ -70,7 +70,8 @@ To extract images from several predefined areas:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageAreaOptions, Rectangle, Point, Size
+from groupdocs.parser.options import PageAreaOptions
+from groupdocs.parser.data import Rectangle, Point, Size
 import os
 
 def extract_images_from_regions(file_path, regions, output_dir):
@@ -90,8 +91,7 @@ def extract_images_from_regions(file_path, regions, output_dir):
             return
         
         for region_idx, (x, y, w, h) in enumerate(regions):
-            print(f"
-Processing region {region_idx + 1}: ({x}, {y}, {w}x{h})")
+            print(f"\nProcessing region {region_idx + 1}: ({x}, {y}, {w}x{h})")
             
             # Create rectangle for this region
             area = Rectangle(Point(x, y), Size(w, h))
@@ -106,6 +106,8 @@ Processing region {region_idx + 1}: ({x}, {y}, {w}x{h})")
                     filepath = os.path.join(output_dir, filename)
                     image.save(filepath)
                     print(f"  Saved: {filename}")
+            else:
+                print("  No images in this region")
 
 # Define regions (e.g., header, body, footer)
 regions = [
@@ -124,6 +126,17 @@ extract_images_from_regions("document.pdf", regions, "region_images")
 The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-images-from-regions-outputs.zip" >}}  
+```text
+region_images/region1_img1.jpeg (9 KB)
+region_images/region2_img1.jpeg (9 KB)
+region_images/region2_img2.jpeg (46 KB)
+region_images/region2_img3.jpeg (60 KB)
+region_images/region2_img4.jpeg (50 KB)
+region_images/region2_img5.jpeg (61 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_images_from_regions/extract-images-from-regions-outputs.zip)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Extracts and saves images organized by the region they were found in.
@@ -136,34 +149,36 @@ To extract images from a specific area on a specific page:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageAreaOptions, Rectangle, Point, Size
+from groupdocs.parser.options import PageAreaOptions
+from groupdocs.parser.data import Rectangle, Point, Size
 
 # Create an instance of Parser class
 with Parser("document.pptx") as parser:
     if not parser.features.images:
         print("Image extraction not supported")
-        return
+    else:
+        # Get document info
+        info = parser.get_document_info()
     
-    # Get document info
-    info = parser.get_document_info()
+        # Process specific page (e.g., first page)
+        page_index = 0
     
-    # Process specific page (e.g., first page)
-    page_index = 0
-    
-    if page_index < info.page_count:
-        # Define area (center of page, 400x300)
-        area = Rectangle(Point(100, 100), Size(400, 300))
-        options = PageAreaOptions(area)
+        if page_index < info.page_count:
+            # Define area (center of page, 400x300)
+            area = Rectangle(Point(100, 100), Size(400, 300))
+            options = PageAreaOptions(area)
         
-        # Extract images from the area on the specific page
-        images = parser.get_images(page_index, options)
+            # Extract images from the area on the specific page
+            images = parser.get_images(page_index, options)
         
-        if images:
-            print(f"Images on page {page_index + 1} in specified area:")
-            for image in images:
-                print(f"  Type: {image.file_type}")
-                print(f"  Position: ({image.rectangle.left}, {image.rectangle.top})")
-                print(f"  Size: {image.rectangle.width}x{image.rectangle.height}")
+            if images:
+                print(f"Images on page {page_index + 1} in specified area:")
+                for image in images:
+                    print(f"  Type: {image.file_type}")
+                    print(f"  Position: ({image.rectangle.left}, {image.rectangle.top})")
+                    print(f"  Size: {image.rectangle.size.width}x{image.rectangle.size.height}")
+            else:
+                print(f"No images on page {page_index + 1} in specified area")
 ```
 
 {{< /tab >}}
@@ -184,7 +199,8 @@ To extract logo images from the header area:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageAreaOptions, Rectangle, Point, Size
+from groupdocs.parser.options import PageAreaOptions
+from groupdocs.parser.data import Rectangle, Point, Size
 import os
 
 def extract_header_logos(file_path, output_dir):
@@ -206,12 +222,8 @@ def extract_header_logos(file_path, output_dir):
         images = parser.get_images(options)
         
         if images:
-            print(f"Found {len(list(images))} images in header
-")
-            
-            # Re-extract as iterator was consumed
-            images = parser.get_images(options)
-            
+            print(f"Found {len(images)} images in header\n")
+
             for idx, image in enumerate(images):
                 filename = f"logo_{idx + 1}{image.file_type.extension}"
                 filepath = os.path.join(output_dir, filename)
@@ -230,6 +242,12 @@ extract_header_logos("invoice.pdf", "extracted_logos")
 The following sample file is used in this example: [invoice.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/invoice.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "logo_1.jpeg" >}}  
+```text
+Binary file (JPEG, 10 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_header_logos/logo_1.jpeg)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Extracts logo or brand images typically found in document headers.
@@ -242,7 +260,8 @@ To extract images from document quadrants:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageAreaOptions, Rectangle, Point, Size
+from groupdocs.parser.options import PageAreaOptions
+from groupdocs.parser.data import Rectangle, Point, Size
 
 def extract_by_quadrant(file_path, page_width=600, page_height=800):
     """
@@ -284,6 +303,15 @@ extract_by_quadrant("layout.pdf")
 The following sample file is used in this example: [layout.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/layout.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-by-quadrant.txt" >}}  
+```text
+Top-Left: 2 images
+Top-Right: 1 images
+Bottom-Left: 4 images
+Bottom-Right: 3 images
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_by_quadrant/extract-by-quadrant.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Categorizes and counts images by their location in document quadrants.
@@ -296,7 +324,8 @@ To filter images by size within an area:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageAreaOptions, Rectangle, Point, Size
+from groupdocs.parser.options import PageAreaOptions
+from groupdocs.parser.data import Rectangle, Point, Size
 import os
 
 def extract_large_images_from_area(file_path, area_rect, min_width, min_height, output_dir):
@@ -321,16 +350,16 @@ def extract_large_images_from_area(file_path, area_rect, min_width, min_height, 
         
         for image in images:
             # Check image size
-            if image.rectangle.width >= min_width and image.rectangle.height >= min_height:
+            size = image.rectangle.size
+            if size.width >= min_width and size.height >= min_height:
                 filename = f"large_image_{saved_count + 1}{image.file_type.extension}"
                 filepath = os.path.join(output_dir, filename)
                 image.save(filepath)
-                
-                print(f"Saved: {filename} ({image.rectangle.width}x{image.rectangle.height})")
+
+                print(f"Saved: {filename} ({size.width}x{size.height})")
                 saved_count += 1
         
-        print(f"
-Total large images saved: {saved_count}")
+        print(f"\nTotal large images saved: {saved_count}")
 
 # Usage - extract images larger than 100x100 from center area
 center_area = Rectangle(Point(100, 100), Size(400, 600))
@@ -342,6 +371,15 @@ extract_large_images_from_area("document.pdf", center_area, 100, 100, "large_ima
 {{< tab-text >}}
 The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/document.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-large-images-from-area-outputs.zip" >}}  
+```text
+large_images/large_image_1.jpeg (46 KB)
+large_images/large_image_2.jpeg (60 KB)
+large_images/large_image_3.jpeg (50 KB)
+large_images/large_image_4.jpeg (61 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_large_images_from_area/extract-large-images-from-area-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 

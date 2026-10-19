@@ -1,0 +1,605 @@
+{
+  "developer-guide/advanced-usage/extraction/extract-highlights#example-3": {
+    "type": "text",
+    "file": "get-search-results-with-context.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-highlights/get_search_results_with_context/get-search-results-with-context.txt",
+    "preview": "Found 6 occurrences:\n\n1. [Harvest] range and by coffee from our long-stand\n   (Page 1, position 399)\n\n2. 3. The Autumn [Harvest] range\n   (Page 2, position 551)\n\n3. The Autumn [Harvest] range launched in September with eight \n   (Page 2, position 577)\n[TRUNCATED]",
+    "function": "get_search_results_with_context"
+  },
+  "developer-guide/advanced-usage/extraction/extract-highlights#example-4": {
+    "type": "text",
+    "file": "extract-multiple-highlights.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-highlights/extract_multiple_highlights/extract-multiple-highlights.txt",
+    "preview": "Extracted 4 highlights:\n\nPosition 0:\n                                                              ...\n\nPosition 500:\n  s...\n\nPosition 1000:\n       97.4%               +1.3 pts...\n[TRUNCATED]",
+    "function": "extract_multiple_highlights"
+  },
+  "developer-guide/advanced-usage/extraction/extract-highlights#example-5": {
+    "type": "text",
+    "file": "create-document-preview.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-highlights/create_document_preview/create-document-preview.txt",
+    "preview": "Document length: 4414 characters\n\nPreview:\n                                                                                       Investor relations\n...\ned in April and holds 140 pallets at 2 C.\n...\n8%               +9.2%",
+    "function": "create_document_preview"
+  },
+  "developer-guide/advanced-usage/extraction/extract-highlights#example-6": {
+    "type": "text",
+    "file": "extract-highlight-with-words.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-highlights/extract_highlight_with_words/extract-highlight-with-words.txt",
+    "preview": "Position 500:\ns",
+    "function": "extract_highlight_with_words"
+  },
+  "developer-guide/advanced-usage/extraction/extract-highlights#example-7": {
+    "type": "text",
+    "file": "create-toc-with-previews.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-highlights/create_toc_with_previews/create-toc-with-previews.txt",
+    "preview": "1. Overview\n  Preview: Harbor Lane Provisions supplies specialty food to ...\n  Key figures\n    Preview: Metric                                   2024     ...\n2. Operations\n  Preview: Orders shipped rose 13.1% to 55,300 while on-time ...\n  Warehouse and logistics\n    Preview:     •   Cold room 3 opened in April and holds 140 ...\n3. The Autumn Harvest range\n  Preview: The Autumn Harvest range launched in September wit...\n[TRUNCATED]",
+    "function": "create_toc_with_previews"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-areas#example-5": {
+    "type": "text",
+    "file": "extract-from-regions.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-areas/extract_from_regions/extract-from-regions.txt",
+    "preview": "region_0: Annual Report 2025  |  Port Ellery Investor relations Harbor Lane Provisions  |  Annual Report 2025 ...\nregion_1: Annual Report 2025  |  Port Ellery Annual Report 2025 1. Overview Harbor Lane Provisions supplies sp...\nregion_2: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |   harborlane.example Harbor Lane Provisi...",
+    "function": "extract_from_regions"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode#example-3": {
+    "type": "text",
+    "file": "extract-text-safely.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode/extract_text_safely/extract-text-safely.txt",
+    "preview": "Extracted 2584 characters",
+    "function": "extract_text_safely"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-in-raw-mode#example-4": {
+    "type": "text",
+    "file": "compare-extraction-modes.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/compare_extraction_modes/compare-extraction-modes.txt",
+    "preview": "Performance Comparison:\nMode            Time (s)        Length          Speed          \n------------------------------------------------------------\nAccurate        0.202           4414            1.0x           \nRaw             0.166           3375            1.22x faster",
+    "function": "compare_extraction_modes"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-in-raw-mode#example-5": {
+    "type": "text",
+    "file": "batch-extract-raw.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/batch_extract_raw/batch-extract-raw.txt",
+    "preview": "Processed 0 documents in 0.00 seconds",
+    "function": "batch_extract_raw"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-in-raw-mode#example-6": {
+    "type": "file",
+    "file": "search_index.json",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/create_search_index/search_index.json",
+    "preview": "{}",
+    "function": "create_search_index"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-structure#example-3": {
+    "type": "text",
+    "file": "extract-hyperlinks-from-structure.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-structure/extract_hyperlinks_from_structure/extract-hyperlinks-from-structure.txt",
+    "preview": "Structure extraction not supported\nFound 0 hyperlinks:",
+    "function": "extract_hyperlinks_from_structure"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-structure#example-4": {
+    "type": "text",
+    "file": "analyze-tables.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-structure/analyze_tables/analyze-tables.txt",
+    "preview": "Found 2 tables:\n\nTable 1:\n  Rows: 41\n  Columns: 9\n\nTable 2:\n  Rows: 12\n  Columns: 4",
+    "function": "analyze_tables"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-structure#example-5": {
+    "type": "text",
+    "file": "extract-formatted-text.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-structure/extract_formatted_text/extract-formatted-text.txt",
+    "preview": "Bold text:\n  - Supply Agreement\n  - 1. Parties\n  - Buyer:\n  - Supplier:\n  - 2.1 Autumn Harvest allocation\n  - 3. Prices and fees\n  - Product\n  - Unit\n  - Price\n[TRUNCATED]",
+    "function": "extract_formatted_text"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-structure#example-6": {
+    "type": "text",
+    "file": "save-structure.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-structure/save_structure_to_file/save-structure.txt",
+    "preview": "Structure extraction not supported",
+    "function": "save_structure_to_file"
+  },
+  "developer-guide/advanced-usage/extraction/extract-text-structure#example-7": {
+    "type": "text",
+    "file": "extract-section-info.txt",
+    "path": "developer-guide/advanced-usage/extraction/extract-text-structure/extract_section_info/extract-section-info.txt",
+    "preview": "Document has 3 sections:\n\nSection: Section 1\n  Style: default\n  Paragraphs: 2\n  Tables: 0\n  Lists: 0\n\nSection: Section 2\n  Style: default\n[TRUNCATED]",
+    "function": "extract_section_info"
+  },
+  "developer-guide/advanced-usage/extraction/search-text#example-6": {
+    "type": "text",
+    "file": "advanced-search.txt",
+    "path": "developer-guide/advanced-usage/extraction/search-text/advanced_search/advanced-search.txt",
+    "preview": "Page 1: [1. Overview]\nPage 2: [2. Operations]\nPage 2: [3. The] Autumn Harvest rang\nPage 3: [4. Financial] summary\nPage 4: [5. Sustainability]\nPage 4: [6. Outlook]",
+    "function": "advanced_search"
+  },
+  "developer-guide/advanced-usage/loading/handle-loading-of-external-resources#example-1": {
+    "type": "text",
+    "file": "on-loading.txt",
+    "path": "developer-guide/advanced-usage/loading/handle-loading-of-external-resources/on_loading/on-loading.txt",
+    "preview": "Images: 2",
+    "function": "on_loading"
+  },
+  "developer-guide/advanced-usage/loading/handle-loading-of-external-resources#example-2": {
+    "type": "text",
+    "file": "on-loading.txt",
+    "path": "developer-guide/advanced-usage/loading/handle-loading-of-external-resources/on_loading/on-loading.txt",
+    "preview": "Images: 2",
+    "function": "on_loading"
+  },
+  "developer-guide/advanced-usage/loading/handle-loading-of-external-resources#example-3": {
+    "type": "text",
+    "file": "on-loading.txt",
+    "path": "developer-guide/advanced-usage/loading/handle-loading-of-external-resources/on_loading/on-loading.txt",
+    "preview": "Images: 2",
+    "function": "on_loading"
+  },
+  "developer-guide/advanced-usage/loading/load-file-from-local-disk#example-5": {
+    "type": "text",
+    "file": "safe-load-document.txt",
+    "path": "developer-guide/advanced-usage/loading/load-file-from-local-disk/safe_load_document/safe-load-document.txt",
+    "preview": "Document loaded successfully: sample.pdf\n                                                                                       Investor relations\r\n\r\n\r\nAnnual Report 2025  |  Port Ellery\r\nAnnual Report 2025\r\n\r\n\r\n1. Overview\r\nHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its\r\n[TRUNCATED]",
+    "function": "safe_load_document"
+  },
+  "developer-guide/advanced-usage/loading/load-file-from-stream#example-3": {
+    "type": "text",
+    "file": "process-uploaded-file.txt",
+    "path": "developer-guide/advanced-usage/loading/load-file-from-stream/process_uploaded_file/process-uploaded-file.txt",
+    "preview": "Processing uploaded file: sample.docx\nFile type: Microsoft Word Open XML Document\nPages: 2\n{'success': True, 'filename': 'sample.docx', 'type': 'Microsoft Word Open XML Document', 'pages': 2, 'text_length': 2584, 'text': 'Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential\\r\\n\\r\\n\\r\\n\\r\\nSupply Agreement\\r\\nHarbor Lane Provisions and Northwind Coffee Roasters\\r\\n1. Parties\\r\\nBuyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena \n[TRUNCATED]",
+    "function": "process_uploaded_file"
+  },
+  "developer-guide/advanced-usage/loading/load-password-protected-documents#example-2": {
+    "type": "text",
+    "file": "load-protected-document.txt",
+    "path": "developer-guide/advanced-usage/loading/load-password-protected-documents/load_protected_document/load-protected-document.txt",
+    "preview": "Document loaded successfully!\nType: Microsoft Word Open XML Document\nPages: 2",
+    "function": "load_protected_document"
+  },
+  "developer-guide/advanced-usage/loading/load-password-protected-documents#example-3": {
+    "type": "text",
+    "file": "check-if-protected.txt",
+    "path": "developer-guide/advanced-usage/loading/load-password-protected-documents/check_if_protected/check-if-protected.txt",
+    "preview": "Document is not password-protected\n                                                                                       Investor relations\r\n\r\n\r\nAnnual Report 2025  |  Port Ellery\r\nAnnual Report 2025\r\n\r\n\r\n1. Overview\r\nHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its\r\n[TRUNCATED]",
+    "function": "check_if_protected"
+  },
+  "developer-guide/advanced-usage/loading/load-password-protected-documents#example-5": {
+    "type": "text",
+    "file": "process-protected-documents.txt",
+    "path": "developer-guide/advanced-usage/loading/load-password-protected-documents/process_protected_documents/process-protected-documents.txt",
+    "preview": "Processing: payroll-summary.pdf\n  ✓ Success - 809 characters extracted\n\n1/1 documents processed successfully",
+    "function": "process_protected_documents"
+  },
+  "developer-guide/advanced-usage/loading/load-specific-file-formats#example-4": {
+    "type": "text",
+    "file": "load-document-with-format.txt",
+    "path": "developer-guide/advanced-usage/loading/load-specific-file-formats/load_document_with_format/load-document-with-format.txt",
+    "preview": "Loading with explicit format: MIME HTML File(.mhtml)\nSubject: Harbor Lane Provisions - Wholesale specialty food Date: Thu, 15 Jan 2026 09:00:00 -0000 MIME-Version: 1.0 Content-Type: multipart/related; type=\"text/html\"; boundary=\"----=_HarborLane_Archive_2026\" ------=_HarborLane_Archive_2026 Content-Type: text/html; charset=\"utf-8\" Content-Transfer-Encoding: 8bit Content-Location: https://harborlane.example/ \r \r\u0013 HYPERLINK \"https://harborlane.example/\" \u0014Home\u0015 \u0013 HYPERLINK \"https://harborlane.examp\n[TRUNCATED]",
+    "function": "load_document_with_format"
+  },
+  "developer-guide/advanced-usage/loading/load-specific-file-formats#example-6": {
+    "type": "text",
+    "file": "safe-load-with-format.txt",
+    "path": "developer-guide/advanced-usage/loading/load-specific-file-formats/safe_load_with_format/safe-load-with-format.txt",
+    "preview": "Document loaded: Markdown Files",
+    "function": "safe_load_with_format"
+  },
+  "developer-guide/advanced-usage/logging#example-1": {
+    "type": "text",
+    "file": "log.txt",
+    "path": "developer-guide/advanced-usage/logging/log/log.txt",
+    "preview": "ERROR groupdocs.parser: Exception of type 'GroupDocs.Parser.Exceptions.InvalidPasswordException' was thrown.\nINFO groupdocs.parser: Skipped a protected document",
+    "function": "log"
+  },
+  "developer-guide/advanced-usage/logging#example-2": {
+    "type": "text",
+    "file": "error.txt",
+    "path": "developer-guide/advanced-usage/logging/error/error.txt",
+    "preview": "Error: Exception of type 'GroupDocs.Parser.Exceptions.InvalidPasswordException' was thrown.",
+    "function": "error"
+  },
+  "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item#example-2": {
+    "type": "text",
+    "file": "categorize-by-file-type.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/categorize_by_file_type/categorize-by-file-type.txt",
+    "preview": "Files categorized by type:\n\nComma Separated Values File: 1 files\n  - inventory.csv\n\nMicrosoft Excel Open XML Spreadsheet: 1 files\n  - inventory.xlsx\n\nMicrosoft Word Open XML Document: 1 files\n  - supply-agreement-northwind.docx\n[TRUNCATED]",
+    "function": "categorize_by_file_type"
+  },
+  "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item#example-3": {
+    "type": "text",
+    "file": "get-supported-items.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/get_supported_items/get-supported-items.txt",
+    "preview": "Supported files (5):\n  invoice-HLP-2025-0412.pdf [Portable Document Format File]\n  supply-agreement-northwind.docx [Microsoft Word Open XML Document]\n  inventory.xlsx [Microsoft Excel Open XML Spreadsheet]\n  inventory.csv [Comma Separated Values File]\n  cold-room-3.png [Portable Network Graphic]\n\nUnsupported files (0):",
+    "function": "get_supported_items"
+  },
+  "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item#example-4": {
+    "type": "file",
+    "file": "file_type_report.json",
+    "path": "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/create_file_type_report/file_type_report.json",
+    "preview": "{\n  \"container\": \"archive.zip\",\n  \"items\": [\n    {\n      \"name\": \"invoice-HLP-2025-0412.pdf\",\n      \"size\": 212328,\n      \"path\": \"finance/invoice-HLP-2025-0412.pdf\",\n      \"file_type\": \"Portable Document Format File\",\n      \"extension\": \".pdf\",\n      \"page_count\": 1\n[TRUNCATED]",
+    "function": "create_file_type_report"
+  },
+  "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item#example-5": {
+    "type": "text",
+    "file": "validate-container-contents.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/validate_container_contents/validate-container-contents.txt",
+    "preview": "Validation Results:\n  Valid items: 2\n  Invalid items: 3\n\nInvalid items:\n  inventory.xlsx: .xlsx - Unexpected type\n  inventory.csv: .csv - Unexpected type\n  cold-room-3.png: .png - Unexpected type\n\nContainer is valid: False",
+    "function": "validate_container_contents"
+  },
+  "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item#example-6": {
+    "type": "text",
+    "file": "extract-type-specific-metadata.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/extract_type_specific_metadata/extract-type-specific-metadata.txt",
+    "preview": "============================================================\nFile: invoice-HLP-2025-0412.pdf\nType: Portable Document Format File\n\nMetadata:\n  title: Invoice HLP-2025-0412\n  subject: Invoice to Harbor Lane Provisions\n  keywords: invoice, coffee, wholesale\n  author: Alex Chen\n  application: Harbor Lane Provisions\n[TRUNCATED]",
+    "function": "extract_type_specific_metadata"
+  },
+  "developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives#example-4": {
+    "type": "zip",
+    "file": "extract-specific-files-outputs.zip",
+    "path": "developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/extract_specific_files/extract-specific-files-outputs.zip",
+    "contents": [
+      "extracted\\invoice-HLP-2025-0412.pdf.txt",
+      "extracted\\supply-agreement-northwind.docx.txt"
+    ],
+    "preview": "extracted/invoice-HLP-2025-0412.pdf.txt (2 KB)\nextracted/supply-agreement-northwind.docx.txt (3 KB)",
+    "function": "extract_specific_files"
+  },
+  "developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives#example-5": {
+    "type": "text",
+    "file": "process-archive-recursively.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/process_archive_recursively/process-archive-recursively.txt",
+    "preview": "Archive Structure:\n\n readme.txt (188 bytes)\n  └─ Text: 188 characters\n records.zip (329903 bytes)\n  └─ [Archive - processing nested items]\n     invoice-HLP-2025-0412.pdf (212328 bytes)\n      └─ Text: 2177 characters\n     supply-agreement-northwind.docx (101710 bytes)\n      └─ Text: 2584 characters\n[TRUNCATED]",
+    "function": "process_archive_recursively"
+  },
+  "developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives#example-6": {
+    "type": "text",
+    "file": "extract-archive-metadata.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/extract_archive_metadata/extract-archive-metadata.txt",
+    "preview": "Archive Metadata Report:\n\nFile: invoice-HLP-2025-0412.pdf\n  Size: 212328 bytes\n  Type: .pdf\n  Pages: 1\n  Metadata: 7 properties\n\nFile: supply-agreement-northwind.docx\n  Size: 101710 bytes\n[TRUNCATED]",
+    "function": "extract_archive_metadata"
+  },
+  "developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives#example-7": {
+    "type": "file",
+    "file": "inventory.json",
+    "path": "developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/create_archive_inventory/inventory.json",
+    "preview": "{\n  \"archive\": \"archive.zip\",\n  \"total_files\": 5,\n  \"total_size\": 341988,\n  \"files\": [\n    {\n      \"name\": \"invoice-HLP-2025-0412.pdf\",\n      \"size\": 212328,\n      \"path\": \"finance/invoice-HLP-2025-0412.pdf\",\n      \"extractable\": true,\n[TRUNCATED]",
+    "function": "create_archive_inventory"
+  },
+  "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items#example-2": {
+    "type": "text",
+    "file": "count-container-items.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/count_container_items/count-container-items.txt",
+    "preview": "Container has 5 items",
+    "function": "count_container_items"
+  },
+  "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items#example-3": {
+    "type": "text",
+    "file": "list-container-contents.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/list_container_contents/list-container-contents.txt",
+    "preview": "#    Name                                    Size           Path                          \n------------------------------------------------------------------------------------------\n1    invoice-HLP-2025-0412.pdf               212,328 bytes  finance/invoice-HLP-2025-041  \n2    supply-agreement-northwind.docx         101,710 bytes  finance/supply-agreement-nor  \n3    inventory.xlsx                          15,600 bytes   operations/inventory.xlsx     \n4    inventory.csv                           \n[TRUNCATED]",
+    "function": "list_container_contents"
+  },
+  "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items#example-4": {
+    "type": "text",
+    "file": "filter-by-extension.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/filter_by_extension/filter-by-extension.txt",
+    "preview": "Found 2 PDF/Word documents:\n\n  invoice-HLP-2025-0412.pdf (212,328 bytes)\n  supply-agreement-northwind.docx (101,710 bytes)",
+    "function": "filter_by_extension"
+  },
+  "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items#example-5": {
+    "type": "text",
+    "file": "calculate-container-size.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/calculate_container_size/calculate-container-size.txt",
+    "preview": "Container Statistics:\n  Items: 5\n  Total Size: 341,988 bytes (0.33 MB)\n  Average Size: 68,398 bytes",
+    "function": "calculate_container_size"
+  },
+  "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items#example-6": {
+    "type": "text",
+    "file": "group-by-file-type.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/group_by_file_type/group-by-file-type.txt",
+    "preview": "Files grouped by type:\n\n.CSV files: 1 items, 3,625 bytes\n  - inventory.csv\n\n.DOCX files: 1 items, 101,710 bytes\n  - supply-agreement-northwind.docx\n\n.PDF files: 1 items, 212,328 bytes\n  - invoice-HLP-2025-0412.pdf\n[TRUNCATED]",
+    "function": "group_by_file_type"
+  },
+  "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items#example-7": {
+    "type": "text",
+    "file": "search-container-items.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/search_container_items/search-container-items.txt",
+    "preview": "Found 1 matching files:\n\n  invoice-HLP-2025-0412.pdf (212,328 bytes)",
+    "function": "search_container_items"
+  },
+  "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items#example-8": {
+    "type": "text",
+    "file": "process-with-progress.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/process_with_progress/process-with-progress.txt",
+    "preview": "Processing 5 items...\n\n[ 20.0%] Processing: invoice-HLP-2025-0412.pdf\n[ 40.0%] Processing: supply-agreement-northwind.docx\n[ 60.0%] Processing: inventory.xlsx\n[ 80.0%] Processing: inventory.csv\n[100.0%] Processing: cold-room-3.png\n\nProcessing complete!",
+    "function": "process_with_progress"
+  },
+  "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items#example-9": {
+    "type": "file",
+    "file": "inventory.csv",
+    "path": "developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/export_inventory_to_csv/inventory.csv",
+    "preview": "Index,Name,Size (bytes),Path\n1,invoice-HLP-2025-0412.pdf,212328,finance/invoice-HLP-2025-0412.pdf\n2,supply-agreement-northwind.docx,101710,finance/supply-agreement-northwind.docx\n3,inventory.xlsx,15600,operations/inventory.xlsx\n4,inventory.csv,3625,operations/inventory.csv\n5,cold-room-3.png,8725,operations/cold-room-3.png",
+    "function": "export_inventory_to_csv"
+  },
+  "developer-guide/advanced-usage/working-with-archives/working-with-containers#example-1": {
+    "type": "text",
+    "file": "print-text.txt",
+    "path": "developer-guide/advanced-usage/working-with-archives/working-with-containers/print_text/print-text.txt",
+    "preview": "invoice-HLP-2025-0412.pdf:                                                                                            INVOICE\r\n\r\n\r\n   FROM                                                                     Invoice Number      HLP-2025-0412\r\n   Northwind Coffee Roasters                                                Invoice Date        4 November 2025\r\n   4 Roastery Lane, Millbrook                                               Due Date            4 December 2025\r\n   alex.chen@northwindroasters.e\n[TRUNCATED]",
+    "function": "print_text"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area#example-3": {
+    "type": "text",
+    "file": "extract-header-links.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_header_links/extract-header-links.txt",
+    "preview": "Hyperlink extraction not supported\nNavigation links (0):",
+    "function": "extract_header_links"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area#example-4": {
+    "type": "text",
+    "file": "extract-links-from-regions.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_links_from_regions/extract-links-from-regions.txt",
+    "preview": "Hyperlink extraction not supported",
+    "function": "extract_links_from_regions"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area#example-5": {
+    "type": "text",
+    "file": "extract-footer-links.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_footer_links/extract-footer-links.txt",
+    "preview": "Footer links: 4\nharborlane.example: https://harborlane.example/\nharborlane.example: https://harborlane.example/\nharborlane.example: https://harborlane.example/\nharborlane.example: https://harborlane.example/",
+    "function": "extract_footer_links"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area#example-6": {
+    "type": "text",
+    "file": "extract-links-by-area-and-pattern.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_links_by_area_and_pattern/extract-links-by-area-and-pattern.txt",
+    "preview": "Hyperlink extraction not supported\nPDF download links in sidebar: 0",
+    "function": "extract_links_by_area_and_pattern"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area#example-7": {
+    "type": "text",
+    "file": "extract-social-media-links.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_social_media_links/extract-social-media-links.txt",
+    "preview": "Hyperlink extraction not supported\nSocial Media Links:",
+    "function": "extract_social_media_links"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page#example-3": {
+    "type": "file",
+    "file": "hyperlinks_by_page.json",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/export_page_hyperlinks/hyperlinks_by_page.json",
+    "preview": "{\n  \"file\": \"document.pdf\",\n  \"total_pages\": 4,\n  \"pages\": [\n    {\n      \"page_number\": 1,\n      \"hyperlinks\": [\n        {\n          \"text\": \"harborlane.example\",\n          \"url\": \"https://harborlane.example/\"\n[TRUNCATED]",
+    "function": "export_page_hyperlinks"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page#example-4": {
+    "type": "text",
+    "file": "find-pages-with-external-links.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/find_pages_with_external_links/find-pages-with-external-links.txt",
+    "preview": "Pages with external links: 4\n\nPage 1: 2 external links\n  - https://harborlane.example/\n  - https://harborlane.example/investors\nPage 2: 1 external links\n  - https://harborlane.example/\nPage 3: 1 external links\n  - https://harborlane.example/\nPage 4: 4 external links\n[TRUNCATED]",
+    "function": "find_pages_with_external_links"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page#example-5": {
+    "type": "text",
+    "file": "analyze-hyperlink-distribution.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/analyze_hyperlink_distribution/analyze-hyperlink-distribution.txt",
+    "preview": "Hyperlink Distribution Analysis:\nPage      Links     Unique URLs    \n-----------------------------------\n1         2         2              \n2         1         1              \n3         1         1              \n4         4         4              \n\nTop domains:\n  harborlane.example: 8",
+    "function": "analyze_hyperlink_distribution"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page#example-6": {
+    "type": "text",
+    "file": "extract-hyperlinks-from-range.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/extract_hyperlinks_from_range/extract-hyperlinks-from-range.txt",
+    "preview": "Found 8 hyperlinks in pages 1-5\n\nPage 1: harborlane.example -> https://harborlane.example/\nPage 1: Investor relations -> https://harborlane.example/investors\nPage 2: harborlane.example -> https://harborlane.example/\nPage 3: harborlane.example -> https://harborlane.example/\nPage 4: harborlane.example -> https://harborlane.example/\nPage 4: harborlane.example/investors/2025 -> https://harborlane.example/investors/2025\nPage 4: harborlane.example/suppliers/charter -> https://harborlane.example/suppli\n[TRUNCATED]",
+    "function": "extract_hyperlinks_from_range"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document#example-3": {
+    "type": "text",
+    "file": "is-valid-url.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/is_valid_url/is-valid-url.txt",
+    "preview": "Hyperlink extraction not supported",
+    "function": "is_valid_url"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document#example-4": {
+    "type": "file",
+    "file": "hyperlinks.csv",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/export_hyperlinks_to_csv/hyperlinks.csv",
+    "preview": "Text,URL,Page,X,Y,Width,Height\nharborlane.example,https://harborlane.example/,1,267.14501953,801.7009887700001,74.71099853999999,11.19900131\nInvestor relations,https://harborlane.example/investors,1,469.46801758,41,72.53198242000002,12.348999020000065\nharborlane.example,https://harborlane.example/,2,267.14501953,801.7009887700001,74.71099853999999,11.19900131\nharborlane.example,https://harborlane.example/,3,267.14501953,801.7009887700001,74.71099853999999,11.19900131\nharborlane.example,https://h\n[TRUNCATED]",
+    "function": "export_hyperlinks_to_csv"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document#example-5": {
+    "type": "text",
+    "file": "analyze-hyperlinks-by-domain.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/analyze_hyperlinks_by_domain/analyze-hyperlinks-by-domain.txt",
+    "preview": "Hyperlink extraction not supported",
+    "function": "analyze_hyperlinks_by_domain"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document#example-6": {
+    "type": "text",
+    "file": "extract-filtered-hyperlinks.txt",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/extract_filtered_hyperlinks/extract-filtered-hyperlinks.txt",
+    "preview": "Hyperlink extraction not supported\nFound 0 PDF links\nHyperlink extraction not supported\nFound 0 download links\nHyperlink extraction not supported\nFound 0 external links",
+    "function": "extract_filtered_hyperlinks"
+  },
+  "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document#example-7": {
+    "type": "file",
+    "file": "all_hyperlinks.json",
+    "path": "developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/batch_extract_hyperlinks/all_hyperlinks.json",
+    "preview": "{}",
+    "function": "batch_extract_hyperlinks"
+  },
+  "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area#example-2": {
+    "type": "zip",
+    "file": "extract-images-from-regions-outputs.zip",
+    "path": "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_images_from_regions/extract-images-from-regions-outputs.zip",
+    "contents": [
+      "region_images\\region1_img1.jpeg",
+      "region_images\\region2_img1.jpeg",
+      "region_images\\region2_img2.jpeg",
+      "region_images\\region2_img3.jpeg",
+      "region_images\\region2_img4.jpeg",
+      "region_images\\region2_img5.jpeg"
+    ],
+    "preview": "region_images/region1_img1.jpeg (9 KB)\nregion_images/region2_img1.jpeg (9 KB)\nregion_images/region2_img2.jpeg (46 KB)\nregion_images/region2_img3.jpeg (60 KB)\nregion_images/region2_img4.jpeg (50 KB)\nregion_images/region2_img5.jpeg (61 KB)",
+    "function": "extract_images_from_regions"
+  },
+  "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area#example-4": {
+    "type": "file",
+    "file": "logo_1.jpeg",
+    "path": "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_header_logos/logo_1.jpeg",
+    "preview": "Binary file (JPEG, 10 KB)",
+    "function": "extract_header_logos"
+  },
+  "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area#example-5": {
+    "type": "text",
+    "file": "extract-by-quadrant.txt",
+    "path": "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_by_quadrant/extract-by-quadrant.txt",
+    "preview": "Top-Left: 2 images\nTop-Right: 1 images\nBottom-Left: 4 images\nBottom-Right: 3 images",
+    "function": "extract_by_quadrant"
+  },
+  "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area#example-6": {
+    "type": "zip",
+    "file": "extract-large-images-from-area-outputs.zip",
+    "path": "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_large_images_from_area/extract-large-images-from-area-outputs.zip",
+    "contents": [
+      "large_images\\large_image_1.jpeg",
+      "large_images\\large_image_2.jpeg",
+      "large_images\\large_image_3.jpeg",
+      "large_images\\large_image_4.jpeg"
+    ],
+    "preview": "large_images/large_image_1.jpeg (46 KB)\nlarge_images/large_image_2.jpeg (60 KB)\nlarge_images/large_image_3.jpeg (50 KB)\nlarge_images/large_image_4.jpeg (61 KB)",
+    "function": "extract_large_images_from_area"
+  },
+  "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page#example-5": {
+    "type": "text",
+    "file": "analyze-image-distribution.txt",
+    "path": "developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/analyze_image_distribution/analyze-image-distribution.txt",
+    "preview": "Document: sample.pdf\nTotal pages: 4\nTotal images: 5\nAverage images per page: 1.25\n\nPage 1: 2 images (.jpeg)\nPage 2: 1 images (.jpeg)\nPage 3: 1 images (.jpeg)\nPage 4: 1 images (.jpeg)",
+    "function": "analyze_image_distribution"
+  },
+  "developer-guide/advanced-usage/working-with-images/extract-images-to-files#example-3": {
+    "type": "zip",
+    "file": "save-images-with-custom-names-outputs.zip",
+    "path": "developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_with_custom_names/save-images-with-custom-names-outputs.zip",
+    "contents": [
+      "saved_images\\report_20261016_184736_page1_img1.jpeg",
+      "saved_images\\report_20261016_184736_page1_img2.jpeg",
+      "saved_images\\report_20261016_184736_page2_img3.jpeg",
+      "saved_images\\report_20261016_184736_page3_img4.jpeg",
+      "saved_images\\report_20261016_184736_page4_img5.jpeg"
+    ],
+    "preview": "saved_images/report_20261016_184736_page1_img1.jpeg (9 KB)\nsaved_images/report_20261016_184736_page1_img2.jpeg (46 KB)\nsaved_images/report_20261016_184736_page2_img3.jpeg (60 KB)\nsaved_images/report_20261016_184736_page3_img4.jpeg (50 KB)\nsaved_images/report_20261016_184736_page4_img5.jpeg (61 KB)",
+    "function": "save_images_with_custom_names"
+  },
+  "developer-guide/advanced-usage/working-with-images/extract-images-to-files#example-5": {
+    "type": "zip",
+    "file": "save-images-by-page-outputs.zip",
+    "path": "developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_by_page/save-images-by-page-outputs.zip",
+    "contents": [
+      "images_by_page\\page_1\\image_1.jpeg",
+      "images_by_page\\page_1\\image_2.jpeg",
+      "images_by_page\\page_2\\image_1.jpeg",
+      "images_by_page\\page_3\\image_1.jpeg",
+      "images_by_page\\page_4\\image_1.jpeg"
+    ],
+    "preview": "images_by_page/page_1/image_1.jpeg (9 KB)\nimages_by_page/page_1/image_2.jpeg (46 KB)\nimages_by_page/page_2/image_1.jpeg (60 KB)\nimages_by_page/page_3/image_1.jpeg (50 KB)\nimages_by_page/page_4/image_1.jpeg (61 KB)",
+    "function": "save_images_by_page"
+  },
+  "developer-guide/advanced-usage/working-with-images/extract-images-to-files#example-6": {
+    "type": "zip",
+    "file": "save-images-by-type-outputs.zip",
+    "path": "developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_by_type/save-images-by-type-outputs.zip",
+    "contents": [
+      "filtered_images\\image_1.jpeg",
+      "filtered_images\\image_2.jpeg",
+      "filtered_images\\image_3.jpeg",
+      "filtered_images\\image_4.jpeg",
+      "filtered_images\\image_5.jpeg"
+    ],
+    "preview": "filtered_images/image_1.jpeg (9 KB)\nfiltered_images/image_2.jpeg (46 KB)\nfiltered_images/image_3.jpeg (60 KB)\nfiltered_images/image_4.jpeg (50 KB)\nfiltered_images/image_5.jpeg (61 KB)",
+    "function": "save_images_by_type"
+  },
+  "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents#example-2": {
+    "type": "text",
+    "file": "get-metadata-value.txt",
+    "path": "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/get_metadata_value/get-metadata-value.txt",
+    "preview": "Document Information:\n  Title: Supply Agreement - Northwind Coffee Roasters\n  Author: Lena Park\n  Created: 12/15/2025 10:00:00\n  Modified: 01/12/2026 09:00:00",
+    "function": "get_metadata_value"
+  },
+  "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents#example-3": {
+    "type": "text",
+    "file": "extract-metadata-as-dict.txt",
+    "path": "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/extract_metadata_as_dict/extract-metadata-as-dict.txt",
+    "preview": "Document Metadata:\n  title: Harbor Lane Provisions - Annual Report 2025\n  subject: Annual report and financial summary\n  keywords: annual report, wholesale, Autumn Harvest, revenue, logistics\n  author: Amara Osei\n  application: Aspose Pty Ltd.\n  last-saved-time: 02/16/2026 12:00:00",
+    "function": "extract_metadata_as_dict"
+  },
+  "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents#example-4": {
+    "type": "file",
+    "file": "metadata.json",
+    "path": "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/export_metadata_to_json/metadata.json",
+    "preview": "{\n  \"file_path\": \"sample.docx\",\n  \"properties\": {\n    \"title\": \"Supply Agreement - Northwind Coffee Roasters\",\n    \"subject\": \"Coffee supply agreement 2026-2028\",\n    \"keywords\": \"supply agreement, coffee, Autumn Harvest, Northwind\",\n    \"category\": \"Back office\",\n    \"company\": \"Harbor Lane Provisions\",\n    \"manager\": \"Amara Osei\",\n    \"author\": \"Lena Park\",\n[TRUNCATED]",
+    "function": "export_metadata_to_json"
+  },
+  "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents#example-5": {
+    "type": "file",
+    "file": "metadata_report.csv",
+    "path": "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/batch_extract_metadata/metadata_report.csv",
+    "preview": "application,application-version,author,category,company,created-time,file_name,keywords,last-author,last-saved-time,manager,revision-number,subject,template,title\nAspose Pty Ltd.,,Amara Osei,,,,sample.pdf,\"annual report, wholesale, Autumn Harvest, revenue, logistics\",,02/16/2026 12:00:00,,,Annual report and financial summary,,Harbor Lane Provisions - Annual Report 2025\nMicrosoft Office Word,786432,Lena Park,Back office,Harbor Lane Provisions,12/15/2025 10:00:00,sample.docx,\"supply agreement, cof\n[TRUNCATED]",
+    "function": "batch_extract_metadata"
+  },
+  "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents#example-6": {
+    "type": "text",
+    "file": "get-metadata-dict.txt",
+    "path": "developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/get_metadata_dict/get-metadata-dict.txt",
+    "preview": "Comparing: version1.docx vs version2.docx\n\nField                File 1                         File 2                         Match     \n-----------------------------------------------------------------------------------------------\napplication          Microsoft Office Word          Microsoft Office Word          Yes       \napplication-version  786432                         786432                         Yes       \nauthor               Lena Park                      Lena Park                  \n[TRUNCATED]",
+    "function": "get_metadata_dict"
+  },
+  "developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page#example-4": {
+    "type": "text",
+    "file": "compare-tables-across-pages.txt",
+    "path": "developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/compare_tables_across_pages/compare-tables-across-pages.txt",
+    "preview": "Table Structure Comparison:\nPage      Tables    Structures                              \n------------------------------------------------------------\n1         1         6×4                                     \n2         0                                                 \n3         1         7×4                                     \n4         0",
+    "function": "compare_tables_across_pages"
+  },
+  "developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page#example-5": {
+    "type": "file",
+    "file": "page1_tables.json",
+    "path": "developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/export_page_tables_to_json/page1_tables.json",
+    "preview": "{\n  \"page_number\": 1,\n  \"tables\": [\n    {\n      \"table_index\": 1,\n      \"rows\": 6,\n      \"columns\": 4,\n      \"data\": [\n        [\n          \"Metric\",\n[TRUNCATED]",
+    "function": "export_page_tables_to_json"
+  },
+  "developer-guide/advanced-usage/working-with-tables/extract-tables-from-document#example-4": {
+    "type": "zip",
+    "file": "export-tables-to-csv-outputs.zip",
+    "path": "developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/export_tables_to_csv/export-tables-to-csv-outputs.zip",
+    "contents": [
+      "exported_tables\\table_1.csv",
+      "exported_tables\\table_2.csv"
+    ],
+    "preview": "exported_tables/table_1.csv (3 KB)\nexported_tables/table_2.csv (644 bytes)",
+    "function": "export_tables_to_csv"
+  },
+  "developer-guide/advanced-usage/working-with-tables/extract-tables-from-document#example-7": {
+    "type": "text",
+    "file": "process-large-table.txt",
+    "path": "developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/process_large_table/process-large-table.txt",
+    "preview": "Table 1:\nTotal size: 40 rows x 9 columns\n\nHeader:\n\nShowing first 10 rows:\n |  |  |  |  |  |  |  | \nHLP-CF-101 | Harbor Blend whole b | Coffee | Northwind Coffee Roa | 1 kg bag | $18.40 | 240 | 80 | A-01\nHLP-CF-102 | Dockside Decaf whole | Coffee | Northwind Coffee Roa | 1 kg bag | $19.10 | 96 | 40 | A-01\nHLP-CF-103 | Lighthouse Espresso  | Coffee | Northwind Coffee Roa | 1 kg bag | $21.75 | 180 | 60 | A-02\n[TRUNCATED]",
+    "function": "process_large_table"
+  },
+  "developer-guide/basic-usage/get-document-info#example-3": {
+    "type": "text",
+    "file": "process-document.txt",
+    "path": "developer-guide/basic-usage/get-document-info/process_document/process-document.txt",
+    "preview": "Processing: sample.pdf\nType: Portable Document Format File\nPages: 4\nSize: 320.61 KB\nDocument has pages, proceeding with text extraction...\n                                                                                       Investor relations\r\n\r\n\r\nAnnual Report 2025  |  Port Ellery\r\nAnnual Report 2025\r\n[TRUNCATED]",
+    "function": "process_document"
+  },
+  "developer-guide/basic-usage/get-supported-file-formats#example-3": {
+    "type": "text",
+    "file": "is-format-supported.txt",
+    "path": "developer-guide/basic-usage/get-supported-file-formats/is_format_supported/is-format-supported.txt",
+    "preview": ".pdf - Supported\n.docx - Supported\n.xlsx - Supported\n.txt - Supported\n.unknown - Not Supported",
+    "function": "is_format_supported"
+  },
+  "developer-guide/basic-usage/get-supported-file-formats#example-5": {
+    "type": "text",
+    "file": "process-file.txt",
+    "path": "developer-guide/basic-usage/get-supported-file-formats/process_file/process-file.txt",
+    "preview": "Processing: sample.pdf\nFormat: Portable Document Format File\nPages: 4\nText extraction successful: 4414 characters\nProcessing: sample.docx\nFormat: Microsoft Word Open XML Document\nPages: 2\nText extraction successful: 2584 characters",
+    "function": "process_file"
+  }
+}

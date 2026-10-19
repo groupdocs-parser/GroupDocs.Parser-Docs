@@ -1,0 +1,10 @@
+Found 8 hyperlinks in pages 1-5
+
+Page 1: harborlane.example -> https://harborlane.example/
+Page 1: Investor relations -> https://harborlane.example/investors
+Page 2: harborlane.example -> https://harborlane.example/
+Page 3: harborlane.example -> https://harborlane.example/
+Page 4: harborlane.example -> https://harborlane.example/
+Page 4: harborlane.example/investors/2025 -> https://harborlane.example/investors/2025
+Page 4: harborlane.example/suppliers/charter -> https://harborlane.example/suppliers/charter
+Page 4: harborlane.example/catalog -> https://harborlane.example/catalog

@@ -47,8 +47,7 @@ supported_file_types = FileType.get_supported_file_types()
 for file_type in sorted(supported_file_types, key=lambda x: x.extension):
     print(f"{file_type.extension} - {file_type.file_format}")
 
-print(f"
-Total supported formats: {len(list(supported_file_types))}")
+print(f"\nTotal supported formats: {len(supported_file_types)}")
 ```
 
 {{< /tab >}}
@@ -119,6 +118,16 @@ for ext in formats_to_check:
 ```
 
 {{< /tab >}}
+{{< tab "is-format-supported.txt" >}}  
+```text
+.pdf - Supported
+.docx - Supported
+.xlsx - Supported
+.txt - Supported
+.unknown - Not Supported
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-supported-file-formats/is_format_supported/is-format-supported.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Get format details
@@ -152,40 +161,41 @@ Here's a practical example of validating user input:
 {{< tab "Python" >}}
 
 ```python
+import os
+
 from groupdocs.parser import Parser
 from groupdocs.parser.options import FileType
-import os
 
 def process_file(file_path):
     """Process a file if its format is supported"""
-    
+
     # Get file extension
     _, ext = os.path.splitext(file_path)
-    
+
     # Check if format is supported
     supported_file_types = FileType.get_supported_file_types()
     is_supported = any(ft.extension.lower() == ext.lower() for ft in supported_file_types)
-    
+
     if not is_supported:
         print(f"Error: File format '{ext}' is not supported")
         return False
-    
-    try:
-        # Process the file
-        with Parser(file_path) as parser:
-            doc_info = parser.get_document_info()
-            print(f"Processing: {file_path}")
-            print(f"Format: {doc_info.file_type.file_format}")
-            print(f"Pages: {doc_info.page_count}")
-            
-            # Extract text
-            text_reader = parser.get_text()
-            if text_reader:
-                print("Text extraction successful")
-                return True
-    except Exception as e:
-        print(f"Error processing file: {e}")
-        return False
+
+    # Process the file
+    with Parser(file_path) as parser:
+        doc_info = parser.get_document_info()
+        print(f"Processing: {file_path}")
+        print(f"Format: {doc_info.file_type.file_format}")
+        print(f"Pages: {doc_info.page_count}")
+
+        # Extract text
+        text_reader = parser.get_text()
+        if text_reader is None:
+            print("Text extraction isn't supported for this format")
+            return False
+
+        text = text_reader.read_to_end()
+        print(f"Text extraction successful: {len(text)} characters")
+        return True
 
 # Example usage
 process_file("sample.pdf")
@@ -202,6 +212,19 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 {{< tab-text >}}
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/basic-usage/get-supported-file-formats/sample.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "process-file.txt" >}}  
+```text
+Processing: sample.pdf
+Format: Portable Document Format File
+Pages: 4
+Text extraction successful: 4414 characters
+Processing: sample.docx
+Format: Microsoft Word Open XML Document
+Pages: 2
+Text extraction successful: 2584 characters
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-supported-file-formats/process_file/process-file.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

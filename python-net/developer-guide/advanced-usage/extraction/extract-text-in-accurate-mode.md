@@ -3,7 +3,7 @@ id: extract-text-in-accurate-mode
 url: parser/python-net/extract-text-in-accurate-mode
 title: Extract text in Accurate mode
 weight: 1
-description: "Learn how to extract text in Accurate mode from documents using GroupDocs.Parser for Python via .NET. High-quality text extraction with best accuracy from PDF, Word, Excel and 50+ formats."
+description: "Learn how to extract text in Accurate mode from documents using GroupDocs.Parser for Python via .NET. High-quality text extraction with best accuracy from PDF, Word, Excel and 60+ formats."
 keywords: extract text, extract text in Accurate mode, accurate text extraction, high quality text extraction, PDF text extraction
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: False
@@ -42,7 +42,7 @@ with Parser("./sample.pdf") as parser:
         print("Text extraction isn't supported")
     else:
         # Print the extracted text
-        print(text_reader)
+        print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -53,7 +53,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 {{< /tab >}}
 {{< /tabs >}}
 
-**Expected behavior:** The method returns a `TextReader` object containing the entire document text, or `None` if text extraction is not supported for the document format.
+**Expected behavior:** The method returns the entire document text as a `str` (which also answers `read_to_end()`), or `None` if text extraction is not supported for the document format.
 
 ## Extract text from document page
 
@@ -69,28 +69,25 @@ with Parser("./sample.pdf") as parser:
     # Check if text extraction is supported
     if not parser.features.text:
         print("Document doesn't support text extraction")
-        return
+    else:
+        # Get document info
+        info = parser.get_document_info()
     
-    # Get document info
-    info = parser.get_document_info()
-    
-    # Check if document has pages
-    if info.page_count == 0:
-        print("Document has no pages")
-        return
-    
-    # Iterate over pages
-    for page_index in range(info.page_count):
-        # Print page number
-        print(f"
-Page {page_index + 1}/{info.page_count}")
+        # Check if document has pages
+        if info.page_count == 0:
+            print("Document has no pages")
+        else:
+            # Iterate over pages
+            for page_index in range(info.page_count):
+                # Print page number
+                print(f"\nPage {page_index + 1}/{info.page_count}")
         
-        # Extract text from the page
-        text_reader = parser.get_text(page_index)
+                # Extract text from the page
+                text_reader = parser.get_text(page_index)
         
-        # Print the page text
-        if text_reader is not None:
-            print(text_reader)
+                # Print the page text
+                if text_reader is not None:
+                    print(text_reader.read_to_end())
 ```
 
 {{< /tab >}}
@@ -123,7 +120,7 @@ def extract_text_safely(file_path):
             # Extract text
             text_reader = parser.get_text()
             if text_reader is not None:
-                return text_reader
+                return text_reader.read_to_end()
             
     except Exception as e:
         print(f"Error extracting text: {e}")
@@ -140,6 +137,12 @@ if text:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode/sample.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-text-safely.txt" >}}  
+```text
+Extracted 2584 characters
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode/extract_text_safely/extract-text-safely.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

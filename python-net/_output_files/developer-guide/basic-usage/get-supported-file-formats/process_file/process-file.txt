@@ -1,0 +1,8 @@
+Processing: sample.pdf
+Format: Portable Document Format File
+Pages: 4
+Text extraction successful: 4414 characters
+Processing: sample.docx
+Format: Microsoft Word Open XML Document
+Pages: 2
+Text extraction successful: 2584 characters

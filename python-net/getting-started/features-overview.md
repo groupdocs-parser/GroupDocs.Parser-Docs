@@ -109,6 +109,10 @@ GroupDocs.Parser supports image extraction from documents. You may call `get_ima
 
 GroupDocs.Parser allows to extract tables from documents preserving their structure. You can use `get_tables` method to extract tables from the entire document or specific pages.
 
+## Extract Annotations
+
+GroupDocs.Parser reads the comments and notes reviewers leave in PDF, Word and PowerPoint files. Call `get_annotations` for the whole document, or `get_annotations(page_index)` for one page; each annotation carries its text, type, page, author and timestamp. To get the annotations' text inside the extracted text, set `TextOptions.include_annotations`. See [Working with annotations]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-annotations" >}}).
+
 ## Extract Data from Attachments and ZIP Archives
 
 GroupDocs.Parser allows to extract data (text, images, other supported extraction methods) from formats that contain other documents like ZIP archives, PDF portfolios, emails, OST containers.
@@ -122,3 +126,11 @@ GroupDocs.Parser provides the ability to get basic document information such as 
 ## Extract Table of Contents
 
 GroupDocs.Parser allows to extract table of contents from some document formats. To do it, you may call `get_toc` method.
+
+## Logging and External Resources
+
+Pass a Python function, or an object with `trace`, `warning` and `error` methods, to `ParserSettings` to receive the engine's log messages. A resource handler decides which images an HTML or MHTML document may load. See [Logging]({{< ref "parser/python-net/developer-guide/advanced-usage/logging" >}}) and [Handle loading of external resources]({{< ref "parser/python-net/developer-guide/advanced-usage/loading/handle-loading-of-external-resources" >}}).
+
+## Command Line
+
+The package installs the `groupdocs-parser` command, which extracts text, document info, metadata, images and annotations without writing Python code. See [Command Line Interface]({{< ref "parser/python-net/developer-guide/command-line-interface" >}}).

@@ -32,28 +32,28 @@ with Parser("./sample.xlsx") as parser:
     # Check if table extraction is supported
     if not parser.features.tables:
         print("Table extraction isn't supported")
-        return
+    else:
+        # Extract tables from the document
+        tables = parser.get_tables(None)
     
-    # Extract tables from the document
-    tables = parser.get_tables(None)
-    
-    if tables:
-        table_index = 0
-        for table in tables:
-            table_index += 1
-            print(f"
-=== Table {table_index} ===")
-            print(f"Rows: {table.row_count}, Columns: {table.column_count}")
+        if tables:
+            table_index = 0
+            for table in tables:
+                table_index += 1
+                print(f"\n=== Table {table_index} ===")
+                print(f"Rows: {table.row_count}, Columns: {table.column_count}")
             
-            # Iterate over rows
-            for row_index in range(table.row_count):
-                # Iterate over columns
-                for col_index in range(table.column_count):
-                    # Get table cell
-                    cell = table[row_index, col_index]
-                    if cell:
-                        print(f"{cell.text}\t", end="")
-                print()  # New line after each row
+                # Iterate over rows
+                for row_index in range(table.row_count):
+                    # Iterate over columns
+                    for col_index in range(table.column_count):
+                        # Get table cell
+                        cell = table[row_index, col_index]
+                        if cell is not None:
+                            print(f"{cell.text}\t", end="")
+                    print()  # New line after each row
+        else:
+            print("No tables found")
 ```
 
 {{< /tab >}}
@@ -83,25 +83,25 @@ with Parser(excel_path) as parser:
     # Check if table extraction is supported
     if not parser.features.tables:
         print("Table extraction not supported for this file")
-        return
+    else:
+        # Extract tables (pass None for automatic detection)
+        tables = parser.get_tables(None)
     
-    # Extract tables (pass None for automatic detection)
-    tables = parser.get_tables(None)
-    
-    if tables:
-        for table_idx, table in enumerate(tables):
-            print(f"
-Table {table_idx + 1}:")
-            print(f"Size: {table.row_count} rows × {table.column_count} columns")
-            print(f"Page: {table.page.index + 1}")
+        if tables:
+            for table_idx, table in enumerate(tables):
+                print(f"\nTable {table_idx + 1}:")
+                print(f"Size: {table.row_count} rows x {table.column_count} columns")
+                print(f"Page: {table.page.index + 1}")
             
-            # Print table data
-            for row in table.rows:
-                row_data = []
-                for cell in row.cells:
-                    cell_text = cell.text if cell else ""
-                    row_data.append(cell_text)
-                print(" | ".join(row_data))
+                # Print table data
+                for row in range(table.row_count):
+                    row_data = []
+                    for col in range(table.column_count):
+                        cell = table[row, col]
+                        row_data.append(cell.text if cell is not None else "")
+                    print(" | ".join(row_data))
+        else:
+            print("No tables found")
 ```
 
 {{< /tab >}}
@@ -130,33 +130,32 @@ with Parser("invoice.pdf") as parser:
     # Check if table extraction is supported
     if not parser.features.tables:
         print("Table extraction not supported")
-        return
+    else:
+        # Define table layout (column and row separators in points)
+        # Columns: x-coordinates of vertical separators
+        # Rows: y-coordinates of horizontal separators
+        layout = TemplateTableLayout(
+            [40, 120, 330, 390, 470, 555],  # Column separators
+            [300, 318, 338, 358, 378, 398]  # Row separators
+        )
     
-    # Define table layout (column and row separators in points)
-    # Columns: x-coordinates of vertical separators
-    # Rows: y-coordinates of horizontal separators
-    layout = TemplateTableLayout(
-        [50, 95, 275, 415, 485, 545],  # Column separators
-        [325, 340, 365, 395]            # Row separators
-    )
+        # Create options for table extraction
+        options = PageTableAreaOptions(layout)
     
-    # Create options for table extraction
-    options = PageTableAreaOptions(layout)
+        # Extract tables with custom layout
+        tables = parser.get_tables(options)
     
-    # Extract tables with custom layout
-    tables = parser.get_tables(options)
-    
-    if tables:
-        for table in tables:
-            print(f"
-Table: {table.row_count} rows × {table.column_count} columns")
+        if tables:
+            for table in tables:
+                print(f"\nTable: {table.row_count} rows x {table.column_count} columns")
             
-            # Print table content
-            for row in table.rows:
-                for cell in row.cells:
-                    if cell:
-                        print(f"{cell.text} | ", end="")
-                print()
+                # Print table content
+                for row in range(table.row_count):
+                    for col in range(table.column_count):
+                        cell = table[row, col]
+                        if cell is not None:
+                            print(f"{cell.text} | ", end="")
+                    print()
 ```
 
 {{< /tab >}}
@@ -207,11 +206,11 @@ def export_tables_to_csv(file_path, output_dir):
                 writer = csv.writer(csvfile)
                 
                 # Write table rows
-                for row in table.rows:
+                for row in range(table.row_count):
                     row_data = []
-                    for cell in row.cells:
-                        cell_text = cell.text if cell else ""
-                        row_data.append(cell_text)
+                    for col in range(table.column_count):
+                        cell = table[row, col]
+                        row_data.append(cell.text if cell is not None else "")
                     writer.writerow(row_data)
             
             print(f"Saved: {csv_path}")
@@ -225,6 +224,13 @@ export_tables_to_csv("report.xlsx", "exported_tables")
 {{< tab-text >}}
 The following sample file is used in this example: [report.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/report.xlsx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "export-tables-to-csv-outputs.zip" >}}  
+```text
+exported_tables/table_1.csv (3 KB)
+exported_tables/table_2.csv (644 bytes)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/export_tables_to_csv/export-tables-to-csv-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -243,27 +249,24 @@ from groupdocs.parser import Parser
 with Parser("document.docx") as parser:
     if not parser.features.tables:
         print("Table extraction not supported")
-        return
+    else:
+        tables = parser.get_tables(None)
     
-    tables = parser.get_tables(None)
-    
-    if tables:
-        for table in tables:
-            print(f"
-Table: {table.row_count}×{table.column_count}")
-            print(f"Position: {table.rectangle}")
+        if tables:
+            for table in tables:
+                print(f"\nTable: {table.row_count}×{table.column_count}")
+                print(f"Position: {table.rectangle}")
             
-            # Access specific cell
-            if table.row_count > 0 and table.column_count > 0:
-                cell = table[0, 0]  # First cell
-                if cell:
-                    print(f"
-First cell:")
-                    print(f"  Text: {cell.text}")
-                    print(f"  Row index: {cell.row_index}")
-                    print(f"  Column index: {cell.column_index}")
-                    print(f"  Row span: {cell.row_span}")
-                    print(f"  Column span: {cell.column_span}")
+                # Access specific cell
+                if table.row_count > 0 and table.column_count > 0:
+                    cell = table[0, 0]  # First cell
+                    if cell is not None:
+                        print("\nFirst cell:")
+                        print(f"  Text: {cell.text}")
+                        print(f"  Row index: {cell.row_index}")
+                        print(f"  Column index: {cell.column_index}")
+                        print(f"  Row span: {cell.row_span}")
+                        print(f"  Column span: {cell.column_span}")
 ```
 
 {{< /tab >}}
@@ -289,35 +292,32 @@ from groupdocs.parser import Parser
 with Parser("report.pdf") as parser:
     if not parser.features.tables:
         print("Table extraction not supported")
-        return
+    else:
+        # Get document info
+        info = parser.get_document_info()
+        print(f"Document has {info.page_count} pages")
     
-    # Get document info
-    info = parser.get_document_info()
-    print(f"Document has {info.page_count} pages")
+        # Extract all tables
+        tables = parser.get_tables(None)
     
-    # Extract all tables
-    tables = parser.get_tables(None)
-    
-    if tables:
-        # Group tables by page
-        tables_by_page = {}
-        for table in tables:
-            page_num = table.page.index + 1
-            if page_num not in tables_by_page:
-                tables_by_page[page_num] = []
-            tables_by_page[page_num].append(table)
+        if tables:
+            # Group tables by page
+            tables_by_page = {}
+            for table in tables:
+                page_num = table.page.index + 1
+                if page_num not in tables_by_page:
+                    tables_by_page[page_num] = []
+                tables_by_page[page_num].append(table)
         
-        # Print summary
-        print(f"
-Found {len(list(tables))} tables across {len(tables_by_page)} pages")
+            # Print summary
+            print(f"\nFound {len(tables)} tables across {len(tables_by_page)} pages")
         
-        for page_num in sorted(tables_by_page.keys()):
-            page_tables = tables_by_page[page_num]
-            print(f"
-Page {page_num}: {len(page_tables)} table(s)")
+            for page_num in sorted(tables_by_page.keys()):
+                page_tables = tables_by_page[page_num]
+                print(f"\nPage {page_num}: {len(page_tables)} table(s)")
             
-            for idx, table in enumerate(page_tables):
-                print(f"  Table {idx + 1}: {table.row_count}×{table.column_count}")
+                for idx, table in enumerate(page_tables):
+                    print(f"  Table {idx + 1}: {table.row_count}×{table.column_count}")
 ```
 
 {{< /tab >}}
@@ -350,31 +350,33 @@ def process_large_table(file_path, max_rows_to_print=10):
         
         tables = parser.get_tables(None)
         
-        if tables:
-            for table_idx, table in enumerate(tables):
-                print(f"\nTable {table_idx + 1}:")
-                print(f"Total size: {table.row_count} rows × {table.column_count} columns")
-                
-                # Print header (first row)
-                if table.row_count > 0:
-                    print("\nHeader:")
-                    for col in range(table.column_count):
-                        cell = table[0, col]
-                        if cell:
-                            print(f"  Column {col + 1}: {cell.text}")
-                
-                # Print preview of data
-                rows_to_show = min(max_rows_to_print, table.row_count)
-                print(f"
-Showing first {rows_to_show} rows:")
-                
-                for row in range(rows_to_show):
-                    row_data = []
-                    for col in range(table.column_count):
-                        cell = table[row, col]
-                        cell_text = cell.text[:20] if cell and cell.text else ""  # Truncate long text
-                        row_data.append(cell_text)
-                    print(" | ".join(row_data))
+        if not tables:
+            print("No tables found")
+            return
+        
+        for table_idx, table in enumerate(tables):
+            print(f"\nTable {table_idx + 1}:")
+            print(f"Total size: {table.row_count} rows x {table.column_count} columns")
+            
+            # Print header (first row)
+            if table.row_count > 0:
+                print("\nHeader:")
+                for col in range(table.column_count):
+                    cell = table[0, col]
+                    if cell is not None:
+                        print(f"  Column {col + 1}: {cell.text}")
+            
+            # Print preview of data
+            rows_to_show = min(max_rows_to_print, table.row_count)
+            print(f"\nShowing first {rows_to_show} rows:")
+            
+            for row in range(rows_to_show):
+                row_data = []
+                for col in range(table.column_count):
+                    cell = table[row, col]
+                    cell_text = cell.text[:20] if cell is not None and cell.text else ""  # Truncate long text
+                    row_data.append(cell_text)
+                print(" | ".join(row_data))
 
 # Usage
 process_large_table("large_spreadsheet.xlsx")
@@ -385,6 +387,22 @@ process_large_table("large_spreadsheet.xlsx")
 {{< tab-text >}}
 The following sample file is used in this example: [large_spreadsheet.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/large_spreadsheet.xlsx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "process-large-table.txt" >}}  
+```text
+Table 1:
+Total size: 40 rows x 9 columns
+
+Header:
+
+Showing first 10 rows:
+ |  |  |  |  |  |  |  | 
+HLP-CF-101 | Harbor Blend whole b | Coffee | Northwind Coffee Roa | 1 kg bag | $18.40 | 240 | 80 | A-01
+HLP-CF-102 | Dockside Decaf whole | Coffee | Northwind Coffee Roa | 1 kg bag | $19.10 | 96 | 40 | A-01
+HLP-CF-103 | Lighthouse Espresso  | Coffee | Northwind Coffee Roa | 1 kg bag | $21.75 | 180 | 60 | A-02
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/process_large_table/process-large-table.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

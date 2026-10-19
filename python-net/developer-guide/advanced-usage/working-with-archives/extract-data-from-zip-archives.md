@@ -38,8 +38,7 @@ with Parser("./archive.zip") as parser:
     else:
         # Iterate over attachments
         for idx, attachment in enumerate(attachments):
-            print(f"
-File {idx + 1}:")
+            print(f"\nFile {idx + 1}:")
             print(f"  Name: {attachment.name}")
             print(f"  Size: {attachment.size} bytes")
             print(f"  File Path: {attachment.file_path}")
@@ -74,8 +73,7 @@ with Parser("./documents.zip") as parser:
     else:
         # Iterate over attachments
         for attachment in attachments:
-            print(f"
-Processing: {attachment.name}")
+            print(f"\nProcessing: {attachment.name}")
             
             try:
                 # Get parser for the attachment
@@ -83,8 +81,8 @@ Processing: {attachment.name}")
                     # Extract text from the file
                     text_reader = file_parser.get_text()
                     
-                    if text_reader:
-                        text = text_reader
+                    if text_reader is not None:
+                        text = text_reader.read_to_end()
                         print(f"  Extracted {len(text)} characters")
                         print(f"  Preview: {text[:100]}...")
                     else:
@@ -127,14 +125,13 @@ with Parser("mixed_files.zip") as parser:
         for attachment in attachments:
             # Get file info
             try:
-                with attachment.open_parser() as file_parser:
-                    info = file_parser.get_document_info()
-                    file_type = info.file_type.extension if info and info.file_type else "unknown"
-                    
-                    if file_type not in files_by_type:
-                        files_by_type[file_type] = []
-                    
-                    files_by_type[file_type].append(attachment.name)
+                detected = attachment.detect_file_type()
+                file_type = detected.extension if detected is not None else "unknown"
+                
+                if file_type not in files_by_type:
+                    files_by_type[file_type] = []
+                
+                files_by_type[file_type].append(attachment.name)
             
             except:
                 if "unknown" not in files_by_type:
@@ -143,8 +140,7 @@ with Parser("mixed_files.zip") as parser:
         
         # Print summary
         for file_type, files in sorted(files_by_type.items()):
-            print(f"
-{file_type.upper()} files ({len(files)}):")
+            print(f"\n{file_type.upper()} files ({len(files)}):")
             for filename in files:
                 print(f"  - {filename}")
 ```
@@ -204,12 +200,12 @@ def extract_specific_files(archive_path, output_dir, extensions=None):
                     # Extract text
                     text_reader = file_parser.get_text()
                     
-                    if text_reader:
+                    if text_reader is not None:
                         # Save to output directory
                         output_file = os.path.join(output_dir, f"{attachment.name}.txt")
                         
                         with open(output_file, 'w', encoding='utf-8') as f:
-                            f.write(text_reader)
+                            f.write(text_reader.read_to_end())
                         
                         extracted_count += 1
                         print(f"  Saved to: {output_file}")
@@ -217,8 +213,7 @@ def extract_specific_files(archive_path, output_dir, extensions=None):
             except Exception as e:
                 print(f"  Error: {e}")
         
-        print(f"
-Extracted {extracted_count} files")
+        print(f"\nExtracted {extracted_count} files")
 
 # Usage - extract only PDF and DOCX files
 extract_specific_files("documents.zip", "extracted", ['.pdf', '.docx'])
@@ -229,6 +224,13 @@ extract_specific_files("documents.zip", "extracted", ['.pdf', '.docx'])
 {{< tab-text >}}
 The following sample file is used in this example: [documents.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/documents.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-specific-files-outputs.zip" >}}  
+```text
+extracted/invoice-HLP-2025-0412.pdf.txt (2 KB)
+extracted/supply-agreement-northwind.docx.txt (3 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/extract_specific_files/extract-specific-files-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -270,8 +272,8 @@ def process_archive_recursively(parser, level=0):
                 else:
                     # Try to extract text
                     text_reader = file_parser.get_text()
-                    if text_reader:
-                        text = text_reader
+                    if text_reader is not None:
+                        text = text_reader.read_to_end()
                         print(f"{indent}  └─ Text: {len(text)} characters")
         
         except Exception as e:
@@ -288,6 +290,22 @@ with Parser("nested_archive.zip") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [nested_archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/nested_archive.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "process-archive-recursively.txt" >}}  
+```text
+Archive Structure:
+
+ readme.txt (188 bytes)
+  └─ Text: 188 characters
+ records.zip (329903 bytes)
+  └─ [Archive - processing nested items]
+     invoice-HLP-2025-0412.pdf (212328 bytes)
+      └─ Text: 2177 characters
+     supply-agreement-northwind.docx (101710 bytes)
+      └─ Text: 2584 characters
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/process_archive_recursively/process-archive-recursively.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -332,10 +350,14 @@ def extract_archive_metadata(archive_path):
                         for item in metadata:
                             file_info['metadata'][item.name] = str(item.value)
                     
+                    # Detect the file type
+                    detected = attachment.detect_file_type()
+                    if detected is not None:
+                        file_info['file_type'] = detected.extension
+                    
                     # Get document info
                     info = file_parser.get_document_info()
-                    if info:
-                        file_info['file_type'] = info.file_type.extension
+                    if info is not None:
                         file_info['page_count'] = info.page_count
             
             except Exception as e:
@@ -366,6 +388,22 @@ for item in metadata_list:
 {{< tab-text >}}
 The following sample file is used in this example: [documents.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/documents.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-archive-metadata.txt" >}}  
+```text
+Archive Metadata Report:
+
+File: invoice-HLP-2025-0412.pdf
+  Size: 212328 bytes
+  Type: .pdf
+  Pages: 1
+  Metadata: 7 properties
+
+File: supply-agreement-northwind.docx
+  Size: 101710 bytes
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/extract_archive_metadata/extract-archive-metadata.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -409,8 +447,8 @@ def create_archive_inventory(archive_path, output_json):
                         # Check if text extraction is supported
                         if file_parser.features.text:
                             text_reader = file_parser.get_text()
-                            if text_reader:
-                                text = text_reader
+                            if text_reader is not None:
+                                text = text_reader.read_to_end()
                                 file_entry['extractable'] = True
                                 file_entry['text_length'] = len(text)
                                 file_entry['word_count'] = len(text.split())
@@ -434,6 +472,22 @@ def create_archive_inventory(archive_path, output_json):
 create_archive_inventory("archive.zip", "inventory.json")
 ```
 
+{{< /tab >}}
+{{< tab "inventory.json" >}}  
+```text
+{
+  "archive": "archive.zip",
+  "total_files": 5,
+  "total_size": 341988,
+  "files": [
+    {
+      "name": "invoice-HLP-2025-0412.pdf",
+      "size": 212328,
+      "path": "finance/invoice-HLP-2025-0412.pdf",
+      "extractable": true,
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/create_archive_inventory/inventory.json)
 {{< /tab >}}
 {{< /tabs >}}
 

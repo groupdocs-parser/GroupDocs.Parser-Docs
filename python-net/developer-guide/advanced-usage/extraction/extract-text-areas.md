@@ -77,31 +77,28 @@ with Parser("./sample.pdf") as parser:
     # Check if text areas extraction is supported
     if not parser.features.text_areas:
         print("Document doesn't support text areas extraction")
-        return
+    else:
+        # Get document info
+        info = parser.get_document_info()
     
-    # Get document info
-    info = parser.get_document_info()
-    
-    # Check if document has pages
-    if info.page_count == 0:
-        print("Document has no pages")
-        return
-    
-    # Iterate over pages
-    for page_index in range(info.page_count):
-        print(f"
-Page {page_index + 1}/{info.page_count}")
+        # Check if document has pages
+        if info.page_count == 0:
+            print("Document has no pages")
+        else:
+            # Iterate over pages
+            for page_index in range(info.page_count):
+                print(f"\nPage {page_index + 1}/{info.page_count}")
         
-        # Extract text areas from the page
-        text_areas = parser.get_text_areas(page_index)
+                # Extract text areas from the page
+                text_areas = parser.get_text_areas(page_index)
         
-        # Iterate over text areas
-        if text_areas:
-            for area in text_areas:
-                # Print rectangle and text
-                rect = area.rectangle
-                print(f"Position: ({rect.left}, {rect.top}), Size: ({rect.width}x{rect.height})")
-                print(f"Text: {area.text}")
+                # Iterate over text areas
+                if text_areas:
+                    for area in text_areas:
+                        # Print rectangle and text
+                        rect = area.rectangle
+                        print(f"Position: ({rect.left}, {rect.top}), Size: ({rect.size.width}x{rect.size.height})")
+                        print(f"Text: {area.text}")
 ```
 
 {{< /tab >}}
@@ -122,12 +119,13 @@ To extract text areas from a specific region with filtering:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageTextAreaOptions, Rectangle, Point, Size
+from groupdocs.parser.options import PageTextAreaOptions
+from groupdocs.parser.data import Rectangle, Point, Size
 
 # Create an instance of Parser class
 with Parser("./sample.pdf") as parser:
-    # Define the region (upper-left corner, 300x100 pixels)
-    region = Rectangle(Point(0, 0), Size(300, 100))
+    # Define the region (upper-left corner, 300x200 points)
+    region = Rectangle(Point(0, 0), Size(300, 200))
     
     # Create options to extract only text areas with digits in the specified region
     options = PageTextAreaOptions(r"\d+", region)
@@ -173,9 +171,9 @@ with Parser("./sample.docx") as parser:
         # Iterate over text areas
         for area in text_areas:
             # Get text style if available
-            if area.text_style:
+            if area.text_style is not None:
                 print(f"Text: {area.text}")
-                print(f"Font: {area.text_style.name}")
+                print(f"Font: {area.text_style.font_name}")
                 print(f"Size: {area.text_style.font_size}")
                 print(f"Bold: {area.text_style.is_bold}")
                 print(f"Italic: {area.text_style.is_italic}")
@@ -200,7 +198,8 @@ Extract text from multiple predefined regions:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageTextAreaOptions, Rectangle, Point, Size
+from groupdocs.parser.options import PageTextAreaOptions
+from groupdocs.parser.data import Rectangle, Point, Size
 
 def extract_from_regions(file_path, regions):
     """
@@ -249,6 +248,14 @@ for region_name, text in extracted.items():
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-areas/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-from-regions.txt" >}}  
+```text
+region_0: Annual Report 2025  |  Port Ellery Investor relations Harbor Lane Provisions  |  Annual Report 2025 ...
+region_1: Annual Report 2025  |  Port Ellery Annual Report 2025 1. Overview Harbor Lane Provisions supplies sp...
+region_2: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |   harborlane.example Harbor Lane Provisi...
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-areas/extract_from_regions/extract-from-regions.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

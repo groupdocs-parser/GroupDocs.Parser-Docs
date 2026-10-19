@@ -1,0 +1,18 @@
+Comparing: version1.docx vs version2.docx
+
+Field                File 1                         File 2                         Match     
+-----------------------------------------------------------------------------------------------
+application          Microsoft Office Word          Microsoft Office Word          Yes       
+application-version  786432                         786432                         Yes       
+author               Lena Park                      Lena Park                      Yes       
+category             Back office                    Back office                    Yes       
+company              Harbor Lane Provisions         Harbor Lane Provisions         Yes       
+created-time         12/15/2025 10:00:00            12/15/2025 10:00:00            Yes       
+keywords             supply agreement, coffee, Autu supply agreement, coffee, Autu Yes       
+last-author          Lena Park                      Amara Osei                     No        
+last-saved-time      01/05/2026 16:20:00            01/09/2026 11:45:00            No        
+manager              Amara Osei                     Amara Osei                     Yes       
+revision-number      1                              2                              No        
+subject              Coffee supply agreement 2026-2 Coffee supply agreement 2026-2 Yes       
+template             Normal.dot                     Normal.dot                     Yes       
+title                Supply Agreement - Northwind C Supply Agreement - Northwind C Yes

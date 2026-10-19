@@ -38,8 +38,7 @@ with Parser("./archive.zip") as parser:
     else:
         # Iterate over items
         for idx, attachment in enumerate(attachments):
-            print(f"
-Item {idx + 1}:")
+            print(f"\nItem {idx + 1}:")
             print(f"  Name: {attachment.name}")
             print(f"  Size: {attachment.size} bytes")
             print(f"  Path: {attachment.file_path}")
@@ -89,6 +88,12 @@ print(f"Container has {count} items")
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/archive.zip)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "count-container-items.txt" >}}  
+```text
+Container has 5 items
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/count_container_items/count-container-items.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns the total number of items in the container.
@@ -132,6 +137,18 @@ list_container_contents("documents.zip")
 {{< tab-text >}}
 The following sample file is used in this example: [documents.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/documents.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "list-container-contents.txt" >}}  
+```text
+#    Name                                    Size           Path                          
+------------------------------------------------------------------------------------------
+1    invoice-HLP-2025-0412.pdf               212,328 bytes  finance/invoice-HLP-2025-041  
+2    supply-agreement-northwind.docx         101,710 bytes  finance/supply-agreement-nor  
+3    inventory.xlsx                          15,600 bytes   operations/inventory.xlsx     
+4    inventory.csv                           
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/list_container_contents/list-container-contents.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -179,8 +196,7 @@ def filter_by_extension(file_path, extensions):
 # Usage - find all PDF and Word documents
 items = filter_by_extension("archive.zip", ['.pdf', '.docx', '.doc'])
 
-print(f"Found {len(items)} PDF/Word documents:
-")
+print(f"Found {len(items)} PDF/Word documents:\n")
 for item in items:
     print(f"  {item['name']} ({item['size']:,} bytes)")
 ```
@@ -190,6 +206,15 @@ for item in items:
 {{< tab-text >}}
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/archive.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "filter-by-extension.txt" >}}  
+```text
+Found 2 PDF/Word documents:
+
+  invoice-HLP-2025-0412.pdf (212,328 bytes)
+  supply-agreement-northwind.docx (101,710 bytes)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/filter_by_extension/filter-by-extension.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -242,6 +267,15 @@ print(f"  Average Size: {stats['average_size']:,.0f} bytes")
 {{< tab-text >}}
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/archive.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "calculate-container-size.txt" >}}  
+```text
+Container Statistics:
+  Items: 5
+  Total Size: 341,988 bytes (0.33 MB)
+  Average Size: 68,398 bytes
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/calculate_container_size/calculate-container-size.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -300,6 +334,22 @@ for ext, items in sorted(groups.items()):
 The following sample file is used in this example: [mixed_archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/mixed_archive.zip)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "group-by-file-type.txt" >}}  
+```text
+Files grouped by type:
+
+.CSV files: 1 items, 3,625 bytes
+  - inventory.csv
+
+.DOCX files: 1 items, 101,710 bytes
+  - supply-agreement-northwind.docx
+
+.PDF files: 1 items, 212,328 bytes
+  - invoice-HLP-2025-0412.pdf
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/group_by_file_type/group-by-file-type.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Organizes and displays items grouped by file extension.
@@ -345,8 +395,7 @@ def search_container_items(file_path, pattern):
 # Usage - find all files containing "invoice"
 matches = search_container_items("documents.zip", r'invoice')
 
-print(f"Found {len(matches)} matching files:
-")
+print(f"Found {len(matches)} matching files:\n")
 for match in matches:
     print(f"  {match['name']} ({match['size']:,} bytes)")
 ```
@@ -356,6 +405,14 @@ for match in matches:
 {{< tab-text >}}
 The following sample file is used in this example: [documents.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/documents.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "search-container-items.txt" >}}  
+```text
+Found 1 matching files:
+
+  invoice-HLP-2025-0412.pdf (212,328 bytes)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/search_container_items/search-container-items.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -385,8 +442,7 @@ def process_with_progress(file_path):
         items = list(attachments)
         total = len(items)
         
-        print(f"Processing {total} items...
-")
+        print(f"Processing {total} items...\n")
         
         for idx, attachment in enumerate(items, 1):
             # Show progress
@@ -410,6 +466,20 @@ process_with_progress("archive.zip")
 {{< tab-text >}}
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/archive.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "process-with-progress.txt" >}}  
+```text
+Processing 5 items...
+
+[ 20.0%] Processing: invoice-HLP-2025-0412.pdf
+[ 40.0%] Processing: supply-agreement-northwind.docx
+[ 60.0%] Processing: inventory.xlsx
+[ 80.0%] Processing: inventory.csv
+[100.0%] Processing: cold-room-3.png
+
+Processing complete!
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/process_with_progress/process-with-progress.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -464,10 +534,16 @@ export_inventory_to_csv("archive.zip", "inventory.csv")
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/archive.zip)
 {{< /tab-text >}}
 {{< /tab >}}
-{{< tab "inventory.csv" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [inventory.csv](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/inventory.csv)
-{{< /tab-text >}}
+{{< tab "inventory.csv" >}}  
+```text
+Index,Name,Size (bytes),Path
+1,invoice-HLP-2025-0412.pdf,212328,finance/invoice-HLP-2025-0412.pdf
+2,supply-agreement-northwind.docx,101710,finance/supply-agreement-northwind.docx
+3,inventory.xlsx,15600,operations/inventory.xlsx
+4,inventory.csv,3625,operations/inventory.csv
+5,cold-room-3.png,8725,operations/cold-room-3.png
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/export_inventory_to_csv/inventory.csv)
 {{< /tab >}}
 {{< /tabs >}}
 

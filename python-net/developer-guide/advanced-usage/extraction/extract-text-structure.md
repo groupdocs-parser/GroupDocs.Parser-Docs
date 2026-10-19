@@ -59,7 +59,8 @@ with Parser("./sample.docx") as parser:
         print("Text structure extraction isn't supported")
     else:
         # Read XML content
-        xml_content = xml_reader
+        xml_reader.move_to_content()
+        xml_content = xml_reader.read_outer_xml()
         print(xml_content)
 ```
 
@@ -92,7 +93,8 @@ with Parser("sample.docx") as parser:
         print("Structure extraction not supported")
     else:
         # Parse XML
-        xml_content = xml_reader
+        xml_reader.move_to_content()
+        xml_content = xml_reader.read_outer_xml()
         root = ET.fromstring(xml_content)
         
         # Count elements
@@ -140,14 +142,15 @@ def extract_hyperlinks_from_structure(file_path):
             return []
         
         # Parse XML
-        xml_content = xml_reader
+        xml_reader.move_to_content()
+        xml_content = xml_reader.read_outer_xml()
         root = ET.fromstring(xml_content)
         
         # Find all hyperlink elements
         hyperlinks = []
         for hyperlink in root.findall('.//hyperlink'):
             url = hyperlink.get('link', '')
-            text = hyperlink.text or ''
+            text = ''.join(hyperlink.itertext())
             
             if url:
                 hyperlinks.append({
@@ -159,8 +162,7 @@ def extract_hyperlinks_from_structure(file_path):
 
 # Usage
 links = extract_hyperlinks_from_structure("sample.pdf")
-print(f"Found {len(links)} hyperlinks:
-")
+print(f"Found {len(links)} hyperlinks:\n")
 for link in links:
     print(f"  {link['text']} -> {link['url']}")
 ```
@@ -170,6 +172,13 @@ for link in links:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-hyperlinks-from-structure.txt" >}}  
+```text
+Structure extraction not supported
+Found 0 hyperlinks:
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/extract_hyperlinks_from_structure/extract-hyperlinks-from-structure.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -197,14 +206,14 @@ def analyze_tables(file_path):
             return
         
         # Parse XML
-        xml_content = xml_reader
+        xml_reader.move_to_content()
+        xml_content = xml_reader.read_outer_xml()
         root = ET.fromstring(xml_content)
         
         # Find all tables
         tables = root.findall('.//table')
         
-        print(f"Found {len(tables)} tables:
-")
+        print(f"Found {len(tables)} tables:\n")
         
         for idx, table in enumerate(tables, 1):
             rows = table.findall('.//tr')
@@ -212,13 +221,14 @@ def analyze_tables(file_path):
             print(f"Table {idx}:")
             print(f"  Rows: {len(rows)}")
             
-            # Get column count from first row
+            # Get column count from first row (a merged cell counts its columnSpan)
             if rows:
-                cells = rows[0].findall('.//td')
-                print(f"  Columns: {len(cells)}")
+                cells = rows[0].findall('td')
+                print(f"  Columns: {sum(int(td.get('columnSpan', '1')) for td in cells)}")
             
-            # Show cell spanning
-            cells_with_span = table.findall('.//td[@rowSpan]') + table.findall('.//td[@columnSpan]')
+            # Show cell spanning (cells that span more than one row or column)
+            cells_with_span = [td for td in table.findall('.//td')
+                               if td.get('rowSpan', '1') != '1' or td.get('columnSpan', '1') != '1']
             if cells_with_span:
                 print(f"  Cells with spanning: {len(cells_with_span)}")
             
@@ -233,6 +243,20 @@ analyze_tables("sample.xlsx")
 {{< tab-text >}}
 The following sample file is used in this example: [sample.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.xlsx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "analyze-tables.txt" >}}  
+```text
+Found 2 tables:
+
+Table 1:
+  Rows: 41
+  Columns: 9
+
+Table 2:
+  Rows: 12
+  Columns: 4
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/analyze_tables/analyze-tables.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -260,7 +284,8 @@ def extract_formatted_text(file_path):
             return
         
         # Parse XML
-        xml_content = xml_reader
+        xml_reader.move_to_content()
+        xml_content = xml_reader.read_outer_xml()
         root = ET.fromstring(xml_content)
         
         # Find formatted text
@@ -269,13 +294,15 @@ def extract_formatted_text(file_path):
         
         print("Bold text:")
         for text in bold_texts:
-            if text.text:
-                print(f"  - {text.text}")
+            content = ''.join(text.itertext()).strip()
+            if content:
+                print(f"  - {content}")
         
         print("\nItalic text:")
         for text in italic_texts:
-            if text.text:
-                print(f"  - {text.text}")
+            content = ''.join(text.itertext()).strip()
+            if content:
+                print(f"  - {content}")
 
 # Usage
 extract_formatted_text("sample.docx")
@@ -286,6 +313,22 @@ extract_formatted_text("sample.docx")
 {{< tab-text >}}
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-formatted-text.txt" >}}  
+```text
+Bold text:
+  - Supply Agreement
+  - 1. Parties
+  - Buyer:
+  - Supplier:
+  - 2.1 Autumn Harvest allocation
+  - 3. Prices and fees
+  - Product
+  - Unit
+  - Price
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/extract_formatted_text/extract-formatted-text.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -312,7 +355,8 @@ def save_structure_to_file(file_path, output_xml):
             return False
         
         # Read and save XML
-        xml_content = xml_reader
+        xml_reader.move_to_content()
+        xml_content = xml_reader.read_outer_xml()
         
         with open(output_xml, 'w', encoding='utf-8') as f:
             f.write(xml_content)
@@ -324,6 +368,12 @@ def save_structure_to_file(file_path, output_xml):
 save_structure_to_file("sample.pdf", "structure.xml")
 ```
 
+{{< /tab >}}
+{{< tab "save-structure.txt" >}}  
+```text
+Structure extraction not supported
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/save_structure_to_file/save-structure.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -351,14 +401,14 @@ def extract_section_info(file_path):
             return
         
         # Parse XML
-        xml_content = xml_reader
+        xml_reader.move_to_content()
+        xml_content = xml_reader.read_outer_xml()
         root = ET.fromstring(xml_content)
         
         # Find all sections
         sections = root.findall('.//section')
         
-        print(f"Document has {len(sections)} sections:
-")
+        print(f"Document has {len(sections)} sections:\n")
         
         for idx, section in enumerate(sections, 1):
             name = section.get('name', f'Section {idx}')
@@ -385,6 +435,22 @@ extract_section_info("sample.pptx")
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.pptx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-section-info.txt" >}}  
+```text
+Document has 3 sections:
+
+Section: Section 1
+  Style: default
+  Paragraphs: 2
+  Tables: 0
+  Lists: 0
+
+Section: Section 2
+  Style: default
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/extract_section_info/extract-section-info.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

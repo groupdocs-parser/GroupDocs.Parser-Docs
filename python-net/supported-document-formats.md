@@ -53,6 +53,7 @@ This topic lists file formats supported by [GroupDocs.Parser for Python via .NET
 | [EPUB](https://wiki.fileformat.com/ebook/epub/) | Digital E-Book File Format | ✅ | | ✅ | |
 | [FB2](https://wiki.fileformat.com/ebook/fb2/) | FictionBook 2.0 File | ✅ | | ✅ | |
 | [MOBI](https://docs.fileformat.com/ebook/mobi/) | Mobipocket | ✅ | | | |
+| [AZW3](https://docs.fileformat.com/ebook/azw3/) | Kindle Format 8 | ✅ | | | |
 
 ## Spreadsheet
 
@@ -65,8 +66,12 @@ This topic lists file formats supported by [GroupDocs.Parser for Python via .NET
 | [XLT](https://wiki.fileformat.com/specification/spreadsheet/xlt/) | Microsoft Excel Template | ✅ | ✅ | ✅ | ✅ |
 | [XLTX](https://wiki.fileformat.com/specification/spreadsheet/xltx/) | Office Open XML Spreadsheet Template | ✅ | ✅ | ✅ | ✅ |
 | [XLTM](https://wiki.fileformat.com/specification/spreadsheet/xltm/) | Office Open XML Macro-Enabled Spreadsheet Template | ✅ | ✅ | ✅ | ✅ |
+| XLA | Excel Add-In File | ✅ | ✅ | ✅ | |
+| XLAM | Excel Open XML Macro-Enabled Add-In | ✅ | ✅ | ✅ | |
 | [ODS](https://wiki.fileformat.com/specification/spreadsheet/ods/) | Open Document Spreadsheet | ✅ | ✅ | ✅ | ✅ |
+| OTS | Open Document Spreadsheet Template | ✅ | ✅ | ✅ | |
 | [CSV](https://wiki.fileformat.com/specification/spreadsheet/csv/) | Comma Separated Values | ✅ | | | |
+| TSV | Tab Separated Values | ✅ | | | |
 
 ## Presentation
 
@@ -98,13 +103,14 @@ This topic lists file formats supported by [GroupDocs.Parser for Python via .NET
 
 | Format | Description | Extract Text | Extract Metadata | Extract Images | Extract Tables |
 | --- | --- | :-: | :-: | :-: | :-: |
+| [7Z](https://wiki.fileformat.com/compression/7z/) | 7-Zip Archive | ✅* | | ✅* | |
 | [ZIP](https://wiki.fileformat.com/compression/zip/) | Zipped File | ✅* | | ✅* | |
 | [RAR](https://wiki.fileformat.com/compression/rar/) | Rar File | ✅* | | ✅* | |
 | [TAR](https://wiki.fileformat.com/compression/tar/) | Tar File | ✅* | | ✅* | |
 | [GZ](https://wiki.fileformat.com/compression/gz/) | GZip file | ✅* | | ✅* | |
 | [BZ2](https://wiki.fileformat.com/compression/bz2/) | BZip2 File | ✅* | | ✅* | |
 
-\* Extraction from files within the archive
+\* Extraction from files within the archive. Encrypted 7-Zip archives are not supported.
 
 ## Image
 
@@ -115,7 +121,7 @@ This topic lists file formats supported by [GroupDocs.Parser for Python via .NET
 | [PNG](https://wiki.fileformat.com/image/png/) | Portable Network Graphics | ✅ | |
 | [TIF, TIFF](https://wiki.fileformat.com/image/tiff/) | Tagged Image File Format | ✅ | |
 | [GIF](https://wiki.fileformat.com/image/gif/) | Graphical Interchange Format | | |
-| [DJVU](https://wiki.fileformat.com/image/djvu/) | DjVu File Format | ✅ | |
+| [JP2](https://wiki.fileformat.com/image/jp2/) | JPEG 2000 Core Image File | | |
 
 > **Note:** Text extraction from images requires OCR functionality. Basic OCR support is available, but for advanced scenarios, you may need to configure additional OCR providers.
 
@@ -127,7 +133,7 @@ This topic lists file formats supported by [GroupDocs.Parser for Python via .NET
 
 ## Summary
 
-GroupDocs.Parser for Python via .NET supports **50+ document formats** across various categories including office documents, PDFs, emails, archives, and images. The library provides comprehensive data extraction capabilities including text, metadata, images, and tables depending on the format.
+GroupDocs.Parser for Python via .NET supports **60+ document formats** (65 file types in 10 families) across various categories including office documents, PDFs, emails, eBooks, archives, and images. `FileType.get_supported_file_types()` returns the same list at run time; see [Get supported file formats]({{< ref "parser/python-net/developer-guide/basic-usage/get-supported-file-formats" >}}). The library provides comprehensive data extraction capabilities including text, metadata, images, and tables depending on the format.
 
 For specific format support and feature availability, please refer to the detailed tables above or consult the [API Reference](https://reference.groupdocs.com/parser/python-net).
 

@@ -1,14 +1,14 @@
 ---
-id: working-with-images
+id: working-with-images-guide
 url: parser/python-net/working-with-images
 title: Working with Images
 weight: 5
-version: 25.12
+version: 26.10
 description: "Enumerate, filter, and save images extracted with GroupDocs.Parser for Python via .NET."
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: false
 toc: true
-tags: python, parser, images, v25.12
+tags: python, parser, images, v26.10
 ---
 
 Use image areas to inspect page coordinates, image types, and to save embedded resources in the desired format.
@@ -24,10 +24,13 @@ with Parser("brochure.pdf") as parser:
     images = parser.get_images()
     if images is None:
         print("Image extraction isn't supported for this format.")
+    elif not images:
+        print("No images found")
     else:
         for image_area in images:
+            # The image stream is a .NET MemoryStream; to_array() returns its bytes
             with image_area.get_image_stream() as stream:
-                data = stream.read()
+                data = stream.to_array()
                 print(f"Read {len(data)} bytes from page {image_area.page.index + 1}")
 ```
 

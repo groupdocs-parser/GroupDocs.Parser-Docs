@@ -43,11 +43,11 @@ with Parser("./sample.pdf") as parser:
     # Extract highlight at position 100
     highlight = parser.get_highlight(100, True, options)
     
-    if highlight:
+    if highlight is not None:
         print(f"Position: {highlight.position}")
         print(f"Text: {highlight.text}")
     else:
-        print("Highlight extraction not supported or position out of range")
+        print("Highlight extraction isn't supported")
 ```
 
 {{< /tab >}}
@@ -82,9 +82,8 @@ with Parser("sample.docx") as parser:
         # Extract highlight
         highlight = parser.get_highlight(pos, True, options)
         
-        if highlight:
-            print(f"
-Position {pos}:")
+        if highlight is not None:
+            print(f"\nPosition {pos}:")
             print(f"Text: {highlight.text}")
 ```
 
@@ -121,6 +120,7 @@ def get_search_results_with_context(file_path, keyword, context_length=30):
             match_case=False,
             match_whole_word=False,
             use_regular_expression=False,
+            search_by_pages=True,
             left_highlight_options=highlight_opts,
             right_highlight_options=highlight_opts
         )
@@ -135,13 +135,13 @@ def get_search_results_with_context(file_path, keyword, context_length=30):
         # Collect results with context
         search_results = []
         for result in results:
-            left_context = result.left_highlight_item.text if result.left_highlight_item else ""
-            right_context = result.right_highlight_item.text if result.right_highlight_item else ""
+            left_context = result.left_highlight_item.text if result.left_highlight_item is not None else ""
+            right_context = result.right_highlight_item.text if result.right_highlight_item is not None else ""
             
             search_results.append({
                 'keyword': result.text,
                 'position': result.position,
-                'page': result.page_index + 1 if hasattr(result, 'page_index') else None,
+                'page': result.page_index + 1 if result.page_index is not None else None,
                 'left_context': left_context,
                 'right_context': right_context,
                 'full_snippet': f"{left_context}[{result.text}]{right_context}"
@@ -150,17 +150,31 @@ def get_search_results_with_context(file_path, keyword, context_length=30):
         return search_results
 
 # Usage
-results = get_search_results_with_context("sample.pdf", "artificial intelligence", 40)
+results = get_search_results_with_context("sample.pdf", "harvest", 40)
 
-print(f"Found {len(results)} occurrences:
-")
+print(f"Found {len(results)} occurrences:\n")
 for idx, result in enumerate(results, 1):
     print(f"{idx}. {result['full_snippet']}")
     if result['page']:
-        print(f"   (Page {result['page']}, position {result['position']})
-")
+        print(f"   (Page {result['page']}, position {result['position']})\n")
 ```
 
+{{< /tab >}}
+{{< tab "get-search-results-with-context.txt" >}}  
+```text
+Found 6 occurrences:
+
+1. [Harvest] range and by coffee from our long-stand
+   (Page 1, position 399)
+
+2. 3. The Autumn [Harvest] range
+   (Page 2, position 551)
+
+3. The Autumn [Harvest] range launched in September with eight 
+   (Page 2, position 577)
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/get_search_results_with_context/get-search-results-with-context.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -188,7 +202,7 @@ def extract_multiple_highlights(file_path, positions, length=50):
         for position in positions:
             highlight = parser.get_highlight(position, True, options)
             
-            if highlight:
+            if highlight is not None:
                 highlights.append({
                     'position': highlight.position,
                     'text': highlight.text,
@@ -198,11 +212,10 @@ def extract_multiple_highlights(file_path, positions, length=50):
         return highlights
 
 # Extract highlights at specific positions
-positions = [0, 500, 1000, 1500, 2000]
+positions = [0, 500, 1000, 1500]
 highlights = extract_multiple_highlights("sample.pdf", positions, length=80)
 
-print(f"Extracted {len(highlights)} highlights:
-")
+print(f"Extracted {len(highlights)} highlights:\n")
 for h in highlights:
     print(f"Position {h['position']}:")
     print(f"  {h['text'][:60]}...")
@@ -214,6 +227,22 @@ for h in highlights:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-highlights/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-multiple-highlights.txt" >}}  
+```text
+Extracted 4 highlights:
+
+Position 0:
+                                                              ...
+
+Position 500:
+  s...
+
+Position 1000:
+       97.4%               +1.3 pts...
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/extract_multiple_highlights/extract-multiple-highlights.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -237,11 +266,11 @@ def create_document_preview(file_path, num_sections=5, section_length=100):
         # Get document text to determine positions
         text_reader = parser.get_text()
         
-        if not text_reader:
+        if text_reader is None:
             print("Text extraction not supported")
             return None
         
-        full_text = text_reader
+        full_text = text_reader.read_to_end()
         text_length = len(full_text)
         
         # Calculate evenly distributed positions
@@ -257,27 +286,37 @@ def create_document_preview(file_path, num_sections=5, section_length=100):
         
         for pos in positions:
             highlight = parser.get_highlight(pos, True, options)
-            if highlight:
+            if highlight is not None:
                 preview_sections.append(highlight.text)
         
         return {
             'document_length': text_length,
             'preview_sections': preview_sections,
-            'full_preview': '
-...
-'.join(preview_sections)
+            'full_preview': '\n...\n'.join(preview_sections)
         }
 
 # Usage
 preview = create_document_preview("sample.pdf", num_sections=3, section_length=150)
 
 if preview:
-    print(f"Document length: {preview['document_length']} characters
-")
+    print(f"Document length: {preview['document_length']} characters\n")
     print("Preview:")
     print(preview['full_preview'])
 ```
 
+{{< /tab >}}
+{{< tab "create-document-preview.txt" >}}  
+```text
+Document length: 4414 characters
+
+Preview:
+                                                                                       Investor relations
+...
+ed in April and holds 140 pallets at 2 C.
+...
+8%               +9.2%
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/create_document_preview/create-document-preview.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -302,7 +341,7 @@ def extract_highlight_with_words(file_path, position, max_length=100):
         options = HighlightOptions(max_length + 50)
         highlight = parser.get_highlight(position, True, options)
         
-        if not highlight:
+        if highlight is None:
             return None
         
         text = highlight.text
@@ -332,6 +371,13 @@ if highlight:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-highlights/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-highlight-with-words.txt" >}}  
+```text
+Position 500:
+s
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/extract_highlight_with_words/extract-highlight-with-words.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -364,10 +410,10 @@ def create_toc_with_previews(file_path, preview_length=60):
         
         # Get text to find section positions
         text_reader = parser.get_text()
-        if not text_reader:
+        if text_reader is None:
             return []
         
-        full_text = text_reader
+        full_text = text_reader.read_to_end()
         
         for item in toc_items:
             # Try to extract highlight for this TOC item
@@ -376,8 +422,13 @@ def create_toc_with_previews(file_path, preview_length=60):
             position = full_text.find(section_text)
             
             if position >= 0:
-                highlight = parser.get_highlight(position, True, options)
-                preview = highlight.text if highlight else "No preview available"
+                # Start the preview on the line that follows the heading
+                next_line = full_text.find("\n", position) + 1
+                if 0 < next_line < len(full_text):
+                    highlight = parser.get_highlight(next_line, True, options)
+                    preview = highlight.text if highlight is not None else "No preview available"
+                else:
+                    preview = "No preview available"
             else:
                 preview = "Section not found"
             
@@ -398,6 +449,27 @@ for item in toc:
 ```
 
 {{< /tab >}}
+{{< tab "SampleWithToc.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [SampleWithToc.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-highlights/SampleWithToc.pdf)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "create-toc-with-previews.txt" >}}  
+```text
+1. Overview
+  Preview: Harbor Lane Provisions supplies specialty food to ...
+  Key figures
+    Preview: Metric                                   2024     ...
+2. Operations
+  Preview: Orders shipped rose 13.1% to 55,300 while on-time ...
+  Warehouse and logistics
+    Preview:     •   Cold room 3 opened in April and holds 140 ...
+3. The Autumn Harvest range
+  Preview: The Autumn Harvest range launched in September wit...
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/create_toc_with_previews/create-toc-with-previews.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Generates a table of contents with text previews for each section.
@@ -405,7 +477,7 @@ for item in toc:
 ## Notes
 
 - The `get_highlight()` method returns `None` if highlight extraction is not supported
-- The second parameter (boolean) indicates whether to extract from fixed position (True) or dynamic position (False)
+- The second parameter (`is_direct`) sets the direction: `True` extracts the text to the right of the position, `False` the text to the left of it
 - Highlight length is specified in characters
 - Use highlights with search results to show context
 - Highlights are useful for creating document previews and snippets

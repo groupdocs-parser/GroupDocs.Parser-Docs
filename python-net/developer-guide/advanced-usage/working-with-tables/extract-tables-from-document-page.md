@@ -26,39 +26,34 @@ To extract tables from a particular page:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageTableAreaOptions
 
 # Create an instance of Parser class
 with Parser("./report.pdf") as parser:
     # Check if table extraction is supported
     if not parser.features.tables:
         print("Table extraction not supported")
-        return
-    
-    # Create options for page-specific extraction
-    page_index = 0  # First page
-    options = PageTableAreaOptions(page_index)
-    
-    # Extract tables from the specified page
-    tables = parser.get_tables(options)
-    
-    if tables:
-        print(f"Tables on page {page_index + 1}:")
-        for table_idx, table in enumerate(tables):
-            print(f"
-Table {table_idx + 1}:")
-            print(f"Size: {table.row_count} rows × {table.column_count} columns")
-            
-            # Print table content
-            for row in range(table.row_count):
-                row_data = []
-                for col in range(table.column_count):
-                    cell = table[row, col]
-                    cell_text = cell.text if cell else ""
-                    row_data.append(cell_text)
-                print(" | ".join(row_data))
     else:
-        print(f"No tables found on page {page_index + 1}")
+        page_index = 0  # First page
+    
+        # Extract tables from the specified page
+        tables = parser.get_tables(page_index)
+    
+        if tables:
+            print(f"Tables on page {page_index + 1}:")
+            for table_idx, table in enumerate(tables):
+                print(f"\nTable {table_idx + 1}:")
+                print(f"Size: {table.row_count} rows x {table.column_count} columns")
+            
+                # Print table content
+                for row in range(table.row_count):
+                    row_data = []
+                    for col in range(table.column_count):
+                        cell = table[row, col]
+                        cell_text = cell.text if cell is not None else ""
+                        row_data.append(cell_text)
+                    print(" | ".join(row_data))
+        else:
+            print(f"No tables found on page {page_index + 1}")
 ```
 
 {{< /tab >}}
@@ -79,55 +74,45 @@ To process tables page by page:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageTableAreaOptions
 
 # Create an instance of Parser class
 with Parser("./document.docx") as parser:
     # Check if table extraction is supported
     if not parser.features.tables:
         print("Table extraction not supported")
-        return
+    else:
+        # Get document info
+        info = parser.get_document_info()
     
-    # Get document info
-    info = parser.get_document_info()
-    
-    if info.page_count == 0:
-        print("Document has no pages")
-        return
-    
-    # Iterate over pages
-    total_tables = 0
-    for page_index in range(info.page_count):
-        print(f"
-{'=' * 50}")
-        print(f"Page {page_index + 1}/{info.page_count}")
-        print('=' * 50)
-        
-        # Create options for this page
-        options = PageTableAreaOptions(page_index)
-        
-        # Extract tables from current page
-        tables = parser.get_tables(options)
-        
-        if tables:
-            page_table_count = 0
-            for table in tables:
-                page_table_count += 1
-                total_tables += 1
-                
-                print(f"
-Table {page_table_count}:")
-                print(f"Size: {table.row_count}×{table.column_count}")
-                print(f"Position: ({table.rectangle.left}, {table.rectangle.top})")
-            
-            print(f"
-Tables on this page: {page_table_count}")
+        if info.page_count == 0:
+            print("Document has no pages")
         else:
-            print("No tables on this page")
+            # Iterate over pages
+            total_tables = 0
+            for page_index in range(info.page_count):
+                print(f"\n{'=' * 50}")
+                print(f"Page {page_index + 1}/{info.page_count}")
+                print('=' * 50)
+        
+                # Extract tables from current page
+                tables = parser.get_tables(page_index)
+        
+                if tables:
+                    page_table_count = 0
+                    for table in tables:
+                        page_table_count += 1
+                        total_tables += 1
+                
+                        print(f"\nTable {page_table_count}:")
+                        print(f"Size: {table.row_count}×{table.column_count}")
+                        print(f"Position: ({table.rectangle.left}, {table.rectangle.top})")
+            
+                    print(f"\nTables on this page: {page_table_count}")
+                else:
+                    print("No tables on this page")
     
-    print(f"
-{'=' * 50}")
-    print(f"Total tables in document: {total_tables}")
+            print(f"\n{'=' * 50}")
+            print(f"Total tables in document: {total_tables}")
 ```
 
 {{< /tab >}}
@@ -148,41 +133,42 @@ To extract tables from selected pages:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageTableAreaOptions
 
 # Create an instance of Parser class
 with Parser("report.xlsx") as parser:
     if not parser.features.tables:
         print("Table extraction not supported")
-        return
+    else:
+        page_count = parser.get_document_info().page_count
     
-    # Define pages to process (e.g., pages 1, 3, and 5)
-    pages_to_process = [0, 2, 4]  # Zero-based indices
+        # Define pages to process (e.g., pages 1, 3, and 5)
+        pages_to_process = [0, 2, 4]  # Zero-based indices
     
-    for page_index in pages_to_process:
-        print(f"
-Processing page {page_index + 1}...")
+        for page_index in pages_to_process:
+            # Skip pages the document doesn't have
+            if page_index >= page_count:
+                print(f"\nPage {page_index + 1} doesn't exist (the document has {page_count} pages)")
+                continue
         
-        # Create options for this page
-        options = PageTableAreaOptions(page_index)
+            print(f"\nProcessing page {page_index + 1}...")
         
-        # Extract tables from this page
-        tables = parser.get_tables(options)
+            # Extract tables from this page
+            tables = parser.get_tables(page_index)
         
-        if tables:
-            for table_idx, table in enumerate(tables):
-                print(f"  Table {table_idx + 1}: {table.row_count}×{table.column_count}")
+            if tables:
+                for table_idx, table in enumerate(tables):
+                    print(f"  Table {table_idx + 1}: {table.row_count}×{table.column_count}")
                 
-                # Show first row as sample
-                if table.row_count > 0:
-                    print("  First row:", end=" ")
-                    for col in range(min(3, table.column_count)):  # Show first 3 columns
-                        cell = table[0, col]
-                        if cell:
-                            print(f"[{cell.text}]", end=" ")
-                    print("...")
-        else:
-            print(f"  No tables found on page {page_index + 1}")
+                    # Show first row as sample
+                    if table.row_count > 0:
+                        print("  First row:", end=" ")
+                        for col in range(min(3, table.column_count)):  # Show first 3 columns
+                            cell = table[0, col]
+                            if cell is not None:
+                                print(f"[{cell.text}]", end=" ")
+                        print("...")
+            else:
+                print(f"  No tables found on page {page_index + 1}")
 ```
 
 {{< /tab >}}
@@ -203,7 +189,6 @@ To analyze table structure across different pages:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageTableAreaOptions
 
 def compare_tables_across_pages(file_path, page_indices):
     """
@@ -214,11 +199,15 @@ def compare_tables_across_pages(file_path, page_indices):
             print("Table extraction not supported")
             return
         
+        page_count = parser.get_document_info().page_count
         page_table_info = {}
         
         for page_index in page_indices:
-            options = PageTableAreaOptions(page_index)
-            tables = parser.get_tables(options)
+            # Skip pages the document doesn't have
+            if page_index >= page_count:
+                continue
+            
+            tables = parser.get_tables(page_index)
             
             if tables:
                 table_list = list(tables)
@@ -251,6 +240,18 @@ compare_tables_across_pages("financial_report.pdf", [0, 1, 2, 3, 4])
 The following sample file is used in this example: [financial_report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/financial_report.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "compare-tables-across-pages.txt" >}}  
+```text
+Table Structure Comparison:
+Page      Tables    Structures                              
+------------------------------------------------------------
+1         1         6×4                                     
+2         0                                                 
+3         1         7×4                                     
+4         0
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/compare_tables_across_pages/compare-tables-across-pages.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Provides a comparative view of table structures across specified pages.
@@ -263,7 +264,6 @@ To export page-specific tables to structured JSON:
 
 ```python
 from groupdocs.parser import Parser
-from groupdocs.parser.options import PageTableAreaOptions
 import json
 
 def export_page_tables_to_json(file_path, page_index, output_file):
@@ -275,8 +275,7 @@ def export_page_tables_to_json(file_path, page_index, output_file):
             print("Table extraction not supported")
             return
         
-        options = PageTableAreaOptions(page_index)
-        tables = parser.get_tables(options)
+        tables = parser.get_tables(page_index)
         
         if not tables:
             print(f"No tables found on page {page_index + 1}")
@@ -301,7 +300,7 @@ def export_page_tables_to_json(file_path, page_index, output_file):
                 row_data = []
                 for col in range(table.column_count):
                     cell = table[row, col]
-                    row_data.append(cell.text if cell else "")
+                    row_data.append(cell.text if cell is not None else "")
                 table_data['data'].append(row_data)
             
             page_data['tables'].append(table_data)
@@ -322,10 +321,21 @@ export_page_tables_to_json("data.pdf", 0, "page1_tables.json")
 The following sample file is used in this example: [data.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/data.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
-{{< tab "page1_tables.json" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [page1_tables.json](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/page1_tables.json)
-{{< /tab-text >}}
+{{< tab "page1_tables.json" >}}  
+```text
+{
+  "page_number": 1,
+  "tables": [
+    {
+      "table_index": 1,
+      "rows": 6,
+      "columns": 4,
+      "data": [
+        [
+          "Metric",
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/export_page_tables_to_json/page1_tables.json)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -346,32 +356,30 @@ from groupdocs.parser.templates import TemplateTableLayout
 with Parser("invoice.pdf") as parser:
     if not parser.features.tables:
         print("Table extraction not supported")
-        return
+    else:
+        # Define custom table layout (separator coordinates in points)
+        layout = TemplateTableLayout(
+            [40, 120, 330, 390, 470, 555],  # Column separators
+            [300, 318, 338, 358, 378, 398]  # Row separators
+        )
     
-    # Define custom table layout
-    layout = TemplateTableLayout(
-        [50, 150, 300, 450],  # Column separators
-        [200, 220, 240, 260]  # Row separators
-    )
+        # Create options with the custom layout
+        options = PageTableAreaOptions(layout)
     
-    # Create options for specific page with custom layout
-    page_index = 0
-    options = PageTableAreaOptions(page_index, layout)
+        # Extract tables from the specified page
+        page_index = 0
+        tables = parser.get_tables(page_index, options)
     
-    # Extract tables
-    tables = parser.get_tables(options)
-    
-    if tables:
-        print(f"Tables extracted from page {page_index + 1} with custom layout:")
-        for table in tables:
-            print(f"
-Table: {table.row_count}×{table.column_count}")
-            for row in range(table.row_count):
-                for col in range(table.column_count):
-                    cell = table[row, col]
-                    if cell:
-                        print(f"{cell.text:20}", end=" | ")
-                print()
+        if tables:
+            print(f"Tables extracted from page {page_index + 1} with custom layout:")
+            for table in tables:
+                print(f"\nTable: {table.row_count}x{table.column_count}")
+                for row in range(table.row_count):
+                    for col in range(table.column_count):
+                        cell = table[row, col]
+                        if cell is not None:
+                            print(f"{cell.text:20}", end=" | ")
+                    print()
 ```
 
 {{< /tab >}}
@@ -387,8 +395,8 @@ The following sample file is used in this example: [invoice.pdf](/parser/python-
 ## Notes
 
 - Page indices are zero-based (first page is index 0)
-- Use `PageTableAreaOptions(page_index)` to extract from a specific page
-- Combine with `TemplateTableLayout` for structured documents with known table positions
+- Use `parser.get_tables(page_index)` to extract from a specific page
+- Combine with `TemplateTableLayout` for structured documents with known table positions: `parser.get_tables(page_index, PageTableAreaOptions(layout))`
 - Use `get_document_info()` to determine the total number of pages
 - Page-by-page extraction is more memory-efficient for large documents
 - Empty collections are returned for pages without tables (not `None`)

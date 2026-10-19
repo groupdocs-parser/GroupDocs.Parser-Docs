@@ -1,0 +1,16 @@
+Files grouped by type:
+
+.CSV files: 1 items, 3,625 bytes
+  - inventory.csv
+
+.DOCX files: 1 items, 101,710 bytes
+  - supply-agreement-northwind.docx
+
+.PDF files: 1 items, 212,328 bytes
+  - invoice-HLP-2025-0412.pdf
+
+.PNG files: 1 items, 8,725 bytes
+  - cold-room-3.png
+
+.XLSX files: 1 items, 15,600 bytes
+  - inventory.xlsx

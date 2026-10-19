@@ -1,0 +1,13 @@
+Pages with external links: 4
+
+Page 1: 2 external links
+  - https://harborlane.example/
+  - https://harborlane.example/investors
+Page 2: 1 external links
+  - https://harborlane.example/
+Page 3: 1 external links
+  - https://harborlane.example/
+Page 4: 4 external links
+  - https://harborlane.example/
+  - https://harborlane.example/investors/2025
+  - https://harborlane.example/suppliers/charter

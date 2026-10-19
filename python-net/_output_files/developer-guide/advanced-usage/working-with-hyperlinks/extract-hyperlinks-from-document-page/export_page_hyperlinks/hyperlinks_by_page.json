@@ -1,0 +1,58 @@
+{
+  "file": "document.pdf",
+  "total_pages": 4,
+  "pages": [
+    {
+      "page_number": 1,
+      "hyperlinks": [
+        {
+          "text": "harborlane.example",
+          "url": "https://harborlane.example/"
+        },
+        {
+          "text": "Investor relations",
+          "url": "https://harborlane.example/investors"
+        }
+      ]
+    },
+    {
+      "page_number": 2,
+      "hyperlinks": [
+        {
+          "text": "harborlane.example",
+          "url": "https://harborlane.example/"
+        }
+      ]
+    },
+    {
+      "page_number": 3,
+      "hyperlinks": [
+        {
+          "text": "harborlane.example",
+          "url": "https://harborlane.example/"
+        }
+      ]
+    },
+    {
+      "page_number": 4,
+      "hyperlinks": [
+        {
+          "text": "harborlane.example",
+          "url": "https://harborlane.example/"
+        },
+        {
+          "text": "harborlane.example/investors/2025",
+          "url": "https://harborlane.example/investors/2025"
+        },
+        {
+          "text": "harborlane.example/suppliers/charter",
+          "url": "https://harborlane.example/suppliers/charter"
+        },
+        {
+          "text": "harborlane.example/catalog",
+          "url": "https://harborlane.example/catalog"
+        }
+      ]
+    }
+  ]
+}
