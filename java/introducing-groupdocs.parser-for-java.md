@@ -10,7 +10,7 @@ hideChildren: False
 ---
 ## What Is GroupDocs.Parser?
 
-GroupDocs.Parser is a powerful document data extraction API from over 50 document types in your applications.
+GroupDocs.Parser is a powerful document data extraction API from over 65 document types in your applications.
   
 One of the most valuable features of GroupDocs.Parser is parsing documents with predefined templates. It's easy to define template and extract data from invoices, prices or other kinds of your typical documents.  
 

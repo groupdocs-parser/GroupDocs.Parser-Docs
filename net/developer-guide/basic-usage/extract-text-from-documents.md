@@ -4,7 +4,7 @@ url: parser/net/extract-text-from-documents
 title: Extract text from documents
 weight: 5
 version: 23.5
-description: "Learn how to extract text from PDF, Word, Excel, PowerPoint, and 50+ document formats using GroupDocs.Parser for .NET. Simple C# code examples for extract text from PDF C# scenarios."
+description: "Learn how to extract text from PDF, Word, Excel, PowerPoint, and 65+ document formats using GroupDocs.Parser for .NET. Simple C# code examples for extract text from PDF C# scenarios."
 keywords: Extract text, extract text from PDF C#, PDF text extraction library C#, EPUB, FB2, CHM, pdf, DOC, DOCX, PPT, PPTX, XLS, XLSX, text extraction C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False

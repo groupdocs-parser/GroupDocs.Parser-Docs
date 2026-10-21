@@ -3,7 +3,7 @@ id: extract-text-in-accurate-mode
 url: parser/python-net/extract-text-in-accurate-mode
 title: Extract text in Accurate mode
 weight: 1
-description: "Learn how to extract text in Accurate mode from documents using GroupDocs.Parser for Python via .NET. High-quality text extraction with best accuracy from PDF, Word, Excel and 60+ formats."
+description: "Learn how to extract text in Accurate mode from documents using GroupDocs.Parser for Python via .NET. High-quality text extraction with best accuracy from PDF, Word, Excel and 65+ formats."
 keywords: extract text, extract text in Accurate mode, accurate text extraction, high quality text extraction, PDF text extraction
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: False

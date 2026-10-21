@@ -4,7 +4,7 @@ url: parser/net/features-overview
 title: Features Overview
 weight: 1
 version: 23.5
-description: "Comprehensive overview of GroupDocs.Parser for .NET features including text extraction, metadata extraction, image extraction, template-based parsing, and PDF form data extraction from 50+ document formats."
+description: "Comprehensive overview of GroupDocs.Parser for .NET features including text extraction, metadata extraction, image extraction, template-based parsing, and PDF form data extraction from 65+ document formats."
 keywords: parse data, parse, extract data, PDF text extraction library C#, document parser features, extract text from PDF C#, template parsing, metadata extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False

@@ -133,7 +133,7 @@ This topic lists file formats supported by [GroupDocs.Parser for Python via .NET
 
 ## Summary
 
-GroupDocs.Parser for Python via .NET supports **60+ document formats** (65 file types in 10 families) across various categories including office documents, PDFs, emails, eBooks, archives, and images. `FileType.get_supported_file_types()` returns the same list at run time; see [Get supported file formats]({{< ref "parser/python-net/developer-guide/basic-usage/get-supported-file-formats" >}}). The library provides comprehensive data extraction capabilities including text, metadata, images, and tables depending on the format.
+GroupDocs.Parser for Python via .NET supports **65+ document formats** (65 file types in 10 families) across various categories including office documents, PDFs, emails, eBooks, archives, and images. `FileType.get_supported_file_types()` returns the same list at run time; see [Get supported file formats]({{< ref "parser/python-net/developer-guide/basic-usage/get-supported-file-formats" >}}). The library provides comprehensive data extraction capabilities including text, metadata, images, and tables depending on the format.
 
 For specific format support and feature availability, please refer to the detailed tables above or consult the [API Reference](https://reference.groupdocs.com/parser/python-net).
 

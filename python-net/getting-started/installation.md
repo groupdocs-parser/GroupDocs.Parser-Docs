@@ -13,7 +13,7 @@ structuredData:
   showOrganization: True
   application:
     name: Document Parser Tool
-    description: The product allows to extract text, images, metadata, tables, and structured data from PDF, Word, Excel, PowerPoint and 60+ other file formats. Parser API also supports template-based extraction and container processing.
+    description: The product allows to extract text, images, metadata, tables, and structured data from PDF, Word, Excel, PowerPoint and 65+ other file formats. Parser API also supports template-based extraction and container processing.
     productCode: parser
     productPlatform: python-net
   howTo:

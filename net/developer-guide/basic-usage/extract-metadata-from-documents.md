@@ -4,7 +4,7 @@ url: parser/net/extract-metadata-from-documents
 title: Extract metadata from documents
 weight: 7
 version: 23.5
-description: "Learn how to extract metadata from PDF, Word, Excel, PowerPoint and 50+ document formats using GroupDocs.Parser for .NET. Get document properties like author, title, creation date in C#."
+description: "Learn how to extract metadata from PDF, Word, Excel, PowerPoint and 65+ document formats using GroupDocs.Parser for .NET. Get document properties like author, title, creation date in C#."
 keywords: Extract metadata, extract basic metadata, extract metadata from image, document properties C#, PDF metadata extraction, document info C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False

@@ -4,7 +4,7 @@ url: parser/net/extract-text-in-accurate-mode
 title: Extract text in Accurate mode
 weight: 1
 version: 23.5
-description: "Learn how to extract text in Accurate mode from documents using GroupDocs.Parser for .NET. High-quality text extraction with best accuracy from PDF, Word, Excel and 50+ formats in C#."
+description: "Learn how to extract text in Accurate mode from documents using GroupDocs.Parser for .NET. High-quality text extraction with best accuracy from PDF, Word, Excel and 65+ formats in C#."
 keywords: extract text, extract text in Accurate mode, accurate text extraction C#, high quality text extraction, PDF text extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False

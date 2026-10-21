@@ -3,7 +3,7 @@ id: extract-text-from-documents
 url: parser/python-net/extract-text-from-documents
 title: Extract text from documents
 weight: 3
-description: "This article demonstrates how to extract text from PDF, Word, Excel, PowerPoint, Outlook, OneNote, HTML, and 60+ other documents using GroupDocs.Parser for Python via .NET."
+description: "This article demonstrates how to extract text from PDF, Word, Excel, PowerPoint, Outlook, OneNote, HTML, and 65+ other documents using GroupDocs.Parser for Python via .NET."
 keywords: Extract text, document text extraction in Python, extract text from PDF
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: False
@@ -35,7 +35,7 @@ Text extraction is one of the most fundamental features of [GroupDocs.Parser](ht
 *   Email messages
 *   Images (with OCR)
 *   eBooks (EPUB, FB2, CHM)
-*   And 60+ other formats
+*   And 65+ other formats
 
 GroupDocs.Parser's text extractor is easy to use and powerful at the same time. For advanced text extraction scenarios, refer to the [advanced usage section]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/_index.md" >}}).
 

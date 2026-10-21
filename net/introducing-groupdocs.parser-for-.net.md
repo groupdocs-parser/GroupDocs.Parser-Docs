@@ -3,7 +3,7 @@ id: introducing-groupdocs-parser-for-net
 url: parser/net/introducing-groupdocs-parser-for-net
 title: Introducing GroupDocs.Parser for .NET
 weight: 1
-description: "Powerful .NET document parsing API for extracting text, images, metadata, and structured data from 50+ file formats including PDF, Word, Excel, PowerPoint. Features template-based extraction, full-text search, and enterprise-ready document processing capabilities."
+description: "Powerful .NET document parsing API for extracting text, images, metadata, and structured data from 65+ file formats including PDF, Word, Excel, PowerPoint. Features template-based extraction, full-text search, and enterprise-ready document processing capabilities."
 keywords: "GroupDocs.Parser, .NET document parser, text extraction API, PDF parser, document data extraction, template parsing, metadata extraction, C# document processing, file format parser, enterprise document management, text mining, data extraction library, PDF text extraction library C#, extract text from PDF C#, extract tables from Excel C#"
 version: 23.5
 productName: GroupDocs.Parser for .NET
@@ -11,7 +11,7 @@ hideChildren: False
 toc: true
 ---
 ## What Is GroupDocs.Parser?
-GroupDocs.Parser is a powerful document data extraction API from over 50 document types in your applications.  
+GroupDocs.Parser is a powerful document data extraction API from over 65 document types in your applications.  
 Many popular formats are supported: PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, ODT, ODS, RTF, EPUB and many others.
   
 One of the most valuable features of GroupDocs.Parser is parsing documents with predefined templates. It's easy to define template and extract data from invoices, prices or other kinds of your typical documents.  
@@ -21,7 +21,7 @@ If you want to extract PDF forms, GroupDocs.Parser also allows to do it.
 
 ## Why Use GroupDocs.Parser?  
 
-*   No additional software is required for most document formats - extract text, metadata, and images from PDF, Office documents, and 50+ formats out of the box. Note: OCR functionality for scanned documents uses built-in OCR for English text, or you can integrate optional third-party OCR solutions for advanced needs (see [OCR usage]({{< ref "parser/net/developer-guide/advanced-usage/using-ocr/_index.md" >}}));
+*   No additional software is required for most document formats - extract text, metadata, and images from PDF, Office documents, and 65+ formats out of the box. Note: OCR functionality for scanned documents uses built-in OCR for English text, or you can integrate optional third-party OCR solutions for advanced needs (see [OCR usage]({{< ref "parser/net/developer-guide/advanced-usage/using-ocr/_index.md" >}}));
 *   Online free document data extraction App for simple cases and powerful .Net library for many data extraction scenarios;     
 *   Accurate and fast Raw text extraction modes;
 *   Document information extraction - file type, page count etc;

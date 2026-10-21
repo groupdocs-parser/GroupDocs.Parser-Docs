@@ -4,7 +4,7 @@ url: parser/net/extract-formatted-text-from-documents
 title: Extract formatted text from documents
 weight: 6
 version: 23.5
-description: "Learn how to extract formatted text as HTML, Markdown, or PlainText from PDF, Word, Excel, and 50+ document formats using GroupDocs.Parser for .NET. Preserve formatting with C# code examples."
+description: "Learn how to extract formatted text as HTML, Markdown, or PlainText from PDF, Word, Excel, and 65+ document formats using GroupDocs.Parser for .NET. Preserve formatting with C# code examples."
 keywords: Extract formatted text, Extract data, HTML text extraction, Markdown extraction, EPUB, FB2, CHM, DOC, DOCX, PPT, PPTX, XLS, XLSX, formatted text C#
 productName: GroupDocs.Parser for .NET
 hideChildren: False

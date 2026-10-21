@@ -386,7 +386,7 @@ A: Automatic table detection works excellently for text-based PDFs with clear ta
 A: Yes. Once tables are extracted, you can access individual cells by row and column index, allowing you to filter, transform, or extract specific data elements.
 
 **Q: Does GroupDocs.Parser support other document formats?**  
-A: Yes. GroupDocs.Parser supports 50+ document formats including Word, Excel, PowerPoint, and more. However, this guide focuses on PDF table extraction.
+A: Yes. GroupDocs.Parser supports 65+ document formats including Word, Excel, PowerPoint, and more. However, this guide focuses on PDF table extraction.
 
 **Q: How do I handle documents with multiple tables per page?**  
 A: The `GetTables()` method returns all tables found on a page. You can iterate through the collection and process each table individually, or filter them based on size, position, or content.

@@ -4,7 +4,7 @@ url: parser/net/extract-images-from-documents
 title: Extract images from documents
 weight: 8
 version: 23.5
-description: "Learn how to extract images from PDF, Word, Excel, PowerPoint and 50+ document formats using GroupDocs.Parser for .NET. Extract images with position data, coordinates, and save to files in C#."
+description: "Learn how to extract images from PDF, Word, Excel, PowerPoint and 65+ document formats using GroupDocs.Parser for .NET. Extract images with position data, coordinates, and save to files in C#."
 keywords: extract images, extract images from pdf, extract images from DOCX, image extraction C#, extract images with coordinates, document image extraction
 productName: GroupDocs.Parser for .NET
 hideChildren: False

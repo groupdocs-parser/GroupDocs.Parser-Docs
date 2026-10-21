@@ -205,7 +205,7 @@ The complete `AGENTS.md` shipped in the 26.10 package:
 
 > Instructions for AI agents working with this package.
 
-Extract text, formatted text (HTML, Markdown), tables, images, metadata, hyperlinks, barcodes, annotations and the table of contents from PDF, Word, Excel, PowerPoint, email, eBook, archive and image files (60+ formats).
+Extract text, formatted text (HTML, Markdown), tables, images, metadata, hyperlinks, barcodes, annotations and the table of contents from PDF, Word, Excel, PowerPoint, email, eBook, archive and image files (65+ formats).
 
 ## Install
 

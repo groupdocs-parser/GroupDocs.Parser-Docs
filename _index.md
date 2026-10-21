@@ -10,6 +10,10 @@ hideChildren: true
 showFeedbackForm: false
 ---
 
+## Choose SDK, Cloud, or MCP
+
+Use the **on-premise GroupDocs.Parser SDK** (.NET, Java, Python via .NET) when you need full parsing APIs inside your own process and infrastructure. Use **GroupDocs.Parser Cloud** when you prefer a hosted REST API instead of shipping the SDK binaries. Use the **Parser MCP server** when an IDE or agent should call a small tool surface over MCP - that path is separate from these SDK guides. Start with the SDK docs for your platform ([.NET](/parser/net/), [Java](/parser/java/), [Python via .NET](/parser/python-net/)), or the [MCP quick start](/parser/mcp/getting-started/) if you specifically need MCP tools.
+
 <div class="gdoc-list-descr">
 GroupDocs.Parser helps developers extract text, formatted text, tables, images, metadata, hyperlinks and barcodes from PDF, Microsoft Office, OpenDocument, email, eBook, archive and image files across .NET, Java, Node.js, and Python SDKs. See the supported formats tables for <a href="/parser/net/supported-document-formats/">.NET</a>, <a href="/parser/java/supported-document-formats/">Java</a>, <a href="/parser/nodejs-java/supported-document-formats/">Node.js</a> and <a href="/parser/python-net/supported-document-formats/">Python</a> for the full lists.
 </div>

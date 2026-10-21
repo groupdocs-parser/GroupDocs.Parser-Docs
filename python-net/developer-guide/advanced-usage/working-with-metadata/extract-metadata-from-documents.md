@@ -3,7 +3,7 @@ id: extract-metadata-from-documents-advanced
 url: parser/python-net/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents
 title: Extract metadata from documents
 weight: 1
-description: "Learn how to extract metadata from PDF, Word, Excel, PowerPoint and 60+ document formats using GroupDocs.Parser for Python via .NET. Get document properties like author, title, creation date."
+description: "Learn how to extract metadata from PDF, Word, Excel, PowerPoint and 65+ document formats using GroupDocs.Parser for Python via .NET. Get document properties like author, title, creation date."
 keywords: Extract metadata, extract basic metadata, extract metadata from image, document properties, PDF metadata extraction, document info
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: False

@@ -4,7 +4,7 @@ url: parser/python-net
 title: GroupDocs.Parser for Python via .NET
 linkTitle: GroupDocs.Parser for Python
 weight: 1
-description: GroupDocs.Parser for Python developer documentation. Learn how to extract text, images, tables, and metadata from PDF, DOCX, XLSX, and 60+ document formats using Python.
+description: GroupDocs.Parser for Python developer documentation. Learn how to extract text, images, tables, and metadata from PDF, DOCX, XLSX, and 65+ document formats using Python.
 keywords: parse, extract, parser api, python api, pdf, words, xlsx, microsoft words, docx, pptx, text extraction, metadata extraction
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: True
@@ -25,7 +25,7 @@ AddLibInfoScript: True
 {{< button style="primary" link="https://pypi.org/project/groupdocs-parser-net/" >}} {{< icon "gdoc_download" >}} Package repository {{< /button >}}
 
 
-**GroupDocs.Parser for Python via .NET** is a Python version of the GroupDocs.Parser API. It provides the ability to extract text, images, metadata, tables, and structured data from over 60 document formats. This powerful API supports parsing documents with templates for structured data extraction, as well as raw and formatted text extraction modes. The library supports popular formats including PDF, Microsoft Office, OpenOffice, images, archives, and more.
+**GroupDocs.Parser for Python via .NET** is a Python version of the GroupDocs.Parser API. It provides the ability to extract text, images, metadata, tables, and structured data from over 65 document formats. This powerful API supports parsing documents with templates for structured data extraction, as well as raw and formatted text extraction modes. The library supports popular formats including PDF, Microsoft Office, OpenOffice, images, archives, and more.
 
 ---
 
