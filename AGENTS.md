@@ -2,7 +2,7 @@
 
 > Instructions for AI agents working with **GroupDocs.Parser** documentation in this repository.
 
-GroupDocs.Parser is an on-premise SDK for extracting text, formatted text, tables, images, metadata, hyperlinks and barcodes from PDF, Microsoft Office, OpenDocument, email, eBook, archive and image files. The .NET and Python docs also cover extracting annotations.
+GroupDocs.Parser is an on-premise SDK for extracting text, formatted text, tables, images, metadata, hyperlinks and barcodes from PDF, Microsoft Office, OpenDocument, email, eBook, archive and image files. The .NET, Java and Python docs also cover extracting annotations.
 
 **Supported formats (canon):** the per-platform tables below. Format lists differ between platforms, so do not quote one platform's list or count for another.
 
