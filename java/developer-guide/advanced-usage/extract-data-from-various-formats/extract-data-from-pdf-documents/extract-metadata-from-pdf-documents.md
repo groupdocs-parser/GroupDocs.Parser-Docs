@@ -3,35 +3,45 @@ id: extract-metadata-from-pdf-documents
 url: parser/java/extract-metadata-from-pdf-documents
 title: Extract metadata from PDF documents
 weight: 2
-description: ""
-keywords: 
+description: "Learn how to extract metadata from PDF files in Java using GroupDocs.Parser for Java. Get document properties such as title, author, subject, creation date, and more."
+keywords: extract PDF metadata Java, PDF metadata Java, read PDF document properties Java, get PDF file information, GroupDocs.Parser metadata extraction
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-To extract metadata from PDF documents [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method is used. This method allows to extract the following metadata:
+
+PDF files often contain **metadata** such as the title, subject, author, creation date, and application used to generate the document. With **GroupDocs.Parser for Java**, you can easily read these metadata properties programmatically using the [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method.
+
+This guide shows how to extract metadata from PDF documents in Java step by step.
+
+---
+
+## What metadata can be extracted?
+
+The `getMetadata` method can return the following properties from a PDF document:
 
 | Name | Description |
 | --- | --- |
-| title | The title of the presentation. |
-| subject | The subject of the presentation. |
-| keywords | The keyword of the presentation. |
-| author | The name of the presentation's author. |
-| application | The name of the application. |
-| application-version | The version number of the application that created the presentation. |
-| created-time | The time of the presentation creation. |
-| last-saved-time | The time of the the presentation when it was last saved. |
+| **title** | Title of the PDF document |
+| **subject** | Subject of the PDF document |
+| **keywords** | Keywords associated with the document |
+| **author** | Author of the document |
+| **application** | Application that created the PDF |
+| **created-time** | Date and time the PDF was created |
+| **last-saved-time** | Date and time the PDF was last modified |
 
-Here are the steps to extract metadata from PDF document:
+*Note: The available metadata depends on the PDF file itself. Properties that are empty in the document are not included in the result.*
 
-*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial document;
-*   Call [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method and obtain collection of document metadata objects;
-*   Iterate through the collection and get metadata names and values.
+---
 
-{{< alert style="warning" >}}
-[getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns *null* value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for TXT files. Therefore, for TXT file [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata())  method returns *null*. If PDF document has no metadata, [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns an empty collection.
-{{< /alert >}}
+## How to extract PDF metadata in Java
 
-The following example demonstrates how to extract metadata from PDF document:
+Follow these steps to get metadata from a PDF document:
+
+1. **Instantiate the [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object** for the PDF file.
+2. **Call the [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method** to retrieve the collection of [MetadataItem](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/MetadataItem) objects.
+3. **Iterate through the collection** and read metadata names and values.
+
+### Example: extract PDF metadata in Java
 
 ```java
 // Create an instance of Parser class
@@ -46,17 +56,29 @@ try (Parser parser = new Parser(Constants.SamplePdf)) {
 }
 ```
 
+{{< alert style="warning" >}}
+[getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns *null* value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for TXT files. Therefore, for TXT file [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata())  method returns *null*. If PDF document has no metadata, [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns an empty collection.
+{{< /alert >}}
+
+## Why extract PDF metadata?
+
+Extracting PDF metadata is useful for:
+
+*   Document management – quickly find and categorize files by author, subject, or keywords.
+*   Compliance checks – verify creation and modification dates.
+*   Search indexing – improve search accuracy by including document properties.
+
 ## More resources
 
 ### GitHub examples
 
-You may easily run the code above and see the feature in action in our GitHub examples:
+You may easily run the code above and see the feature in action in our GitHub examples:
 
 *   [GroupDocs.Parser for .NET examples](https://github.com/groupdocs-parser/GroupDocs.Parser-for-.NET)    
 *   [GroupDocs.Parser for Java examples](https://github.com/groupdocs-parser/GroupDocs.Parser-for-Java)    
 
 ### Free online document parser App
 
-Along with full featured .NET library we provide simple, but powerful free Apps.
+Along with full featured Java library we provide simple, but powerful free Apps.
 
 You are welcome to parse documents and extract data from PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, Emails and more with our free online [Free Online Document Parser App](https://products.groupdocs.app/parser).

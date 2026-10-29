@@ -3,44 +3,56 @@ id: extract-metadata-from-microsoft-office-excel-spreadsheets
 url: parser/java/extract-metadata-from-microsoft-office-excel-spreadsheets
 title: Extract metadata from Microsoft Office Excel spreadsheets
 weight: 2
-description: ""
-keywords: 
+description: "Learn how to extract metadata from Microsoft Excel spreadsheets (.xls, .xlsx) in Java using GroupDocs.Parser for Java. Step-by-step guide with code example."
+keywords: extract Excel metadata Java, Excel spreadsheet metadata Java, get Excel file properties Java, read Excel document metadata, GroupDocs.Parser metadata extraction
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-To extract metadata from Microsoft Office Excel spreadsheets [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method is used. This method allows to extract the following metadata:
+
+Microsoft Excel files often contain hidden **metadata** such as the author, company, creation date, last modification time, and more. With **GroupDocs.Parser for Java**, you can easily extract this metadata from Excel spreadsheets (`.xls` and `.xlsx`) using the [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method.
+
+This guide explains how to extract Excel file metadata programmatically in just a few steps.
+
+---
+
+## What metadata can be extracted?
+
+The `getMetadata` method allows you to access a wide range of Excel spreadsheet properties:
 
 | Name | Description |
 | --- | --- |
-| title | The title of the spreadsheet. |
-| subject | The subject of the spreadsheet. |
-| keywords | The keyword of the spreadsheet. |
-| comments | The comments of the spreadsheet. |
-| content-status | The content status of the spreadsheet. |
-| category | The category of the spreadsheet. |
-| company | The company of the spreadsheet. |
-| manager | The manager of the spreadsheet. |
-| author | The name of the spreadsheet's author. |
-| last-author | The name of the last spreadsheet's author. |
-| hyperlink-base | The base string used for evaluating relative hyperlinks in this spreadsheet. |
-| application | The name of the application. |
-| application-version | The version number of the application that created the spreadsheet. |
-| template | The informational name of the spreadsheet template. |
-| created-time | The time of the spreadsheet creation. |
-| last-saved-time | The time of the the spreadsheet when it was last saved. |
-| last-printed-time | The time of the spreadsheet when it was last printed. |
-| revision-number | The spreadsheet revision number. |
-| total-editing-time | The total editing time in minutes. |
+| **title** | Spreadsheet title |
+| **subject** | Spreadsheet subject |
+| **keywords** | Spreadsheet keywords |
+| **comments** | User comments |
+| **content-status** | Status of the spreadsheet |
+| **category** | Spreadsheet category |
+| **company** | Company name |
+| **manager** | Manager name |
+| **author** | Original author |
+| **last-author** | Last modified by |
+| **hyperlink-base** | Base URL for relative hyperlinks |
+| **application** | Application used to create the file |
+| **application-version** | Version of the application |
+| **template** | Template name |
+| **created-time** | Creation time |
+| **last-saved-time** | Last saved timestamp |
+| **last-printed-time** | Last printed timestamp |
+| **total-editing-time** | Total editing time (in minutes) |
 
-Here are the steps to extract metadata from Microsoft Office Excel spreadsheet:
+Properties that are empty in the spreadsheet are not included in the result.
 
-*   Instantiate [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object for the initial spreadsheet;
-*   Call [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method and obtain collection of document metadata objects;
-*   Iterate through the collection and get metadata names and values.
+---
 
-{{< alert style="warning" >}}[getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns null value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for CSV files. Therefore, for CSV file [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns null. If Microsoft Office Excel spreadsheet has no metadata, [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns an empty collection.{{< /alert >}}
+{{< alert style="warning" >}}[getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns null value if metadata extraction isn't supported for the document. For example, metadata extraction isn't supported for CSV files. Therefore, for CSV file [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns null. If Microsoft Office Excel spreadsheet has no metadata, [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method returns an empty collection.{{< /alert >}}
 
-The following example demonstrates how to extract metadata from Excel spreadsheet:
+## How to extract Excel metadata in Java
+
+Follow these steps to extract metadata from an Excel file:
+
+1. **Instantiate the [Parser](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser) object** for the Excel spreadsheet.
+2. **Call the [getMetadata](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getMetadata()) method** to retrieve all [MetadataItem](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/MetadataItem) objects.
+3. **Iterate through the collection** and print metadata names and values.
 
 ```java
 // Create an instance of Parser class
@@ -59,13 +71,13 @@ try (Parser parser = new Parser(Constants.SampleXlsx)) {
 
 ### GitHub examples
 
-You may easily run the code above and see the feature in action in our GitHub examples:
+You may easily run the code above and see the feature in action in our GitHub examples:
 
 *   [GroupDocs.Parser for .NET examples](https://github.com/groupdocs-parser/GroupDocs.Parser-for-.NET)    
 *   [GroupDocs.Parser for Java examples](https://github.com/groupdocs-parser/GroupDocs.Parser-for-Java)    
 
 ### Free online document parser App
 
-Along with full featured .NET library we provide simple, but powerful free Apps.
+Along with full featured Java library we provide simple, but powerful free Apps.
 
 You are welcome to parse documents and extract data from PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, Emails and more with our free online [Free Online Document Parser App](https://products.groupdocs.app/parser).
