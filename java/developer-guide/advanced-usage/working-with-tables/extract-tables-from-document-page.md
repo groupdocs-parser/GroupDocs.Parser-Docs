@@ -87,6 +87,8 @@ try (Parser parser = new Parser(Constants.SampleInvoicePagesPdf)) {
 }
 ```
 
+## More resources
+
 ### GitHub examples
 
 You may easily run the code above and see the feature in action in our GitHub examples:
