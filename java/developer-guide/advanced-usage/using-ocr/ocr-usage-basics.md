@@ -91,14 +91,23 @@ try (Parser parser = new Parser(Constants.SampleScan, settings)) {
 }
 ```
 
-[TextOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/textoptions/) and [PageTextAreaOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/pagetextareaoptions) classes have the property OcrOptions. OcrOptions class has the following members:
+[TextOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/textoptions/) and [PageTextAreaOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/pagetextareaoptions) classes accept an [OcrOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions) object in the constructor (`new TextOptions(false, true, ocrOptions)`, `new PageTextAreaOptions(true, ocrOptions)`) and return it by the `getOcrOptions` method. OcrOptions class has the following members:
 
 | Member | Description |
 | --- | --- |
-| Rectangle | Is used to pass a rectangular area to restrict the area of the text recognition. |
-| Handler | An instance of [OcrEventHandler](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler) class to handle any warnings which occur while the text recognition. |
+| getRectangle / setRectangle | Is used to pass a rectangular area to restrict the area of the text recognition. |
+| getHandler / setHandler | An instance of [OcrEventHandler](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler) class to handle any warnings which occur while the text recognition. |
+| getUseSpellChecker / setUseSpellChecker | A flag that asks the connector to use spell checking (if the OCR engine supports it). |
+| getLanguage / setLanguage | The recognition language - a value of the [Language](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/language) enum. `Language.Eng` by default; passing *null* resets it to `Language.Eng`. |
+| getPagePreviewOptions / setPagePreviewOptions | [PagePreviewOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/pagepreviewoptions) object with the resolution (DPI) the connector may use for the page image. |
 
-The following sections describe how to use this property.
+OcrOptions object is passed to the OCR connector, and the connector is responsible for applying these values: GroupDocs.Parser itself only uses the rectangle (to scale it to the page image) and the handler (to collect warnings).
+
+{{< alert style="warning" >}}
+In GroupDocs.Parser for Java 26.10 the connector receives your OcrOptions object as is only when the source document is an image file. For PDF and other documents that are rendered to images before the recognition, the connector receives a copy that contains only the rectangle (scaled to the rendered page image) and the handler; language, spell checker flag and page preview options are not passed. The page images are rendered by the parser itself (images are passed in their original size; document pages are rendered at 144 DPI), so `PagePreviewOptions` doesn't change the image that the connector receives.
+{{< /alert >}}
+
+The following sections describe how to use these members.
 
 ## How to restrict the area of the text recognition
 
@@ -125,7 +134,7 @@ try (Parser parser = new Parser(Constants.SampleScan, settings)) {
 
 ## How to handle warnings
 
-To restrict an area of the image for the text recognition [OcrOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions) class is used. Set [Handler](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions/#getHandler--) property to handle warning messages. [hasWarnings](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler/#hasWarnings--) property of [OcrEventHandler](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler) class is used to indicate if any warnings occur. Use [Warnings](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler/#getWarnings--) to get all warnings or [getWarnings](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler/#getWarnings-int-) method for warnings for the page. The empty list returns if no warning occurs during the text recognition.
+To handle warnings which occur while the text recognition [OcrOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions) class is used. Set [Handler](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions/#getHandler--) property to handle warning messages. [hasWarnings](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler/#hasWarnings--) property of [OcrEventHandler](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler) class is used to indicate if any warnings occur. Use [Warnings](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler/#getWarnings--) to get all warnings or [getWarnings](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocreventhandler/#getWarnings-int-) method for warnings for the page. The empty list returns if no warning occurs during the text recognition.
 
 The following example shows how to handle warning messages:
 
@@ -155,3 +164,30 @@ try (Parser parser = new Parser(Constants.SampleScan, settings)) {
     }
 }
 ```
+
+## How to set the recognition language and page preview options
+
+To pass the recognition language to the connector, call [setLanguage](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions/#setLanguage-com.groupdocs.parser.options.Language-) method of [OcrOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions) class with a [Language](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/language) value. [PagePreviewOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/pagepreviewoptions) object with the required DPI can be passed to the [OcrOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions) constructor or set by [setPagePreviewOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ocroptions/#setPagePreviewOptions-com.groupdocs.parser.options.PagePreviewOptions-) method. Which languages are supported and how these values are applied depends on the OCR connector (see the note above).
+
+The following example shows how to set the recognition language and the page preview resolution:
+
+```Java
+// Create an instance of ParserSettings class with OCR Connector
+ParserSettings settings = new ParserSettings(new AsposeOcrOnPremise());
+// Create an instance of Parser class with settings
+try (Parser parser = new Parser(Constants.SampleScan, settings)) {
+    // Create an instance of OcrOptions with the page preview resolution
+    OcrOptions ocrOptions = new OcrOptions(new PagePreviewOptions(144));
+    // Set the recognition language
+    ocrOptions.setLanguage(Language.Jpn);
+    // Create an instance of TextOptions to use OCR
+    TextOptions options = new TextOptions(false, true, ocrOptions);
+    // Extract a text using OCR
+    try (TextReader reader = parser.getText(options)) {
+        // Print a text or 'not supported' message
+        System.out.println(reader == null ? "Text extraction isn't supported" : reader.readToEnd());
+    }
+}
+```
+
+Inside the connector, read these values from the `options` parameter, for example `options.getLanguage()` and `options.getPagePreviewOptions()`, and map them to the settings of your OCR engine.
