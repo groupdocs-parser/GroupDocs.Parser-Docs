@@ -7,10 +7,11 @@ description: "This article explains that how to extract text in Raw mode."
 keywords: extract text, extract text in Raw mode
 productName: GroupDocs.Parser for Java
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract a text from documents.
 
-The **Raw** mode is the fastest text extraction mode and it means that performance wlll be the best possible.
+The **Raw** mode is the fastest text extraction mode and it means that performance will be the best possible.
 
 Raw mode usually retrieves text in worse quality than Accurate mode, but in some cases performance is more important than quality.
 
@@ -58,7 +59,7 @@ try (Parser parser = new Parser(Constants.SamplePdf)) {
 }
 ```
 
-## Extract text from page
+## Extract text from a page
 
 Here are the steps to extract a raw text from the document page:
 
@@ -90,7 +91,7 @@ try (Parser parser = new Parser(Constants.SamplePdf)) {
     // Iterate over pages
     for (int p = 0; p < documentInfo.getRawPageCount(); p++) {
         // Print a page number
-        System.out.println(String.format("Page %d/%d", p + 1, documentInfo.getPageCount()));
+        System.out.println(String.format("Page %d/%d", p + 1, documentInfo.getRawPageCount()));
         // Extract a text into the reader
         try (TextReader reader = parser.getText(p, new TextOptions(true))) {
             // Print a text from the document

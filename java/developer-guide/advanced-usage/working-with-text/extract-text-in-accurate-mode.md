@@ -7,6 +7,7 @@ description: "This article explains that how to extract text in Accurate mode."
 keywords: extract text, extract text in Accurate mode
 productName: GroupDocs.Parser for Java
 hideChildren: False
+toc: true
 ---
 GroupDocs.Parser provides the functionality to extract text from documents.
 
@@ -53,7 +54,7 @@ try (Parser parser = new Parser(Constants.SamplePdf)) {
 } 
 ```
 
-## Extract text from page
+## Extract text from a document page
 
 Here are the steps to extract a text from the document page:
 

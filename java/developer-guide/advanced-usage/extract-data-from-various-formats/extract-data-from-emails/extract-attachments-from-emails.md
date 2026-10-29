@@ -7,6 +7,7 @@ description: ""
 keywords: 
 productName: GroupDocs.Parser for Java
 hideChildren: False
+toc: true
 ---
   
 
@@ -19,6 +20,7 @@ Email **Attachment** can contain the following metadata:
 | Name | Description |
 | --- | --- |
 | content-type | The MIME type of the attachment content |
+| disposition | The attachment disposition: `inline` or `attachment` |
 
 These metadata refer to a container element itself, not a document.
 
@@ -63,6 +65,33 @@ try (Parser parser = new Parser(Constants.SampleMsg)) {
 }
 ```
 
+## Detect inline images
+
+To detect if image attachment is inline, `disposition` metadata is used. It takes `inline` or `attachment` values. The value is obtained by [getMetadataValue](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/ContainerItem#getMetadataValue(java.lang.String)) method of [ContainerItem](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.data/ContainerItem) class.
+
+The following example shows how to detect inline attachments:
+
+```java
+// Create an instance of Parser class
+try (Parser parser = new Parser(Constants.InlineImages)) {
+    // Extract attachments from the container
+    Iterable<ContainerItem> attachments = parser.getContainer();
+    // Check if container extraction is supported
+    if (attachments == null) {
+        System.out.println("Container extraction isn't supported");
+        return;
+    }
+    // Iterate over attachments
+    for (ContainerItem item : attachments) {
+        // Check metadata for 'disposition' item
+        if ("inline".equals(item.getMetadataValue("disposition"))) {
+            // If it's 'inline' then print an item name
+            System.out.println(item.getName());
+        }
+    }
+}
+```
+
 ## More resources
 
 ### GitHub examples
@@ -74,6 +103,6 @@ You may easily run the code above and see the feature in action in our GitHub e
 
 ### Free online document parser App
 
-Along with full featured .NET library we provide simple, but powerful free Apps.
+Along with full featured Java library we provide simple, but powerful free Apps.
 
 You are welcome to parse documents and extract data from PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, Emails and more with our free online [Free Online Document Parser App](https://products.groupdocs.app/parser).
