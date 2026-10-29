@@ -349,6 +349,148 @@ Template template = new Template(java.util.Arrays.asList(templateItems));
 
 ```
 
+## Images and scanned PDFs
+
+[ParseByTemplateOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ParseByTemplateOptions) class is used with [parseByTemplate(Template, ParseByTemplateOptions)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#parseByTemplate(com.groupdocs.parser.templates.Template,%20com.groupdocs.parser.options.ParseByTemplateOptions)) method. It has the following members:
+
+| Member | Description |
+| --- | --- |
+| getPageIndex / setPageIndex | The zero-based index of the page to parse; *null* to parse all pages. |
+| getUseOcr / setUseOcr | The value that indicates whether OCR is requested for template parsing. |
+| getOcrOptions / setOcrOptions | The [OcrOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/OcrOptions) object for the OCR connector. |
+
+{{< alert style="warning" >}}
+GroupDocs.Parser for Java 26.10 doesn't support template-based parsing of images and scanned PDFs. Parsing by template isn't available for image files ([parseByTemplate](https://reference.groupdocs.com/parser/java/com.groupdocs.parser/Parser#parseByTemplate(com.groupdocs.parser.templates.Template)) returns *null* for them), and the `useOcr` and `ocrOptions` values of [ParseByTemplateOptions](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.options/ParseByTemplateOptions) are accepted but not used yet: the template is applied to the text layer of the document, and only the page index is taken into account. To get data from scanned documents, create the parser with an OCR connector and extract text areas with OCR (see [OCR Usage Basics]({{< ref "parser/java/developer-guide/advanced-usage/using-ocr/ocr-usage-basics.md" >}})).
+{{< /alert >}}
+
+The following example shows how to parse only the first page of the document by the template:
+
+```java
+// Load a document template from the file
+Template template = Template.load("template.xml");
+
+// Create an instance of Parser class
+try (Parser parser = new Parser(Constants.SamplePdfWithBarcodes)) {
+    // Parse the first page of the document by the template
+    DocumentData data = parser.parseByTemplate(template, new ParseByTemplateOptions(0, false));
+
+    // Check if parsing by template is supported
+    if (data == null) {
+        System.out.println("Parsing by template isn't supported.");
+        return;
+    }
+
+    // Print all extracted data
+    for (int i = 0; i < data.getCount(); i++) {
+        // Print the field's name and text
+        System.out.println(data.get(i).getName() + ": " + data.get(i).getText());
+    }
+}
+```
+
+## Template serialization
+
+Templates can be loaded from XML files instead of creating them in the code. Use [Template.load(String)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.templates/Template#load(java.lang.String)) to load a template from a file or [Template.load(InputStream)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.templates/Template#load(java.io.InputStream)) to load it from a stream. If the XML doesn't represent a template in a valid format, [GroupDocsParserException](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.exceptions/GroupDocsParserException) is thrown.
+
+```java
+// Load a document template from the file
+Template template = Template.load("template.xml");
+
+// Create an instance of Parser class
+try (Parser parser = new Parser(Constants.SamplePdfWithBarcodes)) {
+    // Parse the document by the template
+    DocumentData data = parser.parseByTemplate(template);
+
+    // Print all extracted data
+    for (int i = 0; i < data.getCount(); i++) {
+        // Print the field's name and text
+        System.out.println(data.get(i).getName() + ": " + data.get(i).getText());
+    }
+}
+```
+
+Templates can be saved from the code with [save(String)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.templates/Template#save(java.lang.String)) or [save(OutputStream)](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.templates/Template#save(java.io.OutputStream)) methods:
+
+```java
+// Create a collection of template items
+TemplateItem[] templateItems = new TemplateItem[]
+        {
+                // ... items were omitted, see samples above
+        };
+
+// Create a document template
+Template template = new Template(java.util.Arrays.asList(templateItems));
+// Save the document template to the file
+template.save("template.xml");
+```
+
+You can also create templates in any text editor. The following example shows a template with one fixed field:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE template SYSTEM "template.v1.dtd">
+<template version="2.0">
+  <items>
+    <field name="Address">
+      <fixed position="35;160" size="110;20"/>
+    </field>
+  </items>
+</template>
+```
+
+Points and sizes are written as two numbers separated by a semicolon. The `save` method writes version `2.0`; the `load` method accepts versions `1.0` and `2.0`. Start hand-written files with the same `DOCTYPE` declaration that `save` writes: `template.v1.dtd` is resolved from a copy bundled in the library, nothing is downloaded. XML DTD file is the following:
+
+```xml
+<!ELEMENT template (items)>
+<!ATTLIST template version CDATA #REQUIRED>
+<!ATTLIST template rectangleTolerance CDATA #IMPLIED>
+
+<!ELEMENT items (barcode|field|table)*>
+
+<!ELEMENT barcode EMPTY>
+<!ATTLIST barcode name CDATA #REQUIRED>
+<!ATTLIST barcode pageIndex CDATA #IMPLIED>
+<!ATTLIST barcode position CDATA #REQUIRED>
+<!ATTLIST barcode size CDATA #REQUIRED>
+
+<!ELEMENT field (fixed|regex|link)>
+<!ATTLIST field name CDATA #REQUIRED>
+<!ATTLIST field pageIndex CDATA #IMPLIED>
+
+<!ELEMENT fixed EMPTY>
+<!ATTLIST fixed position CDATA #REQUIRED>
+<!ATTLIST fixed size CDATA #REQUIRED>
+
+<!ELEMENT regex EMPTY>
+<!ATTLIST regex expression CDATA #REQUIRED>
+<!ATTLIST regex matchCase CDATA #IMPLIED>
+
+<!ELEMENT link EMPTY>
+<!ATTLIST link fieldName CDATA #REQUIRED>
+<!ATTLIST link searchArea CDATA #REQUIRED>
+<!ATTLIST link edges CDATA #REQUIRED>
+<!ATTLIST link autoScale CDATA #IMPLIED>
+
+<!ELEMENT table (layout|parameters)>
+<!ATTLIST table name CDATA #REQUIRED>
+<!ATTLIST table pageIndex CDATA #IMPLIED>
+
+<!ELEMENT layout EMPTY>
+<!ATTLIST layout verticalSeparators CDATA #REQUIRED>
+<!ATTLIST layout horizontalSeparators CDATA #REQUIRED>
+
+<!ELEMENT parameters EMPTY>
+<!ATTLIST parameters position CDATA #REQUIRED>
+<!ATTLIST parameters size CDATA #REQUIRED>
+<!ATTLIST parameters verticalSeparators CDATA #IMPLIED>
+<!ATTLIST parameters hasMergedCells CDATA #IMPLIED>
+<!ATTLIST parameters minRowCount CDATA #IMPLIED>
+<!ATTLIST parameters minColumnCount CDATA #IMPLIED>
+<!ATTLIST parameters minVerticalSpace CDATA #IMPLIED>
+```
+
+In addition to the attributes declared in the DTD, `barcode`, `field` and `table` elements can have an optional `pageWidth` attribute. `save` writes it for template items created with a page width, and `load` reads it.
+
 ## More resources
 
 ### GitHub examples
