@@ -12,7 +12,7 @@ GroupDocs.Parser is an on-premise SDK for extracting text, formatted text, table
 |---|---|---|
 | `net` | [net/_index.md](net/_index.md) | [net/getting-started/supported-document-formats.md](net/getting-started/supported-document-formats.md) |
 | `java` | [java/_index.md](java/_index.md) | [java/getting-started/supported-document-formats.md](java/getting-started/supported-document-formats.md) |
-| `python-net` | [python-net/_index.md](python-net/_index.md) | [python-net/supported-document-formats.md](python-net/supported-document-formats.md) |
+| `python-net` | [python-net/_index.md](python-net/_index.md) | [python-net/getting-started/supported-document-formats.md](python-net/getting-started/supported-document-formats.md) |
 | `nodejs-java` | [nodejs-java/_index.md](nodejs-java/_index.md) | [nodejs-java/getting-started/supported-document-formats.md](nodejs-java/getting-started/supported-document-formats.md) |
 | `mcp` | [mcp/_index.md](mcp/_index.md) | [mcp/supported-formats.md](mcp/supported-formats.md) |
 

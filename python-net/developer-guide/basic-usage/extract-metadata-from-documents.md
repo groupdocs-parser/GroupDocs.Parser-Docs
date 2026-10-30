@@ -11,7 +11,7 @@ toc: true
 tags: python, parser, metadata, document-properties, v26.10
 ---
 
-GroupDocs.Parser extracts metadata such as author, title, creation date, and custom properties from supported formats (see [supported formats]({{< ref "parser/python-net/supported-document-formats.md" >}})).
+GroupDocs.Parser extracts metadata such as author, title, creation date, and custom properties from supported formats (see [supported formats]({{< ref "parser/python-net/getting-started/supported-document-formats.md" >}})).
 
 ## Extract metadata
 {{< tabs "example-1" >}}

@@ -2,135 +2,65 @@
 id: features-overview
 url: parser/python-net/features-overview
 title: Features Overview
+linkTitle: Features Overview
 weight: 1
-description: "This article describes the main functions of GroupDocs.Parser for Python via .NET. Extracting text, images, metadata, tables, and structured data from documents with template-based parsing support."
-keywords: text extraction, parse data, extract metadata, extract images, template parsing
+description: "GroupDocs.Parser for Python via .NET extracts text, formatted text, tables, images, hyperlinks, metadata and annotations through a single, format-independent API, and parses documents by templates."
+keywords: text extraction, formatted text, markdown, html, extract tables, extract images, extract metadata, annotations, template parsing, OCR, python
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: False
 toc: True
 ---
 
-{{< alert style="info" >}}GroupDocs.Parser is a feature-rich document data parsing API. Here you may find description of the most important features.{{< /alert >}}
+GroupDocs.Parser for Python via .NET extracts data from a wide range of [supported document formats]({{< ref "parser/python-net/getting-started/supported-document-formats.md" >}}). Every operation follows the same workflow: open a document with `Parser`, call an extraction method such as `get_text()`, `get_tables()` or `get_metadata()`, and read the result. A method returns `None` when the document's format does not support that operation, so one code path serves every format.
 
-## Parse Data from Documents
+## Text extraction
 
-GroupDocs.Parser allows to parse documents by user-defined templates.
+Extract the plain text of a whole document or of one page. The accurate mode keeps the reading order and layout; the raw mode is faster and fits pipelines where speed matters more than layout. Scanned pages and images are read with OCR. See [Extract text from documents]({{< ref "parser/python-net/developer-guide/basic-usage/extract-text-from-documents.md" >}}), [Extract text in Accurate mode]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode.md" >}}), and [Extract text in Raw mode]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode.md" >}}).
 
-It is easy to create a template with data field definitions and table definitions. Then it's easy to use the template (just pass the Template object to `parse_by_template` method) and extract data such as prices, invoices, tables from your typical documents.
+## Formatted text
 
-## Extract Text
+`get_formatted_text()` returns HTML, Markdown or plain text that keeps the document's headings, numbered and bulleted lists, tables, hyperlinks, and bold and italic text, ready for an HTML preview or a Markdown pipeline. See [Working with Text]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/working-with-text.md" >}}).
 
-GroupDocs.Parser provides several text extraction methods that cover various text retrieval scenarios.
+## Search, structure, and text areas
 
-*   Extract plain text from any of the supported documents
-*   Extract HTML or Markdown formatted text for a fast preview
-*   Extract structured text
-*   Extract text areas with coordinates, text style and other info
-*   Search text by a keyword or regular expression; get text around the found word
+Search a document by keyword or regular expression and get the text around each hit, read its structure (paragraphs, headings, lists, tables and hyperlinks) as XML, or get its text areas with their coordinates and text style. See [Search text]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/search-text.md" >}}), [Extract highlights]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/extract-highlights.md" >}}), [Extract text structure]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/extract-text-structure.md" >}}), and [Extract text areas]({{< ref "parser/python-net/developer-guide/advanced-usage/extraction/extract-text-areas.md" >}}).
 
-Below different text extraction aspects are described:
+## Tables
 
-### Accurate Text Extraction Mode
+Extract the tables of PDF, Word, spreadsheet and presentation pages with their rows and cells, from a whole document or one page. See [Extract tables from document]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document.md" >}}) and [Extract tables from document page]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page.md" >}}).
 
-One of the most demanded features is accurate text extraction. GroupDocs.Parser allows to easily implement it using simple `get_text` method.
+## Images and hyperlinks
 
-### Raw Text Extraction Mode
+Extract the images of a document, a page or a rectangular page area, and save them to files in their own format or another. Hyperlinks are extracted the same way. See [Extract Images from Documents]({{< ref "parser/python-net/developer-guide/basic-usage/extract-images-from-documents.md" >}}), [Extract images to files]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-images/extract-images-to-files.md" >}}), and [Extract hyperlinks from document]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document.md" >}}).
 
-GroupDocs.Parser provides a way to increase text extraction performance with **Raw** text extraction mode for some formats. The text doesn't look so accurate, but performance is higher.
+## Metadata and document information
 
-This feature is useful in those text extraction scenarios when text quality may not be the best, but performance is critical.
+Read document properties such as title, author and dates with `get_metadata()`, the table of contents with `get_toc()`, and the file type, page count and size with `get_document_info()`. List every format the library reads with `FileType.get_supported_file_types()`. See [Extract Metadata from Documents]({{< ref "parser/python-net/developer-guide/basic-usage/extract-metadata-from-documents.md" >}}), [Get document info]({{< ref "parser/python-net/developer-guide/basic-usage/get-document-info.md" >}}), and [Get supported file formats]({{< ref "parser/python-net/developer-guide/basic-usage/get-supported-file-formats.md" >}}).
 
-### Extract Formatted Text
+## Annotations
 
-In addition to standard text extraction modes, GroupDocs.Parser API provides a method `get_formatted_text` to extract formatted text for those cases when simple plain text is not enough and you may need to keep formatting like text style, table layout etc.
+Read the comments and notes reviewers leave in PDF, Word and PowerPoint files. Call `get_annotations()` for the whole document, or `get_annotations(page_index)` for one page; each annotation carries its text, type, page, author and timestamp. To get the annotations' text inside the extracted text, set `TextOptions.include_annotations`. See [Working with annotations]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-annotations/_index.md" >}}).
 
-At this moment the following formats are supported:
+## Templates
 
-*   Plain Text
-*   Markdown
-*   HTML
+Describe the fields and tables of documents that share a layout, such as invoices, once in a template, then pass it to `parse_by_template()` to read their values from every such document. See [Parse Data from Documents]({{< ref "parser/python-net/developer-guide/basic-usage/parse-data-from-documents.md" >}}) and [Working with Templates]({{< ref "parser/python-net/developer-guide/advanced-usage/template-based-parsing/working-with-templates.md" >}}).
 
-#### Plain Text
+## Archives, attachments, and portfolios
 
-With Plain Text mode GroupDocs.Parser performs formatting in plain text making extracted text look closer to original. This is achieved due to special text positioning, box-drawing characters etc.
+`get_container()` lists the documents inside ZIP, RAR, 7Z and TAR archives, email attachments, Outlook data files and PDF portfolios, and each item opens with a `Parser` of its own. See [Extract Data from Attachments and ZIP Archives]({{< ref "parser/python-net/developer-guide/basic-usage/extract-data-from-attachments-and-zip-archives.md" >}}) and [Working with Containers]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-archives/working-with-containers.md" >}}).
 
-#### Markdown
+## Loading documents
 
-This mode is useful when you need to export the extracted text to any system that supports [Markdown](https://en.wikipedia.org/wiki/Markdown)-formatted text.
+Open a document from a file path or a binary stream, open password-protected documents, and tell the library a document's format when its name does not. See [Load file from stream]({{< ref "parser/python-net/developer-guide/advanced-usage/loading/load-file-from-stream.md" >}}) and [Load password-protected documents]({{< ref "parser/python-net/developer-guide/advanced-usage/loading/load-password-protected-documents.md" >}}).
 
-At this moment the following formatting are supported:
+## Logging and external resources
 
-*   Bold text
-*   Italic text
-*   Hyperlinks
-*   Headings
-*   Numbering and bullets lists
-*   Tables
+Pass a Python function, or an object with `trace`, `warning` and `error` methods, to `ParserSettings` to receive the engine's log messages. A resource handler decides which images an HTML or MHTML document may load. See [Logging]({{< ref "parser/python-net/developer-guide/advanced-usage/logging.md" >}}) and [Handle loading of external resources]({{< ref "parser/python-net/developer-guide/advanced-usage/loading/handle-loading-of-external-resources.md" >}}).
 
-#### HTML
+## Command line
 
-GroupDocs.Parser also supports HTML formatting.
+The package installs the `groupdocs-parser` command, which extracts text, document info, metadata, images and annotations without writing Python code. See [Command Line Interface]({{< ref "parser/python-net/developer-guide/command-line-interface.md" >}}).
 
-Following HTML tags are now supported when extracting text with this formatting mode:
+## On-premise
 
-| Tag | Description |
-| --- | --- |
-| `<p>` | Paragraph is surrounded by `<p>` tag |
-| `<a>` | Hyperlinks |
-| `<b>` | Text with Bold font is surrounded by `<b>` tag |
-| `<i>` | Text with Italic font is surrounded by `<i>` tag |
-| `<h1>` – `<h6>` | If the heading has 'Heading X' style, it's surrounded by `<hX>` tag |
-| `<ol>`/`<ul>` | Numbering and bullets lists |
-| `<table>` | Tables |
-
-### Extract Structured Text
-
-Many document formats do not contain only text. Usually, the text is organized into paragraphs divided into parts with headers. Also, the text can contain hyperlinks, lists, tables. For this scenario, GroupDocs.Parser provides structured text extraction with the ability to extract text with its structure. This feature is easy to use - you simply call `get_structure` method that returns XML with structured text.
-
-### Extract Text Areas
-
-GroupDocs.Parser provides API that allows to extract text areas with coordinates and text style.
-
-This feature allows to implement advanced scenarios related to text analytics in your applications. Just call `get_text_areas` method and you will get all text area objects.
-
-### Search Text in Documents
-
-GroupDocs.Parser allows to perform search over loaded document using keywords or regular expressions. Use the `search` method and then loop through the collection of search results.
-
-## Extract Metadata
-
-GroupDocs.Parser provides API that allows to extract metadata from supported document formats with simple `get_metadata` method call.
-
-## Extract Images
-
-GroupDocs.Parser supports image extraction from documents. You may call `get_images` method that returns all info about document images and allows to save them.
-
-## Extract Tables
-
-GroupDocs.Parser allows to extract tables from documents preserving their structure. You can use `get_tables` method to extract tables from the entire document or specific pages.
-
-## Extract Annotations
-
-GroupDocs.Parser reads the comments and notes reviewers leave in PDF, Word and PowerPoint files. Call `get_annotations` for the whole document, or `get_annotations(page_index)` for one page; each annotation carries its text, type, page, author and timestamp. To get the annotations' text inside the extracted text, set `TextOptions.include_annotations`. See [Working with annotations]({{< ref "parser/python-net/developer-guide/advanced-usage/working-with-annotations" >}}).
-
-## Extract Data from Attachments and ZIP Archives
-
-GroupDocs.Parser allows to extract data (text, images, other supported extraction methods) from formats that contain other documents like ZIP archives, PDF portfolios, emails, OST containers.
-
-You can simply call `get_container` method and work with extracted attached or archived documents as with usual document files.
-
-## Extract Document Information
-
-GroupDocs.Parser provides the ability to get basic document information such as file type, page count, and size. This can be done using the `get_document_info` method.
-
-## Extract Table of Contents
-
-GroupDocs.Parser allows to extract table of contents from some document formats. To do it, you may call `get_toc` method.
-
-## Logging and External Resources
-
-Pass a Python function, or an object with `trace`, `warning` and `error` methods, to `ParserSettings` to receive the engine's log messages. A resource handler decides which images an HTML or MHTML document may load. See [Logging]({{< ref "parser/python-net/developer-guide/advanced-usage/logging" >}}) and [Handle loading of external resources]({{< ref "parser/python-net/developer-guide/advanced-usage/loading/handle-loading-of-external-resources" >}}).
-
-## Command Line
-
-The package installs the `groupdocs-parser` command, which extracts text, document info, metadata, images and annotations without writing Python code. See [Command Line Interface]({{< ref "parser/python-net/developer-guide/command-line-interface" >}}).
+GroupDocs.Parser for Python via .NET runs entirely on your own infrastructure — your documents never leave your environment. The package is a self-contained wheel that bundles everything it needs, so no Microsoft Office, OpenOffice, or separate runtime has to be installed. See [System Requirements]({{< ref "parser/python-net/getting-started/system-requirements.md" >}}) for the supported platforms and native dependencies.

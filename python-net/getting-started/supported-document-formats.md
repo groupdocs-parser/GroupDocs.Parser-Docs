@@ -2,7 +2,7 @@
 id: supported-document-formats
 url: parser/python-net/supported-document-formats
 title: Supported Document Formats
-weight: 2
+weight: 4
 description: Supported file formats matrix for GroupDocs.Parser for Python via .NET.
 keywords: parser, supported formats, python-net
 productName: GroupDocs.Parser for Python via .NET
@@ -75,23 +75,13 @@ Each format may support different metadata capabilities:
 | Format | Description | ExtractContainersAndAttachments | ExtractImages | ExtractMetadata | ExtractStructuredAndFormattedText | ExtractTableOfContents | ExtractTextAccurate | ExtractTextAreas | ExtractTextRaw | ParseDocumentByTemplate | ParseFormData | ScanBarcode | Remarks |
 |--------|-------------|------|------|------|------|------|------|------|------|------|------|------|---------|
 | `.bmp` | Bitmap Image File | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.dcm` | DICOM Image | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.djvu` | DjVu Image | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.emf` | Enhanced Windows Metafile | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
 | `.gif` | Graphical Interchange Format File | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.j2k` | JPEG 2000 Code Stream | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
 | `.jp2` | JPEG 2000 Core Image File | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
 | `.jpeg` | JPEG Image | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
 | `.jpg` | JPEG Image | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
 | `.png` | Portable Network Graphic | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.ps` | PostScript File | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.psd` | Adobe Photoshop Document | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.svg` | Scalable Vector Graphics File | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.svgz` | Compressed Scalable Vector Graphics File | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
 | `.tif` | Tagged Image File | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
 | `.tiff` | Tagged Image File Format | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.webp` | WebP Image | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
-| `.wmf` | Windows Metafile | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |  |
 
 ---
 
@@ -99,10 +89,11 @@ Each format may support different metadata capabilities:
 
 | Format | Description | ExtractContainersAndAttachments | ExtractImages | ExtractMetadata | ExtractStructuredAndFormattedText | ExtractTableOfContents | ExtractTextAccurate | ExtractTextAreas | ExtractTextRaw | ParseDocumentByTemplate | ParseFormData | ScanBarcode | Remarks |
 |--------|-------------|------|------|------|------|------|------|------|------|------|------|------|---------|
+| `.html` | Hypertext Markup Language File | ❌ | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
 | `.md` | Markdown Files | ❌ | ❌ | ❌ | ⚠️ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | Formatted Text is not supported |
-| `.mht` | MHTML Web Archive | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
-| `.mhtml` | MIME HTML File | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
-| `.xhtml` | Hypertext Markup Language File | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
+| `.mht` | MHTML Web Archive | ❌ | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
+| `.mhtml` | MIME HTML File | ❌ | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
+| `.xhtml` | Hypertext Markup Language File | ❌ | ✅ | ❌ | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
 | `.xml` | XML File | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
 
 ---
@@ -146,9 +137,9 @@ Each format may support different metadata capabilities:
 | Format | Description | ExtractContainersAndAttachments | ExtractImages | ExtractMetadata | ExtractStructuredAndFormattedText | ExtractTableOfContents | ExtractTextAccurate | ExtractTextAreas | ExtractTextRaw | ParseDocumentByTemplate | ParseFormData | ScanBarcode | Remarks |
 |--------|-------------|------|------|------|------|------|------|------|------|------|------|------|---------|
 | `.csv` | Comma Separated Values File | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |  |
-| `.numbers` | Apple iWork Numbers | ❌ | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |  |
 | `.ods` | OpenDocument Spreadsheet | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |  |
 | `.ots` | OpenDocument Spreadsheet Template | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |  |
+| `.tsv` | Tab Separated Values File | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ |  |
 | `.xla` | Excel Add-In File | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |  |
 | `.xlam` | Excel Open XML Macro-Enabled Add-In | ❌ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |  |
 | `.xls` | Excel Spreadsheet | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |  |

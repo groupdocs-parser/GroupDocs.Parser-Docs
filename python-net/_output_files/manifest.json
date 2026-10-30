@@ -601,5 +601,47 @@
     "path": "developer-guide/basic-usage/get-supported-file-formats/process_file/process-file.txt",
     "preview": "Processing: sample.pdf\nFormat: Portable Document Format File\nPages: 4\nText extraction successful: 4414 characters\nProcessing: sample.docx\nFormat: Microsoft Word Open XML Document\nPages: 2\nText extraction successful: 2584 characters",
     "function": "process_file"
+  },
+  "getting-started/hello-world#code-example-hello-world": {
+    "type": "text",
+    "file": "hello-world.txt",
+    "path": "getting-started/hello-world/hello_world/hello-world.txt",
+    "preview": "Investor relations\r\n\r\n\r\nAnnual Report 2025  |  Port Ellery\r\nAnnual Report 2025\r\n\r\n\r\n1. Overview\r\nHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its\r\nQuayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn\r\n[TRUNCATED]",
+    "function": "hello_world"
+  },
+  "getting-started/quick-start-guide#demo_app_extract_text": {
+    "type": "text",
+    "file": "extract-text.txt",
+    "path": "getting-started/quick-start-guide/extract_text/extract-text.txt",
+    "preview": "Investor relations\r\n\r\n\r\nAnnual Report 2025  |  Port Ellery\r\nAnnual Report 2025\r\n\r\n\r\n1. Overview\r\nHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its\r\nQuayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn\r\n[TRUNCATED]",
+    "function": "extract_text"
+  },
+  "getting-started/quick-start-guide#demo_app_extract_metadata": {
+    "type": "text",
+    "file": "extract-metadata.txt",
+    "path": "getting-started/quick-start-guide/extract_metadata/extract-metadata.txt",
+    "preview": "title = Harbor Lane Provisions - Annual Report 2025\nsubject = Annual report and financial summary\nkeywords = annual report, wholesale, Autumn Harvest, revenue, logistics\nauthor = Amara Osei\napplication = Aspose Pty Ltd.\nlast-saved-time = 2/16/2026 12:00:00 PM",
+    "function": "extract_metadata"
+  },
+  "getting-started/quick-start-guide#demo_app_extract_tables": {
+    "type": "text",
+    "file": "extract-tables.txt",
+    "path": "getting-started/quick-start-guide/extract_tables/extract-tables.txt",
+    "preview": "Table on page 1\nMetric | 2024 | 2025 | Change\nNet revenue | $18.6 m | $21.4 m | +15.1%\nGross margin | 31.2% | 32.8% | +1.6 pts\nOrders shipped | 48,900 | 55,300 | +13.1%\nWholesale customers | 1,140 | 1,265 | +11.0%\nOn-time delivery | 96.1% | 97.4% | +1.3 pts\nTable on page 3\nCategory | Revenue | Share | Growth\nCoffee & Tea | $5.9 m | 27.6% | +18.4%\n[TRUNCATED]",
+    "function": "extract_tables"
+  },
+  "product-overview#product-overview-extract-text": {
+    "type": "text",
+    "file": "quick.txt",
+    "path": "product-overview/quick_example/quick.txt",
+    "preview": "Investor relations\r\n\r\n\r\nAnnual Report 2025  |  Port Ellery\r\nAnnual Report 2025\r\n\r\n\r\n1. Overview\r\nHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its\r\nQuayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn\r\n[TRUNCATED]",
+    "function": "quick_example"
+  },
+  "product-overview#product-overview-extract-markdown": {
+    "type": "text",
+    "file": "extract-markdown.txt",
+    "path": "product-overview/extract_markdown/extract-markdown.txt",
+    "preview": "**Supply Agreement**\r\n\r\nHarbor Lane Provisions and Northwind Coffee Roasters\r\n\r\n# **1. Parties**\r\n\r\n**Buyer:** Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.\r\n\r\n**Supplier:** Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.\r\n\r\n[TRUNCATED]",
+    "function": "extract_markdown"
   }
 }

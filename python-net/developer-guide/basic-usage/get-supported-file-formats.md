@@ -26,7 +26,7 @@ structuredData:
         text: Iterate through the collection to output the supported file types, for example, to the console.
 ---
 
-[GroupDocs.Parser](https://products.groupdocs.com/parser/python-net) allows you to get the list of all [supported file formats]({{< ref "parser/python-net/supported-document-formats.md" >}}). To do this, follow these steps:
+[GroupDocs.Parser](https://products.groupdocs.com/parser/python-net) allows you to get the list of all [supported file formats]({{< ref "parser/python-net/getting-started/supported-document-formats.md" >}}). To do this, follow these steps:
 
 1. Call the `get_supported_file_types` method of the `FileType` class
 2. Enumerate through the collection of `FileType` objects

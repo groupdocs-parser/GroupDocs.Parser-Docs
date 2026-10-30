@@ -110,7 +110,7 @@ Errors are printed to standard error as one line, for example `error: no such fi
 
 ## Licensing
 
-Without a license the command runs in evaluation mode: `text` stops after about 20 lines and `metadata` returns the first 5 properties (see [Licensing and evaluation limitations]({{< ref "parser/python-net/licensing-and-evaluation-limitations" >}})). Pass `--license PATH` or set the `GROUPDOCS_LIC_PATH` environment variable.
+Without a license the command runs in evaluation mode: `text` stops after about 20 lines and `metadata` returns the first 5 properties (see [Licensing and evaluation limitations]({{< ref "parser/python-net/getting-started/licensing-and-subscription.md" >}})). Pass `--license PATH` or set the `GROUPDOCS_LIC_PATH` environment variable.
 
 ## When to use Python instead
 

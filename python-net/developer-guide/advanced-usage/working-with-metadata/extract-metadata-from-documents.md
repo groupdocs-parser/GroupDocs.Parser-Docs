@@ -405,5 +405,5 @@ author               Lena Park                      Lena Park
 
 - [Get document info]({{< ref "parser/python-net/developer-guide/basic-usage/get-document-info" >}})
 - [Extract text from documents]({{< ref "parser/python-net/developer-guide/basic-usage/extract-text-from-documents" >}})
-- [Supported document formats]({{< ref "parser/python-net/supported-document-formats" >}})
+- [Supported document formats]({{< ref "parser/python-net/getting-started/supported-document-formats.md" >}})
 

@@ -3,7 +3,7 @@ id: installation
 url: parser/python-net/installation
 title: Install GroupDocs.Parser for Python via .NET
 linkTitle: Installation
-weight: 4
+weight: 1
 description: "Install GroupDocs.Parser for Python via .NET on Windows, Linux, or macOS - from PyPI or from a pre-downloaded wheel, including Intel and Apple Silicon builds."
 keywords: install, installation, pip, pypi, wheel, whl, Windows, Linux, macOS, Apple Silicon, manylinux, requirements.txt, GroupDocs.Parser, python
 productName: GroupDocs.Parser for Python via .NET
@@ -28,8 +28,12 @@ structuredData:
 
 GroupDocs.Parser for Python via .NET is distributed as a pre-built wheel on [PyPI](https://pypi.org/project/groupdocs-parser-net/). The PyPI index hosts a separate wheel for each supported platform, and `pip` picks the correct one automatically. Each wheel is self-contained: it bundles the embedded .NET runtime and every managed dependency, so no Microsoft Office, OpenOffice, or separate runtime install is required.
 
+{{< alert style="warning" >}}
+Version 26.10 is not on PyPI yet. Its wheels are on the [GroupDocs Releases website](https://releases.groupdocs.com/parser/python-net/), and PyPI will carry them as the `groupdocs-parser-net` package. Until it does, `pip install groupdocs-parser-net` installs the previous version, 25.12: [install a pre-downloaded wheel](#install-from-a-pre-downloaded-wheel) instead.
+{{< /alert >}}
+
 {{< alert style="info" >}}
-Before you install, review the [System Requirements]({{< ref "parser/python-net/system-requirements" >}}). The wheels need 64-bit Python, Linux with glibc 2.27 or newer, or macOS 13 or newer, and pip 20.3 or newer to install. On macOS, OCR (text from scanned pages and images) needs macOS 13.3 or newer. On Linux, install ICU, fontconfig, the Liberation fonts and libgdiplus, and on macOS mono-libgdiplus (see [Platform Prerequisites](#platform-prerequisites)).
+Before you install, review the [System Requirements]({{< ref "parser/python-net/getting-started/system-requirements.md" >}}). The wheels need 64-bit Python, Linux with glibc 2.27 or newer, or macOS 13 or newer, and pip 20.3 or newer to install. On macOS, OCR (text from scanned pages and images) needs macOS 13.3 or newer. On Linux, install ICU, fontconfig, the Liberation fonts and libgdiplus, and on macOS mono-libgdiplus (see [Platform Prerequisites](#platform-prerequisites)).
 {{< /alert >}}
 
 ## Install Package from PyPI
@@ -58,7 +62,7 @@ After running the command you should see output similar to:
 
 ```bash
 Collecting groupdocs-parser-net
-  Downloading groupdocs_parser_net-26.10.0-py3-none-win_amd64.whl (301.4 MB)
+  Downloading groupdocs_parser_net-26.10.0-py3-none-win_amd64.whl (301.5 MB)
 Installing collected packages: groupdocs-parser-net
 Successfully installed groupdocs-parser-net-26.10.0
 ```
@@ -142,24 +146,15 @@ On macOS, install libgdiplus:
 brew install mono-libgdiplus
 ```
 
-libgdiplus serves presentations: page previews, ODP and OTP files, and PowerPoint files with tables or hyperlinks. The Microsoft core fonts are not needed. The [System Requirements]({{< ref "parser/python-net/system-requirements" >}}) page explains what each package is for.
+libgdiplus serves presentations: page previews, ODP and OTP files, and PowerPoint files with tables or hyperlinks. The Microsoft core fonts are not needed. The [System Requirements]({{< ref "parser/python-net/getting-started/system-requirements.md" >}}) page explains what each package is for.
 
 ## Verify the Installation
 
-Confirm the package imports correctly:
+Confirm the package imported correctly:
 
-{{< tabs "example-1" >}}
-{{< tab "Python" >}}
-
-```python
-# The import fails if the package is not installed correctly
-from groupdocs.parser import Parser
-
-print("GroupDocs.Parser for Python via .NET installed successfully!")
+```bash
+python -c "import groupdocs.parser; print('GroupDocs.Parser is ready')"
 ```
-
-{{< /tab >}}
-{{< /tabs >}}
 
 The package also installs the `groupdocs-parser` command (see [Command Line Interface]({{< ref "parser/python-net/developer-guide/command-line-interface" >}})), which prints the installed version:
 
@@ -171,41 +166,9 @@ groupdocs-parser --version
 groupdocs-parser 26.10.0
 ```
 
-You can also run `pip show groupdocs-parser-net` to confirm the version and location.
-
-## Quick Start Example
-
-Here's a simple example to extract text from a document:
-{{< tabs "example-2" >}}
-{{< tab "Python" >}}
-
-```python
-from groupdocs.parser import Parser
-
-# Create an instance of Parser class
-with Parser("./sample.pdf") as parser:
-    # Extract text from the document
-    text = parser.get_text()
-
-    if text is None:
-        print("Text extraction isn't supported for this format")
-    else:
-        # Print the extracted text
-        print(text)
-```
-
-{{< /tab >}}
-{{< tab "sample.pdf" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/getting-started/installation/sample.pdf)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< /tabs >}}
-
-The first `Parser(...)` in a process takes 20-30 seconds while the engine loads; later documents open in a fraction of a second.
+You can also run `pip show groupdocs-parser-net` to confirm the version and location. The first `Parser(...)` in a process takes 20-30 seconds while the engine loads; later documents open in a fraction of a second.
 
 ## Next Steps
 
-- Follow the [Quick Start Guide]({{< ref "parser/python-net/getting-started/quick-start" >}}) to extract text, images and metadata.
-- Read the [Features Overview]({{< ref "parser/python-net/getting-started/features-overview" >}}) to see everything you can do.
-- Clone the [examples repository](https://github.com/groupdocs-parser/GroupDocs.Parser-for-Python-via-.NET) and read [How to Run Examples]({{< ref "parser/python-net/getting-started/how-to-run-examples" >}}) to try every documented scenario locally.
+- Follow the [Hello, World!]({{< ref "parser/python-net/getting-started/hello-world.md" >}}) guide to extract your first text.
+- Read the [Features Overview]({{< ref "parser/python-net/getting-started/features-overview.md" >}}) to see everything you can do.

@@ -3,7 +3,7 @@ id: system-requirements
 url: parser/python-net/system-requirements
 title: System Requirements
 linkTitle: System Requirements
-weight: 4
+weight: 3
 description: "System requirements for GroupDocs.Parser for Python via .NET - supported operating systems, Python versions, wheel tags, and the Linux packages it needs."
 keywords: System Requirements, Supported Operating System, Python 3.5, Python 3.14, Windows, Linux, macOS, glibc, ICU, fonts-liberation, libgdiplus
 productName: GroupDocs.Parser for Python via .NET
@@ -12,7 +12,7 @@ toc: True
 ---
 
 {{< alert style="info" >}}
-GroupDocs.Parser for Python via .NET ships as a self-contained wheel that bundles the .NET runtime it needs. No Microsoft Office, third-party document editor, .NET install or Mono install is required. On Linux and macOS a few system packages are needed; see [Platform Dependencies](#platform-dependencies). To install the library, follow the steps in the [Installation]({{< ref "parser/python-net/getting-started/installation" >}}) guide.
+GroupDocs.Parser for Python via .NET ships as a self-contained wheel that bundles the .NET runtime it needs. No Microsoft Office, third-party document editor, .NET install or Mono install is required. On Linux and macOS a few system packages are needed; see [Platform Dependencies](#platform-dependencies). To install the library, follow the steps in the [Installation]({{< ref "parser/python-net/getting-started/installation.md" >}}) guide.
 {{< /alert >}}
 
 ## Supported Operating Systems
@@ -62,7 +62,7 @@ GroupDocs.Parser for Python via .NET is distributed via [PyPI](https://pypi.org/
 pip install groupdocs-parser-net
 ```
 
-The PyPI index hosts one wheel per platform:
+Until PyPI carries the 26.10 wheels, that command installs the previous version, 25.12. Install a 26.10 wheel downloaded from the [GroupDocs Releases website](https://releases.groupdocs.com/parser/python-net/) instead, as described on the [Installation]({{< ref "parser/python-net/getting-started/installation.md" >}}) page. One wheel is published per platform:
 
 | Platform | Wheel suffix | Oldest system |
 | --- | --- | --- |

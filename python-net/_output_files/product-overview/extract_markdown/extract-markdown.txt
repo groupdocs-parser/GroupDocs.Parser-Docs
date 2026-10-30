@@ -1,0 +1,67 @@
+**Supply Agreement**
+
+Harbor Lane Provisions and Northwind Coffee Roasters
+
+# **1. Parties**
+
+**Buyer:** Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.
+
+**Supplier:** Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+
+This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+
+# 2. Products
+
+The Supplier roasts and delivers the following coffees to the Buyer's Quayside warehouse:
+
+* Harbor Blend whole bean coffee, 1 kg bags
+* Dockside Decaf whole bean coffee, 1 kg bags
+* Lighthouse Espresso beans, 1 kg bags
+* Cold brew concentrate, 1 L bottles
+* Autumn Harvest spiced roast, 500 g bags (September to December)
+
+## ***2.1 Autumn Harvest allocation***
+
+For each harvest season the Supplier reserves 2,400 kg of the spiced roast for the Buyer. *Unordered volume is released on 15 October.*
+
+# **3. Prices and fees**
+
+Prices are per unit, delivered, excluding sales tax, and fixed until 31 December 2026.
+
+| **Product** | **Unit** | **Price** | **Minimum order** |
+| --- | --- | --- | --- |
+| Harbor Blend | 1 kg bag | $18.40 | 40 bags |
+| Dockside Decaf | 1 kg bag | $19.10 | 20 bags |
+| Lighthouse Espresso | 1 kg bag | $21.75 | 30 bags |
+| Cold brew concentrate | 1 L bottle | $9.60 | 24 bottles |
+| Autumn Harvest spiced roast | 500 g bag | $11.20 | 50 bags |
+
+## ***3.1 Price review***
+
+Either party may ask for a price review once a year, with 60 days' notice, if green coffee prices move by more than 12%.
+
+# **4. Delivery**
+
+1. Deliveries arrive on Tuesdays and Fridays between 06:00 and 10:00.
+2. Coffee is roasted no more than five days before delivery.
+3. The Buyer confirms each delivery against the order within one working day.
+
+# **5. Quality and audits**
+
+The Supplier follows the Buyer's [supplier quality charter](https://harborlane.example/suppliers/charter) and publishes its sourcing data at [northwindroasters.example/quality](https://northwindroasters.example/quality). The Buyer may audit the roastery once a year.
+
+# **6. Payment**
+
+The Supplier invoices each delivery. The Buyer pays within 30 days of the invoice date by bank transfer.
+
+# **7. Term and renewal**
+
+The agreement runs for three years and renews for one year at a time unless either party gives 90 days' written notice. Full terms: [harborlane.example/terms](https://harborlane.example/terms).
+
+# **8. Signatures**
+
+**For Harbor Lane Provisions:** Lena Park, Procurement Lead
+
+**For Northwind Coffee Roasters:** Alex Chen, Head of Wholesale
+
+Questions: [lena.park@harborlane.example](mailto:lena.park@harborlane.example)

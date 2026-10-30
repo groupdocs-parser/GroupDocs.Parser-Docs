@@ -3,7 +3,7 @@ id: sdk-cloud-mcp
 url: parser/python-net/sdk-cloud-mcp
 title: SDK, Cloud or MCP?
 linkTitle: SDK, Cloud or MCP?
-weight: 11
+weight: 8
 description: "Choose between GroupDocs.Parser for Python via .NET (the on-premise SDK), GroupDocs.Parser Cloud (a hosted REST API) and the GroupDocs.Parser MCP server (extraction tools for AI agents)."
 keywords: GroupDocs.Parser, Python, SDK, Cloud, REST API, MCP, Model Context Protocol, AI agents, data extraction, decision guide
 productName: GroupDocs.Parser for Python via .NET
@@ -31,7 +31,7 @@ GroupDocs.Parser reaches Python code in three ways. They share the extraction en
 - You need the whole API: template-based parsing, search and highlights, text areas with coordinates, annotations, OCR, page previews, or the documents inside archives and emails.
 - You process many documents in batch jobs and want no network round trips.
 
-Start with [Installation]({{< ref "parser/python-net/getting-started/installation" >}}) and the [Quick Start Guide]({{< ref "parser/python-net/getting-started/quick-start" >}}). For shell scripts and CI steps, the package also installs the [`groupdocs-parser` command]({{< ref "parser/python-net/developer-guide/command-line-interface" >}}).
+Start with [Installation]({{< ref "parser/python-net/getting-started/installation" >}}) and the [Quick Start Guide]({{< ref "parser/python-net/getting-started/quick-start-guide.md" >}}). For shell scripts and CI steps, the package also installs the [`groupdocs-parser` command]({{< ref "parser/python-net/developer-guide/command-line-interface" >}}).
 
 ## Choose GroupDocs.Parser Cloud when
 

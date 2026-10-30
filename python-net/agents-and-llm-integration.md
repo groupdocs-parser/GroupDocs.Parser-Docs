@@ -1,21 +1,29 @@
 ---
 id: agents-and-llm-integration
 url: parser/python-net/agents-and-llm-integration
-title: Agents and LLM Integration
+title: AI agents and LLM integration
 linkTitle: Agents and LLMs
 description: "GroupDocs.Parser for Python via .NET is AI agent and LLM friendly: machine-readable documentation, MCP servers, AGENTS.md shipped inside the pip package, a command line, and runnable examples that turn documents into data for AI pipelines."
-weight: 9
+weight: 6
 keywords: AI, LLM, agent, MCP, machine-readable, documentation, Claude, GPT, Copilot, AGENTS.md, RAG, document extraction, text extraction, table extraction
 productName: GroupDocs.Parser for Python via .NET
 hideChildren: False
 toc: True
 ---
 
-## AI agent and LLM friendly
-
 GroupDocs.Parser for Python via .NET is designed to work with AI agents, LLMs, and code generation tools. The library ships machine-readable documentation in several formats, including an `AGENTS.md` file inside the pip package itself, so that AI assistants can discover and use the API without manual guidance.
 
-## MCP server for the documentation
+## Built into the package
+
+The `groupdocs-parser-net` pip package includes an `AGENTS.md` file at `groupdocs/parser/AGENTS.md`. AI coding assistants that scan installed packages (such as Claude Code, Cursor, and GitHub Copilot) can read it to learn the imports, key patterns, callbacks, the command line, licensing, platform requirements, and troubleshooting tips. Its full text is reproduced [below](#agentsmd-reference).
+
+After installing the package, you can find it with:
+
+```bash
+pip show -f groupdocs-parser-net | grep AGENTS
+```
+
+## MCP server
 
 GroupDocs provides an [MCP (Model Context Protocol) server](https://docs.groupdocs.com/mcp) that lets LLMs query the documentation on demand instead of loading it all at once. This saves tokens and lets your AI assistant fetch only what it needs for the current task.
 
@@ -75,21 +83,11 @@ To connect your AI tool to the MCP server, add the GroupDocs endpoint to your MC
 
 See [https://docs.groupdocs.com/mcp](https://docs.groupdocs.com/mcp) for full setup instructions and the list of available tools.
 
-## MCP server for extracting data
+### Extracting data from an agent
 
 The [GroupDocs.Parser MCP server]({{< ref "parser/mcp/_index.md" >}}) is a separate server that does the work itself: it lets an AI agent extract text, tables, metadata, images and barcodes from documents, locally on your machine. The server is the .NET build of GroupDocs.Parser and ships as a Docker image, so it runs alongside a Python project without a .NET installation.
 
 Use the documentation MCP server when an agent writes Python code against this library, and the extraction MCP server when the agent itself reads documents. [SDK, Cloud or MCP?]({{< ref "parser/python-net/sdk-cloud-mcp.md" >}}) compares the options.
-
-## AGENTS.md: built into the package
-
-The `groupdocs-parser-net` pip package includes an `AGENTS.md` file at `groupdocs/parser/AGENTS.md`. AI coding assistants that scan installed packages (such as Claude Code, Cursor, and GitHub Copilot) can read it to learn the imports, key patterns, callbacks, the command line, licensing, platform requirements, and troubleshooting tips. Its full text is reproduced [below](#agentsmd-reference).
-
-After installing the package, you can find it with:
-
-```bash
-pip show -f groupdocs-parser-net | grep AGENTS
-```
 
 ## Machine-readable documentation
 
@@ -100,7 +98,7 @@ Every documentation page is available as a plain Markdown file that AI tools can
 | Full documentation (single file) | `https://docs.groupdocs.com/parser/python-net/llms-full.txt` |
 | Full documentation (all products) | `https://docs.groupdocs.com/llms-full.txt` |
 | Individual page (any page) | Append `.md` to the page URL |
-| Quick start guide | `https://docs.groupdocs.com/parser/python-net/quick-start.md` |
+| Quick start guide | `https://docs.groupdocs.com/parser/python-net/quick-start-guide.md` |
 
 ### How to use with AI tools
 
@@ -178,7 +176,7 @@ An agent with a shell can get the same data without writing code, through the [c
 For end-to-end examples, see the [Developer Guide]({{< ref "parser/python-net/developer-guide/_index.md" >}}). Every code example has a runnable counterpart in the [examples repository](https://github.com/groupdocs-parser/GroupDocs.Parser-for-Python-via-.NET).
 
 {{< alert style="info" >}}
-Without a license, extracted text stops after about 20 lines and only the first 5 metadata items are returned. Set the `GROUPDOCS_LIC_PATH` environment variable before an agent runs these steps. See [Licensing and evaluation limitations]({{< ref "parser/python-net/licensing-and-evaluation-limitations.md" >}}).
+Without a license, extracted text stops after about 20 lines and only the first 5 metadata items are returned. Set the `GROUPDOCS_LIC_PATH` environment variable before an agent runs these steps. See [Licensing and evaluation]({{< ref "parser/python-net/getting-started/licensing-and-subscription.md" >}}).
 {{< /alert >}}
 
 ## Pair with other GroupDocs products
@@ -191,7 +189,7 @@ For richer AI document pipelines, chain GroupDocs.Parser with:
 
 ## See also
 
-- [Quick Start Guide]({{< ref "parser/python-net/getting-started/quick-start.md" >}}): your first extraction script in five minutes
+- [Quick Start Guide]({{< ref "parser/python-net/getting-started/quick-start-guide.md" >}}): your first extraction script in five minutes
 - [Developer Guide]({{< ref "parser/python-net/developer-guide/_index.md" >}}): runnable examples for every extraction feature
 - [API Reference](https://reference.groupdocs.com/parser/python-net): full class and method documentation
 - [SDK, Cloud or MCP?]({{< ref "parser/python-net/sdk-cloud-mcp.md" >}}): which GroupDocs.Parser product line fits your project
@@ -326,7 +324,20 @@ with open("license.lic", "rb") as f:
     License().set_license(f)
 ```
 
-Or auto-apply: `export GROUPDOCS_LIC_PATH="path/to/license.lic"`
+Or auto-apply: `export GROUPDOCS_LIC_PATH="path/to/license.lic"`. It is applied at the first Parser call, not at import. If it cannot be applied (an expired subscription, a licence for another product, a missing file), every Parser call raises `LicenseError` naming the variable and the engine's reason, until a licence is applied:
+
+```python
+from groupdocs.parser import License, LicenseError, Parser
+
+try:
+    parser = Parser("document.pdf")
+except LicenseError as e:
+    print(e)                                   # GROUPDOCS_LIC_PATH=... could not be applied: <reason>
+    License().set_license("path/to/other.lic")  # ends the refusal
+    parser = Parser("document.pdf")
+```
+
+`GROUPDOCS_LIC_STRICT=0` turns the failure into one `LicenseWarning` and evaluation mode instead.
 
 **Evaluation vs licensed.** Without a license the library still runs, but extracted text stops after about 20 lines and ends with "Evaluation only. Created with GroupDocs.Parser for .NET.", and only the first 5 metadata items are returned. Set `GROUPDOCS_LIC_PATH` (or call `License().set_license(...)`) and re-run to clear both. A 30-day full license is free: https://purchase.groupdocs.com/temporary-license
 
