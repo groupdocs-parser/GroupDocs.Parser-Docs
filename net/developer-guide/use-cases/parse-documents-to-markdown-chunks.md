@@ -9,7 +9,7 @@ productName: GroupDocs.Parser for .NET
 structuredData:
     showOrganization: True
 toc: true
-draft: true
+draft: false
 ---
 
 # Parse Documents to Markdown Chunks in .NET: Integration Guide

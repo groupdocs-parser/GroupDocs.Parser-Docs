@@ -9,7 +9,7 @@ productName: GroupDocs.Parser for .NET
 structuredData:
     showOrganization: True
 toc: true
-draft: true
+draft: false
 hideChildren: False
 ---
 
