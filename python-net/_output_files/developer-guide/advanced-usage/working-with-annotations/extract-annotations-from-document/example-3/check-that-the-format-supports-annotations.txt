@@ -1,0 +1,2 @@
+./reviewed.pdf: found 4 annotations
+./sample.xlsx: annotation extraction isn't supported for this format

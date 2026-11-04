@@ -1,1 +1,11 @@
-Hyperlink extraction not supported
+HEADER: 1 links
+  - https://harborlane.example/investors
+BODY: 3 links
+  - https://harborlane.example/investors/2025
+  - https://harborlane.example/suppliers/charter
+  - https://harborlane.example/catalog
+FOOTER: 4 links
+  - https://harborlane.example/
+  - https://harborlane.example/
+  - https://harborlane.example/
+  - https://harborlane.example/

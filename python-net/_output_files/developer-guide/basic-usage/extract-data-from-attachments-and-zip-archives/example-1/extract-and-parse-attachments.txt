@@ -1,0 +1,188 @@
+finance/invoice-HLP-2025-0412.pdf
+                                                                                           INVOICE
+
+
+   FROM                                                                     Invoice Number      HLP-2025-0412
+   Northwind Coffee Roasters                                                Invoice Date        4 November 2025
+   4 Roastery Lane, Millbrook                                               Due Date            4 December 2025
+   alex.chen@northwindroasters.example                                      Order Reference     PO-7731
+
+   BILL TO                                                                  SHIP TO
+   Harbor Lane Provisions                                                   Quayside warehouse, dock 2
+   18 Quayside Road, Port Ellery                                            18 Quayside Road, Port Ellery
+   Attn: Lena Park, Procurement Lead
+
+
+ SKU                Description                                       Qty           Unit price         Amount
+
+ HLP-CF-101         Harbor Blend whole bean coffee, 1 kg              120           $18.40             $2,208.00
+
+ HLP-CF-102         Dockside Decaf whole bean coffee, 1 kg            48            $19.10             $916.80
+
+ HLP-CF-103         Lighthouse Espresso beans, 1 kg                   90            $21.75             $1,957.50
+
+ HLP-CF-105         Autumn Harvest spiced roast, 500 g                150           $11.20             $1,680.00
+
+                                                                                   Subtotal                     $6,762.30
+                                                                                   Sales tax 5%                  $338.12
+                                                                                   Total due                    $7,100.42
+
+Payment terms
+Payment within 30 days of the invoice date by bank transfer.
+Bank: Millbrook Savings  |  Account 0042-118-2271  |  Reference HLP-2025-0412
+
+Thank you for your business. Questions about this invoice: alex.chen@northwindroasters.example
+
+
+Northwind Coffee Roasters  |  4 Roastery Lane, Millbrook  |  northwindroasters.example
+
+finance/supply-agreement-northwind.docx
+Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential
+
+
+
+Supply Agreement
+Harbor Lane Provisions and Northwind Coffee Roasters
+1. Parties
+Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.
+Supplier: Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+2. Products
+The Supplier roasts and delivers the following coffees to the Buyer's Quayside warehouse:
+Harbor Blend whole bean coffee, 1 kg bags
+Dockside Decaf whole bean coffee, 1 kg bags
+Lighthouse Espresso beans, 1 kg bags
+Cold brew concentrate, 1 L bottles
+Autumn Harvest spiced roast, 500 g bags (September to December)
+2.1 Autumn Harvest allocation
+For each harvest season the Supplier reserves 2,400 kg of the spiced roast for the Buyer. Unordered volume is released on 15 October.
+
+
+3. Prices and fees
+Prices are per unit, delivered, excluding sales tax, and fixed until 31 December 2026.
+ProductUnitPriceMinimum orderHarbor Blend1 kg bag$18.4040 bagsDockside Decaf1 kg bag$19.1020 bagsLighthouse Espresso1 kg bag$21.7530 bagsCold brew concentrate1 L bottle$9.6024 bottlesAutumn Harvest spiced roast500 g bag$11.2050 bags3.1 Price review
+Either party may ask for a price review once a year, with 60 days' notice, if green coffee prices move by more than 12%.
+4. Delivery
+Deliveries arrive on Tuesdays and Fridays between 06:00 and 10:00.
+
+Coffee is roasted no more than five days before delivery.
+The Buyer confirms each delivery against the order within one working day.
+5. Quality and audits
+The Supplier follows the Buyer's  HYPERLINK "https://harborlane.example/suppliers/charter" supplier quality charter and publishes its sourcing data at  HYPERLINK "https://northwindroasters.example/quality" northwindroasters.example/quality. The Buyer may audit the roastery once a year.
+
+6. Payment
+The Supplier invoices each delivery. The Buyer pays within 30 days of the invoice date by bank transfer.
+
+7. Term and renewal
+The agreement runs for three years and renews for one year at a time unless either party gives 90 days' written notice. Full terms:  HYPERLINK "https://harborlane.example/terms" harborlane.example/terms.
+8. Signatures
+For Harbor Lane Provisions: Lena Park, Procurement Lead
+For Northwind Coffee Roasters: Alex Chen, Head of Wholesale
+Questions:  HYPERLINK "mailto:lena.park@harborlane.example" lena.park@harborlane.example
+
+operations/inventory.xlsx
+Inventory
+SKU Product Category Supplier Unit Unit cost On hand Reorder level Location
+HLP-CF-101 Harbor Blend whole bean coffee Coffee Northwind Coffee Roasters 1 kg bag 18.4 240 80 A-01
+HLP-CF-102 Dockside Decaf whole bean coffee Coffee Northwind Coffee Roasters 1 kg bag 19.1 96 40 A-01
+HLP-CF-103 Lighthouse Espresso beans Coffee Northwind Coffee Roasters 1 kg bag 21.75 180 60 A-02
+HLP-CF-104 Cold brew concentrate Coffee Northwind Coffee Roasters 1 L bottle 9.6 150 50 A-02
+HLP-CF-105 Autumn Harvest spiced roast Coffee Northwind Coffee Roasters 500 g bag 11.2 210 70 A-03
+HLP-OL-201 Cold-pressed olive oil Oils & Vinegars Grove & Press 750 ml tin 12.9 320 100 B-04
+HLP-OL-202 Pumpkin seed oil Oils & Vinegars Grove & Press 250 ml bottle 8.75 140 40 B-04
+HLP-OL-203 Apple cider vinegar Oils & Vinegars Orchard Row 500 ml bottle 4.3 260 80 B-05
+HLP-OL-204 Aged balsamic vinegar Oils & Vinegars Grove & Press 250 ml bottle 14.6 85 30 B-05
+HLP-HN-301 Chestnut honey Honey & Preserves Hillside Apiaries 350 g jar 7.8 190 60 C-02
+HLP-HN-302 Wildflower honey Honey & Preserves Hillside Apiaries 500 g jar 8.2 230 80 C-02
+HLP-HN-303 Cranberry relish Honey & Preserves Orchard Row 300 g jar 4.95 175 60 C-03
+HLP-HN-304 Fig and walnut preserve Honey & Preserves Orchard Row 300 g jar 5.4 120 40 C-03
+HLP-HN-305 Autumn Harvest apple butter Honey & Preserves Orchard Row 300 g jar 4.6 205 70 C-03
+HLP-GR-401 Maple pecan granola Grains & Cereals Mill Creek Farms 750 g bag 6.3 160 50 D-01
+HLP-GR-402 Stone-ground oats Grains & Cereals Mill Creek Farms 1 kg bag 3.1 300 100 D-01
+HLP-GR-403 Heritage spelt flour Grains & Cereals Mill Creek Farms 1 kg bag 3.85 210 80 D-02
+HLP-GR-404 Wild rice blend Grains & Cereals Mill Creek Farms 500 g bag 4.4 130 40 D-02
+HLP-GR-405 Autumn Harvest muesli Grains & Cereals Mill Creek Farms 750 g bag 5.9 180 60 D-03
+HLP-SP-501 Smoked sea salt Spices & Salts Saltmarsh Co. 250 g jar 3.95 260 80 E-01
+HLP-SP-502 Pink peppercorns Spices & Salts Spice Quay 100 g jar 5.25 110 40 E-01
+HLP-SP-503 Mulling spice blend Spices & Salts Spice Quay 80 g tin 4.1 145 50 E-02
+HLP-SP-504 Smoked paprika Spices & Salts Spice Quay 100 g tin 3.6 190 60 E-02
+HLP-SP-505 Saffron threads Spices & Salts Spice Quay 1 g vial 6.8 70 25 E-03
+HLP-CH-601 Aged harbour cheddar Cheese & Dairy Coastline Creamery 1 kg wheel 16.5 90 30 F-01
+HLP-CH-602 Smoked gouda Cheese & Dairy Coastline Creamery 1 kg wheel 15.2 75 25 F-01
+HLP-CH-603 Goat cheese log Cheese & Dairy Coastline Creamery 200 g log 4.7 140 50 F-02
+HLP-CH-604 Cultured butter Cheese & Dairy Coastline Creamery 250 g block 3.9 220 80 F-02
+HLP-BK-701 Sea salt crackers Bakery Quayside Bakehouse 200 g box 2.85 280 90 G-01
+HLP-BK-702 Rosemary flatbread Bakery Quayside Bakehouse 150 g box 2.95 160 60 G-01
+HLP-BK-703 Oat and honey biscuits Bakery Quayside Bakehouse 250 g box 3.2 195 70 G-02
+HLP-BK-704 Autumn Harvest fruit loaf Bakery Quayside Bakehouse 500 g loaf 4.75 85 30 G-02
+HLP-TE-801 Harbor breakfast tea Tea Leaf & Kettle 100 bags 6.4 170 60 H-01
+HLP-TE-802 Chamomile and apple tea Tea Leaf & Kettle 50 bags 4.2 120 40 H-01
+HLP-TE-803 Smoked lapsang tea Tea Leaf & Kettle 100 g tin 7.1 60 20 H-02
+HLP-CN-901 Tomato passata Pantry Sunfield Kitchens 700 g jar 2.4 340 120 J-01
+HLP-CN-902 Roasted red peppers Pantry Sunfield Kitchens 290 g jar 3.15 150 50 J-01
+HLP-CN-903 Butter beans Pantry Sunfield Kitchens 400 g tin 1.6 410 150 J-02
+HLP-CN-904 Chickpeas Pantry Sunfield Kitchens 400 g tin 1.45 390 150 J-02
+HLP-CN-905 Autumn Harvest squash soup Pantry Sunfield Kitchens 600 ml jar 3.7 135 50 J-03
+
+Suppliers
+Supplier Categories Lines Contact
+Coastline Creamery Cheese & Dairy 4 orders@coastlinecreamery.example
+Grove & Press Oils & Vinegars 3 orders@grovepress.example
+Hillside Apiaries Honey & Preserves 2 orders@hillsideapiaries.example
+Leaf & Kettle Tea 3 orders@leafkettle.example
+Mill Creek Farms Grains & Cereals 5 orders@millcreekfarms.example
+Northwind Coffee Roasters Coffee 5 alex.chen@northwindroasters.example
+Orchard Row Oils & Vinegars, Honey & Preserves 4 orders@orchardrow.example
+Quayside Bakehouse Bakery 4 orders@quaysidebakehouse.example
+Saltmarsh Co. Spices & Salts 1 orders@saltmarshco.example
+Spice Quay Spices & Salts 4 orders@spicequay.example
+Sunfield Kitchens Pantry 5 orders@sunfieldkitchens.example
+
+operations/inventory.csv
+Sheet1
+SKU Product Category Supplier Unit Unit cost On hand Reorder level Location
+HLP-CF-101 Harbor Blend whole bean coffee Coffee Northwind Coffee Roasters 1 kg bag 18.4 240 80 A-01
+HLP-CF-102 Dockside Decaf whole bean coffee Coffee Northwind Coffee Roasters 1 kg bag 19.1 96 40 A-01
+HLP-CF-103 Lighthouse Espresso beans Coffee Northwind Coffee Roasters 1 kg bag 21.75 180 60 A-02
+HLP-CF-104 Cold brew concentrate Coffee Northwind Coffee Roasters 1 L bottle 9.6 150 50 A-02
+HLP-CF-105 Autumn Harvest spiced roast Coffee Northwind Coffee Roasters 500 g bag 11.2 210 70 A-03
+HLP-OL-201 Cold-pressed olive oil Oils & Vinegars Grove & Press 750 ml tin 12.9 320 100 B-04
+HLP-OL-202 Pumpkin seed oil Oils & Vinegars Grove & Press 250 ml bottle 8.75 140 40 B-04
+HLP-OL-203 Apple cider vinegar Oils & Vinegars Orchard Row 500 ml bottle 4.3 260 80 B-05
+HLP-OL-204 Aged balsamic vinegar Oils & Vinegars Grove & Press 250 ml bottle 14.6 85 30 B-05
+HLP-HN-301 Chestnut honey Honey & Preserves Hillside Apiaries 350 g jar 7.8 190 60 C-02
+HLP-HN-302 Wildflower honey Honey & Preserves Hillside Apiaries 500 g jar 8.2 230 80 C-02
+HLP-HN-303 Cranberry relish Honey & Preserves Orchard Row 300 g jar 4.95 175 60 C-03
+HLP-HN-304 Fig and walnut preserve Honey & Preserves Orchard Row 300 g jar 5.4 120 40 C-03
+HLP-HN-305 Autumn Harvest apple butter Honey & Preserves Orchard Row 300 g jar 4.6 205 70 C-03
+HLP-GR-401 Maple pecan granola Grains & Cereals Mill Creek Farms 750 g bag 6.3 160 50 D-01
+HLP-GR-402 Stone-ground oats Grains & Cereals Mill Creek Farms 1 kg bag 3.1 300 100 D-01
+HLP-GR-403 Heritage spelt flour Grains & Cereals Mill Creek Farms 1 kg bag 3.85 210 80 D-02
+HLP-GR-404 Wild rice blend Grains & Cereals Mill Creek Farms 500 g bag 4.4 130 40 D-02
+HLP-GR-405 Autumn Harvest muesli Grains & Cereals Mill Creek Farms 750 g bag 5.9 180 60 D-03
+HLP-SP-501 Smoked sea salt Spices & Salts Saltmarsh Co. 250 g jar 3.95 260 80 E-01
+HLP-SP-502 Pink peppercorns Spices & Salts Spice Quay 100 g jar 5.25 110 40 E-01
+HLP-SP-503 Mulling spice blend Spices & Salts Spice Quay 80 g tin 4.1 145 50 E-02
+HLP-SP-504 Smoked paprika Spices & Salts Spice Quay 100 g tin 3.6 190 60 E-02
+HLP-SP-505 Saffron threads Spices & Salts Spice Quay 1 g vial 6.8 70 25 E-03
+HLP-CH-601 Aged harbour cheddar Cheese & Dairy Coastline Creamery 1 kg wheel 16.5 90 30 F-01
+HLP-CH-602 Smoked gouda Cheese & Dairy Coastline Creamery 1 kg wheel 15.2 75 25 F-01
+HLP-CH-603 Goat cheese log Cheese & Dairy Coastline Creamery 200 g log 4.7 140 50 F-02
+HLP-CH-604 Cultured butter Cheese & Dairy Coastline Creamery 250 g block 3.9 220 80 F-02
+HLP-BK-701 Sea salt crackers Bakery Quayside Bakehouse 200 g box 2.85 280 90 G-01
+HLP-BK-702 Rosemary flatbread Bakery Quayside Bakehouse 150 g box 2.95 160 60 G-01
+HLP-BK-703 Oat and honey biscuits Bakery Quayside Bakehouse 250 g box 3.2 195 70 G-02
+HLP-BK-704 Autumn Harvest fruit loaf Bakery Quayside Bakehouse 500 g loaf 4.75 85 30 G-02
+HLP-TE-801 Harbor breakfast tea Tea Leaf & Kettle 100 bags 6.4 170 60 H-01
+HLP-TE-802 Chamomile and apple tea Tea Leaf & Kettle 50 bags 4.2 120 40 H-01
+HLP-TE-803 Smoked lapsang tea Tea Leaf & Kettle 100 g tin 7.1 60 20 H-02
+HLP-CN-901 Tomato passata Pantry Sunfield Kitchens 700 g jar 2.4 340 120 J-01
+HLP-CN-902 Roasted red peppers Pantry Sunfield Kitchens 290 g jar 3.15 150 50 J-01
+HLP-CN-903 Butter beans Pantry Sunfield Kitchens 400 g tin 1.6 410 150 J-02
+HLP-CN-904 Chickpeas Pantry Sunfield Kitchens 400 g tin 1.45 390 150 J-02
+HLP-CN-905 Autumn Harvest squash soup Pantry Sunfield Kitchens 600 ml jar 3.7 135 50 J-03
+
+operations/cold-room-3.png
+2.0
+COLD ROOM
+HARBQR LANE 1 COLD RQQM 3 | KEPT AT 2 C

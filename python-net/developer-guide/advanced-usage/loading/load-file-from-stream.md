@@ -64,6 +64,22 @@ with open("sample.docx", "rb") as stream:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-stream/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "load-document-from-file-stream.txt" >}}  
+```text
+Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential
+
+
+
+Supply Agreement
+Harbor Lane Provisions and Northwind Coffee Roasters
+1. Parties
+Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.
+Supplier: Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-file-from-stream/example-1/load-document-from-file-stream.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Load document from BytesIO stream
@@ -95,6 +111,13 @@ with Parser(stream) as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-stream/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "load-document-from-bytesio-stream.txt" >}}  
+```text
+File type: Portable Document Format File
+Page count: 4
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-file-from-stream/example-2/load-document-from-bytesio-stream.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

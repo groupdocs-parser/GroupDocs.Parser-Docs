@@ -30,7 +30,7 @@ from groupdocs.parser.options import PageAreaOptions
 from groupdocs.parser.data import Rectangle, Point, Size
 
 # Create an instance of Parser class
-with Parser("./webpage.html") as parser:
+with Parser("./document.pdf") as parser:
     # Check if hyperlink extraction is supported
     if not parser.features.hyperlinks:
         print("Hyperlink extraction not supported")
@@ -53,10 +53,17 @@ with Parser("./webpage.html") as parser:
 ```
 
 {{< /tab >}}
-{{< tab "webpage.html" >}}
+{{< tab "document.pdf" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [webpage.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/webpage.html)
+The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/document.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-hyperlinks-from-page-area.txt" >}}  
+```text
+Hyperlinks found in area:
+  Investor relations -> https://harborlane.example/investors
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/example-1/extract-hyperlinks-from-page-area.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -106,6 +113,13 @@ with Parser("document.pdf") as parser:
 The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-hyperlinks-from-specific-page-area.txt" >}}  
+```text
+Hyperlinks in sidebar (page 1):
+  Investor relations: https://harborlane.example/investors
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/example-2/extract-hyperlinks-from-specific-page-area.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Extracts hyperlinks from a specific area on a specific page.
@@ -149,7 +163,7 @@ def extract_header_links(file_path):
         return []
 
 # Usage
-nav_links = extract_header_links("website.html")
+nav_links = extract_header_links("document.pdf")
 
 print(f"Navigation links ({len(nav_links)}):")
 for link in nav_links:
@@ -157,15 +171,15 @@ for link in nav_links:
 ```
 
 {{< /tab >}}
-{{< tab "website.html" >}}
+{{< tab "document.pdf" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [website.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/website.html)
+The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab "extract-header-links.txt" >}}  
 ```text
-Hyperlink extraction not supported
-Navigation links (0):
+Navigation links (1):
+  Investor relations -> https://harborlane.example/investors
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_header_links/extract-header-links.txt)
 {{< /tab >}}
@@ -217,12 +231,12 @@ def extract_links_from_regions(file_path, regions):
 # Define regions
 regions = {
     'header': (0, 0, 600, 100),
-    'sidebar': (0, 100, 150, 700),
-    'footer': (0, 800, 600, 100)
+    'body': (0, 100, 600, 650),
+    'footer': (0, 780, 600, 62)
 }
 
 # Extract links from regions
-links_by_region = extract_links_from_regions("page.html", regions)
+links_by_region = extract_links_from_regions("document.pdf", regions)
 
 for region, urls in links_by_region.items():
     print(f"{region.upper()}: {len(urls)} links")
@@ -231,14 +245,24 @@ for region, urls in links_by_region.items():
 ```
 
 {{< /tab >}}
-{{< tab "page.html" >}}
+{{< tab "document.pdf" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [page.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/page.html)
+The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab "extract-links-from-regions.txt" >}}  
 ```text
-Hyperlink extraction not supported
+HEADER: 1 links
+  - https://harborlane.example/investors
+BODY: 3 links
+  - https://harborlane.example/investors/2025
+  - https://harborlane.example/suppliers/charter
+  - https://harborlane.example/catalog
+FOOTER: 4 links
+  - https://harborlane.example/
+  - https://harborlane.example/
+  - https://harborlane.example/
+[TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_links_from_regions/extract-links-from-regions.txt)
 {{< /tab >}}
@@ -366,34 +390,31 @@ def extract_links_by_area_and_pattern(file_path, area_rect, url_pattern):
         
         return matching_links
 
-# Usage - extract PDF links from sidebar
-sidebar_area = (400, 100, 200, 700)
-pdf_links = extract_links_by_area_and_pattern(
-    "document.html",
-    sidebar_area,
-    r'\.pdf$'
+# Usage - extract the investor and supplier links from the page body
+body_area = (0, 100, 600, 650)
+section_links = extract_links_by_area_and_pattern(
+    "document.pdf",
+    body_area,
+    r'/(investors|suppliers)/'
 )
 
-print(f"PDF download links in sidebar: {len(pdf_links)}\n")
-for link in pdf_links:
+print(f"Investor and supplier links in the body: {len(section_links)}\n")
+for link in section_links:
     print(f"  {link['text']}: {link['url']}")
 ```
 
 {{< /tab >}}
-{{< tab "document.html" >}}
+{{< tab "document.pdf" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [document.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/document.html)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< tab ".pdf" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [.pdf](../../../../../../../../../.pdf)
+The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab "extract-links-by-area-and-pattern.txt" >}}  
 ```text
-Hyperlink extraction not supported
-PDF download links in sidebar: 0
+Investor and supplier links in the body: 2
+
+  harborlane.example/investors/2025: https://harborlane.example/investors/2025
+  harborlane.example/suppliers/charter: https://harborlane.example/suppliers/charter
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_links_by_area_and_pattern/extract-links-by-area-and-pattern.txt)
 {{< /tab >}}
@@ -451,25 +472,27 @@ def extract_social_media_links(file_path, area_rect):
         
         return social_links
 
-# Usage - extract from footer area
-footer_area = (0, 800, 600, 100)
-social_links = extract_social_media_links("webpage.html", footer_area)
+# Usage - extract from the footer area of an A4 page
+footer_area = (0, 780, 600, 62)
+social_links = extract_social_media_links("document.pdf", footer_area)
 
 print("Social Media Links:")
 for platform, urls in social_links.items():
     print(f"  {platform}: {', '.join(urls)}")
+if not social_links:
+    print("  none in this area")
 ```
 
 {{< /tab >}}
-{{< tab "webpage.html" >}}
+{{< tab "document.pdf" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [webpage.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/webpage.html)
+The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab "extract-social-media-links.txt" >}}  
 ```text
-Hyperlink extraction not supported
 Social Media Links:
+  none in this area
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_social_media_links/extract-social-media-links.txt)
 {{< /tab >}}

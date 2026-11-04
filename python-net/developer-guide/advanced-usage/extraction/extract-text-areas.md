@@ -59,6 +59,16 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-areas/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-areas-from-document.txt" >}}  
+```text
+Page: 0, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Page: 0, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 0, Rectangle: (56; 92.40000019000013) (119.02400000000003; 8.799999999999955), Text: Annual Report 2025  |  Port Ellery
+Page: 0, Rectangle: (56; 114.49799948999998) (244.16600000000005; 28.600000000000023), Text: Annual Report
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-areas/example-1/extract-text-areas-from-document.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns a collection of `PageTextArea` objects with position and text information for each text area in the document.
@@ -107,6 +117,22 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-areas/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-areas-from-document-page.txt" >}}  
+```text
+Page 1/4
+Position: (56, 803.10098896), Size: (213.13599999999997x8.799999999999955)
+Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Position: (269.14500426999996, 803.10098896), Size: (70.69599999999974x8.799999999999955)
+Text: harborlane.example
+Position: (56, 92.40000019000013), Size: (119.02400000000003x8.799999999999955)
+Text: Annual Report 2025  |  Port Ellery
+Position: (56, 114.49799948999998), Size: (244.16600000000005x28.600000000000023)
+Text: Annual Report 2025
+Posit
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-areas/example-2/extract-text-areas-from-document-page.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns text areas only for the specified page, allowing page-by-page processing.
@@ -147,13 +173,25 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-areas/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-areas-options.txt" >}}  
+```text
+Page: 0, Rectangle: (109.368; 92.40000019000013) (17.792; 8.799999999999955), Text: 2025
+Page: 0, Rectangle: (242.31599999999995; 114.49799948999998) (57.849999999999994; 28.600000000000023), Text: 2025
+Page: 1, Rectangle: (203.936; 28.400000190000128) (17.79200000000003; 8.799999999999955), Text: 2025
+Page: 1, Rectangle: (56; 98.74999968999998) (8.340000000000003; 16.5), Text: 2
+Page: 1, Rectangle: (149.38; 121.74900065999998) (11.120000000000005; 11), Text: 13
+Page: 1, Rectangle: (163.28000000
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-areas/example-3/extract-text-areas-options.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns only text areas that match the regular expression pattern and fall within the specified rectangular region.
 
-## Extract text areas with formatting
+## Extract text areas with position and formatting
 
-To extract text areas and access formatting information:
+To extract text areas with their position on the page, and their formatting where the document reports it:
 {{< tabs "example-4" >}}
 {{< tab "Python" >}}
 
@@ -168,16 +206,18 @@ with Parser("./sample.docx") as parser:
     if text_areas is None:
         print("Text areas extraction isn't supported")
     else:
-        # Iterate over text areas
-        for area in text_areas:
-            # Get text style if available
+        # Iterate over the first text areas
+        for area in list(text_areas)[:8]:
+            rect = area.rectangle
+            print(f"Text: {area.text}")
+            print(f"Page: {area.page.index + 1}, position: ({rect.left:.0f}, {rect.top:.0f}), "
+                  f"size: {rect.right - rect.left:.0f} x {rect.bottom - rect.top:.0f}, "
+                  f"base line: {area.base_line:.1f}")
+            # The text style is None where the format doesn't report one
             if area.text_style is not None:
-                print(f"Text: {area.text}")
-                print(f"Font: {area.text_style.font_name}")
-                print(f"Size: {area.text_style.font_size}")
-                print(f"Bold: {area.text_style.is_bold}")
-                print(f"Italic: {area.text_style.is_italic}")
-                print("---")
+                print(f"Font: {area.text_style.font_name}, {area.text_style.font_size} pt, "
+                      f"bold: {area.text_style.is_bold}, italic: {area.text_style.is_italic}")
+            print("---")
 ```
 
 {{< /tab >}}
@@ -186,9 +226,25 @@ with Parser("./sample.docx") as parser:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-areas/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-areas-with-position-and-formatting.txt" >}}  
+```text
+Text: Supply Agreement
+Page: 1, position: (56, 121), size: 230 x 30, base line: 150.9
+---
+Text: Harbor Lane Provisions and Northwind Coffee Roasters
+Page: 1, position: (56, 154), size: 247 x 11, base line: 165.4
+---
+Text: 1. Parties
+Page: 1, position: (56, 175), size: 67 x 17, base line: 192.6
+---
+Text: Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-areas/example-4/extract-text-areas-with-position-and-formatting.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
-**Expected behavior:** Extracts text areas with detailed formatting information, useful for document analysis.
+**Expected behavior:** Prints each text area with its page, position, size and base line, and its font where the document reports one, useful for document analysis.
 
 ## Extract specific text from regions
 

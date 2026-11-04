@@ -57,6 +57,15 @@ with Parser("./reviewed.pdf") as parser:
 The following sample file is used in this example: [reviewed.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/reviewed.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-annotations-document.txt" >}}  
+```text
+Check the 2,400 kg against last season's sell-through before we sign.
+Release date works for the Q4 cash forecast.
+Ask Northwind for the green coffee index they will use.
+Dock 2 is reserved for these two mornings.
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/example-1/extract-annotations-document.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Prints the text of every annotation in the document, one per line: a reviewer's note and the text of a link annotation for the sample.
@@ -97,6 +106,22 @@ with Parser("./reviewed.pdf") as parser:
 The following sample file is used in this example: [reviewed.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/reviewed.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "read-who-annotated-when-and-where.txt" >}}  
+```text
+Type: Text
+Author: Lena Park
+Initials: -
+Created/modified: 2026-01-12 13:00:00
+Page: 1
+Content: Check the 2,400 kg against last season's sell-through before we sign.
+
+Type: Highlight
+Author: Amara Osei
+Initials: -
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/example-2/read-who-annotated-when-and-where.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** For the sample, prints:
@@ -127,24 +152,37 @@ Not every format can carry annotations. Check `parser.features.annotations` firs
 ```python
 from groupdocs.parser import Parser
 
-with Parser("./sample.xlsx") as parser:
-    # Check if the format supports annotations before extracting them
-    if not parser.features.annotations:
-        print("Annotation extraction isn't supported for this format")
-    else:
-        annotations = parser.get_annotations()
-        print("Found %d annotations" % len(annotations))
+for path in ("./reviewed.pdf", "./sample.xlsx"):
+    with Parser(path) as parser:
+        # Check if the format supports annotations before extracting them
+        if not parser.features.annotations:
+            print("%s: annotation extraction isn't supported for this format" % path)
+        else:
+            annotations = parser.get_annotations()
+            print("%s: found %d annotations" % (path, len(annotations)))
 ```
 
+{{< /tab >}}
+{{< tab "reviewed.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [reviewed.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/reviewed.pdf)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< tab "sample.xlsx" >}}
 {{< tab-text >}}
 The following sample file is used in this example: [sample.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/sample.xlsx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "check-that-the-format-supports-annotations.txt" >}}  
+```text
+./reviewed.pdf: found 4 annotations
+./sample.xlsx: annotation extraction isn't supported for this format
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/example-3/check-that-the-format-supports-annotations.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
-**Expected behavior:** Prints `Annotation extraction isn't supported for this format` for a spreadsheet.
+**Expected behavior:** Prints the number of annotations in the PDF, and `annotation extraction isn't supported for this format` for the spreadsheet.
 
 ## Export annotations to JSON
 
@@ -178,6 +216,22 @@ print(json.dumps(records, indent=2))
 {{< tab-text >}}
 The following sample file is used in this example: [reviewed.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/reviewed.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "export-annotations-to-json.txt" >}}  
+```text
+[
+  {
+    "page": 1,
+    "type": "Text",
+    "author": "Lena Park",
+    "timestamp": "2026-01-12T13:00:00",
+    "text": "Check the 2,400 kg against last season's sell-through before we sign."
+  },
+  {
+    "page": 1,
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document/example-4/export-annotations-to-json.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

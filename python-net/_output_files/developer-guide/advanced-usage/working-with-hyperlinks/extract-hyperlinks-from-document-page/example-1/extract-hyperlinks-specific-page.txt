@@ -1,0 +1,6 @@
+Hyperlinks on page 1:
+  Text: harborlane.example
+  URL: https://harborlane.example/
+
+  Text: Investor relations
+  URL: https://harborlane.example/investors

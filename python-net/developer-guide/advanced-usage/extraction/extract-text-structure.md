@@ -70,6 +70,13 @@ with Parser("./sample.docx") as parser:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-structure.txt" >}}  
+```text
+<document><section><p>Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential</p><p style="TITLE"><strong>Supply Agreement</strong></p><p>Harbor Lane Provisions and Northwind Coffee Roasters</p><p style="HEADING1"><strong>1. Parties</strong></p><p><strong>Buyer: </strong>Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.</p><p><strong>Supplier: </strong>Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, repres
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/example-1/extract-text-structure.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns an XML representation of the document structure, or `None` if structure extraction is not supported.
@@ -116,6 +123,16 @@ with Parser("sample.docx") as parser:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "parse-and-analyze-document-structure.txt" >}}  
+```text
+Document Structure Analysis:
+  Sections: 1
+  Paragraphs: 53
+  Tables: 1
+  Hyperlinks: 4
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/example-2/parse-and-analyze-document-structure.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Parses the XML structure and provides statistics about document elements.
@@ -161,22 +178,26 @@ def extract_hyperlinks_from_structure(file_path):
         return hyperlinks
 
 # Usage
-links = extract_hyperlinks_from_structure("sample.pdf")
+links = extract_hyperlinks_from_structure("sample.docx")
 print(f"Found {len(links)} hyperlinks:\n")
 for link in links:
     print(f"  {link['text']} -> {link['url']}")
 ```
 
 {{< /tab >}}
-{{< tab "sample.pdf" >}}
+{{< tab "sample.docx" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.pdf)
+The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab "extract-hyperlinks-from-structure.txt" >}}  
 ```text
-Structure extraction not supported
-Found 0 hyperlinks:
+Found 4 hyperlinks:
+
+  supplier quality charter -> https://harborlane.example/suppliers/charter
+  northwindroasters.example/quality -> https://northwindroasters.example/quality
+  harborlane.example/terms -> https://harborlane.example/terms
+  lena.park@harborlane.example -> mailto:lena.park@harborlane.example
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/extract_hyperlinks_from_structure/extract-hyperlinks-from-structure.txt)
 {{< /tab >}}
@@ -365,15 +386,21 @@ def save_structure_to_file(file_path, output_xml):
         return True
 
 # Usage
-save_structure_to_file("sample.pdf", "structure.xml")
+save_structure_to_file("sample.docx", "structure.xml")
 ```
 
 {{< /tab >}}
-{{< tab "save-structure.txt" >}}  
+{{< tab "sample.docx" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-structure/sample.docx)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "structure.xml" >}}  
 ```text
-Structure extraction not supported
+<document><section><p>Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential</p><p style="TITLE"><strong>Supply Agreement</strong></p><p>Harbor Lane Provisions and Northwind Coffee Roasters</p><p style="HEADING1"><strong>1. Parties</strong></p><p><strong>Buyer: </strong>Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.</p><p><strong>Supplier: </strong>Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, repres
+[TRUNCATED]
 ```
-[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/save_structure_to_file/save-structure.txt)
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-structure/save_structure_to_file/structure.xml)
 {{< /tab >}}
 {{< /tabs >}}
 

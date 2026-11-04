@@ -58,6 +58,22 @@ with open("sample.md", "rb") as stream:
 The following sample file is used in this example: [sample.md](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-specific-file-formats/sample.md)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "load-markdown-document.txt" >}}  
+```text
+Harbor Lane Provisions: wholesale ordering guide
+
+Welcome to Harbor Lane Provisions, the specialty food wholesaler on the Quayside in Port Ellery. This guide explains how to open an account, place orders and receive deliveries.
+
+Opening an account
+
+1. Fill in the account form at [harborlane.example/account](https://harborlane.example/account).
+2. Send us your resale certificate.
+3. Lena Park confirms your account within two working days.
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-specific-file-formats/example-1/load-markdown-document.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Load MHTML document
@@ -85,6 +101,15 @@ with Parser("email_page.mhtml", load_options) as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [email_page.mhtml](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-specific-file-formats/email_page.mhtml)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "load-mhtml-document.txt" >}}  
+```text
+Subject: Harbor Lane Provisions - Wholesale specialty food Date: Thu, 15 Jan 2026 09:00:00 -0000 MIME-Version: 1.0 Content-Type: multipart/related; type="text/html"; boundary="----=_HarborLane_Archive_2026" ------=_HarborLane_Archive_2026 Content-Type: text/html; charset="utf-8" Content-Transfer-Encoding: 8bit Content-Location: https://harborlane.example/ 
+ 
+ HYPERLINK "https://harborlane.example/" Home  HYPERLINK "https://harborlane.example/catalog" Catalog  HYPERLINK "https://harborlane
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-specific-file-formats/example-2/load-mhtml-document.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -118,6 +143,17 @@ with Parser("template.otp", load_options) as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [template.otp](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-specific-file-formats/template.otp)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "load-otp-document.txt" >}}  
+```text
+File type: OpenDocument Presentation Template
+Pages: 2
+Harbor Lane Provisions presentation title
+Subtitle, presenter and date
+Slide title
+First point in Arial 18Second pointThird pointHarbor Lane colours: harbor navy, sea teal, sand and coral
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-specific-file-formats/example-3/load-otp-document.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -216,6 +252,14 @@ for name, format_value in formats_needing_specification.items():
     print(f"{name}: {format_value}")
 ```
 
+{{< /tab >}}
+{{< tab "available-file-formats.txt" >}}  
+```text
+Markdown: Markdown Files(.md)
+MHTML: MIME HTML File(.mhtml)
+OTP: OpenDocument Presentation Template(.otp)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-specific-file-formats/example-5/available-file-formats.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

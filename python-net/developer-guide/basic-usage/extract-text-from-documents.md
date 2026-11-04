@@ -54,6 +54,27 @@ with Parser("./sample.docx") as parser:
 ```
 
 {{< /tab >}}
+{{< tab "sample.docx" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/basic-usage/extract-text-from-documents/sample.docx)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-text-from-documents.txt" >}}  
+```text
+Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential
+
+
+
+Supply Agreement
+Harbor Lane Provisions and Northwind Coffee Roasters
+1. Parties
+Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.
+Supplier: Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/extract-text-from-documents/example-1/extract-text-from-documents.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 The method returns the extracted text as a `str`, or `None` if text extraction isn't supported for the document format. The returned string also has a `read_to_end()` method, so code written for earlier versions, which returned a reader, keeps working.
@@ -91,6 +112,22 @@ with Parser("./sample.docx") as parser:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/basic-usage/extract-text-from-documents/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-from-local-files.txt" >}}  
+```text
+Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential
+
+
+
+Supply Agreement
+Harbor Lane Provisions and Northwind Coffee Roasters
+1. Parties
+Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.
+Supplier: Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/extract-text-from-documents/example-2/extract-text-from-local-files.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Extract text from a stream
@@ -119,6 +156,22 @@ with open("sample.pdf", "rb") as stream:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/basic-usage/extract-text-from-documents/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-text-stream.txt" >}}  
+```text
+Investor relations
+
+
+Annual Report 2025  |  Port Ellery
+Annual Report 2025
+
+
+1. Overview
+Harbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its
+Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/extract-text-from-documents/example-3/extract-text-stream.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -152,6 +205,22 @@ with Parser("./sample.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/basic-usage/extract-text-from-documents/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-text-from-specific-pages.txt" >}}  
+```text
+Text from page 1:
+                                                                                       Investor relations
+
+
+Annual Report 2025  |  Port Ellery
+Annual Report 2025
+
+
+1. Overview
+Harbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/extract-text-from-documents/example-5/extract-text-from-specific-pages.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

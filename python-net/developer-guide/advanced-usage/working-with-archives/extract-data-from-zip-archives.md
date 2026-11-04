@@ -50,6 +50,22 @@ with Parser("./archive.zip") as parser:
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/archive.zip)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "detect-and-iterate-through-archive-items.txt" >}}  
+```text
+File 1:
+  Name: invoice-HLP-2025-0412.pdf
+  Size: 213407 bytes
+  File Path: finance/invoice-HLP-2025-0412.pdf
+
+File 2:
+  Name: supply-agreement-northwind.docx
+  Size: 263263 bytes
+  File Path: finance/supply-agreement-northwind.docx
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/example-1/detect-and-iterate-through-archive-items.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns a collection of container items representing files in the ZIP archive, or `None` if container extraction is not supported.
@@ -97,6 +113,22 @@ with Parser("./documents.zip") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [documents.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/documents.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-text-from-files-in-zip-archive.txt" >}}  
+```text
+Processing: invoice-HLP-2025-0412.pdf
+  Extracted 2177 characters
+  Preview:                                                                                            INVOICE
+...
+
+Processing: supply-agreement-northwind.docx
+  Extracted 2584 characters
+  Preview: Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential
+
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/example-2/extract-text-from-files-in-zip-archive.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -150,6 +182,22 @@ with Parser("mixed_files.zip") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [mixed_files.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/mixed_files.zip)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "detect-file-type-of-container-items.txt" >}}  
+```text
+Archive Contents:
+
+
+.CSV files (1):
+  - inventory.csv
+
+.DOCX files (1):
+  - supply-agreement-northwind.docx
+
+.PDF files (1):
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/example-3/detect-file-type-of-container-items.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -297,11 +345,11 @@ Archive Structure:
 
  readme.txt (188 bytes)
   └─ Text: 188 characters
- records.zip (329903 bytes)
+ records.zip (495455 bytes)
   └─ [Archive - processing nested items]
-     invoice-HLP-2025-0412.pdf (212328 bytes)
+     invoice-HLP-2025-0412.pdf (213407 bytes)
       └─ Text: 2177 characters
-     supply-agreement-northwind.docx (101710 bytes)
+     supply-agreement-northwind.docx (263263 bytes)
       └─ Text: 2584 characters
 [TRUNCATED]
 ```
@@ -394,13 +442,13 @@ The following sample file is used in this example: [documents.zip](/parser/pytho
 Archive Metadata Report:
 
 File: invoice-HLP-2025-0412.pdf
-  Size: 212328 bytes
+  Size: 213407 bytes
   Type: .pdf
   Pages: 1
   Metadata: 7 properties
 
 File: supply-agreement-northwind.docx
-  Size: 101710 bytes
+  Size: 263263 bytes
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/extract_archive_metadata/extract-archive-metadata.txt)
@@ -473,16 +521,21 @@ create_archive_inventory("archive.zip", "inventory.json")
 ```
 
 {{< /tab >}}
+{{< tab "archive.zip" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/extract-data-from-zip-archives/archive.zip)
+{{< /tab-text >}}
+{{< /tab >}}
 {{< tab "inventory.json" >}}  
 ```text
 {
   "archive": "archive.zip",
   "total_files": 5,
-  "total_size": 341988,
+  "total_size": 507213,
   "files": [
     {
       "name": "invoice-HLP-2025-0412.pdf",
-      "size": 212328,
+      "size": 213407,
       "path": "finance/invoice-HLP-2025-0412.pdf",
       "extractable": true,
 [TRUNCATED]

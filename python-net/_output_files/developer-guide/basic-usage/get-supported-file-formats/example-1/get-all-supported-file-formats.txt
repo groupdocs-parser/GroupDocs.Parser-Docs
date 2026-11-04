@@ -1,0 +1,67 @@
+.7z - 7z Archive File
+.azw3 - AZW3
+.bmp - Bitmap Image File
+.bz2 - Bzip2 Archive File
+.chm - Compiled HTML Help File
+.csv - Comma Separated Values File
+.doc - Microsoft Word Document
+.docm - Word Open XML Macro-Enabled Document
+.docx - Microsoft Word Open XML Document
+.dot - Word Document Template
+.dotm - Word Open XML Macro-Enabled Document Template
+.dotx - Word Open XML Document Template
+.eml - E-Mail Message
+.emlx - Apple Mail Message
+.epub - Open eBook File
+.fb2 - FictionBook
+.gif - Graphical Interchange Format File
+.gz - Gzip Archive File
+.html - Hypertext Markup Language File
+.jp2 - JPEG 2000 Core Image File
+.jpeg - JPEG Image
+.jpg - JPEG Image
+.md - Markdown Files
+.mhtml - MIME HTML File
+.mobi - FictionBook
+.msg - Outlook Mail Message
+.odp - OpenDocument Presentation
+.ods - OpenDocument Spreadsheet
+.odt - OpenDocument Text Document
+.one - OneNote Document
+.ost - Outlook Offline Data File
+.otp - OpenDocument Presentation Template
+.ots - OpenDocument Spreadsheet Template
+.ott - OpenDocument Document Template
+.pdf - Portable Document Format File
+.png - Portable Network Graphic
+.pot - PowerPoint Template
+.potm - PowerPoint Open XML Macro-Enabled Presentation Template
+.potx - PowerPoint Open XML Presentation Template
+.pps - PowerPoint Slide Show
+.ppsm - PowerPoint Open XML Macro-Enabled Slide
+.ppsx - PowerPoint Open XML Slide Show
+.ppt - PowerPoint Presentation
+.pptm - PowerPoint Open XML Macro-Enabled Presentation
+.pptx - PowerPoint Open XML Presentation
+.pst - Outlook Personal Information Store File
+.rar - RAR Archive File
+.rtf - Rich Text Format File
+.tar - Tar Archive File
+.tif - Tagged Image File
+.tiff - Tagged Image File Format
+.tsv - Tab Separated Values File
+.txt - Plain Text File
+.xhtml - Hypertext Markup Language File
+.xla - Excel Add-In File
+.xlam - Excel Open XML Macro-Enabled Add-In
+.xls - Excel Spreadsheet
+.xlsb - Excel Binary Spreadsheet
+.xlsm - Excel Open XML Macro-Enabled Spreadsheet
+.xlsx - Microsoft Excel Open XML Spreadsheet
+.xlt - Microsoft Excel Template
+.xltm - Excel Open XML Macro-Enabled Spreadsheet Template
+.xltx - Excel Open XML Spreadsheet Template
+.xml - XML File
+.zip - Zipped File
+
+Total supported formats: 65

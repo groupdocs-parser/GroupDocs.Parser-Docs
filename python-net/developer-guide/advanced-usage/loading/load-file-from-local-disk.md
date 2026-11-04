@@ -60,6 +60,22 @@ with Parser(file_path) as parser:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "load-document-by-file-path.txt" >}}  
+```text
+Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential
+
+
+
+Supply Agreement
+Harbor Lane Provisions and Northwind Coffee Roasters
+1. Parties
+Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement Lead.
+Supplier: Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/example-1/load-document-by-file-path.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Load document with absolute path
@@ -88,6 +104,14 @@ with Parser(file_path) as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "load-document-with-absolute-path.txt" >}}  
+```text
+File type: Portable Document Format File
+Page count: 4
+File size: 619289 bytes
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/example-2/load-document-with-absolute-path.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Batch processing multiple files
@@ -102,7 +126,7 @@ def process_files_from_directory(directory_path):
     """Process all supported documents in a directory"""
     
     # Get all files in the directory
-    for filename in os.listdir(directory_path):
+    for filename in sorted(os.listdir(directory_path)):
         file_path = os.path.join(directory_path, filename)
         
         # Skip if not a file
@@ -127,8 +151,16 @@ def process_files_from_directory(directory_path):
                     
         except Exception as e:
             print(f"  Error: {e}")
+
+# Process every document in the ./documents folder
+process_files_from_directory("documents")
 ```
 
+{{< /tab >}}
+{{< tab "documents" >}}
+{{< tab-text >}}
+The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/documents/annual-report.pdf), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/documents/service-agreement.docx), [inventory.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/documents/inventory.xlsx), [product-catalog.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/documents/product-catalog.pptx)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< /tabs >}}
 

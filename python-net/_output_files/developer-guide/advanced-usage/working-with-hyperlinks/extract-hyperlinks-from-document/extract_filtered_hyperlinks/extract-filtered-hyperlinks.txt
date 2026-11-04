@@ -1,6 +1,5 @@
-Hyperlink extraction not supported
-Found 0 PDF links
-Hyperlink extraction not supported
-Found 0 download links
-Hyperlink extraction not supported
-Found 0 external links
+Found 2 links to harborlane.example
+  supplier quality charter -> https://harborlane.example/suppliers/charter
+  harborlane.example/terms -> https://harborlane.example/terms
+Found 1 links about the charter
+Found 3 web links

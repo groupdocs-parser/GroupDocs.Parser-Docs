@@ -39,6 +39,15 @@ with Parser("./slides.pptx") as parser:
 The following sample file is used in this example: [slides.pptx](/parser/python-net/_sample_files/developer-guide/basic-usage/extract-images-from-documents/slides.pptx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-images-outputs.zip" >}}  
+```text
+image-1.png (4 KB)
+image-2.jpeg (136 KB)
+image-3.jpeg (75 KB)
+image-4.jpeg (105 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/extract-images-from-documents/example-1/extract-images-outputs.zip)
+{{< /tab >}}
 {{< /tabs >}}
 
 ### Steps

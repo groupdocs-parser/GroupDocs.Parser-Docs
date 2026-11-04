@@ -54,6 +54,22 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-images-from-document.txt" >}}  
+```text
+Image 1:
+  Page: 1
+  Type: JPEG Image(.jpeg)
+  Size: 150x45
+  Position: (40, 70.99999999593751)
+Image 2:
+  Page: 1
+  Type: JPEG Image(.jpeg)
+  Size: 375x234
+  Position: (110, 383.9999999959375)
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/example-1/extract-images-from-document.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns a collection of `PageImageArea` objects representing all images found in the document, or `None` if image extraction is not supported.
@@ -102,6 +118,14 @@ with Parser("./sample.docx") as parser:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "save-extracted-images-to-files-outputs.zip" >}}  
+```text
+extracted_images/image_1.png (4 KB)
+extracted_images/image_2.jpeg (176 KB)
+extracted_images/image_3.jpeg (136 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/example-2/save-extracted-images-to-files-outputs.zip)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Saves each extracted image to a separate file with the appropriate file extension (.png, .jpg, .gif, etc.).
@@ -146,6 +170,22 @@ with Parser("./sample.pptx") as parser:
 The following sample file is used in this example: [sample.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/sample.pptx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-images-with-metadata.txt" >}}  
+```text
+Found 4 images
+
+Image 1:
+  Page: 1
+  Format: Portable Network Graphic(.png)
+  Rotation: 0 degrees
+  Rectangle: (30; 20) (150; 45)
+  Width: 150
+  Height: 45
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/example-3/extract-images-with-metadata.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Displays comprehensive information about each image including position, size, format, and rotation angle.
@@ -188,6 +228,21 @@ with Parser("./sample.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "get-image-stream.txt" >}}  
+```text
+Image 1: 10365 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 55430 bytes
+Image 2: 90027 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 633711 bytes
+Image 3: 125180 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 837256 bytes
+Image 4: 163435 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 1186275 bytes
+Image 5: 94989 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 928726 bytes
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/example-4/get-image-stream.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -235,6 +290,16 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "convert-images-during-extraction-outputs.zip" >}}  
+```text
+converted_images/image_1.png (54 KB)
+converted_images/image_2.png (619 KB)
+converted_images/image_3.png (818 KB)
+converted_images/image_4.png (1158 KB)
+converted_images/image_5.png (907 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/example-5/convert-images-during-extraction-outputs.zip)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** All extracted images are converted to PNG format before saving, regardless of their original format.
@@ -259,7 +324,7 @@ def extract_images_from_directory(input_dir, output_dir):
     # Supported document extensions
     extensions = ['.pdf', '.docx', '.doc', '.xlsx', '.pptx', '.ppt']
     
-    for file_path in Path(input_dir).rglob('*'):
+    for file_path in sorted(Path(input_dir).rglob('*')):
         if file_path.suffix.lower() in extensions:
             print(f"\nProcessing: {file_path.name}")
             
@@ -289,9 +354,14 @@ def extract_images_from_directory(input_dir, output_dir):
                 print(f"  Error: {e}")
 
 # Usage
-extract_images_from_directory("input_documents", "extracted_images")
+extract_images_from_directory("documents", "extracted_images")
 ```
 
+{{< /tab >}}
+{{< tab "documents" >}}
+{{< tab-text >}}
+The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/documents/annual-report.pdf), [product-catalog.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/documents/product-catalog.pptx), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/documents/service-agreement.docx)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< /tabs >}}
 

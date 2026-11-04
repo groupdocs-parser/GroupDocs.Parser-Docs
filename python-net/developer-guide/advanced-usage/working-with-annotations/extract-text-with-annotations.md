@@ -39,6 +39,22 @@ with Parser("./reviewed.pdf") as parser:
 The following sample file is used in this example: [reviewed.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-text-with-annotations/reviewed.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-together-with-annotations.txt" >}}  
+```text
+Supply Agreement
+Harbor Lane Provisions and Northwind Coffee Roasters
+1. Parties
+Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement
+Lead.
+Supplier: Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+2. Products
+The Supplier roasts and delivers the following coffees to the Buyer's Quayside warehouse:
+    •   Harbor Blend
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-annotations/extract-text-with-annotations/example-1/extract-text-together-with-annotations.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Prints the document text. The two annotations of the sample's first page follow the text of that page.
@@ -73,6 +89,15 @@ with Parser("./reviewed.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [reviewed.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-text-with-annotations/reviewed.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "compare-text-with-and-without-annotations.txt" >}}  
+```text
+"Check the 2,400 kg against last season's sell-through before we sign.": False / True
+'Release date works for the Q4 cash forecast.': False / True
+'Ask Northwind for the green coffee index they will use.': False / True
+'Dock 2 is reserved for these two mornings.': False / True
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-annotations/extract-text-with-annotations/example-2/compare-text-with-and-without-annotations.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

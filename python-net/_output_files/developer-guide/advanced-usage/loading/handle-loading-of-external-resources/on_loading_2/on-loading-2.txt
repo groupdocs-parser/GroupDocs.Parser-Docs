@@ -1,0 +1,3 @@
+Images: 3
+Requested: cold-room-installation.png
+Requested: https://cdn.harborlane.example/images/quayside-at-dawn.jpg

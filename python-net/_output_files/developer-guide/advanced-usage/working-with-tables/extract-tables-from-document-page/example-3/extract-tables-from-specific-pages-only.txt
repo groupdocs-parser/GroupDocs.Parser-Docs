@@ -1,0 +1,7 @@
+Processing page 1...
+  Table 1: 40×9
+  First row: ...
+
+Page 3 doesn't exist (the document has 2 pages)
+
+Page 5 doesn't exist (the document has 2 pages)

@@ -1,0 +1,31 @@
+Processing: invoice-HLP-2025-0412.pdf
+  Extracted 2177 characters
+  Preview:                                                                                            INVOICE
+...
+
+Processing: supply-agreement-northwind.docx
+  Extracted 2584 characters
+  Preview: Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential
+
+
+
+Su...
+
+Processing: inventory.xlsx
+  Extracted 4352 characters
+  Preview: Inventory
+SKU Product Category Supplier Unit Unit cost On hand Reorder level Location
+HLP-CF-101 H...
+
+Processing: inventory.csv
+  Extracted 3604 characters
+  Preview: Sheet1
+SKU Product Category Supplier Unit Unit cost On hand Reorder level Location
+HLP-CF-101 Harb...
+
+Processing: cold-room-3.png
+  Extracted 57 characters
+  Preview: 2.0
+COLD ROOM
+HARBQR LANE 1 COLD RQQM 3 | KEPT AT 2 C
+...

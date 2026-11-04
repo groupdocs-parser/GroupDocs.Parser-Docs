@@ -59,6 +59,22 @@ with Parser("./archive.zip") as parser:
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/archive.zip)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "detect-file-type-of-container-items.txt" >}}  
+```text
+File: invoice-HLP-2025-0412.pdf
+  Type: Portable Document Format File
+  Extension: .pdf
+
+File: supply-agreement-northwind.docx
+  Type: Microsoft Word Open XML Document
+  Extension: .docx
+
+File: inventory.xlsx
+  Type: Microsoft Excel Open XML Spreadsheet
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/example-1/detect-file-type-of-container-items.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Detects and displays the file type of each item in the container.
@@ -201,6 +217,11 @@ for name in result['unsupported']:
 ```
 
 {{< /tab >}}
+{{< tab "documents.zip" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [documents.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/documents.zip)
+{{< /tab-text >}}
+{{< /tab >}}
 {{< tab "get-supported-items.txt" >}}  
 ```text
 Supported files (5):
@@ -303,6 +324,11 @@ create_file_type_report("archive.zip", "file_type_report.json")
 ```
 
 {{< /tab >}}
+{{< tab "archive.zip" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/detect-file-type-of-container-item/archive.zip)
+{{< /tab-text >}}
+{{< /tab >}}
 {{< tab "file_type_report.json" >}}  
 ```text
 {
@@ -310,7 +336,7 @@ create_file_type_report("archive.zip", "file_type_report.json")
   "items": [
     {
       "name": "invoice-HLP-2025-0412.pdf",
-      "size": 212328,
+      "size": 213407,
       "path": "finance/invoice-HLP-2025-0412.pdf",
       "file_type": "Portable Document Format File",
       "extension": ".pdf",

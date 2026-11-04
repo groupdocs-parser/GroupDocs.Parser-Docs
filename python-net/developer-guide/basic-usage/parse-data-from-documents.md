@@ -50,6 +50,13 @@ with Parser("./invoice.pdf") as parser:
 The following sample file is used in this example: [invoice.pdf](/parser/python-net/_sample_files/developer-guide/basic-usage/parse-data-from-documents/invoice.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "parse-data-with-a-template.txt" >}}  
+```text
+COMPANYNAME: Northwind Coffee
+INVOICENUMBER: HLP-2025-0412
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/parse-data-from-documents/example-1/parse-data-with-a-template.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ### Steps

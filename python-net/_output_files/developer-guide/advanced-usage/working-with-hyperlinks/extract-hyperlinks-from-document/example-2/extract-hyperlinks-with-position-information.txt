@@ -1,0 +1,27 @@
+Hyperlink 1:
+  Text: supplier quality charter
+  URL: https://harborlane.example/suppliers/charter
+  Page: 2
+  Position: (201.3090057373047, 369.78399658203125)
+  Size: 100.60499572753906x11.49899959564209
+
+Hyperlink 2:
+  Text: northwindroasters.example/quality
+  URL: https://northwindroasters.example/quality
+  Page: 2
+  Position: (56, 381.2829895019531)
+  Size: 151.7429962158203x11.49899959564209
+
+Hyperlink 3:
+  Text: harborlane.example/terms
+  URL: https://harborlane.example/terms
+  Page: 2
+  Position: (169.91900634765625, 655.2780151367188)
+  Size: 116.1669921875x11.49899959564209
+
+Hyperlink 4:
+  Text: lena.park@harborlane.example
+  URL: mailto:lena.park@harborlane.example
+  Page: 2
+  Position: (106.58100128173828, 731.0239868164062)
+  Size: 139.6780014038086x11.49899959564209

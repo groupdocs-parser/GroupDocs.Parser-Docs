@@ -1,0 +1,17 @@
+Archive Contents:
+
+
+.CSV files (1):
+  - inventory.csv
+
+.DOCX files (1):
+  - supply-agreement-northwind.docx
+
+.PDF files (1):
+  - invoice-HLP-2025-0412.pdf
+
+.PNG files (1):
+  - cold-room-3.png
+
+.XLSX files (1):
+  - inventory.xlsx

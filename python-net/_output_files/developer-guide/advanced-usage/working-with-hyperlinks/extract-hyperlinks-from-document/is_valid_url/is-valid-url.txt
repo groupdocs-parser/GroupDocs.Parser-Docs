@@ -1,1 +1,10 @@
-Hyperlink extraction not supported
+Valid hyperlinks: 3
+Invalid hyperlinks: 1
+
+Valid URLs:
+  supplier quality charter -> https://harborlane.example/suppliers/charter
+  northwindroasters.example/quality -> https://northwindroasters.example/quality
+  harborlane.example/terms -> https://harborlane.example/terms
+
+Other links (mail addresses and the like):
+  lena.park@harborlane.example -> mailto:lena.park@harborlane.example

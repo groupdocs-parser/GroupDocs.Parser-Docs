@@ -1,0 +1,27 @@
+Type: Text
+Author: Lena Park
+Initials: -
+Created/modified: 2026-01-12 13:00:00
+Page: 1
+Content: Check the 2,400 kg against last season's sell-through before we sign.
+
+Type: Highlight
+Author: Amara Osei
+Initials: -
+Created/modified: 2026-01-12 13:25:00
+Page: 1
+Content: Release date works for the Q4 cash forecast.
+
+Type: Text
+Author: Amara Osei
+Initials: -
+Created/modified: 2026-01-12 13:40:00
+Page: 2
+Content: Ask Northwind for the green coffee index they will use.
+
+Type: Highlight
+Author: Lena Park
+Initials: -
+Created/modified: 2026-01-12 13:55:00
+Page: 2
+Content: Dock 2 is reserved for these two mornings.

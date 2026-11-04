@@ -70,6 +70,8 @@ The following sample file is used in this example: [document.html](/parser/pytho
 {{< tab "on-loading.txt" >}}  
 ```text
 Images: 2
+.png
+.png
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/handle-loading-of-external-resources/on_loading/on-loading.txt)
 {{< /tab >}}
@@ -114,11 +116,13 @@ for uri in sorted(set(requested)):
 The following sample file is used in this example: [document.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/handle-loading-of-external-resources/document.html)
 {{< /tab-text >}}
 {{< /tab >}}
-{{< tab "on-loading.txt" >}}  
+{{< tab "on-loading-2.txt" >}}  
 ```text
-Images: 2
+Images: 3
+Requested: cold-room-installation.png
+Requested: https://cdn.harborlane.example/images/quayside-at-dawn.jpg
 ```
-[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/handle-loading-of-external-resources/on_loading/on-loading.txt)
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/handle-loading-of-external-resources/on_loading_2/on-loading-2.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -163,11 +167,11 @@ with Parser("./document.html", settings) as parser:
 The following sample file is used in this example: [document.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/handle-loading-of-external-resources/document.html)
 {{< /tab-text >}}
 {{< /tab >}}
-{{< tab "on-loading.txt" >}}  
+{{< tab "on-loading-3.txt" >}}  
 ```text
 Images: 2
 ```
-[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/handle-loading-of-external-resources/on_loading/on-loading.txt)
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/handle-loading-of-external-resources/on_loading_3/on-loading-3.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

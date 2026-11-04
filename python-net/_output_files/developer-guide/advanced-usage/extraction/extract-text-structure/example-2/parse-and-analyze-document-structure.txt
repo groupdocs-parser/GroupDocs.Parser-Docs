@@ -1,0 +1,5 @@
+Document Structure Analysis:
+  Sections: 1
+  Paragraphs: 53
+  Tables: 1
+  Hyperlinks: 4

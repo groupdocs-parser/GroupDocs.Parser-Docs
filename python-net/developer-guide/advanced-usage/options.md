@@ -35,6 +35,19 @@ with open("./protected.pdf", "rb") as stream:
 The following sample file is used in this example: [protected.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/options/protected.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "apply-load-options.txt" >}}  
+```text
+Payroll summary - December 2025
+Confidential: prepared by Finance for the directors of Harbor Lane Provisions.
+Department                              Headcount          Gross pay            Employer costs
+Warehouse                               21                 $71,400              $13,900
+Drivers                                 9                  $29,700              $5,800
+Sales and customer service              7                  $27,300              $5,300
+Procurement               
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/options/example-1/apply-load-options.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## When to use other options

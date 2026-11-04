@@ -1,0 +1,8 @@
+Tables extracted from page 1 with custom layout:
+
+Table: 5x5
+SKU                  | Description          | Qty                  | Unit price           | Amount               | 
+HLP-CF-101           | Harbor Blend whole bean coffee, 1 kg | 120                  | $18.40               | $2,208.00            | 
+HLP-CF-102           | Dockside Decaf whole bean coffee, 1 kg | 48                   | $19.10               | $916.80              | 
+HLP-CF-103           | Lighthouse Espresso beans, 1 kg | 90                   | $21.75               | $1,957.50            | 
+HLP-CF-105           | Autumn Harvest spiced roast, 500 g | 150                  | $11.20               | $1,680.00            |

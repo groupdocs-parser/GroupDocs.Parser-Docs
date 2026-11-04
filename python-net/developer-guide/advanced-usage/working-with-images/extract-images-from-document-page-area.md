@@ -58,6 +58,13 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-images-from-page-area.txt" >}}  
+```text
+Images found in area:
+  Image 1: JPEG Image(.jpeg), Page 1
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/example-1/extract-images-from-page-area.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns only images that are located within the specified rectangular area.
@@ -128,12 +135,12 @@ The following sample file is used in this example: [document.pdf](/parser/python
 {{< /tab >}}
 {{< tab "extract-images-from-regions-outputs.zip" >}}  
 ```text
-region_images/region1_img1.jpeg (9 KB)
-region_images/region2_img1.jpeg (9 KB)
-region_images/region2_img2.jpeg (46 KB)
-region_images/region2_img3.jpeg (60 KB)
-region_images/region2_img4.jpeg (50 KB)
-region_images/region2_img5.jpeg (61 KB)
+region_images/region1_img1.jpeg (10 KB)
+region_images/region2_img1.jpeg (10 KB)
+region_images/region2_img2.jpeg (88 KB)
+region_images/region2_img3.jpeg (122 KB)
+region_images/region2_img4.jpeg (160 KB)
+region_images/region2_img5.jpeg (93 KB)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_images_from_regions/extract-images-from-regions-outputs.zip)
 {{< /tab >}}
@@ -186,6 +193,15 @@ with Parser("document.pptx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [document.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/document.pptx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-images-from-page-area-with-page-index.txt" >}}  
+```text
+Images on page 1 in specified area:
+  Type: JPEG Image(.jpeg)
+  Position: (140, 130)
+  Size: 320x200
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/example-3/extract-images-from-page-area-with-page-index.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -244,7 +260,7 @@ The following sample file is used in this example: [invoice.pdf](/parser/python-
 {{< /tab >}}
 {{< tab "logo_1.jpeg" >}}  
 ```text
-Binary file (JPEG, 10 KB)
+Binary file (JPEG, 14 KB)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_header_logos/logo_1.jpeg)
 {{< /tab >}}
@@ -374,10 +390,10 @@ The following sample file is used in this example: [document.pdf](/parser/python
 {{< /tab >}}
 {{< tab "extract-large-images-from-area-outputs.zip" >}}  
 ```text
-large_images/large_image_1.jpeg (46 KB)
-large_images/large_image_2.jpeg (60 KB)
-large_images/large_image_3.jpeg (50 KB)
-large_images/large_image_4.jpeg (61 KB)
+large_images/large_image_1.jpeg (88 KB)
+large_images/large_image_2.jpeg (122 KB)
+large_images/large_image_3.jpeg (160 KB)
+large_images/large_image_4.jpeg (93 KB)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page-area/extract_large_images_from_area/extract-large-images-from-area-outputs.zip)
 {{< /tab >}}

@@ -1,0 +1,9 @@
+Document has 4 pages
+
+Found 2 tables across 2 pages
+
+Page 1: 1 table(s)
+  Table 1: 6×4
+
+Page 3: 1 table(s)
+  Table 1: 7×4

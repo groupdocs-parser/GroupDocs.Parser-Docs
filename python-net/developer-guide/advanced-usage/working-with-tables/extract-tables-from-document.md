@@ -62,6 +62,20 @@ with Parser("./sample.xlsx") as parser:
 The following sample file is used in this example: [sample.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/sample.xlsx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-tables-from-document.txt" >}}  
+```text
+=== Table 1 ===
+Rows: 40, Columns: 9
+
+HLP-CF-101	Harbor Blend whole bean coffee	Coffee	Northwind Coffee Roasters	1 kg bag	$18.40	240	80	A-01	
+HLP-CF-102	Dockside Decaf whole bean coffee	Coffee	Northwind Coffee Roasters	1 kg bag	$19.10	96	40	A-01	
+HLP-CF-103	Lighthouse Espresso beans	Coffee	Northwind Coffee Roasters	1 kg bag	$21.75	180	60	A-02	
+HLP-CF-104	Cold brew concentrate	Coffee	Northwind Coffee Roasters	1 L bottle	$9.60	150	50	A-02	
+HLP-CF-105	Autumn Harvest spiced roast	Coffee	Northwind Co
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/example-1/extract-tables-from-document.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Extracts all tables from the document with automatic table detection, returning structured table data with rows, columns, and cell values.
@@ -109,6 +123,20 @@ with Parser(excel_path) as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [data.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/data.xlsx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-tables-from-excel-spreadsheets.txt" >}}  
+```text
+Table 1:
+Size: 40 rows x 9 columns
+Page: 1
+ |  |  |  |  |  |  |  | 
+HLP-CF-101 | Harbor Blend whole bean coffee | Coffee | Northwind Coffee Roasters | 1 kg bag | $18.40 | 240 | 80 | A-01
+HLP-CF-102 | Dockside Decaf whole bean coffee | Coffee | Northwind Coffee Roasters | 1 kg bag | $19.10 | 96 | 40 | A-01
+HLP-CF-103 | Lighthouse Espresso beans | Coffee | Northwind Coffee Roasters | 1 kg bag | $21.75 | 180 | 60 | A-02
+HLP-CF-104 | Cold brew concentrate | Coffee | Northwind Coffee Roasters | 1 L b
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/example-2/extract-tables-from-excel-spreadsheets.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -163,6 +191,17 @@ with Parser("invoice.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [invoice.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/invoice.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-tables-with-custom-layout.txt" >}}  
+```text
+Table: 5 rows x 5 columns
+SKU | Description | Qty | Unit price | Amount | 
+HLP-CF-101 | Harbor Blend whole bean coffee, 1 kg | 120 | $18.40 | $2,208.00 | 
+HLP-CF-102 | Dockside Decaf whole bean coffee, 1 kg | 48 | $19.10 | $916.80 | 
+HLP-CF-103 | Lighthouse Espresso beans, 1 kg | 90 | $21.75 | $1,957.50 | 
+HLP-CF-105 | Autumn Harvest spiced roast, 500 g | 150 | $11.20 | $1,680.00 |
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/example-3/extract-tables-with-custom-layout.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -275,6 +314,20 @@ with Parser("document.docx") as parser:
 The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/document.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "get-table-cell-properties.txt" >}}  
+```text
+Table: 6×4
+Position: (0; 0) (0; 0)
+
+First cell:
+  Text: Product
+  Row index: 0
+  Column index: 0
+  Row span: 1
+  Column span: 1
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/example-5/get-table-cell-properties.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Provides access to individual cell properties including text, position, and span information.
@@ -325,6 +378,20 @@ with Parser("report.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/report.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-tables-from-multiple-pages.txt" >}}  
+```text
+Document has 4 pages
+
+Found 2 tables across 2 pages
+
+Page 1: 1 table(s)
+  Table 1: 6×4
+
+Page 3: 1 table(s)
+  Table 1: 7×4
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document/example-6/extract-tables-from-multiple-pages.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

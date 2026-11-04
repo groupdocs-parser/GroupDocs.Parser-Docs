@@ -63,6 +63,15 @@ with Parser("./sample.docx") as parser:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/basic-usage/get-document-info/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "get-document-info-local-file.txt" >}}  
+```text
+File type: Microsoft Word Open XML Document
+Page count: 2
+File size: 263263 bytes
+File extension: .docx
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-document-info/example-1/get-document-info-local-file.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Get document info from a stream
@@ -90,6 +99,14 @@ with open("sample.pdf", "rb") as stream:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/basic-usage/get-document-info/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "get-document-info-stream.txt" >}}  
+```text
+File type: Portable Document Format File
+Page count: 4
+File size: 619289 bytes
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-document-info/example-2/get-document-info-stream.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -136,7 +153,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 Processing: sample.pdf
 Type: Portable Document Format File
 Pages: 4
-Size: 320.61 KB
+Size: 604.77 KB
 Document has pages, proceeding with text extraction...
                                                                                        Investor relations
 
@@ -180,6 +197,18 @@ with Parser("./sample.docx") as parser:
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/basic-usage/get-document-info/sample.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "get-page-specific-information.txt" >}}  
+```text
+Total pages: 2
+
+--- Page 1 ---
+Characters: 974
+
+--- Page 2 ---
+Characters: 1610
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-document-info/example-4/get-page-specific-information.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Working with unsupported formats
@@ -192,20 +221,39 @@ If a document format doesn't support certain features, the API returns appropria
 from groupdocs.parser import Parser
 from groupdocs.parser.exceptions import UnsupportedDocumentFormatException
 
-try:
-    with Parser("./unknown.format") as parser:
-        doc_info = parser.get_document_info()
-        print(f"File type: {doc_info.file_type.file_format}")
+# A Word document, and an audio recording that isn't a document
+for path in ("./sample.docx", "./voice-memo.wav"):
+    try:
+        with Parser(path) as parser:
+            doc_info = parser.get_document_info()
+            print(f"{path}: {doc_info.file_type.file_format}, {doc_info.page_count} pages")
 
-        # Some formats may not have page count
-        if doc_info.page_count == 0:
-            print("Page count is not available for this format")
-except UnsupportedDocumentFormatException:
-    print("This document format isn't supported")
-except FileNotFoundError:
-    print("File not found: ./unknown.format")
+            # Some formats may not have page count
+            if doc_info.page_count == 0:
+                print("Page count is not available for this format")
+    except UnsupportedDocumentFormatException:
+        print(f"{path}: this document format isn't supported")
+    except FileNotFoundError:
+        print(f"File not found: {path}")
 ```
 
+{{< /tab >}}
+{{< tab "sample.docx" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/basic-usage/get-document-info/sample.docx)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "voice-memo.wav" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [voice-memo.wav](/parser/python-net/_sample_files/developer-guide/basic-usage/get-document-info/voice-memo.wav)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "working-with-unsupported-formats.txt" >}}  
+```text
+./sample.docx: Microsoft Word Open XML Document, 2 pages
+File not found: ./voice-memo.wav
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-document-info/example-5/working-with-unsupported-formats.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

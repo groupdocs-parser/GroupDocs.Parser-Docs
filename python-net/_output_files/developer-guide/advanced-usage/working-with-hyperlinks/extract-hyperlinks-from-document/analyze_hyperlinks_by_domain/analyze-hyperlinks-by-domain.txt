@@ -1,1 +1,8 @@
-Hyperlink extraction not supported
+Total hyperlinks: 4
+Unique domains: 3
+
+Domain                                   Count     
+--------------------------------------------------
+harborlane.example                       2         
+northwindroasters.example                1         
+internal                                 1

@@ -1,0 +1,24 @@
+File 1:
+  Name: invoice-HLP-2025-0412.pdf
+  Size: 213407 bytes
+  File Path: finance/invoice-HLP-2025-0412.pdf
+
+File 2:
+  Name: supply-agreement-northwind.docx
+  Size: 263263 bytes
+  File Path: finance/supply-agreement-northwind.docx
+
+File 3:
+  Name: inventory.xlsx
+  Size: 15607 bytes
+  File Path: operations/inventory.xlsx
+
+File 4:
+  Name: inventory.csv
+  Size: 3625 bytes
+  File Path: operations/inventory.csv
+
+File 5:
+  Name: cold-room-3.png
+  Size: 11311 bytes
+  File Path: operations/cold-room-3.png

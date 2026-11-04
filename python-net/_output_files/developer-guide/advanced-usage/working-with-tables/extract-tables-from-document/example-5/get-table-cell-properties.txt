@@ -1,0 +1,9 @@
+Table: 6×4
+Position: (0; 0) (0; 0)
+
+First cell:
+  Text: Product
+  Row index: 0
+  Column index: 0
+  Row span: 1
+  Column span: 1

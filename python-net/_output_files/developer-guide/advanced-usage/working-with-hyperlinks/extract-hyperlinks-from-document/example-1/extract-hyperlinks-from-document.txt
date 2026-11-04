@@ -1,0 +1,31 @@
+Text: harborlane.example
+URL: https://harborlane.example/
+Page: 1
+
+Text: Investor relations
+URL: https://harborlane.example/investors
+Page: 1
+
+Text: harborlane.example
+URL: https://harborlane.example/
+Page: 2
+
+Text: harborlane.example
+URL: https://harborlane.example/
+Page: 3
+
+Text: harborlane.example
+URL: https://harborlane.example/
+Page: 4
+
+Text: harborlane.example/investors/2025
+URL: https://harborlane.example/investors/2025
+Page: 4
+
+Text: harborlane.example/suppliers/charter
+URL: https://harborlane.example/suppliers/charter
+Page: 4
+
+Text: harborlane.example/catalog
+URL: https://harborlane.example/catalog
+Page: 4

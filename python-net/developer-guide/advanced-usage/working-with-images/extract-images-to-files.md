@@ -60,6 +60,16 @@ with Parser("./document.pdf") as parser:
 The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "save-images-to-files-outputs.zip" >}}  
+```text
+extracted_images/image_1.jpeg (10 KB)
+extracted_images/image_2.jpeg (88 KB)
+extracted_images/image_3.jpeg (122 KB)
+extracted_images/image_4.jpeg (160 KB)
+extracted_images/image_5.jpeg (93 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/example-1/save-images-to-files-outputs.zip)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Saves each extracted image to a separate file using the image's original format.
@@ -107,6 +117,15 @@ with Parser("presentation.pptx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [presentation.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/presentation.pptx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "save-images-with-format-conversion-outputs.zip" >}}  
+```text
+images_png/image_1.png (4 KB)
+images_png/image_2.png (739 KB)
+images_png/image_3.png (437 KB)
+images_png/image_4.png (565 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/example-2/save-images-with-format-conversion-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -166,11 +185,11 @@ The following sample file is used in this example: [report.pdf](/parser/python-n
 {{< /tab >}}
 {{< tab "save-images-with-custom-names-outputs.zip" >}}  
 ```text
-saved_images/report_20261016_184736_page1_img1.jpeg (9 KB)
-saved_images/report_20261016_184736_page1_img2.jpeg (46 KB)
-saved_images/report_20261016_184736_page2_img3.jpeg (60 KB)
-saved_images/report_20261016_184736_page3_img4.jpeg (50 KB)
-saved_images/report_20261016_184736_page4_img5.jpeg (61 KB)
+saved_images/report_20261104_132751_page1_img1.jpeg (10 KB)
+saved_images/report_20261104_132751_page1_img2.jpeg (88 KB)
+saved_images/report_20261104_132751_page2_img3.jpeg (122 KB)
+saved_images/report_20261104_132751_page3_img4.jpeg (160 KB)
+saved_images/report_20261104_132751_page4_img5.jpeg (93 KB)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_with_custom_names/save-images-with-custom-names-outputs.zip)
 {{< /tab >}}
@@ -224,6 +243,20 @@ with Parser("document.docx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/document.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "save-images-in-multiple-formats-outputs.zip" >}}  
+```text
+images_multi_format/image_1.bmp (422 KB)
+images_multi_format/image_1.jpg (16 KB)
+images_multi_format/image_1.png (4 KB)
+images_multi_format/image_2.bmp (3516 KB)
+images_multi_format/image_2.jpg (160 KB)
+images_multi_format/image_2.png (1035 KB)
+images_multi_format/image_3.bmp (3516 KB)
+images_multi_format/image_3.jpg (122 KB)
+images_multi_format/image_3.png (739 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/example-4/save-images-in-multiple-formats-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -293,11 +326,11 @@ The following sample file is used in this example: [multi_page.pdf](/parser/pyth
 {{< /tab >}}
 {{< tab "save-images-by-page-outputs.zip" >}}  
 ```text
-images_by_page/page_1/image_1.jpeg (9 KB)
-images_by_page/page_1/image_2.jpeg (46 KB)
-images_by_page/page_2/image_1.jpeg (60 KB)
-images_by_page/page_3/image_1.jpeg (50 KB)
-images_by_page/page_4/image_1.jpeg (61 KB)
+images_by_page/page_1/image_1.jpeg (10 KB)
+images_by_page/page_1/image_2.jpeg (88 KB)
+images_by_page/page_2/image_1.jpeg (122 KB)
+images_by_page/page_3/image_1.jpeg (160 KB)
+images_by_page/page_4/image_1.jpeg (93 KB)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_by_page/save-images-by-page-outputs.zip)
 {{< /tab >}}
@@ -357,13 +390,18 @@ save_images_by_type("document.pdf", "filtered_images", ['.jpg', '.jpeg', '.png']
 ```
 
 {{< /tab >}}
+{{< tab "document.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/document.pdf)
+{{< /tab-text >}}
+{{< /tab >}}
 {{< tab "save-images-by-type-outputs.zip" >}}  
 ```text
-filtered_images/image_1.jpeg (9 KB)
-filtered_images/image_2.jpeg (46 KB)
-filtered_images/image_3.jpeg (60 KB)
-filtered_images/image_4.jpeg (50 KB)
-filtered_images/image_5.jpeg (61 KB)
+filtered_images/image_1.jpeg (10 KB)
+filtered_images/image_2.jpeg (88 KB)
+filtered_images/image_3.jpeg (122 KB)
+filtered_images/image_4.jpeg (160 KB)
+filtered_images/image_5.jpeg (93 KB)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_by_type/save-images-by-type-outputs.zip)
 {{< /tab >}}
@@ -390,7 +428,7 @@ def batch_save_images(input_dir, output_dir):
     
     extensions = ['.pdf', '.docx', '.doc', '.pptx', '.ppt']
     
-    for file_path in Path(input_dir).rglob('*'):
+    for file_path in sorted(Path(input_dir).rglob('*')):
         if file_path.suffix.lower() in extensions:
             print(f"\nProcessing: {file_path.name}")
             
@@ -418,9 +456,14 @@ def batch_save_images(input_dir, output_dir):
                 print(f"  Error: {e}")
 
 # Usage
-batch_save_images("input_documents", "all_extracted_images")
+batch_save_images("documents", "all_extracted_images")
 ```
 
+{{< /tab >}}
+{{< tab "documents" >}}
+{{< tab-text >}}
+The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/documents/annual-report.pdf), [product-catalog.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/documents/product-catalog.pptx), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/documents/service-agreement.docx)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< /tabs >}}
 

@@ -3,7 +3,7 @@
   "items": [
     {
       "name": "invoice-HLP-2025-0412.pdf",
-      "size": 212328,
+      "size": 213407,
       "path": "finance/invoice-HLP-2025-0412.pdf",
       "file_type": "Portable Document Format File",
       "extension": ".pdf",
@@ -11,7 +11,7 @@
     },
     {
       "name": "supply-agreement-northwind.docx",
-      "size": 101710,
+      "size": 263263,
       "path": "finance/supply-agreement-northwind.docx",
       "file_type": "Microsoft Word Open XML Document",
       "extension": ".docx",
@@ -19,7 +19,7 @@
     },
     {
       "name": "inventory.xlsx",
-      "size": 15600,
+      "size": 15607,
       "path": "operations/inventory.xlsx",
       "file_type": "Microsoft Excel Open XML Spreadsheet",
       "extension": ".xlsx",
@@ -35,7 +35,7 @@
     },
     {
       "name": "cold-room-3.png",
-      "size": 8725,
+      "size": 11311,
       "path": "operations/cold-room-3.png",
       "file_type": "Portable Network Graphic",
       "extension": ".png",

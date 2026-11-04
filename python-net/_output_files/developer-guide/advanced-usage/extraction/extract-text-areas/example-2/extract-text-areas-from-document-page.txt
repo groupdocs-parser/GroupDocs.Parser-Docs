@@ -1,0 +1,231 @@
+Page 1/4
+Position: (56, 803.10098896), Size: (213.13599999999997x8.799999999999955)
+Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Position: (269.14500426999996, 803.10098896), Size: (70.69599999999974x8.799999999999955)
+Text: harborlane.example
+Position: (56, 92.40000019000013), Size: (119.02400000000003x8.799999999999955)
+Text: Annual Report 2025  |  Port Ellery
+Position: (56, 114.49799948999998), Size: (244.16600000000005x28.600000000000023)
+Text: Annual Report 2025
+Position: (56, 406.24899260999996), Size: (83.38499999999999x16.5)
+Text: 1. Overview
+Position: (56, 426.24798595000004), Size: (480.7799999999995x11)
+Text: Harbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its 
+Position: (56, 437.74698555000003), Size: (476.3399999999997x11)
+Text: Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn 
+Position: (56, 449.24598419), Size: (394.61x11)
+Text: Harvest range and by coffee from our long-standing supplier, Northwind Coffee Roasters.
+Position: (56, 472.84499564), Size: (65.35199999999998x13.199999999999989)
+Text: Key figures
+Position: (56, 490.29400646000005), Size: (29.450000000000003x11)
+Text: Metric
+Position: (251.55000305, 490.29400646000005), Size: (22.24000000000001x11)
+Text: 2024
+Position: (344.20001221, 490.29400646000005), Size: (22.24000000000001x11)
+Text: 2025
+Position: (436.8500061, 490.29400646000005), Size: (36.67000000000007x11)
+Text: Change
+Position: (56, 508.5430070100001), Size: (54.47000000000001x11)
+Text: Net revenue
+Position: (251.55000305, 508.5430070100001), Size: (36.12999999999994x11)
+Text: $18.6 m
+Position: (344.20001221, 508.5430070100001), Size: (36.12999999999994x11)
+Text: $21.4 m
+Position: (436.8500061, 508.5430070100001), Size: (34.18999999999994x11)
+Text: +15.1%
+Position: (56, 526.79200756), Size: (60.010000000000005x11)
+Text: Gross margin
+Position: (251.55000305, 526.79200756), Size: (28.349999999999966x11)
+Text: 31.2%
+Position: (344.20001221, 526.79200756), Size: (28.349999999999966x11)
+Text: 32.8%
+Position: (436.8500061, 526.79200756), Size: (35.8599999999999x11)
+Text: +1.6 pts
+Position: (56, 545.0410081100001), Size: (68.36000000000001x11)
+Text: Orders shipped
+Position: (251.55000305, 545.0410081100001), Size: (30.579999999999984x11)
+Text: 48,900
+Position: (344.20001221, 545.0410081100001), Size: (30.579999999999984x11)
+Text: 55,300
+Position: (436.8500061, 545.0410081100001), Size: (34.18999999999994x11)
+Text: +13.1%
+Position: (56, 563.29000866), Size: (95.58000000000004x11)
+Text: Wholesale customers
+Position: (251.55000305, 563.29000866), Size: (25.019999999999982x11)
+Text: 1,140
+Position: (344.20001221, 563.29000866), Size: (25.019999999999982x11)
+Text: 1,265
+Position: (436.8500061, 563.29000866), Size: (34.18999999999994x11)
+Text: +11.0%
+Position: (56, 581.53900921), Size: (72.79000000000002x11)
+Text: On-time delivery
+Position: (251.55000305, 581.53900921), Size: (28.349999999999966x11)
+Text: 96.1%
+Position: (344.20001221, 581.53900921), Size: (28.349999999999966x11)
+Text: 97.4%
+Position: (436.8500061, 581.53900921), Size: (35.8599999999999x11)
+Text: +1.3 pts
+Position: (471.46800232, 42.450000390000014), Size: (68.52600000000018x9.899999999999977)
+Text: Investor relations
+
+Page 2/4
+Position: (56, 28.400000190000128), Size: (165.71200000000007x8.799999999999955)
+Text: Harbor Lane Provisions  |  Annual Report 2025
+Position: (56, 803.10098896), Size: (213.13599999999997x8.799999999999955)
+Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Position: (269.14500426999996, 803.10098896), Size: (70.69599999999974x8.799999999999955)
+Text: harborlane.example
+Position: (56, 98.74999968999998), Size: (95.86500000000001x16.5)
+Text: 2. Operations
+Position: (56, 121.74900065999998), Size: (479.08999999999946x11)
+Text: Orders shipped rose 13.1% to 55,300 while on-time delivery improved to 97.4%. Two investments made the 
+Position: (56, 133.24800026000003), Size: (451.3199999999999x11)
+Text: difference: a third cold room for cheese and dairy, and route planning that groups deliveries by district 
+Position: (56, 144.7469989), Size: (103.38000000000005x11)
+Text: instead of by customer.
+Position: (56, 162.34600176999993), Size: (141.372x13.200000000000045)
+Text: Warehouse and logistics
+Position: (74, 182.04499827999996), Size: (271.4599999999999x11)
+Text: •   Cold room 3 opened in April and holds 140 pallets at 2 C.
+Position: (74, 199.54399882999996), Size: (264.2099999999999x11)
+Text: •   Average pick time fell from 6.1 to 4.8 minutes per order.
+Position: (74, 217.04299937999997), Size: (292.0099999999998x11)
+Text: •   Four electric vans replaced diesel vans on the harbour routes.
+Position: (56, 452.79199187999996), Size: (208.38x16.5)
+Text: 3. The Autumn Harvest range
+Position: (56, 475.79098522000004), Size: (475.2299999999997x11)
+Text: The Autumn Harvest range launched in September with eight seasonal lines, from apple butter and squash 
+Position: (56, 487.28998482000003), Size: (472.4399999999998x11)
+Text: soup to a spiced roast blended by Northwind Coffee Roasters. The range sold out twice before November, 
+Position: (56, 498.78898346), Size: (207.88x11)
+Text: and harvest lines now make up 9% of revenue.
+Position: (56, 516.38799395), Size: (124.03199999999998x13.200000000000045)
+Text: Supplier partnerships
+Position: (56, 536.0870057300001), Size: (475.17999999999984x11)
+Text: We buy from 27 producers, 19 of them within 200 km of Port Ellery. Every supplier signs our quality charter 
+Position: (56, 547.58600533), Size: (120.07000000000005x11)
+Text: and is audited once a year.
+Position: (56, 565.1099914399999), Size: (135.34499999999994x11.549999999999955)
+Text: Northwind Coffee Roasters
+Position: (56, 583.15899669), Size: (471.8699999999998x11)
+Text: Northwind roasts our Harbor Blend, Dockside Decaf and Lighthouse Espresso beans to order and delivers 
+Position: (56, 594.65799629), Size: (347.9199999999998x11)
+Text: twice a week. The supply agreement renewed in January for three more years.
+
+Page 3/4
+Position: (56, 28.400000190000128), Size: (165.71200000000007x8.799999999999955)
+Text: Harbor Lane Provisions  |  Annual Report 2025
+Position: (56, 803.10098896), Size: (213.13599999999997x8.799999999999955)
+Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Position: (269.14500426999996, 803.10098896), Size: (70.69599999999974x8.799999999999955)
+Text: harborlane.example
+Position: (56, 92.74999968999998), Size: (152.56499999999997x16.5)
+Text: 4. Financial summary
+Position: (56, 115.74900065999998), Size: (472.4299999999996x11)
+Text: Gross margin improved by 1.6 points to 32.8%, as freight costs fell and the share of own-brand lines grew. 
+Position: (56, 127.24800026000003), Size: (431.84999999999985x11)
+Text: Operating costs rose 9.8%, mostly from the new cold room and three new hires in the warehouse.
+Position: (56, 144.84700121999992), Size: (120.70799999999997x13.200000000000045)
+Text: Revenue by category
+Position: (56, 168.29599772999995), Size: (43.34x11)
+Text: Category
+Position: (251.55000305, 168.29599772999995), Size: (41.680000000000064x11)
+Text: Revenue
+Position: (354.5, 168.29599772999995), Size: (27.79000000000002x11)
+Text: Share
+Position: (447.1499939, 168.29599772999995), Size: (34.99999999999994x11)
+Text: Growth
+Position: (56, 192.54499827999996), Size: (58.920000000000016x11)
+Text: Coffee & Tea
+Position: (251.55000305, 192.54499827999996), Size: (30.569999999999936x11)
+Text: $5.9 m
+Position: (354.5, 192.54499827999996), Size: (28.349999999999966x11)
+Text: 27.6%
+Position: (447.1499939, 192.54499827999996), Size: (34.18999999999994x11)
+Text: +18.4%
+Position: (56, 216.79399882999996), Size: (68.91000000000001x11)
+Text: Oils & Vinegars
+Position: (251.55000305, 216.79399882999996), Size: (30.569999999999936x11)
+Text: $3.8 m
+Position: (354.5, 216.79399882999996), Size: (28.349999999999966x11)
+Text: 17.8%
+Position: (447.1499939, 216.79399882999996), Size: (28.62999999999994x11)
+Text: +9.2%
+Position: (56, 241.04299937999997), Size: (86.14000000000001x11)
+Text: Honey & Preserves
+Position: (251.55000305, 241.04299937999997), Size: (30.569999999999936x11)
+Text: $3.1 m
+Position: (354.5, 241.04299937999997), Size: (28.349999999999966x11)
+Text: 14.5%
+Position: (447.1499939, 241.04299937999997), Size: (34.18999999999994x11)
+Text: +21.7%
+Position: (56, 265.29199993), Size: (70.02000000000001x11)
+Text: Cheese & Dairy
+Position: (251.55000305, 265.29199993), Size: (30.569999999999936x11)
+Text: $3.4 m
+Position: (354.5, 265.29199993), Size: (28.349999999999966x11)
+Text: 15.9%
+Position: (447.1499939, 265.29199993), Size: (34.18999999999994x11)
+Text: +11.3%
+Position: (56, 289.54100048), Size: (107.25999999999999x11)
+Text: Grains, Bakery & Pantry
+Position: (251.55000305, 289.54100048), Size: (30.569999999999936x11)
+Text: $5.2 m
+Position: (354.5, 289.54100048), Size: (28.349999999999966x11)
+Text: 24.2%
+Position: (447.1499939, 289.54100048), Size: (34.18999999999994x11)
+Text: +14.0%
+Position: (56, 313.79000103), Size: (22.230000000000004x11)
+Text: Total
+Position: (251.55000305, 313.79000103), Size: (36.12999999999994x11)
+Text: $21.4 m
+Position: (354.5, 313.79000103), Size: (33.90999999999997x11)
+Text: 100.0%
+Position: (447.1499939, 313.79000103), Size: (34.18999999999994x11)
+Text: +15.1%
+Position: (56, 556.1390010299999), Size: (120.69599999999997x13.200000000000045)
+Text: Cash and investment
+Position: (56, 575.83801281), Size: (483.5499999999996x11)
+Text: Operating cash flow was $2.3 million. We invested $1.1 million in the cold room and the van fleet, and closed 
+Position: (56, 587.3370124099999), Size: (120.07000000000005x11)
+Text: the year with no bank debt.
+
+Page 4/4
+Position: (56, 28.400000190000128), Size: (165.71200000000007x8.799999999999955)
+Text: Harbor Lane Provisions  |  Annual Report 2025
+Position: (56, 803.10098896), Size: (213.13599999999997x8.799999999999955)
+Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Position: (269.14500426999996, 803.10098896), Size: (70.69599999999974x8.799999999999955)
+Text: harborlane.example
+Position: (56, 92.74999968999998), Size: (114.20999999999998x16.5)
+Text: 5. Sustainability
+Position: (56, 115.74900065999998), Size: (479.6799999999996x11)
+Text: Food waste fell to 1.2% of stock, the lowest since we began measuring. Unsold harvest produce goes to the 
+Position: (56, 127.24800026000003), Size: (153.39000000000007x11)
+Text: Port Ellery food bank every Friday.
+Position: (74, 144.74700176), Size: (224.17000000000007x11)
+Text: •   Electric vans cover 40% of delivery kilometres.
+Position: (74, 162.24600231), Size: (325.91x11)
+Text: •   All coffee is traceable to the farm through Northwind Coffee Roasters.
+Position: (74, 179.74500286), Size: (219.19000000000005x11)
+Text: •   Packaging is 86% recyclable or compostable.
+Position: (56, 197.49400299), Size: (73.35x16.5)
+Text: 6. Outlook
+Position: (56, 220.49299632999998), Size: (474.1199999999999x11)
+Text: In 2026 we plan a second Autumn Harvest season with twelve lines, a wholesale web shop, and a regional 
+Position: (56, 231.99199593000003), Size: (166.7400000000001x11)
+Text: depot for customers north of the river.
+Position: (56, 249.59099687999992), Size: (61.35599999999998x13.200000000000045)
+Text: Resources
+Position: (56, 269.28999339999996), Size: (112.82000000000002x11)
+Text: Full financial statements: 
+Position: (168.82499695, 269.28999339999996), Size: (156.18x11)
+Text: harborlane.example/investors/2025
+Position: (56, 286.78900157), Size: (107.82000000000005x11)
+Text: Supplier quality charter: 
+Position: (163.83000183000001, 286.78900157), Size: (165.06000000000006x11)
+Text: harborlane.example/suppliers/charter
+Position: (56, 304.28799448999996), Size: (87.26000000000002x11)
+Text: Wholesale catalog: 
+Position: (143.26899719, 304.28799448999996), Size: (123.39000000000004x11)
+Text: harborlane.example/catalog

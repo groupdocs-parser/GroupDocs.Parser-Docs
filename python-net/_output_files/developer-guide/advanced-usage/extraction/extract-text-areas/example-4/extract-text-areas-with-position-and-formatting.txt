@@ -1,0 +1,24 @@
+Text: Supply Agreement
+Page: 1, position: (56, 121), size: 230 x 30, base line: 150.9
+---
+Text: Harbor Lane Provisions and Northwind Coffee Roasters
+Page: 1, position: (56, 154), size: 247 x 11, base line: 165.4
+---
+Text: 1. Parties
+Page: 1, position: (56, 175), size: 67 x 17, base line: 192.6
+---
+Text: Buyer: Harbor Lane Provisions, 18 Quayside Road, Port Ellery, represented by Lena Park, Procurement
+Page: 1, position: (56, 196), size: 462 x 11, base line: 207.1
+---
+Text: Lead.
+Page: 1, position: (56, 207), size: 25 x 11, base line: 218.6
+---
+Text: Supplier: Northwind Coffee Roasters, 4 Roastery Lane, Millbrook, represented by Alex Chen.
+Page: 1, position: (56, 225), size: 415 x 11, base line: 236.1
+---
+Text: This agreement takes effect on 12 January 2026 and replaces the agreement of January 2023.
+Page: 1, position: (56, 242), size: 419 x 11, base line: 253.6
+---
+Text: 2. Products
+Page: 1, position: (56, 264), size: 76 x 17, base line: 280.9
+---

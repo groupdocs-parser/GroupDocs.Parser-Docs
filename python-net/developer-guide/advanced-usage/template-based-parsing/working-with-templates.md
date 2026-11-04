@@ -45,6 +45,12 @@ with Parser("./invoice.pdf") as parser:
 The following sample file is used in this example: [invoice.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/template-based-parsing/working-with-templates/invoice.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "regex-based-fields.txt" >}}  
+```text
+Invoice number: HLP-2025-0412
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/template-based-parsing/working-with-templates/example-1/regex-based-fields.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Tables with detector parameters
@@ -87,6 +93,12 @@ with Parser("./invoice.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [invoice.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/template-based-parsing/working-with-templates/invoice.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "tables-with-detector-parameters.txt" >}}  
+```text
+Rows extracted: 5
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/template-based-parsing/working-with-templates/example-2/tables-with-detector-parameters.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

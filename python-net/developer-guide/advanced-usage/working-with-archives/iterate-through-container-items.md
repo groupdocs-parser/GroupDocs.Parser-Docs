@@ -50,6 +50,22 @@ with Parser("./archive.zip") as parser:
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/archive.zip)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "iterate-through-container-items.txt" >}}  
+```text
+Item 1:
+  Name: invoice-HLP-2025-0412.pdf
+  Size: 213407 bytes
+  Path: finance/invoice-HLP-2025-0412.pdf
+
+Item 2:
+  Name: supply-agreement-northwind.docx
+  Size: 263263 bytes
+  Path: finance/supply-agreement-northwind.docx
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/example-1/iterate-through-container-items.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Iterates through all files in the container and displays their properties.
@@ -142,9 +158,9 @@ The following sample file is used in this example: [documents.zip](/parser/pytho
 ```text
 #    Name                                    Size           Path                          
 ------------------------------------------------------------------------------------------
-1    invoice-HLP-2025-0412.pdf               212,328 bytes  finance/invoice-HLP-2025-041  
-2    supply-agreement-northwind.docx         101,710 bytes  finance/supply-agreement-nor  
-3    inventory.xlsx                          15,600 bytes   operations/inventory.xlsx     
+1    invoice-HLP-2025-0412.pdf               213,407 bytes  finance/invoice-HLP-2025-041  
+2    supply-agreement-northwind.docx         263,263 bytes  finance/supply-agreement-nor  
+3    inventory.xlsx                          15,607 bytes   operations/inventory.xlsx     
 4    inventory.csv                           
 [TRUNCATED]
 ```
@@ -211,8 +227,8 @@ The following sample file is used in this example: [archive.zip](/parser/python-
 ```text
 Found 2 PDF/Word documents:
 
-  invoice-HLP-2025-0412.pdf (212,328 bytes)
-  supply-agreement-northwind.docx (101,710 bytes)
+  invoice-HLP-2025-0412.pdf (213,407 bytes)
+  supply-agreement-northwind.docx (263,263 bytes)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/filter_by_extension/filter-by-extension.txt)
 {{< /tab >}}
@@ -272,8 +288,8 @@ The following sample file is used in this example: [archive.zip](/parser/python-
 ```text
 Container Statistics:
   Items: 5
-  Total Size: 341,988 bytes (0.33 MB)
-  Average Size: 68,398 bytes
+  Total Size: 507,213 bytes (0.48 MB)
+  Average Size: 101,443 bytes
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/calculate_container_size/calculate-container-size.txt)
 {{< /tab >}}
@@ -341,10 +357,10 @@ Files grouped by type:
 .CSV files: 1 items, 3,625 bytes
   - inventory.csv
 
-.DOCX files: 1 items, 101,710 bytes
+.DOCX files: 1 items, 263,263 bytes
   - supply-agreement-northwind.docx
 
-.PDF files: 1 items, 212,328 bytes
+.PDF files: 1 items, 213,407 bytes
   - invoice-HLP-2025-0412.pdf
 [TRUNCATED]
 ```
@@ -410,7 +426,7 @@ The following sample file is used in this example: [documents.zip](/parser/pytho
 ```text
 Found 1 matching files:
 
-  invoice-HLP-2025-0412.pdf (212,328 bytes)
+  invoice-HLP-2025-0412.pdf (213,407 bytes)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/search_container_items/search-container-items.txt)
 {{< /tab >}}
@@ -537,11 +553,11 @@ The following sample file is used in this example: [archive.zip](/parser/python-
 {{< tab "inventory.csv" >}}  
 ```text
 Index,Name,Size (bytes),Path
-1,invoice-HLP-2025-0412.pdf,212328,finance/invoice-HLP-2025-0412.pdf
-2,supply-agreement-northwind.docx,101710,finance/supply-agreement-northwind.docx
-3,inventory.xlsx,15600,operations/inventory.xlsx
+1,invoice-HLP-2025-0412.pdf,213407,finance/invoice-HLP-2025-0412.pdf
+2,supply-agreement-northwind.docx,263263,finance/supply-agreement-northwind.docx
+3,inventory.xlsx,15607,operations/inventory.xlsx
 4,inventory.csv,3625,operations/inventory.csv
-5,cold-room-3.png,8725,operations/cold-room-3.png
+5,cold-room-3.png,11311,operations/cold-room-3.png
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/export_inventory_to_csv/inventory.csv)
 {{< /tab >}}

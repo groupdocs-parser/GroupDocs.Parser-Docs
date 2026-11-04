@@ -1,0 +1,19 @@
+File: invoice-HLP-2025-0412.pdf
+  Type: Portable Document Format File
+  Extension: .pdf
+
+File: supply-agreement-northwind.docx
+  Type: Microsoft Word Open XML Document
+  Extension: .docx
+
+File: inventory.xlsx
+  Type: Microsoft Excel Open XML Spreadsheet
+  Extension: .xlsx
+
+File: inventory.csv
+  Type: Comma Separated Values File
+  Extension: .csv
+
+File: cold-room-3.png
+  Type: Portable Network Graphic
+  Extension: .png

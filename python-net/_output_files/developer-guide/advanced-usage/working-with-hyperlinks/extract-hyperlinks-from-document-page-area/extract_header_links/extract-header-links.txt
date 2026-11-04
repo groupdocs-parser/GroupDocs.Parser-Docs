@@ -1,2 +1,2 @@
-Hyperlink extraction not supported
-Navigation links (0):
+Navigation links (1):
+  Investor relations -> https://harborlane.example/investors

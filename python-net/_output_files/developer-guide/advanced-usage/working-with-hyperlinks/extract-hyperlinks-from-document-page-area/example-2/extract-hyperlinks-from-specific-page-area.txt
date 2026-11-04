@@ -1,0 +1,2 @@
+Hyperlinks in sidebar (page 1):
+  Investor relations: https://harborlane.example/investors

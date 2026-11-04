@@ -56,6 +56,22 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-hyperlinks-from-document.txt" >}}  
+```text
+Text: harborlane.example
+URL: https://harborlane.example/
+Page: 1
+
+Text: Investor relations
+URL: https://harborlane.example/investors
+Page: 1
+
+Text: harborlane.example
+URL: https://harborlane.example/
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/example-1/extract-hyperlinks-from-document.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns a collection of `PageHyperlinkArea` objects representing all hyperlinks found in the document, or `None` if hyperlink extraction is not supported.
@@ -97,6 +113,22 @@ with Parser("document.docx") as parser:
 The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/document.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-hyperlinks-with-position-information.txt" >}}  
+```text
+Hyperlink 1:
+  Text: supplier quality charter
+  URL: https://harborlane.example/suppliers/charter
+  Page: 2
+  Position: (201.3090057373047, 369.78399658203125)
+  Size: 100.60499572753906x11.49899959564209
+
+Hyperlink 2:
+  Text: northwindroasters.example/quality
+  URL: https://northwindroasters.example/quality
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/example-2/extract-hyperlinks-with-position-information.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Displays comprehensive information about each hyperlink including text, URL, page number, and position coordinates.
@@ -124,7 +156,7 @@ def is_valid_url(url):
     return url_pattern.match(url) is not None
 
 # Create an instance of Parser class
-with Parser("webpage.html") as parser:
+with Parser("document.docx") as parser:
     if not parser.features.hyperlinks:
         print("Hyperlink extraction not supported")
     else:
@@ -147,17 +179,30 @@ with Parser("webpage.html") as parser:
             print("\nValid URLs:")
             for link in valid_links[:10]:  # Show first 10
                 print(f"  {link.text} -> {link.url}")
+
+            print("\nOther links (mail addresses and the like):")
+            for link in invalid_links:
+                print(f"  {link.text} -> {link.url}")
 ```
 
 {{< /tab >}}
-{{< tab "webpage.html" >}}
+{{< tab "document.docx" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [webpage.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/webpage.html)
+The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/document.docx)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab "is-valid-url.txt" >}}  
 ```text
-Hyperlink extraction not supported
+Valid hyperlinks: 3
+Invalid hyperlinks: 1
+
+Valid URLs:
+  supplier quality charter -> https://harborlane.example/suppliers/charter
+  northwindroasters.example/quality -> https://northwindroasters.example/quality
+  harborlane.example/terms -> https://harborlane.example/terms
+
+Other links (mail addresses and the like):
+  lena.park@harborlane.example -> mailto:lena.park@harborlane.example
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/is_valid_url/is-valid-url.txt)
 {{< /tab >}}
@@ -287,18 +332,25 @@ def analyze_hyperlinks_by_domain(file_path):
             print(f"{domain:<40} {len(links):<10}")
 
 # Usage
-analyze_hyperlinks_by_domain("article.html")
+analyze_hyperlinks_by_domain("document.docx")
 ```
 
 {{< /tab >}}
-{{< tab "article.html" >}}
+{{< tab "document.docx" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [article.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/article.html)
+The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/document.docx)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab "analyze-hyperlinks-by-domain.txt" >}}  
 ```text
-Hyperlink extraction not supported
+Total hyperlinks: 4
+Unique domains: 3
+
+Domain                                   Count     
+--------------------------------------------------
+harborlane.example                       2         
+northwindroasters.example                1         
+internal                                 1
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/analyze_hyperlinks_by_domain/analyze-hyperlinks-by-domain.txt)
 {{< /tab >}}
@@ -348,38 +400,34 @@ def extract_filtered_hyperlinks(file_path, url_pattern=None, text_pattern=None):
 
 # Usage examples
 
-# Extract only PDF links
-pdf_links = extract_filtered_hyperlinks("document.html", url_pattern=r'\.pdf$')
-print(f"Found {len(pdf_links)} PDF links")
+# Extract only the links to one site
+site_links = extract_filtered_hyperlinks("document.docx", url_pattern=r'^https://harborlane\.example/')
+print(f"Found {len(site_links)} links to harborlane.example")
+for link in site_links:
+    print(f"  {link.text} -> {link.url}")
 
-# Extract links containing "download"
-download_links = extract_filtered_hyperlinks("document.html", text_pattern=r'download')
-print(f"Found {len(download_links)} download links")
+# Extract links whose text mentions "charter"
+charter_links = extract_filtered_hyperlinks("document.docx", text_pattern=r'charter')
+print(f"Found {len(charter_links)} links about the charter")
 
-# Extract external links (http/https)
-external_links = extract_filtered_hyperlinks("document.html", url_pattern=r'^https?://')
-print(f"Found {len(external_links)} external links")
+# Extract web links (http/https), leaving out mail addresses
+web_links = extract_filtered_hyperlinks("document.docx", url_pattern=r'^https?://')
+print(f"Found {len(web_links)} web links")
 ```
 
 {{< /tab >}}
-{{< tab "document.html" >}}
+{{< tab "document.docx" >}}
 {{< tab-text >}}
-The following sample file is used in this example: [document.html](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/document.html)
-{{< /tab-text >}}
-{{< /tab >}}
-{{< tab ".pdf" >}}
-{{< tab-text >}}
-The following sample file is used in this example: [.pdf](../../../../../../../../../.pdf)
+The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/document.docx)
 {{< /tab-text >}}
 {{< /tab >}}
 {{< tab "extract-filtered-hyperlinks.txt" >}}  
 ```text
-Hyperlink extraction not supported
-Found 0 PDF links
-Hyperlink extraction not supported
-Found 0 download links
-Hyperlink extraction not supported
-Found 0 external links
+Found 2 links to harborlane.example
+  supplier quality charter -> https://harborlane.example/suppliers/charter
+  harborlane.example/terms -> https://harborlane.example/terms
+Found 1 links about the charter
+Found 3 web links
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/extract_filtered_hyperlinks/extract-filtered-hyperlinks.txt)
 {{< /tab >}}
@@ -406,7 +454,7 @@ def batch_extract_hyperlinks(input_dir, output_json):
     
     all_hyperlinks = {}
     
-    for file_path in Path(input_dir).rglob('*'):
+    for file_path in sorted(Path(input_dir).rglob('*')):
         if file_path.suffix.lower() in extensions:
             print(f"Processing: {file_path.name}")
             
@@ -447,6 +495,11 @@ def batch_extract_hyperlinks(input_dir, output_json):
 batch_extract_hyperlinks("documents", "all_hyperlinks.json")
 ```
 
+{{< /tab >}}
+{{< tab "documents" >}}
+{{< tab-text >}}
+The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/documents/annual-report.pdf), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/documents/service-agreement.docx)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< tab "all_hyperlinks.json" >}}  
 ```text

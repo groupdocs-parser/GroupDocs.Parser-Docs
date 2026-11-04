@@ -51,6 +51,22 @@ print(f"\nTotal supported formats: {len(supported_file_types)}")
 ```
 
 {{< /tab >}}
+{{< tab "get-all-supported-file-formats.txt" >}}  
+```text
+.7z - 7z Archive File
+.azw3 - AZW3
+.bmp - Bitmap Image File
+.bz2 - Bzip2 Archive File
+.chm - Compiled HTML Help File
+.csv - Comma Separated Values File
+.doc - Microsoft Word Document
+.docm - Word Open XML Macro-Enabled Document
+.docx - Microsoft Word Open XML Document
+.dot - Word Document Template
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-supported-file-formats/example-1/get-all-supported-file-formats.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Filter supported formats by category
@@ -86,6 +102,22 @@ for file_type in supported_file_types:
         print(f"  {file_type.extension} - {file_type.file_format}")
 ```
 
+{{< /tab >}}
+{{< tab "filter-supported-formats-by-category.txt" >}}  
+```text
+Word Processing Formats:
+  .doc - Microsoft Word Document
+  .dot - Word Document Template
+  .docx - Microsoft Word Open XML Document
+  .docm - Word Open XML Macro-Enabled Document
+  .dotx - Word Open XML Document Template
+  .dotm - Word Open XML Macro-Enabled Document Template
+  .odt - OpenDocument Text Document
+  .ott - OpenDocument Document Template
+  .rtf - Rich Text Format File
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-supported-file-formats/example-2/filter-supported-formats-by-category.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -151,6 +183,22 @@ for file_type in sorted(supported_file_types, key=lambda x: x.extension):
     print(f"{file_type.extension:<12} {file_type.file_format:<50}")
 ```
 
+{{< /tab >}}
+{{< tab "get-format-details.txt" >}}  
+```text
+Supported Document Formats:
+
+Extension    Format Name                                       
+--------------------------------------------------------------
+.7z          7z Archive File                                   
+.azw3        AZW3                                              
+.bmp         Bitmap Image File                                 
+.bz2         Bzip2 Archive File                                
+.chm         Compiled HTML Help File                           
+.csv         Comma Separ
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-supported-file-formats/example-4/get-format-details.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

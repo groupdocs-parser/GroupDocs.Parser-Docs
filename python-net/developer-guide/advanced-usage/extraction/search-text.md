@@ -48,6 +48,17 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/search-text/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "search-text-by-keyword.txt" >}}  
+```text
+At 399: Harvest
+At 1671: Harvest
+At 1697: Harvest
+At 1898: harvest
+At 3732: harvest
+At 4032: Harvest
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/search-text/example-1/search-text-by-keyword.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** The method returns a collection of `SearchResult` objects, each containing the position and text of every occurrence of the keyword.
@@ -86,6 +97,17 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/search-text/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "search-with-regular-expressions.txt" >}}  
+```text
+At 171: 1. Overview
+At 1171: 2. Operations
+At 1657: 3. The
+At 2444: 4. Financial
+At 3635: 5. Sustainability
+At 3988: 6. Outlook
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/search-text/example-2/search-with-regular-expressions.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Finds all text matching the regular expression pattern with the specified options.
@@ -115,6 +137,12 @@ with Parser("./sample.docx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/search-text/sample.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "search-with-case-sensitivity-and-whole-word-matching.txt" >}}  
+```text
+Found 4 occurrences of 'harvest' as whole word
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/search-text/example-3/search-with-case-sensitivity-and-whole-word-matching.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -161,6 +189,17 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/search-text/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "search-text-with-highlights.txt" >}}  
+```text
+[Harvest] range and by c
+3. The Autumn [Harvest] range
+The Autumn [Harvest] range launched
+and [harvest] lines now make
+suring. Unsold [harvest] produce goes t
+ second Autumn [Harvest] season with tw
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/search-text/example-4/search-text-with-highlights.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns search results with context from surrounding text on both sides of the match.
@@ -198,6 +237,17 @@ with Parser("./sample.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/search-text/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "search-text-with-page-numbers.txt" >}}  
+```text
+At 399 (page 1): Harvest
+At 551 (page 2): Harvest
+At 577 (page 2): Harvest
+At 778 (page 2): harvest
+At 148 (page 4): harvest
+At 448 (page 4): Harvest
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/search-text/example-5/search-text-with-page-numbers.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -262,6 +312,11 @@ for item in results:
     print(f"Page {item['page']}: {item['left_context']}[{item['text']}]{item['right_context']}")
 ```
 
+{{< /tab >}}
+{{< tab "sample.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/search-text/sample.pdf)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< tab "advanced-search.txt" >}}  
 ```text

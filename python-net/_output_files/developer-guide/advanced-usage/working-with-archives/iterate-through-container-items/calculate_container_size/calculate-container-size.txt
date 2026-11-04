@@ -1,4 +1,4 @@
 Container Statistics:
   Items: 5
-  Total Size: 341,988 bytes (0.33 MB)
-  Average Size: 68,398 bytes
+  Total Size: 507,213 bytes (0.48 MB)
+  Average Size: 101,443 bytes

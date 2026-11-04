@@ -35,7 +35,8 @@ from groupdocs.parser import Parser
 from groupdocs.parser.exceptions import UnsupportedDocumentFormatException
 
 try:
-    with Parser("./unknown.xyz") as parser:
+    # An audio recording: a file, but not a document
+    with Parser("./voice-memo.wav") as parser:
         reader = parser.get_text()
         print(reader.read_to_end() if reader is not None else "No text available.")
 except UnsupportedDocumentFormatException:
@@ -44,6 +45,17 @@ except FileNotFoundError:
     print("The file wasn't found.")
 ```
 
+{{< /tab >}}
+{{< tab "voice-memo.wav" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [voice-memo.wav](/parser/python-net/_sample_files/developer-guide/advanced-usage/errors-and-exceptions/voice-memo.wav)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "handle-unsupported-formats.txt" >}}  
+```text
+The file wasn't found.
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/errors-and-exceptions/example-1/handle-unsupported-formats.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

@@ -38,6 +38,17 @@ with Parser("sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/working-with-text/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "search-text.txt" >}}  
+```text
+Found on page 1: Harvest
+Found on page 2: Harvest
+Found on page 2: Harvest
+Found on page 2: harvest
+Found on page 4: harvest
+Found on page 4: Harvest
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/working-with-text/example-1/search-text.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ### Notes
@@ -67,6 +78,22 @@ with Parser("sample.pptx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/working-with-text/sample.pptx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-formatted-or-structured-text.txt" >}}  
+```text
+Autumn Harvest 2025
+
+Seasonal lines from Harbor Lane Provisions for grocers, cafes and restaurants.
+
+What is in the range
+
+Autumn Harvest spiced roast from Northwind Coffee Roasters
+Apple butter, cranberry relish and fig preserve
+Squash soup, muesli and a fruit loaf from local producers
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/working-with-text/example-2/extract-formatted-or-structured-text.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

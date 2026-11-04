@@ -1,0 +1,14 @@
+Page 1/3:
+  Type: Portable Network Graphic(.png), Position: (30, 20)
+  Type: JPEG Image(.jpeg), Position: (140, 130)
+  Total images on this page: 2
+
+Page 2/3:
+  Type: JPEG Image(.jpeg), Position: (40, 110)
+  Type: JPEG Image(.jpeg), Position: (380, 110)
+  Total images on this page: 2
+
+Page 3/3:
+  No images on this page
+
+Total images in document: 4

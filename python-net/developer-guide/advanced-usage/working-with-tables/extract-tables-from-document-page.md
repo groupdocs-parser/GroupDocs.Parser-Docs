@@ -62,6 +62,21 @@ with Parser("./report.pdf") as parser:
 The following sample file is used in this example: [report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/report.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-tables-specific-page.txt" >}}  
+```text
+Tables on page 1:
+
+Table 1:
+Size: 6 rows x 4 columns
+Metric | 2024 | 2025 | Change
+Net revenue | $18.6 m | $21.4 m | +15.1%
+Gross margin | 31.2% | 32.8% | +1.6 pts
+Orders shipped | 48,900 | 55,300 | +13.1%
+Wholesale customers | 1,140 | 1,265 | +11.0%
+On-time delivery | 96.1% | 97.4% | +1.3 pts
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/example-1/extract-tables-specific-page.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Extracts only tables from the specified page, returning an empty collection if no tables exist on that page.
@@ -121,6 +136,22 @@ with Parser("./document.docx") as parser:
 The following sample file is used in this example: [document.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/document.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-tables-from-all-pages-iteratively.txt" >}}  
+```text
+==================================================
+Page 1/2
+==================================================
+No tables on this page
+
+==================================================
+Page 2/2
+==================================================
+
+Table 1:
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/example-2/extract-tables-from-all-pages-iteratively.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Iterates through all pages and extracts tables from each page individually, providing page-specific statistics.
@@ -176,6 +207,18 @@ with Parser("report.xlsx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [report.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/report.xlsx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-tables-from-specific-pages-only.txt" >}}  
+```text
+Processing page 1...
+  Table 1: 40×9
+  First row: ...
+
+Page 3 doesn't exist (the document has 2 pages)
+
+Page 5 doesn't exist (the document has 2 pages)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/example-3/extract-tables-from-specific-pages-only.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -387,6 +430,19 @@ with Parser("invoice.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [invoice.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/invoice.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-tables-with-custom-layout-from-specific-page.txt" >}}  
+```text
+Tables extracted from page 1 with custom layout:
+
+Table: 5x5
+SKU                  | Description          | Qty                  | Unit price           | Amount               | 
+HLP-CF-101           | Harbor Blend whole bean coffee, 1 kg | 120                  | $18.40               | $2,208.00            | 
+HLP-CF-102           | Dockside Decaf whole bean coffee, 1 kg | 48                   | $19.10               | $916.80              | 
+HLP-CF-103           | Lighthouse Espresso beans, 1 kg | 
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-tables/extract-tables-from-document-page/example-6/extract-tables-with-custom-layout-from-specific-page.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

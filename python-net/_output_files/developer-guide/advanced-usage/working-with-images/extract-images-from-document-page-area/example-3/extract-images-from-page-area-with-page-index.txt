@@ -1,0 +1,4 @@
+Images on page 1 in specified area:
+  Type: JPEG Image(.jpeg)
+  Position: (140, 130)
+  Size: 320x200

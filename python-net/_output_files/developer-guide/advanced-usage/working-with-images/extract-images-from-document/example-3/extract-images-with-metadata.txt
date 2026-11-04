@@ -1,0 +1,33 @@
+Found 4 images
+
+Image 1:
+  Page: 1
+  Format: Portable Network Graphic(.png)
+  Rotation: 0 degrees
+  Rectangle: (30; 20) (150; 45)
+  Width: 150
+  Height: 45
+
+Image 2:
+  Page: 1
+  Format: JPEG Image(.jpeg)
+  Rotation: 0 degrees
+  Rectangle: (140; 130) (320; 200)
+  Width: 320
+  Height: 200
+
+Image 3:
+  Page: 2
+  Format: JPEG Image(.jpeg)
+  Rotation: 0 degrees
+  Rectangle: (40; 110) (300; 188)
+  Width: 300
+  Height: 188
+
+Image 4:
+  Page: 2
+  Format: JPEG Image(.jpeg)
+  Rotation: 0 degrees
+  Rectangle: (380; 110) (300; 188)
+  Width: 300
+  Height: 188

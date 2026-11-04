@@ -1,2 +1,4 @@
-Hyperlink extraction not supported
-PDF download links in sidebar: 0
+Investor and supplier links in the body: 2
+
+  harborlane.example/investors/2025: https://harborlane.example/investors/2025
+  harborlane.example/suppliers/charter: https://harborlane.example/suppliers/charter

@@ -1,0 +1,25 @@
+Image 1:
+  Page: 1
+  Type: JPEG Image(.jpeg)
+  Size: 150x45
+  Position: (40, 70.99999999593751)
+Image 2:
+  Page: 1
+  Type: JPEG Image(.jpeg)
+  Size: 375x234
+  Position: (110, 383.9999999959375)
+Image 3:
+  Page: 2
+  Type: JPEG Image(.jpeg)
+  Size: 340x212
+  Position: (127.6500015258789, 446.0419921834375)
+Image 4:
+  Page: 3
+  Type: JPEG Image(.jpeg)
+  Size: 340x212
+  Position: (127.6500015258789, 549.5390014607813)
+Image 5:
+  Page: 4
+  Type: JPEG Image(.jpeg)
+  Size: 280x175
+  Position: (56, 496.286987300625)

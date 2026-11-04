@@ -52,6 +52,14 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-images-specific-page.txt" >}}  
+```text
+Images on page 1:
+  Image 1: JPEG Image(.jpeg), size: 150x45
+  Image 2: JPEG Image(.jpeg), size: 375x234
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/example-1/extract-images-specific-page.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns only the images from the specified page, or an empty collection if the page has no images.
@@ -105,6 +113,22 @@ with Parser("./sample.pptx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/sample.pptx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-images-from-all-pages.txt" >}}  
+```text
+Page 1/3:
+  Type: Portable Network Graphic(.png), Position: (30, 20)
+  Type: JPEG Image(.jpeg), Position: (140, 130)
+  Total images on this page: 2
+
+Page 2/3:
+  Type: JPEG Image(.jpeg), Position: (40, 110)
+  Type: JPEG Image(.jpeg), Position: (380, 110)
+  Total images on this page: 2
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/example-2/extract-images-from-all-pages.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -160,6 +184,16 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "save-images-by-page-outputs.zip" >}}  
+```text
+images_by_page/page_1/image_1.jpeg (10 KB)
+images_by_page/page_1/image_2.jpeg (88 KB)
+images_by_page/page_2/image_1.jpeg (122 KB)
+images_by_page/page_3/image_1.jpeg (160 KB)
+images_by_page/page_4/image_1.jpeg (93 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/example-3/save-images-by-page-outputs.zip)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Creates separate directories for each page and saves extracted images with organized naming.
@@ -213,6 +247,13 @@ with Parser("./sample.docx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/sample.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-images-from-specific-pages-only-outputs.zip" >}}  
+```text
+selected_page_images/page1_img1.png (4 KB)
+selected_page_images/page1_img2.jpeg (176 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/example-4/extract-images-from-specific-pages-only-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -339,6 +380,15 @@ with Parser("./sample.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-first-image-from-each-page-outputs.zip" >}}  
+```text
+first_images/page_1_first.jpeg (10 KB)
+first_images/page_2_first.jpeg (122 KB)
+first_images/page_3_first.jpeg (160 KB)
+first_images/page_4_first.jpeg (93 KB)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document-page/example-6/extract-first-image-from-each-page-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 

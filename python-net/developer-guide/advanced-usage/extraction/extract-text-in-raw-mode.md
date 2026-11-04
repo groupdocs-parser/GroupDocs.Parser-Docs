@@ -59,6 +59,13 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-in-raw-mode.txt" >}}  
+```text
+Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  harborlane.exampleAnnual Report 2025  |  Port ElleryAnnual Report 20251. OverviewHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn Harvest range and by coffee from our long-standing supplier, Northwind Coffee Roasters.Key figuresMetric20242025ChangeNet revenue$18.6 m$21.4 m+1
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/example-1/extract-text-in-raw-mode.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns text extracted in Raw mode with improved performance but potentially reduced formatting quality.
@@ -102,6 +109,14 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-from-page-in-raw-mode.txt" >}}  
+```text
+Page 1/4
+Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  harborlane.exampleAnnual Report 2025  |  Port ElleryAnnual Report 20251. OverviewHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn Harvest range and by coffee from our long-standing supplier, Northwind Coffee Roasters.Key figuresMetric20242025ChangeNet revenue$18.6 m
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/example-2/extract-text-from-page-in-raw-mode.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Extracts text page by page in Raw mode, using `raw_page_count` for accurate page enumeration.
@@ -132,6 +147,13 @@ with Parser("sample.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "important-note-about-page-counts.txt" >}}  
+```text
+Accurate mode pages: 4
+Raw mode pages: 4
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/example-3/important-note-about-page-counts.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -196,8 +218,8 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 Performance Comparison:
 Mode            Time (s)        Length          Speed          
 ------------------------------------------------------------
-Accurate        0.202           4414            1.0x           
-Raw             0.166           3375            1.22x faster
+Accurate        0.329           4414            1.0x           
+Raw             0.114           3375            2.89x faster
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/compare_extraction_modes/compare-extraction-modes.txt)
 {{< /tab >}}
@@ -232,7 +254,7 @@ def batch_extract_raw(input_dir, output_dir):
     # Create raw mode options
     options = TextOptions(True)
     
-    for file_path in Path(input_dir).rglob('*'):
+    for file_path in sorted(Path(input_dir).rglob('*')):
         if file_path.suffix.lower() in extensions:
             print(f"Processing: {file_path.name}")
             
@@ -257,9 +279,14 @@ def batch_extract_raw(input_dir, output_dir):
         print(f"Average: {elapsed_time/processed_count:.2f} seconds per document")
 
 # Usage
-batch_extract_raw("input_documents", "extracted_text")
+batch_extract_raw("documents", "extracted_text")
 ```
 
+{{< /tab >}}
+{{< tab "documents" >}}
+{{< tab-text >}}
+The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/annual-report.pdf), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/service-agreement.docx), [supplier-invoice.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/supplier-invoice.pdf)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< tab "batch-extract-raw.txt" >}}  
 ```text
@@ -306,7 +333,7 @@ def create_search_index(input_dir, index_file):
     index = {}
     options = TextOptions(True)  # Raw mode for speed
     
-    for file_path in Path(input_dir).rglob('*'):
+    for file_path in sorted(Path(input_dir).rglob('*')):
         if file_path.suffix.lower() in ['.pdf', '.docx', '.doc', '.txt']:
             try:
                 with Parser(str(file_path)) as parser:
@@ -316,7 +343,7 @@ def create_search_index(input_dir, index_file):
                         text = text_reader.read_to_end()
                         
                         # Create index entry
-                        index[str(file_path)] = {
+                        index[file_path.as_posix()] = {
                             'filename': file_path.name,
                             'size': len(text),
                             'preview': text[:200],  # First 200 chars
@@ -339,6 +366,11 @@ def create_search_index(input_dir, index_file):
 index = create_search_index("documents", "search_index.json")
 ```
 
+{{< /tab >}}
+{{< tab "documents" >}}
+{{< tab-text >}}
+The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/annual-report.pdf), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/service-agreement.docx), [supplier-invoice.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/supplier-invoice.pdf)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< tab "search_index.json" >}}  
 ```text

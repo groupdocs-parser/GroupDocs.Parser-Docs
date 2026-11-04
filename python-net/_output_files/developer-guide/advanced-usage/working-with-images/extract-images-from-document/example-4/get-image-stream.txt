@@ -1,0 +1,10 @@
+Image 1: 10365 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 55430 bytes
+Image 2: 90027 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 633711 bytes
+Image 3: 125180 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 837256 bytes
+Image 4: 163435 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 1186275 bytes
+Image 5: 94989 bytes, format: JPEG Image(.jpeg)
+  Converted to PNG: 928726 bytes

@@ -1,0 +1,3 @@
+Images on page 1:
+  Image 1: JPEG Image(.jpeg), size: 150x45
+  Image 2: JPEG Image(.jpeg), size: 375x234

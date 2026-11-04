@@ -70,6 +70,19 @@ with Parser("protected_document.pdf", load_options) as parser:
 The following sample file is used in this example: [protected_document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-password-protected-documents/protected_document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "load-password-protected-document.txt" >}}  
+```text
+Payroll summary - December 2025
+Confidential: prepared by Finance for the directors of Harbor Lane Provisions.
+Department                              Headcount          Gross pay            Employer costs
+Warehouse                               21                 $71,400              $13,900
+Drivers                                 9                  $29,700              $5,800
+Sales and customer service              7                  $27,300              $5,300
+Procurement               
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-password-protected-documents/example-1/load-password-protected-document.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Handle incorrect password
@@ -246,6 +259,12 @@ def extract_from_protected(file_path, password, extract_type="text"):
 
 # Extract text from protected PDF
 text = extract_from_protected("protected.pdf", "123456", "text")
+print(text)
+
+# Extract its metadata
+metadata = extract_from_protected("protected.pdf", "123456", "metadata")
+for name, value in (metadata or {}).items():
+    print(f"{name}: {value}")
 ```
 
 {{< /tab >}}
@@ -253,6 +272,19 @@ text = extract_from_protected("protected.pdf", "123456", "text")
 {{< tab-text >}}
 The following sample file is used in this example: [protected.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-password-protected-documents/protected.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-from-protected.txt" >}}  
+```text
+Payroll summary - December 2025
+Confidential: prepared by Finance for the directors of Harbor Lane Provisions.
+Department                              Headcount          Gross pay            Employer costs
+Warehouse                               21                 $71,400              $13,900
+Drivers                                 9                  $29,700              $5,800
+Sales and customer service              7                  $27,300              $5,300
+Procurement               
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-password-protected-documents/extract_from_protected/extract-from-protected.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

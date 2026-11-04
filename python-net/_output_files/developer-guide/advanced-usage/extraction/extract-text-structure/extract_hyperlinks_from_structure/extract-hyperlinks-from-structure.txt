@@ -1,2 +1,6 @@
-Structure extraction not supported
-Found 0 hyperlinks:
+Found 4 hyperlinks:
+
+  supplier quality charter -> https://harborlane.example/suppliers/charter
+  northwindroasters.example/quality -> https://northwindroasters.example/quality
+  harborlane.example/terms -> https://harborlane.example/terms
+  lena.park@harborlane.example -> mailto:lena.park@harborlane.example

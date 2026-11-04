@@ -1,0 +1,112 @@
+Page: 0, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Page: 0, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 0, Rectangle: (56; 92.40000019000013) (119.02400000000003; 8.799999999999955), Text: Annual Report 2025  |  Port Ellery
+Page: 0, Rectangle: (56; 114.49799948999998) (244.16600000000005; 28.600000000000023), Text: Annual Report 2025
+Page: 0, Rectangle: (56; 406.24899260999996) (83.38499999999999; 16.5), Text: 1. Overview
+Page: 0, Rectangle: (56; 426.24798595000004) (480.7799999999995; 11), Text: Harbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its 
+Page: 0, Rectangle: (56; 437.74698555000003) (476.3399999999997; 11), Text: Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn 
+Page: 0, Rectangle: (56; 449.24598419) (394.61; 11), Text: Harvest range and by coffee from our long-standing supplier, Northwind Coffee Roasters.
+Page: 0, Rectangle: (56; 472.84499564) (65.35199999999998; 13.199999999999989), Text: Key figures
+Page: 0, Rectangle: (56; 490.29400646000005) (29.450000000000003; 11), Text: Metric
+Page: 0, Rectangle: (251.55000305; 490.29400646000005) (22.24000000000001; 11), Text: 2024
+Page: 0, Rectangle: (344.20001221; 490.29400646000005) (22.24000000000001; 11), Text: 2025
+Page: 0, Rectangle: (436.8500061; 490.29400646000005) (36.67000000000007; 11), Text: Change
+Page: 0, Rectangle: (56; 508.5430070100001) (54.47000000000001; 11), Text: Net revenue
+Page: 0, Rectangle: (251.55000305; 508.5430070100001) (36.12999999999994; 11), Text: $18.6 m
+Page: 0, Rectangle: (344.20001221; 508.5430070100001) (36.12999999999994; 11), Text: $21.4 m
+Page: 0, Rectangle: (436.8500061; 508.5430070100001) (34.18999999999994; 11), Text: +15.1%
+Page: 0, Rectangle: (56; 526.79200756) (60.010000000000005; 11), Text: Gross margin
+Page: 0, Rectangle: (251.55000305; 526.79200756) (28.349999999999966; 11), Text: 31.2%
+Page: 0, Rectangle: (344.20001221; 526.79200756) (28.349999999999966; 11), Text: 32.8%
+Page: 0, Rectangle: (436.8500061; 526.79200756) (35.8599999999999; 11), Text: +1.6 pts
+Page: 0, Rectangle: (56; 545.0410081100001) (68.36000000000001; 11), Text: Orders shipped
+Page: 0, Rectangle: (251.55000305; 545.0410081100001) (30.579999999999984; 11), Text: 48,900
+Page: 0, Rectangle: (344.20001221; 545.0410081100001) (30.579999999999984; 11), Text: 55,300
+Page: 0, Rectangle: (436.8500061; 545.0410081100001) (34.18999999999994; 11), Text: +13.1%
+Page: 0, Rectangle: (56; 563.29000866) (95.58000000000004; 11), Text: Wholesale customers
+Page: 0, Rectangle: (251.55000305; 563.29000866) (25.019999999999982; 11), Text: 1,140
+Page: 0, Rectangle: (344.20001221; 563.29000866) (25.019999999999982; 11), Text: 1,265
+Page: 0, Rectangle: (436.8500061; 563.29000866) (34.18999999999994; 11), Text: +11.0%
+Page: 0, Rectangle: (56; 581.53900921) (72.79000000000002; 11), Text: On-time delivery
+Page: 0, Rectangle: (251.55000305; 581.53900921) (28.349999999999966; 11), Text: 96.1%
+Page: 0, Rectangle: (344.20001221; 581.53900921) (28.349999999999966; 11), Text: 97.4%
+Page: 0, Rectangle: (436.8500061; 581.53900921) (35.8599999999999; 11), Text: +1.3 pts
+Page: 0, Rectangle: (471.46800232; 42.450000390000014) (68.52600000000018; 9.899999999999977), Text: Investor relations
+Page: 1, Rectangle: (56; 28.400000190000128) (165.71200000000007; 8.799999999999955), Text: Harbor Lane Provisions  |  Annual Report 2025
+Page: 1, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Page: 1, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 1, Rectangle: (56; 98.74999968999998) (95.86500000000001; 16.5), Text: 2. Operations
+Page: 1, Rectangle: (56; 121.74900065999998) (479.08999999999946; 11), Text: Orders shipped rose 13.1% to 55,300 while on-time delivery improved to 97.4%. Two investments made the 
+Page: 1, Rectangle: (56; 133.24800026000003) (451.3199999999999; 11), Text: difference: a third cold room for cheese and dairy, and route planning that groups deliveries by district 
+Page: 1, Rectangle: (56; 144.7469989) (103.38000000000005; 11), Text: instead of by customer.
+Page: 1, Rectangle: (56; 162.34600176999993) (141.372; 13.200000000000045), Text: Warehouse and logistics
+Page: 1, Rectangle: (74; 182.04499827999996) (271.4599999999999; 11), Text: •   Cold room 3 opened in April and holds 140 pallets at 2 C.
+Page: 1, Rectangle: (74; 199.54399882999996) (264.2099999999999; 11), Text: •   Average pick time fell from 6.1 to 4.8 minutes per order.
+Page: 1, Rectangle: (74; 217.04299937999997) (292.0099999999998; 11), Text: •   Four electric vans replaced diesel vans on the harbour routes.
+Page: 1, Rectangle: (56; 452.79199187999996) (208.38; 16.5), Text: 3. The Autumn Harvest range
+Page: 1, Rectangle: (56; 475.79098522000004) (475.2299999999997; 11), Text: The Autumn Harvest range launched in September with eight seasonal lines, from apple butter and squash 
+Page: 1, Rectangle: (56; 487.28998482000003) (472.4399999999998; 11), Text: soup to a spiced roast blended by Northwind Coffee Roasters. The range sold out twice before November, 
+Page: 1, Rectangle: (56; 498.78898346) (207.88; 11), Text: and harvest lines now make up 9% of revenue.
+Page: 1, Rectangle: (56; 516.38799395) (124.03199999999998; 13.200000000000045), Text: Supplier partnerships
+Page: 1, Rectangle: (56; 536.0870057300001) (475.17999999999984; 11), Text: We buy from 27 producers, 19 of them within 200 km of Port Ellery. Every supplier signs our quality charter 
+Page: 1, Rectangle: (56; 547.58600533) (120.07000000000005; 11), Text: and is audited once a year.
+Page: 1, Rectangle: (56; 565.1099914399999) (135.34499999999994; 11.549999999999955), Text: Northwind Coffee Roasters
+Page: 1, Rectangle: (56; 583.15899669) (471.8699999999998; 11), Text: Northwind roasts our Harbor Blend, Dockside Decaf and Lighthouse Espresso beans to order and delivers 
+Page: 1, Rectangle: (56; 594.65799629) (347.9199999999998; 11), Text: twice a week. The supply agreement renewed in January for three more years.
+Page: 2, Rectangle: (56; 28.400000190000128) (165.71200000000007; 8.799999999999955), Text: Harbor Lane Provisions  |  Annual Report 2025
+Page: 2, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Page: 2, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 2, Rectangle: (56; 92.74999968999998) (152.56499999999997; 16.5), Text: 4. Financial summary
+Page: 2, Rectangle: (56; 115.74900065999998) (472.4299999999996; 11), Text: Gross margin improved by 1.6 points to 32.8%, as freight costs fell and the share of own-brand lines grew. 
+Page: 2, Rectangle: (56; 127.24800026000003) (431.84999999999985; 11), Text: Operating costs rose 9.8%, mostly from the new cold room and three new hires in the warehouse.
+Page: 2, Rectangle: (56; 144.84700121999992) (120.70799999999997; 13.200000000000045), Text: Revenue by category
+Page: 2, Rectangle: (56; 168.29599772999995) (43.34; 11), Text: Category
+Page: 2, Rectangle: (251.55000305; 168.29599772999995) (41.680000000000064; 11), Text: Revenue
+Page: 2, Rectangle: (354.5; 168.29599772999995) (27.79000000000002; 11), Text: Share
+Page: 2, Rectangle: (447.1499939; 168.29599772999995) (34.99999999999994; 11), Text: Growth
+Page: 2, Rectangle: (56; 192.54499827999996) (58.920000000000016; 11), Text: Coffee & Tea
+Page: 2, Rectangle: (251.55000305; 192.54499827999996) (30.569999999999936; 11), Text: $5.9 m
+Page: 2, Rectangle: (354.5; 192.54499827999996) (28.349999999999966; 11), Text: 27.6%
+Page: 2, Rectangle: (447.1499939; 192.54499827999996) (34.18999999999994; 11), Text: +18.4%
+Page: 2, Rectangle: (56; 216.79399882999996) (68.91000000000001; 11), Text: Oils & Vinegars
+Page: 2, Rectangle: (251.55000305; 216.79399882999996) (30.569999999999936; 11), Text: $3.8 m
+Page: 2, Rectangle: (354.5; 216.79399882999996) (28.349999999999966; 11), Text: 17.8%
+Page: 2, Rectangle: (447.1499939; 216.79399882999996) (28.62999999999994; 11), Text: +9.2%
+Page: 2, Rectangle: (56; 241.04299937999997) (86.14000000000001; 11), Text: Honey & Preserves
+Page: 2, Rectangle: (251.55000305; 241.04299937999997) (30.569999999999936; 11), Text: $3.1 m
+Page: 2, Rectangle: (354.5; 241.04299937999997) (28.349999999999966; 11), Text: 14.5%
+Page: 2, Rectangle: (447.1499939; 241.04299937999997) (34.18999999999994; 11), Text: +21.7%
+Page: 2, Rectangle: (56; 265.29199993) (70.02000000000001; 11), Text: Cheese & Dairy
+Page: 2, Rectangle: (251.55000305; 265.29199993) (30.569999999999936; 11), Text: $3.4 m
+Page: 2, Rectangle: (354.5; 265.29199993) (28.349999999999966; 11), Text: 15.9%
+Page: 2, Rectangle: (447.1499939; 265.29199993) (34.18999999999994; 11), Text: +11.3%
+Page: 2, Rectangle: (56; 289.54100048) (107.25999999999999; 11), Text: Grains, Bakery & Pantry
+Page: 2, Rectangle: (251.55000305; 289.54100048) (30.569999999999936; 11), Text: $5.2 m
+Page: 2, Rectangle: (354.5; 289.54100048) (28.349999999999966; 11), Text: 24.2%
+Page: 2, Rectangle: (447.1499939; 289.54100048) (34.18999999999994; 11), Text: +14.0%
+Page: 2, Rectangle: (56; 313.79000103) (22.230000000000004; 11), Text: Total
+Page: 2, Rectangle: (251.55000305; 313.79000103) (36.12999999999994; 11), Text: $21.4 m
+Page: 2, Rectangle: (354.5; 313.79000103) (33.90999999999997; 11), Text: 100.0%
+Page: 2, Rectangle: (447.1499939; 313.79000103) (34.18999999999994; 11), Text: +15.1%
+Page: 2, Rectangle: (56; 556.1390010299999) (120.69599999999997; 13.200000000000045), Text: Cash and investment
+Page: 2, Rectangle: (56; 575.83801281) (483.5499999999996; 11), Text: Operating cash flow was $2.3 million. We invested $1.1 million in the cold room and the van fleet, and closed 
+Page: 2, Rectangle: (56; 587.3370124099999) (120.07000000000005; 11), Text: the year with no bank debt.
+Page: 3, Rectangle: (56; 28.400000190000128) (165.71200000000007; 8.799999999999955), Text: Harbor Lane Provisions  |  Annual Report 2025
+Page: 3, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
+Page: 3, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 3, Rectangle: (56; 92.74999968999998) (114.20999999999998; 16.5), Text: 5. Sustainability
+Page: 3, Rectangle: (56; 115.74900065999998) (479.6799999999996; 11), Text: Food waste fell to 1.2% of stock, the lowest since we began measuring. Unsold harvest produce goes to the 
+Page: 3, Rectangle: (56; 127.24800026000003) (153.39000000000007; 11), Text: Port Ellery food bank every Friday.
+Page: 3, Rectangle: (74; 144.74700176) (224.17000000000007; 11), Text: •   Electric vans cover 40% of delivery kilometres.
+Page: 3, Rectangle: (74; 162.24600231) (325.91; 11), Text: •   All coffee is traceable to the farm through Northwind Coffee Roasters.
+Page: 3, Rectangle: (74; 179.74500286) (219.19000000000005; 11), Text: •   Packaging is 86% recyclable or compostable.
+Page: 3, Rectangle: (56; 197.49400299) (73.35; 16.5), Text: 6. Outlook
+Page: 3, Rectangle: (56; 220.49299632999998) (474.1199999999999; 11), Text: In 2026 we plan a second Autumn Harvest season with twelve lines, a wholesale web shop, and a regional 
+Page: 3, Rectangle: (56; 231.99199593000003) (166.7400000000001; 11), Text: depot for customers north of the river.
+Page: 3, Rectangle: (56; 249.59099687999992) (61.35599999999998; 13.200000000000045), Text: Resources
+Page: 3, Rectangle: (56; 269.28999339999996) (112.82000000000002; 11), Text: Full financial statements: 
+Page: 3, Rectangle: (168.82499695; 269.28999339999996) (156.18; 11), Text: harborlane.example/investors/2025
+Page: 3, Rectangle: (56; 286.78900157) (107.82000000000005; 11), Text: Supplier quality charter: 
+Page: 3, Rectangle: (163.83000183000001; 286.78900157) (165.06000000000006; 11), Text: harborlane.example/suppliers/charter
+Page: 3, Rectangle: (56; 304.28799448999996) (87.26000000000002; 11), Text: Wholesale catalog: 
+Page: 3, Rectangle: (143.26899719; 304.28799448999996) (123.39000000000004; 11), Text: harborlane.example/catalog

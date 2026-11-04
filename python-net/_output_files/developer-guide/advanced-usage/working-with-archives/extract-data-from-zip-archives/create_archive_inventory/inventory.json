@@ -1,11 +1,11 @@
 {
   "archive": "archive.zip",
   "total_files": 5,
-  "total_size": 341988,
+  "total_size": 507213,
   "files": [
     {
       "name": "invoice-HLP-2025-0412.pdf",
-      "size": 212328,
+      "size": 213407,
       "path": "finance/invoice-HLP-2025-0412.pdf",
       "extractable": true,
       "text_length": 2177,
@@ -13,7 +13,7 @@
     },
     {
       "name": "supply-agreement-northwind.docx",
-      "size": 101710,
+      "size": 263263,
       "path": "finance/supply-agreement-northwind.docx",
       "extractable": true,
       "text_length": 2584,
@@ -21,7 +21,7 @@
     },
     {
       "name": "inventory.xlsx",
-      "size": 15600,
+      "size": 15607,
       "path": "operations/inventory.xlsx",
       "extractable": true,
       "text_length": 4352,
@@ -37,11 +37,11 @@
     },
     {
       "name": "cold-room-3.png",
-      "size": 8725,
+      "size": 11311,
       "path": "operations/cold-room-3.png",
       "extractable": true,
-      "text_length": 19,
-      "word_count": 6
+      "text_length": 57,
+      "word_count": 14
     }
   ]
 }

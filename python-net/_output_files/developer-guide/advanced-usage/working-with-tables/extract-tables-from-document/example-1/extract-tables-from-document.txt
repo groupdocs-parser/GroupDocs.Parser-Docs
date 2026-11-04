@@ -1,0 +1,56 @@
+=== Table 1 ===
+Rows: 40, Columns: 9
+
+HLP-CF-101	Harbor Blend whole bean coffee	Coffee	Northwind Coffee Roasters	1 kg bag	$18.40	240	80	A-01	
+HLP-CF-102	Dockside Decaf whole bean coffee	Coffee	Northwind Coffee Roasters	1 kg bag	$19.10	96	40	A-01	
+HLP-CF-103	Lighthouse Espresso beans	Coffee	Northwind Coffee Roasters	1 kg bag	$21.75	180	60	A-02	
+HLP-CF-104	Cold brew concentrate	Coffee	Northwind Coffee Roasters	1 L bottle	$9.60	150	50	A-02	
+HLP-CF-105	Autumn Harvest spiced roast	Coffee	Northwind Coffee Roasters	500 g bag	$11.20	210	70	A-03	
+HLP-OL-201	Cold-pressed olive oil	Oils & Vinegars	Grove & Press	750 ml tin	$12.90	320	100	B-04	
+HLP-OL-202	Pumpkin seed oil	Oils & Vinegars	Grove & Press	250 ml bottle	$8.75	140	40	B-04	
+HLP-OL-203	Apple cider vinegar	Oils & Vinegars	Orchard Row	500 ml bottle	$4.30	260	80	B-05	
+HLP-OL-204	Aged balsamic vinegar	Oils & Vinegars	Grove & Press	250 ml bottle	$14.60	85	30	B-05	
+HLP-HN-301	Chestnut honey	Honey & Preserves	Hillside Apiaries	350 g jar	$7.80	190	60	C-02	
+HLP-HN-302	Wildflower honey	Honey & Preserves	Hillside Apiaries	500 g jar	$8.20	230	80	C-02	
+HLP-HN-303	Cranberry relish	Honey & Preserves	Orchard Row	300 g jar	$4.95	175	60	C-03	
+HLP-HN-304	Fig and walnut preserve	Honey & Preserves	Orchard Row	300 g jar	$5.40	120	40	C-03	
+HLP-HN-305	Autumn Harvest apple butter	Honey & Preserves	Orchard Row	300 g jar	$4.60	205	70	C-03	
+HLP-GR-401	Maple pecan granola	Grains & Cereals	Mill Creek Farms	750 g bag	$6.30	160	50	D-01	
+HLP-GR-402	Stone-ground oats	Grains & Cereals	Mill Creek Farms	1 kg bag	$3.10	300	100	D-01	
+HLP-GR-403	Heritage spelt flour	Grains & Cereals	Mill Creek Farms	1 kg bag	$3.85	210	80	D-02	
+HLP-GR-404	Wild rice blend	Grains & Cereals	Mill Creek Farms	500 g bag	$4.40	130	40	D-02	
+HLP-GR-405	Autumn Harvest muesli	Grains & Cereals	Mill Creek Farms	750 g bag	$5.90	180	60	D-03	
+HLP-SP-501	Smoked sea salt	Spices & Salts	Saltmarsh Co.	250 g jar	$3.95	260	80	E-01	
+HLP-SP-502	Pink peppercorns	Spices & Salts	Spice Quay	100 g jar	$5.25	110	40	E-01	
+HLP-SP-503	Mulling spice blend	Spices & Salts	Spice Quay	80 g tin	$4.10	145	50	E-02	
+HLP-SP-504	Smoked paprika	Spices & Salts	Spice Quay	100 g tin	$3.60	190	60	E-02	
+HLP-SP-505	Saffron threads	Spices & Salts	Spice Quay	1 g vial	$6.80	70	25	E-03	
+HLP-CH-601	Aged harbour cheddar	Cheese & Dairy	Coastline Creamery	1 kg wheel	$16.50	90	30	F-01	
+HLP-CH-602	Smoked gouda	Cheese & Dairy	Coastline Creamery	1 kg wheel	$15.20	75	25	F-01	
+HLP-CH-603	Goat cheese log	Cheese & Dairy	Coastline Creamery	200 g log	$4.70	140	50	F-02	
+HLP-CH-604	Cultured butter	Cheese & Dairy	Coastline Creamery	250 g block	$3.90	220	80	F-02	
+HLP-BK-701	Sea salt crackers	Bakery	Quayside Bakehouse	200 g box	$2.85	280	90	G-01	
+HLP-BK-702	Rosemary flatbread	Bakery	Quayside Bakehouse	150 g box	$2.95	160	60	G-01	
+HLP-BK-703	Oat and honey biscuits	Bakery	Quayside Bakehouse	250 g box	$3.20	195	70	G-02	
+HLP-BK-704	Autumn Harvest fruit loaf	Bakery	Quayside Bakehouse	500 g loaf	$4.75	85	30	G-02	
+HLP-TE-801	Harbor breakfast tea	Tea	Leaf & Kettle	100 bags	$6.40	170	60	H-01	
+HLP-TE-802	Chamomile and apple tea	Tea	Leaf & Kettle	50 bags	$4.20	120	40	H-01	
+HLP-TE-803	Smoked lapsang tea	Tea	Leaf & Kettle	100 g tin	$7.10	60	20	H-02	
+HLP-CN-901	Tomato passata	Pantry	Sunfield Kitchens	700 g jar	$2.40	340	120	J-01	
+HLP-CN-902	Roasted red peppers	Pantry	Sunfield Kitchens	290 g jar	$3.15	150	50	J-01	
+HLP-CN-903	Butter beans	Pantry	Sunfield Kitchens	400 g tin	$1.60	410	150	J-02	
+HLP-CN-904	Chickpeas	Pantry	Sunfield Kitchens	400 g tin	$1.45	390	150	J-02	
+
+=== Table 2 ===
+Rows: 11, Columns: 4
+
+Coastline Creamery	Cheese & Dairy	4	orders@coastlinecreamery.example	
+Grove & Press	Oils & Vinegars	3	orders@grovepress.example	
+Hillside Apiaries	Honey & Preserves	2	orders@hillsideapiaries.example	
+Leaf & Kettle	Tea	3	orders@leafkettle.example	
+Mill Creek Farms	Grains & Cereals	5	orders@millcreekfarms.example	
+Northwind Coffee Roasters	Coffee	5	alex.chen@northwindroasters.example	
+Orchard Row	Oils & Vinegars, Honey & Preserves	4	orders@orchardrow.example	
+Quayside Bakehouse	Bakery	4	orders@quaysidebakehouse.example	
+Saltmarsh Co.	Spices & Salts	1	orders@saltmarshco.example	
+Spice Quay	Spices & Salts	4	orders@spicequay.example

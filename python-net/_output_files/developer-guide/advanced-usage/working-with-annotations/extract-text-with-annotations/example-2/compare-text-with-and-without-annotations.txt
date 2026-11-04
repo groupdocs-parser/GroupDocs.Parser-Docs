@@ -1,0 +1,4 @@
+"Check the 2,400 kg against last season's sell-through before we sign.": False / True
+'Release date works for the Q4 cash forecast.': False / True
+'Ask Northwind for the green coffee index they will use.': False / True
+'Dock 2 is reserved for these two mornings.': False / True

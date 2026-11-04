@@ -38,6 +38,14 @@ with Parser("./reviewed.pdf") as parser:
 The following sample file is used in this example: [reviewed.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document-page/reviewed.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-annotations-specific-page.txt" >}}  
+```text
+Page 1: 2 annotations
+  [Text] Check the 2,400 kg against last season's sell-through before we sign.
+  [Highlight] Release date works for the Q4 cash forecast.
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document-page/example-1/extract-annotations-specific-page.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** For the sample, prints:
@@ -75,6 +83,17 @@ with Parser("./reviewed.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [reviewed.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document-page/reviewed.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-annotations-page-by-page.txt" >}}  
+```text
+Page 1 of 2: 2 annotations
+  Lena Park: Check the 2,400 kg against last season's sell-through before we sign.
+  Amara Osei: Release date works for the Q4 cash forecast.
+Page 2 of 2: 2 annotations
+  Amara Osei: Ask Northwind for the green coffee index they will use.
+  Lena Park: Dock 2 is reserved for these two mornings.
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-annotations/extract-annotations-from-document-page/example-2/extract-annotations-page-by-page.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

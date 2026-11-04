@@ -1,0 +1,30 @@
+[
+  {
+    "page": 1,
+    "type": "Text",
+    "author": "Lena Park",
+    "timestamp": "2026-01-12T13:00:00",
+    "text": "Check the 2,400 kg against last season's sell-through before we sign."
+  },
+  {
+    "page": 1,
+    "type": "Highlight",
+    "author": "Amara Osei",
+    "timestamp": "2026-01-12T13:25:00",
+    "text": "Release date works for the Q4 cash forecast."
+  },
+  {
+    "page": 2,
+    "type": "Text",
+    "author": "Amara Osei",
+    "timestamp": "2026-01-12T13:40:00",
+    "text": "Ask Northwind for the green coffee index they will use."
+  },
+  {
+    "page": 2,
+    "type": "Highlight",
+    "author": "Lena Park",
+    "timestamp": "2026-01-12T13:55:00",
+    "text": "Dock 2 is reserved for these two mornings."
+  }
+]

@@ -40,6 +40,18 @@ with Parser("brochure.pdf") as parser:
 The following sample file is used in this example: [brochure.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/working-with-images/brochure.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "save-images-to-streams.txt" >}}  
+```text
+Read 16247 bytes from page 1
+Read 125180 bytes from page 1
+Read 69728 bytes from page 1
+Read 94989 bytes from page 1
+Read 96241 bytes from page 1
+Read 163435 bytes from page 2
+Read 96241 bytes from page 2
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/working-with-images/example-1/save-images-to-streams.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ### Tips

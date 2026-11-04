@@ -35,6 +35,17 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/basic-usage/extract-metadata-from-documents/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-metadata.txt" >}}  
+```text
+title: Harbor Lane Provisions - Annual Report 2025
+subject: Annual report and financial summary
+keywords: annual report, wholesale, Autumn Harvest, revenue, logistics
+author: Amara Osei
+application: Aspose Pty Ltd.
+last-saved-time: 02/16/2026 11:00:00
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/extract-metadata-from-documents/example-1/extract-metadata.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ### Steps

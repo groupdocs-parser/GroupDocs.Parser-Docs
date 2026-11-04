@@ -48,6 +48,17 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-metadata-from-documents.txt" >}}  
+```text
+title: Harbor Lane Provisions - Annual Report 2025
+subject: Annual report and financial summary
+keywords: annual report, wholesale, Autumn Harvest, revenue, logistics
+author: Amara Osei
+application: Aspose Pty Ltd.
+last-saved-time: 02/16/2026 11:00:00
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/example-1/extract-metadata-from-documents.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns a collection of `MetadataItem` objects containing document properties such as author, title, creation date, modified date, etc., or `None` if metadata extraction is not supported.
@@ -177,7 +188,7 @@ Document Metadata:
   keywords: annual report, wholesale, Autumn Harvest, revenue, logistics
   author: Amara Osei
   application: Aspose Pty Ltd.
-  last-saved-time: 02/16/2026 12:00:00
+  last-saved-time: 02/16/2026 11:00:00
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/extract_metadata_as_dict/extract-metadata-as-dict.txt)
 {{< /tab >}}
@@ -309,10 +320,25 @@ batch_extract_metadata(["sample.pdf", "sample.docx", "report.pdf"], "metadata_re
 ```
 
 {{< /tab >}}
+{{< tab "sample.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/sample.pdf)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "sample.docx" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/sample.docx)
+{{< /tab-text >}}
+{{< /tab >}}
+{{< tab "report.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-metadata/extract-metadata-from-documents/report.pdf)
+{{< /tab-text >}}
+{{< /tab >}}
 {{< tab "metadata_report.csv" >}}  
 ```text
 application,application-version,author,category,company,created-time,file_name,keywords,last-author,last-saved-time,manager,revision-number,subject,template,title
-Aspose Pty Ltd.,,Amara Osei,,,,sample.pdf,"annual report, wholesale, Autumn Harvest, revenue, logistics",,02/16/2026 12:00:00,,,Annual report and financial summary,,Harbor Lane Provisions - Annual Report 2025
+Aspose Pty Ltd.,,Amara Osei,,,,sample.pdf,"annual report, wholesale, Autumn Harvest, revenue, logistics",,02/16/2026 11:00:00,,,Annual report and financial summary,,Harbor Lane Provisions - Annual Report 2025
 Microsoft Office Word,786432,Lena Park,Back office,Harbor Lane Provisions,12/15/2025 10:00:00,sample.docx,"supply agreement, cof
 [TRUNCATED]
 ```

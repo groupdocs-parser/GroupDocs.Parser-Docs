@@ -42,6 +42,20 @@ with Parser("./archive.zip") as parser:
 The following sample file is used in this example: [archive.zip](/parser/python-net/_sample_files/developer-guide/basic-usage/extract-data-from-attachments-and-zip-archives/archive.zip)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-and-parse-attachments.txt" >}}  
+```text
+finance/invoice-HLP-2025-0412.pdf
+                                                                                           INVOICE
+
+
+   FROM                                                                     Invoice Number      HLP-2025-0412
+   Northwind Coffee Roasters                                                Invoice Date        4 November 2025
+   4 Roastery Lane, Millbrook                                               Due Date            4 December 2025
+   alex.chen@northwindroa
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/extract-data-from-attachments-and-zip-archives/example-1/extract-and-parse-attachments.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 ### Steps

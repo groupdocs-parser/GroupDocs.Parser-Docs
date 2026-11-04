@@ -230,7 +230,7 @@ subject = Annual report and financial summary
 keywords = annual report, wholesale, Autumn Harvest, revenue, logistics
 author = Amara Osei
 application = Aspose Pty Ltd.
-last-saved-time = 2/16/2026 12:00:00 PM
+last-saved-time = 02/16/2026 11:00:00
 ```
 [Download full output](/parser/python-net/_output_files/getting-started/quick-start-guide/extract_metadata/extract-metadata.txt)
 {{< /tab >}}

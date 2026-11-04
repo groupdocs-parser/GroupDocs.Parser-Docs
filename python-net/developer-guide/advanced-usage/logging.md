@@ -56,8 +56,8 @@ The following sample file is used in this example: [protected.pdf](/parser/pytho
 {{< /tab >}}
 {{< tab "log.txt" >}}  
 ```text
-ERROR groupdocs.parser: Exception of type 'GroupDocs.Parser.Exceptions.InvalidPasswordException' was thrown.
-INFO groupdocs.parser: Skipped a protected document
+Error: Exception of type 'GroupDocs.Parser.Exceptions.InvalidPasswordException' was thrown.
+The document is password-protected.
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/logging/log/log.txt)
 {{< /tab >}}
@@ -135,9 +135,13 @@ from groupdocs.parser import Parser
 from groupdocs.parser.exceptions import InvalidPasswordException
 from groupdocs.parser.options import ParserSettings
 
-logging.basicConfig(stream=sys.stdout, level=logging.DEBUG,
-                    format="%(levelname)s %(name)s: %(message)s")
+# A handler of its own: logging.basicConfig() does nothing once the
+# application has configured logging
 logger = logging.getLogger("groupdocs.parser")
+logger.setLevel(logging.DEBUG)
+handler = logging.StreamHandler(sys.stdout)
+handler.setFormatter(logging.Formatter("%(levelname)s %(name)s: %(message)s"))
+logger.addHandler(handler)
 LEVELS = {"trace": logging.DEBUG, "warning": logging.WARNING, "error": logging.ERROR}
 
 
@@ -157,6 +161,13 @@ except InvalidPasswordException:
 {{< tab-text >}}
 The following sample file is used in this example: [protected.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/logging/protected.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "log-2.txt" >}}  
+```text
+ERROR groupdocs.parser: Exception of type 'GroupDocs.Parser.Exceptions.InvalidPasswordException' was thrown.
+INFO groupdocs.parser: Skipped a protected document
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/logging/log_2/log-2.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

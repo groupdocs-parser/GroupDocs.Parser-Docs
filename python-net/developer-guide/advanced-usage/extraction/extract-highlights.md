@@ -56,6 +56,13 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-highlights/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-highlights.txt" >}}  
+```text
+Position: 100
+Text: tions
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/example-1/extract-highlights.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns a `HighlightItem` object containing the text fragment starting at the specified position, or `None` if extraction is not supported.
@@ -92,6 +99,22 @@ with Parser("sample.docx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-highlights/sample.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-highlights-with-fixed-length.txt" >}}  
+```text
+Position 0:
+Text: Supply Agreement  |  Harbor Lane Provisions and No
+
+Position 100:
+Text: pply Agreement
+
+Position 500:
+Text: oasts and delivers the following coffees to the Bu
+
+Position 1000:
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/example-2/extract-highlights-with-fixed-length.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -159,6 +182,11 @@ for idx, result in enumerate(results, 1):
         print(f"   (Page {result['page']}, position {result['position']})\n")
 ```
 
+{{< /tab >}}
+{{< tab "sample.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-highlights/sample.pdf)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< tab "get-search-results-with-context.txt" >}}  
 ```text
@@ -304,6 +332,11 @@ if preview:
     print(preview['full_preview'])
 ```
 
+{{< /tab >}}
+{{< tab "sample.pdf" >}}
+{{< tab-text >}}
+The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-highlights/sample.pdf)
+{{< /tab-text >}}
 {{< /tab >}}
 {{< tab "create-document-preview.txt" >}}  
 ```text

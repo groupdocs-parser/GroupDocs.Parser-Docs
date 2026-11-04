@@ -1,0 +1,2 @@
+Accurate mode pages: 4
+Raw mode pages: 4

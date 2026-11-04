@@ -51,6 +51,22 @@ with Parser("./sample.pdf") as parser:
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode/sample.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-text-from-document.txt" >}}  
+```text
+Investor relations
+
+
+Annual Report 2025  |  Port Ellery
+Annual Report 2025
+
+
+1. Overview
+Harbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its
+Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode/example-1/extract-text-from-document.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** The method returns the entire document text as a `str` (which also answers `read_to_end()`), or `None` if text extraction is not supported for the document format.
@@ -95,6 +111,22 @@ with Parser("./sample.pdf") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [sample.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode/sample.pdf)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-text-from-document-page.txt" >}}  
+```text
+Page 1/4
+                                                                                       Investor relations
+
+
+Annual Report 2025  |  Port Ellery
+Annual Report 2025
+
+
+1. Overview
+Harbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-accurate-mode/example-2/extract-text-from-document-page.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

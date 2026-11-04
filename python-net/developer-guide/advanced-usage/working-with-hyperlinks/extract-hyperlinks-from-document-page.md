@@ -53,6 +53,17 @@ with Parser("./document.pdf") as parser:
 The following sample file is used in this example: [document.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/document.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-hyperlinks-specific-page.txt" >}}  
+```text
+Hyperlinks on page 1:
+  Text: harborlane.example
+  URL: https://harborlane.example/
+
+  Text: Investor relations
+  URL: https://harborlane.example/investors
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/example-1/extract-hyperlinks-specific-page.txt)
+{{< /tab >}}
 {{< /tabs >}}
 
 **Expected behavior:** Returns only hyperlinks from the specified page.
@@ -105,6 +116,22 @@ with Parser("report.docx") as parser:
 {{< tab-text >}}
 The following sample file is used in this example: [report.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/report.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "extract-hyperlinks-from-all-pages.txt" >}}  
+```text
+=== Page 1/2 ===
+No hyperlinks on this page
+
+=== Page 2/2 ===
+Found 4 hyperlinks:
+  • supplier quality charter -> https://harborlane.example/suppliers/charter
+  • northwindroasters.example/quality -> https://northwindroasters.example/quality
+  • harborlane.example/terms -> https://harborlane.example/terms
+  • lena.park@harborlane.example -> mailto:lena.park@harborlane.example
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/example-2/extract-hyperlinks-from-all-pages.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
