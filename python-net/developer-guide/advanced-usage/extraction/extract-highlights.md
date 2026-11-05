@@ -225,9 +225,26 @@ def extract_multiple_highlights(file_path, positions, length=50):
     highlights = []
     
     with Parser(file_path) as parser:
+        # A position past the end of the text raises an error, so read the text first
+        text_reader = parser.get_text()
+        if text_reader is None:
+            print("Text extraction not supported")
+            return highlights
+        text = text_reader.read_to_end()
+
         options = HighlightOptions(length)
         
         for position in positions:
+            if position >= len(text):
+                print(f"Skipped position {position}: the text has {len(text)} characters\n")
+                continue
+
+            # Start at the beginning of a word, not inside one or in the page's layout spaces
+            while position > 0 and not text[position - 1].isspace():
+                position -= 1
+            while position < len(text) - 1 and text[position].isspace():
+                position += 1
+
             highlight = parser.get_highlight(position, True, options)
             
             if highlight is not None:
@@ -245,8 +262,10 @@ highlights = extract_multiple_highlights("sample.pdf", positions, length=80)
 
 print(f"Extracted {len(highlights)} highlights:\n")
 for h in highlights:
+    # Collapse the spaces that lay out the PDF page
+    snippet = " ".join(h['text'].split())
     print(f"Position {h['position']}:")
-    print(f"  {h['text'][:60]}...")
+    print(f"  {snippet[:60]}...")
     print()
 ```
 
@@ -260,21 +279,21 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 ```text
 Extracted 4 highlights:
 
-Position 0:
-                                                              ...
+Position 87:
+  Investor relations...
 
-Position 500:
-  s...
+Position 494:
+  figures...
 
-Position 1000:
-       97.4%               +1.3 pts...
+Position 1005:
+  97.4% +1.3 pts...
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/extract_multiple_highlights/extract-multiple-highlights.txt)
 {{< /tab >}}
 {{< /tabs >}}
 
-**Expected behavior:** Extracts text fragments from multiple specified positions in the document.
+**Expected behavior:** Extracts text fragments from multiple specified positions in the document, and skips a position past the end of the text. In evaluation mode the text stops after about 20 lines, so fewer positions are in range.
 
 ## Create document preview with highlights
 

@@ -31,7 +31,7 @@
     "type": "text",
     "file": "extract-multiple-highlights.txt",
     "path": "developer-guide/advanced-usage/extraction/extract-highlights/extract_multiple_highlights/extract-multiple-highlights.txt",
-    "preview": "Extracted 4 highlights:\n\nPosition 0:\n                                                              ...\n\nPosition 500:\n  s...\n\nPosition 1000:\n       97.4%               +1.3 pts...\n[TRUNCATED]",
+    "preview": "Extracted 4 highlights:\n\nPosition 87:\n  Investor relations...\n\nPosition 494:\n  figures...\n\nPosition 1005:\n  97.4% +1.3 pts...\n[TRUNCATED]",
     "function": "extract_multiple_highlights"
   },
   "developer-guide/advanced-usage/extraction/extract-highlights#example-5": {
