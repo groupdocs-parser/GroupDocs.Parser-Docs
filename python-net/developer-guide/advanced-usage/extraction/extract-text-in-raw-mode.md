@@ -61,7 +61,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 {{< /tab >}}
 {{< tab "extract-text-in-raw-mode.txt" >}}  
 ```text
-Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  harborlane.exampleAnnual Report 2025  |  Port ElleryAnnual Report 20251. OverviewHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn Harvest range and by coffee from our long-standing supplier, Northwind Coffee Roasters.Key figuresMetric20242025ChangeNet revenue$18.6 m$21.4 m+1
+Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  harborlane.example  |  LinkedIn  |  Instagram  |  YouTubeAnnual Report 2025  |  Port ElleryAnnual Report 20251. OverviewHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn Harvest range and by coffee from our long-standing supplier, Northwind Coffee Roasters.Key figuresMetric20
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/example-1/extract-text-in-raw-mode.txt)
@@ -112,7 +112,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 {{< tab "extract-text-from-page-in-raw-mode.txt" >}}  
 ```text
 Page 1/4
-Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  harborlane.exampleAnnual Report 2025  |  Port ElleryAnnual Report 20251. OverviewHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn Harvest range and by coffee from our long-standing supplier, Northwind Coffee Roasters.Key figuresMetric20242025ChangeNet revenue$18.6 m
+Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  harborlane.example  |  LinkedIn  |  Instagram  |  YouTubeAnnual Report 2025  |  Port ElleryAnnual Report 20251. OverviewHarbor Lane Provisions supplies specialty food to 1,265 independent grocers, cafes and restaurants from its Quayside warehouse in Port Ellery. In 2025 net revenue grew 15.1% to $21.4 million, driven by the Autumn Harvest range and by coffee from our long-standing supplier, Northwind Coffee Roasters.Key figure
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/example-2/extract-text-from-page-in-raw-mode.txt)
@@ -218,8 +218,8 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 Performance Comparison:
 Mode            Time (s)        Length          Speed          
 ------------------------------------------------------------
-Accurate        0.329           4414            1.0x           
-Raw             0.114           3375            2.89x faster
+Accurate        0.129           4570            1.0x           
+Raw             0.024           3531            5.36x faster
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/compare_extraction_modes/compare-extraction-modes.txt)
 {{< /tab >}}
@@ -288,11 +288,13 @@ batch_extract_raw("documents", "extracted_text")
 The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/annual-report.pdf), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/service-agreement.docx), [supplier-invoice.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/documents/supplier-invoice.pdf)
 {{< /tab-text >}}
 {{< /tab >}}
-{{< tab "batch-extract-raw.txt" >}}  
+{{< tab "batch-extract-raw-outputs.zip" >}}  
 ```text
-Processed 0 documents in 0.00 seconds
+extracted_text/annual-report.txt (3 KB)
+extracted_text/service-agreement.txt (3 KB)
+extracted_text/supplier-invoice.txt (1016 bytes)
 ```
-[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/batch_extract_raw/batch-extract-raw.txt)
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/batch_extract_raw/batch-extract-raw-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -374,7 +376,17 @@ The following sample files are used in this example: [annual-report.pdf](/parser
 {{< /tab >}}
 {{< tab "search_index.json" >}}  
 ```text
-{}
+{
+  "documents/annual-report.pdf": {
+    "filename": "annual-report.pdf",
+    "size": 3531,
+    "preview": "Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  harborlane.example  |  LinkedIn  |  Instagram  |  YouTubeAnnual Report 2025  |  Port ElleryAnnual Report 20251. OverviewHarbor Lane Provisi",
+    "word_count": 482
+  },
+  "documents/service-agreement.docx": {
+    "filename": "service-agreement.docx",
+    "size": 2584,
+[TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-in-raw-mode/create_search_index/search_index.json)
 {{< /tab >}}

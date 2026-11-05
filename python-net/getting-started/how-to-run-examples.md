@@ -66,7 +66,7 @@ The folders follow this documentation: each page's examples are in the folder of
 pip install -r requirements.txt
 ```
 
-Until PyPI carries `groupdocs-parser-net` 26.10.0, that command finds no matching version. First install the 26.10 wheel for your platform from the [GroupDocs Releases website](https://releases.groupdocs.com/parser/python-net/), as the [Installation]({{< ref "parser/python-net/getting-started/installation.md" >}}) page describes. pip then finds the requirement already satisfied.
+`requirements.txt` pins `groupdocs-parser-net==26.10.0`, which pip installs from PyPI with the wheel for your platform.
 
 To run the examples with the full feature set, apply a license. The simplest way is the `GROUPDOCS_LIC_PATH` environment variable, which `run_all_examples.py` reads and the package applies at the first call into the engine:
 
@@ -102,7 +102,7 @@ python hello_world.py
 
 ## Run with Docker
 
-The repository ships a `Dockerfile` that builds a Linux image with Python 3.13, the system packages the library needs on Linux (ICU, fontconfig, the Liberation fonts and `libgdiplus`), and the package preinstalled. The image installs the package from PyPI, so it builds once `groupdocs-parser-net` 26.10.0 is published there.
+The repository ships a `Dockerfile` that builds a Linux image with Python 3.13, the system packages the library needs on Linux (ICU, fontconfig, the Liberation fonts and `libgdiplus`), and the package preinstalled. The image installs the package from PyPI.
 
 ```bash
 # Build the image
@@ -120,7 +120,7 @@ docker run --rm \
 
 ## Continuous integration
 
-The `.github/workflows/` directory contains a workflow that runs the full example suite on `ubuntu-latest` with Python 3.13. Until `groupdocs-parser-net` 26.10.0 is on PyPI it runs on demand only (Actions > Run Examples > Run workflow); after that, on every push. The same run is reproducible locally via the `Dockerfile` above.
+The `.github/workflows/` directory contains a workflow that runs the full example suite on `ubuntu-latest` with Python 3.13. It runs on every push, and on demand (Actions > Run Examples > Run workflow). The same run is reproducible locally via the `Dockerfile` above.
 
 ## Troubleshooting
 

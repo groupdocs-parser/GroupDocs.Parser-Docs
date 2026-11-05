@@ -62,12 +62,12 @@ Text: harborlane.example
 URL: https://harborlane.example/
 Page: 1
 
-Text: Investor relations
-URL: https://harborlane.example/investors
+Text: LinkedIn
+URL: https://www.linkedin.com/company/harbor-lane-provisions-example
 Page: 1
 
-Text: harborlane.example
-URL: https://harborlane.example/
+Text: Instagram
+URL: https://www.instagram.com/harborlane.example/
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/example-1/extract-hyperlinks-from-document.txt)
@@ -270,10 +270,9 @@ The following sample file is used in this example: [document.pdf](/parser/python
 ```text
 Text,URL,Page,X,Y,Width,Height
 harborlane.example,https://harborlane.example/,1,267.14501953,801.7009887700001,74.71099853999999,11.19900131
-Investor relations,https://harborlane.example/investors,1,469.46801758,41,72.53198242000002,12.348999020000065
-harborlane.example,https://harborlane.example/,2,267.14501953,801.7009887700001,74.71099853999999,11.19900131
-harborlane.example,https://harborlane.example/,3,267.14501953,801.7009887700001,74.71099853999999,11.19900131
-harborlane.example,https://h
+LinkedIn,https://www.linkedin.com/company/harbor-lane-provisions-example,1,348.82400513,801.7009887700001,34.24600219000001,11.19900131
+Instagram,https://www.instagram.com/harborlane.example/,1,390.03799438,801.7009887700001,39.57000733000001,11.19900131
+YouTube,https://www.youtube.com/@harborlane-example,1,436.57598877,801.7009887700001,36.46899414000001,1
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/export_hyperlinks_to_csv/hyperlinks.csv)
@@ -503,7 +502,17 @@ The following sample files are used in this example: [annual-report.pdf](/parser
 {{< /tab >}}
 {{< tab "all_hyperlinks.json" >}}  
 ```text
-{}
+{
+  "annual-report.pdf": {
+    "count": 20,
+    "links": [
+      {
+        "text": "harborlane.example",
+        "url": "https://harborlane.example/",
+        "page": 1
+      },
+      {
+[TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document/batch_extract_hyperlinks/all_hyperlinks.json)
 {{< /tab >}}

@@ -340,14 +340,14 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 {{< /tab >}}
 {{< tab "create-document-preview.txt" >}}  
 ```text
-Document length: 4414 characters
+Document length: 4570 characters
 
 Preview:
                                                                                        Investor relations
 ...
-ed in April and holds 140 pallets at 2 C.
+nd holds 140 pallets at 2 C.
 ...
-8%               +9.2%
+Honey & Preserves                        $3.1 m               14.5%               +21.7%
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-highlights/create_document_preview/create-document-preview.txt)
 {{< /tab >}}

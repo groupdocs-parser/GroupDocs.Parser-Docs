@@ -108,7 +108,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 ```text
 File type: Portable Document Format File
 Page count: 4
-File size: 619289 bytes
+File size: 622772 bytes
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/example-2/load-document-with-absolute-path.txt)
 {{< /tab >}}
@@ -161,6 +161,22 @@ process_files_from_directory("documents")
 {{< tab-text >}}
 The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/documents/annual-report.pdf), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/documents/service-agreement.docx), [inventory.xlsx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/documents/inventory.xlsx), [product-catalog.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/documents/product-catalog.pptx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "process-files-from-directory.txt" >}}  
+```text
+Processing: annual-report.pdf
+  Type: Portable Document Format File
+  Pages: 4
+  Characters: 4570
+
+Processing: inventory.xlsx
+  Type: Microsoft Excel Open XML Spreadsheet
+  Pages: 2
+  Characters: 4352
+
+[TRUNCATED]
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/loading/load-file-from-local-disk/process_files_from_directory/process-files-from-directory.txt)
 {{< /tab >}}
 {{< /tabs >}}
 

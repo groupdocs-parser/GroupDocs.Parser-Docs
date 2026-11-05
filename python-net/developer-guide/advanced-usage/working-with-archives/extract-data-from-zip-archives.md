@@ -345,7 +345,7 @@ Archive Structure:
 
  readme.txt (188 bytes)
   └─ Text: 188 characters
- records.zip (495455 bytes)
+ records.zip (495460 bytes)
   └─ [Archive - processing nested items]
      invoice-HLP-2025-0412.pdf (213407 bytes)
       └─ Text: 2177 characters
@@ -531,7 +531,7 @@ The following sample file is used in this example: [archive.zip](/parser/python-
 {
   "archive": "archive.zip",
   "total_files": 5,
-  "total_size": 507213,
+  "total_size": 507212,
   "files": [
     {
       "name": "invoice-HLP-2025-0412.pdf",

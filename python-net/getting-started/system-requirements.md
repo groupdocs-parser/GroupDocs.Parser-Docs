@@ -62,7 +62,7 @@ GroupDocs.Parser for Python via .NET is distributed via [PyPI](https://pypi.org/
 pip install groupdocs-parser-net
 ```
 
-Until PyPI carries the 26.10 wheels, that command installs the previous version, 25.12. Install a 26.10 wheel downloaded from the [GroupDocs Releases website](https://releases.groupdocs.com/parser/python-net/) instead, as described on the [Installation]({{< ref "parser/python-net/getting-started/installation.md" >}}) page. One wheel is published per platform:
+The same wheels are on the [GroupDocs Releases website](https://releases.groupdocs.com/parser/python-net/) for machines that cannot reach PyPI (see [Installation]({{< ref "parser/python-net/getting-started/installation.md" >}})). One wheel is published per platform:
 
 | Platform | Wheel suffix | Oldest system |
 | --- | --- | --- |

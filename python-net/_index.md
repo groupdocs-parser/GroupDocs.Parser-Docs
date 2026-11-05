@@ -18,16 +18,12 @@ structuredData:
 <img src="https://img.shields.io/pypi/dm/groupdocs-parser-net?label=pypi%20downloads" alt="PyPI downloads">
 
 {{< button style="primary" link="https://releases.groupdocs.com/parser/python-net/release-notes/" >}} <svg class="gdoc-icon gdoc-product-doc__btn-icon"><use xlink:href="/img/groupdocs-stack.svg#document"></use></svg> Release notes {{< /button >}}
-{{< button style="primary" link="https://releases.groupdocs.com/parser/python-net/" >}} {{< icon "gdoc_download" >}} Download the wheels {{< /button >}}
+{{< button style="primary" link="https://pypi.org/project/groupdocs-parser-net/" >}} {{< icon "gdoc_download" >}} Download from PyPI {{< /button >}}
 {{< button style="primary" link="https://products.groupdocs.app/parser/family" >}} <svg class="gdoc-icon gdoc-product-doc__btn-icon"><use xlink:href="/img/groupdocs-stack.svg#app"></use></svg> Online app {{< /button >}}
 
 [GroupDocs.Parser for Python via .NET](https://products.groupdocs.com/parser/python-net/) is a document parsing API: extract the text of a document or a page, get it as HTML or Markdown, pull out its tables, images, hyperlinks, metadata and annotations, search it, and read fields from invoices and forms with templates. It works with Word processing, spreadsheets, presentations, PDF, email, eBooks, markup, archives and images, 65+ formats, with no MS Office or OpenOffice installation required.
 
 <div style="clear:left"></div>
-
-{{< alert style="info" >}}
-Version 26.10 is available on the [GroupDocs Releases website](https://releases.groupdocs.com/parser/python-net/) and is not on PyPI yet: until it is, `pip install groupdocs-parser-net` installs 25.12. See [Installation]({{< ref "parser/python-net/getting-started/installation.md" >}}).
-{{< /alert >}}
 
 ## Quick example
 

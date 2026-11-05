@@ -363,6 +363,22 @@ extract_images_from_directory("documents", "extracted_images")
 The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/documents/annual-report.pdf), [product-catalog.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/documents/product-catalog.pptx), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/documents/service-agreement.docx)
 {{< /tab-text >}}
 {{< /tab >}}
+{{< tab "extract-images-from-directory-outputs.zip" >}}  
+```text
+extracted_images/annual-report/image_1.jpeg (10 KB)
+extracted_images/annual-report/image_2.jpeg (88 KB)
+extracted_images/annual-report/image_3.jpeg (122 KB)
+extracted_images/annual-report/image_4.jpeg (160 KB)
+extracted_images/annual-report/image_5.jpeg (93 KB)
+extracted_images/product-catalog/image_1.png (4 KB)
+extracted_images/product-catalog/image_2.jpeg (136 KB)
+extracted_images/product-catalog/image_3.jpeg (75 KB)
+extracted_images/product-catalog/image_4.jpeg (105 KB)
+extracted_images/service-agreement/image_1.png (4 KB)
+[TRUNCATED] (12 files total)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-from-document/extract_images_from_directory/extract-images-from-directory-outputs.zip)
+{{< /tab >}}
 {{< /tabs >}}
 
 ## Notes

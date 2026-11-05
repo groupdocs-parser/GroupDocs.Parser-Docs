@@ -1,2 +1,2 @@
 ./sample.docx: Microsoft Word Open XML Document, 2 pages
-File not found: ./voice-memo.wav
+./voice-memo.wav: this document format isn't supported

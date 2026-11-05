@@ -1,10 +1,22 @@
-Found 8 hyperlinks in pages 1-5
+Found 20 hyperlinks in pages 1-5
 
 Page 1: harborlane.example -> https://harborlane.example/
+Page 1: LinkedIn -> https://www.linkedin.com/company/harbor-lane-provisions-example
+Page 1: Instagram -> https://www.instagram.com/harborlane.example/
+Page 1: YouTube -> https://www.youtube.com/@harborlane-example
 Page 1: Investor relations -> https://harborlane.example/investors
 Page 2: harborlane.example -> https://harborlane.example/
+Page 2: LinkedIn -> https://www.linkedin.com/company/harbor-lane-provisions-example
+Page 2: Instagram -> https://www.instagram.com/harborlane.example/
+Page 2: YouTube -> https://www.youtube.com/@harborlane-example
 Page 3: harborlane.example -> https://harborlane.example/
+Page 3: LinkedIn -> https://www.linkedin.com/company/harbor-lane-provisions-example
+Page 3: Instagram -> https://www.instagram.com/harborlane.example/
+Page 3: YouTube -> https://www.youtube.com/@harborlane-example
 Page 4: harborlane.example -> https://harborlane.example/
+Page 4: LinkedIn -> https://www.linkedin.com/company/harbor-lane-provisions-example
+Page 4: Instagram -> https://www.instagram.com/harborlane.example/
+Page 4: YouTube -> https://www.youtube.com/@harborlane-example
 Page 4: harborlane.example/investors/2025 -> https://harborlane.example/investors/2025
 Page 4: harborlane.example/suppliers/charter -> https://harborlane.example/suppliers/charter
 Page 4: harborlane.example/catalog -> https://harborlane.example/catalog

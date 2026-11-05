@@ -1,5 +1,17 @@
-Footer links: 4
+Footer links: 16
 harborlane.example: https://harborlane.example/
+LinkedIn: https://www.linkedin.com/company/harbor-lane-provisions-example
+Instagram: https://www.instagram.com/harborlane.example/
+YouTube: https://www.youtube.com/@harborlane-example
 harborlane.example: https://harborlane.example/
+LinkedIn: https://www.linkedin.com/company/harbor-lane-provisions-example
+Instagram: https://www.instagram.com/harborlane.example/
+YouTube: https://www.youtube.com/@harborlane-example
 harborlane.example: https://harborlane.example/
+LinkedIn: https://www.linkedin.com/company/harbor-lane-provisions-example
+Instagram: https://www.instagram.com/harborlane.example/
+YouTube: https://www.youtube.com/@harborlane-example
 harborlane.example: https://harborlane.example/
+LinkedIn: https://www.linkedin.com/company/harbor-lane-provisions-example
+Instagram: https://www.instagram.com/harborlane.example/
+YouTube: https://www.youtube.com/@harborlane-example

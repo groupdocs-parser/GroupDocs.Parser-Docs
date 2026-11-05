@@ -104,7 +104,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 ```text
 File type: Portable Document Format File
 Page count: 4
-File size: 619289 bytes
+File size: 622772 bytes
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-document-info/example-2/get-document-info-stream.txt)
 {{< /tab >}}
@@ -153,7 +153,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 Processing: sample.pdf
 Type: Portable Document Format File
 Pages: 4
-Size: 604.77 KB
+Size: 608.18 KB
 Document has pages, proceeding with text extraction...
                                                                                        Investor relations
 
@@ -251,7 +251,7 @@ The following sample file is used in this example: [voice-memo.wav](/parser/pyth
 {{< tab "working-with-unsupported-formats.txt" >}}  
 ```text
 ./sample.docx: Microsoft Word Open XML Document, 2 pages
-File not found: ./voice-memo.wav
+./voice-memo.wav: this document format isn't supported
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/basic-usage/get-document-info/example-5/working-with-unsupported-formats.txt)
 {{< /tab >}}

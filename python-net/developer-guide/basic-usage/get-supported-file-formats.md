@@ -266,7 +266,7 @@ The following sample file is used in this example: [sample.docx](/parser/python-
 Processing: sample.pdf
 Format: Portable Document Format File
 Pages: 4
-Text extraction successful: 4414 characters
+Text extraction successful: 4570 characters
 Processing: sample.docx
 Format: Microsoft Word Open XML Document
 Pages: 2

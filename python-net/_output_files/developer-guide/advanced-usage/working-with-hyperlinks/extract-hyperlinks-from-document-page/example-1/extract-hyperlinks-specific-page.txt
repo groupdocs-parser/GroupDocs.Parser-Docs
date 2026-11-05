@@ -2,5 +2,14 @@ Hyperlinks on page 1:
   Text: harborlane.example
   URL: https://harborlane.example/
 
+  Text: LinkedIn
+  URL: https://www.linkedin.com/company/harbor-lane-provisions-example
+
+  Text: Instagram
+  URL: https://www.instagram.com/harborlane.example/
+
+  Text: YouTube
+  URL: https://www.youtube.com/@harborlane-example
+
   Text: Investor relations
   URL: https://harborlane.example/investors

@@ -160,7 +160,7 @@ The following sample file is used in this example: [documents.zip](/parser/pytho
 ------------------------------------------------------------------------------------------
 1    invoice-HLP-2025-0412.pdf               213,407 bytes  finance/invoice-HLP-2025-041  
 2    supply-agreement-northwind.docx         263,263 bytes  finance/supply-agreement-nor  
-3    inventory.xlsx                          15,607 bytes   operations/inventory.xlsx     
+3    inventory.xlsx                          15,606 bytes   operations/inventory.xlsx     
 4    inventory.csv                           
 [TRUNCATED]
 ```
@@ -288,8 +288,8 @@ The following sample file is used in this example: [archive.zip](/parser/python-
 ```text
 Container Statistics:
   Items: 5
-  Total Size: 507,213 bytes (0.48 MB)
-  Average Size: 101,443 bytes
+  Total Size: 507,212 bytes (0.48 MB)
+  Average Size: 101,442 bytes
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-archives/iterate-through-container-items/calculate_container_size/calculate-container-size.txt)
 {{< /tab >}}
@@ -555,7 +555,7 @@ The following sample file is used in this example: [archive.zip](/parser/python-
 Index,Name,Size (bytes),Path
 1,invoice-HLP-2025-0412.pdf,213407,finance/invoice-HLP-2025-0412.pdf
 2,supply-agreement-northwind.docx,263263,finance/supply-agreement-northwind.docx
-3,inventory.xlsx,15607,operations/inventory.xlsx
+3,inventory.xlsx,15606,operations/inventory.xlsx
 4,inventory.csv,3625,operations/inventory.csv
 5,cold-room-3.png,11311,operations/cold-room-3.png
 ```

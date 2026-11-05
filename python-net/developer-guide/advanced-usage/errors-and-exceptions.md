@@ -53,7 +53,7 @@ The following sample file is used in this example: [voice-memo.wav](/parser/pyth
 {{< /tab >}}
 {{< tab "handle-unsupported-formats.txt" >}}  
 ```text
-The file wasn't found.
+The document format isn't supported.
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/errors-and-exceptions/example-1/handle-unsupported-formats.txt)
 {{< /tab >}}

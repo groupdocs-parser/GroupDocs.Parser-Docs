@@ -63,8 +63,9 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 ```text
 Page: 0, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
 Page: 0, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
-Page: 0, Rectangle: (56; 92.40000019000013) (119.02400000000003; 8.799999999999955), Text: Annual Report 2025  |  Port Ellery
-Page: 0, Rectangle: (56; 114.49799948999998) (244.16600000000005; 28.600000000000023), Text: Annual Report
+Page: 0, Rectangle: (339.85700426999995; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 0, Rectangle: (350.82400513; 803.10098896) (30.239999999999895; 8.799999999999955), Text: LinkedIn
+Page: 0, Rectangle:
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-areas/example-1/extract-text-areas-from-document.txt)
@@ -124,11 +125,11 @@ Position: (56, 803.10098896), Size: (213.13599999999997x8.799999999999955)
 Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
 Position: (269.14500426999996, 803.10098896), Size: (70.69599999999974x8.799999999999955)
 Text: harborlane.example
-Position: (56, 92.40000019000013), Size: (119.02400000000003x8.799999999999955)
-Text: Annual Report 2025  |  Port Ellery
-Position: (56, 114.49799948999998), Size: (244.16600000000005x28.600000000000023)
-Text: Annual Report 2025
-Posit
+Position: (339.85700426999995, 803.10098896), Size: (10.975999999999942x8.799999999999955)
+Text:   |  
+Position: (350.82400513, 803.10098896), Size: (30.239999999999895x8.799999999999955)
+Text: LinkedIn
+Position: (381.07200513, 803.1
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-areas/example-2/extract-text-areas-from-document-page.txt)
@@ -309,7 +310,7 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 ```text
 region_0: Annual Report 2025  |  Port Ellery Investor relations Harbor Lane Provisions  |  Annual Report 2025 ...
 region_1: Annual Report 2025  |  Port Ellery Annual Report 2025 1. Overview Harbor Lane Provisions supplies sp...
-region_2: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |   harborlane.example Harbor Lane Provisi...
+region_2: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |   harborlane.example   |   LinkedIn   | ...
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/extract-text-areas/extract_from_regions/extract-from-regions.txt)
 {{< /tab >}}

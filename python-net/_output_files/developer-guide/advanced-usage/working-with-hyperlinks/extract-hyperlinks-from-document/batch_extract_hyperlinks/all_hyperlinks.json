@@ -1,1 +1,132 @@
-{}
+{
+  "annual-report.pdf": {
+    "count": 20,
+    "links": [
+      {
+        "text": "harborlane.example",
+        "url": "https://harborlane.example/",
+        "page": 1
+      },
+      {
+        "text": "LinkedIn",
+        "url": "https://www.linkedin.com/company/harbor-lane-provisions-example",
+        "page": 1
+      },
+      {
+        "text": "Instagram",
+        "url": "https://www.instagram.com/harborlane.example/",
+        "page": 1
+      },
+      {
+        "text": "YouTube",
+        "url": "https://www.youtube.com/@harborlane-example",
+        "page": 1
+      },
+      {
+        "text": "Investor relations",
+        "url": "https://harborlane.example/investors",
+        "page": 1
+      },
+      {
+        "text": "harborlane.example",
+        "url": "https://harborlane.example/",
+        "page": 2
+      },
+      {
+        "text": "LinkedIn",
+        "url": "https://www.linkedin.com/company/harbor-lane-provisions-example",
+        "page": 2
+      },
+      {
+        "text": "Instagram",
+        "url": "https://www.instagram.com/harborlane.example/",
+        "page": 2
+      },
+      {
+        "text": "YouTube",
+        "url": "https://www.youtube.com/@harborlane-example",
+        "page": 2
+      },
+      {
+        "text": "harborlane.example",
+        "url": "https://harborlane.example/",
+        "page": 3
+      },
+      {
+        "text": "LinkedIn",
+        "url": "https://www.linkedin.com/company/harbor-lane-provisions-example",
+        "page": 3
+      },
+      {
+        "text": "Instagram",
+        "url": "https://www.instagram.com/harborlane.example/",
+        "page": 3
+      },
+      {
+        "text": "YouTube",
+        "url": "https://www.youtube.com/@harborlane-example",
+        "page": 3
+      },
+      {
+        "text": "harborlane.example",
+        "url": "https://harborlane.example/",
+        "page": 4
+      },
+      {
+        "text": "LinkedIn",
+        "url": "https://www.linkedin.com/company/harbor-lane-provisions-example",
+        "page": 4
+      },
+      {
+        "text": "Instagram",
+        "url": "https://www.instagram.com/harborlane.example/",
+        "page": 4
+      },
+      {
+        "text": "YouTube",
+        "url": "https://www.youtube.com/@harborlane-example",
+        "page": 4
+      },
+      {
+        "text": "harborlane.example/investors/2025",
+        "url": "https://harborlane.example/investors/2025",
+        "page": 4
+      },
+      {
+        "text": "harborlane.example/suppliers/charter",
+        "url": "https://harborlane.example/suppliers/charter",
+        "page": 4
+      },
+      {
+        "text": "harborlane.example/catalog",
+        "url": "https://harborlane.example/catalog",
+        "page": 4
+      }
+    ]
+  },
+  "service-agreement.docx": {
+    "count": 4,
+    "links": [
+      {
+        "text": "supplier quality charter",
+        "url": "https://harborlane.example/suppliers/charter",
+        "page": 2
+      },
+      {
+        "text": "northwindroasters.example/quality",
+        "url": "https://northwindroasters.example/quality",
+        "page": 2
+      },
+      {
+        "text": "harborlane.example/terms",
+        "url": "https://harborlane.example/terms",
+        "page": 2
+      },
+      {
+        "text": "lena.park@harborlane.example",
+        "url": "mailto:lena.park@harborlane.example",
+        "page": 2
+      }
+    ]
+  }
+}

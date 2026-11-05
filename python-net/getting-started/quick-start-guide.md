@@ -97,10 +97,6 @@ Ensure the package is installed successfully. You should see the message
 Successfully installed groupdocs-parser-net-*
 ```
 
-{{< alert style="info" >}}
-Version 26.10 is not on PyPI yet: until it is, `pip install groupdocs-parser-net` installs 25.12. Install the 26.10 wheel for your platform from the [GroupDocs Releases website](https://releases.groupdocs.com/parser/python-net/) instead, as described in [Install from a Pre-Downloaded Wheel]({{< ref "parser/python-net/getting-started/installation.md#install-from-a-pre-downloaded-wheel" >}}).
-{{< /alert >}}
-
 ## Example 1: Extract text
 
 To quickly test the library, let's extract the text of a PDF report.

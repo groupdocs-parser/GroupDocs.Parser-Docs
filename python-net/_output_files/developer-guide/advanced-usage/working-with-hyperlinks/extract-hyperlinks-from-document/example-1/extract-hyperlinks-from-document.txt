@@ -2,6 +2,18 @@ Text: harborlane.example
 URL: https://harborlane.example/
 Page: 1
 
+Text: LinkedIn
+URL: https://www.linkedin.com/company/harbor-lane-provisions-example
+Page: 1
+
+Text: Instagram
+URL: https://www.instagram.com/harborlane.example/
+Page: 1
+
+Text: YouTube
+URL: https://www.youtube.com/@harborlane-example
+Page: 1
+
 Text: Investor relations
 URL: https://harborlane.example/investors
 Page: 1
@@ -10,12 +22,48 @@ Text: harborlane.example
 URL: https://harborlane.example/
 Page: 2
 
+Text: LinkedIn
+URL: https://www.linkedin.com/company/harbor-lane-provisions-example
+Page: 2
+
+Text: Instagram
+URL: https://www.instagram.com/harborlane.example/
+Page: 2
+
+Text: YouTube
+URL: https://www.youtube.com/@harborlane-example
+Page: 2
+
 Text: harborlane.example
 URL: https://harborlane.example/
 Page: 3
 
+Text: LinkedIn
+URL: https://www.linkedin.com/company/harbor-lane-provisions-example
+Page: 3
+
+Text: Instagram
+URL: https://www.instagram.com/harborlane.example/
+Page: 3
+
+Text: YouTube
+URL: https://www.youtube.com/@harborlane-example
+Page: 3
+
 Text: harborlane.example
 URL: https://harborlane.example/
+Page: 4
+
+Text: LinkedIn
+URL: https://www.linkedin.com/company/harbor-lane-provisions-example
+Page: 4
+
+Text: Instagram
+URL: https://www.instagram.com/harborlane.example/
+Page: 4
+
+Text: YouTube
+URL: https://www.youtube.com/@harborlane-example
 Page: 4
 
 Text: harborlane.example/investors/2025

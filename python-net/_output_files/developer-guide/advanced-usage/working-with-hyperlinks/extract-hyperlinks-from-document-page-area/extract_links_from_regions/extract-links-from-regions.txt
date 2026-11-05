@@ -4,8 +4,9 @@ BODY: 3 links
   - https://harborlane.example/investors/2025
   - https://harborlane.example/suppliers/charter
   - https://harborlane.example/catalog
-FOOTER: 4 links
+FOOTER: 16 links
   - https://harborlane.example/
-  - https://harborlane.example/
-  - https://harborlane.example/
+  - https://www.linkedin.com/company/harbor-lane-provisions-example
+  - https://www.instagram.com/harborlane.example/
+  - https://www.youtube.com/@harborlane-example
   - https://harborlane.example/

@@ -13,7 +13,7 @@ File: supply-agreement-northwind.docx
   Metadata: 14 properties
 
 File: inventory.xlsx
-  Size: 15607 bytes
+  Size: 15606 bytes
   Type: .xlsx
   Pages: 2
   Metadata: 10 properties

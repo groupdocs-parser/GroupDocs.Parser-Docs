@@ -12,5 +12,5 @@ Files grouped by type:
 .PNG files: 1 items, 11,311 bytes
   - cold-room-3.png
 
-.XLSX files: 1 items, 15,607 bytes
+.XLSX files: 1 items, 15,606 bytes
   - inventory.xlsx

@@ -258,10 +258,10 @@ BODY: 3 links
   - https://harborlane.example/investors/2025
   - https://harborlane.example/suppliers/charter
   - https://harborlane.example/catalog
-FOOTER: 4 links
+FOOTER: 16 links
   - https://harborlane.example/
-  - https://harborlane.example/
-  - https://harborlane.example/
+  - https://www.linkedin.com/company/harbor-lane-provisions-example
+  - https://www.instagram.com/harborlane.example/
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_links_from_regions/extract-links-from-regions.txt)
@@ -330,11 +330,17 @@ The following sample file is used in this example: [document.pdf](/parser/python
 {{< /tab >}}
 {{< tab "extract-footer-links.txt" >}}  
 ```text
-Footer links: 4
+Footer links: 16
 harborlane.example: https://harborlane.example/
+LinkedIn: https://www.linkedin.com/company/harbor-lane-provisions-example
+Instagram: https://www.instagram.com/harborlane.example/
+YouTube: https://www.youtube.com/@harborlane-example
 harborlane.example: https://harborlane.example/
-harborlane.example: https://harborlane.example/
-harborlane.example: https://harborlane.example/
+LinkedIn: https://www.linkedin.com/company/harbor-lane-provisions-example
+Instagram: https://www.instagram.com/harborlane.example/
+YouTube: https://www.youtube.com/@harborlane-example
+harborlane.example:
+[TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_footer_links/extract-footer-links.txt)
 {{< /tab >}}
@@ -465,9 +471,9 @@ def extract_social_media_links(file_path, area_rect):
                 for domain in social_domains:
                     if domain in link.url:
                         platform = domain.split('.')[0].capitalize()
-                        if platform not in social_links:
-                            social_links[platform] = []
-                        social_links[platform].append(link.url)
+                        urls = social_links.setdefault(platform, [])
+                        if link.url not in urls:  # the footer repeats on every page
+                            urls.append(link.url)
                         break
         
         return social_links
@@ -492,7 +498,9 @@ The following sample file is used in this example: [document.pdf](/parser/python
 {{< tab "extract-social-media-links.txt" >}}  
 ```text
 Social Media Links:
-  none in this area
+  Linkedin: https://www.linkedin.com/company/harbor-lane-provisions-example
+  Instagram: https://www.instagram.com/harborlane.example/
+  Youtube: https://www.youtube.com/@harborlane-example
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page-area/extract_social_media_links/extract-social-media-links.txt)
 {{< /tab >}}

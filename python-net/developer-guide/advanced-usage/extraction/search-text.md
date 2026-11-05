@@ -51,11 +51,11 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 {{< tab "search-text-by-keyword.txt" >}}  
 ```text
 At 399: Harvest
-At 1671: Harvest
-At 1697: Harvest
-At 1898: harvest
-At 3732: harvest
-At 4032: Harvest
+At 1710: Harvest
+At 1736: Harvest
+At 1937: harvest
+At 3849: harvest
+At 4149: Harvest
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/search-text/example-1/search-text-by-keyword.txt)
 {{< /tab >}}
@@ -100,11 +100,11 @@ The following sample file is used in this example: [sample.pdf](/parser/python-n
 {{< tab "search-with-regular-expressions.txt" >}}  
 ```text
 At 171: 1. Overview
-At 1171: 2. Operations
-At 1657: 3. The
-At 2444: 4. Financial
-At 3635: 5. Sustainability
-At 3988: 6. Outlook
+At 1210: 2. Operations
+At 1696: 3. The
+At 2522: 4. Financial
+At 3752: 5. Sustainability
+At 4105: 6. Outlook
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/extraction/search-text/example-2/search-with-regular-expressions.txt)
 {{< /tab >}}

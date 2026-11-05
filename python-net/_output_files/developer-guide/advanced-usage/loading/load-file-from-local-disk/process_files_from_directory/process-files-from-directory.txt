@@ -1,0 +1,19 @@
+Processing: annual-report.pdf
+  Type: Portable Document Format File
+  Pages: 4
+  Characters: 4570
+
+Processing: inventory.xlsx
+  Type: Microsoft Excel Open XML Spreadsheet
+  Pages: 2
+  Characters: 4352
+
+Processing: product-catalog.pptx
+  Type: PowerPoint Open XML Presentation
+  Pages: 3
+  Characters: 696
+
+Processing: service-agreement.docx
+  Type: Microsoft Word Open XML Document
+  Pages: 2
+  Characters: 2584

@@ -1,5 +1,11 @@
 Page: 0, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
 Page: 0, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 0, Rectangle: (339.85700426999995; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 0, Rectangle: (350.82400513; 803.10098896) (30.239999999999895; 8.799999999999955), Text: LinkedIn
+Page: 0, Rectangle: (381.07200513; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 0, Rectangle: (392.03799438; 803.10098896) (35.56799999999987; 8.799999999999955), Text: Instagram
+Page: 0, Rectangle: (427.60599437999997; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 0, Rectangle: (438.57598877; 803.10098896) (32.463999999999885; 8.799999999999955), Text: YouTube
 Page: 0, Rectangle: (56; 92.40000019000013) (119.02400000000003; 8.799999999999955), Text: Annual Report 2025  |  Port Ellery
 Page: 0, Rectangle: (56; 114.49799948999998) (244.16600000000005; 28.600000000000023), Text: Annual Report 2025
 Page: 0, Rectangle: (56; 406.24899260999996) (83.38499999999999; 16.5), Text: 1. Overview
@@ -35,6 +41,12 @@ Page: 0, Rectangle: (471.46800232; 42.450000390000014) (68.52600000000018; 9.899
 Page: 1, Rectangle: (56; 28.400000190000128) (165.71200000000007; 8.799999999999955), Text: Harbor Lane Provisions  |  Annual Report 2025
 Page: 1, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
 Page: 1, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 1, Rectangle: (339.85700426999995; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 1, Rectangle: (350.82400513; 803.10098896) (30.239999999999895; 8.799999999999955), Text: LinkedIn
+Page: 1, Rectangle: (381.07200513; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 1, Rectangle: (392.03799438; 803.10098896) (35.56799999999987; 8.799999999999955), Text: Instagram
+Page: 1, Rectangle: (427.60599437999997; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 1, Rectangle: (438.57598877; 803.10098896) (32.463999999999885; 8.799999999999955), Text: YouTube
 Page: 1, Rectangle: (56; 98.74999968999998) (95.86500000000001; 16.5), Text: 2. Operations
 Page: 1, Rectangle: (56; 121.74900065999998) (479.08999999999946; 11), Text: Orders shipped rose 13.1% to 55,300 while on-time delivery improved to 97.4%. Two investments made the 
 Page: 1, Rectangle: (56; 133.24800026000003) (451.3199999999999; 11), Text: difference: a third cold room for cheese and dairy, and route planning that groups deliveries by district 
@@ -56,6 +68,12 @@ Page: 1, Rectangle: (56; 594.65799629) (347.9199999999998; 11), Text: twice a we
 Page: 2, Rectangle: (56; 28.400000190000128) (165.71200000000007; 8.799999999999955), Text: Harbor Lane Provisions  |  Annual Report 2025
 Page: 2, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
 Page: 2, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 2, Rectangle: (339.85700426999995; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 2, Rectangle: (350.82400513; 803.10098896) (30.239999999999895; 8.799999999999955), Text: LinkedIn
+Page: 2, Rectangle: (381.07200513; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 2, Rectangle: (392.03799438; 803.10098896) (35.56799999999987; 8.799999999999955), Text: Instagram
+Page: 2, Rectangle: (427.60599437999997; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 2, Rectangle: (438.57598877; 803.10098896) (32.463999999999885; 8.799999999999955), Text: YouTube
 Page: 2, Rectangle: (56; 92.74999968999998) (152.56499999999997; 16.5), Text: 4. Financial summary
 Page: 2, Rectangle: (56; 115.74900065999998) (472.4299999999996; 11), Text: Gross margin improved by 1.6 points to 32.8%, as freight costs fell and the share of own-brand lines grew. 
 Page: 2, Rectangle: (56; 127.24800026000003) (431.84999999999985; 11), Text: Operating costs rose 9.8%, mostly from the new cold room and three new hires in the warehouse.
@@ -94,6 +112,12 @@ Page: 2, Rectangle: (56; 587.3370124099999) (120.07000000000005; 11), Text: the 
 Page: 3, Rectangle: (56; 28.400000190000128) (165.71200000000007; 8.799999999999955), Text: Harbor Lane Provisions  |  Annual Report 2025
 Page: 3, Rectangle: (56; 803.10098896) (213.13599999999997; 8.799999999999955), Text: Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  
 Page: 3, Rectangle: (269.14500426999996; 803.10098896) (70.69599999999974; 8.799999999999955), Text: harborlane.example
+Page: 3, Rectangle: (339.85700426999995; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 3, Rectangle: (350.82400513; 803.10098896) (30.239999999999895; 8.799999999999955), Text: LinkedIn
+Page: 3, Rectangle: (381.07200513; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 3, Rectangle: (392.03799438; 803.10098896) (35.56799999999987; 8.799999999999955), Text: Instagram
+Page: 3, Rectangle: (427.60599437999997; 803.10098896) (10.975999999999942; 8.799999999999955), Text:   |  
+Page: 3, Rectangle: (438.57598877; 803.10098896) (32.463999999999885; 8.799999999999955), Text: YouTube
 Page: 3, Rectangle: (56; 92.74999968999998) (114.20999999999998; 16.5), Text: 5. Sustainability
 Page: 3, Rectangle: (56; 115.74900065999998) (479.6799999999996; 11), Text: Food waste fell to 1.2% of stock, the lowest since we began measuring. Unsold harvest produce goes to the 
 Page: 3, Rectangle: (56; 127.24800026000003) (153.39000000000007; 11), Text: Port Ellery food bank every Friday.

@@ -185,11 +185,11 @@ The following sample file is used in this example: [report.pdf](/parser/python-n
 {{< /tab >}}
 {{< tab "save-images-with-custom-names-outputs.zip" >}}  
 ```text
-saved_images/report_20261104_132751_page1_img1.jpeg (10 KB)
-saved_images/report_20261104_132751_page1_img2.jpeg (88 KB)
-saved_images/report_20261104_132751_page2_img3.jpeg (122 KB)
-saved_images/report_20261104_132751_page3_img4.jpeg (160 KB)
-saved_images/report_20261104_132751_page4_img5.jpeg (93 KB)
+saved_images/report_20261105_041430_page1_img1.jpeg (10 KB)
+saved_images/report_20261105_041430_page1_img2.jpeg (88 KB)
+saved_images/report_20261105_041430_page2_img3.jpeg (122 KB)
+saved_images/report_20261105_041430_page3_img4.jpeg (160 KB)
+saved_images/report_20261105_041430_page4_img5.jpeg (93 KB)
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/save_images_with_custom_names/save-images-with-custom-names-outputs.zip)
 {{< /tab >}}
@@ -464,6 +464,22 @@ batch_save_images("documents", "all_extracted_images")
 {{< tab-text >}}
 The following sample files are used in this example: [annual-report.pdf](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/documents/annual-report.pdf), [product-catalog.pptx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/documents/product-catalog.pptx), [service-agreement.docx](/parser/python-net/_sample_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/documents/service-agreement.docx)
 {{< /tab-text >}}
+{{< /tab >}}
+{{< tab "batch-save-images-outputs.zip" >}}  
+```text
+all_extracted_images/annual-report/image_1.jpeg (10 KB)
+all_extracted_images/annual-report/image_2.jpeg (88 KB)
+all_extracted_images/annual-report/image_3.jpeg (122 KB)
+all_extracted_images/annual-report/image_4.jpeg (160 KB)
+all_extracted_images/annual-report/image_5.jpeg (93 KB)
+all_extracted_images/product-catalog/image_1.png (4 KB)
+all_extracted_images/product-catalog/image_2.jpeg (136 KB)
+all_extracted_images/product-catalog/image_3.jpeg (75 KB)
+all_extracted_images/product-catalog/image_4.jpeg (105 KB)
+all_extracted_images/service-agreement/image_1.png (4 KB)
+[TRUNCATED] (12 files total)
+```
+[Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-images/extract-images-to-files/batch_save_images/batch-save-images-outputs.zip)
 {{< /tab >}}
 {{< /tabs >}}
 

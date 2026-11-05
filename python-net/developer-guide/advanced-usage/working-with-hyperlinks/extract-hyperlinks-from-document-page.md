@@ -59,8 +59,13 @@ Hyperlinks on page 1:
   Text: harborlane.example
   URL: https://harborlane.example/
 
-  Text: Investor relations
-  URL: https://harborlane.example/investors
+  Text: LinkedIn
+  URL: https://www.linkedin.com/company/harbor-lane-provisions-example
+
+  Text: Instagram
+  URL: https://www.instagram.com/harborlane.example/
+
+[TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/example-1/extract-hyperlinks-specific-page.txt)
 {{< /tab >}}
@@ -280,14 +285,14 @@ The following sample file is used in this example: [article.pdf](/parser/python-
 ```text
 Pages with external links: 4
 
-Page 1: 2 external links
+Page 1: 5 external links
   - https://harborlane.example/
-  - https://harborlane.example/investors
-Page 2: 1 external links
+  - https://www.linkedin.com/company/harbor-lane-provisions-example
+  - https://www.instagram.com/harborlane.example/
+Page 2: 4 external links
   - https://harborlane.example/
-Page 3: 1 external links
-  - https://harborlane.example/
-Page 4: 4 external links
+  - https://www.linkedin.com/company/harbor-lane-provisions-example
+  - https://www.instagram.com/harborlane.example/
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/find_pages_with_external_links/find-pages-with-external-links.txt)
@@ -370,13 +375,14 @@ The following sample file is used in this example: [documentation.pdf](/parser/p
 Hyperlink Distribution Analysis:
 Page      Links     Unique URLs    
 -----------------------------------
-1         2         2              
-2         1         1              
-3         1         1              
-4         4         4              
+1         5         5              
+2         4         4              
+3         4         4              
+4         7         7              
 
 Top domains:
   harborlane.example: 8
+[TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/analyze_hyperlink_distribution/analyze-hyperlink-distribution.txt)
 {{< /tab >}}
@@ -444,15 +450,15 @@ The following sample file is used in this example: [document.pdf](/parser/python
 {{< /tab >}}
 {{< tab "extract-hyperlinks-from-range.txt" >}}  
 ```text
-Found 8 hyperlinks in pages 1-5
+Found 20 hyperlinks in pages 1-5
 
 Page 1: harborlane.example -> https://harborlane.example/
+Page 1: LinkedIn -> https://www.linkedin.com/company/harbor-lane-provisions-example
+Page 1: Instagram -> https://www.instagram.com/harborlane.example/
+Page 1: YouTube -> https://www.youtube.com/@harborlane-example
 Page 1: Investor relations -> https://harborlane.example/investors
 Page 2: harborlane.example -> https://harborlane.example/
-Page 3: harborlane.example -> https://harborlane.example/
-Page 4: harborlane.example -> https://harborlane.example/
-Page 4: harborlane.example/investors/2025 -> https://harborlane.example/investors/2025
-Page 4: harborlane.example/suppliers/charter -> https://harborlane.example/suppli
+Page 2: LinkedIn -> https://www.linkedin.com/company/harbor-lane-prov
 [TRUNCATED]
 ```
 [Download full output](/parser/python-net/_output_files/developer-guide/advanced-usage/working-with-hyperlinks/extract-hyperlinks-from-document-page/extract_hyperlinks_from_range/extract-hyperlinks-from-range.txt)

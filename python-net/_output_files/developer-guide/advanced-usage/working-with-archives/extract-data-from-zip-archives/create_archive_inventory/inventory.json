@@ -1,7 +1,7 @@
 {
   "archive": "archive.zip",
   "total_files": 5,
-  "total_size": 507213,
+  "total_size": 507212,
   "files": [
     {
       "name": "invoice-HLP-2025-0412.pdf",
@@ -21,7 +21,7 @@
     },
     {
       "name": "inventory.xlsx",
-      "size": 15607,
+      "size": 15606,
       "path": "operations/inventory.xlsx",
       "extractable": true,
       "text_length": 4352,

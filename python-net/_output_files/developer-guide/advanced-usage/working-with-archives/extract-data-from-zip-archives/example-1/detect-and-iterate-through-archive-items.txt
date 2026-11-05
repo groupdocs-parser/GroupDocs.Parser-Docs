@@ -10,7 +10,7 @@ File 2:
 
 File 3:
   Name: inventory.xlsx
-  Size: 15607 bytes
+  Size: 15606 bytes
   File Path: operations/inventory.xlsx
 
 File 4:

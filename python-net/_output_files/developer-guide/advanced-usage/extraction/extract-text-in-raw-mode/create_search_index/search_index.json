@@ -1,1 +1,20 @@
-{}
+{
+  "documents/annual-report.pdf": {
+    "filename": "annual-report.pdf",
+    "size": 3531,
+    "preview": "Harbor Lane Provisions  |  18 Quayside Road, Port Ellery  |  harborlane.example  |  LinkedIn  |  Instagram  |  YouTubeAnnual Report 2025  |  Port ElleryAnnual Report 20251. OverviewHarbor Lane Provisi",
+    "word_count": 482
+  },
+  "documents/service-agreement.docx": {
+    "filename": "service-agreement.docx",
+    "size": 2584,
+    "preview": "Supply Agreement  |  Harbor Lane Provisions and Northwind Coffee Roasters  |  Confidential\r\n\r\n\r\n\r\nSupply Agreement\r\nHarbor Lane Provisions and Northwind Coffee Roasters\r\n1. Parties\r\nBuyer: Harbor Lane",
+    "word_count": 354
+  },
+  "documents/supplier-invoice.pdf": {
+    "filename": "supplier-invoice.pdf",
+    "size": 1015,
+    "preview": "INVOICEInvoice NumberHLP-2025-0412Invoice Date4 November 2025Due Date4 December 2025Order ReferencePO-7731FROMNorthwind Coffee Roasters4 Roastery Lane, Millbrookalex.chen@northwindroasters.exampleBILL",
+    "word_count": 95
+  }
+}

@@ -28,10 +28,6 @@ structuredData:
 
 GroupDocs.Parser for Python via .NET is distributed as a pre-built wheel on [PyPI](https://pypi.org/project/groupdocs-parser-net/). The PyPI index hosts a separate wheel for each supported platform, and `pip` picks the correct one automatically. Each wheel is self-contained: it bundles the embedded .NET runtime and every managed dependency, so no Microsoft Office, OpenOffice, or separate runtime install is required.
 
-{{< alert style="warning" >}}
-Version 26.10 is not on PyPI yet. Its wheels are on the [GroupDocs Releases website](https://releases.groupdocs.com/parser/python-net/), and PyPI will carry them as the `groupdocs-parser-net` package. Until it does, `pip install groupdocs-parser-net` installs the previous version, 25.12: [install a pre-downloaded wheel](#install-from-a-pre-downloaded-wheel) instead.
-{{< /alert >}}
-
 {{< alert style="info" >}}
 Before you install, review the [System Requirements]({{< ref "parser/python-net/getting-started/system-requirements.md" >}}). The wheels need 64-bit Python, Linux with glibc 2.27 or newer, or macOS 13 or newer, and pip 20.3 or newer to install. On macOS, OCR (text from scanned pages and images) needs macOS 13.3 or newer. On Linux, install ICU, fontconfig, the Liberation fonts and libgdiplus, and on macOS mono-libgdiplus (see [Platform Prerequisites](#platform-prerequisites)).
 {{< /alert >}}
@@ -62,7 +58,7 @@ After running the command you should see output similar to:
 
 ```bash
 Collecting groupdocs-parser-net
-  Downloading groupdocs_parser_net-26.10.0-py3-none-win_amd64.whl (301.5 MB)
+  Downloading groupdocs_parser_net-26.10.0-py3-none-win_amd64.whl (299.9 MB)
 Installing collected packages: groupdocs-parser-net
 Successfully installed groupdocs-parser-net-26.10.0
 ```
