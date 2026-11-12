@@ -66,4 +66,4 @@ Ask your agent *"list your GroupDocs parser tools and the license status"* — i
 
 ## Still stuck?
 
-Post your config (redact license paths) and the client name in the [Parser forum](https://forum.groupdocs.com/c/parser/17) — we answer MCP questions daily. Bugs: [GitHub issues](https://github.com/groupdocs-parser/GroupDocs.Parser.Mcp/issues).
+Post your config (redact license paths) and the client name in the [Parser forum](https://forum.groupdocs.com/c/parser/17). Bugs: [GitHub issues](https://github.com/groupdocs-parser/GroupDocs.Parser.Mcp/issues).

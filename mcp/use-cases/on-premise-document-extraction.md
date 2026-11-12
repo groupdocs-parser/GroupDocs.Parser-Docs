@@ -52,7 +52,7 @@ GroupDocs.Parser's engine embeds around 234 MB of ONNX models, which puts the pa
 For a security review, a single pinned image is easier to reason about than a package plus a runtime plus native dependencies: the contents are fixed, the digest is verifiable, and there is no SDK on the host to keep patched.
 
 ```bash
-docker run --rm -i \
+docker run --rm -i --user "$(id -u):$(id -g)" \
   -v /srv/documents:/data \
   -v /srv/licenses:/license:ro \
   -e GROUPDOCS_MCP_STORAGE_PATH=/data \
@@ -61,6 +61,7 @@ docker run --rm -i \
 ```
 
 * **Pin the tag** (`:26.9.0`, not `:latest`) so a new release cannot change behaviour underneath a running workflow.
+* `--user "$(id -u):$(id -g)"` (Linux) lets the container, which runs as a non-root user, write into a folder you own. A JSON client config runs no shell to expand it — write the numbers: `"--user", "1000:1000"`.
 * **Mount deliberately** — the container sees exactly the folders you give it, and nothing else. That is a tighter boundary than a process running as your user.
 * **Licence read-only.**
 

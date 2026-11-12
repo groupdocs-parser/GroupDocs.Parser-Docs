@@ -19,7 +19,8 @@ The GroupDocs.Parser MCP server runs **anywhere Docker runs**. There is no NuGet
 | Architectures | linux/amd64 + linux/arm64 (Apple Silicon native) |
 | Installer scripts | PowerShell 5.1 (Windows built-in) or PowerShell 7 (`pwsh`, macOS/Linux) |
 | Disk | the image is large — it carries the engine's ONNX models. Pull once per version |
-| Network | pull from ghcr.io / docker.io at install only — no network at runtime |
+| Network | ghcr.io / docker.io when the image is pulled; a pulled, pinned image runs offline |
+| Linux file ownership | run as your user: `--user "$(id -u):$(id -g)"` |
 
 **Plan for the image size.** The models that make text and barcode extraction work are inside the image, so the first pull is substantially bigger than for the other GroupDocs MCP servers. Pull it deliberately (`docker pull ghcr.io/groupdocs-parser/parser-net-mcp:latest`) rather than letting a client hit it on the first tool call and time out.
 

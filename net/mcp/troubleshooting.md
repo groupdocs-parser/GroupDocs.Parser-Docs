@@ -35,6 +35,10 @@ docker run --rm -v /path/to/documents:/data \
   ghcr.io/groupdocs-parser/parser-net-mcp:latest ls /data
 ```
 
+## `Permission denied` when saving into a mounted folder (Linux)
+
+The image runs as a non-root user (uid 1654) and a mounted folder keeps its host owner, so the container cannot write into a folder you own. Run it as you: `--user "$(id -u):$(id -g)"` on the command line, or `"--user", "1000:1000"` (your `id -u` and `id -g`) in a JSON client config, which runs no shell.
+
 ## Paths in the config are container paths
 
 `GROUPDOCS_MCP_STORAGE_PATH=/data` refers to the path **inside** the container — `/data` is whatever host folder you mounted there. A host path such as `D:/Storage/Documents` in that variable means nothing to the container and produces an empty storage folder. See [Configuration]({{< ref "parser/net/mcp/configuration.md" >}}).

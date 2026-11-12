@@ -13,9 +13,12 @@ toc: True
 **GroupDocs.Parser MCP server** lets AI agents like Claude, Cursor, and Copilot **pull data out of documents** — text, tables, images, metadata, barcodes — from PDF, Office, email, e-book, and image formats, **locally on your machine**. Install with one command:
 
 ```bash
-docker run --rm -i -v $(pwd)/documents:/data \
+docker run --rm -i --user "$(id -u):$(id -g)" \
+  -v $(pwd)/documents:/data \
   ghcr.io/groupdocs-parser/parser-net-mcp:latest
 ```
+
+`--user` runs the container as you, so on Linux it can write into a folder you own (the image runs as a non-root user otherwise). Docker Desktop on Windows and macOS does not need it.
 
 {{< alert style="info" >}}
 **This product ships via Docker only.** GroupDocs.Parser's engine embeds around 234 MB of ONNX models, which puts the packed tool over nuget.org's 250 MB package limit — so this product ships **via Docker only**, and there is no `dnx` command for it. Other GroupDocs MCP servers offer a NuGet (`dnx`) channel; this one does not, and every command in these pages reflects that. Details: [MCP server for .NET]({{< ref "parser/net/mcp/_index.md" >}}).

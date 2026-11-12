@@ -65,7 +65,8 @@ Check first when you are not sure:
 ## Setup
 
 ```bash
-docker run --rm -i -v $(pwd)/documents:/data \
+docker run --rm -i --user "$(id -u):$(id -g)" \
+  -v $(pwd)/documents:/data \
   ghcr.io/groupdocs-parser/parser-net-mcp:latest
 ```
 

@@ -33,9 +33,12 @@ pwsh ./install-groupdocs-mcp.ps1 -Channel docker \
 ## Manual run
 
 ```bash
-docker run --rm -i -v $(pwd)/documents:/data \
+docker run --rm -i --user "$(id -u):$(id -g)" \
+  -v $(pwd)/documents:/data \
   ghcr.io/groupdocs-parser/parser-net-mcp:latest
 ```
+
+The image runs as a non-root user (uid 1654), and a mounted folder keeps its host owner — `--user "$(id -u):$(id -g)"` runs the container as you, so it can write extracted images and files into your folder. MCP client configs are JSON and run no shell, so `$(id -u)` is not expanded there. Put the numbers in directly (`id -u` and `id -g` print them): `"--user", "1000:1000"` after `"-i"`.
 
 Client config locations on Linux: Claude Desktop `~/.config/Claude/claude_desktop_config.json`, VS Code user-level `~/.config/Code/User/mcp.json` — full list in [Register in AI clients]({{< ref "parser/net/mcp/install-in-ai-clients.md" >}}).
 
@@ -50,6 +53,7 @@ A passing run completes the MCP handshake (seven tools listed) and — when a do
 ## Linux-specific troubleshooting
 
 * **`docker: permission denied`** — your user is not in the `docker` group yet; `newgrp docker` or re-login.
+* **`Permission denied` when the server saves into the mounted folder** — the container runs as uid 1654; add `--user "$(id -u):$(id -g)"` (numbers in JSON configs).
 * **Empty `/data` in the container** — the volume path did not exist on the host, so Docker created an empty directory. Create the folder first, then run.
 * **SELinux hosts** — add `:z` to the volume (`-v $(pwd)/documents:/data:z`) if the container cannot read mounted files.
 * **Slow first start** — the image is large (it carries the ONNX models); pull it once with `docker pull ghcr.io/groupdocs-parser/parser-net-mcp:latest` before the first tool call.
