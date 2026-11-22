@@ -22,7 +22,7 @@ This method returns a collection of [PageBarcodeArea](https://reference.groupdoc
 | [Page](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getPage()) | The page that contains the text area.                        |
 | [Rectangle](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageArea#getRectangle()) | The rectangular area on the page that contains the text area. |
 | [Value](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea#getValue()) | A string value that represents a value of the barcode page area. |
-| [CodeTypeName](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea#getCodeTypeName()) | A string value than represents a type name of the barcode. |
+| [CodeTypeName](https://reference.groupdocs.com/parser/java/com.groupdocs.parser.data/PageBarcodeArea#getCodeTypeName()) | A string value that represents a type name of the barcode. |
 
 Here are the steps to extract all barcodes from the whole document:
 
