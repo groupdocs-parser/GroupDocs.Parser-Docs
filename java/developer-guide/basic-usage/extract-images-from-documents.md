@@ -10,7 +10,7 @@ hideChildren: False
 ---
 GroupDocs.Parser allows to extract images from PDF, Emails, Ebooks, Microsoft Office: Word (DOC, DOCX), PowerPoint (PPT, PPTX), Excel (XLS, XLSX), LibreOffice formats and many others (see full list at [supported document formats]({{< ref "parser/java/getting-started/supported-document-formats.md" >}}) article).
 
-GroupDocs.Parser's allows to easily implement simple and complex image extraction cases at the same time (see more at [advanced help section]({{< ref "parser/java/developer-guide/advanced-usage/working-with-images/_index.md" >}})).
+GroupDocs.Parser allows to easily implement simple and complex image extraction cases at the same time (see more at [advanced help section]({{< ref "parser/java/developer-guide/advanced-usage/working-with-images/_index.md" >}})).
 
 In this article you can see how to extract images from any supported format without additional settings.
 

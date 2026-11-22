@@ -8,7 +8,7 @@ keywords:
 productName: GroupDocs.Parser for Java
 hideChildren: False
 ---
-To extract a text from Microsoft Office Word documents [getText](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getText()) and [getText(int)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getText(int)) methods are used. These methods allow to extract a text from the entire document or a text from the selected page. [TextOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/TextOptions) parameter is ignored for Microsoft Office Words documents.
+To extract a text from Microsoft Office Word documents [getText](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getText()) and [getText(int)](https://reference.groupdocs.com/java/parser/com.groupdocs.parser/Parser#getText(int)) methods are used. These methods allow to extract a text from the entire document or a text from the selected page. [TextOptions](https://reference.groupdocs.com/java/parser/com.groupdocs.parser.options/TextOptions) parameter is ignored for Microsoft Office Word documents.
 
 Here are the steps to extract a text from Microsoft Office Word document:
 
